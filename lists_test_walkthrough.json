@@ -1,0 +1,56 @@
+{
+  "game": "games/zcode/lists.z5",
+  "commands": [
+    "look",
+    "inventory",
+    "examine door",
+    "north",
+    "look",
+    "inventory"
+  ],
+  "transcript": [
+    {
+      "command": "",
+      "output": "\n\nHey, that door wasn't there last time you walked by this spot. What the heck?\n\nLists And Lists\nAn Interactive Tutorial\nCopyright 1996 by Andrew Plotkin.\n(First-time players should type \"about\".)\nRelease 3 / Serial number 960823 / Inform v1502 Library 5/12\n\nA Familiar Place\nEverything here is just like it always is, except for that door.\n\n>A Familiar Place"
+    },
+    {
+      "command": "look",
+      "output": "\nA Familiar Place\nEverything here is just like it always is, except for that door.\n\n>A Familiar Place",
+      "room_id": 17
+    },
+    {
+      "command": "inventory",
+      "output": "You are carrying nothing.\n\n>A Familiar Place",
+      "room_id": 17
+    },
+    {
+      "command": "examine door",
+      "output": "The door to the north is ancient, stained, knotted wood. It looks terribly out of place here. In fact, it is out of place here. The door is closed.\n\n>A Familiar Place",
+      "room_id": 17
+    },
+    {
+      "command": "north",
+      "output": "You are carrying nothing.\n\n>A Familiar Place",
+      "room_id": 17
+    },
+    {
+      "command": "look",
+      "output": "\nA Familiar Place\nEverything here is just like it always is, except for that door.\n\n>A Familiar Place",
+      "room_id": 17
+    },
+    {
+      "command": "inventory",
+      "output": "You are carrying nothing.\n\n>A Familiar Place",
+      "room_id": 17
+    }
+  ],
+  "final_stats": {
+    "rooms_found": 1,
+    "total_exits": 0,
+    "objects_found": 3,
+    "takeable_objects": 2,
+    "commands_tried": 7,
+    "vocabulary_size": 340,
+    "unexplored_remaining": 12
+  }
+}

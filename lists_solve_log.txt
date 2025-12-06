@@ -1,0 +1,2411 @@
+Loading games/zcode/lists.z5...
+============================================================
+GAME START
+============================================================
+
+
+Hey, that door wasn't there last time you walked by this spot. What the heck?
+
+Lists And Lists
+An Interactive Tutorial
+Copyright 1996 by Andrew Plotkin.
+(First-time players should type "about".)
+Release 3 / Serial number 960823 / Inform v1502 Library 5/12
+
+A Familiar Place
+Everything here is just like it always is, except for that door.
+
+>A Familiar Place
+
+Using Anthropic Claude for AI assistance...
+
+============================================================
+ITERATION 1
+============================================================
+Room: A Familiar Place (ID: 17)
+Inventory: empty
+Exits: none
+Objects: yourself, stuff, door
+
+AI analyzing...
+Priority: medium
+Suggested commands: ['about', 'look', 'examine stuff', 'open door', 'go through door']
+
+> about
+Lists And Lists is copyright 1996 by Andrew Plotkin. It may be copied, distributed, and played freely.
+
+I will make the source code available when the competition is over.
+
+Type "help" for help with whatever you are currently stuck on.
+
+Thanks for beta-testing and comments: Michael Kinyon, Dylan Thu...
+✓ Something interesting happened!
+
+> look
+
+A Familiar Place
+Everything here is just like it always is, except for that door.
+
+>A Familiar Place
+✓ Something interesting happened!
+
+> examine stuff
+Leave that alone; there's nothing new about it.
+
+>A Familiar Place
+✓ Something interesting happened!
+
+> open door
+You push the door open. It doesn't creak at all.
+
+>A Familiar Place
+✓ Something interesting happened!
+
+> go through door
+
+White Room
+This is a comfortably cluttered room. Cluttered with bookshelves, mostly. To one side is a large desk, on which a computer squats regally. A lumpy couch is the only other furniture of note.
+
+Beside the computer is a small glass box.
+
+Resting on the couch, and snoring in a manner which yo...
+✓ Moved to new room!
+
+============================================================
+ITERATION 2
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['The genie may need to be woken up or interacted with in a specific way to progress', 'The glass box may contain an item or clue that is necessary to solve a puzzle']
+Suggested commands: ['examine genie', 'examine box', 'take box', 'wake genie', 'ask genie about something']
+
+> examine genie
+You always thought genies were folklore, but now that you've encountered one you find you really can't mistake it. He's eight feet tall, bright shimmering bronze, absolutely covered with tasteless wrought-gold jewelry, and he smells of ozone. He's also quite dead to the world, snoring like mad on th...
+✓ Something interesting happened!
+
+> examine box
+It's a small cube of frosted glass. Neatly etched on one side are the words "Break glass to wake owner." Something turns slowly inside the box... you can't quite see what.
+
+>White Room
+✓ Something interesting happened!
+
+> take box
+Taken.
+
+>White Room
+
+> wake genie
+The genie snorts. "'z a louse," he mumbles.
+
+>White Room
+✓ Something interesting happened!
+
+> ask genie about something
+There is no reply.
+
+>White Room
+
+============================================================
+ITERATION 3
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Waking up the genie', 'Determining the purpose of the glass box']
+Suggested commands: ['examine genie', 'talk to genie', 'examine box', 'open box', 'smell genie', 'search couch']
+
+> examine genie
+You always thought genies were folklore, but now that you've encountered one you find you really can't mistake it. He's eight feet tall, bright shimmering bronze, absolutely covered with tasteless wrought-gold jewelry, and he smells of ozone. He's also quite dead to the world, snoring like mad on th...
+✓ Something interesting happened!
+
+> talk to genie
+That's not a verb I recognise.
+
+>White Room
+
+> examine box
+It's a small cube of frosted glass. Neatly etched on one side are the words "Break glass to wake owner." Something turns slowly inside the box... you can't quite see what.
+
+>White Room
+✓ Something interesting happened!
+
+> open box
+The translucent glass is seamless.
+
+>White Room
+
+> smell genie
+You smell nothing unexpected.
+
+>White Room
+
+============================================================
+ITERATION 4
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Waking the genie', 'Opening the glass box']
+Suggested commands: ['wake genie', 'ask genie', 'examine box', 'take box', 'break glass']
+
+> wake genie
+The genie mumbles, "M'm awake, mmf," and throws an arm over his ear.
+
+>White Room
+✓ Something interesting happened!
+
+> ask genie
+What do you want to ask the genie for?
+
+>White Room
+✓ Something interesting happened!
+
+> examine box
+It's a small cube of frosted glass. Neatly etched on one side are the words "Break glass to wake owner." Something turns slowly inside the box... you can't quite see what.
+
+>White Room
+✓ Something interesting happened!
+
+> take box
+You already have that.
+
+>White Room
+
+> break glass
+You turn the box over carefully, then shrug and swing it sharply towards the table...
+
+"No no don't break it I'm awake!" A gleaming hand catches your wrist. The genie gently -- very gently -- removes the box from your grasp, and tucks it carefully away into nothing.
+
+The genie looks you over, squinc...
+✓ Something interesting happened!
+
+============================================================
+ITERATION 5
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Figuring out how to properly interact with or wake the genie', 'Determining the purpose of the glass box and how to wake its owner']
+Suggested commands: ['ask genie', 'examine genie', 'talk to genie', 'take glass box', 'examine desk', 'examine computer']
+
+> ask genie
+What do you want to ask the genie for?
+
+>White Room
+✓ Something interesting happened!
+
+> examine genie
+You always thought genies were folklore, but now that you've encountered one you find you really can't mistake it. He's eight feet tall, bright shimmering bronze, absolutely covered with tasteless wrought-gold jewelry, and he smells of ozone.
+
+>White Room
+✓ Something interesting happened!
+
+> talk to genie
+That's not a verb I recognise.
+
+>White Room
+
+> take glass box
+You can't see any such thing.
+
+>White Room
+
+> examine desk
+The desk is obviously from that school of design that says that furniture should be clean, efficient, unadorned, and capable of being disassembled with allen wrenches and put into a box six feet by three feet by two inches high. On the desk is a computer.
+
+>White Room
+✓ Something interesting happened!
+
+============================================================
+ITERATION 6
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['The genie may have a task or request for the player, potentially requiring the player to find or do something to interact with it further.', 'The computer on the desk may contain information or a puzzle that needs to be solved.']
+Suggested commands: ['examine genie', 'talk to genie', 'ask genie', 'search desk', 'search bookshelves']
+
+> examine genie
+You always thought genies were folklore, but now that you've encountered one you find you really can't mistake it. He's eight feet tall, bright shimmering bronze, absolutely covered with tasteless wrought-gold jewelry, and he smells of ozone.
+
+>White Room
+✓ Something interesting happened!
+
+> talk to genie
+That's not a verb I recognise.
+
+>White Room
+
+> ask genie
+What do you want to ask the genie for?
+
+>White Room
+✓ Something interesting happened!
+
+> search desk
+On the desk.
+
+>White Room
+
+> search bookshelves
+You decide that the stuff on the shelves is not what you're in here for.
+
+>White Room
+✓ Something interesting happened!
+
+============================================================
+ITERATION 7
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Waking up the genie and getting information from him', 'Interacting with the computer and finding clues']
+Suggested commands: ['examine genie', 'ask genie about...', 'search genie', 'look inside box', 'turn on computer']
+
+> examine genie
+You always thought genies were folklore, but now that you've encountered one you find you really can't mistake it. He's eight feet tall, bright shimmering bronze, absolutely covered with tasteless wrought-gold jewelry, and he smells of ozone.
+
+>White Room
+✓ Something interesting happened!
+
+> ask genie about...
+There is no reply.
+
+>White Room
+
+> search genie
+You find nothing of interest.
+
+>White Room
+
+> look inside box
+You can't see any such thing.
+
+>White Room
+
+> turn on computer
+The computer comes to life: whirr, feeple, feep! You settle yourself before the keyboard as text appears on the screen...
+
+
+[Welcome to the interpreter. Enter ":q" to exit, or ":m" for documentation, or ":?" for a list of other ":" commands.]
+[Interpreter warning:
+Since the Z-machine has no way to c...
+✓ Something interesting happened!
+
+============================================================
+ITERATION 8
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Waking up the genie and getting it to interact', 'Accessing the computer and finding information or completing a task']
+Suggested commands: ['examine box', 'examine computer', 'take genie', 'talk to genie', 'search desk']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 200/1600Atom name space: 223/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 202/1600Atom name space: 234/800
+✓ Something interesting happened!
+
+> take genie
+[Error: undefined atom: take]
+[Error: undefined atom: genie]
+ >>Heap: 204/1600Atom name space: 249/800
+✓ Something interesting happened!
+
+> talk to genie
+[Error: undefined atom: talk]
+[Error: undefined atom: to]
+[Error: undefined atom: genie]
+ >>Heap: 207/1600Atom name space: 261/800
+✓ Something interesting happened!
+
+> search desk
+[Error: undefined atom: search]
+[Error: undefined atom: desk]
+ >>Heap: 209/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 9
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['Waking up the genie and getting it to assist the player', 'Accessing the contents of the box or computer']
+Suggested commands: ['examine box', 'examine computer', 'search desk', 'talk to genie', 'take genie']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 211/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 213/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> search desk
+[Error: undefined atom: search]
+[Error: undefined atom: desk]
+ >>Heap: 215/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> talk to genie
+[Error: undefined atom: talk]
+[Error: undefined atom: to]
+[Error: undefined atom: genie]
+ >>Heap: 218/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> take genie
+[Error: undefined atom: take]
+[Error: undefined atom: genie]
+ >>Heap: 220/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 10
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Interacting with the genie could potentially be a puzzle or challenge, as the description suggests the genie is sleeping and may need to be awoken or dealt with in some way.']
+Suggested commands: ['examine box', 'examine computer', 'search desk', 'talk to genie', 'take genie']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 222/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 224/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> search desk
+[Error: undefined atom: search]
+[Error: undefined atom: desk]
+ >>Heap: 226/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> talk to genie
+[Error: undefined atom: talk]
+[Error: undefined atom: to]
+[Error: undefined atom: genie]
+ >>Heap: 229/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> take genie
+[Error: undefined atom: take]
+[Error: undefined atom: genie]
+ >>Heap: 231/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 11
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['The genie appears to be sleeping, and may need to be woken up or interacted with in a specific way to progress.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'talk to genie', 'take genie']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 233/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 235/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 237/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> talk to genie
+[Error: undefined atom: talk]
+[Error: undefined atom: to]
+[Error: undefined atom: genie]
+ >>Heap: 240/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> take genie
+[Error: undefined atom: take]
+[Error: undefined atom: genie]
+ >>Heap: 242/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 12
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Waking up the genie and interacting with it could be a puzzle or challenge.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'talk to genie', 'wake up genie']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 244/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 246/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 248/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> talk to genie
+[Error: undefined atom: talk]
+[Error: undefined atom: to]
+[Error: undefined atom: genie]
+ >>Heap: 251/1600Atom name space: 277/800
+✓ Something interesting happened!
+
+> wake up genie
+[Error: undefined atom: wake]
+[Error: undefined atom: up]
+[Error: undefined atom: genie]
+ >>Heap: 254/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 13
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['Interacting with the genie or waking it up may be a puzzle or obstacle in the game.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'wake up genie', 'talk to genie']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 256/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 258/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 260/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 262/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> wake up genie
+[Error: undefined atom: wake]
+[Error: undefined atom: up]
+[Error: undefined atom: genie]
+ >>Heap: 265/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 14
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Waking up the genie could lead to a puzzle or interaction']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'wake up genie']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 267/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 269/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 271/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 273/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> wake up genie
+[Error: undefined atom: wake]
+[Error: undefined atom: up]
+[Error: undefined atom: genie]
+ >>Heap: 276/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 15
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Waking up the genie may lead to some kind of interaction or puzzle']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'wake up genie']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 278/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 280/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 282/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 284/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> wake up genie
+[Error: undefined atom: wake]
+[Error: undefined atom: up]
+[Error: undefined atom: genie]
+ >>Heap: 287/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 16
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['Waking up the genie may be a puzzle or interaction required to progress in the game.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'wake up genie']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 289/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 291/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 293/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 295/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> wake up genie
+[Error: undefined atom: wake]
+[Error: undefined atom: up]
+[Error: undefined atom: genie]
+ >>Heap: 298/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 17
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Waking up the genie could be a puzzle, as well as figuring out what to do with the glass box and the objects on the desk.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'wake up genie', 'search genie', 'search desk', 'open box']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 300/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 302/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 304/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 306/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+> wake up genie
+[Error: undefined atom: wake]
+[Error: undefined atom: up]
+[Error: undefined atom: genie]
+ >>Heap: 309/1600Atom name space: 289/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 18
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Waking up the genie may be a puzzle or event that needs to be triggered.']
+Suggested commands: ['look', 'examine box', 'examine computer', 'examine desk', 'examine genie', 'wake up genie']
+
+> look
+[Error: undefined atom: look]
+ >>Heap: 310/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 312/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 314/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 316/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 318/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 19
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Interacting with the genie may lead to a puzzle or challenge', 'The box or computer may contain a puzzle or hidden item']
+Suggested commands: ['look', 'examine box', 'examine computer', 'examine desk', 'examine genie', 'take', 'open', 'talk to genie']
+
+> look
+[Error: undefined atom: look]
+ >>Heap: 319/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 321/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 323/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 325/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 327/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 20
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['Interacting with the genie to potentially solve a puzzle or progress in the game.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take genie']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 329/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 331/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 333/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 335/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take genie
+[Error: undefined atom: take]
+[Error: undefined atom: genie]
+ >>Heap: 337/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 21
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['How to interact with the genie', 'What is the purpose of the glass box']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take genie']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 339/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 341/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 343/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 345/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take genie
+[Error: undefined atom: take]
+[Error: undefined atom: genie]
+ >>Heap: 347/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 22
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Waking up the genie and interacting with it could lead to a puzzle or further progression in the game.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'wake up genie', 'talk to genie']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 349/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 351/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 353/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 355/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> wake up genie
+[Error: undefined atom: wake]
+[Error: undefined atom: up]
+[Error: undefined atom: genie]
+ >>Heap: 358/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 23
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Interacting with the genie may lead to a puzzle or quest']
+Suggested commands: ['look', 'examine box', 'examine computer', 'examine desk', 'examine genie', 'wake up genie']
+
+> look
+[Error: undefined atom: look]
+ >>Heap: 359/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 361/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 363/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 365/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 367/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 24
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['The genie may need to be woken up or interacted with in some way to progress further in the game.']
+Suggested commands: ['look', 'examine box', 'examine computer', 'examine desk', 'examine genie', 'talk to genie']
+
+> look
+[Error: undefined atom: look]
+ >>Heap: 368/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 370/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 372/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 374/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 376/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 25
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['Waking up the genie', 'Interacting with the computer or the box']
+Suggested commands: ['look', 'examine box', 'examine computer', 'examine desk', 'examine genie', 'search', 'inventory', 'talk to genie']
+
+> look
+[Error: undefined atom: look]
+ >>Heap: 377/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 379/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 381/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 383/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 385/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 26
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['Waking up the genie or interacting with it may be a puzzle', 'The box and computer may contain clues or items needed to progress']
+Suggested commands: ['look', 'examine box', 'examine computer', 'examine desk', 'examine genie', 'search', 'take']
+
+> look
+[Error: undefined atom: look]
+ >>Heap: 386/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 388/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 390/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 392/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 394/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 27
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['Waking up the genie', 'Interacting with the computer or box']
+Suggested commands: ['look', 'examine box', 'examine computer', 'examine desk', 'examine genie']
+
+> look
+[Error: undefined atom: look]
+ >>Heap: 395/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 397/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 399/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 401/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 403/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 28
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['How to wake up the genie', 'What is the purpose of the box or computer', 'Potential interactions with the genie that could lead to progress']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take box', 'take computer', 'take desk', 'take genie', 'wake genie', 'talk to genie']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 405/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 407/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 409/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 411/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take box
+[Error: undefined atom: take]
+[Error: undefined atom: box]
+ >>Heap: 413/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 29
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['The genie appears to be sleeping, and there may be a way to interact with or wake up the genie to progress in the game.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take box']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 415/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 417/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 419/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 421/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take box
+[Error: undefined atom: take]
+[Error: undefined atom: box]
+ >>Heap: 423/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 30
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['The presence of a sleeping genie suggests a potential puzzle or interaction with the genie.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take box']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 425/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 427/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 429/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 431/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take box
+[Error: undefined atom: take]
+[Error: undefined atom: box]
+ >>Heap: 433/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 31
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['The genie seems to be sleeping, which may be a puzzle to solve in order to interact with it.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take box']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 435/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 437/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 439/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 441/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take box
+[Error: undefined atom: take]
+[Error: undefined atom: box]
+ >>Heap: 443/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 32
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['Waking up the genie', 'Interacting with the box or computer']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take box']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 445/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 447/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 449/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 451/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take box
+[Error: undefined atom: take]
+[Error: undefined atom: box]
+ >>Heap: 453/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 33
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['The genie is snoring, which could indicate a puzzle or obstacle to overcome.', 'The small glass box next to the computer may be an important item or contain a puzzle.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take box']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 455/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 457/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 459/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 461/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take box
+[Error: undefined atom: take]
+[Error: undefined atom: box]
+ >>Heap: 463/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 34
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['The presence of a large, snoring genie on the couch suggests a potential puzzle or interaction with the genie.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take box']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 465/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 467/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 469/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 471/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take box
+[Error: undefined atom: take]
+[Error: undefined atom: box]
+ >>Heap: 473/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 35
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['The presence of a sleeping genie may indicate a puzzle or interaction to be discovered.', 'The box next to the computer may contain an item or clue that could be important.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take box']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 475/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 477/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 479/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 481/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take box
+[Error: undefined atom: take]
+[Error: undefined atom: box]
+ >>Heap: 483/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 36
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['The genie on the couch appears to be an important or interactive element, suggesting a potential puzzle or obstacle to overcome.']
+Suggested commands: ['look', 'examine box', 'examine computer', 'examine desk', 'examine genie', 'take box']
+
+> look
+[Error: undefined atom: look]
+ >>Heap: 484/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 486/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 488/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 490/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 492/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 37
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['Waking up the genie and interacting with it', 'Finding a way to access the contents of the box or computer']
+Suggested commands: ['look', 'examine box', 'examine computer', 'examine desk', 'examine genie', 'talk to genie', 'search couch', 'search bookshelves']
+
+> look
+[Error: undefined atom: look]
+ >>Heap: 493/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 495/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 497/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 499/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 501/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 38
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['The genie appears to be sleeping, which may be an obstacle to interacting with it or other objects in the room.', 'The box next to the computer may contain something important.']
+Suggested commands: ['look', 'examine box', 'examine computer', 'examine desk', 'examine genie']
+
+> look
+[Error: undefined atom: look]
+ >>Heap: 502/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 504/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 506/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 508/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 510/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 39
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['Waking up the genie', 'Interacting with the computer or box', 'Finding a hidden item or clue in the room']
+Suggested commands: ['look', 'examine box', 'examine computer', 'examine desk', 'examine genie', 'talk to genie', 'search couch', 'search bookshelves']
+
+> look
+[Error: undefined atom: look]
+ >>Heap: 511/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 513/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 515/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 517/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 519/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 40
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['The genie on the couch may be interactive and could present a puzzle or challenge to the player.']
+Suggested commands: ['look', 'examine box', 'examine computer', 'examine desk', 'examine genie']
+
+> look
+[Error: undefined atom: look]
+ >>Heap: 520/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 522/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 524/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 526/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 528/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 41
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['The genie on the couch appears to be an unusual and potentially interactive element in the room, suggesting a possible puzzle or quest involving the genie.']
+Suggested commands: ['look', 'examine box', 'examine computer', 'examine desk', 'examine genie']
+
+> look
+[Error: undefined atom: look]
+ >>Heap: 529/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 531/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 533/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 535/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 537/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 42
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Waking up the genie and interacting with it may be a puzzle or objective', 'The box may contain an item or clue that is needed to progress']
+Suggested commands: ['look', 'examine box', 'examine computer', 'examine desk', 'examine genie', 'wake up genie', 'talk to genie', 'search couch']
+
+> look
+[Error: undefined atom: look]
+ >>Heap: 538/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 540/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 542/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 544/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 546/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 43
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['The sleeping genie may be a puzzle or obstacle to overcome.']
+Suggested commands: ['look', 'examine box', 'examine computer', 'examine desk', 'examine genie']
+
+> look
+[Error: undefined atom: look]
+ >>Heap: 547/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 549/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 551/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 553/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 555/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 44
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Waking up the genie', 'Interacting with the box, computer, or desk']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take box', 'take computer', 'take desk', 'take genie', 'wake up genie', 'ask genie about box']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 557/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 559/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 561/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 563/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take box
+[Error: undefined atom: take]
+[Error: undefined atom: box]
+ >>Heap: 565/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 45
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['The genie on the couch appears to be an important interactive element, but the player has not been able to interact with it yet.', 'The small glass box beside the computer may contain something significant, but the player has not been able to examine or take it.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take box']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 567/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 569/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 571/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 573/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take box
+[Error: undefined atom: take]
+[Error: undefined atom: box]
+ >>Heap: 575/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 46
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['The genie appears to be sleeping, and may need to be awakened or interacted with in some way.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take box']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 577/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 579/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 581/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 583/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take box
+[Error: undefined atom: take]
+[Error: undefined atom: box]
+ >>Heap: 585/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 47
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['The genie appears to be sleeping, which may indicate a puzzle or obstacle related to waking or interacting with the genie.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take box']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 587/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 589/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 591/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 593/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take box
+[Error: undefined atom: take]
+[Error: undefined atom: box]
+ >>Heap: 595/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 48
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['Interacting with the box or computer may reveal a puzzle or lead to further progression in the game.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take box']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 597/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 599/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 601/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 603/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take box
+[Error: undefined atom: take]
+[Error: undefined atom: box]
+ >>Heap: 605/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 49
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: high
+Puzzles detected: ['The genie on the couch appears to be an important character, and may be involved in a puzzle or interaction.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take box']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 607/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 609/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 611/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 613/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take box
+[Error: undefined atom: take]
+[Error: undefined atom: box]
+ >>Heap: 615/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+ITERATION 50
+============================================================
+Room: White Room (ID: 20)
+Inventory: empty
+Exits: none
+Objects: yourself, door, bookshelves, toys and puzzles, desk, large couch, genie
+
+AI analyzing...
+Priority: medium
+Puzzles detected: ['The genie on the couch may be an obstacle or puzzle to overcome, perhaps by waking it up or interacting with it in some way.']
+Suggested commands: ['examine box', 'examine computer', 'examine desk', 'examine genie', 'take box']
+
+> examine box
+[Error: undefined atom: examine]
+[Error: undefined atom: box]
+ >>Heap: 617/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine computer
+[Error: undefined atom: examine]
+[Error: undefined atom: computer]
+ >>Heap: 619/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine desk
+[Error: undefined atom: examine]
+[Error: undefined atom: desk]
+ >>Heap: 621/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> examine genie
+[Error: undefined atom: examine]
+[Error: undefined atom: genie]
+ >>Heap: 623/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+> take box
+[Error: undefined atom: take]
+[Error: undefined atom: box]
+ >>Heap: 625/1600Atom name space: 296/800
+✓ Something interesting happened!
+
+============================================================
+SOLUTION SUMMARY
+============================================================
+Rooms discovered: 2
+Commands in solution: 237
+
+Solution path:
+  1. about
+  2. look
+  3. examine stuff
+  4. open door
+  5. go through door
+  6. examine genie
+  7. examine box
+  8. wake genie
+  9. examine genie
+  10. examine box
+  11. wake genie
+  12. ask genie
+  13. examine box
+  14. break glass
+  15. ask genie
+  16. examine genie
+  17. examine desk
+  18. examine genie
+  19. ask genie
+  20. search bookshelves
+  21. examine genie
+  22. turn on computer
+  23. examine box
+  24. examine computer
+  25. take genie
+  26. talk to genie
+  27. search desk
+  28. examine box
+  29. examine computer
+  30. search desk
+  31. talk to genie
+  32. take genie
+  33. examine box
+  34. examine computer
+  35. search desk
+  36. talk to genie
+  37. take genie
+  38. examine box
+  39. examine computer
+  40. examine desk
+  41. talk to genie
+  42. take genie
+  43. examine box
+  44. examine computer
+  45. examine desk
+  46. talk to genie
+  47. wake up genie
+  48. examine box
+  49. examine computer
+  50. examine desk
+  51. examine genie
+  52. wake up genie
+  53. examine box
+  54. examine computer
+  55. examine desk
+  56. examine genie
+  57. wake up genie
+  58. examine box
+  59. examine computer
+  60. examine desk
+  61. examine genie
+  62. wake up genie
+  63. examine box
+  64. examine computer
+  65. examine desk
+  66. examine genie
+  67. wake up genie
+  68. examine box
+  69. examine computer
+  70. examine desk
+  71. examine genie
+  72. wake up genie
+  73. look
+  74. examine box
+  75. examine computer
+  76. examine desk
+  77. examine genie
+  78. look
+  79. examine box
+  80. examine computer
+  81. examine desk
+  82. examine genie
+  83. examine box
+  84. examine computer
+  85. examine desk
+  86. examine genie
+  87. take genie
+  88. examine box
+  89. examine computer
+  90. examine desk
+  91. examine genie
+  92. take genie
+  93. examine box
+  94. examine computer
+  95. examine desk
+  96. examine genie
+  97. wake up genie
+  98. look
+  99. examine box
+  100. examine computer
+  101. examine desk
+  102. examine genie
+  103. look
+  104. examine box
+  105. examine computer
+  106. examine desk
+  107. examine genie
+  108. look
+  109. examine box
+  110. examine computer
+  111. examine desk
+  112. examine genie
+  113. look
+  114. examine box
+  115. examine computer
+  116. examine desk
+  117. examine genie
+  118. look
+  119. examine box
+  120. examine computer
+  121. examine desk
+  122. examine genie
+  123. examine box
+  124. examine computer
+  125. examine desk
+  126. examine genie
+  127. take box
+  128. examine box
+  129. examine computer
+  130. examine desk
+  131. examine genie
+  132. take box
+  133. examine box
+  134. examine computer
+  135. examine desk
+  136. examine genie
+  137. take box
+  138. examine box
+  139. examine computer
+  140. examine desk
+  141. examine genie
+  142. take box
+  143. examine box
+  144. examine computer
+  145. examine desk
+  146. examine genie
+  147. take box
+  148. examine box
+  149. examine computer
+  150. examine desk
+  151. examine genie
+  152. take box
+  153. examine box
+  154. examine computer
+  155. examine desk
+  156. examine genie
+  157. take box
+  158. examine box
+  159. examine computer
+  160. examine desk
+  161. examine genie
+  162. take box
+  163. look
+  164. examine box
+  165. examine computer
+  166. examine desk
+  167. examine genie
+  168. look
+  169. examine box
+  170. examine computer
+  171. examine desk
+  172. examine genie
+  173. look
+  174. examine box
+  175. examine computer
+  176. examine desk
+  177. examine genie
+  178. look
+  179. examine box
+  180. examine computer
+  181. examine desk
+  182. examine genie
+  183. look
+  184. examine box
+  185. examine computer
+  186. examine desk
+  187. examine genie
+  188. look
+  189. examine box
+  190. examine computer
+  191. examine desk
+  192. examine genie
+  193. look
+  194. examine box
+  195. examine computer
+  196. examine desk
+  197. examine genie
+  198. look
+  199. examine box
+  200. examine computer
+  201. examine desk
+  202. examine genie
+  203. examine box
+  204. examine computer
+  205. examine desk
+  206. examine genie
+  207. take box
+  208. examine box
+  209. examine computer
+  210. examine desk
+  211. examine genie
+  212. take box
+  213. examine box
+  214. examine computer
+  215. examine desk
+  216. examine genie
+  217. take box
+  218. examine box
+  219. examine computer
+  220. examine desk
+  221. examine genie
+  222. take box
+  223. examine box
+  224. examine computer
+  225. examine desk
+  226. examine genie
+  227. take box
+  228. examine box
+  229. examine computer
+  230. examine desk
+  231. examine genie
+  232. take box
+  233. examine box
+  234. examine computer
+  235. examine desk
+  236. examine genie
+  237. take box
+
+✓ Solution saved to: lists_solution.json
