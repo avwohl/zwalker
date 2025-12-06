@@ -5,6 +5,14 @@
 
 **ZWalker** is an automated walkthrough generator for Z-machine interactive fiction games. It uses AI assistance to explore games, generate solution walkthroughs, and provide regression testing for Z-machine compilers like z2js.
 
+## 📚 Documentation
+
+**[→ View Full Documentation & Game Index](https://yourusername.github.io/zwalker/)** *(Update with your GitHub username)*
+
+- [100+ Game Sources with Download URLs](https://yourusername.github.io/zwalker/GAME_SOURCES.html)
+- [49 AI-Generated Walkthroughs](https://yourusername.github.io/zwalker/WALKTHROUGHS.html)
+- [Complete Test Suite Results](https://yourusername.github.io/zwalker/#testing)
+
 ## Features
 
 - 🎮 **Z-Machine Interpreter**: 100% CZECH compliance (425/425 tests passing)
