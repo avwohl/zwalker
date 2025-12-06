@@ -15,8 +15,8 @@
     "out"
   ],
   "rooms": {
-    "92": {
-      "name": "Starting Room",
+    "1": {
+      "name": "Cold Iron",
       "exits": {},
       "objects": [],
       "takeable": []

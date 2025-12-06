@@ -15,18 +15,150 @@
     "out"
   ],
   "rooms": {
-    "22": {
-      "name": "(Inform Library)",
+    "41": {
+      "name": "apartment",
       "exits": {},
-      "objects": [],
+      "objects": [
+        [
+          42,
+          "living room"
+        ],
+        [
+          43,
+          "cardboard crate"
+        ],
+        [
+          44,
+          "stereo"
+        ],
+        [
+          45,
+          "luggage"
+        ],
+        [
+          46,
+          "plant"
+        ],
+        [
+          47,
+          "mirror"
+        ],
+        [
+          48,
+          "front door"
+        ],
+        [
+          49,
+          "window"
+        ],
+        [
+          51,
+          "closet"
+        ],
+        [
+          54,
+          "futon"
+        ],
+        [
+          55,
+          "desk"
+        ],
+        [
+          64,
+          "kitchen nook"
+        ],
+        [
+          73,
+          "bathroom nook"
+        ]
+      ],
       "takeable": []
     }
   },
-  "objects": {},
+  "objects": {
+    "42": {
+      "name": "living room",
+      "found_in_room": 41,
+      "is_takeable": false,
+      "taken": false
+    },
+    "43": {
+      "name": "cardboard crate",
+      "found_in_room": 41,
+      "is_takeable": false,
+      "taken": false
+    },
+    "44": {
+      "name": "stereo",
+      "found_in_room": 41,
+      "is_takeable": false,
+      "taken": false
+    },
+    "45": {
+      "name": "luggage",
+      "found_in_room": 41,
+      "is_takeable": false,
+      "taken": false
+    },
+    "46": {
+      "name": "plant",
+      "found_in_room": 41,
+      "is_takeable": false,
+      "taken": false
+    },
+    "47": {
+      "name": "mirror",
+      "found_in_room": 41,
+      "is_takeable": false,
+      "taken": false
+    },
+    "48": {
+      "name": "front door",
+      "found_in_room": 41,
+      "is_takeable": false,
+      "taken": false
+    },
+    "49": {
+      "name": "window",
+      "found_in_room": 41,
+      "is_takeable": false,
+      "taken": false
+    },
+    "51": {
+      "name": "closet",
+      "found_in_room": 41,
+      "is_takeable": false,
+      "taken": false
+    },
+    "54": {
+      "name": "futon",
+      "found_in_room": 41,
+      "is_takeable": false,
+      "taken": false
+    },
+    "55": {
+      "name": "desk",
+      "found_in_room": 41,
+      "is_takeable": false,
+      "taken": false
+    },
+    "64": {
+      "name": "kitchen nook",
+      "found_in_room": 41,
+      "is_takeable": false,
+      "taken": false
+    },
+    "73": {
+      "name": "bathroom nook",
+      "found_in_room": 41,
+      "is_takeable": false,
+      "taken": false
+    }
+  },
   "stats": {
     "rooms_found": 1,
     "total_exits": 0,
-    "objects_found": 0,
+    "objects_found": 13,
     "takeable_objects": 0,
     "commands_tried": 13,
     "vocabulary_size": 465,

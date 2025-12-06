@@ -3,6 +3,18 @@
   "commands": [
     "north",
     "south",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out",
+    "north",
     "east",
     "west",
     "northeast",
@@ -15,20 +27,67 @@
     "out"
   ],
   "rooms": {
-    "22": {
-      "name": "(Inform Library)",
-      "exits": {},
-      "objects": [],
-      "takeable": []
+    "34": {
+      "name": "Chief's office",
+      "exits": {
+        "north": 36
+      },
+      "objects": [
+        [
+          90,
+          "you"
+        ],
+        [
+          92,
+          "piece of white paper"
+        ]
+      ],
+      "takeable": [
+        [
+          90,
+          "you"
+        ]
+      ]
+    },
+    "36": {
+      "name": "Outside",
+      "exits": {
+        "south": 34
+      },
+      "objects": [
+        [
+          90,
+          "you"
+        ]
+      ],
+      "takeable": [
+        [
+          90,
+          "you"
+        ]
+      ]
     }
   },
-  "objects": {},
+  "objects": {
+    "90": {
+      "name": "you",
+      "found_in_room": 34,
+      "is_takeable": true,
+      "taken": false
+    },
+    "92": {
+      "name": "piece of white paper",
+      "found_in_room": 34,
+      "is_takeable": false,
+      "taken": false
+    }
+  },
   "stats": {
-    "rooms_found": 1,
-    "total_exits": 0,
-    "objects_found": 0,
-    "takeable_objects": 0,
-    "commands_tried": 13,
+    "rooms_found": 2,
+    "total_exits": 2,
+    "objects_found": 2,
+    "takeable_objects": 1,
+    "commands_tried": 25,
     "vocabulary_size": 344,
     "unexplored_remaining": 0
   }

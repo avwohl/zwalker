@@ -6,29 +6,92 @@
     "east",
     "west",
     "northeast",
+    "southwest",
     "northwest",
     "southeast",
-    "southwest",
     "up",
     "down",
     "in",
+    "out",
+    "south",
+    "north",
+    "west",
+    "east",
+    "southeast",
+    "northwest",
+    "southwest",
+    "northeast",
+    "down",
+    "up",
+    "out",
+    "in",
+    "south",
+    "west",
+    "southeast",
+    "southwest",
+    "down",
     "out"
   ],
   "rooms": {
     "1": {
       "name": "Starting Room",
-      "exits": {},
+      "exits": {
+        "north": 1,
+        "south": 2,
+        "east": 1,
+        "west": 2,
+        "northeast": 1,
+        "southwest": 2,
+        "northwest": 1,
+        "southeast": 2,
+        "up": 1,
+        "down": 2,
+        "in": 1,
+        "out": 2
+      },
+      "objects": [],
+      "takeable": []
+    },
+    "2": {
+      "name": "Object",
+      "exits": {
+        "north": 1,
+        "east": 1,
+        "northeast": 1,
+        "northwest": 1,
+        "up": 1,
+        "in": 1,
+        "south": 3,
+        "west": 3,
+        "southeast": 3,
+        "southwest": 3,
+        "down": 3,
+        "out": 3
+      },
+      "objects": [],
+      "takeable": []
+    },
+    "3": {
+      "name": "Routine",
+      "exits": {
+        "north": 2,
+        "east": 2,
+        "northwest": 2,
+        "northeast": 2,
+        "up": 2,
+        "in": 2
+      },
       "objects": [],
       "takeable": []
     }
   },
   "objects": {},
   "stats": {
-    "rooms_found": 1,
-    "total_exits": 0,
+    "rooms_found": 3,
+    "total_exits": 30,
     "objects_found": 0,
     "takeable_objects": 0,
-    "commands_tried": 13,
+    "commands_tried": 31,
     "vocabulary_size": 395,
     "unexplored_remaining": 0
   }

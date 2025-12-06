@@ -11,10 +11,8 @@
     "northwest",
     "southeast",
     "southwest",
-    "northeast",
     "up",
     "down",
-    "up",
     "in",
     "out",
     "north",
@@ -31,6 +29,8 @@
     "northwest",
     "southwest",
     "northeast",
+    "up",
+    "down",
     "down",
     "up",
     "in",
@@ -51,19 +51,6 @@
     "out",
     "north",
     "south",
-    "down",
-    "up",
-    "north",
-    "south",
-    "east",
-    "west",
-    "northwest",
-    "southeast",
-    "southwest",
-    "up",
-    "down",
-    "in",
-    "out",
     "north",
     "south",
     "south",
@@ -89,6 +76,8 @@
     "northwest",
     "southwest",
     "northeast",
+    "up",
+    "down",
     "down",
     "up",
     "in",
@@ -130,7 +119,6 @@
     "east",
     "southeast",
     "southwest",
-    "down",
     "north",
     "south",
     "south",
@@ -155,10 +143,9 @@
       "exits": {
         "north": 137,
         "west": 87,
-        "southwest": 244,
-        "down": 137,
         "south": 209,
         "east": 209,
+        "southwest": 209,
         "southeast": 209
       },
       "objects": [
@@ -181,7 +168,6 @@
       "name": "North of House",
       "exits": {
         "south": 64,
-        "up": 64,
         "north": 238,
         "east": 85,
         "west": 238,
@@ -189,6 +175,7 @@
         "northwest": 238,
         "southeast": 238,
         "southwest": 238,
+        "up": 238,
         "down": 238,
         "in": 238,
         "out": 238
@@ -225,37 +212,16 @@
         "southeast": 137,
         "northwest": 137,
         "northeast": 137,
+        "down": 137,
         "up": 137,
         "out": 137,
         "in": 137,
-        "north": 32,
-        "down": 32
+        "north": 32
       },
       "objects": [
         [
           44,
           "cretin"
-        ]
-      ],
-      "takeable": []
-    },
-    "244": {
-      "name": "Stone Barrow",
-      "exits": {
-        "northeast": 64
-      },
-      "objects": [
-        [
-          44,
-          "cretin"
-        ],
-        [
-          113,
-          "stone barrow"
-        ],
-        [
-          190,
-          "stone door"
         ]
       ],
       "takeable": []
@@ -281,12 +247,12 @@
       "exits": {
         "west": 238,
         "south": 128,
-        "up": 238,
         "north": 167,
         "east": 167,
         "northwest": 238,
         "southeast": 167,
         "southwest": 167,
+        "up": 167,
         "down": 167,
         "in": 167,
         "out": 167,
@@ -346,6 +312,7 @@
         "west": 32,
         "northwest": 32,
         "northeast": 32,
+        "down": 32,
         "up": 32,
         "out": 32,
         "in": 32
@@ -401,18 +368,6 @@
       "is_takeable": false,
       "taken": false
     },
-    "113": {
-      "name": "stone barrow",
-      "found_in_room": 244,
-      "is_takeable": false,
-      "taken": false
-    },
-    "190": {
-      "name": "stone door",
-      "found_in_room": 244,
-      "is_takeable": false,
-      "taken": false
-    },
     "118": {
       "name": "mountain range",
       "found_in_room": 167,
@@ -421,11 +376,11 @@
     }
   },
   "stats": {
-    "rooms_found": 11,
-    "total_exits": 79,
-    "objects_found": 6,
+    "rooms_found": 10,
+    "total_exits": 78,
+    "objects_found": 4,
     "takeable_objects": 0,
-    "commands_tried": 148,
+    "commands_tried": 136,
     "vocabulary_size": 684,
     "unexplored_remaining": 0
   }

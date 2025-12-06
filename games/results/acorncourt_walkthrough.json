@@ -15,19 +15,154 @@
     "out"
   ],
   "rooms": {
-    "22": {
-      "name": "(Inform Library)",
+    "24": {
+      "name": "Court Yard",
       "exits": {},
-      "objects": [],
-      "takeable": []
+      "objects": [
+        [
+          25,
+          "tin bucket"
+        ],
+        [
+          54,
+          "window"
+        ],
+        [
+          55,
+          "tree"
+        ],
+        [
+          56,
+          "tennis ball launching machine"
+        ],
+        [
+          58,
+          "iron gate"
+        ],
+        [
+          59,
+          "tennis court net"
+        ],
+        [
+          60,
+          "tennis court"
+        ],
+        [
+          61,
+          "squirrels nest"
+        ],
+        [
+          62,
+          "small water well"
+        ],
+        [
+          63,
+          "hand crank and rope assembly"
+        ]
+      ],
+      "takeable": [
+        [
+          54,
+          "window"
+        ],
+        [
+          55,
+          "tree"
+        ],
+        [
+          58,
+          "iron gate"
+        ],
+        [
+          59,
+          "tennis court net"
+        ],
+        [
+          60,
+          "tennis court"
+        ],
+        [
+          61,
+          "squirrels nest"
+        ],
+        [
+          62,
+          "small water well"
+        ],
+        [
+          63,
+          "hand crank and rope assembly"
+        ]
+      ]
     }
   },
-  "objects": {},
+  "objects": {
+    "25": {
+      "name": "tin bucket",
+      "found_in_room": 24,
+      "is_takeable": false,
+      "taken": false
+    },
+    "54": {
+      "name": "window",
+      "found_in_room": 24,
+      "is_takeable": true,
+      "taken": false
+    },
+    "55": {
+      "name": "tree",
+      "found_in_room": 24,
+      "is_takeable": true,
+      "taken": false
+    },
+    "56": {
+      "name": "tennis ball launching machine",
+      "found_in_room": 24,
+      "is_takeable": false,
+      "taken": false
+    },
+    "58": {
+      "name": "iron gate",
+      "found_in_room": 24,
+      "is_takeable": true,
+      "taken": false
+    },
+    "59": {
+      "name": "tennis court net",
+      "found_in_room": 24,
+      "is_takeable": true,
+      "taken": false
+    },
+    "60": {
+      "name": "tennis court",
+      "found_in_room": 24,
+      "is_takeable": true,
+      "taken": false
+    },
+    "61": {
+      "name": "squirrels nest",
+      "found_in_room": 24,
+      "is_takeable": true,
+      "taken": false
+    },
+    "62": {
+      "name": "small water well",
+      "found_in_room": 24,
+      "is_takeable": true,
+      "taken": false
+    },
+    "63": {
+      "name": "hand crank and rope assembly",
+      "found_in_room": 24,
+      "is_takeable": true,
+      "taken": false
+    }
+  },
   "stats": {
     "rooms_found": 1,
     "total_exits": 0,
-    "objects_found": 0,
-    "takeable_objects": 0,
+    "objects_found": 10,
+    "takeable_objects": 8,
     "commands_tried": 13,
     "vocabulary_size": 343,
     "unexplored_remaining": 0

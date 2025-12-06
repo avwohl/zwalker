@@ -15,19 +15,46 @@
     "out"
   ],
   "rooms": {
-    "22": {
-      "name": "(Inform Library)",
+    "33": {
+      "name": "At the Edifice",
       "exits": {},
-      "objects": [],
-      "takeable": []
+      "objects": [
+        [
+          32,
+          "ground"
+        ],
+        [
+          40,
+          "your Enemies"
+        ]
+      ],
+      "takeable": [
+        [
+          32,
+          "ground"
+        ]
+      ]
     }
   },
-  "objects": {},
+  "objects": {
+    "32": {
+      "name": "ground",
+      "found_in_room": 33,
+      "is_takeable": true,
+      "taken": false
+    },
+    "40": {
+      "name": "your Enemies",
+      "found_in_room": 33,
+      "is_takeable": false,
+      "taken": false
+    }
+  },
   "stats": {
     "rooms_found": 1,
     "total_exits": 0,
-    "objects_found": 0,
-    "takeable_objects": 0,
+    "objects_found": 2,
+    "takeable_objects": 1,
     "commands_tried": 13,
     "vocabulary_size": 820,
     "unexplored_remaining": 0

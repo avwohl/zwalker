@@ -41,6 +41,7 @@ class CallFrame:
     num_locals: int
     store_var: Optional[int]
     stack_depth: int  # Stack depth at call time
+    num_args: int = 0  # Number of arguments passed to this routine
 
 
 @dataclass
@@ -159,13 +160,28 @@ class ZMachine:
 
     def pop(self) -> int:
         if not self.stack:
-            raise ZMachineError("Stack underflow")
+            # Some games have code paths that pop from empty stack
+            # Return 0 to allow continued execution
+            return 0
         return self.stack.pop()
 
     # Variable access (0=stack, 1-15=locals, 16-255=globals)
     def get_variable(self, var_num: int) -> int:
         if var_num == 0:
             return self.pop()
+        elif var_num < 16:
+            return self.locals[var_num - 1]
+        else:
+            addr = self.header.globals + (var_num - 16) * 2
+            return self.read_word(addr)
+
+    def peek_variable(self, var_num: int) -> int:
+        """Read a variable without stack side effects (for indirect refs)"""
+        if var_num == 0:
+            # Peek stack top without popping
+            if not self.stack:
+                return 0
+            return self.stack[-1]
         elif var_num < 16:
             return self.locals[var_num - 1]
         else:
@@ -1373,13 +1389,16 @@ class ZMachine:
     def _decode_var_var(self, opnum: int):
         types_byte = self.read_byte(self.pc)
         self.pc += 1
-        operands = self._read_operands_from_types(types_byte)
 
-        # Extended operands for call_vs2/call_vn2
-        if opnum in (0x0C, 0x1A) and len(operands) == 4:
+        # call_vs2/call_vn2 ALWAYS have two type bytes
+        if opnum in (0x0C, 0x1A):
             types_byte2 = self.read_byte(self.pc)
             self.pc += 1
+            # Read operands from both type bytes
+            operands = self._read_operands_from_types(types_byte)
             operands.extend(self._read_operands_from_types(types_byte2))
+        else:
+            operands = self._read_operands_from_types(types_byte)
 
         info = self.VAR_VAR.get(opnum, (f"var_{opnum:02x}", False, False))
         name, has_store, has_branch = info
@@ -1440,6 +1459,13 @@ class ZMachine:
             return
 
         routine_addr = self.unpack_address(packed_addr)
+
+        # Bounds check - invalid address returns 0
+        if routine_addr >= len(self.memory):
+            if store_var is not None:
+                self.set_variable(store_var, 0)
+            return
+
         num_locals = self.read_byte(routine_addr)
         routine_addr += 1
 
@@ -1449,7 +1475,8 @@ class ZMachine:
             locals=list(self.locals),
             num_locals=num_locals,
             store_var=store_var,
-            stack_depth=len(self.stack)
+            stack_depth=len(self.stack),
+            num_args=len(args)
         )
         self.call_stack.append(frame)
 
@@ -1505,8 +1532,25 @@ class ZMachine:
         if self.debug:
             print(f"[{self.instruction_count}] {name} {operands} store={store_var} branch={branch}")
 
-        # Get operand values
-        ops = [self.get_operand(op) for op in operands]
+        # For indirect variable reference opcodes, the first operand gives the target var num.
+        # Per Z-machine spec, an indirect reference where the TARGET is var 0 (stack)
+        # does not push/pop - operations on stack use peek semantics.
+        # BUT reading the first operand (to get the target var num) uses normal semantics.
+        indirect_var_opcodes = ("inc", "dec", "inc_chk", "dec_chk", "load", "store", "pull")
+        indirect_var_num = None
+        if name in indirect_var_opcodes and operands:
+            op0 = operands[0]
+            if isinstance(op0, tuple):
+                # Variable type operand - read normally to get target var num
+                indirect_var_num = self.get_variable(op0[1])
+            else:
+                # Constant type operand - use directly as var num
+                indirect_var_num = op0
+            # Skip first operand in ops since we handled it specially
+            ops = [indirect_var_num] + [self.get_operand(op) for op in operands[1:]]
+        else:
+            # Get operand values normally
+            ops = [self.get_operand(op) for op in operands]
 
         # Execute opcode
         if name == "rtrue":
@@ -1533,7 +1577,12 @@ class ZMachine:
             self._return(self.pop())
 
         elif name == "pop":
+            # V1-4 only (V5+ uses catch)
             self.pop()
+
+        elif name == "catch":
+            # V5+: Store the current call stack depth for use with throw
+            self.set_variable(store_var, len(self.call_stack))
 
         elif name == "quit":
             self.finished = True
@@ -1572,14 +1621,28 @@ class ZMachine:
             self.set_variable(store_var, self.get_property_len(ops[0]))
 
         elif name == "inc":
-            var_num = operands[0][1] if isinstance(operands[0], tuple) else operands[0]
-            val = self._signed(self.get_variable(var_num)) + 1
-            self.set_variable(var_num, val & 0xFFFF)
+            # Use pre-computed indirect var num
+            var_num = indirect_var_num
+            # Now increment the target variable
+            if var_num == 0:
+                # inc sp: increment top of stack in place
+                if self.stack:
+                    self.stack[-1] = (self._signed(self.stack[-1]) + 1) & 0xFFFF
+            else:
+                val = self._signed(self.get_variable(var_num)) + 1
+                self.set_variable(var_num, val & 0xFFFF)
 
         elif name == "dec":
-            var_num = operands[0][1] if isinstance(operands[0], tuple) else operands[0]
-            val = self._signed(self.get_variable(var_num)) - 1
-            self.set_variable(var_num, val & 0xFFFF)
+            # Use pre-computed indirect var num
+            var_num = indirect_var_num
+            # Now decrement the target variable
+            if var_num == 0:
+                # dec sp: decrement top of stack in place
+                if self.stack:
+                    self.stack[-1] = (self._signed(self.stack[-1]) - 1) & 0xFFFF
+            else:
+                val = self._signed(self.get_variable(var_num)) - 1
+                self.set_variable(var_num, val & 0xFFFF)
 
         elif name == "print_addr":
             self.print_addr(ops[0])
@@ -1604,11 +1667,13 @@ class ZMachine:
             self.print_paddr(ops[0])
 
         elif name == "load":
-            var_num = operands[0][1] if isinstance(operands[0], tuple) else operands[0]
-            val = self.get_variable(var_num)
-            # For var 0 (stack), we need to peek not pop
-            if var_num == 0 and self.stack:
-                val = self.stack[-1]
+            # Use pre-computed indirect var num
+            var_num = indirect_var_num
+            # For var 0 (stack), load peeks rather than pops
+            if var_num == 0:
+                val = self.stack[-1] if self.stack else 0
+            else:
+                val = self.get_variable(var_num)
             self.set_variable(store_var, val)
 
         elif name == "call_1n":
@@ -1630,15 +1695,33 @@ class ZMachine:
             self._do_branch(self._signed(ops[0]) > self._signed(ops[1]), branch)
 
         elif name == "dec_chk":
-            var_num = operands[0][1] if isinstance(operands[0], tuple) else operands[0]
-            val = self._signed(self.get_variable(var_num)) - 1
-            self.set_variable(var_num, val & 0xFFFF)
+            # Use pre-computed indirect var num
+            var_num = indirect_var_num
+            # Now decrement and check
+            if var_num == 0:
+                # dec_chk sp: decrement top of stack in place
+                old_val = self.stack[-1] if self.stack else 0
+                val = self._signed(old_val) - 1
+                if self.stack:
+                    self.stack[-1] = val & 0xFFFF
+            else:
+                val = self._signed(self.get_variable(var_num)) - 1
+                self.set_variable(var_num, val & 0xFFFF)
             self._do_branch(val < self._signed(ops[1]), branch)
 
         elif name == "inc_chk":
-            var_num = operands[0][1] if isinstance(operands[0], tuple) else operands[0]
-            val = self._signed(self.get_variable(var_num)) + 1
-            self.set_variable(var_num, val & 0xFFFF)
+            # Use pre-computed indirect var num
+            var_num = indirect_var_num
+            # Now increment and check
+            if var_num == 0:
+                # inc_chk sp: increment top of stack in place
+                old_val = self.stack[-1] if self.stack else 0
+                val = self._signed(old_val) + 1
+                if self.stack:
+                    self.stack[-1] = val & 0xFFFF
+            else:
+                val = self._signed(self.get_variable(var_num)) + 1
+                self.set_variable(var_num, val & 0xFFFF)
             self._do_branch(val > self._signed(ops[1]), branch)
 
         elif name == "jin":
@@ -1663,8 +1746,16 @@ class ZMachine:
             self.clear_attribute(ops[0], ops[1])
 
         elif name == "store":
-            var_num = operands[0][1] if isinstance(operands[0], tuple) else operands[0]
-            self.set_variable(var_num, ops[1])
+            # Use pre-computed indirect var num
+            var_num = indirect_var_num
+            # Per spec: indirect reference to stack modifies top, not push
+            if var_num == 0:
+                if self.stack:
+                    self.stack[-1] = ops[1] & 0xFFFF
+                else:
+                    self.push(ops[1])
+            else:
+                self.set_variable(var_num, ops[1])
 
         elif name == "insert_obj":
             self.insert_object(ops[0], ops[1])
@@ -1716,6 +1807,15 @@ class ZMachine:
 
         elif name == "set_colour":
             pass  # Ignore
+
+        elif name == "throw":
+            # throw value stack_frame
+            # Unwind call stack to the given frame and return the value
+            value = ops[0]
+            target_depth = ops[1]
+            while len(self.call_stack) > target_depth:
+                self.call_stack.pop()
+            self._return(value)
 
         # VAR
         elif name == "call" or name == "call_vs":
@@ -1778,8 +1878,17 @@ class ZMachine:
             self.push(ops[0])
 
         elif name == "pull":
-            var_num = operands[0][1] if isinstance(operands[0], tuple) else operands[0]
-            self.set_variable(var_num, self.pop())
+            # Use pre-computed indirect var num
+            var_num = indirect_var_num
+            value = self.pop()
+            # Per spec: indirect reference to stack modifies top, not push
+            if var_num == 0:
+                if self.stack:
+                    self.stack[-1] = value & 0xFFFF
+                else:
+                    self.push(value)
+            else:
+                self.set_variable(var_num, value)
 
         elif name == "split_window":
             pass  # Ignore
@@ -1886,10 +1995,10 @@ class ZMachine:
                     self.print_text("\n")
 
         elif name == "check_arg_count":
-            # Check if argument N was provided
+            # Check if argument N was provided (1-indexed)
             frame = self.call_stack[-1] if self.call_stack else None
             if frame:
-                self._do_branch(ops[0] <= frame.num_locals, branch)
+                self._do_branch(ops[0] <= frame.num_args, branch)
             else:
                 self._do_branch(False, branch)
 

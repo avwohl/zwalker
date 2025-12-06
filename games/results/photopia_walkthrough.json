@@ -15,8 +15,8 @@
     "out"
   ],
   "rooms": {
-    "1": {
-      "name": "Starting Room",
+    "2": {
+      "name": "Object",
       "exits": {},
       "objects": [],
       "takeable": []

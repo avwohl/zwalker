@@ -3,6 +3,7 @@
   "commands": [
     "north",
     "south",
+    "north",
     "east",
     "west",
     "northeast",
@@ -12,23 +13,109 @@
     "up",
     "down",
     "in",
-    "out"
+    "out",
+    "out",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in"
   ],
   "rooms": {
-    "22": {
-      "name": "(Inform Library)",
-      "exits": {},
-      "objects": [],
+    "24": {
+      "name": "Outside the Cheeseshop",
+      "exits": {
+        "south": 26,
+        "in": 26
+      },
+      "objects": [
+        [
+          25,
+          "cheeseshop"
+        ]
+      ],
+      "takeable": []
+    },
+    "26": {
+      "name": "Ye Olde Cheese Emporium",
+      "exits": {
+        "north": 24,
+        "out": 24
+      },
+      "objects": [
+        [
+          27,
+          "counter"
+        ],
+        [
+          30,
+          "bouzouki"
+        ],
+        [
+          31,
+          "music"
+        ],
+        [
+          35,
+          "cyanide"
+        ],
+        [
+          201,
+          "cheese"
+        ]
+      ],
       "takeable": []
     }
   },
-  "objects": {},
+  "objects": {
+    "25": {
+      "name": "cheeseshop",
+      "found_in_room": 24,
+      "is_takeable": false,
+      "taken": false
+    },
+    "27": {
+      "name": "counter",
+      "found_in_room": 26,
+      "is_takeable": false,
+      "taken": false
+    },
+    "30": {
+      "name": "bouzouki",
+      "found_in_room": 26,
+      "is_takeable": false,
+      "taken": false
+    },
+    "31": {
+      "name": "music",
+      "found_in_room": 26,
+      "is_takeable": false,
+      "taken": false
+    },
+    "35": {
+      "name": "cyanide",
+      "found_in_room": 26,
+      "is_takeable": false,
+      "taken": false
+    },
+    "201": {
+      "name": "cheese",
+      "found_in_room": 26,
+      "is_takeable": false,
+      "taken": false
+    }
+  },
   "stats": {
-    "rooms_found": 1,
-    "total_exits": 0,
-    "objects_found": 0,
+    "rooms_found": 2,
+    "total_exits": 4,
+    "objects_found": 6,
     "takeable_objects": 0,
-    "commands_tried": 13,
+    "commands_tried": 25,
     "vocabulary_size": 654,
     "unexplored_remaining": 0
   }

@@ -78,6 +78,8 @@
     "southwest",
     "northwest",
     "southeast",
+    "southeast",
+    "northwest",
     "southwest",
     "northeast",
     "up",
@@ -86,6 +88,28 @@
     "up",
     "in",
     "out",
+    "north",
+    "south",
+    "south",
+    "north",
+    "east",
+    "west",
+    "west",
+    "east",
+    "northeast",
+    "southwest",
+    "northwest",
+    "southeast",
+    "southwest",
+    "northeast",
+    "up",
+    "down",
+    "down",
+    "up",
+    "in",
+    "out",
+    "out",
+    "in",
     "south",
     "north",
     "west",
@@ -123,7 +147,7 @@
         "south": 201,
         "east": 203,
         "west": 203,
-        "northwest": 203,
+        "northwest": 204,
         "southeast": 201,
         "southwest": 201,
         "up": 203,
@@ -217,16 +241,40 @@
       "exits": {
         "west": 202,
         "east": 202,
-        "southeast": 202,
         "north": 219,
         "south": 202,
         "northeast": 202,
         "northwest": 202,
+        "southeast": 202,
         "southwest": 202,
         "up": 202,
         "down": 202,
         "out": 200,
         "in": 200
+      },
+      "objects": [
+        [
+          220,
+          "you"
+        ]
+      ],
+      "takeable": []
+    },
+    "204": {
+      "name": "In Forest",
+      "exits": {
+        "southeast": 202,
+        "north": 202,
+        "south": 202,
+        "east": 202,
+        "west": 202,
+        "northeast": 202,
+        "northwest": 202,
+        "southwest": 202,
+        "up": 202,
+        "down": 202,
+        "in": 202,
+        "out": 202
       },
       "objects": [
         [
@@ -300,11 +348,11 @@
     }
   },
   "stats": {
-    "rooms_found": 7,
-    "total_exits": 57,
+    "rooms_found": 8,
+    "total_exits": 69,
     "objects_found": 6,
     "takeable_objects": 0,
-    "commands_tried": 102,
+    "commands_tried": 126,
     "vocabulary_size": 572,
     "unexplored_remaining": 0
   }

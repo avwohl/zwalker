@@ -15,18 +15,90 @@
     "out"
   ],
   "rooms": {
-    "22": {
-      "name": "(Inform Library)",
+    "93": {
+      "name": "Outside",
       "exits": {},
-      "objects": [],
+      "objects": [
+        [
+          94,
+          "moon"
+        ],
+        [
+          95,
+          "wall"
+        ],
+        [
+          96,
+          "field"
+        ],
+        [
+          97,
+          "forest"
+        ],
+        [
+          98,
+          "noise"
+        ],
+        [
+          99,
+          "tracks"
+        ],
+        [
+          100,
+          "farm"
+        ]
+      ],
       "takeable": []
     }
   },
-  "objects": {},
+  "objects": {
+    "94": {
+      "name": "moon",
+      "found_in_room": 93,
+      "is_takeable": false,
+      "taken": false
+    },
+    "95": {
+      "name": "wall",
+      "found_in_room": 93,
+      "is_takeable": false,
+      "taken": false
+    },
+    "96": {
+      "name": "field",
+      "found_in_room": 93,
+      "is_takeable": false,
+      "taken": false
+    },
+    "97": {
+      "name": "forest",
+      "found_in_room": 93,
+      "is_takeable": false,
+      "taken": false
+    },
+    "98": {
+      "name": "noise",
+      "found_in_room": 93,
+      "is_takeable": false,
+      "taken": false
+    },
+    "99": {
+      "name": "tracks",
+      "found_in_room": 93,
+      "is_takeable": false,
+      "taken": false
+    },
+    "100": {
+      "name": "farm",
+      "found_in_room": 93,
+      "is_takeable": false,
+      "taken": false
+    }
+  },
   "stats": {
     "rooms_found": 1,
     "total_exits": 0,
-    "objects_found": 0,
+    "objects_found": 7,
     "takeable_objects": 0,
     "commands_tried": 13,
     "vocabulary_size": 1724,

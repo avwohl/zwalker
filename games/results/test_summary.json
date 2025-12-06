@@ -1,9 +1,9 @@
 {
-  "timestamp": "2025-12-06T12:29:43.206320",
+  "timestamp": "2025-12-06T13:00:24.214663",
   "games_dir": "/home/wohl/src/zwalker/games/zcode",
-  "total_games": 40,
-  "passed": 36,
-  "failed": 4,
+  "total_games": 43,
+  "passed": 43,
+  "failed": 0,
   "results": [
     {
       "game": "905.z5",
@@ -19,7 +19,7 @@
         "vocabulary_size": 296,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:40.852124",
+      "timestamp": "2025-12-06T12:59:48.678778",
       "size": 87040,
       "version": 5,
       "release": 1,
@@ -28,20 +28,32 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/905_walkthrough.json",
-      "elapsed_seconds": 0.01
+      "elapsed_seconds": 0.58
     },
     {
       "game": "acheton.z8",
       "path": "/home/wohl/src/zwalker/games/zcode/acheton.z8",
-      "status": "fail",
-      "error": "Stack underflow",
-      "stats": {},
-      "timestamp": "2025-12-06T12:29:40.859301",
+      "status": "pass",
+      "error": null,
+      "stats": {
+        "rooms_found": 1,
+        "total_exits": 0,
+        "objects_found": 0,
+        "takeable_objects": 0,
+        "commands_tried": 13,
+        "vocabulary_size": 869,
+        "unexplored_remaining": 0
+      },
+      "timestamp": "2025-12-06T12:59:49.257037",
       "size": 250880,
       "version": 8,
       "release": 1,
       "serial": "111115",
-      "elapsed_seconds": 0.01
+      "rooms_found": 1,
+      "commands_tried": 13,
+      "walkthrough_moves": 0,
+      "walkthrough_file": "/home/wohl/src/zwalker/games/results/acheton_walkthrough.json",
+      "elapsed_seconds": 0.07
     },
     {
       "game": "acorncourt.z5",
@@ -51,13 +63,13 @@
       "stats": {
         "rooms_found": 1,
         "total_exits": 0,
-        "objects_found": 0,
-        "takeable_objects": 0,
+        "objects_found": 10,
+        "takeable_objects": 8,
         "commands_tried": 13,
         "vocabulary_size": 343,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:40.865967",
+      "timestamp": "2025-12-06T12:59:49.327839",
       "size": 55296,
       "version": 5,
       "release": 3,
@@ -66,33 +78,57 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/acorncourt_walkthrough.json",
-      "elapsed_seconds": 0.01
+      "elapsed_seconds": 0.19
     },
     {
       "game": "adv440.z8",
       "path": "/home/wohl/src/zwalker/games/zcode/adv440.z8",
-      "status": "fail",
-      "error": "bytearray index out of range",
-      "stats": {},
-      "timestamp": "2025-12-06T12:29:40.872082",
+      "status": "pass",
+      "error": null,
+      "stats": {
+        "rooms_found": 1,
+        "total_exits": 0,
+        "objects_found": 0,
+        "takeable_objects": 0,
+        "commands_tried": 13,
+        "vocabulary_size": 0,
+        "unexplored_remaining": 0
+      },
+      "timestamp": "2025-12-06T12:59:49.515409",
       "size": 193536,
       "version": 8,
       "release": 1,
       "serial": "160307",
-      "elapsed_seconds": 0.0
+      "rooms_found": 1,
+      "commands_tried": 13,
+      "walkthrough_moves": 0,
+      "walkthrough_file": "/home/wohl/src/zwalker/games/results/adv440_walkthrough.json",
+      "elapsed_seconds": 0.71
     },
     {
       "game": "adv550.z8",
       "path": "/home/wohl/src/zwalker/games/zcode/adv550.z8",
-      "status": "fail",
-      "error": "bytearray index out of range",
-      "stats": {},
-      "timestamp": "2025-12-06T12:29:40.873074",
+      "status": "pass",
+      "error": null,
+      "stats": {
+        "rooms_found": 1,
+        "total_exits": 0,
+        "objects_found": 0,
+        "takeable_objects": 0,
+        "commands_tried": 13,
+        "vocabulary_size": 0,
+        "unexplored_remaining": 0
+      },
+      "timestamp": "2025-12-06T12:59:50.222251",
       "size": 231424,
       "version": 8,
       "release": 1,
       "serial": "160307",
-      "elapsed_seconds": 0.01
+      "rooms_found": 1,
+      "commands_tried": 13,
+      "walkthrough_moves": 0,
+      "walkthrough_file": "/home/wohl/src/zwalker/games/results/adv550_walkthrough.json",
+      "elapsed_seconds": 0.44
     },
     {
       "game": "advent.z3",
@@ -100,24 +136,24 @@
       "status": "pass",
       "error": null,
       "stats": {
-        "rooms_found": 7,
-        "total_exits": 57,
+        "rooms_found": 8,
+        "total_exits": 69,
         "objects_found": 6,
         "takeable_objects": 0,
-        "commands_tried": 102,
+        "commands_tried": 126,
         "vocabulary_size": 572,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:40.879462",
+      "timestamp": "2025-12-06T12:59:50.662635",
       "size": 66414,
       "version": 3,
       "release": 1,
       "serial": "151001",
-      "rooms_found": 7,
-      "commands_tried": 102,
+      "rooms_found": 8,
+      "commands_tried": 126,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/advent_walkthrough.json",
-      "elapsed_seconds": 0.54
+      "elapsed_seconds": 0.72
     },
     {
       "game": "adverbum.z5",
@@ -133,7 +169,7 @@
         "vocabulary_size": 606,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.418505",
+      "timestamp": "2025-12-06T12:59:51.378515",
       "size": 138240,
       "version": 5,
       "release": 11,
@@ -142,7 +178,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/adverbum_walkthrough.json",
-      "elapsed_seconds": 0.01
+      "elapsed_seconds": 0.2
     },
     {
       "game": "aisle.z5",
@@ -158,7 +194,7 @@
         "vocabulary_size": 510,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.424245",
+      "timestamp": "2025-12-06T12:59:51.578546",
       "size": 122368,
       "version": 5,
       "release": 1,
@@ -167,7 +203,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/aisle_walkthrough.json",
-      "elapsed_seconds": 0.0
+      "elapsed_seconds": 0.02
     },
     {
       "game": "allroads.z5",
@@ -183,7 +219,7 @@
         "vocabulary_size": 656,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.429231",
+      "timestamp": "2025-12-06T12:59:51.596490",
       "size": 172032,
       "version": 5,
       "release": 1,
@@ -192,7 +228,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/allroads_walkthrough.json",
-      "elapsed_seconds": 0.01
+      "elapsed_seconds": 0.04
     },
     {
       "game": "amfv.z4",
@@ -208,7 +244,7 @@
         "vocabulary_size": 1812,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.435032",
+      "timestamp": "2025-12-06T12:59:51.635616",
       "size": 262036,
       "version": 4,
       "release": 79,
@@ -217,7 +253,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/amfv_walkthrough.json",
-      "elapsed_seconds": 0.05
+      "elapsed_seconds": 0.06
     },
     {
       "game": "anchor.z8",
@@ -233,7 +269,7 @@
         "vocabulary_size": 2257,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.483215",
+      "timestamp": "2025-12-06T12:59:51.697132",
       "size": 520192,
       "version": 8,
       "release": 5,
@@ -242,7 +278,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/anchor_walkthrough.json",
-      "elapsed_seconds": 0.01
+      "elapsed_seconds": 0.41
     },
     {
       "game": "animals.z5",
@@ -258,7 +294,7 @@
         "vocabulary_size": 0,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.494411",
+      "timestamp": "2025-12-06T12:59:52.112123",
       "size": 32768,
       "version": 5,
       "release": 1,
@@ -283,7 +319,7 @@
         "vocabulary_size": 455,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.504724",
+      "timestamp": "2025-12-06T12:59:52.123547",
       "size": 59392,
       "version": 5,
       "release": 1,
@@ -292,7 +328,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/bedlam_walkthrough.json",
-      "elapsed_seconds": 0.11
+      "elapsed_seconds": 0.12
     },
     {
       "game": "bluechairs.z5",
@@ -308,7 +344,7 @@
         "vocabulary_size": 1117,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.616878",
+      "timestamp": "2025-12-06T12:59:52.245193",
       "size": 241152,
       "version": 5,
       "release": 2,
@@ -317,7 +353,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/bluechairs_walkthrough.json",
-      "elapsed_seconds": 0.01
+      "elapsed_seconds": 0.36
     },
     {
       "game": "booth.z5",
@@ -333,7 +369,7 @@
         "vocabulary_size": 299,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.623409",
+      "timestamp": "2025-12-06T12:59:52.607880",
       "size": 44544,
       "version": 5,
       "release": 10859,
@@ -342,7 +378,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/booth_walkthrough.json",
-      "elapsed_seconds": 0.05
+      "elapsed_seconds": 0.06
     },
     {
       "game": "bunny.z5",
@@ -358,7 +394,7 @@
         "vocabulary_size": 417,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.678325",
+      "timestamp": "2025-12-06T12:59:52.670767",
       "size": 78848,
       "version": 5,
       "release": 4,
@@ -367,7 +403,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/bunny_walkthrough.json",
-      "elapsed_seconds": 0.0
+      "elapsed_seconds": 0.15
     },
     {
       "game": "candy.z5",
@@ -383,7 +419,7 @@
         "vocabulary_size": 376,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.681828",
+      "timestamp": "2025-12-06T12:59:52.824572",
       "size": 59392,
       "version": 5,
       "release": 1,
@@ -392,7 +428,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/candy_walkthrough.json",
-      "elapsed_seconds": 0.0
+      "elapsed_seconds": 0.1
     },
     {
       "game": "catseye.z3",
@@ -408,7 +444,7 @@
         "vocabulary_size": 68,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.685693",
+      "timestamp": "2025-12-06T12:59:52.928309",
       "size": 10239,
       "version": 3,
       "release": 3,
@@ -417,11 +453,36 @@
       "commands_tried": 61,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/catseye_walkthrough.json",
-      "elapsed_seconds": 0.15
+      "elapsed_seconds": 0.19
     },
     {
       "game": "cheeseshop.z5",
       "path": "/home/wohl/src/zwalker/games/zcode/cheeseshop.z5",
+      "status": "pass",
+      "error": null,
+      "stats": {
+        "rooms_found": 2,
+        "total_exits": 4,
+        "objects_found": 6,
+        "takeable_objects": 0,
+        "commands_tried": 25,
+        "vocabulary_size": 654,
+        "unexplored_remaining": 0
+      },
+      "timestamp": "2025-12-06T12:59:53.113821",
+      "size": 85504,
+      "version": 5,
+      "release": 2,
+      "serial": "021230",
+      "rooms_found": 2,
+      "commands_tried": 25,
+      "walkthrough_moves": 0,
+      "walkthrough_file": "/home/wohl/src/zwalker/games/results/cheeseshop_walkthrough.json",
+      "elapsed_seconds": 0.49
+    },
+    {
+      "game": "coldiron.z8",
+      "path": "/home/wohl/src/zwalker/games/zcode/coldiron.z8",
       "status": "pass",
       "error": null,
       "stats": {
@@ -430,32 +491,19 @@
         "objects_found": 0,
         "takeable_objects": 0,
         "commands_tried": 13,
-        "vocabulary_size": 654,
+        "vocabulary_size": 495,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.834301",
-      "size": 85504,
-      "version": 5,
-      "release": 2,
-      "serial": "021230",
-      "rooms_found": 1,
-      "commands_tried": 13,
-      "walkthrough_moves": 0,
-      "walkthrough_file": "/home/wohl/src/zwalker/games/results/cheeseshop_walkthrough.json",
-      "elapsed_seconds": 0.0
-    },
-    {
-      "game": "coldiron.z8",
-      "path": "/home/wohl/src/zwalker/games/zcode/coldiron.z8",
-      "status": "fail",
-      "error": "Stack underflow",
-      "stats": {},
-      "timestamp": "2025-12-06T12:29:41.838957",
+      "timestamp": "2025-12-06T12:59:53.600976",
       "size": 230400,
       "version": 8,
       "release": 6,
       "serial": "111119",
-      "elapsed_seconds": 0.01
+      "rooms_found": 1,
+      "commands_tried": 13,
+      "walkthrough_moves": 0,
+      "walkthrough_file": "/home/wohl/src/zwalker/games/results/coldiron_walkthrough.json",
+      "elapsed_seconds": 1.16
     },
     {
       "game": "curses.z5",
@@ -471,7 +519,7 @@
         "vocabulary_size": 1348,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.846328",
+      "timestamp": "2025-12-06T12:59:54.757078",
       "size": 259072,
       "version": 5,
       "release": 16,
@@ -483,8 +531,8 @@
       "elapsed_seconds": 0.01
     },
     {
-      "game": "detective.z5",
-      "path": "/home/wohl/src/zwalker/games/zcode/detective.z5",
+      "game": "czech.z5",
+      "path": "/home/wohl/src/zwalker/games/zcode/czech.z5",
       "status": "pass",
       "error": null,
       "stats": {
@@ -493,19 +541,44 @@
         "objects_found": 0,
         "takeable_objects": 0,
         "commands_tried": 13,
+        "vocabulary_size": 0,
+        "unexplored_remaining": 0
+      },
+      "timestamp": "2025-12-06T12:59:54.770429",
+      "size": 13312,
+      "version": 5,
+      "release": 1,
+      "serial": "031102",
+      "rooms_found": 1,
+      "commands_tried": 13,
+      "walkthrough_moves": 0,
+      "walkthrough_file": "/home/wohl/src/zwalker/games/results/czech_walkthrough.json",
+      "elapsed_seconds": 0.04
+    },
+    {
+      "game": "detective.z5",
+      "path": "/home/wohl/src/zwalker/games/zcode/detective.z5",
+      "status": "pass",
+      "error": null,
+      "stats": {
+        "rooms_found": 2,
+        "total_exits": 2,
+        "objects_found": 2,
+        "takeable_objects": 1,
+        "commands_tried": 25,
         "vocabulary_size": 344,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.858431",
+      "timestamp": "2025-12-06T12:59:54.815274",
       "size": 108032,
       "version": 5,
       "release": 1,
       "serial": "000715",
-      "rooms_found": 1,
-      "commands_tried": 13,
+      "rooms_found": 2,
+      "commands_tried": 25,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/detective_walkthrough.json",
-      "elapsed_seconds": 0.0
+      "elapsed_seconds": 0.77
     },
     {
       "game": "devours.z5",
@@ -513,24 +586,24 @@
       "status": "pass",
       "error": null,
       "stats": {
-        "rooms_found": 1,
-        "total_exits": 0,
+        "rooms_found": 11,
+        "total_exits": 66,
         "objects_found": 0,
         "takeable_objects": 0,
-        "commands_tried": 13,
+        "commands_tried": 123,
         "vocabulary_size": 581,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.862538",
+      "timestamp": "2025-12-06T12:59:55.589487",
       "size": 160768,
       "version": 5,
       "release": 3,
       "serial": "050325",
-      "rooms_found": 1,
-      "commands_tried": 13,
+      "rooms_found": 11,
+      "commands_tried": 123,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/devours_walkthrough.json",
-      "elapsed_seconds": 0.01
+      "elapsed_seconds": 24.23
     },
     {
       "game": "dracula.z8",
@@ -546,7 +619,7 @@
         "vocabulary_size": 1221,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.868301",
+      "timestamp": "2025-12-06T13:00:19.818662",
       "size": 303104,
       "version": 8,
       "release": 3,
@@ -555,7 +628,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/dracula_walkthrough.json",
-      "elapsed_seconds": 0.01
+      "elapsed_seconds": 0.35
     },
     {
       "game": "dreamhold.z8",
@@ -571,7 +644,7 @@
         "vocabulary_size": 1337,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.874709",
+      "timestamp": "2025-12-06T13:00:20.163781",
       "size": 386560,
       "version": 8,
       "release": 5,
@@ -580,7 +653,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/dreamhold_walkthrough.json",
-      "elapsed_seconds": 0.01
+      "elapsed_seconds": 0.29
     },
     {
       "game": "edifice.z5",
@@ -590,13 +663,13 @@
       "stats": {
         "rooms_found": 1,
         "total_exits": 0,
-        "objects_found": 0,
-        "takeable_objects": 0,
+        "objects_found": 2,
+        "takeable_objects": 1,
         "commands_tried": 13,
         "vocabulary_size": 820,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.883299",
+      "timestamp": "2025-12-06T13:00:20.452890",
       "size": 181760,
       "version": 5,
       "release": 2,
@@ -605,7 +678,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/edifice_walkthrough.json",
-      "elapsed_seconds": 0.01
+      "elapsed_seconds": 0.1
     },
     {
       "game": "enchanter.z3",
@@ -621,7 +694,7 @@
         "vocabulary_size": 723,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.889352",
+      "timestamp": "2025-12-06T13:00:20.553964",
       "size": 111126,
       "version": 3,
       "release": 29,
@@ -630,7 +703,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/enchanter_walkthrough.json",
-      "elapsed_seconds": 0.04
+      "elapsed_seconds": 0.06
     },
     {
       "game": "enemies.z8",
@@ -646,7 +719,7 @@
         "vocabulary_size": 2442,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:41.930201",
+      "timestamp": "2025-12-06T13:00:20.612099",
       "size": 289280,
       "version": 8,
       "release": 4,
@@ -655,11 +728,11 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/enemies_walkthrough.json",
-      "elapsed_seconds": 0.16
+      "elapsed_seconds": 0.21
     },
     {
-      "game": "failsafe.z5",
-      "path": "/home/wohl/src/zwalker/games/zcode/failsafe.z5",
+      "game": "etude.z5",
+      "path": "/home/wohl/src/zwalker/games/zcode/etude.z5",
       "status": "pass",
       "error": null,
       "stats": {
@@ -668,19 +741,69 @@
         "objects_found": 0,
         "takeable_objects": 0,
         "commands_tried": 13,
+        "vocabulary_size": 0,
+        "unexplored_remaining": 0
+      },
+      "timestamp": "2025-12-06T13:00:20.817437",
+      "size": 16896,
+      "version": 5,
+      "release": 2,
+      "serial": "970325",
+      "rooms_found": 1,
+      "commands_tried": 13,
+      "walkthrough_moves": 0,
+      "walkthrough_file": "/home/wohl/src/zwalker/games/results/etude_walkthrough.json",
+      "elapsed_seconds": 0.02
+    },
+    {
+      "game": "failsafe.z5",
+      "path": "/home/wohl/src/zwalker/games/zcode/failsafe.z5",
+      "status": "pass",
+      "error": null,
+      "stats": {
+        "rooms_found": 3,
+        "total_exits": 30,
+        "objects_found": 0,
+        "takeable_objects": 0,
+        "commands_tried": 31,
         "vocabulary_size": 395,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:42.090440",
+      "timestamp": "2025-12-06T13:00:20.834498",
       "size": 78336,
       "version": 5,
       "release": 1,
       "serial": "001218",
-      "rooms_found": 1,
-      "commands_tried": 13,
+      "rooms_found": 3,
+      "commands_tried": 31,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/failsafe_walkthrough.json",
-      "elapsed_seconds": 0.01
+      "elapsed_seconds": 0.28
+    },
+    {
+      "game": "gntests.z5",
+      "path": "/home/wohl/src/zwalker/games/zcode/gntests.z5",
+      "status": "pass",
+      "error": null,
+      "stats": {
+        "rooms_found": 3,
+        "total_exits": 8,
+        "objects_found": 1,
+        "takeable_objects": 1,
+        "commands_tried": 41,
+        "vocabulary_size": 0,
+        "unexplored_remaining": 0
+      },
+      "timestamp": "2025-12-06T13:00:21.112063",
+      "size": 7168,
+      "version": 5,
+      "release": 1,
+      "serial": "970311",
+      "rooms_found": 3,
+      "commands_tried": 41,
+      "walkthrough_moves": 0,
+      "walkthrough_file": "/home/wohl/src/zwalker/games/results/gntests_walkthrough.json",
+      "elapsed_seconds": 0.02
     },
     {
       "game": "lists.z5",
@@ -696,7 +819,7 @@
         "vocabulary_size": 340,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:42.097646",
+      "timestamp": "2025-12-06T13:00:21.127265",
       "size": 116224,
       "version": 5,
       "release": 3,
@@ -705,7 +828,7 @@
       "commands_tried": 25,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/lists_walkthrough.json",
-      "elapsed_seconds": 0.24
+      "elapsed_seconds": 0.31
     },
     {
       "game": "lostpig.z8",
@@ -715,13 +838,13 @@
       "stats": {
         "rooms_found": 1,
         "total_exits": 0,
-        "objects_found": 0,
+        "objects_found": 7,
         "takeable_objects": 0,
         "commands_tried": 13,
         "vocabulary_size": 1724,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:42.341984",
+      "timestamp": "2025-12-06T13:00:21.434661",
       "size": 285184,
       "version": 8,
       "release": 2,
@@ -730,7 +853,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/lostpig_walkthrough.json",
-      "elapsed_seconds": 0.01
+      "elapsed_seconds": 1.23
     },
     {
       "game": "photopia.z5",
@@ -746,7 +869,7 @@
         "vocabulary_size": 678,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:42.352455",
+      "timestamp": "2025-12-06T13:00:22.662873",
       "size": 239616,
       "version": 5,
       "release": 1,
@@ -755,7 +878,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/photopia_walkthrough.json",
-      "elapsed_seconds": 0.01
+      "elapsed_seconds": 0.02
     },
     {
       "game": "shade.z5",
@@ -765,13 +888,13 @@
       "stats": {
         "rooms_found": 1,
         "total_exits": 0,
-        "objects_found": 0,
+        "objects_found": 13,
         "takeable_objects": 0,
         "commands_tried": 13,
         "vocabulary_size": 465,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:42.358434",
+      "timestamp": "2025-12-06T13:00:22.679996",
       "size": 108544,
       "version": 5,
       "release": 3,
@@ -780,7 +903,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/shade_walkthrough.json",
-      "elapsed_seconds": 0.0
+      "elapsed_seconds": 0.34
     },
     {
       "game": "tangle.z5",
@@ -796,7 +919,7 @@
         "vocabulary_size": 810,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:42.363164",
+      "timestamp": "2025-12-06T13:00:23.022614",
       "size": 221184,
       "version": 5,
       "release": 4,
@@ -805,7 +928,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/tangle_walkthrough.json",
-      "elapsed_seconds": 0.01
+      "elapsed_seconds": 0.26
     },
     {
       "game": "theatre.z5",
@@ -821,7 +944,7 @@
         "vocabulary_size": 922,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:42.369367",
+      "timestamp": "2025-12-06T13:00:23.280971",
       "size": 185856,
       "version": 5,
       "release": 2,
@@ -846,7 +969,7 @@
         "vocabulary_size": 2120,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:42.375218",
+      "timestamp": "2025-12-06T13:00:23.289280",
       "size": 261484,
       "version": 4,
       "release": 15,
@@ -871,7 +994,7 @@
         "vocabulary_size": 951,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:42.386003",
+      "timestamp": "2025-12-06T13:00:23.303256",
       "size": 194560,
       "version": 5,
       "release": 1,
@@ -880,7 +1003,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/winter_walkthrough.json",
-      "elapsed_seconds": 0.05
+      "elapsed_seconds": 0.07
     },
     {
       "game": "zombies.z5",
@@ -896,7 +1019,7 @@
         "vocabulary_size": 0,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:42.439173",
+      "timestamp": "2025-12-06T13:00:23.372242",
       "size": 7680,
       "version": 5,
       "release": 1,
@@ -905,7 +1028,7 @@
       "commands_tried": 13,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/zombies_walkthrough.json",
-      "elapsed_seconds": 0.1
+      "elapsed_seconds": 0.11
     },
     {
       "game": "zork1.z3",
@@ -913,24 +1036,24 @@
       "status": "pass",
       "error": null,
       "stats": {
-        "rooms_found": 11,
-        "total_exits": 79,
-        "objects_found": 6,
+        "rooms_found": 10,
+        "total_exits": 78,
+        "objects_found": 4,
         "takeable_objects": 0,
-        "commands_tried": 148,
+        "commands_tried": 136,
         "vocabulary_size": 684,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:42.534655",
+      "timestamp": "2025-12-06T13:00:23.477870",
       "size": 86838,
       "version": 3,
       "release": 119,
       "serial": "880429",
-      "rooms_found": 11,
-      "commands_tried": 148,
+      "rooms_found": 10,
+      "commands_tried": 136,
       "walkthrough_moves": 0,
       "walkthrough_file": "/home/wohl/src/zwalker/games/results/zork1_walkthrough.json",
-      "elapsed_seconds": 0.64
+      "elapsed_seconds": 0.7
     },
     {
       "game": "zork2.z3",
@@ -946,7 +1069,7 @@
         "vocabulary_size": 689,
         "unexplored_remaining": 0
       },
-      "timestamp": "2025-12-06T12:29:43.179406",
+      "timestamp": "2025-12-06T13:00:24.182372",
       "size": 92524,
       "version": 3,
       "release": 63,

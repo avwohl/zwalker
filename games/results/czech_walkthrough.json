@@ -15,33 +15,21 @@
     "out"
   ],
   "rooms": {
-    "1": {
-      "name": "Spider And Web",
+    "7": {
+      "name": "Test Object #3",
       "exits": {},
-      "objects": [
-        [
-          31,
-          "ceilingstrips"
-        ]
-      ],
+      "objects": [],
       "takeable": []
     }
   },
-  "objects": {
-    "31": {
-      "name": "ceilingstrips",
-      "found_in_room": 1,
-      "is_takeable": false,
-      "taken": false
-    }
-  },
+  "objects": {},
   "stats": {
     "rooms_found": 1,
     "total_exits": 0,
-    "objects_found": 1,
+    "objects_found": 0,
     "takeable_objects": 0,
     "commands_tried": 13,
-    "vocabulary_size": 810,
+    "vocabulary_size": 0,
     "unexplored_remaining": 0
   }
 }

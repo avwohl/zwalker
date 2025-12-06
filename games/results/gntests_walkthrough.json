@@ -1,0 +1,103 @@
+{
+  "format_version": 1,
+  "commands": [
+    "north",
+    "south",
+    "east",
+    "west",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "up",
+    "in",
+    "out",
+    "north",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "up",
+    "in",
+    "out",
+    "north",
+    "south",
+    "east",
+    "west",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "down",
+    "up",
+    "in",
+    "out"
+  ],
+  "rooms": {
+    "1": {
+      "name": "Starting Room",
+      "exits": {
+        "east": 101,
+        "down": 100
+      },
+      "objects": [],
+      "takeable": []
+    },
+    "101": {
+      "name": "   <unknown attribute>",
+      "exits": {
+        "west": 1,
+        "east": 101,
+        "down": 100
+      },
+      "objects": [
+        [
+          99,
+          "lgw"
+        ]
+      ],
+      "takeable": [
+        [
+          99,
+          "lgw"
+        ]
+      ]
+    },
+    "100": {
+      "name": "a",
+      "exits": {
+        "up": 1,
+        "east": 101,
+        "down": 100
+      },
+      "objects": [],
+      "takeable": []
+    }
+  },
+  "objects": {
+    "99": {
+      "name": "lgw",
+      "found_in_room": 101,
+      "is_takeable": true,
+      "taken": false
+    }
+  },
+  "stats": {
+    "rooms_found": 3,
+    "total_exits": 8,
+    "objects_found": 1,
+    "takeable_objects": 1,
+    "commands_tried": 41,
+    "vocabulary_size": 0,
+    "unexplored_remaining": 0
+  }
+}
