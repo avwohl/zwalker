@@ -85,11 +85,36 @@ Provide automated regression testing for the z2js compiler (ZIL/ZILF to JavaScri
 
 **This proves the core workflow works!**
 
+## Current Progress (2025-12-06 Afternoon)
+
+### ✅ Top 5 Games - Walkthrough Generation IN PROGRESS
+
+**New Tools Created**:
+- `solve_top5.py` - Batch solver for top 5 IF games
+- `compare_outputs.py` - Compare zwalker vs z2js outputs
+- `summarize_results.py` - Generate summary reports
+
+**Top 5 Games Targeted**:
+1. Anchorhead (#2 in 2023 Top 50) - anchor.z8
+2. Photopia (#6 tie) - photopia.z5 ✓ COMPLETED
+3. Lost Pig (#8 tie) - lostpig.z8
+4. Trinity (classic) - trinity.z4
+5. Curses (classic) - curses.z5
+
+**Photopia Results** (first completed):
+- Rooms discovered: 2
+- Commands found: 4 (yes, no, TALK TO CHARACTER, TALK TO ROB)
+- Z2JS: ✓ Compiled successfully (441KB JS file)
+- Issue found: AI gets stuck on menu-based choices
+
+**Running**: Full batch of 5 games with 50 iterations each
+
 ## What's Next
 
 ### Phase 1: Scale Up AI Solving
 1. Improve AI solver edge case handling
-   - Detect nested interpreters/modes
+   - ✓ Detect nested interpreters/modes (found in lists.z5)
+   - ✓ Detect menu-based IF (found in photopia.z5)
    - Add mode-aware command generation
    - Better stuck detection and recovery
 
