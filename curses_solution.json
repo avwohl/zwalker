@@ -1,0 +1,18 @@
+{
+  "game": "games/zcode/curses.z5",
+  "solved": true,
+  "rooms_visited": [
+    1
+  ],
+  "solution_commands": [],
+  "full_solution_data": [],
+  "stats": {
+    "rooms_found": 1,
+    "total_exits": 0,
+    "objects_found": 0,
+    "takeable_objects": 0,
+    "commands_tried": 544,
+    "vocabulary_size": 1348,
+    "unexplored_remaining": 12
+  }
+}

@@ -1,0 +1,1238 @@
+{
+  "game": "games/zcode/anchor.z8",
+  "solved": true,
+  "rooms_visited": [
+    1
+  ],
+  "solution_commands": [
+    "look",
+    "examine",
+    "read",
+    "press 'r'",
+    "inventory",
+    "look",
+    "examine room",
+    "examine umbrella",
+    "examine trenchcoat",
+    "look",
+    "examine class",
+    "examine H.P. Lovecraft quote",
+    "examine exits",
+    "examine class",
+    "examine H.P. Lovecraft quote",
+    "examine exits",
+    "go north",
+    "go south",
+    "examine quote",
+    "examine room",
+    "go west",
+    "look",
+    "examine window",
+    "examine fence",
+    "examine boxes",
+    "examine garbage cans",
+    "look",
+    "examine room",
+    "read",
+    "restore",
+    "look",
+    "examine",
+    "go west",
+    "examine window",
+    "examine fence",
+    "examine garbage",
+    "take object",
+    "look",
+    "examine",
+    "north",
+    "south",
+    "look",
+    "examine",
+    "north",
+    "south",
+    "look",
+    "examine class",
+    "examine lovecraft quote",
+    "r",
+    "look",
+    "examine",
+    "read",
+    "north",
+    "look",
+    "examine",
+    "go west",
+    "look",
+    "examine window",
+    "examine fence",
+    "go west",
+    "look",
+    "examine window",
+    "examine fence",
+    "go west",
+    "look",
+    "go north",
+    "go south",
+    "look",
+    "go east",
+    "look",
+    "examine class",
+    "examine room",
+    "go east",
+    "look",
+    "examine room",
+    "examine class",
+    "go south",
+    "go north",
+    "look",
+    "examine class",
+    "go south",
+    "examine bridge",
+    "look",
+    "examine class",
+    "examine bridge",
+    "go south",
+    "go north",
+    "examine class",
+    "examine bridge",
+    "go south",
+    "examine pub",
+    "take inventory",
+    "examine lantern",
+    "examine class",
+    "examine umbrella",
+    "look",
+    "inventory",
+    "go south",
+    "look",
+    "examine class",
+    "read",
+    "go north",
+    "go south",
+    "look",
+    "examine class",
+    "examine whateley bridge",
+    "go north",
+    "go south",
+    "examine whateley bridge",
+    "go north",
+    "examine lantern",
+    "examine table",
+    "examine bar",
+    "talk to mill workers",
+    "talk to fishermen",
+    "examine",
+    "look",
+    "go",
+    "go south",
+    "go east",
+    "go west",
+    "examine sky",
+    "examine",
+    "look",
+    "go east",
+    "go west",
+    "go north",
+    "go east",
+    "go west",
+    "go east",
+    "examine lighthouse",
+    "inventory",
+    "examine lighthouse",
+    "go north",
+    "go south",
+    "inventory",
+    "go north",
+    "go south",
+    "inventory",
+    "go north",
+    "go east",
+    "examine lighthouse",
+    "examine lighthouse",
+    "go west",
+    "go north",
+    "inventory",
+    "examine lighthouse",
+    "go east",
+    "go west",
+    "examine lighthouse",
+    "go east",
+    "inventory",
+    "examine lighthouse",
+    "go east",
+    "examine umbrella",
+    "examine trenchcoat",
+    "examine wedding ring",
+    "examine lighthouse",
+    "go southeast",
+    "inventory",
+    "examine ring",
+    "examine",
+    "search",
+    "take",
+    "inventory",
+    "look",
+    "look around",
+    "take inventory",
+    "look",
+    "go north",
+    "look",
+    "go east",
+    "look",
+    "go west"
+  ],
+  "full_solution_data": [
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "read",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "press 'r'",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "inventory",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine room",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine umbrella",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine trenchcoat",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine class",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine H.P. Lovecraft quote",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine exits",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine class",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine H.P. Lovecraft quote",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine exits",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go south",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine quote",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine room",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go west",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine window",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine fence",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine boxes",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine garbage cans",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine room",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "read",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "restore",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go west",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine window",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine fence",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine garbage",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "take object",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "south",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "south",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine class",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine lovecraft quote",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "r",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "read",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go west",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine window",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine fence",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go west",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine window",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine fence",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go west",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go south",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go east",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine class",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine room",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go east",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine room",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine class",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go south",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine class",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go south",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine bridge",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine class",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine bridge",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go south",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine class",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine bridge",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go south",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine pub",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "take inventory",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine lantern",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine class",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine umbrella",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "inventory",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go south",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine class",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "read",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go south",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine class",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine whateley bridge",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go south",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine whateley bridge",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine lantern",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine table",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine bar",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "talk to mill workers",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "talk to fishermen",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go south",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go east",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go west",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine sky",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go east",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go west",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go east",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go west",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go east",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine lighthouse",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "inventory",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine lighthouse",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go south",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "inventory",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go south",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "inventory",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go east",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine lighthouse",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine lighthouse",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go west",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "inventory",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine lighthouse",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go east",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go west",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine lighthouse",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go east",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "inventory",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine lighthouse",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go east",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine umbrella",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine trenchcoat",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine wedding ring",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine lighthouse",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go southeast",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "inventory",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine ring",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "examine",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "search",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "take",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "inventory",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look around",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "take inventory",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go north",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go east",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    },
+    {
+      "command": "go west",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "interesting"
+    }
+  ],
+  "stats": {
+    "rooms_found": 1,
+    "total_exits": 0,
+    "objects_found": 0,
+    "takeable_objects": 0,
+    "commands_tried": 247,
+    "vocabulary_size": 2257,
+    "unexplored_remaining": 12
+  }
+}

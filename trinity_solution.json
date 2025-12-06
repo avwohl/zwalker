@@ -1,0 +1,18 @@
+{
+  "game": "games/zcode/trinity.z4",
+  "solved": true,
+  "rooms_visited": [
+    293
+  ],
+  "solution_commands": [],
+  "full_solution_data": [],
+  "stats": {
+    "rooms_found": 1,
+    "total_exits": 0,
+    "objects_found": 0,
+    "takeable_objects": 0,
+    "commands_tried": 546,
+    "vocabulary_size": 2120,
+    "unexplored_remaining": 12
+  }
+}

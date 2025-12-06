@@ -1,0 +1,62 @@
+{
+  "timestamp": "2025-12-06T14:34:41.813073",
+  "ai_mode": "claude",
+  "max_iterations": 50,
+  "results": [
+    {
+      "game": "Anchorhead",
+      "path": "games/zcode/anchor.z8",
+      "rank": "#2 in 2023 Top 50",
+      "solution_file": "anchor_solution.json",
+      "rooms_visited": 1,
+      "commands": 174,
+      "status": "walkthrough_generated",
+      "z2js_file": "z2js_output/anchor.js",
+      "z2js_status": "compiled"
+    },
+    {
+      "game": "Photopia",
+      "path": "games/zcode/photopia.z5",
+      "rank": "#6 tie in 2023 Top 50",
+      "solution_file": "photopia_solution.json",
+      "rooms_visited": 2,
+      "commands": 4,
+      "status": "walkthrough_generated",
+      "z2js_file": "z2js_output/photopia.js",
+      "z2js_status": "compiled"
+    },
+    {
+      "game": "Lost Pig",
+      "path": "games/zcode/lostpig.z8",
+      "rank": "#8 tie in 2023 Top 50",
+      "solution_file": "lostpig_solution.json",
+      "rooms_visited": 2,
+      "commands": 123,
+      "status": "walkthrough_generated",
+      "z2js_file": "z2js_output/lostpig.js",
+      "z2js_status": "compiled"
+    },
+    {
+      "game": "Trinity",
+      "path": "games/zcode/trinity.z4",
+      "rank": "Classic Infocom",
+      "solution_file": "trinity_solution.json",
+      "rooms_visited": 1,
+      "commands": 0,
+      "status": "walkthrough_generated",
+      "z2js_file": "z2js_output/trinity.js",
+      "z2js_status": "compiled"
+    },
+    {
+      "game": "Curses",
+      "path": "games/zcode/curses.z5",
+      "rank": "Classic IF",
+      "solution_file": "curses_solution.json",
+      "rooms_visited": 1,
+      "commands": 0,
+      "status": "walkthrough_generated",
+      "z2js_file": "z2js_output/curses.js",
+      "z2js_status": "compiled"
+    }
+  ]
+}

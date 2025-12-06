@@ -8,8 +8,8 @@
   "solution_commands": [
     "yes",
     "no",
-    "TALK TO CHARACTER",
-    "TALK TO ROB"
+    "talk to",
+    "talk to rob"
   ],
   "full_solution_data": [
     {
@@ -25,13 +25,13 @@
       "result": "moved"
     },
     {
-      "command": "TALK TO CHARACTER",
+      "command": "talk to",
       "from_room": 9,
       "to_room": 2,
       "result": "moved"
     },
     {
-      "command": "TALK TO ROB",
+      "command": "talk to rob",
       "from_room": 2,
       "to_room": 2,
       "result": "interesting"
@@ -42,7 +42,7 @@
     "total_exits": 2,
     "objects_found": 0,
     "takeable_objects": 0,
-    "commands_tried": 299,
+    "commands_tried": 509,
     "vocabulary_size": 678,
     "unexplored_remaining": 24
   }
