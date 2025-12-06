@@ -1,0 +1,35 @@
+{
+  "format_version": 1,
+  "commands": [
+    "north",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out"
+  ],
+  "rooms": {
+    "293": {
+      "name": "Paved Road",
+      "exits": {},
+      "objects": [],
+      "takeable": []
+    }
+  },
+  "objects": {},
+  "stats": {
+    "rooms_found": 1,
+    "total_exits": 0,
+    "objects_found": 0,
+    "takeable_objects": 0,
+    "commands_tried": 13,
+    "vocabulary_size": 2120,
+    "unexplored_remaining": 0
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "format_version": 1,
+  "commands": [
+    "north",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out"
+  ],
+  "rooms": {
+    "42": {
+      "name": "Fork",
+      "exits": {},
+      "objects": [
+        [
+          55,
+          "cretin"
+        ]
+      ],
+      "takeable": []
+    }
+  },
+  "objects": {
+    "55": {
+      "name": "cretin",
+      "found_in_room": 42,
+      "is_takeable": false,
+      "taken": false
+    }
+  },
+  "stats": {
+    "rooms_found": 1,
+    "total_exits": 0,
+    "objects_found": 1,
+    "takeable_objects": 0,
+    "commands_tried": 13,
+    "vocabulary_size": 723,
+    "unexplored_remaining": 0
+  }
+}

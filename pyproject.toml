@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zwalker"
+version = "0.1.0"
+description = "Automated walkthrough generator for Z-machine interactive fiction games"
+readme = "README.md"
+license = "GPL-3.0-or-later"
+authors = [
+    {name = "Aaron Wohl"}
+]
+keywords = ["z-machine", "infocom", "interactive-fiction", "walkthrough", "game-testing"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Games/Entertainment",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+ai = ["anthropic>=0.7.0"]
+openai = ["openai>=1.0.0"]
+all = ["anthropic>=0.7.0", "openai>=1.0.0"]
+
+[project.urls]
+Homepage = "https://github.com/awohl/zwalker"
+Repository = "https://github.com/awohl/zwalker"
+
+[project.scripts]
+zwalker = "zwalker.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["zwalker*"]

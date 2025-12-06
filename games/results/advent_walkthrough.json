@@ -1,0 +1,311 @@
+{
+  "format_version": 1,
+  "commands": [
+    "north",
+    "south",
+    "north",
+    "east",
+    "west",
+    "west",
+    "east",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out",
+    "south",
+    "north",
+    "east",
+    "west",
+    "west",
+    "east",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southeast",
+    "northwest",
+    "southwest",
+    "northeast",
+    "up",
+    "down",
+    "down",
+    "up",
+    "in",
+    "out",
+    "out",
+    "in",
+    "north",
+    "south",
+    "east",
+    "northeast",
+    "northwest",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out",
+    "in",
+    "north",
+    "south",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out",
+    "south",
+    "north",
+    "east",
+    "west",
+    "west",
+    "east",
+    "southeast",
+    "northwest",
+    "southwest",
+    "northeast",
+    "north",
+    "south",
+    "south",
+    "north",
+    "northeast",
+    "southwest",
+    "northwest",
+    "southeast",
+    "southwest",
+    "northeast",
+    "up",
+    "down",
+    "down",
+    "up",
+    "in",
+    "out",
+    "south",
+    "north",
+    "west",
+    "east",
+    "southeast",
+    "northwest",
+    "southwest",
+    "northeast",
+    "up",
+    "down",
+    "down",
+    "up",
+    "in",
+    "out",
+    "out",
+    "in"
+  ],
+  "rooms": {
+    "219": {
+      "name": "At End Of Road",
+      "exits": {
+        "south": 202,
+        "east": 213,
+        "west": 214,
+        "northwest": 213,
+        "in": 213
+      },
+      "objects": [],
+      "takeable": []
+    },
+    "202": {
+      "name": "In A Valley",
+      "exits": {
+        "north": 219,
+        "south": 201,
+        "east": 203,
+        "west": 203,
+        "northwest": 203,
+        "southeast": 201,
+        "southwest": 201,
+        "up": 203,
+        "down": 201,
+        "in": 201,
+        "out": 201,
+        "northeast": 203
+      },
+      "objects": [
+        [
+          220,
+          "you"
+        ]
+      ],
+      "takeable": []
+    },
+    "213": {
+      "name": "Inside Building",
+      "exits": {
+        "west": 219,
+        "southeast": 219,
+        "out": 219
+      },
+      "objects": [
+        [
+          207,
+          "bottle"
+        ],
+        [
+          208,
+          "brass lantern"
+        ],
+        [
+          209,
+          "tasty food"
+        ],
+        [
+          210,
+          "set of keys"
+        ],
+        [
+          212,
+          "spring"
+        ],
+        [
+          220,
+          "you"
+        ]
+      ],
+      "takeable": []
+    },
+    "214": {
+      "name": "At Hill In Road",
+      "exits": {
+        "east": 219
+      },
+      "objects": [
+        [
+          220,
+          "you"
+        ]
+      ],
+      "takeable": []
+    },
+    "201": {
+      "name": "At Slit In Streambed",
+      "exits": {
+        "north": 202,
+        "northwest": 202,
+        "northeast": 202,
+        "down": 202,
+        "up": 202,
+        "out": 202,
+        "in": 202,
+        "south": 200,
+        "east": 203,
+        "west": 200,
+        "southeast": 200,
+        "southwest": 200
+      },
+      "objects": [
+        [
+          220,
+          "you"
+        ]
+      ],
+      "takeable": []
+    },
+    "203": {
+      "name": "In Forest",
+      "exits": {
+        "west": 202,
+        "east": 202,
+        "southeast": 202,
+        "north": 219,
+        "south": 202,
+        "northeast": 202,
+        "northwest": 202,
+        "southwest": 202,
+        "up": 202,
+        "down": 202,
+        "out": 200,
+        "in": 200
+      },
+      "objects": [
+        [
+          220,
+          "you"
+        ]
+      ],
+      "takeable": []
+    },
+    "200": {
+      "name": "Outside Grate",
+      "exits": {
+        "north": 201,
+        "east": 203,
+        "northwest": 201,
+        "northeast": 201,
+        "south": 203,
+        "west": 203,
+        "southeast": 203,
+        "southwest": 203,
+        "up": 203,
+        "down": 203,
+        "in": 203,
+        "out": 203
+      },
+      "objects": [
+        [
+          220,
+          "you"
+        ]
+      ],
+      "takeable": []
+    }
+  },
+  "objects": {
+    "220": {
+      "name": "you",
+      "found_in_room": 202,
+      "is_takeable": false,
+      "taken": false
+    },
+    "207": {
+      "name": "bottle",
+      "found_in_room": 213,
+      "is_takeable": false,
+      "taken": false
+    },
+    "208": {
+      "name": "brass lantern",
+      "found_in_room": 213,
+      "is_takeable": false,
+      "taken": false
+    },
+    "209": {
+      "name": "tasty food",
+      "found_in_room": 213,
+      "is_takeable": false,
+      "taken": false
+    },
+    "210": {
+      "name": "set of keys",
+      "found_in_room": 213,
+      "is_takeable": false,
+      "taken": false
+    },
+    "212": {
+      "name": "spring",
+      "found_in_room": 213,
+      "is_takeable": false,
+      "taken": false
+    }
+  },
+  "stats": {
+    "rooms_found": 7,
+    "total_exits": 57,
+    "objects_found": 6,
+    "takeable_objects": 0,
+    "commands_tried": 102,
+    "vocabulary_size": 572,
+    "unexplored_remaining": 0
+  }
+}

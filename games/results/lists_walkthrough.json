@@ -1,0 +1,182 @@
+{
+  "format_version": 1,
+  "commands": [
+    "north",
+    "south",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out",
+    "out",
+    "north",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in"
+  ],
+  "rooms": {
+    "17": {
+      "name": "A Familiar Place",
+      "exits": {
+        "north": 20,
+        "in": 20
+      },
+      "objects": [
+        [
+          15,
+          "yourself"
+        ],
+        [
+          18,
+          "stuff"
+        ],
+        [
+          19,
+          "door"
+        ]
+      ],
+      "takeable": [
+        [
+          18,
+          "stuff"
+        ],
+        [
+          19,
+          "door"
+        ]
+      ]
+    },
+    "20": {
+      "name": "White Room",
+      "exits": {
+        "south": 17,
+        "out": 17
+      },
+      "objects": [
+        [
+          15,
+          "yourself"
+        ],
+        [
+          21,
+          "door"
+        ],
+        [
+          22,
+          "bookshelves"
+        ],
+        [
+          23,
+          "toys and puzzles"
+        ],
+        [
+          24,
+          "desk"
+        ],
+        [
+          25,
+          "large couch"
+        ],
+        [
+          31,
+          "genie"
+        ]
+      ],
+      "takeable": [
+        [
+          21,
+          "door"
+        ],
+        [
+          22,
+          "bookshelves"
+        ],
+        [
+          23,
+          "toys and puzzles"
+        ],
+        [
+          25,
+          "large couch"
+        ]
+      ]
+    }
+  },
+  "objects": {
+    "15": {
+      "name": "yourself",
+      "found_in_room": 17,
+      "is_takeable": false,
+      "taken": false
+    },
+    "18": {
+      "name": "stuff",
+      "found_in_room": 17,
+      "is_takeable": true,
+      "taken": false
+    },
+    "19": {
+      "name": "door",
+      "found_in_room": 17,
+      "is_takeable": true,
+      "taken": false
+    },
+    "21": {
+      "name": "door",
+      "found_in_room": 20,
+      "is_takeable": true,
+      "taken": false
+    },
+    "22": {
+      "name": "bookshelves",
+      "found_in_room": 20,
+      "is_takeable": true,
+      "taken": false
+    },
+    "23": {
+      "name": "toys and puzzles",
+      "found_in_room": 20,
+      "is_takeable": true,
+      "taken": false
+    },
+    "24": {
+      "name": "desk",
+      "found_in_room": 20,
+      "is_takeable": false,
+      "taken": false
+    },
+    "25": {
+      "name": "large couch",
+      "found_in_room": 20,
+      "is_takeable": true,
+      "taken": false
+    },
+    "31": {
+      "name": "genie",
+      "found_in_room": 20,
+      "is_takeable": false,
+      "taken": false
+    }
+  },
+  "stats": {
+    "rooms_found": 2,
+    "total_exits": 4,
+    "objects_found": 9,
+    "takeable_objects": 6,
+    "commands_tried": 25,
+    "vocabulary_size": 340,
+    "unexplored_remaining": 0
+  }
+}

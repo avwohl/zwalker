@@ -1,0 +1,66 @@
+{
+  "format_version": 1,
+  "commands": [
+    "north",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out"
+  ],
+  "rooms": {
+    "22": {
+      "name": "Your Bedroom",
+      "exits": {},
+      "objects": [
+        [
+          23,
+          "bed"
+        ],
+        [
+          24,
+          "tiny wooden dresser"
+        ]
+      ],
+      "takeable": [
+        [
+          23,
+          "bed"
+        ],
+        [
+          24,
+          "tiny wooden dresser"
+        ]
+      ]
+    }
+  },
+  "objects": {
+    "23": {
+      "name": "bed",
+      "found_in_room": 22,
+      "is_takeable": true,
+      "taken": false
+    },
+    "24": {
+      "name": "tiny wooden dresser",
+      "found_in_room": 22,
+      "is_takeable": true,
+      "taken": false
+    }
+  },
+  "stats": {
+    "rooms_found": 1,
+    "total_exits": 0,
+    "objects_found": 2,
+    "takeable_objects": 2,
+    "commands_tried": 13,
+    "vocabulary_size": 455,
+    "unexplored_remaining": 0
+  }
+}

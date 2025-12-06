@@ -1,0 +1,432 @@
+{
+  "format_version": 1,
+  "commands": [
+    "north",
+    "south",
+    "south",
+    "east",
+    "west",
+    "east",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "northeast",
+    "up",
+    "down",
+    "up",
+    "in",
+    "out",
+    "north",
+    "south",
+    "east",
+    "west",
+    "west",
+    "east",
+    "northeast",
+    "southwest",
+    "northwest",
+    "southeast",
+    "southeast",
+    "northwest",
+    "southwest",
+    "northeast",
+    "down",
+    "up",
+    "in",
+    "out",
+    "out",
+    "in",
+    "north",
+    "south",
+    "north",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out",
+    "north",
+    "south",
+    "down",
+    "up",
+    "north",
+    "south",
+    "east",
+    "west",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out",
+    "north",
+    "south",
+    "south",
+    "north",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out",
+    "north",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southeast",
+    "northwest",
+    "southwest",
+    "northeast",
+    "down",
+    "up",
+    "in",
+    "out",
+    "out",
+    "in",
+    "south",
+    "east",
+    "west",
+    "east",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out",
+    "east",
+    "west",
+    "northeast",
+    "southwest",
+    "northwest",
+    "southeast",
+    "southeast",
+    "northwest",
+    "southwest",
+    "northeast",
+    "up",
+    "down",
+    "down",
+    "up",
+    "in",
+    "out",
+    "out",
+    "in",
+    "north",
+    "east",
+    "southeast",
+    "southwest",
+    "down",
+    "north",
+    "south",
+    "south",
+    "north",
+    "east",
+    "west",
+    "west",
+    "east",
+    "northeast",
+    "southwest",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out"
+  ],
+  "rooms": {
+    "64": {
+      "name": "West of House",
+      "exits": {
+        "north": 137,
+        "west": 87,
+        "southwest": 244,
+        "down": 137,
+        "south": 209,
+        "east": 209,
+        "southeast": 209
+      },
+      "objects": [
+        [
+          44,
+          "cretin"
+        ],
+        [
+          121,
+          "door"
+        ],
+        [
+          230,
+          "small mailbox"
+        ]
+      ],
+      "takeable": []
+    },
+    "137": {
+      "name": "North of House",
+      "exits": {
+        "south": 64,
+        "up": 64,
+        "north": 238,
+        "east": 85,
+        "west": 238,
+        "northeast": 238,
+        "northwest": 238,
+        "southeast": 238,
+        "southwest": 238,
+        "down": 238,
+        "in": 238,
+        "out": 238
+      },
+      "objects": [
+        [
+          44,
+          "cretin"
+        ]
+      ],
+      "takeable": []
+    },
+    "87": {
+      "name": "Forest",
+      "exits": {
+        "east": 238,
+        "south": 221
+      },
+      "objects": [
+        [
+          44,
+          "cretin"
+        ]
+      ],
+      "takeable": []
+    },
+    "238": {
+      "name": "Forest Path",
+      "exits": {
+        "west": 87,
+        "south": 137,
+        "east": 32,
+        "southwest": 137,
+        "southeast": 137,
+        "northwest": 137,
+        "northeast": 137,
+        "up": 137,
+        "out": 137,
+        "in": 137,
+        "north": 32,
+        "down": 32
+      },
+      "objects": [
+        [
+          44,
+          "cretin"
+        ]
+      ],
+      "takeable": []
+    },
+    "244": {
+      "name": "Stone Barrow",
+      "exits": {
+        "northeast": 64
+      },
+      "objects": [
+        [
+          44,
+          "cretin"
+        ],
+        [
+          113,
+          "stone barrow"
+        ],
+        [
+          190,
+          "stone door"
+        ]
+      ],
+      "takeable": []
+    },
+    "85": {
+      "name": "Behind House",
+      "exits": {
+        "west": 137,
+        "north": 128,
+        "south": 128,
+        "east": 128
+      },
+      "objects": [
+        [
+          44,
+          "cretin"
+        ]
+      ],
+      "takeable": []
+    },
+    "32": {
+      "name": "Forest",
+      "exits": {
+        "west": 238,
+        "south": 128,
+        "up": 238,
+        "north": 167,
+        "east": 167,
+        "northwest": 238,
+        "southeast": 167,
+        "southwest": 167,
+        "down": 167,
+        "in": 167,
+        "out": 167,
+        "northeast": 128
+      },
+      "objects": [
+        [
+          44,
+          "cretin"
+        ]
+      ],
+      "takeable": []
+    },
+    "221": {
+      "name": "Forest",
+      "exits": {
+        "north": 128,
+        "west": 87,
+        "northwest": 209
+      },
+      "objects": [
+        [
+          44,
+          "cretin"
+        ]
+      ],
+      "takeable": []
+    },
+    "128": {
+      "name": "Clearing",
+      "exits": {
+        "south": 221,
+        "north": 32,
+        "west": 85,
+        "east": 32,
+        "northeast": 32,
+        "northwest": 32,
+        "southeast": 32,
+        "southwest": 32,
+        "up": 32,
+        "down": 32,
+        "in": 32,
+        "out": 32
+      },
+      "objects": [
+        [
+          44,
+          "cretin"
+        ]
+      ],
+      "takeable": []
+    },
+    "167": {
+      "name": "Forest",
+      "exits": {
+        "south": 32,
+        "west": 32,
+        "northwest": 32,
+        "northeast": 32,
+        "up": 32,
+        "out": 32,
+        "in": 32
+      },
+      "objects": [
+        [
+          44,
+          "cretin"
+        ],
+        [
+          118,
+          "mountain range"
+        ]
+      ],
+      "takeable": []
+    },
+    "209": {
+      "name": "South of House",
+      "exits": {
+        "southeast": 221,
+        "north": 64,
+        "south": 221,
+        "east": 64,
+        "west": 64,
+        "northeast": 64,
+        "northwest": 64
+      },
+      "objects": [
+        [
+          44,
+          "cretin"
+        ]
+      ],
+      "takeable": []
+    }
+  },
+  "objects": {
+    "44": {
+      "name": "cretin",
+      "found_in_room": 64,
+      "is_takeable": false,
+      "taken": false
+    },
+    "121": {
+      "name": "door",
+      "found_in_room": 64,
+      "is_takeable": false,
+      "taken": false
+    },
+    "230": {
+      "name": "small mailbox",
+      "found_in_room": 64,
+      "is_takeable": false,
+      "taken": false
+    },
+    "113": {
+      "name": "stone barrow",
+      "found_in_room": 244,
+      "is_takeable": false,
+      "taken": false
+    },
+    "190": {
+      "name": "stone door",
+      "found_in_room": 244,
+      "is_takeable": false,
+      "taken": false
+    },
+    "118": {
+      "name": "mountain range",
+      "found_in_room": 167,
+      "is_takeable": false,
+      "taken": false
+    }
+  },
+  "stats": {
+    "rooms_found": 11,
+    "total_exits": 79,
+    "objects_found": 6,
+    "takeable_objects": 0,
+    "commands_tried": 148,
+    "vocabulary_size": 684,
+    "unexplored_remaining": 0
+  }
+}

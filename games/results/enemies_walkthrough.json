@@ -1,0 +1,76 @@
+{
+  "format_version": 1,
+  "commands": [
+    "north",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out"
+  ],
+  "rooms": {
+    "16": {
+      "name": "Princess Street",
+      "exits": {},
+      "objects": [
+        [
+          15,
+          "yourself"
+        ],
+        [
+          17,
+          "cinema"
+        ],
+        [
+          18,
+          "marquee"
+        ]
+      ],
+      "takeable": [
+        [
+          17,
+          "cinema"
+        ],
+        [
+          18,
+          "marquee"
+        ]
+      ]
+    }
+  },
+  "objects": {
+    "15": {
+      "name": "yourself",
+      "found_in_room": 16,
+      "is_takeable": false,
+      "taken": false
+    },
+    "17": {
+      "name": "cinema",
+      "found_in_room": 16,
+      "is_takeable": true,
+      "taken": false
+    },
+    "18": {
+      "name": "marquee",
+      "found_in_room": 16,
+      "is_takeable": true,
+      "taken": false
+    }
+  },
+  "stats": {
+    "rooms_found": 1,
+    "total_exits": 0,
+    "objects_found": 3,
+    "takeable_objects": 2,
+    "commands_tried": 13,
+    "vocabulary_size": 2442,
+    "unexplored_remaining": 0
+  }
+}

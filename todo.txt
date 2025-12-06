@@ -1,0 +1,43 @@
+We recently made tools for Infocom .z games
+see ~/src/z2js ~/z2pdf ~/zorkie
+
+PRIMARY USE CASE: COMPILER TESTING
+===================================
+We built a ZIL/ZILF to .z compiler. The IF website folks were
+not happy with the lack of testing.
+
+The main goal of this project is to:
+1. Automatically verify a game can be played from start to finish
+2. Generate a walkthrough/solution with a known-good .z compile
+3. Replay that solution on a new compile to verify correctness
+
+This enables regression testing of the compiler.
+
+APPROACH
+========
+To an extent z2pdf is a previous attempt at this.
+It may not be possible to do 100% puzzle solving automatically.
+However, at least a lot of a game can be mapped by:
+ - start game
+ - preserve state
+ - try every vocabulary word
+ - try multiple words that can be figured from the parser
+ - for each room note the room number and which commands go where
+  (room 1  north -> 2, south-> 10, etc)
+ - can AI help? in reading what it says at each room
+ - try picking up objects and using them
+
+OUTPUT FORMAT
+=============
+Need to output:
+ - Command sequence (for replay)
+ - Expected room numbers after each move
+ - Expected inventory state
+ - Expected output text (or key phrases)
+
+This allows:
+ - Replay on new compile
+ - Diff against expected behavior
+ - Identify compiler regressions
+ 
+

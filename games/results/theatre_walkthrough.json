@@ -1,0 +1,157 @@
+{
+  "format_version": 1,
+  "commands": [
+    "north",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out"
+  ],
+  "rooms": {
+    "1": {
+      "name": "compass",
+      "exits": {},
+      "objects": [
+        [
+          2,
+          "north wall"
+        ],
+        [
+          3,
+          "south wall"
+        ],
+        [
+          4,
+          "east wall"
+        ],
+        [
+          5,
+          "west wall"
+        ],
+        [
+          6,
+          "northeast wall"
+        ],
+        [
+          7,
+          "southeast wall"
+        ],
+        [
+          8,
+          "northwest wall"
+        ],
+        [
+          9,
+          "southwest wall"
+        ],
+        [
+          10,
+          "ceiling"
+        ],
+        [
+          11,
+          "floor"
+        ],
+        [
+          12,
+          "outside"
+        ],
+        [
+          13,
+          "inside"
+        ]
+      ],
+      "takeable": []
+    }
+  },
+  "objects": {
+    "2": {
+      "name": "north wall",
+      "found_in_room": 1,
+      "is_takeable": false,
+      "taken": false
+    },
+    "3": {
+      "name": "south wall",
+      "found_in_room": 1,
+      "is_takeable": false,
+      "taken": false
+    },
+    "4": {
+      "name": "east wall",
+      "found_in_room": 1,
+      "is_takeable": false,
+      "taken": false
+    },
+    "5": {
+      "name": "west wall",
+      "found_in_room": 1,
+      "is_takeable": false,
+      "taken": false
+    },
+    "6": {
+      "name": "northeast wall",
+      "found_in_room": 1,
+      "is_takeable": false,
+      "taken": false
+    },
+    "7": {
+      "name": "southeast wall",
+      "found_in_room": 1,
+      "is_takeable": false,
+      "taken": false
+    },
+    "8": {
+      "name": "northwest wall",
+      "found_in_room": 1,
+      "is_takeable": false,
+      "taken": false
+    },
+    "9": {
+      "name": "southwest wall",
+      "found_in_room": 1,
+      "is_takeable": false,
+      "taken": false
+    },
+    "10": {
+      "name": "ceiling",
+      "found_in_room": 1,
+      "is_takeable": false,
+      "taken": false
+    },
+    "11": {
+      "name": "floor",
+      "found_in_room": 1,
+      "is_takeable": false,
+      "taken": false
+    },
+    "12": {
+      "name": "outside",
+      "found_in_room": 1,
+      "is_takeable": false,
+      "taken": false
+    },
+    "13": {
+      "name": "inside",
+      "found_in_room": 1,
+      "is_takeable": false,
+      "taken": false
+    }
+  },
+  "stats": {
+    "rooms_found": 1,
+    "total_exits": 0,
+    "objects_found": 12,
+    "takeable_objects": 0,
+    "commands_tried": 13,
+    "vocabulary_size": 922,
+    "unexplored_remaining": 0
+  }
+}

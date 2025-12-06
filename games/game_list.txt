@@ -1,0 +1,149 @@
+# Z-Machine Game Test Suite
+# Generated for zwalker compiler testing
+#
+# Format: name | ifdb_id | format | download_url | zwalker_status | zorkie_status | z2js_status
+#
+# Status values: untested, pass, fail, partial, n/a (not z-machine)
+#
+# Sources:
+#   - IF Archive: https://ifarchive.org/indexes/if-archive/games/zcode/
+#   - IFDB: https://ifdb.org/
+#   - IFDB Top 100: https://ifdb.org/viewlist?id=k7rrytlz3wihmx2o
+
+================================================================================
+INFOCOM CLASSICS (ZIL - original Z-machine games)
+================================================================================
+
+Zork I|0dbnusxunq7fw5ro|z3|https://eblong.com/infocom/gamefiles/zork1-r119-s880429.z3|untested|untested|untested
+Zork II|yzzm4puxyjakk8c4|z3|https://eblong.com/infocom/gamefiles/zork2-r63-s860811.z3|untested|untested|untested
+Zork III|vrsot1zgy1wfcdru|z3|https://eblong.com/infocom/gamefiles/zork3-r25-s860811.z3|untested|untested|untested
+Enchanter|vu4xhul3abknifcr|z3|https://eblong.com/infocom/gamefiles/enchanter-r29-s860820.z3|untested|untested|untested
+Sorcerer|lidg5nx9ig0bwsw3|z3|https://eblong.com/infocom/gamefiles/sorcerer-r18-s851021.z3|untested|untested|untested
+Spellbreaker|wqsmrahzozosu3r|z3|https://eblong.com/infocom/gamefiles/spellbre-r87-s860904.z3|untested|untested|untested
+Planetfall|xe6kb3cuqwie2q38|z3|https://eblong.com/infocom/gamefiles/planetfa-r29-s860313.z3|untested|untested|untested
+Stationfall|mz9v8ppqjbxqyyz|z3|https://eblong.com/infocom/gamefiles/stationfal-r107-s870430.z3|untested|untested|untested
+The Lurking Horror|jhbd0kja1t57uop|z3|https://eblong.com/infocom/gamefiles/lurking-r203-s870506.z3|untested|untested|untested
+Infidel|anu79a4n1jedg5mm|z3|https://eblong.com/infocom/gamefiles/infidel-r22-s830916.z3|untested|untested|untested
+Suspended|51wsxfdpwmhvg9i9|z3|https://eblong.com/infocom/gamefiles/suspend-r8-s840521.z3|untested|untested|untested
+Deadline|mz9v8ppqjbxqyyz|z3|https://eblong.com/infocom/gamefiles/deadline-r27-s831006.z3|untested|untested|untested
+Witness|ouatulbtdlq4y7vb|z3|https://eblong.com/infocom/gamefiles/witness-r22-s840924.z3|untested|untested|untested
+Suspect|ewuxlnb9yzcp68sv|z3|https://eblong.com/infocom/gamefiles/suspect-r14-s841005.z3|untested|untested|untested
+Cutthroats|6bdxj5a9mj2u0mxg|z3|https://eblong.com/infocom/gamefiles/cutthro-r23-s840809.z3|untested|untested|untested
+Seastalker|56x98bfxpo4lz7k6|z3|https://eblong.com/infocom/gamefiles/seastal-r15-s840501.z3|untested|untested|untested
+Wishbringer|z02johoqfwgzoylt|z3|https://eblong.com/infocom/gamefiles/wishbrin-r68-s850501.z3|untested|untested|untested
+Ballyhoo|1t905rye4wqtgcvv|z3|https://eblong.com/infocom/gamefiles/ballyhoo-r97-s851218.z3|untested|untested|untested
+Hollywood Hijinx|jnfkbgdgpnktf0l8|z3|https://eblong.com/infocom/gamefiles/hhgg-r31-s871119.z3|untested|untested|untested
+Leather Goddesses of Phobos|1s8pj2i2szbzlc0x|z3|https://eblong.com/infocom/gamefiles/lgop-r118-s860730.z3|untested|untested|untested
+Moonmist|xvvdj8wanpwpmhj|z3|https://eblong.com/infocom/gamefiles/moonmist-r9-s861022.z3|untested|untested|untested
+Plundered Hearts|ddagftras22bnz8h|z3|https://eblong.com/infocom/gamefiles/plundere-r26-s870730.z3|untested|untested|untested
+Nord and Bert|4l2z1q4jhgfyf1z5|z4|https://eblong.com/infocom/gamefiles/nord-r19-s870722.z4|untested|untested|untested
+Trinity|j18kjz80hxjtyayw|z4|https://eblong.com/infocom/gamefiles/trinity-r15-s870628.z4|untested|untested|untested
+A Mind Forever Voyaging|4h62dvooeg9ajtfa|z4|https://eblong.com/infocom/gamefiles/amfv-r79-s851122.z4|untested|untested|untested
+Bureaucracy|mwd7gv2z85hty0sp|z4|https://eblong.com/infocom/gamefiles/bureaucr-r86-s870212.z4|untested|untested|untested
+Beyond Zork|a]ylnpc28jc95ras|z5|https://eblong.com/infocom/gamefiles/beyondzo-r57-s871221.z5|untested|untested|untested
+Border Zone|47cxkazz3zqvizj1|z5|https://eblong.com/infocom/gamefiles/borderzo-r9-s881008.z5|untested|untested|untested
+Sherlock|6bsyhm1k6dn73fd|z5|https://eblong.com/infocom/gamefiles/sherlock-r21-s871214.z5|untested|untested|untested
+Hitchhiker's Guide to the Galaxy|ouv80gvsl32xlion|z3|https://eblong.com/infocom/gamefiles/hhgg-r31-s871119.z3|untested|untested|untested
+
+================================================================================
+IFDB TOP 100 - Z-MACHINE GAMES (Inform 6/7 and other modern)
+================================================================================
+
+Photopia|ju778uv5xaswnlpl|z5|https://ifarchive.org/if-archive/games/zcode/photopia.z5|untested|untested|untested
+Anchorhead|op0uw1gn1tjqmjt7|z8|https://ifarchive.org/if-archive/games/zcode/anchor.z8|untested|untested|untested
+Spider and Web|2xyccw3pe0uovfad|z5|https://ifarchive.org/if-archive/games/zcode/Tangle.z5|untested|untested|untested
+Lost Pig|mohwfk47yjzii14w|z8|https://ifarchive.org/if-archive/games/zcode/LostPig.z8|untested|untested|untested
+Bronze|9p8kh3im2j9h2881|zblorb|https://ifarchive.org/if-archive/games/zcode/Bronze.zblorb|untested|untested|untested
+Violet|4glrrfh7wrp9zz7b|zblorb|https://ifarchive.org/if-archive/games/zcode/Violet.zblorb|untested|untested|untested
+All Things Devours|5e23lnq25gon9tp3|z5|https://ifarchive.org/if-archive/games/zcode/devours.z5|untested|untested|untested
+Slouching Towards Bedlam|032krqe6bjn5au78|z5|https://ifarchive.org/if-archive/games/zcode/bedlam.z5|untested|untested|untested
+Babel|z5xgyw0jbt9r3ah1|z5|https://ifarchive.org/if-archive/games/zcode/babel.z5|untested|untested|untested
+Blue Lacuna|ez2mcyx4zi98qlkh|zblorb|https://ifarchive.org/if-archive/games/zcode/BlueLacuna-r3.zblorb|untested|untested|untested
+Make It Good|jdrbw1htq4ah8q57|z8|https://ifarchive.org/if-archive/games/zcode/makeitgood.z8|untested|untested|untested
+Worlds Apart|1aliwzro4e48mdlt|z8|https://ifarchive.org/if-archive/games/zcode/WorldsApart.z8|untested|untested|untested
+Curses|d9htkfxst8xlu3ck|z5|https://ifarchive.org/if-archive/games/zcode/curses.z5|untested|untested|untested
+9:05|qzftg3j8nh5f34i2|z5|https://ifarchive.org/if-archive/games/zcode/905.z5|untested|untested|untested
+Aisle|eov6fxs5yvmn6l59|z5|https://ifarchive.org/if-archive/games/zcode/Aisle.z5|untested|untested|untested
+Ad Verbum|8hqmjj1z3fy54nwr|z5|https://ifarchive.org/if-archive/games/zcode/adverbum.z5|untested|untested|untested
+All Roads|zhwjjx6tez28juok|z5|https://ifarchive.org/if-archive/games/zcode/AllRoads.z5|untested|untested|untested
+Savoir-Faire|p0cizeb3kiwzlm2p|z8|https://ifarchive.org/if-archive/games/zcode/savoir-faire.z8|untested|untested|untested
+Metamorphoses|j61yaux1cqbptxyb|z5|https://ifarchive.org/if-archive/games/zcode/metamorphoses.z5|untested|untested|untested
+The Dreamhold|dreamhold|z8|https://ifarchive.org/if-archive/games/zcode/dreamhold.z8|untested|untested|untested
+Cold Iron|icfnizaf1cnnifsr|z8|https://ifarchive.org/if-archive/games/zcode/coldiron.z8|untested|untested|untested
+Jigsaw|s3qsmzjxrcfv1wd|z8|https://ifarchive.org/if-archive/games/zcode/jigsaw.z8|untested|untested|untested
+So Far|dqy2qv2ybj3xihep|z8|https://ifarchive.org/if-archive/games/zcode/sofar.z8|untested|untested|untested
+Shade|y4dlwabdyjq4k8x|z5|https://ifarchive.org/if-archive/games/zcode/shade.z5|untested|untested|untested
+Theatre|5hl2xb3wl47e95sb|z5|https://ifarchive.org/if-archive/games/zcode/theatre.z5|untested|untested|untested
+The Edifice|zy9p4d1ajn3jc4l2|z5|https://ifarchive.org/if-archive/games/zcode/edifice.z5|untested|untested|untested
+Galatea|urxrv27t7qtu52lb|z5|https://ifarchive.org/if-archive/games/zcode/galatea.z5|untested|untested|untested
+Varicella|ep1f37lix13q6lqe|z8|https://ifarchive.org/if-archive/games/zcode/varicella.z8|untested|untested|untested
+Suspended Sentence|s4fvj1hq8qw1l7x5|z8|https://ifarchive.org/if-archive/games/zcode/sentence.z8|untested|untested|untested
+
+================================================================================
+IF ARCHIVE SAMPLE - DIVERSE TEST CASES
+================================================================================
+
+Adventure (Colossal Cave)|fft6pu91j85y4acv|z3|https://ifarchive.org/if-archive/games/zcode/advent.z3|untested|untested|untested
+Adventure (Graham Nelson)|same|z5|https://ifarchive.org/if-archive/games/zcode/Advent.z5|untested|untested|untested
+Adventure 440|same|z8|https://ifarchive.org/if-archive/games/zcode/adv440.z8|untested|untested|untested
+Adventure 550|same|z8|https://ifarchive.org/if-archive/games/zcode/adv550.z8|untested|untested|untested
+Acheton|archv3p1b3mn2q21|z8|https://ifarchive.org/if-archive/games/zcode/Acheton.z8|untested|untested|untested
+Cat's Eye|unknown|z3|https://ifarchive.org/if-archive/games/zcode/catseye.z3|untested|untested|untested
+Fantasy Dimension|unknown|z3|https://ifarchive.org/if-archive/games/zcode/fantasydimension.z3|untested|untested|untested
+Acorn Court|unknown|z5|https://ifarchive.org/if-archive/games/zcode/acorncourt.z5|untested|untested|untested
+Adventureland|unknown|z5|https://ifarchive.org/if-archive/games/zcode/Adventureland.z5|untested|untested|untested
+Amish|unknown|z5|https://ifarchive.org/if-archive/games/zcode/amish.z5|untested|untested|untested
+Asylum|unknown|z5|https://ifarchive.org/if-archive/games/zcode/Asylum.z5|untested|untested|untested
+Blue Chairs|unknown|z5|https://ifarchive.org/if-archive/games/zcode/bluechairs.z5|untested|untested|untested
+Bear's Night Out|unknown|z5|https://ifarchive.org/if-archive/games/zcode/bear.z5|untested|untested|untested
+Cheeseshop|unknown|z5|https://ifarchive.org/if-archive/games/zcode/cheeseshop.z5|untested|untested|untested
+Detective|unknown|z5|https://ifarchive.org/if-archive/games/zcode/detective.z5|untested|untested|untested
+Djinni|unknown|z5|https://ifarchive.org/if-archive/games/zcode/djinni.z5|untested|untested|untested
+FailSafe|unknown|z5|https://ifarchive.org/if-archive/games/zcode/FailSafe.z5|untested|untested|untested
+Farm|unknown|z5|https://ifarchive.org/if-archive/games/zcode/farm.z5|untested|untested|untested
+Glass|unknown|zblorb|https://ifarchive.org/if-archive/games/zcode/Glass.zblorb|untested|untested|untested
+Heroes|unknown|z5|https://ifarchive.org/if-archive/games/zcode/heroes.z5|untested|untested|untested
+Humbug|unknown|z5|https://ifarchive.org/if-archive/games/zcode/humbug.z5|untested|untested|untested
+Kissing the Buddha's Feet|unknown|z5|https://ifarchive.org/if-archive/games/zcode/kissing.z5|untested|untested|untested
+Lists and Lists|unknown|z5|https://ifarchive.org/if-archive/games/zcode/lists.z5|untested|untested|untested
+Mother Loose|unknown|z5|https://ifarchive.org/if-archive/games/zcode/mloose.z5|untested|untested|untested
+Offensive Probing|unknown|z5|https://ifarchive.org/if-archive/games/zcode/oprobing.z5|untested|untested|untested
+Parking|unknown|z5|https://ifarchive.org/if-archive/games/zcode/parking.z5|untested|untested|untested
+Pick Up the Phone Booth and Die|unknown|z5|https://ifarchive.org/if-archive/games/zcode/booth.z5|untested|untested|untested
+Rematch|unknown|z5|https://ifarchive.org/if-archive/games/zcode/rematch.z5|untested|untested|untested
+Slouching Towards Bedlam|032krqe6bjn5au78|z5|https://ifarchive.org/if-archive/games/zcode/bedlam.z5|untested|untested|untested
+Spur|unknown|z5|https://ifarchive.org/if-archive/games/zcode/spur.z5|untested|untested|untested
+Tattoo Parlour|unknown|z5|https://ifarchive.org/if-archive/games/zcode/tattoo.z5|untested|untested|untested
+The Act of Misdirection|unknown|z5|https://ifarchive.org/if-archive/games/zcode/misdirect.z5|untested|untested|untested
+The Plant|unknown|z5|https://ifarchive.org/if-archive/games/zcode/plant.z5|untested|untested|untested
+The Weapon|unknown|z5|https://ifarchive.org/if-archive/games/zcode/weapon.z5|untested|untested|untested
+Toonesia|unknown|z5|https://ifarchive.org/if-archive/games/zcode/toonesia.z5|untested|untested|untested
+Uncle Zebulon's Will|unknown|z5|https://ifarchive.org/if-archive/games/zcode/uncle.z5|untested|untested|untested
+Varicella|ep1f37lix13q6lqe|z8|https://ifarchive.org/if-archive/games/zcode/varicella.z8|untested|untested|untested
+Winter Wonderland|unknown|z5|https://ifarchive.org/if-archive/games/zcode/winter.z5|untested|untested|untested
+Zombies|unknown|z5|https://ifarchive.org/if-archive/games/zcode/zombies.z5|untested|untested|untested
+Dracula|unknown|z8|https://ifarchive.org/if-archive/games/zcode/dracula.z8|untested|untested|untested
+Enemies|unknown|z8|https://ifarchive.org/if-archive/games/zcode/Enemies.z8|untested|untested|untested
+Fairyland|unknown|z8|https://ifarchive.org/if-archive/games/zcode/Fairyland.z8|untested|untested|untested
+
+================================================================================
+NOTES
+================================================================================
+
+Total games: ~100 Z-machine games across z3, z4, z5, z8, and zblorb formats
+
+Key archives:
+- IF Archive: https://ifarchive.org/indexes/if-archive/games/zcode/
+- Eblong Infocom archive: https://eblong.com/infocom/gamefiles/
+- IFDB search: https://ifdb.org/
+
+Download script example:
+  wget https://ifarchive.org/if-archive/games/zcode/photopia.z5 -P games/
+
+Run zwalker test:
+  python -m zwalker explore games/photopia.z5 --ai --ai-backend anthropic -j games/photopia_walkthrough.json
+
+Status tracking:
+- zwalker_status: Did zwalker successfully explore and generate walkthrough?
+- zorkie_status: Did zorkie (our compiler) produce a playable .z file?
+- z2js_status: Did z2js interpreter play through successfully?

@@ -1,0 +1,76 @@
+{
+  "format_version": 1,
+  "commands": [
+    "north",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out"
+  ],
+  "rooms": {
+    "51": {
+      "name": "Inside the Barrow",
+      "exits": {},
+      "objects": [
+        [
+          40,
+          "cretin"
+        ],
+        [
+          149,
+          "lamp"
+        ],
+        [
+          223,
+          "elvish sword"
+        ]
+      ],
+      "takeable": [
+        [
+          149,
+          "lamp"
+        ],
+        [
+          223,
+          "elvish sword"
+        ]
+      ]
+    }
+  },
+  "objects": {
+    "40": {
+      "name": "cretin",
+      "found_in_room": 51,
+      "is_takeable": false,
+      "taken": false
+    },
+    "149": {
+      "name": "lamp",
+      "found_in_room": 51,
+      "is_takeable": true,
+      "taken": false
+    },
+    "223": {
+      "name": "elvish sword",
+      "found_in_room": 51,
+      "is_takeable": true,
+      "taken": false
+    }
+  },
+  "stats": {
+    "rooms_found": 1,
+    "total_exits": 0,
+    "objects_found": 3,
+    "takeable_objects": 2,
+    "commands_tried": 13,
+    "vocabulary_size": 689,
+    "unexplored_remaining": 0
+  }
+}

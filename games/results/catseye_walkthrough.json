@@ -1,0 +1,257 @@
+{
+  "format_version": 1,
+  "commands": [
+    "north",
+    "south",
+    "south",
+    "north",
+    "east",
+    "west",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out",
+    "north",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "down",
+    "in",
+    "out",
+    "north",
+    "south",
+    "east",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out",
+    "north",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "in",
+    "out"
+  ],
+  "rooms": {
+    "14": {
+      "name": "Living Room",
+      "exits": {
+        "north": 20,
+        "south": 31,
+        "east": 23
+      },
+      "objects": [
+        [
+          13,
+          "yourself"
+        ],
+        [
+          15,
+          "fireplace"
+        ],
+        [
+          16,
+          "lab bench"
+        ],
+        [
+          17,
+          "blue liquid"
+        ],
+        [
+          18,
+          "catseye orb"
+        ],
+        [
+          19,
+          "necklace"
+        ]
+      ],
+      "takeable": []
+    },
+    "20": {
+      "name": "Sitting Room",
+      "exits": {
+        "south": 14
+      },
+      "objects": [
+        [
+          13,
+          "yourself"
+        ],
+        [
+          21,
+          "shelves"
+        ],
+        [
+          22,
+          "book"
+        ]
+      ],
+      "takeable": []
+    },
+    "31": {
+      "name": "Main Hallway",
+      "exits": {
+        "north": 14,
+        "up": 36
+      },
+      "objects": [
+        [
+          13,
+          "yourself"
+        ],
+        [
+          32,
+          "cellar door"
+        ]
+      ],
+      "takeable": []
+    },
+    "23": {
+      "name": "Kitchen",
+      "exits": {
+        "west": 14
+      },
+      "objects": [
+        [
+          13,
+          "yourself"
+        ],
+        [
+          24,
+          "refrigerator"
+        ],
+        [
+          25,
+          "counter"
+        ],
+        [
+          26,
+          "jar"
+        ]
+      ],
+      "takeable": []
+    },
+    "36": {
+      "name": "Bedroom",
+      "exits": {
+        "down": 31
+      },
+      "objects": [],
+      "takeable": []
+    }
+  },
+  "objects": {
+    "13": {
+      "name": "yourself",
+      "found_in_room": 14,
+      "is_takeable": false,
+      "taken": false
+    },
+    "15": {
+      "name": "fireplace",
+      "found_in_room": 14,
+      "is_takeable": false,
+      "taken": false
+    },
+    "16": {
+      "name": "lab bench",
+      "found_in_room": 14,
+      "is_takeable": false,
+      "taken": false
+    },
+    "17": {
+      "name": "blue liquid",
+      "found_in_room": 14,
+      "is_takeable": false,
+      "taken": false
+    },
+    "18": {
+      "name": "catseye orb",
+      "found_in_room": 14,
+      "is_takeable": false,
+      "taken": false
+    },
+    "19": {
+      "name": "necklace",
+      "found_in_room": 14,
+      "is_takeable": false,
+      "taken": false
+    },
+    "21": {
+      "name": "shelves",
+      "found_in_room": 20,
+      "is_takeable": false,
+      "taken": false
+    },
+    "22": {
+      "name": "book",
+      "found_in_room": 20,
+      "is_takeable": false,
+      "taken": false
+    },
+    "32": {
+      "name": "cellar door",
+      "found_in_room": 31,
+      "is_takeable": false,
+      "taken": false
+    },
+    "24": {
+      "name": "refrigerator",
+      "found_in_room": 23,
+      "is_takeable": false,
+      "taken": false
+    },
+    "25": {
+      "name": "counter",
+      "found_in_room": 23,
+      "is_takeable": false,
+      "taken": false
+    },
+    "26": {
+      "name": "jar",
+      "found_in_room": 23,
+      "is_takeable": false,
+      "taken": false
+    }
+  },
+  "stats": {
+    "rooms_found": 5,
+    "total_exits": 8,
+    "objects_found": 12,
+    "takeable_objects": 0,
+    "commands_tried": 61,
+    "vocabulary_size": 68,
+    "unexplored_remaining": 0
+  }
+}

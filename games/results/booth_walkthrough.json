@@ -1,0 +1,57 @@
+{
+  "format_version": 1,
+  "commands": [
+    "north",
+    "south",
+    "east",
+    "west",
+    "northeast",
+    "northwest",
+    "southeast",
+    "southwest",
+    "up",
+    "down",
+    "in",
+    "out"
+  ],
+  "rooms": {
+    "16": {
+      "name": "The Town Square",
+      "exits": {},
+      "objects": [
+        [
+          15,
+          "yourself"
+        ],
+        [
+          17,
+          "phone booth"
+        ]
+      ],
+      "takeable": []
+    }
+  },
+  "objects": {
+    "15": {
+      "name": "yourself",
+      "found_in_room": 16,
+      "is_takeable": false,
+      "taken": false
+    },
+    "17": {
+      "name": "phone booth",
+      "found_in_room": 16,
+      "is_takeable": false,
+      "taken": false
+    }
+  },
+  "stats": {
+    "rooms_found": 1,
+    "total_exits": 0,
+    "objects_found": 2,
+    "takeable_objects": 0,
+    "commands_tried": 13,
+    "vocabulary_size": 299,
+    "unexplored_remaining": 0
+  }
+}
