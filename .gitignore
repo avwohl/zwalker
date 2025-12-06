@@ -19,29 +19,38 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # Virtual environments
 venv/
 ENV/
 env/
 
-# IDE
+# IDEs
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# Z-machine compiled files
-*.z3
-*.z4
-*.z5
-*.z6
-*.z8
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+
+# Logs (keep structure, ignore content)
+logs/*.log
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Generated site (built from docs)
-site/
+# Project specific (ignore generated files)
+z2js_output/*.js
+z2js_output/*.html
+!z2js_output/.gitkeep
+solutions/*_solution.json
+!solutions/.gitkeep
+tests/*_walkthrough.json
+!tests/.gitkeep
