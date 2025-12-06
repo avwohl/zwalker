@@ -7,11 +7,11 @@
 
 ## 📚 Documentation
 
-**[→ View Full Documentation & Game Index](https://yourusername.github.io/zwalker/)** *(Update with your GitHub username)*
+**[→ View Full Documentation & Game Index](https://avwohl.github.io/zwalker/)**
 
-- [100+ Game Sources with Download URLs](https://yourusername.github.io/zwalker/GAME_SOURCES.html)
-- [49 AI-Generated Walkthroughs](https://yourusername.github.io/zwalker/WALKTHROUGHS.html)
-- [Complete Test Suite Results](https://yourusername.github.io/zwalker/#testing)
+- [100+ Game Sources with Download URLs](https://avwohl.github.io/zwalker/GAME_SOURCES.html)
+- [49 AI-Generated Walkthroughs](https://avwohl.github.io/zwalker/WALKTHROUGHS.html)
+- [Complete Test Suite Results](https://avwohl.github.io/zwalker/#testing)
 
 ## Features
 
@@ -46,7 +46,7 @@ pip install zwalker
 ### From Source
 
 ```bash
-git clone https://github.com/yourusername/zwalker.git
+git clone https://github.com/avwohl/zwalker.git
 cd zwalker
 pip install -e .
 ```
@@ -220,8 +220,8 @@ MIT License - see [LICENSE](LICENSE) file.
 
 ## Links
 
-- **Source**: https://github.com/yourusername/zwalker
-- **Issues**: https://github.com/yourusername/zwalker/issues
+- **Source**: https://github.com/avwohl/zwalker
+- **Issues**: https://github.com/avwohl/zwalker/issues
 - **z2js Compiler**: https://github.com/yourusername/z2js
 - **IF Archive**: https://www.ifarchive.org/
 - **IFDB**: https://ifdb.org/
