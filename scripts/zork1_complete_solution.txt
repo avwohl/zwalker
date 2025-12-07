@@ -1,0 +1,139 @@
+# Zork 1 Complete Solution
+# Commands: 136
+
+north
+east
+open window
+west
+west
+take lamp
+take sword
+turn on lamp
+move rug
+open trap door
+open case
+east
+up
+take rope
+down
+east
+north
+north
+up
+take egg
+down
+south
+east
+west
+west
+put egg in case
+score
+go down
+north
+kill troll with sword
+kill troll with sword
+kill troll with sword
+east
+east
+east
+echo
+take bar
+west
+west
+west
+west
+south
+east
+up
+take coins
+sw
+east
+south
+se
+odysseus
+up
+put bar in case
+put coins in case
+score
+go down
+nw
+n
+e
+e
+east
+north
+ne
+east
+north
+take matchbook
+north
+take wrench
+take screwdriver
+press yellow button
+south
+south
+turn bolt with wrench
+west
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+north
+take trunk
+north
+take pump
+north
+take trident
+south
+south
+south
+east
+south
+sw
+south
+south
+west
+west
+west
+south
+east
+up
+sw
+east
+south
+se
+up
+put trident in case
+put pump in case
+score
+go down
+east
+east
+east
+se
+east
+tie rope to railing
+down
+south
+take bell
+east
+open coffin
+take sceptre
+west
+south
+pray
+east
+south
+east
+west
+west
+put bell in case
+put sceptre in case
+score
+inventory

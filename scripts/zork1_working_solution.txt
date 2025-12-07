@@ -1,0 +1,87 @@
+# Zork 1 Working Solution
+# Total commands: 84
+
+north
+east
+open window
+west
+take sack
+open sack
+take garlic
+west
+take lamp
+take sword
+turn on lamp
+move rug
+open trap door
+open case
+east
+up
+take rope
+down
+east
+north
+north
+up
+take egg
+down
+south
+east
+west
+west
+put egg in case
+go down
+north
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+east
+east
+east
+echo
+take bar
+west
+west
+west
+west
+south
+east
+up
+take coins
+sw
+east
+south
+se
+odysseus
+up
+put bar in case
+put coins in case
+go down
+nw
+nw
+w
+look
+south
+south
+se
+east
+tie rope to railing
+down
+south
+take bell
+east
+open coffin
+take sceptre
+west
+south
+pray
+east
+south
+east
+west
+west
+put bell in case
+put sceptre in case
+score
+inventory

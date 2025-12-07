@@ -1,0 +1,149 @@
+# Zork 1 Working Solution
+# Score: 145/350 points
+# Commands: ~133
+
+# === PHASE 1: SETUP ===
+north
+east
+open window
+west
+west
+take lamp
+take sword
+turn on lamp
+move rug
+open trap door
+open case
+east
+up
+take rope
+down
+east
+north
+north
+up
+take egg
+down
+south
+east
+west
+west
+put egg in case
+
+# === PHASE 2: KILL TROLL ===
+go down
+north
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+drop sword
+
+# === PHASE 3: BAR + COINS ===
+east
+east
+east
+echo
+take bar
+west
+west
+west
+west
+south
+east
+up
+take coins
+sw
+east
+south
+se
+odysseus
+east
+east
+put bar in case
+put coins in case
+
+# === PHASE 4: DAM ITEMS ===
+open trap door
+go down
+north
+east
+east
+north
+north
+northeast
+east
+north
+take matches
+north
+take wrench
+take screwdriver
+press yellow button
+south
+south
+turn bolt with wrench
+drop wrench
+drop screwdriver
+west
+wait
+wait
+north
+take trunk
+north
+take pump
+north
+take trident
+south
+south
+south
+southwest
+south
+south
+west
+west
+west
+south
+east
+up
+sw
+east
+south
+se
+east
+east
+put trunk in case
+put pump in case
+put trident in case
+put matches in case
+
+# === PHASE 5: TEMPLE TREASURES ===
+open trap door
+go down
+north
+east
+east
+southeast
+east
+tie rope to railing
+down
+take torch
+turn off lamp
+south
+take bell
+east
+open coffin
+take sceptre
+west
+south
+pray
+east
+south
+east
+west
+west
+put torch in case
+put bell in case
+put sceptre in case
+
+score

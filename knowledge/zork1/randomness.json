@@ -1,0 +1,191 @@
+{
+  "events": {
+    "thief_encounter": {
+      "id": "thief_encounter",
+      "name": "Thief Encounter",
+      "event_type": "wandering_npc",
+      "detection_pattern": "thief|someone carrying a large bag|figure holding a bag",
+      "detection_rooms": [],
+      "occurrences": [
+        {
+          "run": 18,
+          "turn": 44,
+          "room_id": 33,
+          "output": "Cellar\nYou are in a dark and damp cellar with a narrow passageway leading north, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.\nSomeone carrying a l"
+        },
+        {
+          "run": 20,
+          "turn": 74,
+          "room_id": 67,
+          "output": "Stream View\nSomeone carrying a large bag is casually leaning against one of the walls here. He does not speak, but it is clear from his aspect that the bag will be taken only over his dead body.\nYour "
+        },
+        {
+          "run": 20,
+          "turn": 75,
+          "room_id": 67,
+          "output": "If you pray enough, your prayers may be answered.\nThe thief just left, still carrying his large bag. You may not have noticed that he robbed you blind first.\n\n>"
+        },
+        {
+          "run": 21,
+          "turn": 41,
+          "room_id": 87,
+          "output": "The Troll Room\nThere is a bloody axe here.\nSomeone carrying a large bag is casually leaning against one of the walls here. He does not speak, but it is clear from his aspect that the bag will be taken"
+        },
+        {
+          "run": 24,
+          "turn": 35,
+          "room_id": 104,
+          "output": "Maze\nThis is part of a maze of twisty little passages, all alike.\nSomeone carrying a large bag is casually leaning against one of the walls here. He does not speak, but it is clear from his aspect tha"
+        }
+      ],
+      "first_seen_run": 18,
+      "last_seen_run": 24,
+      "responses": {
+        "has sword": [
+          "kill thief with sword"
+        ],
+        "default": [
+          "drop valuables",
+          "wait",
+          "wait",
+          "take valuables"
+        ]
+      },
+      "successful_response": null
+    },
+    "grue_warning": {
+      "id": "grue_warning",
+      "name": "Grue Warning",
+      "event_type": "random_text",
+      "detection_pattern": "grue|eaten by|lurking in the dark",
+      "detection_rooms": [],
+      "occurrences": [
+        {
+          "run": 8,
+          "turn": 13,
+          "room_id": 187,
+          "output": "You have moved into a dark place.\nIt is pitch black. You are likely to be eaten by a grue.\n\n>"
+        },
+        {
+          "run": 9,
+          "turn": 4,
+          "room_id": 187,
+          "output": "You have moved into a dark place.\nIt is pitch black. You are likely to be eaten by a grue.\n\n>"
+        },
+        {
+          "run": 9,
+          "turn": 21,
+          "room_id": 104,
+          "output": "You have moved into a dark place.\nIt is pitch black. You are likely to be eaten by a grue.\n\n>"
+        },
+        {
+          "run": 9,
+          "turn": 22,
+          "room_id": 104,
+          "output": "It is pitch black. You are likely to be eaten by a grue.\n\n>"
+        },
+        {
+          "run": 9,
+          "turn": 24,
+          "room_id": 33,
+          "output": "You have moved into a dark place.\nIt is pitch black. You are likely to be eaten by a grue.\n\n>"
+        },
+        {
+          "run": 9,
+          "turn": 25,
+          "room_id": 33,
+          "output": "It is pitch black. You are likely to be eaten by a grue.\n\n>"
+        },
+        {
+          "run": 9,
+          "turn": 26,
+          "room_id": 87,
+          "output": "Oh, no! You have walked into the slavering fangs of a lurking grue!\n \n    ****  You have died  **** \n\nNow, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up"
+        },
+        {
+          "run": 22,
+          "turn": 49,
+          "room_id": 241,
+          "output": "You have moved into a dark place.\nIt is pitch black. You are likely to be eaten by a grue.\n\n>"
+        }
+      ],
+      "first_seen_run": 8,
+      "last_seen_run": 22,
+      "responses": {
+        "has lamp": [
+          "light lamp"
+        ],
+        "default": [
+          "go back"
+        ]
+      },
+      "successful_response": null
+    },
+    "combat_start": {
+      "id": "combat_start",
+      "name": "Combat Initiated",
+      "event_type": "wandering_npc",
+      "detection_pattern": "attacks?|strikes|swings at|lunges",
+      "detection_rooms": [],
+      "occurrences": [
+        {
+          "run": 21,
+          "turn": 18,
+          "room_id": 127,
+          "output": "You are still recovering from that last blow, so your attack is ineffective.\nThe axe crashes against the rock, throwing sparks!\n\n>"
+        },
+        {
+          "run": 29,
+          "turn": 14,
+          "room_id": 127,
+          "output": "You are still recovering from that last blow, so your attack is ineffective.\nThe axe sweeps past as you jump aside.\n\n>"
+        },
+        {
+          "run": 29,
+          "turn": 15,
+          "room_id": 127,
+          "output": "The fatal blow strikes the troll square in the heart: He dies.\nAlmost as soon as the troll breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has"
+        }
+      ],
+      "first_seen_run": 21,
+      "last_seen_run": 29,
+      "responses": {
+        "has sword": [
+          "kill enemy with sword",
+          "attack enemy"
+        ],
+        "default": [
+          "flee",
+          "run"
+        ]
+      },
+      "successful_response": null
+    }
+  },
+  "variances": {},
+  "run_snapshots": {
+    "2": [
+      {
+        "run": 2,
+        "turn": 14,
+        "room_id": 27,
+        "room_name": "Kitchen",
+        "object_locations": {
+          "44": 64,
+          "121": 64,
+          "230": 64,
+          "169": 27,
+          "55": 75,
+          "100": 75,
+          "146": 75,
+          "197": 75,
+          "227": 75,
+          "240": 75
+        },
+        "room_description": "",
+        "output": ""
+      }
+    ]
+  },
+  "known_random_patterns": []
+}

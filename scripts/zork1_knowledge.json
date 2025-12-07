@@ -1,0 +1,437 @@
+{
+  "game": "Zork I",
+  "stats": {
+    "game_name": "zork1",
+    "total_runs": 24,
+    "rooms_discovered": 41,
+    "objects_discovered": 36,
+    "total_actions": 1101,
+    "do_not_retry_count": 14,
+    "death_records": 0,
+    "puzzles_discovered": 7,
+    "puzzles_solved": 0,
+    "solution_steps": 643,
+    "solution_branches": 0,
+    "random_events_known": 3,
+    "random_events_observed": 14,
+    "variance_records": 0,
+    "random_objects": 0,
+    "current_run": 24,
+    "current_turn": 0
+  },
+  "rooms": {
+    "64": {
+      "name": "West of House",
+      "exits": [
+        "north",
+        "south",
+        "east",
+        "west"
+      ]
+    },
+    "137": {
+      "name": "North of House",
+      "exits": [
+        "south",
+        "east",
+        "west",
+        "north"
+      ]
+    },
+    "85": {
+      "name": "Behind House",
+      "exits": [
+        "west",
+        "north",
+        "south"
+      ]
+    },
+    "27": {
+      "name": "Kitchen",
+      "exits": [
+        "east",
+        "west",
+        "up"
+      ]
+    },
+    "75": {
+      "name": "Living Room",
+      "exits": [
+        "east",
+        "go down"
+      ]
+    },
+    "209": {
+      "name": "South of House",
+      "exits": [
+        "north",
+        "east",
+        "west",
+        "south"
+      ]
+    },
+    "33": {
+      "name": "Cellar",
+      "exits": [
+        "north",
+        "east",
+        "south"
+      ]
+    },
+    "127": {
+      "name": "The Troll Room",
+      "exits": [
+        "south",
+        "east",
+        "west",
+        "take all"
+      ]
+    },
+    "130": {
+      "name": "East-West Passage",
+      "exits": [
+        "west",
+        "north",
+        "east"
+      ]
+    },
+    "106": {
+      "name": "Chasm",
+      "exits": [
+        "south",
+        "northeast"
+      ]
+    },
+    "175": {
+      "name": "North-South Passage",
+      "exits": [
+        "north",
+        "south"
+      ]
+    },
+    "15": {
+      "name": "Round Room",
+      "exits": [
+        "north",
+        "east",
+        "south",
+        "southeast",
+        "west"
+      ]
+    },
+    "205": {
+      "name": "Loud Room",
+      "exits": [
+        "west"
+      ]
+    },
+    "187": {
+      "name": "Attic",
+      "exits": [
+        "down"
+      ]
+    },
+    "228": {
+      "name": "Narrow Passage",
+      "exits": [
+        "north"
+      ]
+    },
+    "104": {
+      "name": "Maze",
+      "exits": [
+        "east",
+        "south",
+        "north"
+      ]
+    },
+    "87": {
+      "name": "Forest",
+      "exits": [
+        "west",
+        "east",
+        "north",
+        "south"
+      ]
+    },
+    "238": {
+      "name": "Forest Path",
+      "exits": [
+        "south",
+        "east",
+        "west",
+        "up",
+        "north"
+      ]
+    },
+    "32": {
+      "name": "Forest",
+      "exits": [
+        "west",
+        "east",
+        "north",
+        "south"
+      ]
+    },
+    "160": {
+      "name": "Clearing",
+      "exits": [
+        "south",
+        "east",
+        "west"
+      ]
+    },
+    "69": {
+      "name": "Engravings Cave",
+      "exits": [
+        "northwest",
+        "east"
+      ]
+    },
+    "11": {
+      "name": "Dome Room",
+      "exits": [
+        "west",
+        "down"
+      ]
+    },
+    "123": {
+      "name": "Reservoir South",
+      "exits": [
+        "southwest",
+        "west"
+      ]
+    },
+    "18": {
+      "name": "Torch Room",
+      "exits": [
+        "up",
+        "south"
+      ]
+    },
+    "2": {
+      "name": "Temple",
+      "exits": [
+        "north",
+        "east",
+        "down",
+        "south"
+      ]
+    },
+    "241": {
+      "name": "Egyptian Room",
+      "exits": [
+        "west",
+        "up"
+      ]
+    },
+    "221": {
+      "name": "Forest",
+      "exits": [
+        "north",
+        "west"
+      ]
+    },
+    "128": {
+      "name": "Clearing",
+      "exits": [
+        "south",
+        "east",
+        "north"
+      ]
+    },
+    "22": {
+      "name": "Canyon View",
+      "exits": [
+        "west",
+        "east"
+      ]
+    },
+    "247": {
+      "name": "East of Chasm",
+      "exits": [
+        "north",
+        "east"
+      ]
+    },
+    "122": {
+      "name": "Gallery",
+      "exits": [
+        "west"
+      ]
+    },
+    "5": {
+      "name": "Up a Tree",
+      "exits": [
+        "down"
+      ]
+    },
+    "21": {
+      "name": "Rocky Ledge",
+      "exits": [
+        "west",
+        "down"
+      ]
+    },
+    "74": {
+      "name": "Canyon Bottom",
+      "exits": [
+        "up",
+        "north",
+        "northeast"
+      ]
+    },
+    "125": {
+      "name": "End of Rainbow",
+      "exits": [
+        "south",
+        "southwest"
+      ]
+    },
+    "67": {
+      "name": "Stream View",
+      "exits": [
+        "east"
+      ]
+    },
+    "167": {
+      "name": "Forest",
+      "exits": [
+        "west",
+        "south"
+      ]
+    },
+    "129": {
+      "name": "Altar",
+      "exits": [
+        "north",
+        "pray"
+      ]
+    },
+    "19": {
+      "name": "Maze",
+      "exits": [
+        "north",
+        "east",
+        "south"
+      ]
+    },
+    "54": {
+      "name": "Maze",
+      "exits": [
+        "west",
+        "up",
+        "south"
+      ]
+    },
+    "218": {
+      "name": "Maze",
+      "exits": [
+        "down",
+        "north"
+      ]
+    }
+  },
+  "solution_commands": [
+    "look",
+    "open mailbox",
+    "take leaflet",
+    "read leaflet",
+    "north",
+    "east",
+    "open window",
+    "west",
+    "north",
+    "east",
+    "open window",
+    "west",
+    "look",
+    "take all",
+    "inventory",
+    "west",
+    "take lamp",
+    "turn on lamp",
+    "east",
+    "examine cretin",
+    "look",
+    "south",
+    "north",
+    "north",
+    "east",
+    "open window",
+    "west",
+    "look",
+    "take all",
+    "west",
+    "take lamp",
+    "turn on lamp",
+    "move rug",
+    "open trap door",
+    "inventory",
+    "north",
+    "east",
+    "open window",
+    "west",
+    "west",
+    "take lamp",
+    "turn on lamp",
+    "move rug",
+    "open trap door",
+    "enter trap door",
+    "go down",
+    "look",
+    "north",
+    "east",
+    "open window",
+    "west",
+    "west",
+    "take lamp",
+    "turn on lamp",
+    "take sword",
+    "move rug",
+    "open trap door",
+    "go down",
+    "north",
+    "kill troll with sword",
+    "east",
+    "north",
+    "look",
+    "take all",
+    "south",
+    "south",
+    "east",
+    "south",
+    "look",
+    "open mailbox",
+    "take leaflet",
+    "read leaflet",
+    "south",
+    "east",
+    "north",
+    "west",
+    "north",
+    "east",
+    "open window",
+    "west",
+    "take all",
+    "up",
+    "take all",
+    "down",
+    "west",
+    "take lamp",
+    "take sword",
+    "turn on lamp",
+    "move rug",
+    "open trap door",
+    "go down",
+    "north",
+    "kill troll with sword",
+    "look",
+    "east",
+    "north",
+    "look",
+    "south",
+    "south",
+    "east"
+  ]
+}

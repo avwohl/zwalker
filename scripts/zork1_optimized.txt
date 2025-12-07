@@ -1,0 +1,84 @@
+# Zork 1 Optimized Solution
+# Commands: 81
+
+north
+east
+open window
+west
+take sack
+west
+take lamp
+take sword
+turn on lamp
+move rug
+open trap door
+open case
+east
+up
+take rope
+down
+east
+north
+north
+up
+take egg
+down
+south
+east
+west
+west
+put egg in case
+score
+go down
+north
+kill troll with sword
+kill troll with sword
+east
+east
+east
+echo
+take bar
+west
+west
+west
+west
+south
+east
+up
+take coins
+down
+north
+sw
+east
+south
+se
+odysseus
+up
+put bar in case
+put coins in case
+score
+go down
+east
+east
+east
+se
+east
+tie rope to railing
+down
+south
+take bell
+east
+open coffin
+take sceptre
+west
+south
+pray
+east
+south
+east
+west
+west
+put bell in case
+put sceptre in case
+score
+inventory
