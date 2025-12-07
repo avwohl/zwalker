@@ -1,0 +1,310 @@
+{
+  "total_games": 43,
+  "ai_complete": 3,
+  "ai_incomplete": 15,
+  "human_walkthroughs": 12,
+  "no_solution": 28,
+  "games": {
+    "bluechairs": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": true,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "aisle": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": true,
+      "human_walkthrough": true
+    },
+    "acorncourt": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "905": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": true,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "anchor": {
+      "has_zfile": true,
+      "zversion": ".z8",
+      "ai_complete": false,
+      "ai_incomplete": true,
+      "human_walkthrough": true
+    },
+    "gntests": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "adv440": {
+      "has_zfile": true,
+      "zversion": ".z8",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "tangle": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "lostpig": {
+      "has_zfile": true,
+      "zversion": ".z8",
+      "ai_complete": false,
+      "ai_incomplete": true,
+      "human_walkthrough": false
+    },
+    "dracula": {
+      "has_zfile": true,
+      "zversion": ".z8",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "zork2": {
+      "has_zfile": true,
+      "zversion": ".z3",
+      "ai_complete": false,
+      "ai_incomplete": true,
+      "human_walkthrough": true
+    },
+    "advent": {
+      "has_zfile": true,
+      "zversion": ".z3",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "adverbum": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "zombies": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "trinity": {
+      "has_zfile": true,
+      "zversion": ".z4",
+      "ai_complete": false,
+      "ai_incomplete": true,
+      "human_walkthrough": true
+    },
+    "cheeseshop": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "animals": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "curses": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": true,
+      "human_walkthrough": true
+    },
+    "czech": {
+      "has_zfile": true,
+      "zversion": ".z8",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "etude": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "lists": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": true,
+      "human_walkthrough": false
+    },
+    "detective": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "enemies": {
+      "has_zfile": true,
+      "zversion": ".z8",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "catseye": {
+      "has_zfile": true,
+      "zversion": ".z3",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "failsafe": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "dreamhold": {
+      "has_zfile": true,
+      "zversion": ".z8",
+      "ai_complete": false,
+      "ai_incomplete": true,
+      "human_walkthrough": true
+    },
+    "acheton": {
+      "has_zfile": true,
+      "zversion": ".z8",
+      "ai_complete": false,
+      "ai_incomplete": true,
+      "human_walkthrough": false
+    },
+    "allroads": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "adv550": {
+      "has_zfile": true,
+      "zversion": ".z8",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "zork1": {
+      "has_zfile": true,
+      "zversion": ".z3",
+      "ai_complete": false,
+      "ai_incomplete": true,
+      "human_walkthrough": true
+    },
+    "bedlam": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": true,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "bunny": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "booth": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "winter": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "edifice": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "coldiron": {
+      "has_zfile": true,
+      "zversion": ".z8",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "photopia": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": true,
+      "human_walkthrough": true
+    },
+    "candy": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "devours": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "enchanter": {
+      "has_zfile": true,
+      "zversion": ".z3",
+      "ai_complete": false,
+      "ai_incomplete": true,
+      "human_walkthrough": true
+    },
+    "shade": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "amfv": {
+      "has_zfile": true,
+      "zversion": ".z4",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    },
+    "theatre": {
+      "has_zfile": true,
+      "zversion": ".z5",
+      "ai_complete": false,
+      "ai_incomplete": false,
+      "human_walkthrough": false
+    }
+  }
+}

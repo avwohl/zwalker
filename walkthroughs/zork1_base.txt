@@ -1,0 +1,100 @@
+# Zork I Base Walkthrough (59 points)
+# Combat requires many attacks for RNG safety
+
+north
+north
+climb tree
+get egg
+climb down
+south
+south
+east
+open window
+enter
+west
+get lamp
+get sword
+turn on lamp
+east
+up
+get rope
+get knife
+down
+west
+move rug
+open trap door
+down
+north
+attack troll with sword
+attack troll with sword
+attack troll with sword
+attack troll with sword
+attack troll with sword
+attack troll with sword
+attack troll with sword
+attack troll with sword
+attack troll with sword
+attack troll with sword
+attack troll with sword
+attack troll with sword
+attack troll with sword
+attack troll with sword
+attack troll with sword
+drop sword
+east
+east
+southeast
+east
+tie rope to railing
+climb down rope
+get torch
+turn off lamp
+south
+get bell
+south
+get candles
+get book
+north
+north
+climb up
+west
+northwest
+west
+west
+north
+echo
+get bar
+north
+up
+north
+get matches
+get wrench
+get screwdriver
+push yellow
+south
+turn bolt with wrench
+drop wrench
+south
+down
+south
+southeast
+east
+down
+south
+south
+down
+down
+ring bell
+get candles
+light match
+light candles with match
+read book
+drop book
+south
+get skull
+north
+turn on lamp
+up
+up
+north
+north

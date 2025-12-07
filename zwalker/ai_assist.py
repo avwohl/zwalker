@@ -98,8 +98,7 @@ class AIAssistant:
                                zip(context.recent_commands[-5:], context.recent_outputs[-5:]))
         vocab_str = ", ".join(context.vocabulary_sample[:50])
 
-        prompt = f"""You are an expert at playing interactive fiction (text adventure) games.
-Analyze this game state and suggest the best commands to try.
+        prompt = f"""You are an expert at COMPLETING interactive fiction games. Your goal is to WIN this game, not just explore it.
 
 CURRENT ROOM: {context.room_name} (ID: {context.room_id})
 DESCRIPTION: {context.room_description}
@@ -113,16 +112,26 @@ RECENT COMMANDS AND RESPONSES:
 
 AVAILABLE VOCABULARY (sample): {vocab_str}
 
-Based on this information:
-1. What commands should be tried next? (list 5-10 specific commands)
-2. What objects seem important or interactive?
-3. Are there any puzzles or obstacles apparent?
-4. How thoroughly explored does this room seem? (high/medium/low priority for more exploration)
+CRITICAL INSTRUCTIONS:
+- Your ONLY goal is to COMPLETE this game and reach the winning condition
+- Don't just explore - actively try to solve puzzles and advance the plot
+- Pick up items that might be useful later
+- Try commands that make progress toward objectives
+- If stuck, try examining everything, combining items, or using items in creative ways
+- Read descriptions carefully for clues about what to do next
+- Look for goal-oriented actions: unlock doors, solve puzzles, find keys, talk to characters
+
+Suggest 5-10 commands that will help WIN this game. Prioritize:
+1. Actions that directly advance the plot or solve puzzles
+2. Picking up useful items
+3. Trying new exits to find important areas
+4. Examining objects for clues
+5. Only explore systematically if truly stuck
 
 Respond in JSON format:
 {{
     "suggested_commands": ["command1", "command2", ...],
-    "reasoning": "brief explanation",
+    "reasoning": "brief explanation of how these help WIN the game",
     "objects_of_interest": ["object1", "object2", ...],
     "possible_puzzles": ["puzzle description", ...],
     "exploration_priority": "high/medium/low"

@@ -1,0 +1,169 @@
+
+-- 210 OR SO ENDINGS TO PICK UP THE PHONE BOOTH AND AISLE --
+--- By Spinster/Zaratustra --- http://zara.verge-rpg.com ---
+
+I believe this is the more or less complete set of commands that
+will give endings in PUTPBAA. Some that give the same endings 
+(like most KILL synonyms) were skipped.
+
+Commands are marked in a 'compacted' manner: That is, NOTIFY (ON,
+OFF) denotes both NOTIFY ON and NOTIFY OFF work. WAVE (-, ME, 
+PANTS) implies either WAVE by itself or WAVE ME or WAVE PANTS will
+work.
+
+Commands marked with '*' were found with TXD. Shame on me.
+
+WHAT WORKS
+-----------------------------------------------------------------
+
+ABOUT
+AMUSING
+BRIEF
+*CREDITS
+DIE
+FULL
+HELP
+INVENTORY
+NOTIFY (ON, OFF)
+OBJECTS
+PLACES
+PRONOUNS
+RESTORE
+SAVE
+SCORE
+SUPERBRIEF
+UNDO twice
+VERBOSE
+VERIFY
+
+LOOK
+X (ME, BOOTH)
+LOOK IN (ME, BOOTH, PANTS)
+LOOK UNDER (ME, BOOTH)
+
+N, E, S, W, NE, NW, SE, SW, U, D
+X N, X E, X S, X W, X NE, X NW, X SE, X SW, X U, X D
+IN, OUT
+
+BITE (BOOTH, ME)
+BLOW (BOOTH, ME)
+BLOW UP (BOOTH, ME)
+BURN (BOOTH, ME)
+BUY (BOOTH, ME)
+CALL (HOME, ME, *POLICE, *3133, *INFO)
+CLEAN (BOOTH, ME)
+CLIMB (BOOTH, ME)
+CLOSE (-, BOOTH, ME)
+COOK (BOOTH, ME)
+CUT (BOOTH, ME)
+DANCE (-, WITH (BOOTH, ME))
+DIG (-, BOOTH, ME)
+DRINK (BOOTH, ME)
+ENTER (BOOTH, ME)
+FILL (BOOTH, ME, PANTS)
+FROTZ (BOOTH, ME, PANTS)
+GET (BOOTH, ME)
+JUMP (-, OVER (BOOTH, ME))
+KICK (BOOTH, ME)
+KILL (BOOTH, ME)
+KISS (BOOTH, ME)
+LISTEN (-, BOOTH, ME)
+LOCK BOOTH
+LOVE (-, BOOTH, ME)
+OPEN (BOOTH, ME, PANTS)
+PULL (BOOTH, ME)
+PUSH (BOOTH, ME)
+RUB (BOOTH, ME)
+SHAKE (BOOTH, ME)
+SMELL (-, BOOTH, ME)
+SPEAK (BOOTH, ME)
+SQUEEZE (BOOTH, ME)
+SWING (BOOTH, ME)
+TAKE OFF (BOOTH, PANTS)
+TASTE (BOOTH, ME)
+TIE (BOOTH, ME)
+TOUCH (BOOTH, ME)
+TURN (BOOTH, ME)
+UNLOCK BOOTH
+WAKE (BOOTH, ME)
+WAVE (-, ME, PANTS)
+WAYLAY (BOOTH, ME)
+WEAR (BOOTH, ME)
+*BUNK IN (BOOTH, ME)
+*CASKLY (-, BOOTH, ME)
+*DEACTIVATE PANTS
+*DISARM (-, ME, PANTS)
+*ESPLODE (BOOTH, ME)
+*FILFRE (-, BOOTH, ME, PANTS)
+*LAGACH (-, BOOTH, ME)
+*NITFOL (BOOTH, ME, PANTS)
+*NOOGIE (BOOTH, ME, PANTS)
+*OZMOO (BOOTH, ME)
+*WALTZ (-, something, WITH (BOOTH, ME))
+
+AISLE
+DARN and other mild cuss words
+DIVE
+FLY
+LEWD
+LIE DOWN
+LOSE
+NO
+PLOVER
+PLUGH
+PRAY
+SHIT and other strong cuss words
+SING
+SLEEP
+SORRY
+STAND
+THINK
+WAIT
+WIN
+XYZZY
+YES
+*CD (or LS)
+*DELEG
+*HOLD
+*QUITY
+*TANGO
+*ZORK
+
+*SAY YOHO
+*SMOCK MY KNICKERS
+*PUT NALES IN NOSE
+ENTER SHADOW
+ASK ME ABOUT nonword
+ASK BOOTH ABOUT nonword
+GIVE PANTS TO BOOTH (#200)
+BOOTH, nonword
+BOOTH, YES
+BOOTH, NO (#159)
+BOOTH, EAT (ME / BOOTH / PANTS)
+PICK UP THE PHONE BOOTH AND AISLE
+
+---------------------------------------------------------------------
+WEIRD THINGS
+
+BLOW UP dir
+CLEAN dir
+FROTZ dir
+KISS dir
+And most of PUTPBAA's unique verbs when used with directions.
+
+---------------------------------------------------------------------
+WHAT DOESN'T WORK
+
+Debug verbs
+SCRIPT
+CONSULT
+SIT ON FLOOR (bizarre errors)
+TELL
+THROW
+RESTART
+EMPTY anything
+LOOK BEHIND anything
+DROP anything
+AFTERWORD
+HUG
+

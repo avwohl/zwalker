@@ -1,0 +1,61 @@
+{
+  "death_count": 0,
+  "death_causes": [],
+  "room_connections": {
+    "64": {
+      "south": 209
+    },
+    "209": {
+      "east": 85
+    },
+    "85": {
+      "enter": 27
+    },
+    "27": {
+      "west": 75,
+      "go west": 75
+    },
+    "75": {
+      "go down": 33,
+      "down": 33
+    },
+    "33": {
+      "south": 247,
+      "go north": 127,
+      "go south": 247,
+      "north": 127
+    },
+    "247": {
+      "east": 122,
+      "go south": 87,
+      "go east": 122,
+      "north": 33
+    },
+    "122": {
+      "go north": 220,
+      "west": 247,
+      "north": 220
+    },
+    "220": {
+      "go up chimney": 27,
+      "up chimney": 27
+    },
+    "127": {
+      "go south": 33,
+      "south": 33
+    },
+    "87": {
+      "go south": 33
+    }
+  },
+  "room_names": {
+    "247": "East of Chasm",
+    "33": "Cellar",
+    "122": "Gallery",
+    "127": "The Troll Room",
+    "220": "Studio",
+    "27": "Kitchen",
+    "75": "Living Room"
+  },
+  "turn_number": 220
+}

@@ -1,0 +1,259 @@
+# Zork I Complete Walkthrough
+# Source: StrategyWiki
+# Commands to complete the game with 350 points
+
+north
+north
+climb tree
+get egg
+climb down
+south
+south
+east
+open window
+west
+west
+take lamp
+take sword
+move rug
+open trap door
+turn on lamp
+down
+north
+kill troll with sword
+kill troll with sword
+kill troll with sword
+drop sword
+west
+west
+up
+get coins
+southwest
+east
+south
+southeast
+say odysseus
+north
+east
+echo
+north
+up
+east
+north
+get matchbook
+north
+get screwdriver
+get wrench
+press yellow button
+south
+south
+turn bolt with wrench
+drop wrench
+west
+wait
+wait
+wait
+wait
+wait
+north
+get trunk
+south
+southwest
+southeast
+west
+south
+up
+north
+east
+north
+northeast
+north
+get air pump
+north
+get crystal trident
+get rope
+south
+southeast
+east
+tie rope to railing
+climb down
+get torch
+turn off lamp
+south
+drop all
+east
+get coffin
+west
+south
+pray
+east
+south
+southeast
+west
+put coffin down
+down
+east
+north
+northeast
+east
+down
+get plastic
+inflate plastic with pump
+drop pump
+put trident in boat
+put torch in boat
+enter boat
+launch
+wait
+wait
+get buoy
+east
+open buoy
+get emerald
+get shovel
+northeast
+dig
+dig
+dig
+dig
+get scarab
+southwest
+south
+south
+wave sceptre
+drop sceptre
+get pot of gold
+west
+west
+southwest
+up
+up
+northwest
+west
+west
+west
+drop all
+put all in case
+east
+east
+east
+east
+down
+down
+north
+east
+open sack
+get garlic
+north
+east
+east
+south
+south
+touch mirror
+north
+west
+north
+west
+north
+get jade figurine
+east
+put torch in basket
+put screwdriver in basket
+turn on lamp
+north
+down
+get bracelet
+east
+northeast
+southeast
+southwest
+down
+down
+south
+get coal
+north
+up
+up
+north
+east
+south
+north
+up
+south
+put coal in basket
+north
+down
+east
+northeast
+southeast
+southwest
+down
+down
+west
+drop all
+west
+get torch
+get screwdriver
+get coal
+south
+open machine
+put coal in machine
+close machine
+turn switch with screwdriver
+open machine
+get diamond
+north
+put diamond in basket
+put torch in basket
+put screwdriver in basket
+east
+get all
+east
+up
+up
+north
+east
+south
+north
+up
+south
+lower basket
+get diamond
+get torch
+get screwdriver
+west
+south
+east
+south
+down
+up
+west
+west
+west
+drop all
+put all in case
+east
+east
+east
+southeast
+get lamp
+turn on lamp
+go up
+northeast
+ne
+e
+give egg to thief
+kill thief with sword
+kill thief with sword
+kill thief with sword
+get all
+sw
+sw
+down
+sw
+w
+w
+w
+drop all
+put all in case
+score

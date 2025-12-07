@@ -53,6 +53,7 @@ class GameState:
     call_stack: List[CallFrame]
     locals: List[int]
     random_state: Any
+    waiting_for_input: bool
 
 
 class ZMachineError(Exception):
@@ -1054,7 +1055,8 @@ class ZMachine:
             stack=list(self.stack),
             call_stack=[copy.copy(f) for f in self.call_stack],
             locals=list(self.locals),
-            random_state=self.rng.getstate()
+            random_state=self.rng.getstate(),
+            waiting_for_input=self.waiting_for_input
         )
 
     def restore_state(self, state: GameState) -> None:
@@ -1065,8 +1067,12 @@ class ZMachine:
         self.call_stack = [copy.copy(f) for f in state.call_stack]
         self.locals = list(state.locals)
         self.rng.setstate(state.random_state)
-        self.waiting_for_input = False
-        self.pending_input_callback = None
+        self.waiting_for_input = state.waiting_for_input
+        # Clear output buffer since we're restoring to a previous state
+        self.output_buffer = ""
+        # Clear pending input callback since it may reference old state
+        if not self.waiting_for_input:
+            self.pending_input_callback = None
 
     def restart(self) -> None:
         """Restart game"""

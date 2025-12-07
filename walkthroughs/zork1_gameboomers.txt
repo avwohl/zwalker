@@ -1,0 +1,277 @@
+# Zork I Complete Walkthrough
+# Source: GameBoomers
+south
+east
+open window
+enter
+west
+get lamp
+move rug
+open trap door
+turn on lamp
+down
+south
+east
+get painting
+north
+up
+get knife
+get rope
+down
+west
+open case
+put painting in case
+drop knife
+get sword
+open trap door
+down
+north
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+drop sword
+east
+east
+southeast
+east
+tie rope to railing
+climb down rope
+south
+east
+get coffin
+west
+south
+pray
+south
+north
+east
+climb down
+north
+drop coffin
+open coffin
+get sceptre
+wave sceptre
+get pot of gold
+get coffin
+southwest
+up
+northwest
+west
+open bag
+get garlic
+west
+open trap door
+turn on lamp
+down
+north
+east
+north
+northeast
+east
+north
+get matches
+north
+get wrench
+get screwdriver
+push yellow button
+south
+turn bolt with wrench
+drop wrench
+south
+down
+west
+southeast
+east
+climb down rope
+get torch
+turn off lamp
+south
+get bell
+get book
+get candles
+down
+down
+ring bell
+get candles
+light match
+light candles with match
+read book
+drop book
+south
+get crystal skull
+north
+up
+north
+rub mirror
+north
+west
+north
+west
+get garlic
+north
+east
+put torch in basket
+turn on lamp
+north
+down
+east
+northeast
+southeast
+southwest
+down
+down
+south
+get coal
+up
+north
+east
+south
+north
+up
+south
+put coal in basket
+lower basket
+down
+west
+drop all
+squeeze west
+get coal
+get torch
+south
+open lid
+put coal in machine
+close lid
+turn switch with screwdriver
+drop screwdriver
+open lid
+get diamond
+north
+put torch in basket
+put diamond in basket
+squeeze east
+get skull
+get lamp
+get garlic
+east
+up
+north
+south
+south
+get bracelet
+north
+south
+south
+get torch
+get diamond
+turn off lamp
+west
+get jade
+south
+east
+south
+down
+up
+turn on lamp
+down
+north
+east
+north
+northeast
+north
+get trunk
+north
+get air pump
+north
+get crystal trident
+south
+south
+east
+east
+inflate boat
+drop pump
+get in boat
+launch
+wait
+get buoy
+east
+get out
+get shovel
+northeast
+drop shovel
+get scarab
+southwest
+drop buoy
+open buoy
+get emerald
+south
+cross rainbow
+turn off lamp
+southwest
+east
+east
+north
+north
+climb tree
+get egg
+climb down
+south
+east
+turn on lamp
+down
+north
+west
+south
+east
+up
+take coins
+take key
+southwest
+east
+south
+southeast
+ulysses
+up
+give egg to thief
+wait
+wait
+wait
+get egg
+down
+east
+put all in case
+get knife
+west
+up
+kill thief with knife
+kill thief with knife
+kill thief with knife
+kill thief with knife
+kill thief with knife
+get all
+down
+northwest
+south
+west
+up
+down
+northeast
+unlock grate
+open grate
+up
+south
+climb tree
+wind canary
+climb down
+get bauble
+west
+put all in case
+down
+north
+east
+echo
+get bar
+west
+put bar in case
+score

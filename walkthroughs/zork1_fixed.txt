@@ -1,0 +1,282 @@
+# Zork I - Fixed Walkthrough
+# Get all items BEFORE going underground
+
+# === START: Get the egg from tree ===
+north
+north
+climb tree
+get egg
+climb down
+south
+south
+
+# === Enter house and get items ===
+east
+open window
+enter
+west
+get lamp
+get sword
+move rug
+open trap door
+
+# === Go upstairs to get rope and knife ===
+east
+up
+get rope
+get knife
+down
+west
+
+# === Now go underground ===
+turn on lamp
+down
+
+# === Kill the troll ===
+north
+attack troll with sword
+attack troll with sword
+attack troll with sword
+attack troll with sword
+attack troll with sword
+attack troll with sword
+drop sword
+
+# === Go to Dome Room with rope ===
+east
+east
+southeast
+east
+tie rope to railing
+climb down rope
+
+# === Get torch ===
+get torch
+turn off lamp
+
+# === South to get items ===
+south
+get bell
+get book
+get candles
+
+# === Entrance to Hades ===
+down
+down
+ring bell
+get candles
+light match
+light candles
+read book
+drop book
+
+# === South to get skull ===
+south
+get skull
+
+# === Back up ===
+north
+up
+up
+north
+turn on lamp
+
+# === To coffin area ===
+north
+rub mirror
+north
+west
+north
+west
+get garlic
+north
+east
+
+# === Put torch in basket for coal mine ===
+put torch in basket
+north
+down
+get bracelet
+east
+northeast
+southeast
+southwest
+down
+down
+south
+get coal
+north
+up
+up
+north
+east
+south
+north
+up
+south
+put coal in basket
+lower basket
+
+# === Squeeze through to get coal and make diamond ===
+down
+west
+drop all
+squeeze west
+get coal
+get torch
+south
+open lid
+put coal in machine
+close lid
+turn switch with screwdriver
+drop screwdriver
+open lid
+get diamond
+north
+put torch in basket
+put diamond in basket
+squeeze east
+get skull
+get lamp
+get garlic
+east
+up
+north
+
+# === Get bracelet again ===
+south
+south
+get bracelet
+north
+south
+
+# === Get torch and diamond ===
+south
+get torch
+get diamond
+turn off lamp
+
+# === Get jade ===
+west
+get jade
+
+# === Back to surface ===
+south
+east
+south
+down
+up
+
+# === Back to living room ===
+turn on lamp
+down
+north
+east
+north
+northeast
+north
+get trunk
+north
+get pump
+north
+get trident
+south
+south
+east
+east
+
+# === Boat puzzle ===
+inflate boat
+drop pump
+put trident in boat
+put torch in boat
+enter boat
+launch
+wait
+get buoy
+east
+get out
+get shovel
+northeast
+dig
+dig
+dig
+dig
+get scarab
+southwest
+drop buoy
+open buoy
+get emerald
+south
+wave sceptre
+drop sceptre
+get pot of gold
+
+# === Back to house with treasures ===
+west
+west
+southwest
+up
+up
+northwest
+west
+west
+west
+drop all
+put all in case
+
+# === Get egg opened by thief ===
+east
+east
+east
+southeast
+get lamp
+turn on lamp
+up
+northeast
+northeast
+east
+give egg to thief
+wait
+wait
+wait
+get egg
+down
+east
+put all in case
+get knife
+west
+up
+kill thief with knife
+kill thief with knife
+kill thief with knife
+kill thief with knife
+kill thief with knife
+get all
+down
+northwest
+south
+west
+up
+down
+northeast
+unlock grate
+open grate
+up
+south
+climb tree
+wind canary
+climb down
+get bauble
+
+# === Final treasures ===
+west
+put all in case
+down
+north
+east
+echo
+get bar
+west
+put bar in case
+score

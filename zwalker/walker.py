@@ -62,6 +62,7 @@ DIR_ABBREV = {
 }
 
 # Common movement blockers
+# Note: Be specific to avoid false positives (e.g., "revealing a closed door" shouldn't block)
 BLOCKED_PATTERNS = [
     r"can'?t go that way",
     r"cannot go that way",
@@ -69,10 +70,11 @@ BLOCKED_PATTERNS = [
     r"there'?s no exit",
     r"no exit",
     r"nothing in that direction",
-    r"wall",
-    r"blocked",
-    r"closed",
-    r"locked",
+    r"wall blocks",
+    r"door is (locked|closed)",  # Only if door is the subject
+    r"window is (locked|closed)",
+    r"(locked|closed)\s*\.",  # At end of sentence - usually "It is locked."
+    r"way is blocked",
 ]
 
 # Patterns suggesting we've entered a new room

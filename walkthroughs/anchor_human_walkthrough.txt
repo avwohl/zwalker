@@ -1,0 +1,458 @@
+
+Anchorhead: An interactive tale of Lovecrafian Horror by Michael Gentry
+=======================================================================
+
+The Way To Do It ;), By Mike Wallis (mike@jeamland.org)
+----------------
+
+This is the solution to "Anchorhead" - not exactly a walkthrough, more of a 
+story about how to finish the game off. The game is split into four "days",
+with a set of puzzles to complete each day. Once certain puzzles have been
+completed, the day moves to "Evening", where you are expected to go home & 
+sleep, unless, of course, you are unable to do so due to unforseen 
+circumstances. There are some puzzles that can be done at any time after a 
+certain point, and by no means are all the puzzles expected to be completed
+in order. Certain puzzles are optional; the game can be completed without a 
+full score if you forget to do certain things, or couldn`t be bothered, or 
+something.
+
+So, without further ado;
+
+Day One: Takin' It Easy...
+--------
+You have arrived in Anchorhead, carrying nothing but an umbrella, a trenchcoat,
+the clothes you stand up in & your wedding ring. If you read the blurb at the 
+start, you find out that Michael, your husband, has run off to the University
+to check out some paperwork, leaving you to pick up the keys to his family 
+house. If you wander around a bit, find the University, and Michael, he'll
+get a little exasperated at you if you don`t have the keys, so you'd better 
+find them. You start out outside the Agent's office, which is inexplicably 
+locked, so you try & find another way in; the alley to the SE looks promising, 
+so have a look down there. You`ll see a fence, which you should examine, and 
+some garbage cans (or "bins", as I insist in calling them). There is also a 
+window. If you have read the "About", you'll notice a dead giveaway in that one
+of the hardest things Mr. Gentry found to code was shoving the can under the
+window - so give that a go. If you stand on it, open the window, and close your
+brolly, you can enter the window, leading into the file room of the office. 
+You can look things up in the files, but what? Well, head to the main office,
+where you'll find an answering machine with "PLAY" and "DELETE" written on it.
+If you press play, you'll hear "Verlac", the name of Michael's uncle (or 
+cousin, or whatever), so go & look up verlac in the files, where you'll find
+the keys to the house. Ignore the styrofoam cup; it tastes pretty foul; it 
+kind of suggests that the office has been deserted for a day or so, though.
+Head to the University Library, where Michael is working, but on the way, head
+up the side road just past the pub, where you'll find a blank wall, with no 
+obvious way around. Head back SW (not SE), and go find Michael. Before you 
+disturb him, go & have a look at what you need to get a book out of the 
+library; the sign next to the Circulation Desk tells you what you need. While
+you are there, have a look at what Michael is reading. Quite a weighty tome,
+so maybe you should try & have a look at it yourself later. For now, go & say
+hello to your husband, show him the keys, and try & find the house. If you go
+too far wrong, Michael will tell you it isn`t in that direction, but if
+you ask him for directions ("michael, where is the house?") he is a bit iffy
+as to exactly where it is. So, head to the obelisk, and find your way out of
+town to the south - Michael will stop you going too far wrong (from the 
+obelisk, go e, s, sw, nw). Read the notice, and unlock the front door. Head 
+into the house, but don`t explore too far - you don`t have a torch. It's safer
+if you just close & lock the front door, head into the bedroom, & get into bed.
+When you get into bed, "sleep", and remember what you dream (pretty harrowing 
+stuff, and not pleasant to remember, but make a mental note anyway). 
+
+Day Two: Something Rich & Strange.
+--------
+You wake up to the sound of Michael showering. If you want to, listen to him 
+for a while - he comes out with some highly amusing comments, in the light of
+subsequent events, but the important thing here is to get the means of reading
+what he was reading yesterday, so examine his pants. Search them (it is a good
+idea to "search" stuff as well as "examine" them), and you`ll find his wallet. 
+Search his wallet as well, and get the faculty card. He'll come out, tell you
+that he loves you, & them promptly sod off to his study to work. Men, eh? 
+Anyway, put on your clothes, and your trenchcoat - which can hold an amazing
+amount of stuff - and go into the bathroom, picking up the towel, and putting
+it in your coat. Head back through the bedroom, picking up your umbrella and 
+keyring on the way - put the umbrella in your coat as well - and have a wander
+around the house. There are a lot of things you can do, now, and there isn`t
+a particular order you must do them in, so lets take them one-by-one.
+
+1. The Key In The Cellar.
+From the foyer, head N to the back hall, and W into the kitchen. Grab the 
+flashlight from the kitchen, and head for the pantry, turning the torch on 
+first. In there is a broom, which comes in very useful for various bit of the 
+game, so get it. Unlock the cellar door (you did pick up your keyring, didn`t 
+you?), and head down. Look in the wine cellar - nothing important there for 
+the moment, so go into the Storage room. Have a good poke about, and while 
+you are at it, have a closer look at the spiders web. Before you get the key,
+though, clean the web with the broom - that way, the spider won`t get you.
+Put the iron key on the keyring - a useful tool, that - and head upstairs.
+
+2. The Pages In The Children's Bedroom.
+From the Landing, go E and then S. The contents of the jewellery box are
+worth a look, so get the locket, and have a look at the contents. You can 
+wear that, so go ahead. Have a look at the bed, as well. And under it. The
+scratches look as if the bed has been moved a few times, so give that a try.
+Have a look in the hole, & read the pages, providing you with a fair bit
+of useful names, and dates. While you are at it, head into the Library north
+of the room, & pick up & read the book you find there. If you go E & disturb 
+Michael, don`t stress about it, he'll just tell you to go away. On your way
+out, pull the cord, revealing the attic.
+
+3. The Book Michael Was Reading.
+Head back to the University, picking up the newspaper in the town square on 
+your way (read it, giving you a bit more information about what is going on),
+and go to the Circulation Desk. Remember the title of the book from the 
+register? Ring the bell, and show Michael's ID card to the Librarian, and 
+ask the Librarian for the book ("ask librarian for history" works as well 
+as anything). Read the book - a bit more information, there - and a slip of
+paper drops out. Keep hold of the paper for now, & read the book again. The 
+History will give you some names & dates you should look up later, so make a
+note of them. Chilling stuff. You can`t leave the library with the book, so 
+ring the bell & give it back to the librarian.
+
+4. The Magical Shoppe
+From the Narrow Street, head NW up the twisting lane. The blank wall that
+you saw yesterday has suddenly picked up a bit of graffiti - remember your 
+dream? The graffiti, when read, will point you west, so head that way now. 
+Head into the Cauldron, where the proprietor will be glad to help you, 
+especially if you ask him about things he has in his cabinet. Specifically,
+you want the amulet, but he'll give it to you if you ask him about it. Wear it,
+for now.
+
+Now you have picked up some names & dates, go look them up in the Courthouse 
+births & deaths records. It is possible to work out the names of the male 
+Verlacs pretty much back to Croseus, but don`t stress about doing that just 
+yet. Once you have had a look, head back home.
+
+Hmm. A bit quiet? Head up to the study, and see if Michael is home. Well, he
+isn`t, but it means you can have a good nose around his study - and his laptop.
+If you examine the screen, you'll notice he has put his password protector on.
+It is a 4 digit code, a date he is likely to remember, so how about his
+wedding annivarsay? Remove your ring, and have a look on the inside - the
+date is June 28th, so how about that? Type 0628 on the laptop, and have a read
+of what he was typing. Those numbers look familiar? Read the slip of paper that
+you found in the library, and you'll see the two match. Head back to the
+Library, and examine the bookshelves. A somewhat out of place copy of Poe will
+stand out, so get it, and reveal a safe hidden away behind the cases. The safe
+is a dial-type, so try turning the dial to the numbers on the slip of paper 
+and the laptop, and Lo! the safe opens. Search the safe to find a puzzle box
+and a flute. Both of these come in useful, but how to get the darn box open?
+Well, someone knows how to do it. For now, though, put the box in your pocket, 
+and head back into the study. Have a good look around the fireplace, which 
+should jar some memories of dreams - "I don`t know what it opens yet, but I 
+have a good idea" - so try turning the spheres. If you go SW you walk into a
+maze which is worth wandering around so you get a good idea how to move about
+it later, so have a wander in it, while you are not constrained by time limits.
+Before you do that, however, pick up the letter opener - it will be useful - 
+and open the desk drawer, finding another book that tells you a bit of info.
+(SW from first room leads you to the portrait in the front room, NW from there 
+leads you to a hole which you can`t see through yet, SW and SE from there 
+leads you to the observatory, the way out). Have a look at the telescope, and 
+then head SE, leading you into the crawlspace in the attic. Head for the attic,
+and examine that locked door. Annoying, isn`t it? You can't see through the 
+keyhole, so what could be blocking it? How about the key? Put the newspaper 
+under the door, and put the opener in the keyhole. Something drops onto the 
+paper, so get the paper, and the key falls off it. Get the key, and put it on 
+your keyring - and then unlock the door. Search the room, but pay particular 
+attention to the straw, where another locket is found, this time gold. Wear 
+this, and head to the kitchen again, this time going out the back door. Head 
+for the crypt, and unlock & open it. There are quite a lot of coffins here, so
+routing through them could take some time, but you know the names of two people
+at least who have been buried here - Edward & William. Have a look for their
+coffins - notice a difference? Open william's coffin, & get what you find
+there. Head back towards town, go to the Cauldron again, and show the puzzle
+box to the proprietor, who will open it, revealing a disk. Head to the pub, 
+and have a look under the table, where a flask of alcohol will be found. 
+Resist the temptation to drink it yourself. While you are there, you might as 
+well pick up the lantern, but blow it out first. Have a quick wander around the
+town if you havn`t already, orientating yourself with the important places,
+have a chat with the orderly at the Asylum if you want - talk to him about his
+magazine, if you like - and then go find the bum who isn`t a bum at all. Listen
+to him for a bit, and he'll tell you he's thirsty. He'd rather have the flask,
+than the coffee, which will open him up a bit. You have to ask him some pretty
+direct questions, and you need to be persistant, but you'll be able to find out
+that he was the Verlac family Doctor, and that he delivered William & Edward, 
+and apparently buried William. You know that that is bogus, as in William's 
+grave you just found the animal's skeleton. Show the skull to the doc, and 
+persist in your questioning about william ("show skull to bum", "bum, tell me
+about william", "ask bum about william", and repeat in various ways) until he
+breaks down, and tells you. He gets a bit funny about wanting protection, 
+at this point, so give him the amulet from The Cauldron. He'll give you the
+copper key, and evening will fall. Head SE, get the tin of oil, and head back 
+home. Michael isn`t back yet, so stress a little bit, but forget about it for
+now & have a bath, after remembering to lock the back door. Turn the torch off
+as well, if you like (I get paranoid ;), & clamber into bed & go to sleep.
+You'll have another of those remarkable dreams again... so remember them.
+
+Day Three: A Certain Kind Of Something.
+----------
+The day is split up into a few distinct segments that must be completed. It is
+a good idea to complete them in order, but, of course, you don`t _have_ to.
+Well, apart from part 2 & 3 - no choice about that - and you don`t really
+have to do a lot of part 1 - just get the name and work out how to open the
+cellar, really, will do it. Anyway...
+
+Part 1. The Burial Mound.
+
+After Michael has woken up & wandered off so that you don`t know where 
+he is, head for the secret passageways in the study, and SW, look through 
+hole, & NW, look through hole. Head for the observatory, put the disk in the 
+slot, & look through the telescope - write down the name you hear, as it 
+comes in useful. Go down to the wine cellar, and have a look at the wine 
+bottles that Mike was playing with - examine all of them, and make a note of
+the dates on the labels, and the Letters on the bottles. Head off to the 
+records office, if you feel like, and check out the dates on the labels;
+you'll find corresponding names to the letters on the bottles. Head back to
+the cellar, and turn the bottles in date order, earliest first, based on
+what you know about the family - Croseus' birthdate is unknown, but he was
+the first, so start with his ("turn <letter>" where letter is the letter on 
+the bottle is a bit faster than typing "turn pinot", esp if you forget which
+order the bottles go in). This will open the Secret Door in the cellar, 
+leading into the windy passages. You`ll get to a pit, eventually, with W & 
+E ledges - examine both edges, and you`ll see footprints on one of them; head
+that way, and you`ll cross the pit safely - this direction _does_ change. On 
+the other side, you`ll see another odd-angled corridor, which leads off to 
+the Crawlspace in the attic - don`t worry about it for now. Head down the 
+stairs, until you come to a door; examine it, and the symbol, and this should 
+make you think of a passage in "Wardes & Seales", about speaking the name of 
+a deity to open a door; this is that door. The only deity that resembles the 
+symbol is the name of the thing you saw through the telescope, so say that 
+name (you can`t open the door, even if you know the name, unless you have 
+picked up the points for learning the name), and the door will open. Have
+a good look at the obelisk - checking out the pictograms is always good - and
+have a good look at those columns as well. Try blowing the flute, and then
+try blowing it with holes covered by your fingers (when trying this out, 
+remember to remove your finger from one hole before covering the next, until
+you know which holes to cover). When you have worked out which holes to cover,
+(the inspiration for this should come from the "Cryptical"), blow it.
+
+Don`t stand on the altar when blowing the flute.
+
+Part 2: The Slaughterhouse.
+
+Before leaving the house, check the pile of luggage in the foyer. See a bag? 
+In that bag is a hairpin, which will come in useful later, so pick that up.
+Ok, you've checked out practically everywhere in the house, so go for another
+wander around the town itself. The Cauldron has disappeared again, but never 
+mind. Head south to the deserted lane, and remember your dream - you headed 
+west, didn`t you? Try heading west, and a magical route will open up. 
+Head along until you get to the slaughterhouse, get everything you see, and
+have a look at the picture. Odd, isn`t it? Oh well, head south, and move the 
+plywood. Have a look down the well, and search the bones, getting the teddy
+while you are there. Head back out of the slaughterhouse, but wait! Whats that
+noise? Head back to the well, and enter it, _and_ hide under the bones. Wills
+doesn`t take kindly to strangers, and even if you could show the locket of his
+mother to him, he won`t give you time to do anything. Anyway, after hiding for
+a while, he'll get bored & wander off, leaving you the chance to do a runner.
+Go back towards town, but you`ll find your route cut off, somewhat, by a group
+of people who are a little disappointed in you. Head for the church, but go 
+around the back - you`ll never get through the door in a month of sundays. Have
+a look at the trapdoor, and then a look at the padlock - something heavy? Have
+a look at the meat hook, which shows itself as being something heavy, so try
+hitting the padlock with the hook. This opens up the church, so go down there.
+
+Part 3: The Church.
+What's down here? The suggestive shape is, sadly, your estate agent. Some
+people may make jokes about estate agents and this being the best thing for
+them, here, but not I. Search the body a couple of times, until you find the 
+key, and open the furnace, just for morbidity's sake. Head to the Stairwell, 
+but don`t jump just yet. Stow as much as you can in your pockets - the torch,
+more than anything - and jump. You`ll reach the riser, but everything in your 
+hands will drop down the shaft. Don`t worry about it for now, just go & 
+explore the church. Get the robe, and have a read of the black tome on the
+altar - but don`t carry on reading it. Examine the cross - that may give you
+an idea about what went on in this church, and then head for the belfry. Get 
+the rope, and then go back to the stairwell. Drop the robe down the shaft, and
+tie the rope to the railing. Trust your instincts here, and go down the rope. 
+It can`t be far to the bottom, so let go of the rope, and lo! you have escaped 
+the Church.
+
+Part 4. Errata. Much of this can be done in any order.
+
+You are now in the sewer system. Turn the torch on, and get everything that you
+may have dropped down the shaft. If you head nw, and u, you can open the door
+with the copper key, bringing you out at the riverside. If you exit there, you 
+can visit everywhere south of the bridge; if you stay in the sewer system, you
+can go under the river, and eventually come out behind the fence in the alley
+next to the estate agents. Go in there in the usual manner, and unlock the 
+drawer with the steel key you found on her body. Read the letter, and put the 
+key you find on your keyring. Head out - the files don`t have anything about 
+the mill or the lighthouse - and go & find Mrs. Greer. She lives - read the 
+newspaper - at #12, Mill Town Rd, which is, presumably, by the paper mill. If 
+you go there and knock on the door, and show her the teddy, she will invite you
+in and answer any questions you may have. Search Max's overalls, get the key, 
+make your excuses & leave. Head for the lighthouse, and unlock it, and have a
+wander around there as well - make sure you remember the directions you go in,
+as well. You may not have time to go "Oh, is it SW or SE?" and pick the wrong
+one. When you have finished with that, head for the mill. Have a look around,
+but there is no obvious way of opening the gate, so head for the foundations. 
+Search _everything_, but especially the thickets. You should be able to unlock
+the hatch with the long key you stole from Mrs. Greer, so open it & in you go.
+It might be an idea to leave the robe you picked up here, so that you can get
+it later without it being taken off you.
+
+Part 5: The Mill.
+The passageway you are in is fraught with danger; Time it wrong and you could
+end up steamed. The safest way through is to turn the steam off, rather than 
+trying to judge the mechanics, so take your towel, and put it on the wheel. The
+wheel is now cool enough to touch, and so turn it so the needle drops back 
+down - the corridor is now safe enough to saunter through. At the end is a bit
+of a stuck hatch, so just persist in going through it - eventually it will 
+open. In the Mill itself is a maze and an optional way of avoiding it. If you
+have kept hold of your broom, you can avoid the maze; if you havn`t, you must
+get through the maze pretty quickly, otherwise you could end up as flambe. The
+maze is only 6 rooms, so you should be able to map it pretty easily - just 
+save & undo a lot. However, if you have kept your broom, you can just go over 
+the top. Have a look at that control panel, and try pulling the lever. A big 
+block of something you can stand on appears from the roof. Now push the 
+button - and it goes back up. So, if you stood on the block, and had something
+long enough to push the button with... so stand on it, and push it with the
+broom. When you get to the catwalk, just "out" will get you off the block, and
+you can check out the device blueprints that the Agent alluded to in her 
+letter. If you read the blues, you'll notice that the main focusing mirror has
+two numbers, one crossed out, and another; in the rack is a collection of 
+mirrors - but the rest of the device isn`t here. Presumably, these mirrors are 
+spares, so no-one will notice you taking one... get the calipers, and measure 
+the mirrors, & take the one with the corresponding size to the not-crossed-out 
+number. You can take any of the others as well, but remember which is which. 
+Put the mirror in your pocket, and head back the way you came to go back to 
+the Mill Road.
+
+6. The Lighthouse.
+
+Who is that? Michael? Well, lets follow him, then. Have a look in the 
+lighthouse - which is presumably where he went to - and then head back out
+of the lighthouse. Michael turns up, and he isn`t too happy, but at least he 
+is still enough of your husband not to kill you on the spot, so he just knocks 
+you out.
+
+The Last Night: All The Best Freaks Are Here.
+--------------
+
+You wake up inside a padded cell. Presumably, you are inside the Asylum, the 
+one you spent hours trying to get in earlier in the game. How to get out?
+Well, if you examine the door, you`ll notice it is a bit loose on its hinges - 
+so Violence is the answer to this one. Hit the door a couple of times, and you
+are out of the cell. However, you are still stuck in your straightjacket, and
+you are without your belongings, so the first thing is to get out of the 
+jacket. Have a close look at the window. See those cracks? One of them is big 
+enough to hold the shard of glass on the floor. If you "rub glass", you can get
+a hint about how to get out of the jacket, so put the glass in the crack, and
+then rub it - freedom! Have a look in the closet as well - all your belongings
+were placed there, the nice chaps they were. Get everything, and try to find
+your way out. But Wait! What's that on the window, further down the corridor? 
+Bloodtains? How did Edward die? Well, if you asked the orderly, he would have 
+told you that Edward bashed his brains out, so this _could_ be his cell...
+Have a look in there ("unlock west" "open west cell") and search the tear in 
+the padding for Edwards Last Testament. Read it - giving you another clue - and
+then head for the stairs.
+
+That gibbering you have been hearing was not simple background.
+
+To escape the madman, you need to get to the exit, where you find the orderly,
+sadly demised, but at least he won`t tweak any more pimples. His magazine is
+on the floor just outside the door, but his key is a little more out of reach. 
+If you try & go for the key, the madman will catch up with you & start eating
+your brains, however, if you get the magazine, and show it to the madman he'll
+suddenly be distracted by it & stop chasing you quite so much. This gives you 
+a few useful seconds to try & get the key. It is out of reach, but you have 
+something that could snag it - your umbrella (ABOUT tells you to keep hold of
+the umbrella :-) so "snag cell key with umbrella". Remember to keep all your
+keys on your keyring, so do that, and unlock the gate. When you go through it, 
+the madman starts to chase after you again, but he gets distracted by the
+corpse, so head N, and thus escape the asylum.
+
+Head towards the town square, but before you can get too far, you notice the
+mob returning. To stop yourself being caught, go & hide down the side alley,
+and just wait until the poor old doc has quacked his last. Head back to the 
+square, and regain your amulet - didn`t do _him_ much good, but never mind. 
+While you are here, you could do something to disrupt the ceremony that you
+think is going to happen with the mirror devices, so get the tin of fish oil, 
+hold it, and open it. Put a blob of it on the mirror, and then head north to
+get to where the ceremony is likely to be. Unfortunately, Wills is on the
+bridge, and he's not a happy bunny; the description gives you a clue, though,
+so try showing him the gold locket, the one containing the picture of his
+mother. He will start ignoring you, so the best thing for you to do would
+be to kill him before he thinks about killing you, so go & hit him with the
+meat hook.
+
+With Wills out of the way, head towards the lighthouse again, picking up the 
+robe you left outside the Mill & wearing it - this stops you being spotted by
+random groups of people heading towards the ceremony. Once you get in the
+lighthouse, remove the robe & wear your coat again. Get up to the top, and
+examine the device, where it tells you that the mirror could be removed. 
+This would be a good way of disrupting the ceremony, so take it out - but
+just then, Michael comes in. He hasn`t noticed that you have taken the mirror
+just yet, but he will do, so just stay calm. When he asks you for it, give him
+the mirror you smeared fish oil on - it is the same size as the real mirror, so
+Mike won`t smell a rat when he checks the size of it. 
+
+Then you will be taken to an island, where you can do nothing apart from 
+examine things - a good idea, really - until the lighthouse does something
+highly amusing, and explodes. Everyone runs off, including your guards, so you
+can try to pick your handcuffs with the hairpin. Of course, due to a small bug,
+you can just drop the handcuffs without anyone noticing - at any point at
+which you are on the island. You have to release the boy, and escape the 
+island before it sinks, and Michael will start being _really_ nasty to his new
+wife. Follow Michael back to town, where he sinks into the ground at the 
+obelisk. 
+
+Go home, and into the kitchen, where you should be able to find some
+matches in the cupboards. Head towards the cellar, and open the secret door in
+the same way you did earlier in the day. Enter the Windy passage, and *bang*
+your torch finally gives up the ghost. Good job you picked up those matches, 
+then. You can light the lantern from the pub with them, and this won`t blow out
+when a hot wind starts coming up the pit. When you get to the pit, cross on the
+same side as the footprints (the same side you crossed previously) and then
+head _down_ the stairs to the Burial Mound (You can do this in darkness). When
+you get to the mound, Michael will start to kill you, so distract him. Your
+Wedding ring always makes you feel sentimental, so maybe the same would happen
+to Mike - so show it to him. Ah! He lets go; but, go for the kill, here. The
+amulet is a ward against evil, so maybe you could give it to Mike and get rid 
+of the evil in him, so whikle he is distracted, put the amulet on him, and
+Croseus Verlac is exorcised from Mike. Earlier today, you should have tried out
+the flute in here, so you know which holes to cover, so don`t bother listening 
+to all of Croseus' rubbish, just cover the holes & blow the flute. If you leave
+it too long, Mike dies, and you finish the game with 65/80. If you do it in 
+time, Croseus gets sucked into the Womb of Nefilim, and so dies. You win.
+
+For now.
+
+
+Some Other Things You Can Do (courtesy Michael {not me ;) } )
+----------------------------
+
+* The Puzzle Box an be opened by putting it on the train tracks, if you forget 
+to give it to the Man In The Shop.
+
+* If you don`t have the broom, you can tie the chain around your waist and pull
+the Lever - the weight of the block will pull you up.
+
+* As well as the two holes mentioned in the maze from the Study, there is 
+another hole that shows the children's bedroom; when Michael is wandering 
+around the house, have a look in there first, to see another scene.
+
+* If you didn`t pick up the lantern from the pub, you can just hold lit matches
+for a couple of turns before they blow out - but the hot wind will blow it out
+if it appears. Hot winds appear at random intervals, so really the lantern is a
+safer bet.
+
+* Attack Michael in the Mound.
+
+* Read the book in the church totally.
+
+* Let Michael die before banishing Croseus.
+
+* Examine William (ugh!)
+
+* Stand on the tracks until the train comes.
+
+15th May, 1998. 
+"Anchorhead" was written by Michael Gentry (michael.gentry@ey.com),
+and is available from ftp://ftp.gmd.de/if-archve/games/inform/anchorhead.z8
+
+This solution was written by Mike Wallis (mike@jeamland.org),
+and is available from http://www.personal.leeds.ac.uk/~phsmw/anchor.sol
+(soon to be on gmd).
+
+
+
+

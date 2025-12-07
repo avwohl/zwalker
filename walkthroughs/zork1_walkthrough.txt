@@ -1,0 +1,312 @@
+# Zork I Complete Walkthrough (Verified)
+# Source: walkthroughking.com
+# Execute these commands in order
+
+open mailbox
+read leaflet
+south
+east
+open window
+enter
+west
+get lantern
+move rug
+open trap door
+turn on lantern
+go down
+south
+east
+take painting
+go north
+read paper
+drop leaflet
+drop paper
+go up chimney
+go upstairs
+get knife
+get rope
+go down
+go west
+open case
+put painting in case
+drop knife
+get sword
+open trap door
+go down
+go north
+kill troll with sword
+drop sword
+go east
+go east
+go southeast
+go east
+tie rope to railing
+climb down
+go south
+go east
+take coffin
+go west
+go south
+pray
+turn off lantern
+go south
+go north
+go east
+climb down
+climb down
+go north
+open coffin
+take sceptre
+wave sceptre
+take pot of gold
+go southwest
+go up
+go up
+go northwest
+go west
+go in window
+open bag
+take garlic
+go west
+put treasure in case
+open trap door
+turn on lantern
+go down
+go north
+go east
+go north
+go northeast
+go east
+go north
+take matches
+go north
+go east
+get wrench
+get screwdriver
+push yellow button
+go south
+go south
+turn bolt with wrench
+drop wrench
+go south
+go down
+go west
+go southeast
+go east
+go down
+turn off lantern
+get torch
+go south
+take bell
+go to altar
+get candles
+get book
+go down
+go down
+ring bell
+get candles
+light match
+light candles with match
+read book
+go south
+get skull
+go north
+go up
+go north
+put out candles
+rub mirror
+go north
+go west
+go north
+go west
+go north
+go east
+go east
+go north
+go down
+go east
+go northeast
+go southeast
+go southwest
+go down
+go down
+go south
+get coal
+go north
+go up
+go up
+go north
+go east
+go south
+go north
+go up
+go south
+put coal in basket
+put screwdriver in basket
+lower basket
+go down
+go west
+drop everything
+squeeze west
+get screwdriver
+get coal
+get torch
+go south
+open lid
+put coal in machine
+close lid
+turn switch with screwdriver
+drop screwdriver
+open lid
+take diamond
+go north
+put diamond in basket
+put torch in basket
+squeeze east
+get skull
+get lantern
+get garlic
+go east
+go up
+go north
+pick up bracelet
+go up
+go south
+get torch
+get diamond
+turn off lantern
+go west
+take jade
+go south
+go east
+go south
+go down slide
+go up
+put treasure in case
+turn on lantern
+go down
+go north
+go east
+go north
+go northeast
+go north
+get trunk of jewels
+go north
+get air pump
+go north
+get crystal trident
+go south
+go south
+go south
+go east
+go east
+inflate plastic with air pump
+drop pump
+get inside boat
+launch boat
+wait
+take buoy
+go east
+get out of boat
+take shovel
+go northeast
+dig
+drop shovel
+take scarab
+go southwest
+drop buoy
+open buoy
+take emerald
+go south
+go south
+cross rainbow
+turn off lantern
+go southwest
+go up
+go up
+go northwest
+go west
+go west
+go west
+put treasure in case
+go east
+go east
+go north
+go north
+climb up tree
+take egg
+climb down
+go south
+go east
+go west
+go west
+turn on lantern
+go down
+go north
+go west
+go south
+go east
+go up
+take coins
+take skeleton key
+go southwest
+go east
+go south
+go southeast
+ulysses
+go upstairs
+give egg to thief
+go down
+go east
+go east
+put coins in case
+get knife
+go west
+go west
+go upstairs
+kill thief with knife
+get all treasure
+go down
+go northwest
+go south
+go west
+go up
+go down
+go northeast
+unlock grate
+open grate
+go up
+go south
+turn off lantern
+climb tree
+wind canary
+climb down
+take bauble
+go south
+go east
+go west
+go west
+put treasure in case
+turn on lantern
+go down
+go north
+go east
+go east
+go east
+echo
+take platinum bar
+go west
+go west
+go west
+go south
+go up
+put treasure in case
+look
+take map
+read map
+go east
+go east
+go south
+go west
+go southwest
+enter barrow
