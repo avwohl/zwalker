@@ -1,0 +1,38 @@
+# 9:05 Walkthrough - "Escape" Ending
+# By Adam Cadre (2000)
+# Z-machine version 5
+
+# === WAKE UP ===
+answer phone
+stand
+
+# === BATHROOM - SHOWER ===
+south
+remove watch
+remove clothes
+drop all
+enter shower
+
+# === GET DRESSED ===
+take watch
+wear watch
+north
+get all from table
+open dresser
+get clothes
+wear clothes
+
+# === LEAVE HOUSE ===
+east
+open front door
+south
+
+# === DRIVE ===
+unlock car
+open car
+no
+no
+yes
+
+# Ending: "You have left Las Mesas"
+# (This is the "escape" ending - one of 4 possible endings)

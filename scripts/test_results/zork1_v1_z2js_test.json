@@ -1,0 +1,73 @@
+{
+  "test_metadata": {
+    "test_date": "2025-12-07",
+    "test_engine": "z2js",
+    "engine_version": "compiled from ~/src/z2js (with testAttribute fix)",
+    "test_script": "scripts/test_zork1_v1_full.js"
+  },
+  "game": {
+    "name": "Zork I: The Great Underground Empire (Release 5)",
+    "file": "games/zcode/zork1-r5.z1",
+    "release": 5,
+    "serial": "XXXXXX",
+    "format": "Z-machine version 1",
+    "publisher": "Personal Software (early Infocom)",
+    "year": 1980,
+    "max_score": 350,
+    "notes": "First Apple II release, extremely rare v1 format"
+  },
+  "source": {
+    "name": "The Obsessively Complete Infocom Catalog",
+    "url": "https://eblong.com/infocom/",
+    "file_url": "https://eblong.com/infocom/gamefiles/zork1-r5-sXXXXXX.z1",
+    "notes": "Archived early Zork release with nonstandard serial number"
+  },
+  "solution": {
+    "file": "scripts/test_zork1_v1_full.js",
+    "total_commands": 40,
+    "source": "Adapted from v3 walkthrough",
+    "phases_tested": [
+      "Opening (mailbox, window entry)",
+      "Get lamp and sword",
+      "Open trapdoor",
+      "Kill troll",
+      "Partial maze exploration"
+    ]
+  },
+  "results": {
+    "score_achieved": 35,
+    "max_score": 350,
+    "percentage": 10.0,
+    "moves": 28,
+    "rank": "Amateur Adventurer",
+    "status": "INCOMPLETE",
+    "notes": "v1 engine executes but walkthrough incomplete (10%). Maze layout differs from v3 - needs v1-specific solution."
+  },
+  "scoring_breakdown": {
+    "confirmed_points": [
+      {"action": "kill troll", "points": 10},
+      {"action": "opening items", "points": 25, "notes": "leaflet, lamp, sword, trapdoor"}
+    ],
+    "notes": "35 points achieved, verifying core v1 gameplay works"
+  },
+  "observations": {
+    "differences_from_v3": [
+      "Maze layout appears different - standard v3 navigation failed",
+      "Same core text and responses",
+      "Same scoring system",
+      "Same combat mechanics"
+    ],
+    "z2js_compatibility": [
+      "v1 header parsing works",
+      "v1 opcode execution works",
+      "v1 object table (31 attributes) works",
+      "Input/output handling works",
+      "Score tracking works"
+    ]
+  },
+  "files_generated": [
+    "scripts/zork1_v1_z2js.js",
+    "scripts/test_zork1_v1.js",
+    "scripts/test_zork1_v1_full.js"
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "test_metadata": {
+    "test_date": "2025-12-07",
+    "test_engine": "z2js",
+    "engine_version": "compiled from ~/src/z2js (with testAttribute fix)",
+    "test_script": "scripts/test_lostpig_z2js.js"
+  },
+  "game": {
+    "name": "Lost Pig (And Place Under Ground)",
+    "file": "games/zcode/lostpig.z8",
+    "release": 2,
+    "serial": "080406",
+    "format": "Z-machine version 8",
+    "author": "Admiral Jota",
+    "year": 2007,
+    "max_score": 7,
+    "competition": "IFComp 2007 - 1st Place (8.27 average)"
+  },
+  "walkthroughs_consulted": [
+    {
+      "name": "Official Author Walkthrough",
+      "url": "https://ifarchive.org/if-archive/games/competition2007/zcode/lostpig/walkthru.txt",
+      "local_file": "scripts/lostpig_solution.txt",
+      "notes": "Original walkthrough by Admiral Jota"
+    },
+    {
+      "name": "Jay Is Games Walkthrough",
+      "url": "https://jayisgames.com/review/lost-pig.php",
+      "notes": "Step-by-step hints with spoiler sections, explained 7th point requirements"
+    },
+    {
+      "name": "IFWiki",
+      "url": "https://www.ifwiki.org/Lost_Pig",
+      "notes": "Game information and walkthrough links"
+    }
+  ],
+  "solution": {
+    "file": "scripts/lostpig_solution.txt",
+    "total_commands": 91,
+    "source": "Official author walkthrough from IF Archive (adapted for 7/7)",
+    "phases": [
+      "Opening (listen x3 then northeast)",
+      "Entrance room (take torch and whistle)",
+      "Fountain room (get coin)",
+      "Statue room (get hat)",
+      "Table room (get chair and make bricks)",
+      "Shelf room (climb shelf, get book and pole)",
+      "River crossing (magnet puzzle with pole)",
+      "Light torch in chest",
+      "Secret paper from crack",
+      "Pig catching with bricks",
+      "Statue hand puzzle (open secret door)",
+      "Tidy up (drop key, pole, chair; put hat on statue; close secret door)",
+      "Finale (follow gnome)"
+    ]
+  },
+  "results": {
+    "score_achieved": 7,
+    "max_score": 7,
+    "percentage": 100.0,
+    "commands_executed": 91,
+    "status": "COMPLETE",
+    "ending_message": "Grunk bring pig back to farm and make new friend"
+  },
+  "scoring_breakdown": {
+    "known_points": [
+      {"action": "listen at start (hear where pig at)", "points": 1},
+      {"action": "get coin from fountain", "points": 1},
+      {"action": "unlock chest", "points": 1},
+      {"action": "find secret door (put torch in statue hand)", "points": 1},
+      {"action": "give whole book to gnome", "points": 1},
+      {"action": "get pig", "points": 1},
+      {"action": "tidy up (drop items, close secret door)", "points": 1}
+    ],
+    "notes": "7th point requires: drop key, pole, and chair in shrine; put hat on statue; close secret door from Windy Cave"
+  },
+  "game_info": {
+    "premise": "You are Grunk, an orc. Your pig has escaped and you must find it.",
+    "notable_features": [
+      "Comedic tone with orc perspective",
+      "Gnome NPC with extensive conversation options",
+      "Multiple puzzle solutions",
+      "7th point is 'tidy up' bonus - return items and close secret door"
+    ],
+    "play_online": "https://pr-if.org/play/lostpig/"
+  },
+  "bugs_fixed": [
+    {
+      "bug": "z2js testAttribute function broken for Z-machine v4+",
+      "description": "JavaScript bitwise operations only handle 32 bits, but v4+ games have 48 attribute bits. The line `(1 << (47 - attrNum))` fails when shift > 31.",
+      "fix_location": "~/src/z2js/jsgen.py - testAttribute function",
+      "fix_description": "Changed to read attributes directly from object memory using byte reads instead of broken 48-bit integer approach"
+    }
+  ],
+  "solution_adaptations": [
+    {
+      "issue": "Opening sequence requires multiple listens",
+      "description": "Must listen 3 times before going northeast to find the pig",
+      "solution": "listen, z, listen, z, listen, northeast"
+    },
+    {
+      "issue": "Disambiguation required",
+      "description": "Multiple 'things' in game - must specify 'red thing' at river, 'whistle' vs 'key'",
+      "solution": "Use specific item names: 'touch red thing with pole', 'take whistle', 'play whistle'"
+    },
+    {
+      "issue": "7th point tidy up sequence",
+      "description": "Must pick up chair (not skip with 'climb shelf'), then return items to shrine",
+      "solution": "take chair early; at end: drop key, drop pole, drop chair, put hat on statue, go north, close door"
+    }
+  ],
+  "files_generated": [
+    "scripts/lostpig_z2js.js",
+    "scripts/test_lostpig_z2js.js",
+    "scripts/lostpig_solution.txt",
+    "scripts/debug_lostpig.js"
+  ]
+}

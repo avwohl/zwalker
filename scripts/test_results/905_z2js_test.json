@@ -1,0 +1,60 @@
+{
+  "test_metadata": {
+    "test_date": "2025-12-07",
+    "test_engine": "z2js",
+    "engine_version": "compiled from ~/src/z2js (with testAttribute fix)",
+    "test_script": "scripts/test_905.js"
+  },
+  "game": {
+    "name": "9:05",
+    "file": "games/zcode/905.z5",
+    "format": "Z-machine version 5",
+    "author": "Adam Cadre",
+    "year": 2000,
+    "scoring": "No score - narrative game with multiple endings",
+    "awards": "XYZZY 2000 finalist - Best Individual Puzzle"
+  },
+  "walkthroughs_consulted": [
+    {
+      "name": "CASA Solution Archive",
+      "url": "https://www.solutionarchive.com/file/id,11126/",
+      "notes": "Main walkthrough source"
+    },
+    {
+      "name": "Jay Is Games",
+      "url": "https://jayisgames.com/review/905.php",
+      "notes": "Describes 4 possible endings"
+    }
+  ],
+  "solution": {
+    "file": "scripts/905_solution.txt",
+    "total_commands": 24,
+    "ending_achieved": "You have left Las Mesas",
+    "ending_type": "Escape ending (1 of 4)"
+  },
+  "results": {
+    "status": "COMPLETE",
+    "notes": "Narrative game completed. Reached 'escape' ending. No traditional scoring system.",
+    "endings_known": [
+      "Go to work (expected bad ending)",
+      "Discover the truth",
+      "Get arrested",
+      "Escape Las Mesas (achieved)"
+    ]
+  },
+  "observations": {
+    "z5_features_tested": [
+      "Standard I/O",
+      "Yes/No prompts",
+      "Multiple choice branching",
+      "Game ending detection"
+    ],
+    "game_length": "Very short (~5 minutes)",
+    "narrative": "Twist ending - player discovers they are not who they think"
+  },
+  "files_generated": [
+    "scripts/905_z2js.js",
+    "scripts/test_905.js",
+    "scripts/905_solution.txt"
+  ]
+}

@@ -1,0 +1,125 @@
+# Lost Pig Complete Walkthrough - 7/7 Points
+# Max Score: 7 points
+
+# === OPENING ===
+listen
+z
+listen
+z
+listen
+northeast
+
+# === ENTRANCE ROOM ===
+take whistle
+take torch
+east
+
+# === FOUNTAIN ROOM ===
+take coin
+north
+
+# === STATUE ROOM ===
+take hat
+south
+southwest
+
+# === TABLE ROOM - GET CHAIR AND BRICKS ===
+take chair
+put coin in slot
+pull lever
+take brick
+hit box
+take coin
+put coin in slot
+pull lever
+hit box
+take all from basket
+put coin in slot
+pull lever
+take all from basket
+east
+
+# === GNOME'S ROOM ===
+shout
+east
+
+# === SHELF ROOM ===
+climb shelf
+take book
+get down
+take pole
+west
+
+# === BACK TO GNOME ===
+give book to gnome
+east
+east
+
+# === RIVER AREA ===
+northwest
+east
+touch red thing with pole
+fill hat with water
+west
+southeast
+
+# === LIGHT TORCH ===
+unlock chest with key
+open chest
+pour water on powder
+put torch in chest
+
+# === SECRET PAPER ===
+northwest
+west
+burn pole with torch
+take paper with pole
+east
+southwest
+
+# === GIVE PAPER TO GNOME ===
+east
+give paper to gnome
+z
+z
+
+# === GET PIG ===
+go to pig
+show brick to pig
+drop all bricks
+z
+z
+z
+z
+take pig
+
+# === STATUE PUZZLE ===
+go to statue
+put torch in hand
+north
+
+# === WINDY TUNNEL (ENTER AND RETURN) ===
+north
+south
+take torch
+
+# === TIDY UP FOR 7TH POINT ===
+drop key
+drop pole
+drop chair
+put hat on statue
+north
+close door
+
+# === FINALE ===
+go to gnome
+ask gnome for ball
+give torch to gnome
+go to windy cave
+north
+east
+northwest
+play whistle
+southeast
+enter hole
+follow gnome

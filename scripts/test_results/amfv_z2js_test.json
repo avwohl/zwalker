@@ -1,0 +1,56 @@
+{
+  "test_metadata": {
+    "test_date": "2025-12-07",
+    "test_engine": "z2js",
+    "engine_version": "compiled from ~/src/z2js (with testAttribute fix)",
+    "test_script": "scripts/test_amfv.js"
+  },
+  "game": {
+    "name": "A Mind Forever Voyaging",
+    "file": "games/zcode/amfv.z4",
+    "release": 79,
+    "serial": "851122",
+    "format": "Z-machine version 4",
+    "author": "Steve Meretzky",
+    "publisher": "Infocom",
+    "year": 1985,
+    "scoring": "Exploration-based, minimal puzzles"
+  },
+  "walkthroughs_consulted": [
+    {
+      "name": "Abandonware DOS",
+      "url": "https://www.abandonwaredos.com/docawd.php?sf=A_Mind_Forever_Voyaging_solution.txt",
+      "notes": "Describes recording tasks needed"
+    },
+    {
+      "name": "GameFAQs Guide",
+      "url": "https://gamefaqs.gamespot.com/pc/564462-a-mind-forever-voyaging/faqs/74934"
+    }
+  ],
+  "results": {
+    "status": "INCOMPLETE",
+    "notes": "Z-machine v4 execution verified. Game runs correctly - displays text, processes commands, handles time progression, Communications Mode works. AMFV is unique: player is a sentient computer (PRISM) with no physical form. Full completion would require simulation mode entry.",
+    "v4_features_tested": [
+      "v4 header parsing",
+      "v4 opcode execution",
+      "48-bit object attributes",
+      "Time-based events",
+      "Multi-mode interface (Communications Mode)",
+      "Complex text output with timestamps"
+    ]
+  },
+  "observations": {
+    "game_mechanics": "Player is PRISM, a computer AI. Uses Communication codes (PEOF, PPCC, etc.) to interface with world.",
+    "simulation_mode": "Requires entering simulation after Perelman authorization. May need code wheel for copy protection.",
+    "unique_features": [
+      "No physical player - 'You have no appendages'",
+      "Time progression (7:07pm, 7:08pm, etc.)",
+      "Communications Mode with location codes",
+      "NPC events based on time passage"
+    ]
+  },
+  "files_generated": [
+    "scripts/amfv_z2js.js",
+    "scripts/test_amfv.js"
+  ]
+}

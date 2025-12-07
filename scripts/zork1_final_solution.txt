@@ -1,6 +1,6 @@
 # Zork 1 Final Working Solution
-# Score: 180/350 points
-# Treasures: egg, bar, coins, trunk, pump, trident, torch, bell, sceptre, painting, coffin
+# Score: 200/350 points
+# Treasures: egg, bar, coins, trunk, pump, trident, torch, bell, sceptre, skull, painting, coffin (12 items)
 
 # === PHASE 1: INITIAL SETUP ===
 north
@@ -33,6 +33,16 @@ put egg in case
 # === PHASE 2: KILL TROLL ===
 go down
 north
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
 kill troll with sword
 kill troll with sword
 kill troll with sword
@@ -121,13 +131,13 @@ se
 east
 east
 
-# === DEPOSIT #2 ===
+# === DEPOSIT #2: RESERVOIR TREASURES (keep matches) ===
 put trunk in case
 put pump in case
 put trident in case
-put matches in case
 
-# === PHASE 7: TEMPLE TREASURES ===
+# === PHASE 7: HADES QUEST FOR SKULL ===
+# Go to Temple with matches
 open trap door
 go down
 north
@@ -141,6 +151,58 @@ take torch
 turn off lamp
 south
 take bell
+south
+take candles
+take book
+# Go to Hades
+down
+down
+# Perform ritual
+ring bell
+take candles
+light match
+light candles with match
+read book
+# Enter Hades and get skull
+south
+take skull
+# Escape via cyclops route
+north
+up
+west
+north
+north
+north
+west
+west
+west
+south
+east
+up
+sw
+east
+south
+se
+east
+east
+
+# === DEPOSIT #3: SKULL ===
+put skull in case
+drop book
+drop candles
+
+# === PHASE 8: TEMPLE TREASURES (torch, bell, sceptre) ===
+# Torch and bell already deposited, get sceptre
+turn on lamp
+open trap door
+go down
+north
+east
+east
+southeast
+east
+down
+south
 east
 open coffin
 take sceptre
@@ -153,13 +215,13 @@ east
 west
 west
 
-# === DEPOSIT #3 ===
+# === DEPOSIT #4 ===
 put torch in case
 put bell in case
 put sceptre in case
 
-# === PHASE 8: PAINTING ===
-turn on lamp
+# === PHASE 9: PAINTING ===
+drop matchbook
 open trap door
 go down
 south
@@ -170,7 +232,7 @@ up
 west
 put painting in case
 
-# === PHASE 9: COFFIN ===
+# === PHASE 10: COFFIN ===
 go down
 north
 east

@@ -1,0 +1,181 @@
+# Zork 1 Extended Solution
+# Combines working 200pt solution with boat puzzle
+# Target: ~250 points (adds emerald + scarab)
+
+# === PHASE 1: SETUP ===
+north
+east
+open window
+west
+west
+take lamp
+take sword
+turn on lamp
+move rug
+open trap door
+open case
+east
+up
+take rope
+down
+east
+north
+north
+up
+take egg
+down
+south
+east
+west
+west
+put egg in case
+
+# === PHASE 2: KILL TROLL ===
+go down
+north
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+drop sword
+
+# === PHASE 3: BAR FROM LOUD ROOM ===
+east
+east
+east
+echo
+take bar
+
+# === PHASE 4: COINS FROM MAZE ===
+west
+west
+west
+west
+south
+east
+up
+take coins
+sw
+east
+south
+se
+odysseus
+east
+east
+put bar in case
+put coins in case
+
+# === PHASE 5: DAM AREA ===
+open trap door
+go down
+north
+east
+east
+north
+north
+northeast
+east
+north
+take matches
+north
+take wrench
+take screwdriver
+press yellow button
+south
+south
+turn bolt with wrench
+drop wrench
+
+# === PHASE 6: RESERVOIR (wait for drain) ===
+west
+wait
+wait
+wait
+wait
+wait
+wait
+north
+take trunk
+north
+take pump
+north
+take trident
+
+# === PHASE 7: BOAT PUZZLE ===
+# Return to Dam Base
+south
+south
+south
+east
+down
+# Prepare boat
+take pile
+drop pile
+inflate pile with pump
+drop pump
+# Board and launch
+board
+launch
+# Float to Sandy Beach (4 waits for buoy)
+wait
+wait
+wait
+wait
+# Take buoy and land
+take buoy
+east
+# Get off boat
+exit
+take shovel
+# Dig for scarab
+northeast
+dig sand with the shovel
+dig sand with the shovel
+dig sand with the shovel
+dig sand with the shovel
+take scarab
+# Get emerald from buoy
+southwest
+open buoy
+take emerald
+
+# === PHASE 8: RETURN VIA RAINBOW AREA ===
+# Note: Need to find path back to house
+# From Sandy Beach, go south to Shore, then Aragain Falls
+south
+south
+# From Aragain Falls, path back is complex
+# Try: turn off lamp, then explore for path to house
+turn off lamp
+# Navigate forest back to house
+# (Path depends on game state - may need adjustment)
+southwest
+up
+up
+northwest
+west
+# Enter house through window
+north
+east
+open window
+west
+west
+
+# === PHASE 9: DEPOSIT BOAT TREASURES ===
+put emerald in case
+put scarab in case
+put trunk in case
+put trident in case
+put pump in case
+
+# === REMAINING PHASES FROM BASE SOLUTION ===
+# (Temple, Hades, painting, coffin sequences)
+# See zork1_final_solution.txt for these
+
+score

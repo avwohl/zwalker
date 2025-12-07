@@ -1,0 +1,44 @@
+{
+  "test_metadata": {
+    "test_date": "2025-12-07",
+    "test_engine": "z2js",
+    "engine_version": "compiled from ~/src/z2js (with testAttribute fix)",
+    "test_script": "scripts/test_zork1_v1_r2.js"
+  },
+  "game": {
+    "name": "Zork I: The Great Underground Empire (Release 2)",
+    "file": "games/zcode/zork1-r2.z1",
+    "release": 2,
+    "serial": "AS000C",
+    "format": "Z-machine version 1",
+    "publisher": "Personal Software (early Infocom)",
+    "year": 1980,
+    "max_score": 350,
+    "notes": "Earliest known Zork release, from TRS-80 Model I copy-protected disk"
+  },
+  "source": {
+    "name": "The Obsessively Complete Infocom Catalog",
+    "url": "https://eblong.com/infocom/",
+    "file_url": "https://eblong.com/infocom/gamefiles/zork1-r2-sAS000C.z1",
+    "notes": "Extracted from self-booting TRS-80 disk"
+  },
+  "results": {
+    "score_achieved": 35,
+    "max_score": 350,
+    "percentage": 10.0,
+    "moves": 29,
+    "rank": "Amateur Adventurer",
+    "status": "INCOMPLETE",
+    "notes": "v1 engine executes but walkthrough incomplete (10%). Maze layout differs from v3 - needs v1-specific solution."
+  },
+  "observations": {
+    "troll_combat": "Required 4 sword attacks to kill (vs 1 in r5, RNG-dependent)",
+    "maze": "Layout differs from v3 - standard navigation fails",
+    "text": "Same text and responses as r5",
+    "scoring": "Same scoring system as later versions"
+  },
+  "files_generated": [
+    "scripts/zork1_v1_r2_z2js.js",
+    "scripts/test_zork1_v1_r2.js"
+  ]
+}

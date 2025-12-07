@@ -1,0 +1,237 @@
+{
+  "database_info": {
+    "name": "z2js Test Database",
+    "description": "Consolidated test results proving z2js Z-machine interpreter functionality",
+    "created": "2025-12-07",
+    "last_updated": "2025-12-07",
+    "engine": "z2js",
+    "engine_source": "~/src/z2js",
+    "engine_description": "JavaScript Z-machine interpreter compiled from Z-code game files",
+    "pass_threshold": "50% score or game completion required to PASS"
+  },
+  "summary": {
+    "total_games_tested": 6,
+    "games_passed": 3,
+    "games_incomplete": 3,
+    "games_failed": 0,
+    "z_versions_tested": [1, 3, 4, 5, 8],
+    "bugs_fixed": 5
+  },
+  "test_results": [
+    {
+      "game": "Zork I (v1 r2 TRS-80)",
+      "file": "games/zcode/zork1-r2.z1",
+      "z_version": 1,
+      "author": "Personal Software / Infocom",
+      "year": 1980,
+      "test_date": "2025-12-07",
+      "score_achieved": 35,
+      "max_score": 350,
+      "percentage": 10.0,
+      "status": "INCOMPLETE",
+      "notes": "Engine executes v1 code. Walkthrough incomplete - maze layout differs from v3.",
+      "detail_file": "scripts/test_results/zork1_v1_r2_z2js_test.json"
+    },
+    {
+      "game": "Zork I (v1 r5 Apple II)",
+      "file": "games/zcode/zork1-r5.z1",
+      "z_version": 1,
+      "author": "Personal Software / Infocom",
+      "year": 1980,
+      "test_date": "2025-12-07",
+      "score_achieved": 35,
+      "max_score": 350,
+      "percentage": 10.0,
+      "status": "INCOMPLETE",
+      "notes": "Engine executes v1 code. Walkthrough incomplete - maze layout differs from v3.",
+      "detail_file": "scripts/test_results/zork1_v1_z2js_test.json"
+    },
+    {
+      "game": "Zork I (v3 r119)",
+      "file": "games/zcode/zork1.z3",
+      "z_version": 3,
+      "author": "Infocom",
+      "year": 1980,
+      "test_date": "2025-12-07",
+      "score_achieved": 200,
+      "max_score": 350,
+      "percentage": 57.1,
+      "status": "PASSED",
+      "notes": "Core gameplay verified (57%).",
+      "solution_file": "scripts/zork1_final_solution.txt",
+      "detail_file": "scripts/test_results/zork1_z2js_test.json"
+    },
+    {
+      "game": "A Mind Forever Voyaging",
+      "file": "games/zcode/amfv.z4",
+      "z_version": 4,
+      "author": "Steve Meretzky / Infocom",
+      "year": 1985,
+      "test_date": "2025-12-07",
+      "score_achieved": "N/A",
+      "max_score": "N/A",
+      "percentage": "N/A",
+      "status": "INCOMPLETE",
+      "notes": "v4 engine works. Game runs, processes commands, time events work. Unique game - player is computer AI (PRISM). Needs simulation mode entry.",
+      "detail_file": "scripts/test_results/amfv_z2js_test.json"
+    },
+    {
+      "game": "9:05",
+      "file": "games/zcode/905.z5",
+      "z_version": 5,
+      "author": "Adam Cadre",
+      "year": 2000,
+      "test_date": "2025-12-07",
+      "score_achieved": "N/A",
+      "max_score": "N/A",
+      "percentage": "N/A",
+      "status": "COMPLETE",
+      "notes": "Narrative game - no score. Reached 'escape' ending (1 of 4 endings).",
+      "solution_file": "scripts/905_solution.txt",
+      "detail_file": "scripts/test_results/905_z2js_test.json"
+    },
+    {
+      "game": "Lost Pig",
+      "file": "games/zcode/lostpig.z8",
+      "z_version": 8,
+      "author": "Admiral Jota",
+      "year": 2007,
+      "test_date": "2025-12-07",
+      "score_achieved": 7,
+      "max_score": 7,
+      "percentage": 100.0,
+      "status": "COMPLETE",
+      "notes": "Full 100% completion including 7th 'tidy up' bonus point.",
+      "solution_file": "scripts/lostpig_solution.txt",
+      "detail_file": "scripts/test_results/lostpig_z2js_test.json"
+    }
+  ],
+  "bugs_fixed_for_testing": [
+    {
+      "bug_id": 1,
+      "game_affected": "Lost Pig (and all Z-machine v4+ games)",
+      "description": "testAttribute function broken for Z-machine v4+",
+      "root_cause": "JavaScript bitwise ops only handle 32 bits, v4+ has 48 attribute bits.",
+      "fix_location": "~/src/z2js/jsgen.py - testAttribute function",
+      "fix_applied": "Changed to direct byte reads from object memory",
+      "fix_date": "2025-12-07"
+    },
+    {
+      "bug_id": 2,
+      "game_affected": "All Z-machine games",
+      "description": "Opcode 0x9 (pop/discard top of stack) not implemented",
+      "root_cause": "Missing case in execute0OP switch statement",
+      "fix_location": "~/src/z2js/jsgen.py - execute0OP function",
+      "fix_applied": "Added case 0x09: this.pop(); break;",
+      "fix_date": "2025-12-07"
+    },
+    {
+      "bug_id": 3,
+      "game_affected": "All Z-machine games",
+      "description": "Stack pointer indirect access broken for load/store/pull opcodes",
+      "root_cause": "When sp (var 0) used indirectly: load should peek not pop, store should replace not push, pull should pop+replace",
+      "fix_location": "~/src/z2js/jsgen.py - load (1OP 0x0E), store (2OP 0x0D), pull (VAR 0x09)",
+      "fix_applied": "Added special handling for varNum === 0 in all three opcodes",
+      "fix_date": "2025-12-07"
+    },
+    {
+      "bug_id": 4,
+      "game_affected": "All Z-machine games using predictable random",
+      "description": "random opcode incorrect seeding and range=0 handling",
+      "root_cause": "random(0) entered predictable mode instead of resetting to random; seed not used as initial PRNG state",
+      "fix_location": "~/src/z2js/jsgen.py - random function",
+      "fix_applied": "random(0) resets to random mode; random(negative) uses seed as initial PRNG state",
+      "fix_date": "2025-12-07"
+    },
+    {
+      "bug_id": 5,
+      "game_affected": "All games using single-key input (read_char)",
+      "description": "read_char opcode was stubbed to return immediately without waiting for input",
+      "root_cause": "Missing async input implementation for read_char",
+      "fix_location": "~/src/z2js/jsgen.py - added readChar function, fixed case 0x16 in executeVAR",
+      "fix_applied": "Implemented proper async read_char using same pattern as read (line input)",
+      "fix_date": "2025-12-07"
+    }
+  ],
+  "compliance_testing": {
+    "czech_test_suite": {
+      "version": "0.8",
+      "description": "Comprehensive Z-machine Emulation CHecker",
+      "file": "games/zcode/czech.z4",
+      "z_version": 4,
+      "test_date": "2025-12-07",
+      "total_tests": 386,
+      "passed": 367,
+      "failed": 0,
+      "print_tests": 19,
+      "pass_percentage": 100.0,
+      "remaining_failures": [],
+      "categories_passed": [
+        "Jumps (2-31)",
+        "Variables (32-70) - push/pull/pop/store/load/inc/dec/inc_chk/dec_chk",
+        "Arithmetic ops (71-114) - add/sub/mul/div/mod",
+        "Logical ops (115-128) - not/and/or",
+        "Memory (129-136) - loadw/loadb/storeb/storew",
+        "Subroutines (137-154) - call_1s/call_2s/call_vs/call_vs2/ret/rtrue/rfalse/ret_popped/computed call",
+        "Objects (155-244) - parent/sibling/child/jin/test_attr/set_attr/clear_attr/get_prop/put_prop/insert/remove",
+        "Indirect Opcodes (245-362) - load/store/pull/inc/dec/inc_chk/dec_chk with indirect var refs",
+        "Misc (363-367) - test/random/verify",
+        "Print opcodes (368-386) - print_num/print_char/new_line/print_ret/print_addr/print_paddr/abbreviations/print_obj"
+      ]
+    },
+    "gntests": {
+      "version": "Z-Spec 0.99",
+      "description": "Six test programs from Z-Spec 0.99 (Fonts, Accents, InputCodes, Colours, Header, TimedInput)",
+      "file": "games/zcode/gntests.z5",
+      "z_version": 5,
+      "test_date": "2025-12-07",
+      "tests_available": ["Fonts", "Accents", "InputCodes", "Colours", "Header", "TimedInput"],
+      "tests_run": ["Header"],
+      "status": "PARTIAL",
+      "notes": "Header test runs and shows interpreter declarations. Other tests require visual inspection or are feature-specific (colors, timed input)."
+    }
+  },
+  "z_version_coverage": {
+    "v1": {"tested": true, "games": ["Zork I r2", "Zork I r5"], "status": "INCOMPLETE"},
+    "v2": {"tested": false, "games": []},
+    "v3": {"tested": true, "games": ["Zork I r119"], "status": "PASSED"},
+    "v4": {"tested": true, "games": ["A Mind Forever Voyaging"], "status": "INCOMPLETE"},
+    "v5": {"tested": true, "games": ["9:05"], "status": "COMPLETE"},
+    "v6": {"tested": false, "games": [], "notes": "Graphical games"},
+    "v7": {"tested": false, "games": []},
+    "v8": {"tested": true, "games": ["Lost Pig"], "status": "COMPLETE"}
+  },
+  "features_verified": [
+    "Z-machine execution (v1, v3, v4, v5, v8)",
+    "Object attributes (32-bit v1-v3, 48-bit v4/v5/v8)",
+    "Input/output handling",
+    "Yes/No prompt handling",
+    "Time-based events (AMFV)",
+    "Score tracking",
+    "Complex parser",
+    "Random number generation",
+    "Multi-room navigation",
+    "Inventory management",
+    "Stack pointer indirect access (load sp, store sp, pull sp)",
+    "Single-key input (read_char opcode)",
+    "Czech compliance: 100% (367/367 non-print tests passed)",
+    "gntests compliance: Header test passes"
+  ],
+  "recommended_next_tests": [
+    {
+      "game": "Curses",
+      "file": "curses.z5",
+      "reason": "Complex v5 game with scoring"
+    },
+    {
+      "game": "Photopia",
+      "file": "photopia.z5",
+      "reason": "Literary v5 game"
+    },
+    {
+      "game": "Anchorhead",
+      "file": "anchor.z8",
+      "reason": "Complex v8 game"
+    }
+  ]
+}

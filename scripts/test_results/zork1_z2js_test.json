@@ -1,0 +1,115 @@
+{
+  "test_metadata": {
+    "test_date": "2025-12-07",
+    "test_engine": "z2js",
+    "engine_version": "compiled from ~/src/z2js",
+    "test_script": "scripts/test_z2js_solution.js"
+  },
+  "game": {
+    "name": "Zork I: The Great Underground Empire",
+    "file": "games/zcode/zork1.z3",
+    "release": 119,
+    "serial": "880429",
+    "format": "Z-machine version 3",
+    "publisher": "Infocom",
+    "year": 1980,
+    "max_score": 350
+  },
+  "walkthroughs_consulted": [
+    {
+      "name": "MIT Walkthrough",
+      "url": "https://web.mit.edu/marleigh/www/portfolio/Files/zork/transcript.html",
+      "local_file": "walkthroughs/zork1_mit.txt",
+      "notes": "Full 350-point walkthrough. Required fixes: 'go up chimney' -> 'up', missing 'north' before troll, rope/down order"
+    },
+    {
+      "name": "MIT Corrected",
+      "local_file": "walkthroughs/zork1_mit_corrected.txt",
+      "notes": "Our corrected version of MIT walkthrough"
+    },
+    {
+      "name": "GameFAQs Walkthrough",
+      "url": "https://gamefaqs.gamespot.com/pc/564446-zork-i/faqs",
+      "notes": "Reference for puzzle solutions"
+    }
+  ],
+  "solution": {
+    "file": "scripts/zork1_final_solution.txt",
+    "total_commands": 216,
+    "phases": [
+      "Initial setup (lamp, sword, egg)",
+      "Kill troll",
+      "Bar from Loud Room (echo puzzle)",
+      "Coins from maze",
+      "Dam area (matches, wrench, screwdriver)",
+      "Reservoir treasures (trunk, pump, trident)",
+      "Hades quest (bell/book/candles ritual for skull)",
+      "Temple treasures (torch, bell, sceptre)",
+      "Painting",
+      "Coffin"
+    ]
+  },
+  "results": {
+    "score_achieved": 200,
+    "max_score": 350,
+    "percentage": 57.1,
+    "moves": 203,
+    "rank": "Junior Adventurer",
+    "status": "PASSED"
+  },
+  "treasures_collected": [
+    {"item": "egg", "points": 5, "location": "Tree"},
+    {"item": "bar", "points": 10, "location": "Loud Room (after 'echo')"},
+    {"item": "coins", "points": 10, "location": "Maze room 218"},
+    {"item": "trunk", "points": 15, "location": "Drained reservoir"},
+    {"item": "pump", "points": 5, "location": "Reservoir North"},
+    {"item": "trident", "points": 4, "location": "Atlantis room"},
+    {"item": "torch", "points": 14, "location": "Torch Room"},
+    {"item": "bell", "points": 10, "location": "Temple"},
+    {"item": "sceptre", "points": 4, "location": "Egyptian Room coffin"},
+    {"item": "skull", "points": 10, "location": "Hades (via ritual)"},
+    {"item": "painting", "points": 10, "location": "Gallery"},
+    {"item": "coffin", "points": 15, "location": "Egyptian Room"}
+  ],
+  "treasures_not_collected": [
+    {"item": "pot of gold", "points": 10, "location": "End of Rainbow", "requires": "wave sceptre, boat puzzle"},
+    {"item": "emerald", "points": 5, "location": "Inside buoy", "requires": "boat puzzle"},
+    {"item": "scarab", "points": 5, "location": "Sandy Beach", "requires": "boat puzzle, dig with shovel"},
+    {"item": "diamond", "points": 10, "location": "Coal mine", "requires": "coal machine puzzle"},
+    {"item": "jade", "points": 5, "location": "Bat cave", "requires": "garlic"},
+    {"item": "bracelet", "points": 5, "location": "Gas Room area", "requires": "coal/light"},
+    {"item": "bauble", "points": 1, "location": "Tree", "requires": "wind canary after killing thief"},
+    {"item": "chalice", "points": 10, "location": "Treasure Room", "requires": "kill thief"},
+    {"item": "canary", "points": 6, "location": "Egg (opened by thief)", "requires": "give egg to thief"},
+    {"item": "torch", "points": 14, "location": "Torch Room", "notes": "Already collected"}
+  ],
+  "known_issues": [
+    {
+      "issue": "Troll combat RNG",
+      "description": "Troll combat has random outcomes, solution includes 15 attack commands to handle worst case",
+      "workaround": "Multiple kill commands, skip remaining after victory"
+    },
+    {
+      "issue": "Boat timing",
+      "description": "River current advances with each command, going over Aragain Falls = death",
+      "workaround": "Exact sequence: wait x4, take buoy, east, exit"
+    },
+    {
+      "issue": "Dig syntax",
+      "description": "Must use 'dig sand with the shovel', not just 'dig'",
+      "workaround": "Use full syntax"
+    }
+  ],
+  "next_steps": [
+    "Integrate boat puzzle sequence for emerald + scarab (+10 pts)",
+    "Add rainbow crossing for pot of gold (+10 pts)",
+    "Coal mine puzzle for diamond (+10 pts)",
+    "Thief/canary puzzle for bauble + canary (+7 pts)"
+  ],
+  "files_generated": [
+    "scripts/zork1_z2js.js",
+    "scripts/test_z2js_solution.js",
+    "scripts/zork1_final_solution.txt",
+    "scripts/zork1_progress.md"
+  ]
+}
