@@ -1,7 +1,7 @@
 # ZWalker - Automated Z-Machine Walkthrough Generator
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 **ZWalker** is an automated walkthrough generator for Z-machine interactive fiction games. It uses AI assistance to explore games, generate solution walkthroughs, and provide regression testing for Z-machine compilers like z2js.
 
@@ -210,7 +210,7 @@ Contributions welcome! Areas needing improvement:
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file.
+GPL v3 License - see [LICENSE](LICENSE) file.
 
 ## Credits
 

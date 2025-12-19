@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Automated walkthrough generator for Z-machine interactive fiction games"
 readme = "README.md"
 requires-python = ">=3.8"
-license = {text = "MIT"}
+license = {text = "GPL-3.0-or-later"}
 authors = [
     {name = "zwalker team"}
 ]
@@ -18,7 +18,7 @@ classifiers = [
     "Intended Audience :: Developers",
     "Topic :: Games/Entertainment",
     "Topic :: Software Development :: Testing",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Programming Language :: Python :: 3",
 ]
 
