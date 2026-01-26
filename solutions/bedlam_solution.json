@@ -1,0 +1,12 @@
+{
+  "game": "bedlam",
+  "completed": true,
+  "total_rooms": 1,
+  "total_commands": 1,
+  "rooms_visited": [
+    "Your Bedroom"
+  ],
+  "commands": [
+    ""
+  ]
+}

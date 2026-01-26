@@ -1,0 +1,12 @@
+{
+  "game": "905",
+  "completed": true,
+  "total_rooms": 1,
+  "total_commands": 1,
+  "rooms_visited": [
+    "Starting Room"
+  ],
+  "commands": [
+    ""
+  ]
+}

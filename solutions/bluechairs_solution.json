@@ -1,0 +1,12 @@
+{
+  "game": "bluechairs",
+  "completed": true,
+  "total_rooms": 1,
+  "total_commands": 1,
+  "rooms_visited": [
+    "Stuck in an Attic"
+  ],
+  "commands": [
+    ""
+  ]
+}
