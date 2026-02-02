@@ -1,0 +1,50 @@
+{
+  "game": "games/zcode/failsafe.z5",
+  "solved": true,
+  "rooms_visited": [
+    1,
+    2,
+    3
+  ],
+  "solution_commands": [
+    "look",
+    "look",
+    "look",
+    "look"
+  ],
+  "full_solution_data": [
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 1,
+      "result": "moved"
+    },
+    {
+      "command": "look",
+      "from_room": 1,
+      "to_room": 2,
+      "result": "moved"
+    },
+    {
+      "command": "look",
+      "from_room": 2,
+      "to_room": 3,
+      "result": "moved"
+    },
+    {
+      "command": "look",
+      "from_room": 3,
+      "to_room": 3,
+      "result": "interesting"
+    }
+  ],
+  "stats": {
+    "rooms_found": 3,
+    "total_exits": 2,
+    "objects_found": 0,
+    "takeable_objects": 0,
+    "commands_tried": 421,
+    "vocabulary_size": 395,
+    "unexplored_remaining": 36
+  }
+}
