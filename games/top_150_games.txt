@@ -1,0 +1,162 @@
+# Top 150 Z-Machine Games
+# Generated for ZWalker project
+#
+# Format: game_name | url | source
+#
+# Sources:
+#   - Infocom Classics (eblong.com): Original Infocom games from eblong.com archive
+#   - IFDB Top 100: Highest-rated Z-machine games from IFDB rankings
+#   - IF Archive Sample: Community games from ifarchive.org
+#   - IF Archive Extended: Additional games from ifarchive.org catalog
+#
+
+Zork I | https://eblong.com/infocom/gamefiles/zork1-r119-s880429.z3 | Infocom Classics (eblong.com)
+Zork II | https://eblong.com/infocom/gamefiles/zork2-r63-s860811.z3 | Infocom Classics (eblong.com)
+Zork III | https://eblong.com/infocom/gamefiles/zork3-r25-s860811.z3 | Infocom Classics (eblong.com)
+Enchanter | https://eblong.com/infocom/gamefiles/enchanter-r29-s860820.z3 | Infocom Classics (eblong.com)
+Sorcerer | https://eblong.com/infocom/gamefiles/sorcerer-r18-s851021.z3 | Infocom Classics (eblong.com)
+Spellbreaker | https://eblong.com/infocom/gamefiles/spellbre-r87-s860904.z3 | Infocom Classics (eblong.com)
+Planetfall | https://eblong.com/infocom/gamefiles/planetfa-r29-s860313.z3 | Infocom Classics (eblong.com)
+Stationfall | https://eblong.com/infocom/gamefiles/stationfal-r107-s870430.z3 | Infocom Classics (eblong.com)
+The Lurking Horror | https://eblong.com/infocom/gamefiles/lurking-r203-s870506.z3 | Infocom Classics (eblong.com)
+Infidel | https://eblong.com/infocom/gamefiles/infidel-r22-s830916.z3 | Infocom Classics (eblong.com)
+Suspended | https://eblong.com/infocom/gamefiles/suspend-r8-s840521.z3 | Infocom Classics (eblong.com)
+Deadline | https://eblong.com/infocom/gamefiles/deadline-r27-s831006.z3 | Infocom Classics (eblong.com)
+Witness | https://eblong.com/infocom/gamefiles/witness-r22-s840924.z3 | Infocom Classics (eblong.com)
+Suspect | https://eblong.com/infocom/gamefiles/suspect-r14-s841005.z3 | Infocom Classics (eblong.com)
+Cutthroats | https://eblong.com/infocom/gamefiles/cutthro-r23-s840809.z3 | Infocom Classics (eblong.com)
+Seastalker | https://eblong.com/infocom/gamefiles/seastal-r15-s840501.z3 | Infocom Classics (eblong.com)
+Wishbringer | https://eblong.com/infocom/gamefiles/wishbrin-r68-s850501.z3 | Infocom Classics (eblong.com)
+Ballyhoo | https://eblong.com/infocom/gamefiles/ballyhoo-r97-s851218.z3 | Infocom Classics (eblong.com)
+Hollywood Hijinx | https://eblong.com/infocom/gamefiles/hhgg-r31-s871119.z3 | Infocom Classics (eblong.com)
+Leather Goddesses of Phobos | https://eblong.com/infocom/gamefiles/lgop-r118-s860730.z3 | Infocom Classics (eblong.com)
+Moonmist | https://eblong.com/infocom/gamefiles/moonmist-r9-s861022.z3 | Infocom Classics (eblong.com)
+Plundered Hearts | https://eblong.com/infocom/gamefiles/plundere-r26-s870730.z3 | Infocom Classics (eblong.com)
+Nord and Bert | https://eblong.com/infocom/gamefiles/nord-r19-s870722.z4 | Infocom Classics (eblong.com)
+Trinity | https://eblong.com/infocom/gamefiles/trinity-r15-s870628.z4 | Infocom Classics (eblong.com)
+A Mind Forever Voyaging | https://eblong.com/infocom/gamefiles/amfv-r79-s851122.z4 | Infocom Classics (eblong.com)
+Bureaucracy | https://eblong.com/infocom/gamefiles/bureaucr-r86-s870212.z4 | Infocom Classics (eblong.com)
+Beyond Zork | https://eblong.com/infocom/gamefiles/beyondzo-r57-s871221.z5 | Infocom Classics (eblong.com)
+Border Zone | https://eblong.com/infocom/gamefiles/borderzo-r9-s881008.z5 | Infocom Classics (eblong.com)
+Sherlock | https://eblong.com/infocom/gamefiles/sherlock-r21-s871214.z5 | Infocom Classics (eblong.com)
+Hitchhiker's Guide to the Galaxy | https://eblong.com/infocom/gamefiles/hhgg-r31-s871119.z3 | Infocom Classics (eblong.com)
+Photopia | https://ifarchive.org/if-archive/games/zcode/photopia.z5 | IFDB Top 100
+Anchorhead | https://ifarchive.org/if-archive/games/zcode/anchor.z8 | IFDB Top 100
+Spider and Web | https://ifarchive.org/if-archive/games/zcode/Tangle.z5 | IFDB Top 100
+Lost Pig | https://ifarchive.org/if-archive/games/zcode/LostPig.z8 | IFDB Top 100
+All Things Devours | https://ifarchive.org/if-archive/games/zcode/devours.z5 | IFDB Top 100
+Slouching Towards Bedlam | https://ifarchive.org/if-archive/games/zcode/bedlam.z5 | IFDB Top 100
+Babel | https://ifarchive.org/if-archive/games/zcode/babel.z5 | IFDB Top 100
+Make It Good | https://ifarchive.org/if-archive/games/zcode/makeitgood.z8 | IFDB Top 100
+Worlds Apart | https://ifarchive.org/if-archive/games/zcode/WorldsApart.z8 | IFDB Top 100
+Curses | https://ifarchive.org/if-archive/games/zcode/curses.z5 | IFDB Top 100
+9:05 | https://ifarchive.org/if-archive/games/zcode/905.z5 | IFDB Top 100
+Aisle | https://ifarchive.org/if-archive/games/zcode/Aisle.z5 | IFDB Top 100
+Ad Verbum | https://ifarchive.org/if-archive/games/zcode/adverbum.z5 | IFDB Top 100
+All Roads | https://ifarchive.org/if-archive/games/zcode/AllRoads.z5 | IFDB Top 100
+Savoir-Faire | https://ifarchive.org/if-archive/games/zcode/savoir-faire.z8 | IFDB Top 100
+Metamorphoses | https://ifarchive.org/if-archive/games/zcode/metamorphoses.z5 | IFDB Top 100
+The Dreamhold | https://ifarchive.org/if-archive/games/zcode/dreamhold.z8 | IFDB Top 100
+Cold Iron | https://ifarchive.org/if-archive/games/zcode/coldiron.z8 | IFDB Top 100
+Jigsaw | https://ifarchive.org/if-archive/games/zcode/jigsaw.z8 | IFDB Top 100
+So Far | https://ifarchive.org/if-archive/games/zcode/sofar.z8 | IFDB Top 100
+Shade | https://ifarchive.org/if-archive/games/zcode/shade.z5 | IFDB Top 100
+Theatre | https://ifarchive.org/if-archive/games/zcode/theatre.z5 | IFDB Top 100
+The Edifice | https://ifarchive.org/if-archive/games/zcode/edifice.z5 | IFDB Top 100
+Galatea | https://ifarchive.org/if-archive/games/zcode/galatea.z5 | IFDB Top 100
+Varicella | https://ifarchive.org/if-archive/games/zcode/varicella.z8 | IFDB Top 100
+Suspended Sentence | https://ifarchive.org/if-archive/games/zcode/sentence.z8 | IFDB Top 100
+Adventure (Colossal Cave) | https://ifarchive.org/if-archive/games/zcode/advent.z3 | IF Archive Sample
+Adventure (Graham Nelson) | https://ifarchive.org/if-archive/games/zcode/Advent.z5 | IF Archive Sample
+Adventure 440 | https://ifarchive.org/if-archive/games/zcode/adv440.z8 | IF Archive Sample
+Adventure 550 | https://ifarchive.org/if-archive/games/zcode/adv550.z8 | IF Archive Sample
+Acheton | https://ifarchive.org/if-archive/games/zcode/Acheton.z8 | IF Archive Sample
+Cat's Eye | https://ifarchive.org/if-archive/games/zcode/catseye.z3 | IF Archive Sample
+Fantasy Dimension | https://ifarchive.org/if-archive/games/zcode/fantasydimension.z3 | IF Archive Sample
+Acorn Court | https://ifarchive.org/if-archive/games/zcode/acorncourt.z5 | IF Archive Sample
+Adventureland | https://ifarchive.org/if-archive/games/zcode/Adventureland.z5 | IF Archive Sample
+Amish | https://ifarchive.org/if-archive/games/zcode/amish.z5 | IF Archive Sample
+Asylum | https://ifarchive.org/if-archive/games/zcode/Asylum.z5 | IF Archive Sample
+Blue Chairs | https://ifarchive.org/if-archive/games/zcode/bluechairs.z5 | IF Archive Sample
+Bear's Night Out | https://ifarchive.org/if-archive/games/zcode/bear.z5 | IF Archive Sample
+Cheeseshop | https://ifarchive.org/if-archive/games/zcode/cheeseshop.z5 | IF Archive Sample
+Detective | https://ifarchive.org/if-archive/games/zcode/detective.z5 | IF Archive Sample
+Djinni | https://ifarchive.org/if-archive/games/zcode/djinni.z5 | IF Archive Sample
+FailSafe | https://ifarchive.org/if-archive/games/zcode/FailSafe.z5 | IF Archive Sample
+Farm | https://ifarchive.org/if-archive/games/zcode/farm.z5 | IF Archive Sample
+Heroes | https://ifarchive.org/if-archive/games/zcode/heroes.z5 | IF Archive Sample
+Humbug | https://ifarchive.org/if-archive/games/zcode/humbug.z5 | IF Archive Sample
+Kissing the Buddha's Feet | https://ifarchive.org/if-archive/games/zcode/kissing.z5 | IF Archive Sample
+Lists and Lists | https://ifarchive.org/if-archive/games/zcode/lists.z5 | IF Archive Sample
+Mother Loose | https://ifarchive.org/if-archive/games/zcode/mloose.z5 | IF Archive Sample
+Offensive Probing | https://ifarchive.org/if-archive/games/zcode/oprobing.z5 | IF Archive Sample
+Parking | https://ifarchive.org/if-archive/games/zcode/parking.z5 | IF Archive Sample
+Pick Up the Phone Booth and Die | https://ifarchive.org/if-archive/games/zcode/booth.z5 | IF Archive Sample
+Rematch | https://ifarchive.org/if-archive/games/zcode/rematch.z5 | IF Archive Sample
+Spur | https://ifarchive.org/if-archive/games/zcode/spur.z5 | IF Archive Sample
+Tattoo Parlour | https://ifarchive.org/if-archive/games/zcode/tattoo.z5 | IF Archive Sample
+The Act of Misdirection | https://ifarchive.org/if-archive/games/zcode/misdirect.z5 | IF Archive Sample
+The Plant | https://ifarchive.org/if-archive/games/zcode/plant.z5 | IF Archive Sample
+The Weapon | https://ifarchive.org/if-archive/games/zcode/weapon.z5 | IF Archive Sample
+Toonesia | https://ifarchive.org/if-archive/games/zcode/toonesia.z5 | IF Archive Sample
+Uncle Zebulon's Will | https://ifarchive.org/if-archive/games/zcode/uncle.z5 | IF Archive Sample
+Winter Wonderland | https://ifarchive.org/if-archive/games/zcode/winter.z5 | IF Archive Sample
+Zombies | https://ifarchive.org/if-archive/games/zcode/zombies.z5 | IF Archive Sample
+Dracula | https://ifarchive.org/if-archive/games/zcode/dracula.z8 | IF Archive Sample
+Enemies | https://ifarchive.org/if-archive/games/zcode/Enemies.z8 | IF Archive Sample
+Fairyland | https://ifarchive.org/if-archive/games/zcode/Fairyland.z8 | IF Archive Sample
+The Seven Doctors | https://ifarchive.org/if-archive/games/zcode/7doctors.z5 | IF Archive Extended
+A1RL0CK | https://ifarchive.org/if-archive/games/zcode/A1RL0CK.z5 | IF Archive Extended
+Adventure 6 | https://ifarchive.org/if-archive/games/zcode/adv551.z8 | IF Archive Extended
+Adventure (Don Knuth) | https://ifarchive.org/if-archive/games/zcode/advent.z8 | IF Archive Extended
+And A Hippo New Year | https://ifarchive.org/if-archive/games/zcode/AndAHippoNewYear.z8 | IF Archive Extended
+Animals | https://ifarchive.org/if-archive/games/zcode/animals.z5 | IF Archive Extended
+Annoyotron | https://ifarchive.org/if-archive/games/zcode/Annoyotron.z5 | IF Archive Extended
+Appallatron | https://ifarchive.org/if-archive/games/zcode/appall.z5 | IF Archive Extended
+Atrocitron | https://ifarchive.org/if-archive/games/zcode/atrocitron.z5 | IF Archive Extended
+A Tight Spot | https://ifarchive.org/if-archive/games/zcode/ats.z8 | IF Archive Extended
+The Awakening | https://ifarchive.org/if-archive/games/zcode/awaken.z5 | IF Archive Extended
+Balances | https://ifarchive.org/if-archive/games/zcode/Balances.z5 | IF Archive Extended
+Bedlam (preview) | https://ifarchive.org/if-archive/games/zcode/bedlam.z5 | IF Archive Extended
+Beneath: a Transformation | https://ifarchive.org/if-archive/games/zcode/beneath.z5 | IF Archive Extended
+The Bible Retold | https://ifarchive.org/if-archive/games/zcode/BibleRetold.z5 | IF Archive Extended
+Buried In Shoes | https://ifarchive.org/if-archive/games/zcode/bishoes.z5 | IF Archive Extended
+BOFH | https://ifarchive.org/if-archive/games/zcode/bofh.z5 | IF Archive Extended
+The Mad Bomber | https://ifarchive.org/if-archive/games/zcode/bomber.z5 | IF Archive Extended
+Book and Volume | https://ifarchive.org/if-archive/games/zcode/bookvol.z5 | IF Archive Extended
+Pick up the Phone Booth and Dye | https://ifarchive.org/if-archive/games/zcode/boothdye.z5 | IF Archive Extended
+BSE | https://ifarchive.org/if-archive/games/zcode/bse.z5 | IF Archive Extended
+Night of the Vampire Bunnies | https://ifarchive.org/if-archive/games/zcode/bunny.z5 | IF Archive Extended
+The Cabal | https://ifarchive.org/if-archive/games/zcode/cabal.z5 | IF Archive Extended
+Casting | https://ifarchive.org/if-archive/games/zcode/Casting.z5 | IF Archive Extended
+Castle Adventure | https://ifarchive.org/if-archive/games/zcode/castle.z8 | IF Archive Extended
+Zork: The Cavern of Doom | https://ifarchive.org/if-archive/games/zcode/cavern.z5 | IF Archive Extended
+Cheater | https://ifarchive.org/if-archive/games/zcode/cheater.z5 | IF Archive Extended
+Chicks Dig Jerks | https://ifarchive.org/if-archive/games/zcode/chix.z5 | IF Archive Extended
+CIA Adventure | https://ifarchive.org/if-archive/games/zcode/cia.z5 | IF Archive Extended
+Wearing the Claw | https://ifarchive.org/if-archive/games/zcode/claw.z5 | IF Archive Extended
+Conan Kill Everything | https://ifarchive.org/if-archive/games/zcode/ConanKillEverything.z5 | IF Archive Extended
+The Cove | https://ifarchive.org/if-archive/games/zcode/Cove.z5 | IF Archive Extended
+Critical Breach | https://ifarchive.org/if-archive/games/zcode/CriticalBreach.z8 | IF Archive Extended
+Crobe | https://ifarchive.org/if-archive/games/zcode/Crobe.z5 | IF Archive Extended
+Cryptographer | https://ifarchive.org/if-archive/games/zcode/cryptographer.z5 | IF Archive Extended
+Dangerous Curves | https://ifarchive.org/if-archive/games/zcode/curves.z8 | IF Archive Extended
+Vicious Cycles | https://ifarchive.org/if-archive/games/zcode/cycles.z5 | IF Archive Extended
+Darkiss! Chapter 1 | https://ifarchive.org/if-archive/games/zcode/darkiss1.z5 | IF Archive Extended
+Death to my Enemies | https://ifarchive.org/if-archive/games/zcode/death.z5 | IF Archive Extended
+Deephome | https://ifarchive.org/if-archive/games/zcode/deephome.z5 | IF Archive Extended
+Degeneracy | https://ifarchive.org/if-archive/games/zcode/degen.z5 | IF Archive Extended
+Deja Vu | https://ifarchive.org/if-archive/games/zcode/dejavu.z3 | IF Archive Extended
+Delusions | https://ifarchive.org/if-archive/games/zcode/Delusions.z5 | IF Archive Extended
+It's a Dog's Life | https://ifarchive.org/if-archive/games/zcode/dogslife.z5 | IF Archive Extended
+The Zuni Doll | https://ifarchive.org/if-archive/games/zcode/doll.z5 | IF Archive Extended
+Dr. Dumont's Wild P.A.R.T.I. | https://ifarchive.org/if-archive/games/zcode/dumont.z5 | IF Archive Extended
+Entropy | https://ifarchive.org/if-archive/games/zcode/entropy.z8 | IF Archive Extended
+Apartment F209 | https://ifarchive.org/if-archive/games/zcode/f209.z5 | IF Archive Extended
+A Fable | https://ifarchive.org/if-archive/games/zcode/fable.z5 | IF Archive Extended
+The Gostak | https://ifarchive.org/if-archive/games/zcode/gostak.z5 | IF Archive Extended
+Suveh Nux | https://ifarchive.org/if-archive/games/zcode/suvehnux.z5 | IF Archive Extended
+Fork: The Great Underground Dining Room | https://ifarchive.org/if-archive/games/zcode/Fork.z5 | IF Archive Extended
+The Great Machine | https://ifarchive.org/if-archive/games/zcode/TGM.z5 | IF Archive Extended
+The Time Machine | https://ifarchive.org/if-archive/games/zcode/timemach.z5 | IF Archive Extended
+Egyptian Walking Simulator | https://ifarchive.org/if-archive/games/zcode/Egyptian_Walking_Simulator.z8 | IF Archive Extended
