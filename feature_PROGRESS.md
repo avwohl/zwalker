@@ -10,11 +10,11 @@ IN_PROGRESS
 Extend zwalker to play at least 130 games to completion.
 
 ## Current State
-- 78 solution files exist in solutions/ directory
-- 54 games marked as "pass" in game_list.txt (outdated)
-- 101 games total in game_list.txt
-- 47 games marked as "untested" in game_list.txt
-- Need 52 more solved games to reach 130 total
+- 73 solution files exist in solutions/ directory (excluding batch_summary.json)
+- 55 games marked as "pass" in game_list.txt (updated)
+- 172 games total in game_list.txt (71 newly added)
+- 116 games marked as "untested" in game_list.txt
+- Need 57 more solved games to reach 130 total (73 + 57 = 130)
 
 ## Task List
 
