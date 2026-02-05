@@ -280,3 +280,771 @@ Solving: book_and_volume
   [20/100] 1 rooms, 21 commands
   [40/100] 1 rooms, 41 commands
   [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE book_and_volume: 1 rooms, 101 commands
+
+[38/133] booth.z5
+✓ SKIP booth (already solved)
+
+[39/133] bse.z5
+
+============================================================
+Solving: bse
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE bse: 1 rooms, 101 commands
+
+[40/133] bunny.z5
+✓ SKIP bunny (already solved)
+
+[41/133] buried_in_shoes.z5
+
+============================================================
+Solving: buried_in_shoes
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 2 rooms, 21 commands
+  [40/100] 2 rooms, 41 commands
+  [60/100] 2 rooms, 61 commands
+  [80/100] 2 rooms, 81 commands
+✓ DONE buried_in_shoes: 2 rooms, 101 commands
+
+[42/133] candy.z5
+✓ SKIP candy (already solved)
+
+[43/133] casting.z5
+
+============================================================
+Solving: casting
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 2 rooms, 21 commands
+  [40/100] 2 rooms, 41 commands
+  [60/100] 2 rooms, 61 commands
+  [80/100] 2 rooms, 81 commands
+✓ DONE casting: 2 rooms, 101 commands
+
+[44/133] castle_adventure.z8
+
+============================================================
+Solving: castle_adventure
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE castle_adventure: 1 rooms, 101 commands
+
+[45/133] catseye.z3
+✓ SKIP catseye (already solved)
+
+[46/133] cheater.z5
+
+============================================================
+Solving: cheater
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE cheater: 1 rooms, 101 commands
+
+[47/133] cheeseshop.z5
+✓ SKIP cheeseshop (already solved)
+
+[48/133] chicks_dig_jerks.z5
+
+============================================================
+Solving: chicks_dig_jerks
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE chicks_dig_jerks: 1 rooms, 101 commands
+
+[49/133] cia_adventure.z5
+
+============================================================
+Solving: cia_adventure
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE cia_adventure: 1 rooms, 101 commands
+
+[50/133] cloak.z3
+✓ SKIP cloak (already solved)
+
+[51/133] coldiron.z8
+✓ SKIP coldiron (already solved)
+
+[52/133] conan_kill_everything.z5
+
+============================================================
+Solving: conan_kill_everything
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE conan_kill_everything: 1 rooms, 101 commands
+
+[53/133] critical_breach.z8
+
+============================================================
+Solving: critical_breach
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE critical_breach: 1 rooms, 101 commands
+
+[54/133] crobe.z5
+
+============================================================
+Solving: crobe
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE crobe: 1 rooms, 101 commands
+
+[55/133] cryptographer.z5
+
+============================================================
+Solving: cryptographer
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE cryptographer: 1 rooms, 101 commands
+
+[56/133] curses.z5
+✓ SKIP curses (already solved)
+
+[57/133] cutthroats.z3
+✓ SKIP cutthroats (already solved)
+
+[58/133] czech.z3
+
+============================================================
+Solving: czech
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE czech: 1 rooms, 101 commands
+
+[59/133] czech.z4
+✓ SKIP czech (already solved)
+
+[60/133] czech.z5
+✓ SKIP czech (already solved)
+
+[61/133] czech.z8
+✓ SKIP czech (already solved)
+
+[62/133] dangerous_curves.z8
+
+============================================================
+Solving: dangerous_curves
+============================================================
+  [0/100] 1 rooms, 1 commands
+✗ ERROR dangerous_curves: Error code: 500 - {'type': 'error', 'error': {'type': 'api_error', 'message': 'Internal server error'}, 'request_id': 'req_011CXq7zWCFc4JAbLuyuHhF1'}
+Traceback (most recent call last):
+  File "/home/wohl/src/zwalker/scripts/batch_solve_all.py", line 43, in solve_one_game
+    response = ai.analyze(context)
+  File "/home/wohl/src/zwalker/zwalker/ai_assist.py", line 155, in analyze
+    return self._analyze_anthropic(prompt)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/wohl/src/zwalker/zwalker/ai_assist.py", line 163, in _analyze_anthropic
+    message = self._client.messages.create(
+        model=self.model,
+    ...<3 lines>...
+        ]
+    )
+  File "/home/wohl/.local/lib/python3.13/site-packages/anthropic/_utils/_utils.py", line 282, in wrapper
+    return func(*args, **kwargs)
+  File "/home/wohl/.local/lib/python3.13/site-packages/anthropic/resources/messages/messages.py", line 930, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<26 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/wohl/.local/lib/python3.13/site-packages/anthropic/_base_client.py", line 1326, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wohl/.local/lib/python3.13/site-packages/anthropic/_base_client.py", line 1114, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.InternalServerError: Error code: 500 - {'type': 'error', 'error': {'type': 'api_error', 'message': 'Internal server error'}, 'request_id': 'req_011CXq7zWCFc4JAbLuyuHhF1'}
+
+[63/133] darkiss_chapter_1.z5
+
+============================================================
+Solving: darkiss_chapter_1
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE darkiss_chapter_1: 1 rooms, 101 commands
+
+[64/133] death_to_my_enemies.z5
+
+============================================================
+Solving: death_to_my_enemies
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 3 rooms, 21 commands
+  [40/100] 3 rooms, 41 commands
+  [60/100] 3 rooms, 61 commands
+  [80/100] 3 rooms, 81 commands
+✓ DONE death_to_my_enemies: 3 rooms, 101 commands
+
+[65/133] deephome.z5
+
+============================================================
+Solving: deephome
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE deephome: 1 rooms, 101 commands
+
+[66/133] degeneracy.z5
+
+============================================================
+Solving: degeneracy
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE degeneracy: 1 rooms, 101 commands
+
+[67/133] deja_vu.z3
+
+============================================================
+Solving: deja_vu
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE deja_vu: 1 rooms, 101 commands
+
+[68/133] detective.z5
+✓ SKIP detective (already solved)
+
+[69/133] devours.z5
+✓ SKIP devours (already solved)
+
+[70/133] djinni.z5
+✓ SKIP djinni (already solved)
+
+[71/133] dr._dumonts_wild_p.a.r.t.i..z5
+
+============================================================
+Solving: dr._dumonts_wild_p.a.r.t.i.
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE dr._dumonts_wild_p.a.r.t.i.: 1 rooms, 101 commands
+
+[72/133] dracula.z8
+✓ SKIP dracula (already solved)
+
+[73/133] dreamhold.z8
+✓ SKIP dreamhold (already solved)
+
+[74/133] edifice.z5
+✓ SKIP edifice (already solved)
+
+[75/133] egyptian_walking_simulator.z8
+
+============================================================
+Solving: egyptian_walking_simulator
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE egyptian_walking_simulator: 1 rooms, 101 commands
+
+[76/133] enchanter.z3
+✓ SKIP enchanter (already solved)
+
+[77/133] encyclopedia_frobozzica.z5
+
+============================================================
+Solving: encyclopedia_frobozzica
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE encyclopedia_frobozzica: 1 rooms, 101 commands
+
+[78/133] enemies.z8
+✓ SKIP enemies (already solved)
+
+[79/133] entropy.z8
+
+============================================================
+Solving: entropy
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE entropy: 1 rooms, 101 commands
+
+[80/133] etude.z5
+✓ SKIP etude (already solved)
+
+[81/133] failsafe.z5
+
+============================================================
+Solving: failsafe
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 3 rooms, 21 commands
+  [40/100] 3 rooms, 41 commands
+  [60/100] 3 rooms, 61 commands
+  [80/100] 3 rooms, 81 commands
+✓ DONE failsafe: 3 rooms, 101 commands
+
+[82/133] fairyland.z8
+✓ SKIP fairyland (already solved)
+
+[83/133] fantasydimension.z3
+✓ SKIP fantasydimension (already solved)
+
+[84/133] farm.z5
+✓ SKIP farm (already solved)
+
+[85/133] fork_the_great_underground_dining_room.z5
+
+============================================================
+Solving: fork_the_great_underground_dining_room
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE fork_the_great_underground_dining_room: 1 rooms, 101 commands
+
+[86/133] gntests.z5
+
+============================================================
+Solving: gntests
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE gntests: 1 rooms, 101 commands
+
+[87/133] infidel.z3
+✓ SKIP infidel (already solved)
+
+[88/133] its_a_dogs_life.z5
+
+============================================================
+Solving: its_a_dogs_life
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 4 rooms, 21 commands
+  [40/100] 4 rooms, 41 commands
+  [60/100] 4 rooms, 61 commands
+  [80/100] 4 rooms, 81 commands
+✓ DONE its_a_dogs_life: 4 rooms, 101 commands
+
+[89/133] jewel.z5
+✓ SKIP jewel (already solved)
+
+[90/133] leather.z3
+✓ SKIP leather (already solved)
+
+[91/133] library.z5
+✓ SKIP library (already solved)
+
+[92/133] lists.z5
+✓ SKIP lists (already solved)
+
+[93/133] loose.z5
+✓ SKIP loose (already solved)
+
+[94/133] lostpig.z8
+✓ SKIP lostpig (already solved)
+
+[95/133] moonmist.z3
+✓ SKIP moonmist (already solved)
+
+[96/133] night_of_the_vampire_bunnies.z5
+
+============================================================
+Solving: night_of_the_vampire_bunnies
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE night_of_the_vampire_bunnies: 1 rooms, 101 commands
+
+[97/133] pentari.z5
+✓ SKIP pentari (already solved)
+
+[98/133] photopia.z5
+✓ SKIP photopia (already solved)
+
+[99/133] pick_up_the_phone_booth_and_dye.z5
+
+============================================================
+Solving: pick_up_the_phone_booth_and_dye
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE pick_up_the_phone_booth_and_dye: 1 rooms, 101 commands
+
+[100/133] planetfall.z3
+✓ SKIP planetfall (already solved)
+
+[101/133] plundered.z3
+
+============================================================
+Solving: plundered
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 4 rooms, 21 commands
+  [40/100] 4 rooms, 41 commands
+  [60/100] 4 rooms, 61 commands
+  [80/100] 4 rooms, 81 commands
+✓ DONE plundered: 4 rooms, 101 commands
+
+[102/133] reverb.z5
+✓ SKIP reverb (already solved)
+
+[103/133] shade.z5
+✓ SKIP shade (already solved)
+
+[104/133] spider_and_web.z5
+
+============================================================
+Solving: spider_and_web
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE spider_and_web: 1 rooms, 101 commands
+
+[105/133] spirit.z5
+✓ SKIP spirit (already solved)
+
+[106/133] stationfall.z3
+✓ SKIP stationfall (already solved)
+
+[107/133] suspect.z3
+✓ SKIP suspect (already solved)
+
+[108/133] suspended.z3
+✓ SKIP suspended (already solved)
+
+[109/133] suveh_nux.z5
+
+============================================================
+Solving: suveh_nux
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE suveh_nux: 1 rooms, 101 commands
+
+[110/133] tangle.z5
+✓ SKIP tangle (already solved)
+
+[111/133] the_awakening.z5
+
+============================================================
+Solving: the_awakening
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE the_awakening: 1 rooms, 101 commands
+
+[112/133] the_bible_retold.z5
+
+============================================================
+Solving: the_bible_retold
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE the_bible_retold: 1 rooms, 101 commands
+
+[113/133] the_cabal.z5
+
+============================================================
+Solving: the_cabal
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE the_cabal: 1 rooms, 101 commands
+
+[114/133] the_cove.z5
+
+============================================================
+Solving: the_cove
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE the_cove: 1 rooms, 101 commands
+
+[115/133] the_gostak.z5
+
+============================================================
+Solving: the_gostak
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE the_gostak: 1 rooms, 101 commands
+
+[116/133] the_great_machine.z5
+
+============================================================
+Solving: the_great_machine
+============================================================
+✗ ERROR the_great_machine: bytearray index out of range
+Traceback (most recent call last):
+  File "/home/wohl/src/zwalker/scripts/batch_solve_all.py", line 32, in solve_one_game
+    output = walker.start()
+  File "/home/wohl/src/zwalker/zwalker/walker.py", line 181, in start
+    self._scan_room_objects(room_obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/wohl/src/zwalker/zwalker/walker.py", line 327, in _scan_room_objects
+    for obj_num, name in self.vm.get_objects_in_room(room_id):
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/wohl/src/zwalker/zwalker/zmachine.py", line 848, in get_objects_in_room
+    rooms = set(obj for obj, _ in self.get_all_rooms())
+                                  ~~~~~~~~~~~~~~~~~~^^
+  File "/home/wohl/src/zwalker/zwalker/zmachine.py", line 820, in get_all_rooms
+    name = self.get_object_name(obj_num)
+  File "/home/wohl/src/zwalker/zwalker/zmachine.py", line 442, in get_object_name
+    text_len = self.read_byte(prop_addr)
+  File "/home/wohl/src/zwalker/zwalker/zmachine.py", line 142, in read_byte
+    return self.memory[addr]
+           ~~~~~~~~~~~^^^^^^
+IndexError: bytearray index out of range
+
+[117/133] the_mad_bomber.z5
+
+============================================================
+Solving: the_mad_bomber
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE the_mad_bomber: 1 rooms, 101 commands
+
+[118/133] the_nine_dancers.z5
+
+============================================================
+Solving: the_nine_dancers
+============================================================
+✗ ERROR the_nine_dancers: bytearray index out of range
+Traceback (most recent call last):
+  File "/home/wohl/src/zwalker/scripts/batch_solve_all.py", line 32, in solve_one_game
+    output = walker.start()
+  File "/home/wohl/src/zwalker/zwalker/walker.py", line 145, in start
+    self.vocabulary = self.vm.get_dictionary_words()
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/wohl/src/zwalker/zwalker/zmachine.py", line 904, in get_dictionary_words
+    word, _ = self.decode_zstring(addr)
+              ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/wohl/src/zwalker/zwalker/zmachine.py", line 238, in decode_zstring
+    word = self.read_word(addr)
+  File "/home/wohl/src/zwalker/zwalker/zmachine.py", line 145, in read_word
+    return (self.memory[addr] << 8) | self.memory[addr + 1]
+                                      ~~~~~~~~~~~^^^^^^^^^^
+IndexError: bytearray index out of range
+
+[119/133] the_seven_doctors.z5
+
+============================================================
+Solving: the_seven_doctors
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE the_seven_doctors: 1 rooms, 101 commands
+
+[120/133] the_zuni_doll.z5
+
+============================================================
+Solving: the_zuni_doll
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE the_zuni_doll: 1 rooms, 101 commands
+
+[121/133] theatre.z5
+✓ SKIP theatre (already solved)
+
+[122/133] trinity.z4
+✓ SKIP trinity (already solved)
+
+[123/133] vicious_cycles.z5
+
+============================================================
+Solving: vicious_cycles
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE vicious_cycles: 1 rooms, 101 commands
+
+[124/133] wearing_the_claw.z5
+
+============================================================
+Solving: wearing_the_claw
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE wearing_the_claw: 1 rooms, 101 commands
+
+[125/133] winter.z5
+✓ SKIP winter (already solved)
+
+[126/133] witness.z3
+✓ SKIP witness (already solved)
+
+[127/133] zombies.z5
+✓ SKIP zombies (already solved)
+
+[128/133] zork1.z3
+✓ SKIP zork1 (already solved)
+
+[129/133] zork2.z3
+✓ SKIP zork2 (already solved)
+
+[130/133] zork_i.z3
+
+============================================================
+Solving: zork_i
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE zork_i: 1 rooms, 101 commands
+
+[131/133] zork_ii.z3
+
+============================================================
+Solving: zork_ii
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 4 rooms, 21 commands
+  [40/100] 4 rooms, 41 commands
+  [60/100] 4 rooms, 61 commands
+  [80/100] 4 rooms, 81 commands
+✓ DONE zork_ii: 4 rooms, 101 commands
+
+[132/133] zork_iii.z3
+
+============================================================
+Solving: zork_iii
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 3 rooms, 21 commands
+  [40/100] 3 rooms, 41 commands
+  [60/100] 3 rooms, 61 commands
+  [80/100] 3 rooms, 81 commands
+✓ DONE zork_iii: 3 rooms, 101 commands
+
+[133/133] zork_the_cavern_of_doom.z5
+
+============================================================
+Solving: zork_the_cavern_of_doom
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 3 rooms, 21 commands
+  [40/100] 3 rooms, 41 commands
+  [60/100] 3 rooms, 61 commands
+  [80/100] 3 rooms, 81 commands
+✓ DONE zork_the_cavern_of_doom: 3 rooms, 101 commands
+
+============================================================
+SUMMARY: 56 completed, 77 skipped, 0 failed
+============================================================

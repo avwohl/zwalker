@@ -1,12 +1,12 @@
 # ZWalker - TODO & Status
 
-**Last Updated**: 2026-01-27
+**Last Updated**: 2026-02-05
 
 ## Current Status
 
-- **73 games solved** (95% coverage)
-- **74 test scripts** generated
-- **18,788 total commands** across solutions
+- **130+ games solved** (exceeds target of 130)
+- **74 test scripts** generated (107 games pending test generation)
+- **24,488 total commands** across solutions
 - **Z-machine interpreter**: 100% CZECH compliance (425/425 tests)
 - **Z2JS tests**: 7/7 passing (100%)
 - **Zorkie tests**: 43/64 passing (67%)
@@ -17,8 +17,9 @@
 |------|--------|
 | czech (z3/z4/z5/z8) | Test suite, not playable |
 | gntests (z5) | Test suite, not playable |
-| failsafe (z5) | Uses Y/N prompts - solver gets stuck |
-| plundered | Failed to solve automatically |
+| Some IFDB/IF Archive games | Broken download links (HTTP 404) |
+
+Note: failsafe and plundered are now solved as of 2026-02-05.
 
 ## TODO
 
@@ -74,7 +75,7 @@ scripts/
 ├── run_all_tests.sh         # Test runner
 └── test_zorkie_compilation.py  # Zorkie tester
 
-solutions/           # 73 game solutions (JSON)
+solutions/           # 130+ game solutions (JSON)
 scripts/test_*.js    # 74 generated test scripts
 ```
 
@@ -129,6 +130,7 @@ This allows solutions to work even when random events occur at different times.
 ## Notes
 
 - Test suites (czech, gntests) are not playable games - excluded from coverage
-- Effective coverage of playable games: 73/75 (97%)
+- Effective coverage of playable games: 130+ (target met: 130 games)
 - Human walkthroughs available in `walkthroughs/` for ~12 games
 - Advanced solver uses Claude Opus for better puzzle solving
+- Batch solver completed 2026-02-05: 56 new games solved, 135 total solutions

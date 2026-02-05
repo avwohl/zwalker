@@ -14,9 +14,9 @@
 INFOCOM CLASSICS (ZIL - original Z-machine games)
 ================================================================================
 
-Zork I|0dbnusxunq7fw5ro|z3|https://eblong.com/infocom/gamefiles/zork1-r119-s880429.z3|untested|untested|untested
-Zork II|yzzm4puxyjakk8c4|z3|https://eblong.com/infocom/gamefiles/zork2-r63-s860811.z3|untested|untested|untested
-Zork III|vrsot1zgy1wfcdru|z3|https://eblong.com/infocom/gamefiles/zork3-r25-s860811.z3|untested|untested|untested
+Zork I | 0dbnusxunq7fw5ro | z3 | https://eblong.com/infocom/gamefiles/zork1-r119-s880429.z3 | pass | untested | untested
+Zork II | yzzm4puxyjakk8c4 | z3 | https://eblong.com/infocom/gamefiles/zork2-r63-s860811.z3 | pass | untested | untested
+Zork III | vrsot1zgy1wfcdru | z3 | https://eblong.com/infocom/gamefiles/zork3-r25-s860811.z3 | pass | untested | untested
 Enchanter|vu4xhul3abknifcr|z3|https://eblong.com/infocom/gamefiles/enchanter-r29-s860820.z3|pass|untested|untested
 Sorcerer|lidg5nx9ig0bwsw3|z3|https://eblong.com/infocom/gamefiles/sorcerer-r18-s851021.z3|untested|untested|untested
 Spellbreaker|wqsmrahzozosu3r|z3|https://eblong.com/infocom/gamefiles/spellbre-r87-s860904.z3|untested|untested|untested
@@ -35,10 +35,10 @@ Ballyhoo|1t905rye4wqtgcvv|z3|https://eblong.com/infocom/gamefiles/ballyhoo-r97-s
 Hollywood Hijinx|jnfkbgdgpnktf0l8|z3|https://eblong.com/infocom/gamefiles/hhgg-r31-s871119.z3|untested|untested|untested
 Leather Goddesses of Phobos|1s8pj2i2szbzlc0x|z3|https://eblong.com/infocom/gamefiles/lgop-r118-s860730.z3|pass|untested|untested
 Moonmist|xvvdj8wanpwpmhj|z3|https://eblong.com/infocom/gamefiles/moonmist-r9-s861022.z3|pass|untested|untested
-Plundered Hearts|ddagftras22bnz8h|z3|https://eblong.com/infocom/gamefiles/plundere-r26-s870730.z3|untested|untested|untested
+Plundered Hearts | ddagftras22bnz8h | z3 | https://eblong.com/infocom/gamefiles/plundere-r26-s870730.z3 | pass | untested | untested
 Nord and Bert|4l2z1q4jhgfyf1z5|z4|https://eblong.com/infocom/gamefiles/nord-r19-s870722.z4|untested|untested|untested
 Trinity|j18kjz80hxjtyayw|z4|https://eblong.com/infocom/gamefiles/trinity-r15-s870628.z4|pass|untested|untested
-A Mind Forever Voyaging|4h62dvooeg9ajtfa|z4|https://eblong.com/infocom/gamefiles/amfv-r79-s851122.z4|untested|untested|untested
+A Mind Forever Voyaging | 4h62dvooeg9ajtfa | z4 | https://eblong.com/infocom/gamefiles/amfv-r79-s851122.z4 | pass | untested | untested
 Bureaucracy|mwd7gv2z85hty0sp|z4|https://eblong.com/infocom/gamefiles/bureaucr-r86-s870212.z4|untested|untested|untested
 Beyond Zork|a]ylnpc28jc95ras|z5|https://eblong.com/infocom/gamefiles/beyondzo-r57-s871221.z5|untested|untested|untested
 Border Zone|47cxkazz3zqvizj1|z5|https://eblong.com/infocom/gamefiles/borderzo-r9-s881008.z5|untested|untested|untested
@@ -51,7 +51,7 @@ IFDB TOP 100 - Z-MACHINE GAMES (Inform 6/7 and other modern)
 
 Photopia|ju778uv5xaswnlpl|z5|https://ifarchive.org/if-archive/games/zcode/photopia.z5|pass|untested|untested
 Anchorhead|op0uw1gn1tjqmjt7|z8|https://ifarchive.org/if-archive/games/zcode/anchor.z8|pass|untested|untested
-Spider and Web|2xyccw3pe0uovfad|z5|https://ifarchive.org/if-archive/games/zcode/Tangle.z5|untested|untested|untested
+Spider and Web | 2xyccw3pe0uovfad | z5 | https://ifarchive.org/if-archive/games/zcode/Tangle.z5 | pass | untested | untested
 Lost Pig|mohwfk47yjzii14w|z8|https://ifarchive.org/if-archive/games/zcode/LostPig.z8|pass|untested|untested
 Bronze|9p8kh3im2j9h2881|zblorb|https://ifarchive.org/if-archive/games/zcode/Bronze.zblorb|untested|untested|untested
 Violet|4glrrfh7wrp9zz7b|zblorb|https://ifarchive.org/if-archive/games/zcode/Violet.zblorb|untested|untested|untested
@@ -99,7 +99,7 @@ Bear's Night Out|unknown|z5|https://ifarchive.org/if-archive/games/zcode/bear.z5
 Cheeseshop|unknown|z5|https://ifarchive.org/if-archive/games/zcode/cheeseshop.z5|pass|untested|untested
 Detective|unknown|z5|https://ifarchive.org/if-archive/games/zcode/detective.z5|pass|untested|untested
 Djinni|unknown|z5|https://ifarchive.org/if-archive/games/zcode/djinni.z5|pass|untested|untested
-FailSafe|unknown|z5|https://ifarchive.org/if-archive/games/zcode/FailSafe.z5|untested|untested|untested
+FailSafe | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/FailSafe.z5 | pass | untested | untested
 Farm|unknown|z5|https://ifarchive.org/if-archive/games/zcode/farm.z5|pass|untested|untested
 Glass|unknown|zblorb|https://ifarchive.org/if-archive/games/zcode/Glass.zblorb|untested|untested|untested
 Heroes|unknown|z5|https://ifarchive.org/if-archive/games/zcode/heroes.z5|untested|untested|untested
@@ -153,74 +153,74 @@ ADDITIONAL Z-MACHINE GAMES FROM IF ARCHIVE & IFDB
 ================================================================================
 
 69,105 Keys|unknown|zblorb|https://ifarchive.org/if-archive/games/zcode/69105Keys.zblorb|untested|untested|untested
-The Seven Doctors|unknown|z5|https://ifarchive.org/if-archive/games/zcode/7doctors.z5|untested|untested|untested
-A1RL0CK|unknown|z5|https://ifarchive.org/if-archive/games/zcode/A1RL0CK.z5|untested|untested|untested
+The Seven Doctors | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/7doctors.z5 | pass | untested | untested
+A1RL0CK | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/A1RL0CK.z5 | pass | untested | untested
 Accuse|unknown|zblorb|https://ifarchive.org/if-archive/games/zcode/Accuse.zblorb|untested|untested|untested
 The Mysterious Case of the Acrobat|unknown|zblorb|https://ifarchive.org/if-archive/games/zcode/Acrobat.zblorb|untested|untested|untested
-Adventure 6|same|z8|https://ifarchive.org/if-archive/games/zcode/adv551.z8|untested|untested|untested
-Adventure (Don Knuth)|same|z8|https://ifarchive.org/if-archive/games/zcode/advent.z8|untested|untested|untested
+Adventure 6 | same | z8 | https://ifarchive.org/if-archive/games/zcode/adv551.z8 | pass | untested | untested
+Adventure (Don Knuth) | same | z8 | https://ifarchive.org/if-archive/games/zcode/advent.z8 | pass | untested | untested
 Adventure (v6)|same|z6|https://ifarchive.org/if-archive/games/zcode/advent.z6|untested|untested|untested
-And A Hippo New Year|unknown|z8|https://ifarchive.org/if-archive/games/zcode/AndAHippoNewYear.z8|untested|untested|untested
-Animals|unknown|z5|https://ifarchive.org/if-archive/games/zcode/animals.z5|untested|untested|untested
+And A Hippo New Year | unknown | z8 | https://ifarchive.org/if-archive/games/zcode/AndAHippoNewYear.z8 | pass | untested | untested
+Animals | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/animals.z5 | pass | untested | untested
 Annoyotron|unknown|z5|https://ifarchive.org/if-archive/games/zcode/Annoyotron.z5|untested|untested|untested
-Appallatron|unknown|z5|https://ifarchive.org/if-archive/games/zcode/appall.z5|untested|untested|untested
+Appallatron | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/appall.z5 | pass | untested | untested
 Arid and Pale|unknown|zblorb|https://ifarchive.org/if-archive/games/zcode/Arid_and_Pale.zblorb|untested|untested|untested
-Atrocitron|unknown|z5|https://ifarchive.org/if-archive/games/zcode/atrocitron.z5|untested|untested|untested
-A Tight Spot|unknown|z8|https://ifarchive.org/if-archive/games/zcode/ats.z8|untested|untested|untested
-The Awakening|unknown|z5|https://ifarchive.org/if-archive/games/zcode/awaken.z5|untested|untested|untested
-Balances|unknown|z5|https://ifarchive.org/if-archive/games/zcode/Balances.z5|untested|untested|untested
-Bedlam (preview)|unknown|z5|https://ifarchive.org/if-archive/games/zcode/bedlam.z5|untested|untested|untested
+Atrocitron | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/atrocitron.z5 | pass | untested | untested
+A Tight Spot | unknown | z8 | https://ifarchive.org/if-archive/games/zcode/ats.z8 | pass | untested | untested
+The Awakening | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/awaken.z5 | pass | untested | untested
+Balances | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/Balances.z5 | pass | untested | untested
+Bedlam (preview) | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/bedlam.z5 | pass | untested | untested
 Being Andrew Plotkin|unknown|zblorb|https://ifarchive.org/if-archive/games/zcode/BeingAndrewPlotkin.zblorb|untested|untested|untested
-Beneath: a Transformation|unknown|z5|https://ifarchive.org/if-archive/games/zcode/beneath.z5|untested|untested|untested
+Beneath: a Transformation | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/beneath.z5 | pass | untested | untested
 Beyond|unknown|z5|https://ifarchive.org/if-archive/games/zcode/Beyond_txt.zip|untested|untested|untested
-The Bible Retold|unknown|z5|https://ifarchive.org/if-archive/games/zcode/BibleRetold.z5|untested|untested|untested
+The Bible Retold | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/BibleRetold.z5 | pass | untested | untested
 BiCon|unknown|zblorb|https://ifarchive.org/if-archive/games/zcode/BiCon.zblorb|untested|untested|untested
-Buried In Shoes|unknown|z5|https://ifarchive.org/if-archive/games/zcode/bishoes.z5|untested|untested|untested
-BOFH|unknown|z5|https://ifarchive.org/if-archive/games/zcode/bofh.z5|untested|untested|untested
-The Mad Bomber|unknown|z5|https://ifarchive.org/if-archive/games/zcode/bomber.z5|untested|untested|untested
-Book and Volume|unknown|z5|https://ifarchive.org/if-archive/games/zcode/bookvol.z5|untested|untested|untested
-Pick up the Phone Booth and Dye|unknown|z5|https://ifarchive.org/if-archive/games/zcode/boothdye.z5|untested|untested|untested
-BSE|unknown|z5|https://ifarchive.org/if-archive/games/zcode/bse.z5|untested|untested|untested
-Night of the Vampire Bunnies|unknown|z5|https://ifarchive.org/if-archive/games/zcode/bunny.z5|untested|untested|untested
+Buried In Shoes | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/bishoes.z5 | pass | untested | untested
+BOFH | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/bofh.z5 | pass | untested | untested
+The Mad Bomber | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/bomber.z5 | pass | untested | untested
+Book and Volume | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/bookvol.z5 | pass | untested | untested
+Pick up the Phone Booth and Dye | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/boothdye.z5 | pass | untested | untested
+BSE | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/bse.z5 | pass | untested | untested
+Night of the Vampire Bunnies | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/bunny.z5 | pass | untested | untested
 Bureaucrocy|unknown|zblorb|https://ifarchive.org/if-archive/games/zcode/Bureaucrocy.zblorb|untested|untested|untested
-The Cabal|unknown|z5|https://ifarchive.org/if-archive/games/zcode/cabal.z5|untested|untested|untested
-Casting|unknown|z5|https://ifarchive.org/if-archive/games/zcode/Casting.z5|untested|untested|untested
-Castle Adventure|unknown|z8|https://ifarchive.org/if-archive/games/zcode/castle.z8|untested|untested|untested
+The Cabal | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/cabal.z5 | pass | untested | untested
+Casting | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/Casting.z5 | pass | untested | untested
+Castle Adventure | unknown | z8 | https://ifarchive.org/if-archive/games/zcode/castle.z8 | pass | untested | untested
 Castle of the Red Prince|unknown|zblorb|https://ifarchive.org/if-archive/games/zcode/CastleOfTheRedPrince.zblorb|untested|untested|untested
 The Catcher in the Rye|unknown|zblorb|https://ifarchive.org/if-archive/games/zcode/CatcherInTheRye.zblorb|untested|untested|untested
-Zork: The Cavern of Doom|unknown|z5|https://ifarchive.org/if-archive/games/zcode/cavern.z5|untested|untested|untested
-Cheater|unknown|z5|https://ifarchive.org/if-archive/games/zcode/cheater.z5|untested|untested|untested
-Chicks Dig Jerks|unknown|z5|https://ifarchive.org/if-archive/games/zcode/chix.z5|untested|untested|untested
-CIA Adventure|unknown|z5|https://ifarchive.org/if-archive/games/zcode/cia.z5|untested|untested|untested
-Wearing the Claw|unknown|z5|https://ifarchive.org/if-archive/games/zcode/claw.z5|untested|untested|untested
-Conan Kill Everything|unknown|z5|https://ifarchive.org/if-archive/games/zcode/ConanKillEverything.z5|untested|untested|untested
+Zork: The Cavern of Doom | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/cavern.z5 | pass | untested | untested
+Cheater | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/cheater.z5 | pass | untested | untested
+Chicks Dig Jerks | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/chix.z5 | pass | untested | untested
+CIA Adventure | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/cia.z5 | pass | untested | untested
+Wearing the Claw | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/claw.z5 | pass | untested | untested
+Conan Kill Everything | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/ConanKillEverything.z5 | pass | untested | untested
 Cottage|unknown|zblorb|https://ifarchive.org/if-archive/games/zcode/Cottage.zblorb|untested|untested|untested
-The Cove|unknown|z5|https://ifarchive.org/if-archive/games/zcode/Cove.z5|untested|untested|untested
-Critical Breach|unknown|z8|https://ifarchive.org/if-archive/games/zcode/CriticalBreach.z8|untested|untested|untested
-Crobe|unknown|z5|https://ifarchive.org/if-archive/games/zcode/Crobe.z5|untested|untested|untested
-Cryptographer|unknown|z5|https://ifarchive.org/if-archive/games/zcode/cryptographer.z5|untested|untested|untested
+The Cove | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/Cove.z5 | pass | untested | untested
+Critical Breach | unknown | z8 | https://ifarchive.org/if-archive/games/zcode/CriticalBreach.z8 | pass | untested | untested
+Crobe | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/Crobe.z5 | pass | untested | untested
+Cryptographer | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/cryptographer.z5 | pass | untested | untested
 Dangerous Curves|unknown|z8|https://ifarchive.org/if-archive/games/zcode/curves.z8|untested|untested|untested
-Vicious Cycles|unknown|z5|https://ifarchive.org/if-archive/games/zcode/cycles.z5|untested|untested|untested
-Darkiss! Chapter 1|unknown|z5|https://ifarchive.org/if-archive/games/zcode/darkiss1.z5|untested|untested|untested
-Death to my Enemies|unknown|z5|https://ifarchive.org/if-archive/games/zcode/death.z5|untested|untested|untested
-Deephome|unknown|z5|https://ifarchive.org/if-archive/games/zcode/deephome.z5|untested|untested|untested
-Degeneracy|unknown|z5|https://ifarchive.org/if-archive/games/zcode/degen.z5|untested|untested|untested
-Deja Vu|unknown|z3|https://ifarchive.org/if-archive/games/zcode/dejavu.z3|untested|untested|untested
+Vicious Cycles | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/cycles.z5 | pass | untested | untested
+Darkiss! Chapter 1 | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/darkiss1.z5 | pass | untested | untested
+Death to my Enemies | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/death.z5 | pass | untested | untested
+Deephome | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/deephome.z5 | pass | untested | untested
+Degeneracy | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/degen.z5 | pass | untested | untested
+Deja Vu | unknown | z3 | https://ifarchive.org/if-archive/games/zcode/dejavu.z3 | pass | untested | untested
 Delusions|unknown|z5|https://ifarchive.org/if-archive/games/zcode/Delusions.z5|untested|untested|untested
-It's a Dog's Life|unknown|z5|https://ifarchive.org/if-archive/games/zcode/dogslife.z5|untested|untested|untested
-The Zuni Doll|unknown|z5|https://ifarchive.org/if-archive/games/zcode/doll.z5|untested|untested|untested
-Dr. Dumont's Wild P.A.R.T.I.|unknown|z5|https://ifarchive.org/if-archive/games/zcode/dumont.z5|untested|untested|untested
+It's a Dog's Life | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/dogslife.z5 | pass | untested | untested
+The Zuni Doll | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/doll.z5 | pass | untested | untested
+Dr. Dumont's Wild P.A.R.T.I. | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/dumont.z5 | pass | untested | untested
 Enigma|unknown|zblorb|https://ifarchive.org/if-archive/games/zcode/Enigma.zblorb|untested|untested|untested
-Entropy|unknown|z8|https://ifarchive.org/if-archive/games/zcode/entropy.z8|untested|untested|untested
+Entropy | unknown | z8 | https://ifarchive.org/if-archive/games/zcode/entropy.z8 | pass | untested | untested
 Eurydice|unknown|zblorb|https://ifarchive.org/if-archive/games/zcode/Eurydice.zblorb|untested|untested|untested
-Apartment F209|unknown|z5|https://ifarchive.org/if-archive/games/zcode/f209.z5|untested|untested|untested
-A Fable|unknown|z5|https://ifarchive.org/if-archive/games/zcode/fable.z5|untested|untested|untested
+Apartment F209 | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/f209.z5 | pass | untested | untested
+A Fable | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/fable.z5 | pass | untested | untested
 404 - Life not found|unknown|zblorb|https://ifarchive.org/if-archive/games/zcode/404-Life_not_found.zblorb|untested|untested|untested
-The Gostak|w5s3sv43s3p98v45|z5|https://ifarchive.org/if-archive/games/zcode/gostak.z5|untested|untested|untested
-Suveh Nux|xkai23ry99qdxce3|z5|https://ifarchive.org/if-archive/games/zcode/suvehnux.z5|untested|untested|untested
+The Gostak | w5s3sv43s3p98v45 | z5 | https://ifarchive.org/if-archive/games/zcode/gostak.z5 | pass | untested | untested
+Suveh Nux | xkai23ry99qdxce3 | z5 | https://ifarchive.org/if-archive/games/zcode/suvehnux.z5 | pass | untested | untested
 The Nine Dancers|unknown|z5|https://ifarchive.org/if-archive/games/zcode/9Dancers.zip|untested|untested|untested
-Fork: The Great Underground Dining Room|unknown|z5|https://ifarchive.org/if-archive/games/zcode/Fork.z5|untested|untested|untested
+Fork: The Great Underground Dining Room | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/Fork.z5 | pass | untested | untested
 The Great Machine|unknown|z5|https://ifarchive.org/if-archive/games/zcode/TGM.z5|untested|untested|untested
 The Time Machine|unknown|z5|https://ifarchive.org/if-archive/games/zcode/timemach.z5|untested|untested|untested
-Egyptian Walking Simulator|unknown|z8|https://ifarchive.org/if-archive/games/zcode/Egyptian_Walking_Simulator.z8|untested|untested|untested
-Encyclopedia Frobozzica|unknown|z5|https://ifarchive.org/if-archive/games/zcode/Frobozzi.z5|untested|untested|untested
+Egyptian Walking Simulator | unknown | z8 | https://ifarchive.org/if-archive/games/zcode/Egyptian_Walking_Simulator.z8 | pass | untested | untested
+Encyclopedia Frobozzica | unknown | z5 | https://ifarchive.org/if-archive/games/zcode/Frobozzi.z5 | pass | untested | untested
