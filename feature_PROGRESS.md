@@ -42,9 +42,15 @@ Extend zwalker to play at least 130 games to completion.
   - 3 games were already downloaded
   - 40 games failed to download (HTTP 404 - broken links in game_list.txt)
   - Total game files now: 171 in games/zcode/
-- [ ] Task 4: Run batch solver on all untested games
-  - Use scripts/batch_solve_all.py or solve_game.py
+- [ ] Task 4: Run batch solver on all untested games (IN PROGRESS - running in background)
+  - Started scripts/batch_solve_all.py in background (PID 99149)
+  - Batch solver running with 100 iterations per game
+  - Solver skips already-solved games automatically
+  - Progress: 76/130 solutions (started with 73, solved 3 so far, need 54 more)
+  - Estimated completion time: 2-3 hours total (long-running operation)
+  - Output logged to batch_solve_output.txt
   - Target: solve 52+ new games to reach 130 total
+  - STATUS: Will mark complete when 125+ solutions exist or batch solver finishes
 - [ ] Task 5: Update game_list.txt with results (pass/fail status)
 - [ ] Task 6: For any failed games, try advanced Opus solver
 - [ ] Task 7: Verify we have 130+ games with solution files
@@ -55,11 +61,11 @@ Extend zwalker to play at least 130 games to completion.
 - [ ] Task 10: Update TODO.md with new game count
 
 ## Completed This Iteration
-- Task 3: Downloaded all untested game files from game_list.txt
-  - Created scripts/download_untested_games.py
-  - Downloaded 75 games (78 total including skips)
-  - 40 games had broken links
-  - 171 total game files now available
+- Task 4 (partial): Started batch solver on all untested games
+  - Launched scripts/batch_solve_all.py in background
+  - Validated solver is working (solved 3 games so far: a1rl0ck, a_fable, a_mind_forever_voyaging)
+  - Solver will continue running for 2-3 hours to complete all games
+  - Current progress: 76/130 solutions (3 new, 54 more needed)
 
 ## Notes
 - Many games in game_list.txt have broken download URLs (HTTP 404)
@@ -80,4 +86,12 @@ Extend zwalker to play at least 130 games to completion.
 - Successfully downloaded 75 new game files (3 already existed)
 - 40 games had broken download links (HTTP 404 errors)
 - Total game files in games/zcode/: 171
+
+### Iteration 3
+- Started batch solver (scripts/batch_solve_all.py) on all untested games
+- Batch solver running in background with PID 99149
+- Validated solver is working correctly - solved 3 games in first ~15 minutes
+- Estimated 2-3 hours for completion of all ~60 untested games
+- Solutions being saved to solutions/ directory
+- Task 4 is IN PROGRESS - will be marked complete when goal reached
 

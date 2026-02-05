@@ -1,0 +1,74 @@
+Found 133 games
+
+[1/133] 905.z5
+✓ SKIP 905 (already solved)
+
+[2/133] Ralph.z5
+✓ SKIP Ralph (already solved)
+
+[3/133] a1rl0ck.z5
+
+============================================================
+Solving: a1rl0ck
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 5 rooms, 21 commands
+  [40/100] 5 rooms, 41 commands
+  [60/100] 5 rooms, 61 commands
+  [80/100] 5 rooms, 81 commands
+✓ DONE a1rl0ck: 5 rooms, 101 commands
+
+[4/133] a_fable.z5
+
+============================================================
+Solving: a_fable
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 2 rooms, 21 commands
+  [40/100] 2 rooms, 41 commands
+  [60/100] 2 rooms, 61 commands
+  [80/100] 2 rooms, 81 commands
+✓ DONE a_fable: 2 rooms, 101 commands
+
+[5/133] a_mind_forever_voyaging.z4
+
+============================================================
+Solving: a_mind_forever_voyaging
+============================================================
+  [0/100] 1 rooms, 1 commands
+Found 133 games
+
+[1/133] 905.z5
+✓ SKIP 905 (already solved)
+
+[2/133] Ralph.z5
+✓ SKIP Ralph (already solved)
+
+[3/133] a1rl0ck.z5
+✓ SKIP a1rl0ck (already solved)
+
+[4/133] a_fable.z5
+✓ SKIP a_fable (already solved)
+
+[5/133] a_mind_forever_voyaging.z4
+
+============================================================
+Solving: a_mind_forever_voyaging
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE a_mind_forever_voyaging: 1 rooms, 101 commands
+
+[6/133] a_tight_spot.z8
+
+============================================================
+Solving: a_tight_spot
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
