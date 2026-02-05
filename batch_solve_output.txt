@@ -72,3 +72,210 @@ Solving: a_tight_spot
   [40/100] 1 rooms, 41 commands
   [60/100] 1 rooms, 61 commands
   [80/100] 1 rooms, 81 commands
+✓ DONE a_tight_spot: 1 rooms, 101 commands
+
+[7/133] acheton.z8
+✓ SKIP acheton (already solved)
+
+[8/133] acorncourt.z5
+✓ SKIP acorncourt (already solved)
+
+[9/133] adv440.z8
+✓ SKIP adv440 (already solved)
+
+[10/133] adv550.z8
+✓ SKIP adv550 (already solved)
+
+[11/133] advent.z3
+✓ SKIP advent (already solved)
+
+[12/133] adventure_6.z8
+
+============================================================
+Solving: adventure_6
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE adventure_6: 1 rooms, 101 commands
+
+[13/133] adventure_don_knuth.z8
+
+============================================================
+Solving: adventure_don_knuth
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE adventure_don_knuth: 1 rooms, 101 commands
+
+[14/133] adventureland.z5
+✓ SKIP adventureland (already solved)
+
+[15/133] adverbum.z5
+✓ SKIP adverbum (already solved)
+
+[16/133] aisle.z5
+✓ SKIP aisle (already solved)
+
+[17/133] allroads.z5
+✓ SKIP allroads (already solved)
+
+[18/133] amfv.z4
+✓ SKIP amfv (already solved)
+
+[19/133] amish.z5
+✓ SKIP amish (already solved)
+
+[20/133] anchor.z8
+✓ SKIP anchor (already solved)
+
+[21/133] anchorhead.z8
+✓ SKIP anchorhead (already solved)
+
+[22/133] and_a_hippo_new_year.z8
+
+============================================================
+Solving: and_a_hippo_new_year
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE and_a_hippo_new_year: 1 rooms, 101 commands
+
+[23/133] animals.z5
+✓ SKIP animals (already solved)
+
+[24/133] apartment_f209.z5
+
+============================================================
+Solving: apartment_f209
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE apartment_f209: 1 rooms, 101 commands
+
+[25/133] appallatron.z5
+
+============================================================
+Solving: appallatron
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE appallatron: 1 rooms, 101 commands
+
+[26/133] asylum.z5
+✓ SKIP asylum (already solved)
+
+[27/133] atrocitron.z5
+
+============================================================
+Solving: atrocitron
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE atrocitron: 1 rooms, 101 commands
+
+[28/133] balances.z5
+✓ SKIP balances (already solved)
+
+[29/133] ballyhoo.z3
+✓ SKIP ballyhoo (already solved)
+
+[30/133] bear.z5
+✓ SKIP bear (already solved)
+
+[31/133] bedlam.z5
+✓ SKIP bedlam (already solved)
+
+[32/133] bedlam_preview.z5
+
+============================================================
+Solving: bedlam_preview
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE bedlam_preview: 1 rooms, 101 commands
+
+[33/133] beneath_a_transformation.z5
+
+============================================================
+Solving: beneath_a_transformation
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 2 rooms, 21 commands
+  [40/100] 2 rooms, 41 commands
+  [60/100] 2 rooms, 61 commands
+  [80/100] 2 rooms, 81 commands
+✓ DONE beneath_a_transformation: 2 rooms, 101 commands
+
+[34/133] beyond.z5
+
+============================================================
+Solving: beyond
+============================================================
+✗ ERROR beyond: maximum recursion depth exceeded
+Traceback (most recent call last):
+  File "/home/wohl/src/zwalker/scripts/batch_solve_all.py", line 32, in solve_one_game
+    output = walker.start()
+  File "/home/wohl/src/zwalker/zwalker/walker.py", line 145, in start
+    self.vocabulary = self.vm.get_dictionary_words()
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/wohl/src/zwalker/zwalker/zmachine.py", line 904, in get_dictionary_words
+    word, _ = self.decode_zstring(addr)
+              ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/wohl/src/zwalker/zwalker/zmachine.py", line 266, in decode_zstring
+    abbr_str, _ = self.decode_zstring(word_addr * 2)
+                  ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/wohl/src/zwalker/zwalker/zmachine.py", line 266, in decode_zstring
+    abbr_str, _ = self.decode_zstring(word_addr * 2)
+                  ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/wohl/src/zwalker/zwalker/zmachine.py", line 266, in decode_zstring
+    abbr_str, _ = self.decode_zstring(word_addr * 2)
+                  ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  [Previous line repeated 991 more times]
+  File "/home/wohl/src/zwalker/zwalker/zmachine.py", line 238, in decode_zstring
+    word = self.read_word(addr)
+RecursionError: maximum recursion depth exceeded
+
+[35/133] bluechairs.z5
+✓ SKIP bluechairs (already solved)
+
+[36/133] bofh.z5
+
+============================================================
+Solving: bofh
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
+  [80/100] 1 rooms, 81 commands
+✓ DONE bofh: 1 rooms, 101 commands
+
+[37/133] book_and_volume.z5
+
+============================================================
+Solving: book_and_volume
+============================================================
+  [0/100] 1 rooms, 1 commands
+  [20/100] 1 rooms, 21 commands
+  [40/100] 1 rooms, 41 commands

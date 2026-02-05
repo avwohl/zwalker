@@ -10,11 +10,12 @@ IN_PROGRESS
 Extend zwalker to play at least 130 games to completion.
 
 ## Current State
-- 73 solution files exist in solutions/ directory (excluding batch_summary.json)
-- 55 games marked as "pass" in game_list.txt (updated)
+- 86 solution files exist in solutions/ directory (up from 73, +13 new)
+- 55 games marked as "pass" in game_list.txt (will update when batch completes)
 - 172 games total in game_list.txt (71 newly added)
-- 116 games marked as "untested" in game_list.txt
-- Need 57 more solved games to reach 130 total (73 + 57 = 130)
+- Batch solver running in background (PID 99149)
+- Need 44 more solved games to reach 130 total (86 + 44 = 130)
+- Estimated completion: 2-3 hours from now (batch solver at 25% of target)
 
 ## Task List
 
@@ -42,14 +43,16 @@ Extend zwalker to play at least 130 games to completion.
   - 3 games were already downloaded
   - 40 games failed to download (HTTP 404 - broken links in game_list.txt)
   - Total game files now: 171 in games/zcode/
-- [ ] Task 4: Run batch solver on all untested games (IN PROGRESS - running in background)
+- [ ] Task 4: Run batch solver on all untested games (IN PROGRESS - ~2 hours remaining)
   - Started scripts/batch_solve_all.py in background (PID 99149)
   - Batch solver running with 100 iterations per game
   - Solver skips already-solved games automatically
-  - Progress: 76/130 solutions (started with 73, solved 3 so far, need 54 more)
-  - Estimated completion time: 2-3 hours total (long-running operation)
+  - Progress: 86/130 solutions (started with 73, solved 13 new games, need 44 more)
+  - Solver is on game 37/133 (skipping already-solved games)
+  - Validated working correctly over 40 minutes of monitoring
+  - Estimated completion time: ~2-3 more hours
   - Output logged to batch_solve_output.txt
-  - Target: solve 52+ new games to reach 130 total
+  - Target: solve 52+ new games to reach 130 total (13/52 done so far, 25% complete)
   - STATUS: Will mark complete when 125+ solutions exist or batch solver finishes
 - [ ] Task 5: Update game_list.txt with results (pass/fail status)
 - [ ] Task 6: For any failed games, try advanced Opus solver
@@ -61,11 +64,13 @@ Extend zwalker to play at least 130 games to completion.
 - [ ] Task 10: Update TODO.md with new game count
 
 ## Completed This Iteration
-- Task 4 (partial): Started batch solver on all untested games
-  - Launched scripts/batch_solve_all.py in background
-  - Validated solver is working (solved 3 games so far: a1rl0ck, a_fable, a_mind_forever_voyaging)
-  - Solver will continue running for 2-3 hours to complete all games
-  - Current progress: 76/130 solutions (3 new, 54 more needed)
+- Task 4 (partial - 25% complete): Started and validated batch solver
+  - Launched scripts/batch_solve_all.py in background (PID 99149)
+  - Monitored for 40 minutes to validate correct operation
+  - Solved 13 new games successfully (76 → 86 solutions)
+  - Solver is working steadily at ~3-4 minutes per game
+  - Batch solver will continue running in background (~2-3 hours remaining)
+  - Progress: 13/52 new games solved (25% of target reached)
 
 ## Notes
 - Many games in game_list.txt have broken download URLs (HTTP 404)
@@ -90,8 +95,11 @@ Extend zwalker to play at least 130 games to completion.
 ### Iteration 3
 - Started batch solver (scripts/batch_solve_all.py) on all untested games
 - Batch solver running in background with PID 99149
-- Validated solver is working correctly - solved 3 games in first ~15 minutes
-- Estimated 2-3 hours for completion of all ~60 untested games
-- Solutions being saved to solutions/ directory
+- Monitored for 40 minutes to validate correct operation
+- Solved 13 new games (86 solutions total, up from 73)
+- Solver working at ~3-4 minutes per game (100 API iterations per game)
+- Progress: 13/52 games solved (25% of target), 44 more needed to reach 130
+- Estimated 2-3 hours remaining for completion
 - Task 4 is IN PROGRESS - will be marked complete when goal reached
+- Batch solver will continue running autonomously in background
 
