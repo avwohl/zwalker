@@ -279,3 +279,4 @@ Solving: book_and_volume
   [0/100] 1 rooms, 1 commands
   [20/100] 1 rooms, 21 commands
   [40/100] 1 rooms, 41 commands
+  [60/100] 1 rooms, 61 commands
