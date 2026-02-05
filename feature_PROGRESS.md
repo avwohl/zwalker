@@ -1,51 +1,59 @@
 # Progress: feature
 
-Started: Mon Feb  2 04:03:13 EST 2026
+Started: Thu Feb  5 07:59:38 EST 2026
 
 ## Status
 
 IN_PROGRESS
 
+## Goal
+Extend zwalker to play at least 130 games to completion.
+
+## Current State
+- 78 solution files exist in solutions/ directory
+- 54 games marked as "pass" in game_list.txt (outdated)
+- 101 games total in game_list.txt
+- 47 games marked as "untested" in game_list.txt
+- Need 52 more solved games to reach 130 total
+
 ## Task List
 
-- [x] Verify current game list exists and has required information (name, URL, source)
-- [x] Update game_list.txt status fields to reflect which games are already solved
-- [x] Identify which unsolved games from the list can be solved to reach 80 total
-- [ ] Attempt to solve additional games to reach 80 total (currently at 73)
-- [ ] Verify all solutions work by running tests
-- [ ] Update final count in documentation
+### Phase 1: Audit and Sync Game List
+- [x] Task 1: Audit existing solutions against game_list.txt
+  - Count actual solution files (73 found, excluding batch_summary.json)
+  - Update game_list.txt to mark solved games as "pass"
+  - Identify which solutions correspond to which game_list entries
+  - Created scripts/audit_solutions.py
+  - Found 52 matches, updated 1 entry, 55 games now marked as "pass"
+  - 21 solutions don't match game_list (games not in list or name variations)
+
+### Phase 2: Expand Game Collection
+- [x] Task 2: Find and add 50+ more Z-machine games to game_list.txt
+  - Searched IFDB top 150 for Z-machine games not in current list
+  - Searched IF Archive for additional quality games
+  - Added 71 new games to game_list.txt (from 101 to 172 total)
+  - Format distribution: 48 z5, 10 z8, 13 zblorb, 1 z3, 1 z6
+  - Now have 172 total games (73 solved, 99 untested)
+
+### Phase 3: Batch Solve Games
+- [ ] Task 3: Download all untested game files from game_list.txt
+- [ ] Task 4: Run batch solver on all untested games
+  - Use scripts/batch_solve_all.py or solve_game.py
+  - Target: solve 52+ new games to reach 130 total
+- [ ] Task 5: Update game_list.txt with results (pass/fail status)
+- [ ] Task 6: For any failed games, try advanced Opus solver
+- [ ] Task 7: Verify we have 130+ games with solution files
+
+### Phase 4: Validation
+- [ ] Task 8: Run tests to verify solutions work
+- [ ] Task 9: Generate test scripts for new solutions
+- [ ] Task 10: Update TODO.md with new game count
 
 ## Tasks Completed
 
-- Task 1: Verified game_list.txt exists with ~100 games including names, URLs, and sources
-  - File already has Infocom classics, IFDB Top 100, and IF Archive samples
-  - Currently 73 games solved, need 7 more to reach 80
-
-- Task 2: Updated game_list.txt with zwalker_status
-  - Created update_game_list_status.py script
-  - Matched 54 games from game_list.txt with solved solutions
-  - 55 total entries now marked as 'pass' in game_list.txt
-  - Note: 21 solved games (like 905, Ralph, cloak, zork1-r5, etc.) aren't in game_list.txt
-
-## Completed This Iteration
-
-- Task 3: Identified 7 games to solve to reach 80 total
-  - Analyzed game_list.txt (~127 games total, 74 unsolved/untested)
-  - Selected optimal candidates based on game size, format (Z3/Z5), and complexity
-  - Top 7 recommendations (priority order):
-    1. 9:05 [Z5] - Single-room, IFDB Top 100
-    2. FailSafe [Z5] - Simple puzzle structure
-    3. Humbug [Z5] - Single-room Z5
-    4. Seastalker [Z3] - Infocom classic
-    5. Wishbringer [Z3] - Infocom classic
-    6. Babel [Z5] - IFDB Top 100
-    7. Beyond Zork [Z5] - Moderate complexity
-  - All have URLs in game_list.txt and established walkthroughs
-
-## Notes
-
-- The game_list.txt already has comprehensive information (name, URL, source) for ~100 games
-- Currently 73 games are solved, need 7 more to reach the goal of 80
-- Some solved games (21 total) like "905", "Ralph", "cloak" are not in game_list.txt - these may be variants or additional games
-- The status update script can be run again after solving more games
+### Iteration 1
+- Created scripts/audit_solutions.py to match solutions with game_list entries
+- Updated game_list.txt with pass/fail status for solved games (55 now marked as pass)
+- Added 71 new Z-machine games to game_list.txt from IF Archive & IFDB
+- Game list expanded from 101 to 172 total games
 
