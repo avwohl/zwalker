@@ -36,7 +36,12 @@ Extend zwalker to play at least 130 games to completion.
   - Now have 172 total games (73 solved, 99 untested)
 
 ### Phase 3: Batch Solve Games
-- [ ] Task 3: Download all untested game files from game_list.txt
+- [x] Task 3: Download all untested game files from game_list.txt
+  - Created scripts/download_untested_games.py
+  - Downloaded 75 new games successfully
+  - 3 games were already downloaded
+  - 40 games failed to download (HTTP 404 - broken links in game_list.txt)
+  - Total game files now: 171 in games/zcode/
 - [ ] Task 4: Run batch solver on all untested games
   - Use scripts/batch_solve_all.py or solve_game.py
   - Target: solve 52+ new games to reach 130 total
@@ -49,6 +54,19 @@ Extend zwalker to play at least 130 games to completion.
 - [ ] Task 9: Generate test scripts for new solutions
 - [ ] Task 10: Update TODO.md with new game count
 
+## Completed This Iteration
+- Task 3: Downloaded all untested game files from game_list.txt
+  - Created scripts/download_untested_games.py
+  - Downloaded 75 games (78 total including skips)
+  - 40 games had broken links
+  - 171 total game files now available
+
+## Notes
+- Many games in game_list.txt have broken download URLs (HTTP 404)
+- These are mostly from eblong.com/infocom and ifarchive.org
+- May need to find alternative sources or remove broken entries
+- Ready to proceed with batch solving of downloaded games
+
 ## Tasks Completed
 
 ### Iteration 1
@@ -56,4 +74,10 @@ Extend zwalker to play at least 130 games to completion.
 - Updated game_list.txt with pass/fail status for solved games (55 now marked as pass)
 - Added 71 new Z-machine games to game_list.txt from IF Archive & IFDB
 - Game list expanded from 101 to 172 total games
+
+### Iteration 2
+- Created scripts/download_untested_games.py to download all untested games from game_list.txt
+- Successfully downloaded 75 new game files (3 already existed)
+- 40 games had broken download links (HTTP 404 errors)
+- Total game files in games/zcode/: 171
 
