@@ -2011,11 +2011,17 @@ class ZMachine:
         # Extended
         elif name == "save":
             # For automated walking, always succeed
-            self.set_variable(store_var, 1)
+            if store_var is not None:
+                self.set_variable(store_var, 1)  # V4+
+            elif branch is not None:
+                self._do_branch(True, branch)  # V1-3: branch on success
 
         elif name == "restore":
             # For automated walking, always fail (no saved game to restore)
-            self.set_variable(store_var, 0)
+            if store_var is not None:
+                self.set_variable(store_var, 0)  # V4+
+            elif branch is not None:
+                self._do_branch(False, branch)  # V1-3: don't branch (failure)
 
         elif name == "save_undo":
             self.set_variable(store_var, 1)  # Success (but we don't actually save)
