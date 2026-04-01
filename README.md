@@ -156,7 +156,7 @@ python scripts/solve_game.py your_game.z5 --max-iterations 100
 - Complex opening puzzles can stall AI
 - Not all games solve to completion (60-80% success rate expected)
 
-See [docs/STATUS.md](docs/STATUS.md) for detailed status and [docs/PROGRESS_REPORT.md](docs/PROGRESS_REPORT.md) for test results.
+See the [GitHub issues](https://github.com/avwohl/zwalker/issues) for detailed status and test results.
 
 ## Results
 
@@ -175,9 +175,9 @@ See [docs/STATUS.md](docs/STATUS.md) for detailed status and [docs/PROGRESS_REPO
 ## Documentation
 
 - [CHANGELOG.md](docs/CHANGELOG.md) - Z-machine bug fixes
-- [STATUS.md](docs/STATUS.md) - Project status and roadmap
-- [PROGRESS_REPORT.md](docs/PROGRESS_REPORT.md) - Test results
-- [WALKTHROUGHS_STATUS.md](docs/WALKTHROUGHS_STATUS.md) - Walkthrough quality analysis
+- [GAME_SOURCES.md](docs/GAME_SOURCES.md) - 100+ game sources with download URLs
+- [ADVANCED_SOLVER.md](docs/ADVANCED_SOLVER.md) - Advanced solver documentation
+- [TEST_GENERATION.md](docs/TEST_GENERATION.md) - Test generation guide
 
 ## Architecture
 
