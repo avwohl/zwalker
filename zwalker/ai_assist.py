@@ -372,21 +372,17 @@ Respond in JSON format:
         )
 
     def _parse_response(self, response_text: str) -> AIResponse:
-        """Parse JSON response from LLM"""
-        try:
-            # Try to extract JSON from response
-            # Handle cases where LLM wraps JSON in markdown
-            if "```json" in response_text:
-                json_start = response_text.find("```json") + 7
-                json_end = response_text.find("```", json_start)
-                response_text = response_text[json_start:json_end]
-            elif "```" in response_text:
-                json_start = response_text.find("```") + 3
-                json_end = response_text.find("```", json_start)
-                response_text = response_text[json_start:json_end]
+        """Parse JSON response from LLM, tolerating markdown fences and prose.
 
-            data = json.loads(response_text.strip())
+        Uses the shared robust extractor (strips ```json fences, tolerates text
+        before/after the object, falls back to the first balanced {...}/[...]).
+        On hard failure it logs the raw response head and returns a sane default
+        instead of throwing "Expecting value: line 1 column 1".
+        """
+        from .advanced_solver import extract_json
 
+        data = extract_json(response_text)
+        if isinstance(data, dict):
             return AIResponse(
                 suggested_commands=data.get("suggested_commands", []),
                 reasoning=data.get("reasoning", ""),
@@ -394,15 +390,15 @@ Respond in JSON format:
                 possible_puzzles=data.get("possible_puzzles", []),
                 exploration_priority=data.get("exploration_priority", "medium")
             )
-        except (json.JSONDecodeError, KeyError) as e:
-            # Return a basic response if parsing fails
-            return AIResponse(
-                suggested_commands=["look", "inventory", "examine room"],
-                reasoning=f"Failed to parse AI response: {e}",
-                objects_of_interest=[],
-                possible_puzzles=[],
-                exploration_priority="medium"
-            )
+
+        head = (response_text or "").strip().replace("\n", " ")[:200]
+        return AIResponse(
+            suggested_commands=["look", "inventory", "examine room"],
+            reasoning=f"Failed to parse AI response; raw head: {head!r}",
+            objects_of_interest=[],
+            possible_puzzles=[],
+            exploration_priority="medium"
+        )
 
     def suggest_for_puzzle(self, puzzle_description: str,
                            inventory: List[str],

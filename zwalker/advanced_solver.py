@@ -18,6 +18,82 @@ from pathlib import Path
 from collections import defaultdict
 
 
+def extract_json(text: str) -> Optional[Any]:
+    """Best-effort extraction of a JSON value from free-form model output.
+
+    Handles the common ways an LLM wraps JSON:
+      * pure JSON
+      * JSON inside ```json ... ``` or ``` ... ``` markdown fences
+      * JSON with prose before and/or after it
+    Returns the parsed object, or None if nothing parseable is found (the
+    caller is then responsible for a sensible recovery rather than crashing
+    with "Expecting value: line 1 column 1").
+    """
+    if not text:
+        return None
+
+    candidates: List[str] = []
+
+    # 1) Strip markdown code fences and try the fenced body first.
+    if "```" in text:
+        fence = text.split("```", 1)[1]
+        # Drop an optional language tag like "json" on the opening fence line.
+        if "\n" in fence:
+            first_line, rest = fence.split("\n", 1)
+            if first_line.strip().lower() in ("json", "json5", ""):
+                fence = rest
+        fenced = fence.split("```", 1)[0].strip()
+        if fenced:
+            candidates.append(fenced)
+
+    # 2) The whole text, stripped.
+    candidates.append(text.strip())
+
+    # 3) The first balanced {...} or [...] span anywhere in the text.
+    span = _first_balanced_json(text)
+    if span:
+        candidates.append(span)
+
+    for cand in candidates:
+        try:
+            return json.loads(cand)
+        except (json.JSONDecodeError, ValueError):
+            continue
+        except Exception:
+            continue
+    return None
+
+
+def _first_balanced_json(text: str) -> Optional[str]:
+    """Return the first balanced {...} or [...] substring, respecting strings."""
+    starts = [i for i, c in enumerate(text) if c in "{["]
+    for start in starts:
+        open_ch = text[start]
+        close_ch = "}" if open_ch == "{" else "]"
+        depth = 0
+        in_str = False
+        escape = False
+        for i in range(start, len(text)):
+            ch = text[i]
+            if in_str:
+                if escape:
+                    escape = False
+                elif ch == "\\":
+                    escape = True
+                elif ch == '"':
+                    in_str = False
+                continue
+            if ch == '"':
+                in_str = True
+            elif ch == open_ch:
+                depth += 1
+            elif ch == close_ch:
+                depth -= 1
+                if depth == 0:
+                    return text[start:i + 1]
+    return None
+
+
 @dataclass
 class GameState:
     """Snapshot of game state for backtracking"""
@@ -278,8 +354,20 @@ class AdvancedAISolver:
         """
         room_id_before = self.walker.current_room_id
 
-        # Execute the command
-        result = self.walker.try_command(command)
+        # Execute the command. Isolate per-command interpreter errors so one bad
+        # opcode can't abort the whole run (mirrors solve_local / execute_strategy).
+        pre_state = self.walker.vm.save_state()
+        try:
+            result = self.walker.try_command(command)
+        except Exception as e:  # noqa: BLE001 - includes ZMachineError
+            try:
+                self.walker.vm.restore_state(pre_state)
+            except Exception:
+                pass
+            self.walker.current_room_id = room_id_before
+            self.turn_number += 1
+            self.log(f"VM error on '{command}' (skipped): {e}", "ERROR")
+            return None
 
         room_id_after = self.walker.current_room_id
 
@@ -529,6 +617,8 @@ class AdvancedAISolver:
         score = context.get('score', 0)
         max_score = context.get('max_score')
         score_str = f"{score}/{max_score}" if max_score is not None else str(score)
+        best_score = getattr(self, "best_score", score) or score
+        max_score_str = str(max_score) if max_score is not None else "unknown"
         known_exits = ', '.join(room_ctx['exits'].keys()) or 'none discovered yet'
         untried = ', '.join(room_ctx.get('untried_directions', [])) or 'none'
         blocked = ', '.join(room_ctx.get('blocked_directions', [])) or 'none'
@@ -537,10 +627,33 @@ class AdvancedAISolver:
 
         prompt = f"""You are an expert interactive fiction game solver with deep understanding of IF puzzles, mechanics, and conventions.
 
+PRIMARY OBJECTIVE — MAXIMIZE SCORE:
+===================================
+Your single most important goal is to RAISE THE SCORE as high as possible.
+  Current score: {score}
+  Maximum possible score: {max_score_str}
+  Best score reached so far this campaign: {best_score}
+Points are the only objective measure of progress — exploration, taking items,
+and solving puzzles only matter insofar as they increase the score. Always
+prefer the action most likely to raise the score next.
+
+CRITICAL IF SCORING MECHANIC — DEPOSITING, NOT CARRYING:
+In most treasure-hunt / collection IF games (the Zork family being the canonical
+example) you score points in TWO stages, and merely HOLDING a valuable does NOT
+give you its full points:
+  1. FIND and TAKE the treasure/objective item (small or no score), THEN
+  2. CARRY it back to and DEPOSIT it at the designated drop-off location — the
+     trophy case (Zork's "put <treasure> in case" in the living room), an altar,
+     a vault, a goal room, or whatever the game establishes as the deposit point.
+The big points are awarded on DEPOSIT/PUT, not on TAKE. So if you are carrying
+valuable items and your score has stalled, your top priority is to NAVIGATE BACK
+to the known deposit location and DEPOSIT (put/drop) each carried item there.
+Track where the deposit point is once you find it, and make return trips.
+
 CURRENT GAME STATE:
 ===================
 Turn: {context['turn_number']}
-Score: {score_str}
+Score: {score_str}  (best so far: {best_score}, max: {max_score_str})
 Room: {room_ctx['name']} (ID: {room_ctx['id']})
 Description: {room_ctx['description']}
 Visible Objects: {', '.join(room_ctx['objects']) or 'none'}
@@ -617,7 +730,8 @@ Respond in JSON format:
 
 IMPORTANT:
 - ONLY USE WORDS THE PARSER KNOWS: every verb must come from the VERBS list and every noun from the NOUNS list above (directions are always allowed). Do NOT invent words like "door" if it isn't listed.
-- MAXIMIZE SCORE: the score is shown above. Prefer actions that raise it (taking treasures, solving puzzles). A rising score is the clearest sign of progress.
+- MAXIMIZE SCORE (TOP PRIORITY): the score is shown above. Prefer the action most likely to raise it. A rising score is the clearest sign of progress; if it has stalled, change approach.
+- DEPOSIT CARRIED TREASURES: remember that points usually come from PUTTING valuables in the trophy case / deposit location, not from carrying them. If you hold treasures and the score is flat, plan a route BACK to the known deposit point and "put <item> in case" (or drop it at the goal location) for each one.
 - PREFER UNTRIED DIRECTIONS to discover new rooms; NEVER retry BLOCKED DIRECTIONS.
 - Be specific with commands (not just "examine things" but "examine lamp", "take key", etc.)
 - Consider IF game logic (objects often need to be examined before use, doors unlocked before opening, etc.)
@@ -642,17 +756,17 @@ IMPORTANT:
 
             response_text = response.content[0].text
 
-            # Parse JSON response
-            if "```json" in response_text:
-                json_start = response_text.find("```json") + 7
-                json_end = response_text.find("```", json_start)
-                response_text = response_text[json_start:json_end].strip()
-            elif "```" in response_text:
-                json_start = response_text.find("```") + 3
-                json_end = response_text.find("```", json_start)
-                response_text = response_text[json_start:json_end].strip()
-
-            data = json.loads(response_text)
+            # Robustly extract JSON: strips markdown fences, tolerates prose
+            # before/after the object, and falls back to the first balanced
+            # {...}/[...] span. Returns None (not an exception) on hard failure.
+            data = extract_json(response_text)
+            if not isinstance(data, dict):
+                head = (response_text or "").strip().replace("\n", " ")[:300]
+                self.log(
+                    f"Strategy response not parseable as JSON; raw head: {head!r}",
+                    "ERROR",
+                )
+                return self._recovery_strategy("unparseable strategy response")
 
             strategy = Strategy(
                 goal=data.get("goal", "explore"),
@@ -671,13 +785,37 @@ IMPORTANT:
 
         except Exception as e:
             self.log(f"Error getting strategy: {e}", "ERROR")
-            # Fallback: basic exploration
-            return Strategy(
-                goal="explore systematically",
-                steps=["north", "south", "east", "west", "look", "inventory"],
-                reasoning="Fallback strategy due to API error",
-                confidence=0.3
-            )
+            return self._recovery_strategy(f"strategy error: {e}")
+
+    def _recovery_strategy(self, reason: str) -> Strategy:
+        """Build a recovery plan when the planner output can't be used.
+
+        Rather than always returning the same fixed N/S/E/W list (which makes
+        the solver loop uselessly), prefer the current room's UNTRIED exits and
+        a couple of generically useful actions, so a parse failure still makes
+        forward progress.
+        """
+        steps: List[str] = []
+        try:
+            room = self.walker.rooms.get(self.walker.current_room_id)
+            if room is not None:
+                untried = [d for d in getattr(room, "untried_directions", [])]
+                blocked = getattr(room, "blocked_directions", set())
+                steps.extend(d for d in untried if d not in blocked)
+        except Exception:
+            pass
+        # Always include cheap score/inspection actions and a default sweep so
+        # the plan is non-empty even with no known untried exits.
+        for extra in ("take all", "look", "north", "south", "east", "west",
+                      "up", "down", "inventory"):
+            if extra not in steps:
+                steps.append(extra)
+        return Strategy(
+            goal="recover and explore (planner output unusable)",
+            steps=steps[:12],
+            reasoning=f"Recovery plan: {reason}",
+            confidence=0.3,
+        )
 
     def execute_strategy(self, strategy: Strategy) -> bool:
         """
@@ -694,8 +832,24 @@ IMPORTANT:
             # Track room ID before command
             room_id_before = self.walker.current_room_id
 
-            # Execute command
-            result = self.walker.try_command(step)
+            # Execute command. Isolate per-command interpreter errors so a single
+            # bad opcode (e.g. a write to static memory) can't abort an entire
+            # expensive run. Mirror solve_local: restore the pre-command VM state,
+            # record the command as a no-op failure, and continue the strategy.
+            pre_state = self.walker.vm.save_state()
+            try:
+                result = self.walker.try_command(step)
+            except Exception as e:  # noqa: BLE001 - includes ZMachineError
+                try:
+                    self.walker.vm.restore_state(pre_state)
+                except Exception:
+                    pass
+                self.walker.current_room_id = room_id_before
+                self.turn_number += 1
+                self.log(f"VM error on '{step}' (skipped): {e}", "ERROR")
+                if self.verbose:
+                    print(f"  [Room {room_id_before}] → [vm-error: {e}]\n")
+                continue
             output = result.output
 
             # Track room ID after command

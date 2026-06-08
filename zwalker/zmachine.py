@@ -1906,11 +1906,13 @@ class ZMachine:
             self.insert_object(ops[0], ops[1])
 
         elif name == "loadw":
-            addr = ops[0] + 2 * ops[1]
+            # Z-machine byte addresses are 16-bit; the computed address
+            # (array + 2*index) must wrap at 0x10000 rather than exceed it.
+            addr = (ops[0] + 2 * ops[1]) & 0xFFFF
             self.set_variable(store_var, self.read_word(addr))
 
         elif name == "loadb":
-            addr = ops[0] + ops[1]
+            addr = (ops[0] + ops[1]) & 0xFFFF
             self.set_variable(store_var, self.read_byte(addr))
 
         elif name == "get_prop":
@@ -1980,10 +1982,13 @@ class ZMachine:
             self._call_routine(ops[0], args, None)
 
         elif name == "storew":
-            self.write_word(ops[0] + 2 * ops[1], ops[2])
+            # Z-machine byte addresses are 16-bit; wrap the computed address
+            # (array + 2*index) at 0x10000 instead of letting it overflow into
+            # high memory and trip the static-memory write guard.
+            self.write_word((ops[0] + 2 * ops[1]) & 0xFFFF, ops[2])
 
         elif name == "storeb":
-            self.write_byte(ops[0] + ops[1], ops[2])
+            self.write_byte((ops[0] + ops[1]) & 0xFFFF, ops[2])
 
         elif name == "put_prop":
             self.put_property(ops[0], ops[1], ops[2])
@@ -2071,12 +2076,16 @@ class ZMachine:
                 # Close stream 3: write count word + captured ZSCII bytes.
                 if self._stream3_stack:
                     table, buf = self._stream3_stack.pop()
+                    table &= 0xFFFF  # byte addresses are 16-bit
                     count = len(buf)
-                    # Count word at table[0..1], bytes from table+2.
-                    self.memory[table] = (count >> 8) & 0xFF
-                    self.memory[table + 1] = count & 0xFF
+                    # Count word at table[0..1], bytes from table+2. Route through
+                    # write_byte so the dynamic/static-memory guard applies and a
+                    # bad table address fails loudly instead of silently corrupting
+                    # high memory or raising IndexError on a direct slice write.
+                    self.write_byte(table, (count >> 8) & 0xFF)
+                    self.write_byte(table + 1, count & 0xFF)
                     for i, b in enumerate(buf):
-                        self.memory[table + 2 + i] = b & 0xFF
+                        self.write_byte(table + 2 + i, b & 0xFF)
             # Streams +/-1 (screen) and +/-2 (transcript): no-op as before.
 
         elif name == "input_stream":
