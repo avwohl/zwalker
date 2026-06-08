@@ -363,7 +363,8 @@ class AgenticSolver:
     def __init__(self, game_data: bytes,
                  decider: Optional[Decider] = None,
                  verbose: bool = False,
-                 stall_limit: int = 12):
+                 stall_limit: int = 12,
+                 max_seconds: Optional[float] = None):
         self.walker = GameWalker(game_data)
         self.vm = self.walker.vm
         self.world = WorldModel()
@@ -371,6 +372,9 @@ class AgenticSolver:
         self.verbose = verbose
         # K: turns of no score improvement before we backtrack a branch.
         self.stall_limit = stall_limit
+        # OPTIONAL wall-clock cap (seconds). Default None == unbounded, so
+        # max_turns is the real limiter; solve(max_seconds=...) can override.
+        self.max_seconds = max_seconds
 
         self.turn = 0
         self.best_score = 0
@@ -596,13 +600,33 @@ class AgenticSolver:
 
     # ---- 1. THE LOOP -------------------------------------------------------
 
-    def solve(self, max_turns: int = 200, time_budget: float = 300.0,
+    def solve(self, max_turns: int = 200, max_seconds: Optional[float] = None,
               checkpoint_every: int = 8) -> Dict[str, Any]:
         """
-        Main perceive->decide->execute-ONE->verify loop.
+        Main perceive->decide->execute-ONE->verify loop with PLAN CACHING.
+
+        max_turns is the primary limiter. max_seconds is an OPTIONAL wall-clock
+        cap (seconds); when None (the default, also overridable via the
+        constructor's max_seconds=) the run is bounded ONLY by max_turns — so a
+        120-turn run actually runs ~120 turns instead of being silently cut off
+        by an internal ~300s budget. Pass max_seconds=... (here or to the
+        constructor) to bound wall-clock for, e.g., expensive LLM deciders.
+
+        PLAN CACHING: the decider returns Decision(action, subgoal, plan). We
+        seed a `current_plan` queue from action+plan and POP from it on
+        subsequent turns WITHOUT re-consulting the decider, as long as we are
+        "on track" (last command was not a reject/no-op/death and the queue is
+        non-empty). The decider is re-consulted (and the queue refilled) ONLY
+        when genuinely needed: empty queue, a reject/no-op/dead-branch, or a
+        notable event (death, score change, new room) that warrants replanning.
+        This cuts LLM calls/turn well below 1 when plans are long, with no
+        change to VERIFY / world-model / checkpoint / backtrack behavior, which
+        still run every turn regardless of whether the decider was consulted.
 
         Returns the AdvancedAISolver-compatible result dict.
         """
+        # Resolve the optional wall-clock cap (call arg overrides constructor).
+        budget = max_seconds if max_seconds is not None else self.max_seconds
         start_time = time.time()
 
         # Start the game and seed the world model.
@@ -615,8 +639,23 @@ class AgenticSolver:
         last_command, last_response = "", first_output
         stall_reason = "turn budget reached"
 
+        # PLAN-CACHE state.
+        current_plan: deque = deque()    # queued backup/follow-on commands
+        current_subgoal = ""             # subgoal of the in-flight plan
+        decider_calls = 0                # instrumentation (calls-per-turn)
+        # Whether the last executed command kept us "on track" (benign result).
+        on_track = False
+
+        def _useless(a: str, here: int) -> bool:
+            if self._is_nav_meta(a):
+                return False
+            if (here, _norm_action(a)) in self.world.dead_branches:
+                return True
+            prior = self.world.action_outcome(here, a)
+            return prior in ("reject", "noop", "nav-noop")
+
         while self.turn < max_turns:
-            if time.time() - start_time > time_budget:
+            if budget is not None and time.time() - start_time > budget:
                 stall_reason = "wall-clock budget reached"
                 break
             if self.walker.max_score is not None and \
@@ -625,37 +664,46 @@ class AgenticSolver:
                 stall_reason = "won (max score reached)"
                 break
 
-            # --- PERCEIVE ---
-            perception = self.perceive(last_command, last_response)
-
-            # --- DECIDE ---
-            decision = self.decider(perception)
-            action = decision.action
-            if decision.subgoal:
-                self.world.push_goal(decision.subgoal)
-
-            # VERIFY-feedback to the loop itself: never replay an action this
-            # room already proved useless. An action is "useless here" if it is
-            # a marked dead branch OR we previously recorded it as a no-op /
-            # reject from this exact room. Prefer a fresh alternative from the
-            # decider's ordered plan; only fall through to the original action
-            # if every alternative is also useless (then the stall/backtrack
-            # machinery takes over).
             here = self.walker.current_room_id
 
-            def _useless(a: str) -> bool:
-                if self._is_nav_meta(a):
-                    return False
-                if (here, _norm_action(a)) in self.world.dead_branches:
-                    return True
-                prior = self.world.action_outcome(here, a)
-                return prior in ("reject", "noop", "nav-noop")
+            # --- CHOOSE NEXT ACTION (plan-cache vs. decider) ---
+            # Reuse the cached plan WITHOUT calling the decider when we are on
+            # track and the queue still has a usable command. Otherwise consult
+            # the decider once and refill the queue from action+plan.
+            action: Optional[str] = None
+            if on_track and current_plan:
+                # Pop usable queued commands; drop known-dead ones WITHOUT
+                # burning a turn or immediately re-calling the decider.
+                while current_plan:
+                    cand = current_plan.popleft()
+                    if cand and not _useless(cand, here):
+                        action = cand
+                        break
 
-            if _useless(action):
-                alt = next((a for a in decision.plan if a and not _useless(a)),
-                           None)
-                if alt:
-                    action = alt
+            if action is None:
+                # --- PERCEIVE + DECIDE (refill the queue) ---
+                perception = self.perceive(last_command, last_response)
+                decision = self.decider(perception)
+                decider_calls += 1
+                current_subgoal = decision.subgoal
+                if decision.subgoal:
+                    self.world.push_goal(decision.subgoal)
+
+                # Seed the queue from action followed by the ordered plan, and
+                # take the first usable command. Falls through to the raw action
+                # if everything is useless (stall/backtrack machinery then runs).
+                current_plan = deque(
+                    [decision.action] + list(decision.plan or []))
+                while current_plan:
+                    cand = current_plan.popleft()
+                    if cand and not _useless(cand, here):
+                        action = cand
+                        break
+                if action is None:
+                    action = decision.action
+            elif current_subgoal:
+                # Keep the in-flight subgoal current while consuming the plan.
+                self.world.push_goal(current_subgoal)
 
             score_before = self.vm.get_score()
             room_before = self.walker.current_room_id
@@ -702,11 +750,32 @@ class AgenticSolver:
             self._log_turn(action, was_nav, score_delta, score_after,
                            room_changed, room_after, inv_gained, last_response)
 
+            # On-track? A turn is "on track" (the cached plan may continue
+            # WITHOUT re-deciding) when the command was NOT a reject/no-op/
+            # dead-branch, did not die, and produced no notable event (a score
+            # change or reaching a genuinely new room) that warrants fresh
+            # planning. Notable events / rejects drop the cached plan so the
+            # next turn re-consults the decider.
+            is_reject_outcome = outcome in ("reject", "noop", "nav-noop",
+                                            "vm-error")
+            # A room change is a fresh decision point: the queued plan is keyed
+            # to the room it was made in (its take/open/examine target the old
+            # room's objects), so replan on ANY room change. A score change is
+            # also notable. Same-room benign actions (examine/open/push/...) and
+            # nav meta-actions keep the cached plan flowing without a decider
+            # call — that is where the calls/turn savings come from.
+            notable = (score_delta != 0) or room_changed
+            on_track = (not is_reject_outcome) and (not notable)
+            if not on_track:
+                current_plan.clear()
+
             # death -> backtrack immediately. Mark the branch at the room the
             # fatal action was ISSUED FROM (room_before), so after the restore
             # lands us back there we don't re-issue the same fatal command.
             if self._is_death(last_response):
                 self._log(f"  ✗ DEATH after '{action}'")
+                current_plan.clear()
+                on_track = False
                 if not self.backtrack(action, "death", failed_room=room_before):
                     stall_reason = "died with no checkpoint"
                     break
@@ -726,6 +795,8 @@ class AgenticSolver:
                               and self.best_checkpoint.score > 0)
             if self._turns_since_score >= self.stall_limit and have_promising:
                 self._log(f"  ⚠ stalled {self._turns_since_score} turns")
+                current_plan.clear()
+                on_track = False
                 if self.backtrack(action, "score stall", failed_room=room_before):
                     last_command, last_response = "", "(restored after stall)"
                     continue
@@ -753,6 +824,8 @@ class AgenticSolver:
             "commands": list(self.commands),
             "stall_reason": stall_reason,
             "elapsed_sec": elapsed,
+            "decider_calls": decider_calls,
+            "calls_per_turn": round(decider_calls / max(self.turn, 1), 3),
             "world_model": self.world.to_dict(),
         }
 
