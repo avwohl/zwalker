@@ -512,12 +512,20 @@ class GameWalker:
                     self.kb.add_exit(result.room_id, reverse, self.current_room_id)
 
             self.current_room_id = result.room_id
-        elif self._is_blocked(output):
-            # Room didn't change AND output indicates blocked movement
+        elif norm_dir and self._is_blocked(output):
+            # Room didn't change AND output indicates blocked movement.
+            # IMPORTANT: only treat this as a blocked move (and roll the VM state
+            # back) when the command was actually a movement command (norm_dir is
+            # set). Otherwise a successful non-movement action whose output happens
+            # to match a blocked pattern -- e.g. "Closed." from `close receptacle`,
+            # which matches r"(locked|closed)\s*\." -- would be wrongly rolled
+            # back, silently undoing the action (this broke the Zork II balloon
+            # descent: `close receptacle` was reverted, so the balloon never
+            # deflated).
             result.blocked = True
             result_type = "blocked"
             # Record the blocked direction so we don't keep retrying it.
-            if norm_dir and room_rec is not None:
+            if room_rec is not None:
                 room_rec.blocked_directions.add(norm_dir)
             # Restore state since nothing happened
             self.vm.restore_state(state_before)

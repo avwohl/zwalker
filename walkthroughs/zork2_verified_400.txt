@@ -1,0 +1,435 @@
+# Zork II — "The Wizard of Frobozz" (Infocom Release 63, serial 860811, Z-machine V3)
+# VERIFIED COMPLETE SOLVE: 400/400, won=True, died=False
+#
+# Reproduce with the RNG-pinned replay harness (free, no API):
+#   cd ~/src/zwalker
+#   python3 scripts/replay_solve.py games/zcode/zork2.z3 walkthroughs/zork2_verified_400.txt --seeds 12
+#   => zork2_verified_400.txt: VERIFIED 400/400 at seed 2 | 386 cmds | died=False | won=True
+#
+# Why a pinned seed: Zork II's Wizard of Frobozz casts random "F" spells, the
+# carousel/room-spinners randomize exits, and combat is random. The harness pins
+# the interpreter RNG (vm.rng.seed) so the whole playthrough is deterministic;
+# this correct command sequence threads every RNG gate at seed 2. The score
+# timeline is strictly monotonic across 35 real scoring events to 400.
+#
+# Mechanics cross-checked against the official Zork II ZIL source
+# (github.com/historicalsource/zork2): the Tiny Room oak door, the balloon
+# I-BALLOON daemon, the princess/unicorn garden daemons, the demon wish, the
+# menhir float ("wave wand at menhir" + "say float"), and the oddly-angled
+# baseball-diamond motion sequence (SE, NE, NW, SW).
+
+# --- Barrow start: arm up and head down into the Great Underground Empire ---
+take lamp
+take sword
+turn on lamp
+south
+south
+south
+sw
+south
+se
+
+# --- Gazebo (teapot), the Riddle Room ("answer well"), necklace, draw well water ---
+enter gazebo
+take teapot
+exit
+north
+ne
+fill teapot
+south
+sw
+sw
+southeast
+west
+southeast
+answer "well"
+east
+take necklace
+east
+enter bucket
+pour water in bucket
+stand
+east
+
+# --- Alice-in-Wonderland cakes room (eat/throw the right cakes) ---
+take all
+eat green cake
+east
+drop orange cake
+throw red cake in pool
+take candies
+west
+eat blue cake
+nw
+
+# --- Robot puzzle: command the robot to reach the button you cannot ---
+read paper
+drop paper
+robot, go east
+east
+robot, go south
+south
+take red sphere
+robot, lift cage
+take red sphere
+look in red sphere
+robot, go north
+north
+robot, push triangular button
+
+# --- Back out; aquarium/lizard area: violin from the steel box, string, feed lizard ---
+west
+southeast
+west
+southeast
+west
+enter bucket
+fill teapot
+stand
+drop teapot
+west
+west
+nw
+open steel box
+take violin
+sw
+take string
+sw
+give candies to lizard
+drop necklace
+drop violin
+drop red sphere
+
+# --- Tiny Room oak door: slide the mat, push the key out, unlock; blue sphere ---
+north
+ne
+east
+north
+north
+enter gazebo
+take all
+exit
+south
+west
+sw
+north
+take brick
+north
+north
+up
+put mat under door
+open lid
+put opener in keyhole
+take opener
+drop opener
+take mat
+take key
+unlock door with key. open door. north
+take blue sphere
+look in blue sphere
+south
+down
+
+# --- Dragon: drive it back to free the princess; kiss the princess ---
+west
+north
+attack dragon with sword
+south
+attack dragon with sword
+south
+attack dragon with sword
+west
+east
+north
+north
+north
+kiss princess
+
+# --- Princess/unicorn garden: follow the unicorn daemon to the gold key ---
+south
+east
+east
+down
+south
+east
+wait
+east
+wait
+east
+east
+north
+in
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+exit
+take key
+drop rose
+drop orange cake
+drop rusty key
+inventory
+
+# --- Gold-key door; the gem spheres onto their stands; ruby ---
+south
+south
+west
+sw
+sw
+take red sphere
+unlock door with gold key. open door. south
+west
+west
+throw sword at aquarium
+take clear sphere
+take sword
+east
+put clear sphere on diamond stand
+put red sphere on ruby stand
+put blue sphere on sapphire stand
+take black sphere
+look in black sphere
+east
+north
+north
+north
+down
+west
+take ruby
+south
+
+# --- Hot-air balloon: inflate with burning newspaper, tie off, ride to the crown ---
+enter basket
+open receptacle
+put newspaper in receptacle
+light match
+burn newspaper with match
+read label
+drop label
+wait
+land
+tie wire to hook
+stand
+take coin
+south
+open purple book
+take stamp
+north
+enter basket
+untie wire
+wait
+wait
+wait
+land
+tie wire to hook
+stand
+south
+put brick in hole
+put string in brick
+light match
+burn string with match
+north
+south
+take crown
+read card
+north
+enter basket
+untie wire
+close receptacle
+wait
+wait
+wait
+wait
+wait
+wait
+drop card
+stand
+north
+east
+east
+se
+sw
+sw
+take off crown
+
+# --- Stage treasures; Bank of Zork: walk through the light-curtain walls ---
+drop crown
+drop stamp
+drop zorkmid
+drop ruby
+north
+ne
+north
+north
+north
+west
+north
+north
+open chest
+open chest
+take statuette
+south
+west
+west
+nw
+west
+south
+take portrait
+north
+walk through north wall
+walk through south wall
+walk through north wall
+take bills
+walk through north wall
+drop bills
+drop portrait
+east
+east
+take bills
+take portrait
+walk through north wall
+south
+east
+east
+south
+south
+se
+west
+take repellent
+east
+sw
+sw
+take necklace
+south
+west
+south
+
+# --- Gather all ten treasures and wait for the demon to appear ---
+drop necklace
+drop gold key
+drop statuette
+drop violin
+drop portrait
+drop bills
+drop ruby
+drop crown
+drop stamp
+drop zorkmid
+north
+east
+north
+look
+take necklace
+take gold key
+take statuette
+take violin
+take portrait
+take bills
+take ruby
+take crown
+take stamp
+take zorkmid
+south
+west
+south
+drop necklace
+drop gold key
+drop statuette
+drop violin
+drop portrait
+drop bills
+drop ruby
+drop crown
+drop stamp
+drop zorkmid
+north
+east
+north
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+south
+west
+south
+
+# --- The demon: present every treasure, then claim the Wizard's wand ---
+put black sphere in pentagram
+take necklace
+give necklace to demon
+take gold key
+give gold key to demon
+take statuette
+give statuette to demon
+take violin
+give violin to demon
+take portrait
+give portrait to demon
+take bills
+give bills to demon
+take ruby
+give ruby to demon
+take crown
+give crown to demon
+take stamp
+give stamp to demon
+take coin
+give coin to demon
+demon, give me wand
+take wand
+inventory
+
+# --- Float the menhir with the wand; take the collar ---
+north
+east
+north
+north
+ne
+south
+wave wand at menhir
+say "float"
+sw
+take collar
+
+# --- Endgame: collar the Cerberus, repel the grue, open the secret door, win ---
+ne
+south
+down
+west
+west
+se
+ne
+nw
+sw
+west
+south
+north
+east
+down
+put collar on cerberus
+east
+open door
+south
+apply repellent to me
+turn off lamp
+open secret door
+south

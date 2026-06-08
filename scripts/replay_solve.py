@@ -69,7 +69,15 @@ def run_once(data, cmds, seed):
     prev = w.vm.get_score()
     died = False
     for i, raw in enumerate(cmds):
-        r = w.try_command(normalize(raw))
+        try:
+            r = w.try_command(normalize(raw))
+        except Exception:
+            # An interpreter fault under THIS seed (e.g. a storew that lands in
+            # static memory after a particular RNG-driven Wizard spell). Treat the
+            # seed as a dead end and stop replaying it, but do NOT abort the whole
+            # seed search -- other seeds may run cleanly to a full win.
+            died = True
+            break
         out = (r.output if r is not None and hasattr(r, "output") else "") or ""
         s = w.vm.get_score()
         if s != prev:
