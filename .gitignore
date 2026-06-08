@@ -55,3 +55,8 @@ solutions/*_solution.json
 !solutions/.gitkeep
 tests/*_walkthrough.json
 !tests/.gitkeep
+
+# Local secrets (API keys) — never commit
+.env
+.env~
+.env.local
