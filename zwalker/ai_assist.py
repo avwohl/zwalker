@@ -23,6 +23,24 @@ class GameContext:
     recent_commands: List[str]
     recent_outputs: List[str]
     vocabulary_sample: List[str]  # Sample of available words
+    # Exits/score awareness for dictionary-constrained, score-driven solving.
+    untried_directions: List[str] = None  # Compass directions not yet tried here
+    blocked_directions: List[str] = None  # Directions known to be blocked here
+    dictionary_verbs: List[str] = None    # Real verbs from the game's dictionary
+    dictionary_words: List[str] = None    # Full dictionary word set
+    score: int = 0
+    max_score: Optional[int] = None
+
+    def __post_init__(self):
+        # Mutable defaults must be normalized to empty lists.
+        if self.untried_directions is None:
+            self.untried_directions = []
+        if self.blocked_directions is None:
+            self.blocked_directions = []
+        if self.dictionary_verbs is None:
+            self.dictionary_verbs = []
+        if self.dictionary_words is None:
+            self.dictionary_words = []
 
 
 @dataclass
@@ -56,7 +74,7 @@ class AIAssistant:
         self._client = None
 
         if backend == "anthropic":
-            self.model = model or "claude-3-haiku-20240307"
+            self.model = model or "claude-haiku-4-5-20251001"
             self._init_anthropic()
         elif backend == "openai":
             self.model = model or "gpt-3.5-turbo"
@@ -91,42 +109,60 @@ class AIAssistant:
 
     def _build_prompt(self, context: GameContext) -> str:
         """Build the analysis prompt"""
-        exits_str = ", ".join(f"{dir}: room {id}" for dir, id in context.exits.items())
+        if context.exits:
+            exits_str = ", ".join(f"{d}: room {rid}" for d, rid in context.exits.items())
+        else:
+            exits_str = "none discovered yet"
+        untried_str = ", ".join(context.untried_directions) if context.untried_directions else "none"
+        blocked_str = ", ".join(context.blocked_directions) if context.blocked_directions else "none"
         objects_str = ", ".join(context.visible_objects) if context.visible_objects else "none visible"
         inventory_str = ", ".join(context.inventory) if context.inventory else "empty"
         recent_str = "\n".join(f"> {cmd}\n{out}" for cmd, out in
                                zip(context.recent_commands[-5:], context.recent_outputs[-5:]))
-        vocab_str = ", ".join(context.vocabulary_sample[:50])
 
-        prompt = f"""You are an expert at COMPLETING interactive fiction games. Your goal is to WIN this game, not just explore it.
+        # Dictionary constraint: the game only understands these verbs/words.
+        verbs_str = ", ".join(context.dictionary_verbs[:60]) if context.dictionary_verbs else \
+            ", ".join(context.vocabulary_sample[:50])
+        # Nouns the parser will accept right now = visible objects + inventory.
+        noun_pool = []
+        for name in (context.visible_objects or []) + (context.inventory or []):
+            noun_pool.append(name.split()[0].lower() if name else name)
+        nouns_str = ", ".join(dict.fromkeys(noun_pool)) if noun_pool else "none"
+        score_str = f"{context.score}/{context.max_score}" if context.max_score is not None \
+            else str(context.score)
+
+        prompt = f"""You are an expert at COMPLETING interactive fiction games. Your goal is to WIN this game (maximize SCORE), not just explore it.
 
 CURRENT ROOM: {context.room_name} (ID: {context.room_id})
 DESCRIPTION: {context.room_description}
 
+SCORE: {score_str}
 VISIBLE OBJECTS: {objects_str}
 INVENTORY: {inventory_str}
-EXITS: {exits_str}
+KNOWN EXITS: {exits_str}
+UNTRIED DIRECTIONS (try these to find new rooms): {untried_str}
+BLOCKED DIRECTIONS (do not retry): {blocked_str}
 
 RECENT COMMANDS AND RESPONSES:
 {recent_str}
 
-AVAILABLE VOCABULARY (sample): {vocab_str}
+WORD CONSTRAINT — the game's parser ONLY understands these words:
+  VERBS you may use: {verbs_str}
+  NOUNS available now (visible objects + inventory): {nouns_str}
 
 CRITICAL INSTRUCTIONS:
-- Your ONLY goal is to COMPLETE this game and reach the winning condition
-- Don't just explore - actively try to solve puzzles and advance the plot
-- Pick up items that might be useful later
-- Try commands that make progress toward objectives
-- If stuck, try examining everything, combining items, or using items in creative ways
-- Read descriptions carefully for clues about what to do next
-- Look for goal-oriented actions: unlock doors, solve puzzles, find keys, talk to characters
+- ONLY use verbs from the VERBS list above and nouns from the NOUNS list above (or the directions). Using any other word wastes a turn with "I don't know the word".
+- Your goal is to RAISE THE SCORE and reach the winning condition.
+- Prefer UNTRIED DIRECTIONS to discover new rooms; never retry BLOCKED DIRECTIONS.
+- Pick up items ("take all"), examine and open things, turn on a lamp if you have one.
+- Read descriptions for clues; unlock doors, solve puzzles, find keys.
 
-Suggest 5-10 commands that will help WIN this game. Prioritize:
-1. Actions that directly advance the plot or solve puzzles
-2. Picking up useful items
-3. Trying new exits to find important areas
-4. Examining objects for clues
-5. Only explore systematically if truly stuck
+Suggest 5-10 commands that will raise the score / win. Prioritize:
+1. Actions that directly advance the plot or solve puzzles (score gains)
+2. Picking up useful items ("take all")
+3. Trying UNTRIED exits to find important areas
+4. Examining/opening objects for clues
+5. Only fall back to systematic exploration if truly stuck
 
 Respond in JSON format:
 {{
@@ -186,56 +222,153 @@ Respond in JSON format:
 
     def _analyze_local(self, prompt: str, context: GameContext) -> AIResponse:
         """
-        Simple local analysis without LLM.
+        Competent, dictionary-aware, score-greedy local command generator.
 
-        Uses heuristics to suggest commands based on visible objects
-        and room description.
+        From the current room + inventory it generates:
+          - go untried exits (preferring directions not yet attempted),
+          - "take all",
+          - examine / open / unlock / move / read / push / pull visible nouns,
+          - turn on the lamp/lantern if carried,
+          - basic state commands (look, inventory),
+        and then filters every generated command so that its verb and nouns all
+        exist in the game's dictionary. This kills the constant
+        'I don't know the word "..."' / 'That's not a verb I recognise' waste.
         """
-        suggested = []
-        objects_of_interest = []
+        dict_words = set(w.lower() for w in (context.dictionary_words or []))
+        dict_verbs = set(v.lower() for v in (context.dictionary_verbs or []))
 
-        # Look for interactive objects in description
-        desc_lower = context.room_description.lower()
+        def dict_has(word: str) -> bool:
+            """A word is usable if it (or a 6-char prefix) is in the dictionary.
+            Empty dictionary => permissive (don't over-filter)."""
+            if not dict_words:
+                return True
+            w = word.lower()
+            if w in dict_words:
+                return True
+            # Z-machine dictionaries store truncated words (4 chars V1-3, 6 V4+).
+            return any(dw.startswith(w[:6]) or w.startswith(dw) for dw in dict_words)
 
-        # Common interactive elements
-        if "door" in desc_lower:
-            suggested.extend(["open door", "examine door"])
-            objects_of_interest.append("door")
-        if "button" in desc_lower:
-            suggested.extend(["push button", "press button"])
-            objects_of_interest.append("button")
-        if "lever" in desc_lower:
-            suggested.extend(["pull lever", "push lever"])
-            objects_of_interest.append("lever")
-        if "window" in desc_lower:
-            suggested.extend(["open window", "look through window"])
-            objects_of_interest.append("window")
-        if "box" in desc_lower or "chest" in desc_lower:
-            suggested.extend(["open box", "examine box"])
-            objects_of_interest.append("box/chest")
+        def verb_ok(verb: str) -> bool:
+            if dict_verbs:
+                v = verb.lower()
+                return v in dict_verbs or any(dv.startswith(v[:6]) for dv in dict_verbs)
+            return dict_has(verb)
 
-        # Suggest examining visible objects
-        for obj in context.visible_objects[:5]:
-            obj_word = obj.split()[0]
-            suggested.append(f"examine {obj_word}")
-            suggested.append(f"take {obj_word}")
+        def cmd_ok(cmd: str) -> bool:
+            """Every token of the command must be dictionary-valid."""
+            tokens = cmd.lower().split()
+            if not tokens:
+                return False
+            if not verb_ok(tokens[0]):
+                return False
+            # Skip trivial fillers; require the remaining content words to exist.
+            fillers = {"all", "at", "to", "with", "on", "off", "the", "a", "an",
+                       "in", "out", "up", "down", "through", "into"}
+            for tok in tokens[1:]:
+                if tok in fillers:
+                    continue
+                if not dict_has(tok):
+                    return False
+            return True
 
-        # Basic exploration commands
-        suggested.extend(["look", "inventory", "examine room"])
+        suggested: List[str] = []
+        objects_of_interest: List[str] = []
 
-        # Determine priority based on unexplored aspects
+        # 1) GRAB EVERYTHING first (cheap, high score yield in treasure games).
+        suggested.append("take all")
+
+        # 2) A FEW untried directions up front so object work and exploration
+        #    interleave (the rest of the directions are appended at the end).
+        untried = list(context.untried_directions or [])
+        for d in untried[:4]:
+            suggested.append(d)
+
+        # 3) Light source: turn on a carried lamp/lantern (Zork needs this).
+        inv_lower = " ".join(context.inventory).lower()
+        if "lamp" in inv_lower or "lantern" in inv_lower or "light" in inv_lower:
+            noun = "lamp" if "lamp" in inv_lower else ("lantern" if "lantern" in inv_lower else "light")
+            suggested.extend([f"turn on {noun}", f"light {noun}"])
+
+        # 4) Interact with visible objects: examine/take/open/unlock/move/read.
+        seen_nouns = set()
+        for obj in (context.visible_objects or []):
+            head = obj.split()[0].lower() if obj else ""
+            if not head or head in seen_nouns:
+                continue
+            seen_nouns.add(head)
+            objects_of_interest.append(obj)
+            suggested.extend([
+                f"examine {head}",
+                f"take {head}",
+                f"open {head}",
+                f"read {head}",
+                f"move {head}",
+                f"push {head}",
+            ])
+
+        # 5) Nouns mentioned in the room description but not yet object-listed.
+        desc_words = set(w.strip(".,!?;:'\"()").lower()
+                         for w in context.room_description.split())
+        interactive_hints = {
+            "door": ["open door", "unlock door"],
+            "window": ["open window", "enter"],
+            "button": ["push button", "press button"],
+            "lever": ["pull lever", "push lever"],
+            "chest": ["open chest", "examine chest"],
+            "box": ["open box", "examine box"],
+            "trapdoor": ["open trapdoor", "down"],
+            "grating": ["open grating", "down"],
+            "case": ["open case", "examine case"],
+            "mailbox": ["open mailbox", "read leaflet"],
+            "egg": ["take egg", "open egg"],
+            "rug": ["move rug", "look under rug"],
+        }
+        for noun, cmds in interactive_hints.items():
+            if noun in desc_words and noun not in seen_nouns:
+                suggested.extend(cmds)
+                objects_of_interest.append(noun)
+
+        # 6) Remaining untried directions + known exits (exploration tail).
+        for d in untried[4:]:
+            suggested.append(d)
+        for d in context.exits.keys():
+            if d not in untried:
+                suggested.append(d)
+
+        # 7) Cheap state commands.
+        suggested.extend(["look", "inventory"])
+
+        # Dictionary-filter + dedupe while preserving order.
+        filtered: List[str] = []
+        seen = set()
+        for cmd in suggested:
+            c = cmd.strip().lower()
+            if not c or c in seen:
+                continue
+            seen.add(c)
+            if cmd_ok(c):
+                filtered.append(c)
+
+        # Priority: high if we have untried exits or many objects.
         priority = "medium"
-        if len(context.visible_objects) > 3:
+        if (context.untried_directions and len(context.untried_directions) > 2) \
+                or len(context.visible_objects) > 3:
             priority = "high"
-        if not context.visible_objects and len(context.exits) <= 2:
+        elif not context.untried_directions and not context.visible_objects:
             priority = "low"
 
+        reasoning = (
+            f"Dictionary-aware heuristic: {len(context.untried_directions or [])} untried "
+            f"exits, {len(context.visible_objects or [])} visible objects, score "
+            f"{context.score}/{context.max_score if context.max_score is not None else '?'}."
+        )
+
         return AIResponse(
-            suggested_commands=suggested[:10],
-            reasoning="Heuristic analysis based on room description and objects",
+            suggested_commands=filtered[:12],
+            reasoning=reasoning,
             objects_of_interest=objects_of_interest,
             possible_puzzles=[],
-            exploration_priority=priority
+            exploration_priority=priority,
         )
 
     def _parse_response(self, response_text: str) -> AIResponse:
@@ -358,6 +491,21 @@ def create_context_from_walker(walker, num_recent: int = 5) -> GameContext:
     # Sample vocabulary
     vocab_sample = walker.vocabulary[:100] if walker.vocabulary else []
 
+    # Real, untried, and blocked exits for this room (Fix C: exits bug).
+    untried = room.untried_directions() if room else []
+    blocked = sorted(room.blocked_directions) if room else []
+
+    # Dictionary-derived verbs (Fix C: dictionary constraint).
+    dict_words = walker.vocabulary or []
+    try:
+        by_type = walker.vm.get_dictionary_words_by_type()
+        dict_verbs = by_type.get("verbs", []) + by_type.get("directions", [])
+        # Drop Infocom internal/debug pseudo-verbs ($ve, #random, ...).
+        dict_verbs = list(dict.fromkeys(
+            v for v in dict_verbs if v and v[0].isalpha()))
+    except Exception:
+        dict_verbs = []
+
     return GameContext(
         room_name=room.name if room else "Unknown",
         room_description=room.description if room else "",
@@ -367,5 +515,11 @@ def create_context_from_walker(walker, num_recent: int = 5) -> GameContext:
         exits=room.exits if room else {},
         recent_commands=recent_commands,
         recent_outputs=recent_outputs,
-        vocabulary_sample=vocab_sample
+        vocabulary_sample=vocab_sample,
+        untried_directions=untried,
+        blocked_directions=blocked,
+        dictionary_verbs=dict_verbs,
+        dictionary_words=dict_words,
+        score=getattr(walker, "score", 0),
+        max_score=getattr(walker, "max_score", None),
     )

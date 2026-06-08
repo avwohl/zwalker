@@ -143,6 +143,10 @@ class ZMachine:
         self._player_object: Optional[int] = None
         self._rooms_container: Optional[int] = None
 
+        # UNDO support: snapshots taken by save_undo, restored by restore_undo.
+        # Each entry is (GameState, store_var_of_save_undo_instruction).
+        self._undo_snapshots: List[Tuple[GameState, Optional[int]]] = []
+
     def _parse_header(self) -> ZHeader:
         """Parse the 64-byte Z-machine header"""
         version = self.memory[0]
@@ -772,21 +776,33 @@ class ZMachine:
         if rooms_container is None:
             return None
 
-        # Check objects 1-30 for potential player objects
-        for obj_num in range(1, 31):
-            parent = self.get_object_parent(obj_num)
-            # Is this object inside a room?
-            if parent > 0 and self._is_room(parent):
-                # It's in a room - likely the player or an object
-                # The player is usually one of the very first such objects
-                name = self.get_object_name(obj_num)
-                # Some common player object names
-                if name and any(n in name.lower() for n in
-                              ['player', 'adventurer', 'you', 'cretin', 'protagonist']):
+        # The full object range for this version (V1-3: up to 255, V4+: up to 2000).
+        max_obj = 255 if self.header.version <= 3 else 1000
+
+        # Pass 1: a name-matched player object ANYWHERE in the table. In Zork the
+        # protagonist is object "cretin" (obj 44), well past the old 1-30 cap, so
+        # restricting the scan misdetected an in-room scenery object as the player
+        # and broke get_inventory(). Prefer a name match in the whole table.
+        player_names = ['cretin', 'adventurer', 'protagonist', 'player', 'yourself']
+        for obj_num in range(1, max_obj + 1):
+            name = self.get_object_name(obj_num)
+            if name and any(n in name.lower() for n in player_names):
+                self._player_object = obj_num
+                return obj_num
+
+        # Pass 2: the object whose parent is the CURRENT location object
+        # (status-line global, var 16). The player always travels with the room,
+        # so this is a reliable structural signal even without a name match.
+        current_loc = self.read_word(self.header.globals)
+        if current_loc > 0:
+            for obj_num in range(1, max_obj + 1):
+                if self.get_object_parent(obj_num) == current_loc:
+                    # Prefer an object that itself contains things (the player
+                    # holds inventory); otherwise accept the first in-room object.
                     self._player_object = obj_num
                     return obj_num
 
-        # Fallback: just find the first object whose parent is a room
+        # Pass 3 (legacy fallback): first object whose parent is any room.
         for obj_num in range(1, 31):
             parent = self.get_object_parent(obj_num)
             if parent > 0 and self._is_room(parent):
@@ -845,6 +861,64 @@ class ZMachine:
         if room:
             return self.get_object_name(room)
         return ""
+
+    # Score / turns (V3 status-line globals, Z-Machine Standard §8.2)
+    #
+    # In a V1-3 "score/turns" game the status line is driven by three globals:
+    #   global var 16 (0x10) = location object   (== self.header.globals)
+    #   global var 17 (0x11) = score             (signed 16-bit)
+    #   global var 18 (0x12) = turns
+    # Zork I/II/III are all score/turns games, so these hold the real score.
+    def _read_global(self, var_num: int) -> int:
+        """Read raw 16-bit global variable (var_num 16..255)."""
+        addr = self.header.globals + (var_num - 16) * 2
+        return self.read_word(addr)
+
+    def get_score(self) -> int:
+        """Current score (signed; score can go negative in some games)."""
+        return self._signed(self._read_global(17))
+
+    def get_turns(self) -> int:
+        """Number of turns/moves taken so far."""
+        return self._read_global(18)
+
+    def get_max_score(self, banner: str = "") -> Optional[int]:
+        """
+        Maximum achievable score, when known for this game.
+
+        Returns a small known map {Zork I:350, Zork II:400, Zork III:7} else None.
+        Detection prefers the banner text (the opening "ZORK I/II/III" line the
+        walker captures), then falls back to the header serial+release, which
+        uniquely identifies the standard Infocom builds.
+        """
+        text = (banner or "").upper()
+        # Banner detection (most reliable when available). Order matters:
+        # check the longer Roman numerals before the shorter ones.
+        if "ZORK III" in text or "ZORK 3" in text:
+            return 7
+        if "ZORK II" in text or "ZORK 2" in text:
+            return 400
+        if "ZORK I" in text or "ZORK 1" in text or "ZORK:" in text or "GREAT UNDERGROUND EMPIRE" in text:
+            return 350
+
+        # Fall back to (serial, release) of the well-known Infocom builds.
+        # Zork II and Zork III share serial 860811 but differ by release.
+        serial = (self.header.serial or "").strip()
+        release = self.header.release
+        known = {
+            ('880429', 119): 350,  # Zork I  r119
+            ('840726', 88): 350,   # Zork I  r88
+            ('860811', 63): 400,   # Zork II r63
+            ('820901', 17): 400,   # Zork II earlier
+            ('860811', 25): 7,     # Zork III r25
+            ('840508', 17): 7,     # Zork III earlier
+        }
+        if (serial, release) in known:
+            return known[(serial, release)]
+        # Serial-only fallback (release unknown): only safe when unambiguous.
+        if serial == '880429':
+            return 350
+        return None
 
     def get_all_rooms(self) -> List[Tuple[int, str]]:
         """
@@ -1131,6 +1205,7 @@ class ZMachine:
         self.running = False
         self.finished = False
         self.waiting_for_input = False
+        self._undo_snapshots = []
 
     # Output
     def print_text(self, text: str) -> None:
@@ -1659,7 +1734,10 @@ class ZMachine:
             self.print_text("\n")
 
         elif name == "show_status":
-            pass  # Ignore for now
+            # No visible status line is rendered for headless walking. The
+            # score/turns the status line would show live in globals 17/18 and
+            # are readable any time via get_score()/get_turns().
+            pass
 
         elif name == "verify":
             self._do_branch(True, branch)  # Always succeed
@@ -2102,10 +2180,29 @@ class ZMachine:
                 self._do_branch(False, branch)  # V1-3 branch semantics
 
         elif name == "save_undo":
-            self.set_variable(store_var, 1)  # Success (but we don't actually save)
+            # Snapshot full machine state (dynamic memory + stack + call stack +
+            # locals + pc + RNG) via the working save_state mechanism. At this
+            # point self.pc already points just past this instruction, so a
+            # later restore_undo resumes exactly here. Record this instruction's
+            # store_var so restore_undo can land 2 into it (the resume value).
+            snapshot = self.save_state()
+            self._undo_snapshots.append((snapshot, store_var))
+            if len(self._undo_snapshots) > 16:
+                self._undo_snapshots.pop(0)
+            self.set_variable(store_var, 1)  # success
 
         elif name == "restore_undo":
-            self.set_variable(store_var, 0)  # Fail
+            if self._undo_snapshots:
+                snapshot, save_store_var = self._undo_snapshots.pop()
+                self.restore_state(snapshot)
+                # Resume as if the original save_undo had returned 2 (the
+                # "after restore" value): store 2 into save_undo's result
+                # variable, NOT restore_undo's. PC/stack are now back at the
+                # point right after save_undo executed.
+                if save_store_var is not None:
+                    self.set_variable(save_store_var, 2)
+            else:
+                self.set_variable(store_var, 0)  # failure: nothing to restore
 
         elif name == "log_shift":
             val = ops[0]

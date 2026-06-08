@@ -96,7 +96,7 @@ class AdvancedAISolver:
             raise ValueError("ANTHROPIC_API_KEY environment variable not set")
 
         self.client = anthropic.Anthropic(api_key=api_key)
-        self.model = "claude-opus-4-20250514"  # Opus 4
+        self.model = "claude-opus-4-8"  # Claude Opus 4.8 (current)
 
         # Long-term memory
         self.visited_rooms: Dict[int, Dict[str, Any]] = {}
@@ -114,6 +114,7 @@ class AdvancedAISolver:
         self.turn_number = 0
         self.stuck_counter = 0
         self.last_progress_turn = 0
+        self.best_score = 0  # Highest score reached so far
 
         # Win conditions
         self.game_won = False
@@ -364,23 +365,31 @@ class AdvancedAISolver:
         return [name for _, name in self.walker.vm.get_inventory()]
 
     def detect_win_condition(self, output: str) -> bool:
-        """Check if game has been won"""
-        # More specific win phrases to avoid false positives
-        # (e.g., "congratulations" appearing in game manuals/papers)
+        """
+        Check if the game has been won.
+
+        Primary signal is SCORE: if the game has a known max score and we've
+        reached it, that's a win. Otherwise fall back to clear endgame text
+        (no game-specific substring hardcoding such as "350 points").
+        """
+        # Score-based: reached the known maximum.
+        max_score = getattr(self.walker, "max_score", None)
+        if max_score is not None:
+            try:
+                if self.walker.vm.get_score() >= max_score:
+                    return True
+            except Exception:
+                pass
+
+        # Generic endgame text (game-agnostic).
         win_phrases = [
-            "you have won",
             "*** you have won ***",
+            "you have won",
             "you've won",
             "you are victorious",
-            "game over - you won",
             "you have completed the game",
-            "your score is 350",  # Zork specific - max score
-            "350 points in",  # Zork win
-            "all 19 treasures",  # Zork win
-            "master adventurer",  # Zork title for winning
-            "you have achieved the rank of master",
+            "you have died and gone to heaven",  # some games' victory framing
         ]
-
         output_lower = output.lower()
         for phrase in win_phrases:
             if phrase in output_lower:
@@ -431,15 +440,41 @@ class AdvancedAISolver:
         # Puzzle tracking
         active_puzzles = [p for p in self.puzzles.values() if p.likely_solution is None]
 
+        # Real/untried/blocked exits (Fix C: exits bug).
+        untried = room.untried_directions() if room else []
+        blocked = sorted(room.blocked_directions) if room else []
+
+        # Dictionary verbs (Fix C: dictionary constraint).
+        try:
+            by_type = self.walker.vm.get_dictionary_words_by_type()
+            verbs = by_type.get("verbs", []) + by_type.get("directions", [])
+            # Drop Infocom internal/debug pseudo-verbs ($ve, #random, ...).
+            dict_verbs = list(dict.fromkeys(
+                v for v in verbs if v and v[0].isalpha()))
+        except Exception:
+            dict_verbs = []
+
+        # Nouns the parser accepts now = visible objects + inventory.
+        noun_pool = []
+        for name in ([name for _, name in room.objects] if room else []) + current_inventory:
+            noun_pool.append(name.split()[0].lower() if name else name)
+        nouns = list(dict.fromkeys(noun_pool))
+
         context = {
             "turn_number": self.turn_number,
+            "score": self.walker.vm.get_score(),
+            "max_score": getattr(self.walker, "max_score", None),
             "current_room": {
                 "id": self.walker.current_room_id,
                 "name": room.name if room else "Unknown",
                 "description": room.description if room else "",
                 "exits": room.exits if room else {},
+                "untried_directions": untried,
+                "blocked_directions": blocked,
                 "objects": [name for _, name in room.objects] if room else []
             },
+            "dictionary_verbs": dict_verbs,
+            "available_nouns": nouns,
             "inventory": current_inventory,
             "recent_history": [
                 {"command": cmd, "output": out[:500]}  # Truncate long outputs
@@ -490,16 +525,34 @@ class AdvancedAISolver:
         """
         self.log(f"Asking {self.model} for strategic plan...", "THINK")
 
+        room_ctx = context['current_room']
+        score = context.get('score', 0)
+        max_score = context.get('max_score')
+        score_str = f"{score}/{max_score}" if max_score is not None else str(score)
+        known_exits = ', '.join(room_ctx['exits'].keys()) or 'none discovered yet'
+        untried = ', '.join(room_ctx.get('untried_directions', [])) or 'none'
+        blocked = ', '.join(room_ctx.get('blocked_directions', [])) or 'none'
+        verbs = ', '.join(context.get('dictionary_verbs', [])[:60]) or '(unknown)'
+        nouns = ', '.join(context.get('available_nouns', [])) or 'none'
+
         prompt = f"""You are an expert interactive fiction game solver with deep understanding of IF puzzles, mechanics, and conventions.
 
 CURRENT GAME STATE:
 ===================
 Turn: {context['turn_number']}
-Room: {context['current_room']['name']} (ID: {context['current_room']['id']})
-Description: {context['current_room']['description']}
-Visible Objects: {', '.join(context['current_room']['objects']) or 'none'}
-Exits: {', '.join(context['current_room']['exits'].keys()) or 'none'}
+Score: {score_str}
+Room: {room_ctx['name']} (ID: {room_ctx['id']})
+Description: {room_ctx['description']}
+Visible Objects: {', '.join(room_ctx['objects']) or 'none'}
+Known Exits: {known_exits}
+Untried Directions (try these to find new rooms): {untried}
+Blocked Directions (do NOT retry): {blocked}
 Inventory: {', '.join(context['inventory']) or 'empty'}
+
+WORD CONSTRAINT — the parser ONLY understands these words:
+  VERBS you may use: {verbs}
+  NOUNS available now (visible objects + inventory): {nouns}
+Using any verb/noun NOT in these lists wastes a turn ("I don't know the word").
 
 RECENT ACTIONS:
 ===============
@@ -563,6 +616,9 @@ Respond in JSON format:
 }}
 
 IMPORTANT:
+- ONLY USE WORDS THE PARSER KNOWS: every verb must come from the VERBS list and every noun from the NOUNS list above (directions are always allowed). Do NOT invent words like "door" if it isn't listed.
+- MAXIMIZE SCORE: the score is shown above. Prefer actions that raise it (taking treasures, solving puzzles). A rising score is the clearest sign of progress.
+- PREFER UNTRIED DIRECTIONS to discover new rooms; NEVER retry BLOCKED DIRECTIONS.
 - Be specific with commands (not just "examine things" but "examine lamp", "take key", etc.)
 - Consider IF game logic (objects often need to be examined before use, doors unlocked before opening, etc.)
 - If truly stuck, suggest backtracking or systematic exploration
@@ -579,7 +635,8 @@ IMPORTANT:
             response = self.client.messages.create(
                 model=self.model,
                 max_tokens=4000,
-                temperature=0.7,  # Some creativity but not too random
+                # NOTE: Opus 4.8 removes temperature/top_p/top_k (they 400).
+                # Steering is done via the prompt instead.
                 messages=[{"role": "user", "content": prompt}]
             )
 
@@ -695,8 +752,16 @@ IMPORTANT:
                 strategy.status = "failed"
                 return False
 
-            # Track progress
-            if result.new_room:
+            # Track progress. SCORE GAIN is the strongest signal and always
+            # resets the stuck counter; a genuinely new room also counts.
+            if result.score_delta > 0:
+                if result.score > self.best_score:
+                    self.best_score = result.score
+                self.log(f"  ✓ SCORE +{result.score_delta} (now {result.score})", "WIN")
+                progress_made = True
+                self.last_progress_turn = self.turn_number
+                self.stuck_counter = 0
+            elif result.new_room:
                 self.log(f"  ✓ Entered new room", "INFO")
                 progress_made = True
                 self.last_progress_turn = self.turn_number
@@ -849,6 +914,9 @@ IMPORTANT:
             "game_won": self.game_won,
             "turns_taken": self.turn_number,
             "win_turn": self.win_detected_turn,
+            "final_score": self.walker.vm.get_score(),
+            "best_score": self.best_score,
+            "max_score": getattr(self.walker, "max_score", None),
             "rooms_explored": len(self.walker.rooms),
             "strategies_tried": len(self.strategy_history),
             "commands": [cmd for cmd, _ in self.walker.full_transcript if cmd],  # Extract commands

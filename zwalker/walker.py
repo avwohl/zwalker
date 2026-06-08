@@ -25,6 +25,29 @@ class Room:
     takeable_objects: List[Tuple[int, str]] = field(default_factory=list)  # Objects that can be taken
     visited_from: Optional[Tuple[int, str]] = None  # (room_id, direction) we came from
     state_snapshot: Optional[GameState] = None
+    # Directions we have actually attempted FROM this room (whether or not they
+    # led anywhere). Used so the solver can prefer untried directions instead of
+    # being told "Exits: none" before any move has succeeded.
+    tried_directions: Set[str] = field(default_factory=set)
+    # Directions known to be blocked ("You can't go that way").
+    blocked_directions: Set[str] = field(default_factory=set)
+
+    def untried_directions(self) -> List[str]:
+        """The 12 canonical compass directions not yet attempted from here."""
+        return [d for d in CANONICAL_DIRECTIONS if d not in self.tried_directions]
+
+    def known_exits_str(self) -> str:
+        """Human/LLM-readable summary of real + untried exits for this room."""
+        parts = []
+        if self.exits:
+            parts.append("known exits: " + ", ".join(
+                f"{d}->room {dest}" for d, dest in self.exits.items()))
+        untried = self.untried_directions()
+        if untried:
+            parts.append("untried directions: " + ", ".join(untried))
+        if self.blocked_directions:
+            parts.append("blocked: " + ", ".join(sorted(self.blocked_directions)))
+        return "; ".join(parts) if parts else "none discovered yet"
 
 
 @dataclass
@@ -49,7 +72,16 @@ class ExplorationResult:
     took_object: bool = False  # Successfully took an object
     object_id: Optional[int] = None  # Object involved
     random_event: Optional[str] = None  # Random event ID if one was detected
+    score_delta: int = 0  # Change in game score caused by this command
+    score: int = 0  # Game score after this command
 
+
+# The 12 canonical movement directions (long-form), used for exit probing.
+CANONICAL_DIRECTIONS = [
+    "north", "south", "east", "west",
+    "northeast", "northwest", "southeast", "southwest",
+    "up", "down", "in", "out",
+]
 
 # Common direction commands
 DIRECTIONS = [
@@ -58,6 +90,24 @@ DIRECTIONS = [
     "up", "down", "in", "out",
     "n", "s", "e", "w", "ne", "nw", "se", "sw", "u", "d"
 ]
+
+# Map any short/long direction form to its canonical long form.
+DIRECTION_NORMALIZE = {
+    "n": "north", "s": "south", "e": "east", "w": "west",
+    "ne": "northeast", "nw": "northwest", "se": "southeast", "sw": "southwest",
+    "u": "up", "d": "down",
+    "north": "north", "south": "south", "east": "east", "west": "west",
+    "northeast": "northeast", "northwest": "northwest",
+    "southeast": "southeast", "southwest": "southwest",
+    "up": "up", "down": "down", "in": "in", "out": "out",
+}
+
+
+def _normalize_direction(cmd: str) -> Optional[str]:
+    """Return the canonical direction for a movement command, or None."""
+    c = cmd.strip().lower()
+    c = c.replace("go ", "").replace("walk ", "").strip()
+    return DIRECTION_NORMALIZE.get(c)
 
 # Direction abbreviation mapping
 DIR_ABBREV = {
@@ -140,6 +190,13 @@ class GameWalker:
         # Room name detection
         self.known_room_names: Set[str] = set()
 
+        # Score tracking (drives the progress signal; see try_command).
+        self.score: int = 0
+        self.best_score: int = 0
+        self.max_score: Optional[int] = None
+        # Banner captured at start(), used to identify the game for max_score.
+        self.opening_banner: str = ""
+
     def start(self) -> str:
         """Start the game and capture initial output"""
         self.vocabulary = self.vm.get_dictionary_words()
@@ -151,6 +208,12 @@ class GameWalker:
         # Run until first input prompt
         self.vm.run()
         output = self.vm.get_output()
+
+        # Capture the opening banner and initialize score tracking.
+        self.opening_banner = output
+        self.score = self.vm.get_score()
+        self.best_score = self.score
+        self.max_score = self.vm.get_max_score(self.opening_banner)
 
         # Get the actual room object number from the Z-machine
         room_obj = self.vm.get_current_room()
@@ -395,6 +458,14 @@ class GameWalker:
         # Save state and room before command
         state_before = self.vm.save_state()
         room_before = self.vm.get_current_room()
+        score_before = self.vm.get_score()
+
+        # Record that we attempted this direction from the current room (so the
+        # solver can prefer untried directions instead of seeing "Exits: none").
+        norm_dir = _normalize_direction(command)
+        room_rec = self.rooms.get(self.current_room_id)
+        if norm_dir and room_rec is not None:
+            room_rec.tried_directions.add(norm_dir)
 
         # Send command
         self.vm.send_input(command)
@@ -445,6 +516,9 @@ class GameWalker:
             # Room didn't change AND output indicates blocked movement
             result.blocked = True
             result_type = "blocked"
+            # Record the blocked direction so we don't keep retrying it.
+            if norm_dir and room_rec is not None:
+                room_rec.blocked_directions.add(norm_dir)
             # Restore state since nothing happened
             self.vm.restore_state(state_before)
 
@@ -455,9 +529,15 @@ class GameWalker:
                     reason="blocked/can't go that way"
                 )
         else:
-            # Room didn't change but not clearly blocked - check what happened
-            # Check if something interesting happened
-            if len(output.strip()) > 50:
+            # Room didn't change but not clearly blocked - check what happened.
+            # Progress is driven primarily by SCORE: any score increase is a real,
+            # unambiguous sign of progress (kept regardless of output length). We
+            # only fall back to the output-length heuristic when the score is
+            # unavailable/unchanged, so we still flag plausibly-useful events.
+            score_after = self.vm.get_score()
+            if score_after > score_before:
+                result.interesting = True
+            elif len(output.strip()) > 50:
                 result.interesting = True
 
             # Check for failure patterns to mark as "do not retry"
@@ -492,6 +572,16 @@ class GameWalker:
                     turn=self.kb.current_turn,
                     output=output,
                 )
+
+        # Update score tracking. Note: if the command was blocked, state was
+        # restored above, so get_score() reflects the pre-command value and the
+        # delta is correctly zero.
+        new_score = self.vm.get_score()
+        result.score_delta = new_score - score_before
+        result.score = new_score
+        self.score = new_score
+        if new_score > self.best_score:
+            self.best_score = new_score
 
         # Record action in knowledge base
         if self.kb:
@@ -1019,6 +1109,178 @@ class GameWalker:
             results.append(result)
 
         return results
+
+    def _step_toward_frontier(self, start_room: int) -> Optional[str]:
+        """
+        BFS over the known map for the nearest room with untried directions.
+
+        Returns the first-step direction to take from `start_room` toward that
+        frontier room, or None if no reachable room has untried exits.
+        """
+        from collections import deque
+        start = self.rooms.get(start_room)
+        if start is None:
+            return None
+        # If the start room itself has an untried direction, just take it.
+        if start.untried_directions():
+            return start.untried_directions()[0]
+
+        # BFS: queue of (room_id, first_direction_taken).
+        visited = {start_room}
+        queue = deque()
+        for direction, dest in start.exits.items():
+            queue.append((dest, direction))
+            visited.add(dest)
+        while queue:
+            room_id, first_dir = queue.popleft()
+            room = self.rooms.get(room_id)
+            if room is None:
+                continue
+            if room.untried_directions():
+                return first_dir  # head this way to reach unexplored exits
+            for direction, dest in room.exits.items():
+                if dest not in visited:
+                    visited.add(dest)
+                    queue.append((dest, first_dir))
+        return None
+
+    def solve_local(self, max_turns: int = 400, time_budget: float = 120.0,
+                    verbose: bool = False) -> Dict[str, Any]:
+        """
+        Greedy, score-driven, dictionary-aware local solver (no LLM needed).
+
+        At each step it asks the local heuristic generator for dictionary-valid
+        commands (which prefer untried exits, "take all", object interactions and
+        turning on the lamp), executes the most promising ones, and tracks score.
+        Progress = score gain or a genuinely new room. It avoids dead loops by
+        not retrying blocked directions and limiting repeated no-progress runs.
+
+        Returns a stats dict (final/best score, turns, rooms, inventory, stall).
+        """
+        import time
+        from .ai_assist import AIAssistant, create_context_from_walker
+
+        ai = AIAssistant(backend="local")
+        if not self.rooms:
+            self.start()
+
+        start_time = time.time()
+        turns = 0
+        last_progress_turn = 0
+        stall_reason = "turn budget reached"
+        # Per-room set of non-movement commands already executed (avoid re-running
+        # "examine lamp" etc. forever once they've been tried in a given room).
+        done_actions: Dict[int, Set[str]] = {}
+
+        def run(cmd: str):
+            nonlocal turns
+            pre = self.vm.save_state()
+            pre_room = self.current_room_id
+            try:
+                result = self.try_command(cmd)
+            except Exception as e:
+                # An interpreter-level error on one command shouldn't abort the
+                # whole solve. Restore the pre-command state to keep the VM
+                # consistent, record it as a no-op, and move on.
+                self.vm.restore_state(pre)
+                self.current_room_id = pre_room
+                self.score = self.vm.get_score()
+                turns += 1
+                if verbose:
+                    print(f"  {turns:4d} > {cmd:<18} [vm-error: {e}]")
+                return ExplorationResult(command=cmd, output=f"[error: {e}]")
+            turns += 1
+            if verbose:
+                tag = ""
+                if result.score_delta:
+                    tag = f" [+{result.score_delta} -> {result.score}]"
+                elif result.new_room:
+                    tag = " [new room]"
+                print(f"  {turns:4d} > {cmd:<18}{tag}")
+            return result
+
+        while turns < max_turns:
+            if time.time() - start_time > time_budget:
+                stall_reason = "wall-clock budget reached"
+                break
+            if self.max_score is not None and self.score >= self.max_score:
+                stall_reason = "won (max score reached)"
+                break
+
+            room = self.rooms.get(self.current_room_id)
+            rid = self.current_room_id
+            done_here = done_actions.setdefault(rid, set())
+            context = create_context_from_walker(self)
+            suggestions = ai.analyze(context).suggested_commands
+
+            # Split suggestions into untried-movement vs unrun-actions.
+            move_cmds, action_cmds = [], []
+            blocked = room.blocked_directions if room else set()
+            tried = room.tried_directions if room else set()
+            for cmd in suggestions:
+                nd = _normalize_direction(cmd)
+                if nd is not None:
+                    if nd not in blocked and nd not in tried:
+                        move_cmds.append(cmd)
+                elif cmd not in done_here:
+                    action_cmds.append(cmd)
+
+            # Priority each iteration (pick ONE action, then re-evaluate):
+            #   1) a couple of unrun object/interaction actions (cheap score wins),
+            #   2) an untried movement direction (discover rooms),
+            #   3) navigate toward the frontier (rooms with untried exits),
+            #   4) give up if there's nowhere left to go.
+            progressed = False
+            # 1) Try a few unrun actions first (take all, open X, turn on lamp...).
+            for cmd in action_cmds[:6]:
+                done_here.add(cmd)
+                result = run(cmd)
+                low = result.output.lower()
+                if any(p in low for p in ("you have died", "you are dead",
+                                          "*** you have died", "you have been killed")):
+                    if room and room.state_snapshot:
+                        self.vm.restore_state(room.state_snapshot)
+                        self.score = self.vm.get_score()
+                    break
+                if result.score_delta > 0 or result.new_room:
+                    progressed = True
+                    last_progress_turn = turns
+                    break
+                if turns >= max_turns or (time.time() - start_time > time_budget):
+                    break
+            if progressed:
+                continue
+
+            # 2) Take an untried movement direction.
+            if move_cmds and turns < max_turns:
+                result = run(move_cmds[0])
+                if result.score_delta > 0 or result.new_room:
+                    last_progress_turn = turns
+                continue
+
+            # 3) Navigate toward an unexplored frontier.
+            step = self._step_toward_frontier(rid)
+            if step and turns < max_turns:
+                result = run(step)
+                if result.new_room or result.score_delta > 0:
+                    last_progress_turn = turns
+                continue
+
+            # 4) Nothing actionable and no frontier reachable: fully stuck.
+            stall_reason = "stuck (no untried exits or frontier reachable)"
+            break
+
+        return {
+            "final_score": self.score,
+            "best_score": self.best_score,
+            "max_score": self.max_score,
+            "turns_used": turns,
+            "rooms_explored": len(self.rooms),
+            "room_names": sorted({r.name for r in self.rooms.values()}),
+            "final_inventory": [name for _, name in self.vm.get_inventory()],
+            "stall_reason": stall_reason,
+            "elapsed_sec": round(time.time() - start_time, 1),
+        }
 
     def get_ai_analysis(self, ai_assistant=None) -> dict:
         """

@@ -1,4 +1,4 @@
-# Advanced AI Solver - Claude Opus 4.5
+# Advanced AI Solver - Claude Opus 4.8
 
 A sophisticated IF game solver designed to actually complete complex games, not just explore them.
 
@@ -98,13 +98,13 @@ Consider:
 Output: JSON with analysis, goal, steps, reasoning
 ```
 
-### Why Opus 4.5?
+### Why Opus 4.8?
 
 | Model | Reasoning | Planning | IF Knowledge | Cost |
 |-------|-----------|----------|--------------|------|
-| Haiku | Weak | Minimal | Generic | $0.25/M |
-| Sonnet | Good | Decent | Some | $3/M |
-| **Opus 4.5** | **Excellent** | **Strategic** | **Deep** | **$15/M** |
+| Haiku 4.5 | Weak | Minimal | Generic | $1/$5 per 1M |
+| Sonnet 4.6 | Good | Decent | Some | $3/$15 per 1M |
+| **Opus 4.8** | **Excellent** | **Strategic** | **Deep** | **$5/$25 per 1M** |
 
 For complex puzzle solving, Opus's superior reasoning is essential. A game might cost $5-10 to solve but generates reusable complete walkthroughs.
 
@@ -163,7 +163,7 @@ Solutions are saved as JSON:
   "commands": ["north", "open mailbox", "read leaflet", ...],
   "final_inventory": ["brass lantern", "sword", "rusty knife"],
   "strategies_used": 12,
-  "model": "claude-opus-4-20250514"
+  "model": "claude-opus-4-8"
 }
 ```
 
@@ -186,7 +186,7 @@ This is acceptable because:
 
 | Feature | Basic Solver | Advanced Solver |
 |---------|-------------|-----------------|
-| Model | Haiku | Opus 4.5 |
+| Model | Haiku 4.5 | Opus 4.8 |
 | Context | 5 commands | 30+ commands + full map |
 | Planning | Single command | 5-15 step strategies |
 | Memory | None | Puzzles, map, history |
