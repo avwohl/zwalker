@@ -593,8 +593,18 @@ class AgenticSolver:
         if nav_target is not None:
             # resolve "<id>" or "<name>"
             target: Any = int(nav_target) if nav_target.isdigit() else nav_target
+            turn_before = self.turn
             arrived, info = self.go_to(target)
             self._log(f"  {self.turn:4d} > go_to({nav_target}) [{info}]")
+            if self.turn == turn_before:
+                # Zero-move navigation (already there / no known path) advanced
+                # no game turn. Consume a turn anyway so the loop can't spin
+                # re-deciding the same dead nav forever (the spin bug), and mark
+                # it dead so it isn't re-proposed from this room.
+                self.turn += 1
+                self.commands.append(action)
+                self.world.dead_branches.add(
+                    (self.walker.current_room_id, _norm_action(action)))
             return None, True
         return self._do(action), False
 
@@ -647,12 +657,12 @@ class AgenticSolver:
         on_track = False
 
         def _useless(a: str, here: int) -> bool:
-            if self._is_nav_meta(a):
-                return False
+            # No nav-meta exemption: a "go to X" that already went nowhere from
+            # here is as useless as any other no-op. Exempting nav-metas was the
+            # source of the spin (the decider could re-propose a dead nav forever).
             if (here, _norm_action(a)) in self.world.dead_branches:
                 return True
-            prior = self.world.action_outcome(here, a)
-            return prior in ("reject", "noop", "nav-noop")
+            return self.world.action_outcome(here, a) in ("reject", "noop", "nav-noop")
 
         while self.turn < max_turns:
             if budget is not None and time.time() - start_time > budget:
