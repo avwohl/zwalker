@@ -68,6 +68,44 @@ class ZMachine:
     A0 = "abcdefghijklmnopqrstuvwxyz"
     A1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+    # Default Unicode translation table for extended ZSCII codes 155..223
+    # (Z-Machine Standard §3.8.5). Index 0 corresponds to ZSCII code 155.
+    # 69 entries; å Å ø Ø are at ZSCII 201-204 (indices 46-49).
+    DEFAULT_UNICODE_TABLE = [
+        0xE4, 0xF6, 0xFC, 0xC4, 0xD6, 0xDC, 0xDF, 0xBB, 0xAB,  # 155-163
+        0xEB, 0xEF, 0xFF, 0xCB, 0xCF, 0xE1, 0xE9, 0xED, 0xF3,  # 164-172
+        0xFA, 0xFD, 0xC1, 0xC9, 0xCD, 0xD3, 0xDA, 0xDD, 0xE0,  # 173-181
+        0xE8, 0xEC, 0xF2, 0xF9, 0xC0, 0xC8, 0xCC, 0xD2, 0xD9,  # 182-190
+        0xE2, 0xEA, 0xEE, 0xF4, 0xFB, 0xC2, 0xCA, 0xCE, 0xD4,  # 191-199
+        0xDB, 0xE5, 0xC5, 0xF8, 0xD8, 0xE3, 0xF1, 0xF5, 0xC3,  # 200-208 (å Å ø Ø)
+        0xD1, 0xD5, 0xE6, 0xC6, 0xE7, 0xC7, 0xFE, 0xF0, 0xDE,  # 209-217
+        0xD0, 0xA3, 0x153, 0x152, 0xA1, 0xBF,                  # 218-223
+    ]
+
+    def zscii_to_unicode(self, code: int) -> str:
+        """Translate a ZSCII output code (155..251) to a Unicode string.
+
+        Codes 155..223 use the default translation table; unmapped codes
+        (224..251, or out-of-range) yield '?' (Z-Machine Standard §3.8.5).
+        """
+        if 155 <= code <= 223:
+            return chr(self.DEFAULT_UNICODE_TABLE[code - 155])
+        return '?'
+
+    def unicode_to_zscii(self, ch: str) -> int:
+        """Inverse of zscii_to_unicode for output stream 3 capture.
+
+        Newline -> 13, ASCII 32..126 -> itself, table chars -> 155+index,
+        anything else -> 63 ('?')."""
+        if ch == '\n' or ch == '\r':
+            return 13
+        v = ord(ch)
+        if 32 <= v <= 126:
+            return v
+        if v in self.DEFAULT_UNICODE_TABLE:
+            return 155 + self.DEFAULT_UNICODE_TABLE.index(v)
+        return 63
+
     def __init__(self, data: bytes):
         self.original_data = bytes(data)
         self.memory = bytearray(data)
@@ -83,6 +121,10 @@ class ZMachine:
         self.output_buffer = ""
         self.input_callback: Optional[Callable[[str], str]] = None
         self.output_callback: Optional[Callable[[str], None]] = None
+
+        # Output stream 3 (redirect-to-table) stack: list of [table_addr, bytearray]
+        # Nested up to 16 deep (Z-Machine Standard §7.1.2.1).
+        self._stream3_stack: List[List[Any]] = []
 
         # Interpreter state
         self.running = False
@@ -253,7 +295,10 @@ class ZMachine:
                 elif zscii_state == 2:
                     zscii_code = (zscii_high << 5) | c
                     if zscii_code > 0:
-                        result.append(chr(zscii_code))
+                        if zscii_code >= 155:
+                            result.append(self.zscii_to_unicode(zscii_code))
+                        else:
+                            result.append(chr(zscii_code))
                     zscii_state = 0
                     alphabet = lock_alphabet
                     continue
@@ -1089,6 +1134,13 @@ class ZMachine:
 
     # Output
     def print_text(self, text: str) -> None:
+        # Output stream 3 (redirect to table): while active, ALL printed text
+        # goes only to the innermost table buffer; streams 1 & 2 are suppressed.
+        if self._stream3_stack:
+            buf = self._stream3_stack[-1][1]
+            for ch in text:
+                buf.append(self.unicode_to_zscii(ch))
+            return
         self.output_buffer += text
         if self.output_callback:
             self.output_callback(text)
@@ -1100,7 +1152,16 @@ class ZMachine:
         self.print_text(str(num))
 
     def print_char(self, char: int) -> None:
-        self.print_text(chr(char))
+        if char == 0:
+            # ZSCII 0 is null: prints nothing (Z-Machine Standard §3.8).
+            return
+        if char == 13:
+            # ZSCII 13 is the standard output newline.
+            self.print_text("\n")
+        elif char >= 155:
+            self.print_text(self.zscii_to_unicode(char))
+        else:
+            self.print_text(chr(char))
 
     def print_object(self, obj_num: int) -> None:
         self.print_text(self.get_object_name(obj_num))
@@ -1921,7 +1982,24 @@ class ZMachine:
             pass  # Ignore
 
         elif name == "output_stream":
-            pass  # Ignore
+            stream = self._signed(ops[0])
+            if stream == 3:
+                # Open stream 3: redirect output to a memory table.
+                table = ops[1] if len(ops) > 1 else 0
+                if len(self._stream3_stack) >= 16:
+                    raise ZMachineError("output_stream 3 nested more than 16 deep")
+                self._stream3_stack.append([table, bytearray()])
+            elif stream == -3:
+                # Close stream 3: write count word + captured ZSCII bytes.
+                if self._stream3_stack:
+                    table, buf = self._stream3_stack.pop()
+                    count = len(buf)
+                    # Count word at table[0..1], bytes from table+2.
+                    self.memory[table] = (count >> 8) & 0xFF
+                    self.memory[table + 1] = count & 0xFF
+                    for i, b in enumerate(buf):
+                        self.memory[table + 2 + i] = b & 0xFF
+            # Streams +/-1 (screen) and +/-2 (transcript): no-op as before.
 
         elif name == "input_stream":
             pass  # Ignore
