@@ -35,6 +35,23 @@ _load_dotenv_file()
 
 from .zmachine import ZMachine
 from .walker import GameWalker
+from .agentic_solver import (
+    AgenticSolver,
+    WorldModel,
+    Perception,
+    Decision,
+    local_decider,
+    make_opus_decider,
+)
 
 __version__ = "0.1.0"
-__all__ = ["ZMachine", "GameWalker"]
+__all__ = [
+    "ZMachine",
+    "GameWalker",
+    "AgenticSolver",
+    "WorldModel",
+    "Perception",
+    "Decision",
+    "local_decider",
+    "make_opus_decider",
+]
