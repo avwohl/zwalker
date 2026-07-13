@@ -12,7 +12,7 @@ The IF community was not happy with z2js due to lack of testing. ZWalker provide
 
 This enables regression testing of the z2js compiler.
 
-**See [TODO.md](/TODO.md) for current status and tasks.**
+**See [TODO.md](../TODO.md) for current status and tasks.**
 
 ## Approach
 
@@ -43,6 +43,8 @@ See [ADVANCED_SOLVER.md](ADVANCED_SOLVER.md) for the strategic solver design:
 - Backtracking system (checkpoints every 10 turns)
 - Deep IF understanding built into prompts
 - Win detection after every command
+
+The current working approach is the agentic solver `zwalker/agentic_solver.py` (a perceive->decide->act->verify loop with BFS navigation and checkpoint backtracking) plus the deterministic replay harness `scripts/replay_solve.py`. This combination produced the verified complete solves: Zork I 350/350 and Zork II 400/400 (`solutions/zork1_verified.json`, `solutions/zork2_verified.json`). ADVANCED_SOLVER.md describes the earlier design.
 
 ## Output Format
 

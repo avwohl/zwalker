@@ -16,7 +16,7 @@ When running the Opus solver on Zork I, after correctly moving the rug to reveal
 
 ### Root Cause
 
-**Location**: `zwalker/walker.py`, lines 64-78 (BLOCKED_PATTERNS)
+**Location**: `zwalker/walker.py` (BLOCKED_PATTERNS; now at lines 121-133)
 
 The pattern list included `r"closed"` and `r"locked"` as bare words:
 
@@ -152,7 +152,7 @@ Tested on Zork I opening sequence:
 
 ## Files Changed
 
-- `zwalker/walker.py` - Updated BLOCKED_PATTERNS (lines 64-78)
+- `zwalker/walker.py` - Updated BLOCKED_PATTERNS (now at lines 121-133)
 
 ## Lesson Learned
 

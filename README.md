@@ -3,58 +3,79 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-**ZWalker** is an automated walkthrough generator for Z-machine interactive fiction games. It uses AI assistance to explore games, generate solution walkthroughs, and provide regression testing for Z-machine compilers like z2js.
+**ZWalker** is an automated walkthrough generator for Z-machine interactive fiction games. It combines a CZECH-compliant Z-machine interpreter, AI-assisted solvers, and a deterministic replay harness to produce and verify game walkthroughs, primarily as regression tests for the [z2js](https://github.com/avwohl/z2js) compiler.
 
 ## 📚 Documentation
 
 **[→ View Full Documentation & Game Index](https://avwohl.github.io/zwalker/)**
 
+- [Verified Solves & AI Walkthroughs](https://avwohl.github.io/zwalker/WALKTHROUGHS.html)
 - [100+ Game Sources with Download URLs](https://avwohl.github.io/zwalker/GAME_SOURCES.html)
-- [49 AI-Generated Walkthroughs](https://avwohl.github.io/zwalker/WALKTHROUGHS.html)
-- [Complete Test Suite Results](https://avwohl.github.io/zwalker/#testing)
+- [Test Suite Results](https://avwohl.github.io/zwalker/#testing)
+
+## Verified Results
+
+The headline results are two complete, reproducibly-won Infocom solves, verified by
+deterministic replay against a fixed RNG seed (re-verified 2026-07-13):
+
+| Game | Score | Won | Turns | Commands | Seed | Solution | Walkthrough |
+|------|-------|-----|-------|----------|------|----------|-------------|
+| Zork I | 350/350 | ✅ | 499 | 431 | 3 | [JSON](solutions/zork1_verified.json) | [Text](walkthroughs/zork1_verified_350.txt) |
+| Zork II | 400/400 | ✅ | 416 | 386 | 2 | [JSON](solutions/zork2_verified.json) | [Text](walkthroughs/zork2_verified_400.txt) |
+
+Reproduce either result locally:
+
+```bash
+python3 scripts/replay_solve.py games/zcode/zork1.z3 walkthroughs/zork1_verified_350.txt --seeds 4
+# -> zork1_verified_350.txt: VERIFIED 350/350 at seed 3 | 431 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/zork2.z3 walkthroughs/zork2_verified_400.txt --seeds 3
+# -> zork2_verified_400.txt: VERIFIED 400/400 at seed 2 | 386 cmds | died=False | won=True
+```
+
+Beyond the verified solves, the repo carries exploration-grade coverage data: 43 room-mapping
+walkthrough dumps in `games/results/` and 73 batch solver runs in `solutions/`. These map
+rooms and exercise the parser for compiler regression testing — they are **not** complete
+solutions and are labeled accordingly.
 
 ## Features
 
-- 🎮 **Z-Machine Interpreter**: 100% CZECH compliance (425/425 tests passing)
-  - Supports Z-machine versions 3, 4, 5, and 8
-  - Accurate opcode implementation
-  - Full state save/restore
+- 🎮 **Z-Machine Interpreter**: 100% CZECH compliance — 1,604/1,604 tests passing
+  across versions 3, 4, 5, and 8 (v3: 368, v4: 386, v5: 425, v8: 425)
+  - Plays Z-machine versions 1–5 and 8 (v6/v7 screen model not supported); CZECH-verified on 3, 4, 5, 8
+  - Accurate opcode implementation, full state save/restore
 
-- 🤖 **AI-Assisted Solving**: Generate walkthroughs automatically
-  - Claude (Anthropic) integration
-  - OpenAI GPT integration
-  - Local heuristic fallback
+- ✅ **Deterministic Replay Verification**: `scripts/replay_solve.py` replays a walkthrough
+  with a pinned RNG seed and searches seeds until random events (combat, thief, wizard)
+  line up — making "did we really win?" a reproducible yes/no
 
-- 🧪 **Compiler Testing**: Validate z2js and other compilers
-  - Generate test walkthroughs
-  - Compare outputs between interpreters
-  - Automated regression detection
+- 🤖 **AI-Assisted Solving**: multiple solver generations
+  - Agentic solver (`zwalker/agentic_solver.py`): perceive→decide→act→verify loop with
+    BFS navigation, world model, and checkpoint backtracking; runs free with a local
+    decider or with Claude via API
+  - Strategic LLM solver (`zwalker/advanced_solver.py`) and assist layer (`zwalker/ai_assist.py`)
+  - Persistent cross-run knowledge base (`zwalker/knowledge.py`)
 
-- 📊 **Game Exploration**: Automated mapping and analysis
-  - Room discovery and mapping
-  - Object detection and tracking
+- 🧪 **Compiler Testing**: validate z2js and other compilers
+  - Convert solutions into Node.js replay test scripts (155 tracked, including 73 "smart"
+    tests that tolerate random events)
+  - Compare outputs between interpreters, detect regressions automatically
+
+- 📊 **Game Exploration**: automated mapping and analysis
+  - Room discovery and mapping, object detection and tracking
   - Command success/failure analysis
 
 ## Installation
 
-### From PyPI (when published)
-
-```bash
-pip install zwalker
-```
-
-### From Source
+Not yet published to PyPI — install from source:
 
 ```bash
 git clone https://github.com/avwohl/zwalker.git
 cd zwalker
 pip install -e .
-```
 
-### With AI Support
-
-```bash
-pip install zwalker[ai]
+# with AI backends (anthropic, openai)
+pip install -e ".[ai]"
 ```
 
 ## Quick Start
@@ -70,6 +91,12 @@ zwalker explore game.z5 --ai --ai-backend anthropic --max-rooms 100
 
 # Interactive play mode
 zwalker play game.z5
+```
+
+### Verify a Walkthrough
+
+```bash
+python3 scripts/replay_solve.py games/zcode/zork1.z3 walkthroughs/zork1_verified_350.txt --seeds 4
 ```
 
 ### Python API
@@ -97,17 +124,19 @@ walkthrough = walker.get_walkthrough_json()
 
 ### Generate Walkthroughs for Testing
 
-```python
-# Solve a game and test with z2js
+```bash
+# Solve a game (iterations fixed at 50; add --real-ai for LLM assistance)
 python scripts/solve_game.py game.z5 --real-ai
-python scripts/compare_outputs.py game_solution.json
+
+# Compare interpreter output against a recorded solution
+python scripts/compare_outputs.py solutions/lostpig_solution.json
 ```
 
 ## Use Cases
 
 ### 1. Compiler Testing (Primary Use Case)
 
-ZWalker was built to provide regression testing for the [z2js](https://github.com/yourusername/z2js) compiler (ZIL/ZILF to JavaScript).
+ZWalker was built to provide regression testing for the [z2js](https://github.com/avwohl/z2js) compiler (ZIL/ZILF to JavaScript).
 
 **The Problem**: z2js was released with bugs that upset users due to lack of testing.
 
@@ -117,12 +146,14 @@ ZWalker was built to provide regression testing for the [z2js](https://github.co
 - Used to compare output between interpreters
 
 ```bash
-# Generate walkthrough with working compiler
-python scripts/solve_top5.py
+# Generate JS test scripts from recorded solutions (smart tests handle random events)
+python scripts/generate_all_smart_tests.py
 
-# Test new compiler version against walkthrough
-python scripts/compare_outputs.py photopia_solution.json
+# Run the z2js regression suite
+./scripts/run_smart_tests.sh
 ```
+
+See [docs/TEST_GENERATION.md](docs/TEST_GENERATION.md) for the full pipeline.
 
 ### 2. Game Analysis
 
@@ -137,7 +168,7 @@ zwalker explore game.z5 --thorough --commands
 Generate test coverage for your IF game:
 
 ```bash
-python scripts/solve_game.py your_game.z5 --max-iterations 100
+python scripts/solve_game.py your_game.z5 --real-ai
 ```
 
 ## Project Status
@@ -145,68 +176,64 @@ python scripts/solve_game.py your_game.z5 --max-iterations 100
 **Version**: 0.1.0 (Alpha)
 
 **What Works**:
-- ✅ Z-machine interpreter (100% CZECH compliance)
-- ✅ AI-assisted game solving
-- ✅ Walkthrough generation
-- ✅ z2js compilation testing
+- ✅ Z-machine interpreter (1,604/1,604 CZECH tests across v3/v4/v5/v8)
+- ✅ Verified complete solves: Zork I 350/350, Zork II 400/400 (deterministic replay)
+- ✅ Replay/verification harness (`scripts/replay_solve.py`)
+- ✅ Agentic solver with navigation, world model, and backtracking
+- ✅ Walkthrough generation and z2js test-script generation
 - ✅ Output comparison tools
 
 **Current Limitations**:
-- Menu-based IF needs special handling
-- Complex opening puzzles can stall AI
-- Not all games solve to completion (60-80% success rate expected)
+- Most games beyond Zork I/II have exploration coverage only, not verified wins
+- Menu-based IF and Y/N prompts need special handling
+- Complex opening puzzles can stall the AI solvers
 
-See [docs/STATUS.md](docs/STATUS.md) for detailed status and [docs/PROGRESS_REPORT.md](docs/PROGRESS_REPORT.md) for test results.
-
-## Results
-
-**Top 5 IF Games Test** (completed 2025-12-06):
-
-| Game | Rank | Rooms | Commands | Quality |
-|------|------|-------|----------|---------|
-| Photopia | #6 (2023) | 2 | 4 | ✅ Best |
-| Lost Pig | #8 (2023) | 2 | 123 | ✅ Good |
-| Anchorhead | #2 (2023) | 1 | 174 | ⚠ Stuck |
-| Trinity | Classic | 1 | 0 | ✗ Failed |
-| Curses | Classic | 1 | 0 | ✗ Failed |
-
-**Z2JS Compilation**: 5/5 (100% success - no compiler errors found)
+See [TODO.md](TODO.md) for current status and [docs/CHANGELOG.md](docs/CHANGELOG.md) for
+interpreter fixes. Historical reports live in [docs/archive/](docs/archive/).
 
 ## Documentation
 
 - [CHANGELOG.md](docs/CHANGELOG.md) - Z-machine bug fixes
-- [STATUS.md](docs/STATUS.md) - Project status and roadmap
-- [PROGRESS_REPORT.md](docs/PROGRESS_REPORT.md) - Test results
-- [WALKTHROUGHS_STATUS.md](docs/WALKTHROUGHS_STATUS.md) - Walkthrough quality analysis
+- [TEST_GENERATION.md](docs/TEST_GENERATION.md) - z2js test pipeline
+- [ADVANCED_SOLVER.md](docs/ADVANCED_SOLVER.md) - strategic solver design (Dec 2025)
+- [PROJECT_NOTES.md](docs/PROJECT_NOTES.md) - project overview and approach
+- [docs/archive/](docs/archive/) - historical status and progress reports
 
 ## Architecture
 
 ```
 zwalker/
-├── zmachine.py      # Z-machine interpreter (425/425 CZECH tests)
-├── walker.py        # Game exploration engine
-├── ai_assist.py     # AI integration (Claude, GPT, local)
-└── cli.py           # Command-line interface
+├── zmachine.py        # Z-machine interpreter (1,604/1,604 CZECH tests)
+├── walker.py          # Game exploration engine
+├── agentic_solver.py  # Agentic solver: perceive→act→verify + navigation + backtracking
+├── advanced_solver.py # Strategic LLM solver (multi-turn planning)
+├── ai_assist.py       # AI integration (Claude, GPT, local)
+├── knowledge.py       # Persistent cross-run knowledge base
+└── cli.py             # Command-line interface
 
-scripts/
-├── solve_game.py       # Single game AI solver
-├── solve_top5.py       # Batch solver for top games
-├── compare_outputs.py  # Output comparison tool
-└── summarize_results.py # Analysis reports
+scripts/               # (selection)
+├── replay_solve.py       # Deterministic seed-search walkthrough verifier
+├── solve_game.py         # Single game AI solver
+├── generate_all_smart_tests.py  # z2js test generation (random-event tolerant)
+├── compare_outputs.py    # Output comparison tool
+└── generate_docs_pages.py # Regenerates docs/WALKTHROUGHS.html from repo data
 
-docs/                # All documentation
-solutions/           # Generated walkthroughs
-tests/              # Test files
+docs/                # Documentation + GitHub Pages site
+solutions/           # Solution JSONs (2 verified solves + exploration runs)
+walkthroughs/        # Human + verified walkthroughs (text + JSON command lists)
+games/zcode/         # Game corpus (155 story files)
+games/results/       # Exploration walkthrough dumps (43 games)
+tests/               # Interpreter regression tests
 ```
 
 ## Contributing
 
 Contributions welcome! Areas needing improvement:
 
-1. **Menu Detection**: Better handling of menu-based IF
-2. **Puzzle Solving**: Improved AI strategies for complex puzzles
-3. **Game Completion**: Detection of win/loss/ending states
-4. **More Games**: Test coverage for additional IF games
+1. **More Verified Solves**: extend the Zork I/II treatment to other games
+2. **Menu Detection**: better handling of menu-based IF and Y/N prompts
+3. **Puzzle Solving**: improved AI strategies for complex puzzles
+4. **More Games**: test coverage for additional IF games
 
 ## License
 
@@ -222,7 +249,7 @@ GPL v3 License - see [LICENSE](LICENSE) file.
 
 - **Source**: https://github.com/avwohl/zwalker
 - **Issues**: https://github.com/avwohl/zwalker/issues
-- **z2js Compiler**: https://github.com/yourusername/z2js
+- **z2js Compiler**: https://github.com/avwohl/z2js
 - **IF Archive**: https://www.ifarchive.org/
 - **IFDB**: https://ifdb.org/
 

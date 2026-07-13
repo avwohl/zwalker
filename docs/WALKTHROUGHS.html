@@ -63,339 +63,607 @@
 <body>
     <header>
         <h1>ZWalker Walkthroughs</h1>
-        <p>AI-generated walkthroughs for Interactive Fiction games</p>
+        <p>Verified complete solves and AI exploration runs for Z-machine games</p>
     </header>
     <div class="container">
-        <a href="index.html" class="back-link">← Back to Main</a>
+        <a href="index.html" class="back-link">&larr; Back to Main</a>
+
         <section>
-            <h2>Available Walkthroughs</h2>
-            <p>ZWalker has generated walkthroughs for 43 games. All walkthroughs are in JSON format with room tracking and command history.</p>
+            <h2>Verified Complete Solves (2)</h2>
+            <p>These walkthroughs play the game start to finish for a perfect score,
+               verified by deterministic replay (<code>scripts/replay_solve.py</code>)
+               against a fixed RNG seed. The JSON includes the full command list and
+               a step-by-step score timeline; the text file is a plain command script.</p>
+            <table>
+                <tr>
+                    <th>Game</th>
+                    <th>Score</th>
+                    <th>Won</th>
+                    <th>Turns</th>
+                    <th>Commands</th>
+                    <th>RNG Seed</th>
+                    <th>Download</th>
+                </tr>
+    <tr>
+        <td>zork1</td>
+        <td class="status-good">350/350</td>
+        <td>Yes</td>
+        <td>499</td>
+        <td>431</td>
+        <td>3</td>
+        <td><a href="solutions/zork1_verified.json">JSON</a> | <a href="walkthroughs/zork1_verified_350.txt">Text</a></td>
+    </tr>
+    <tr>
+        <td>zork2</td>
+        <td class="status-good">400/400</td>
+        <td>Yes</td>
+        <td>416</td>
+        <td>386</td>
+        <td>2</td>
+        <td><a href="solutions/zork2_verified.json">JSON</a> | <a href="walkthroughs/zork2_verified_400.txt">Text</a></td>
+    </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>AI Exploration Runs (73)</h2>
+            <p>Automated exploration output: room mapping and command coverage generated
+               by the solver. These are regression-test fixtures for the
+               <a href="https://github.com/avwohl/z2js">z2js</a> compiler, not complete
+               solutions &mdash; most do not finish the game.</p>
             <table>
                 <tr>
                     <th>Game</th>
                     <th>Rooms Explored</th>
                     <th>Commands</th>
-                    <th>Quality</th>
+                    <th>Coverage</th>
                     <th>Download</th>
                 </tr>
-<tr>
+    <tr>
         <td>905</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/905_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Acheton</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/acheton_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Acorncourt</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/acorncourt_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Adv440</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/adv440_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Adv550</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/adv550_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Advent</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/advent_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Adverbum</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/adverbum_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Aisle</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/aisle_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Allroads</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/allroads_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Amfv</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/amfv_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Anchor</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/anchor_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Animals</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/animals_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Bedlam</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/bedlam_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Bluechairs</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/bluechairs_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Booth</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/booth_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Bunny</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/bunny_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Candy</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/candy_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Catseye</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/catseye_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Cheeseshop</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/cheeseshop_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Coldiron</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/coldiron_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Curses</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/curses_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Czech</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/czech_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Detective</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/detective_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Devours</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/devours_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Dracula</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/dracula_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Dreamhold</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/dreamhold_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Edifice</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/edifice_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Enchanter</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/enchanter_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Enemies</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/enemies_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Etude</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/etude_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Failsafe</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/failsafe_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Gntests</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/gntests_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Lists</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/lists_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Lostpig</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/lostpig_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Photopia</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/photopia_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Shade</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/shade_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Tangle</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/tangle_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Theatre</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/theatre_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Trinity</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/trinity_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Winter</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/winter_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Zombies</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/zombies_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Zork1</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/zork1_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Zork2</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../games/results/zork2_walkthrough.json">JSON</a></td>
-    </tr><tr>
-        <td>Anchor</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../solutions/anchor_solution.json">JSON</a></td>
-    </tr><tr>
-        <td>Curses</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../solutions/curses_solution.json">JSON</a></td>
-    </tr><tr>
-        <td>Lists</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../solutions/lists_solution.json">JSON</a></td>
-    </tr><tr>
-        <td>Lostpig</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../solutions/lostpig_solution.json">JSON</a></td>
-    </tr><tr>
-        <td>Photopia</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../solutions/photopia_solution.json">JSON</a></td>
-    </tr><tr>
-        <td>Trinity</td>
-        <td>0</td>
-        <td>0</td>
-        <td><span class="status-low">Limited</span></td>
-        <td><a href="../solutions/trinity_solution.json">JSON</a></td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/905_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>acheton</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/acheton_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>acorncourt</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/acorncourt_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>adv440</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/adv440_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>adv550</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/adv550_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>advent</td>
+        <td>8</td>
+        <td>125</td>
+        <td><span class="status-medium">Partial exploration</span></td>
+        <td><a href="games/results/advent_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>adventureland</td>
+        <td>8</td>
+        <td>401</td>
+        <td><span class="status-medium">Partial exploration</span></td>
+        <td><a href="solutions/adventureland_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>adverbum</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/adverbum_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>aisle</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/aisle_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>allroads</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/allroads_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>amfv</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/amfv_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>amish</td>
+        <td>1</td>
+        <td>76</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/amish_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>anchor</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/anchor_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>anchorhead</td>
+        <td>1</td>
+        <td>208</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/anchorhead_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>animals</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/animals_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>asylum</td>
+        <td>1</td>
+        <td>76</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/asylum_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>balances</td>
+        <td>3</td>
+        <td>487</td>
+        <td><span class="status-medium">Partial exploration</span></td>
+        <td><a href="solutions/balances_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>ballyhoo</td>
+        <td>8</td>
+        <td>313</td>
+        <td><span class="status-medium">Partial exploration</span></td>
+        <td><a href="solutions/ballyhoo_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>bear</td>
+        <td>1</td>
+        <td>76</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/bear_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>bedlam</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/bedlam_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>bluechairs</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/bluechairs_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>booth</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/booth_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>bunny</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/bunny_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>candy</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/candy_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>catseye</td>
+        <td>5</td>
+        <td>60</td>
+        <td><span class="status-medium">Partial exploration</span></td>
+        <td><a href="games/results/catseye_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>cheeseshop</td>
+        <td>2</td>
+        <td>24</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/cheeseshop_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>cloak</td>
+        <td>3</td>
+        <td>111</td>
+        <td><span class="status-medium">Partial exploration</span></td>
+        <td><a href="solutions/cloak_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>coldiron</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/coldiron_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>curses</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/curses_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>cutthroats</td>
+        <td>1</td>
+        <td>166</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/cutthroats_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>detective</td>
+        <td>2</td>
+        <td>24</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/detective_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>devours</td>
+        <td>11</td>
+        <td>122</td>
+        <td><span class="status-good">Broad exploration</span></td>
+        <td><a href="games/results/devours_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>djinni</td>
+        <td>11</td>
+        <td>401</td>
+        <td><span class="status-good">Broad exploration</span></td>
+        <td><a href="solutions/djinni_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>dracula</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/dracula_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>dreamhold</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/dreamhold_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>edifice</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/edifice_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>enchanter</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/enchanter_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>enemies</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/enemies_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>failsafe</td>
+        <td>3</td>
+        <td>30</td>
+        <td><span class="status-medium">Partial exploration</span></td>
+        <td><a href="games/results/failsafe_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>fairyland</td>
+        <td>1</td>
+        <td>148</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/fairyland_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>fantasydimension</td>
+        <td>5</td>
+        <td>401</td>
+        <td><span class="status-medium">Partial exploration</span></td>
+        <td><a href="solutions/fantasydimension_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>farm</td>
+        <td>1</td>
+        <td>76</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/farm_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>infidel</td>
+        <td>1</td>
+        <td>166</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/infidel_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>jewel</td>
+        <td>1</td>
+        <td>166</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/jewel_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>jigsaw</td>
+        <td>0</td>
+        <td>470</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/jigsaw_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>leather</td>
+        <td>4</td>
+        <td>391</td>
+        <td><span class="status-medium">Partial exploration</span></td>
+        <td><a href="solutions/leather_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>library</td>
+        <td>1</td>
+        <td>76</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/library_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>lists</td>
+        <td>2</td>
+        <td>24</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/lists_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>loose</td>
+        <td>12</td>
+        <td>501</td>
+        <td><span class="status-good">Broad exploration</span></td>
+        <td><a href="solutions/loose_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>lostpig</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/lostpig_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>moonmist</td>
+        <td>1</td>
+        <td>178</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/moonmist_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>pentari</td>
+        <td>4</td>
+        <td>501</td>
+        <td><span class="status-medium">Partial exploration</span></td>
+        <td><a href="solutions/pentari_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>photopia</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/photopia_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>planetfa</td>
+        <td>0</td>
+        <td>209</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/planetfa_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>planetfall</td>
+        <td>5</td>
+        <td>601</td>
+        <td><span class="status-medium">Partial exploration</span></td>
+        <td><a href="solutions/planetfall_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>Ralph</td>
+        <td>1</td>
+        <td>166</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/Ralph_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>reverb</td>
+        <td>1</td>
+        <td>133</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/reverb_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>shade</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/shade_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>spirit</td>
+        <td>1</td>
+        <td>166</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/spirit_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>stationfall</td>
+        <td>5</td>
+        <td>601</td>
+        <td><span class="status-medium">Partial exploration</span></td>
+        <td><a href="solutions/stationfall_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>suspect</td>
+        <td>10</td>
+        <td>348</td>
+        <td><span class="status-good">Broad exploration</span></td>
+        <td><a href="solutions/suspect_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>suspended</td>
+        <td>1</td>
+        <td>103</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/suspended_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>tangle</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/tangle_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>theatre</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/theatre_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>trinity</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/trinity_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>winter</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/winter_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>witness</td>
+        <td>8</td>
+        <td>313</td>
+        <td><span class="status-medium">Partial exploration</span></td>
+        <td><a href="solutions/witness_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>zombies</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/zombies_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>zork1</td>
+        <td>10</td>
+        <td>135</td>
+        <td><span class="status-good">Broad exploration</span></td>
+        <td><a href="games/results/zork1_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>zork1-r2</td>
+        <td>10</td>
+        <td>331</td>
+        <td><span class="status-good">Broad exploration</span></td>
+        <td><a href="solutions/zork1-r2_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>zork1-r5</td>
+        <td>10</td>
+        <td>331</td>
+        <td><span class="status-good">Broad exploration</span></td>
+        <td><a href="solutions/zork1-r5_solution.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>zork2</td>
+        <td>1</td>
+        <td>12</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="games/results/zork2_walkthrough.json">JSON</a></td>
+    </tr>
+    <tr>
+        <td>zork3</td>
+        <td>0</td>
+        <td>209</td>
+        <td><span class="status-low">Shallow</span></td>
+        <td><a href="solutions/zork3_solution.json">JSON</a></td>
     </tr>
             </table>
         </section>
-        
+
         <section>
-            <h2>Walkthrough Format</h2>
-            <p>All walkthroughs use the following JSON structure:</p>
+            <h2>Walkthrough Formats</h2>
+            <p>Verified solves (<code>solutions/*_verified.json</code>):</p>
             <pre style="background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 8px; overflow-x: auto;">
 {
-  "game": "photopia.z5",
-  "total_rooms": 2,
-  "total_commands": 4,
-  "commands": [
-    "look",
-    "inventory",
-    "examine room",
-    "wait"
-  ],
-  "rooms_visited": [
-    "Alley",
-    "Corner"
-  ]
+  "game": "games/zcode/zork1.z3",
+  "walkthrough": "walkthroughs/zork1_verified_350.txt",
+  "solver": "replay+seed",
+  "rng_seed": 3,
+  "score": 350,
+  "max_score": 350,
+  "won": true,
+  "turns": 499,
+  "num_commands": 431,
+  "score_timeline": [ { "step": 3, "command": "enter window", "score": 10 }, ... ],
+  "commands": [ ... ]
+}</pre>
+            <p>Exploration runs (<code>games/results/*_walkthrough.json</code>):</p>
+            <pre style="background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 8px; overflow-x: auto;">
+{
+  "format_version": 1,
+  "commands": [ "north", "take lamp", ... ],
+  "rooms": { "1": { "name": "West of House", "exits": [...] }, ... },
+  "objects": { ... },
+  "stats": { "rooms_found": 8, "commands_tried": 126, ... }
 }</pre>
         </section>
+
+        <footer style="text-align: center; padding: 1rem; color: #777;">
+            <p>Generated by <code>scripts/generate_docs_pages.py</code> from the JSON files in this repository.</p>
+        </footer>
     </div>
 </body>
 </html>

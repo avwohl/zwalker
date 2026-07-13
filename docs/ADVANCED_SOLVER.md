@@ -1,5 +1,7 @@
 # Advanced AI Solver - Claude Opus 4.8
 
+> **Note**: Design doc from December 2025. The approach that produced verified complete solves (Zork I 350/350, Zork II 400/400) is the newer agentic solver `zwalker/agentic_solver.py` plus the deterministic replay harness `scripts/replay_solve.py`.
+
 A sophisticated IF game solver designed to actually complete complex games, not just explore them.
 
 ## Philosophy
@@ -242,5 +244,4 @@ python3 scripts/solve_with_opus.py games/zcode/curses.z5 --max-turns 800
 
 ---
 
-**Status**: Implementation complete, ready for testing
-**Next**: Run smoke tests then full evaluation
+**Status**: Tested December 2025 (see [docs/archive/OPUS_ZORK_TEST_RESULTS.md](archive/OPUS_ZORK_TEST_RESULTS.md)); superseded by the agentic solver (`zwalker/agentic_solver.py`)

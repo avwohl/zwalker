@@ -1,9 +1,41 @@
 # Changelog
 
+## 2026-06-08 - Verified Complete Solves: Zork I & Zork II
+
+### Summary
+First fully verified end-to-end game solves, plus the replay harness that makes them
+reproducible.
+
+- **Zork I solved 350/350** (won, 499 turns, 431 commands) — `solutions/zork1_verified.json`,
+  `walkthroughs/zork1_verified_350.txt`
+- **Zork II solved 400/400** (won, 416 turns, 386 commands) — `solutions/zork2_verified.json`,
+  `walkthroughs/zork2_verified_400.txt`
+- **Replay harness** `scripts/replay_solve.py`: deterministic walkthrough replay with RNG
+  seed search — pins `vm.rng.seed` and searches seeds until random events (thief, combat,
+  wizard) line up, then records a full score timeline. Zork I verifies at seed 3, Zork II
+  at seed 2.
+- **Walker fix**: rollback false-positive in the exploration engine.
+
+## 2026-06-08 - Agentic Solver (Plan B) & Interpreter Fixes
+
+- New `zwalker/agentic_solver.py`: perceive→decide→act→verify loop with BFS navigation
+  via a world model, checkpoint/backtracking stack, and a pluggable decider (free local
+  heuristics or Claude via API).
+- Tuning: configurable wall-clock budget, plan caching, zero-move navigation consumes a
+  turn, dead navigation targets filtered (fixes agentic spin).
+- Solver hardening: score-driven and dictionary-constrained command selection, real exit
+  detection, undo support; fixed a Zork III crash and hardened the LLM planner.
+- Implemented `output_stream 3` (memory redirection) and the default Unicode table.
+- Auto-load `.env` (`ANTHROPIC_API_KEY`) on import.
+
+## 2026-03-16 - Save/Restore Fix
+
+- Fixed save/restore crash on V1-3 games (issue #2).
+
 ## 2025-12-06 - Z-Machine Bug Fixes
 
 ### Summary
-Fixed 5 critical bugs in the Z-machine interpreter, achieving 100% compliance with the CZECH test suite (425 tests, 0 failures, down from 46 failures).
+Fixed 5 critical bugs in the Z-machine interpreter, achieving 100% compliance with the CZECH test suite (czech.z5: 425 tests, 0 failures, down from 46 failures).
 
 ### Bug Fixes
 
@@ -57,7 +89,8 @@ Enhanced error handling and bounds checking:
 ### Test Results
 
 **Before fixes**: CZECH compliance test had 46 failures
-**After fixes**: CZECH compliance test has 0 failures (425/425 passing)
+**After fixes**: CZECH compliance test has 0 failures (czech.z5: 425/425 passing; the
+full v3/v4/v5/v8 suite totals 1,604 tests — see the 2026 entries above)
 
 All 43 test games now pass successfully:
 - Z-machine v3 games: 5 passing

@@ -241,13 +241,15 @@
         <div>
             <span class="badge">100% CZECH Compliant</span>
             <span class="badge">1,604 Tests Passing</span>
-            <span class="badge">43 Games Tested</span>
+            <span class="badge">Zork I Solved 350/350</span>
+            <span class="badge">Zork II Solved 400/400</span>
         </div>
     </header>
 
     <nav>
         <ul>
             <li><a href="#overview">Overview</a></li>
+            <li><a href="#verified">Verified Solves</a></li>
             <li><a href="#testing">Test Results</a></li>
             <li><a href="#games">Game Index</a></li>
             <li><a href="#walkthroughs">Walkthroughs</a></li>
@@ -258,7 +260,7 @@
     <div class="container">
         <section id="overview">
             <h2>Overview</h2>
-            <p>ZWalker is a complete Python implementation of the Z-machine virtual machine with AI-assisted game solving capabilities. It achieves 100% compliance with all major Z-machine test suites and can automatically generate walkthroughs for Interactive Fiction games.</p>
+            <p>ZWalker is a complete Python implementation of the Z-machine virtual machine with AI-assisted game solving capabilities. It achieves 100% CZECH test-suite compliance, generates walkthroughs for Interactive Fiction games, and verifies complete solves with a deterministic replay harness.</p>
 
             <div class="stats-grid">
                 <div class="stat-card">
@@ -270,24 +272,64 @@
                     <span class="stat-label">Tests Passing</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">43</span>
-                    <span class="stat-label">Games Tested</span>
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Verified Complete Solves</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">4</span>
-                    <span class="stat-label">Z-Machine Versions</span>
+                    <span class="stat-number">73</span>
+                    <span class="stat-label">Exploration Walkthroughs</span>
                 </div>
             </div>
 
             <h3>Features</h3>
             <ul>
-                <li>Complete Z-machine interpreter (versions 3, 4, 5, 8)</li>
+                <li>Complete Z-machine interpreter (plays versions 1&ndash;5 and 8; CZECH-verified on 3, 4, 5, 8)</li>
+                <li>Deterministic walkthrough replay &amp; verification with RNG seed search (<code>scripts/replay_solve.py</code>)</li>
+                <li>Agentic AI solver: perceive&rarr;act&rarr;verify loop with navigation and backtracking</li>
                 <li>AI-powered game solving with Claude/OpenAI</li>
-                <li>Automatic walkthrough generation</li>
                 <li>Game exploration and mapping</li>
-                <li>100% test suite compliance (CZECH, GNTests, TerpEtude)</li>
+                <li>100% CZECH compliance; GNTests passing; TerpEtude critical tests verified</li>
                 <li>z2js compiler validation</li>
             </ul>
+        </section>
+
+        <section id="verified">
+            <h2>Verified Complete Solves</h2>
+            <p>These games are played start to finish for a perfect score, and the win is
+               reproduced deterministically by replaying the command list against a fixed
+               RNG seed with <code>scripts/replay_solve.py</code>.</p>
+            <table>
+                <tr>
+                    <th>Game</th>
+                    <th>Score</th>
+                    <th>Won</th>
+                    <th>Turns</th>
+                    <th>Commands</th>
+                    <th>RNG Seed</th>
+                    <th>Download</th>
+                </tr>
+                <tr>
+                    <td>Zork I</td>
+                    <td class="status-pass">350/350</td>
+                    <td class="status-pass">Yes</td>
+                    <td>499</td>
+                    <td>431</td>
+                    <td>3</td>
+                    <td><a href="solutions/zork1_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/zork1_verified_350.txt" class="walkthrough-link">Text</a></td>
+                </tr>
+                <tr>
+                    <td>Zork II</td>
+                    <td class="status-pass">400/400</td>
+                    <td class="status-pass">Yes</td>
+                    <td>416</td>
+                    <td>386</td>
+                    <td>2</td>
+                    <td><a href="solutions/zork2_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/zork2_verified_400.txt" class="walkthrough-link">Text</a></td>
+                </tr>
+            </table>
+            <pre><code># reproduce locally
+python3 scripts/replay_solve.py games/zcode/zork1.z3 walkthroughs/zork1_verified_350.txt --seeds 4
+python3 scripts/replay_solve.py games/zcode/zork2.z3 walkthroughs/zork2_verified_400.txt --seeds 3</code></pre>
         </section>
 
         <section id="testing">
@@ -364,9 +406,10 @@
 
         <section id="games">
             <h2>Game Index</h2>
-            <p>ZWalker has been tested with 100+ Z-machine games. Below are the top 50 games from IFDB rankings and classic Infocom titles.</p>
+            <p>The repository indexes 100+ game download sources and carries a corpus of 155 story files; 73 games have exploration data in the repo (40 walkthrough dumps in games/results/ plus tracked solution runs), plus the verified complete solves of Zork I and Zork II above.</p>
 
-            <h3>Top 5 AI Walkthrough Tests</h3>
+            <h3>Sample Exploration &amp; Replay Runs (Jan 2026)</h3>
+            <p>Early solver output &mdash; room mapping and command coverage for compiler testing, not complete solves.</p>
             <table>
                 <tr>
                     <th>Game</th>
@@ -378,37 +421,37 @@
                 <tr>
                     <td>Photopia</td>
                     <td>z5</td>
-                    <td><a href="../solutions/photopia_solution.json" class="walkthrough-link">View JSON</a></td>
+                    <td><a href="solutions/photopia_solution.json" class="walkthrough-link">View JSON</a></td>
                     <td class="status-pass">Compiled</td>
-                    <td class="status-pass">2 rooms, 4 commands</td>
+                    <td class="status-partial">3 rooms, 201 commands (smart solver)</td>
                 </tr>
                 <tr>
                     <td>Lost Pig</td>
                     <td>z8</td>
-                    <td><a href="../solutions/lostpig_solution.json" class="walkthrough-link">View JSON</a></td>
+                    <td><a href="solutions/lostpig_solution.json" class="walkthrough-link">View JSON</a></td>
                     <td class="status-pass">Compiled</td>
-                    <td class="status-pass">2 rooms, 123 commands</td>
+                    <td class="status-partial">2 rooms, 123 commands</td>
                 </tr>
                 <tr>
                     <td>Anchorhead</td>
                     <td>z8</td>
-                    <td><a href="../solutions/anchor_solution.json" class="walkthrough-link">View JSON</a></td>
+                    <td><a href="solutions/anchor_solution.json" class="walkthrough-link">View JSON</a></td>
                     <td class="status-pass">Compiled</td>
-                    <td class="status-partial">1 room, 174 commands (stuck)</td>
+                    <td class="status-partial">298 commands (human walkthrough replay, unverified)</td>
                 </tr>
                 <tr>
                     <td>Trinity</td>
                     <td>z4</td>
-                    <td><a href="../solutions/trinity_solution.json" class="walkthrough-link">View JSON</a></td>
+                    <td><a href="solutions/trinity_solution.json" class="walkthrough-link">View JSON</a></td>
                     <td class="status-pass">Compiled</td>
-                    <td class="status-partial">Menu-based (limited)</td>
+                    <td class="status-partial">244 commands (human walkthrough replay, unverified)</td>
                 </tr>
                 <tr>
                     <td>Curses</td>
                     <td>z5</td>
-                    <td><a href="../solutions/curses_solution.json" class="walkthrough-link">View JSON</a></td>
+                    <td><a href="solutions/curses_solution.json" class="walkthrough-link">View JSON</a></td>
                     <td class="status-pass">Compiled</td>
-                    <td class="status-partial">Complex puzzle (limited)</td>
+                    <td class="status-partial">1 room, 76 commands</td>
                 </tr>
             </table>
 
@@ -446,47 +489,54 @@
 
         <section id="walkthroughs">
             <h2>Walkthroughs</h2>
-            <p>ZWalker can automatically generate walkthroughs for Interactive Fiction games using AI assistance. All walkthroughs are in JSON format with room tracking and command history.</p>
+            <p>ZWalker generates walkthroughs for Interactive Fiction games using AI assistance: 2 verified complete solves and 73 exploration runs, all in JSON format with room tracking and command history.</p>
 
-            <h3>Available Walkthroughs (43 games)</h3>
-            <p>Walkthroughs have been generated for the following games:</p>
+            <h3>Highlights</h3>
             <ul>
-                <li>Zork I - <a href="../games/results/zork1_walkthrough.json" class="walkthrough-link">JSON</a></li>
-                <li>Adventure (Colossal Cave) - <a href="../games/results/advent_walkthrough.json" class="walkthrough-link">JSON</a></li>
-                <li>Photopia - <a href="../solutions/photopia_solution.json" class="walkthrough-link">JSON</a></li>
-                <li>Lost Pig - <a href="../solutions/lostpig_solution.json" class="walkthrough-link">JSON</a></li>
-                <li>Shade - <a href="../games/results/shade_walkthrough.json" class="walkthrough-link">JSON</a></li>
-                <li>Aisle - <a href="../games/results/aisle_walkthrough.json" class="walkthrough-link">JSON</a></li>
-                <li>Detective - <a href="../games/results/detective_walkthrough.json" class="walkthrough-link">JSON</a></li>
-                <li>Blue Chairs - <a href="../games/results/bluechairs_walkthrough.json" class="walkthrough-link">JSON</a></li>
-                <li>And 35 more... <a href="WALKTHROUGHS.html" class="walkthrough-link">View all</a></li>
+                <li>Zork I (verified 350/350) - <a href="solutions/zork1_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/zork1_verified_350.txt" class="walkthrough-link">Text</a></li>
+                <li>Zork II (verified 400/400) - <a href="solutions/zork2_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/zork2_verified_400.txt" class="walkthrough-link">Text</a></li>
+                <li>Zork I exploration - <a href="games/results/zork1_walkthrough.json" class="walkthrough-link">JSON</a></li>
+                <li>Adventure (Colossal Cave) - <a href="games/results/advent_walkthrough.json" class="walkthrough-link">JSON</a></li>
+                <li>Photopia - <a href="solutions/photopia_solution.json" class="walkthrough-link">JSON</a></li>
+                <li>Lost Pig - <a href="solutions/lostpig_solution.json" class="walkthrough-link">JSON</a></li>
+                <li>Shade - <a href="games/results/shade_walkthrough.json" class="walkthrough-link">JSON</a></li>
+                <li>Aisle - <a href="games/results/aisle_walkthrough.json" class="walkthrough-link">JSON</a></li>
+                <li>All 75 walkthroughs... <a href="WALKTHROUGHS.html" class="walkthrough-link">View the full index</a></li>
             </ul>
 
             <h3>Walkthrough Format</h3>
+            <p>Verified solves (<code>solutions/*_verified.json</code>):</p>
             <pre><code>{
-  "game": "photopia.z5",
-  "total_rooms": 2,
-  "total_commands": 4,
-  "commands": [
-    "look",
-    "inventory",
-    "examine room",
-    "wait"
+  "game": "games/zcode/zork1.z3",
+  "walkthrough": "walkthroughs/zork1_verified_350.txt",
+  "solver": "replay+seed",
+  "rng_seed": 3,
+  "score": 350,
+  "max_score": 350,
+  "won": true,
+  "turns": 499,
+  "num_commands": 431,
+  "score_timeline": [
+    { "step": 3, "command": "enter window", "score": 10 },
+    ...
   ],
-  "rooms_visited": [
-    "Alley",
-    "Corner"
-  ]
+  "commands": [ ... ]
+}</code></pre>
+            <p>Exploration runs (<code>games/results/*_walkthrough.json</code>):</p>
+            <pre><code>{
+  "format_version": 1,
+  "commands": [ "north", "take lamp", ... ],
+  "rooms": { "64": { "name": "West of House", ... }, ... },
+  "objects": { ... },
+  "stats": { "rooms_found": 10, "commands_tried": 136, ... }
 }</code></pre>
         </section>
 
         <section id="download">
             <h2>Installation & Usage</h2>
 
-            <h3>Install from PyPI</h3>
-            <pre><code>pip install zwalker</code></pre>
-
             <h3>Install from GitHub</h3>
+            <p>Not yet published to PyPI &mdash; install from source:</p>
             <pre><code>git clone https://github.com/avwohl/zwalker.git
 cd zwalker
 pip install -e .</code></pre>
@@ -502,10 +552,12 @@ pip install -e .</code></pre>
             <h4>Generate walkthrough</h4>
             <pre><code>python scripts/solve_game.py games/zcode/lostpig.z8 --real-ai</code></pre>
 
+            <h4>Verify a walkthrough deterministically</h4>
+            <pre><code>python3 scripts/replay_solve.py games/zcode/zork1.z3 walkthroughs/zork1_verified_350.txt --seeds 4</code></pre>
+
             <div style="margin-top: 2rem;">
                 <a href="https://github.com/avwohl/zwalker" class="download-btn">View on GitHub</a>
-                <a href="https://pypi.org/project/zwalker/" class="download-btn">PyPI Package</a>
-                <a href="../README.md" class="download-btn">Documentation</a>
+                <a href="https://github.com/avwohl/zwalker#readme" class="download-btn">Documentation</a>
             </div>
         </section>
     </div>

@@ -165,11 +165,13 @@ python scripts/generate_all_tests.py --force
 
 ## Current Status
 
-As of 2026-01-26, we have:
+As of 2026-07-13, we have:
 
-- **26 solution files** in the `solutions/` directory
-- **26 test scripts** generated successfully
-- Test scripts for: zork1, zork2, zork3, lostpig, lists, acheton, advent, enchanter, and 18 more games
+- **73 solution files** (`solutions/*_solution.json`), plus 2 verified-solve JSONs (`zork1_verified.json`, `zork2_verified.json`)
+- **155 tracked test scripts** (`scripts/test_*.js`), 73 of which are smart tests (`*_smart.js`)
+- Test scripts for: zork1, zork2, zork3, lostpig, lists, acheton, advent, enchanter, and many more games
+
+The smart-test path is the recommended one: `scripts/generate_all_smart_tests.py` and `scripts/run_smart_tests.sh` handle random events (thief/combat/grue) during playback.
 
 ## Troubleshooting
 
@@ -220,5 +222,5 @@ Possible improvements:
 ## See Also
 
 - [README.md](../README.md) - Project overview
-- [STATUS.md](STATUS.md) - Project status
-- [TEST_SUITES.md](TEST_SUITES.md) - Z-machine test suites
+- [STATUS.md](archive/STATUS.md) - Project status (archived)
+- [TEST_SUITES.md](archive/TEST_SUITES.md) - Z-machine test suites (archived)

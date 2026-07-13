@@ -27,10 +27,19 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      # Site root is docs/, plus the walkthrough/solution data the pages link to.
+      - name: Assemble site
+        run: |
+          mkdir -p _site/games/results _site/solutions _site/walkthroughs
+          cp -r docs/. _site/
+          cp games/results/*.json _site/games/results/
+          cp solutions/*.json _site/solutions/
+          cp -r walkthroughs/. _site/walkthroughs/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './docs'
+          path: './_site'
 
       - name: Deploy to GitHub Pages
         id: deployment

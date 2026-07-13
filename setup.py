@@ -11,12 +11,11 @@ long_description = readme_file.read_text() if readme_file.exists() else ""
 setup(
     name="zwalker",
     version="0.1.0",
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="zwalker team",
     description="Automated walkthrough generator for Z-machine interactive fiction games",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/zwalker",
+    url="https://github.com/avwohl/zwalker",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",

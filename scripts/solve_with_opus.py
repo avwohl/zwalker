@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Advanced solver using Claude Sonnet 4 for complex IF games.
+Advanced solver using Claude Opus for complex IF games.
 
 This solver is designed to actually solve difficult games like:
 - Zork I, II, III
@@ -57,7 +57,7 @@ def solve_game(game_path: str, max_turns: int = 500, verbose: bool = True, hints
     print("="*80)
     print(f"Game: {game_path}")
     print(f"Max turns: {max_turns}")
-    print(f"Model: claude-opus-4-20250514")
+    print(f"Model: claude-opus-4-8")
     if hints_file:
         print(f"Hints: {hints_file}")
     if state_file:
@@ -128,7 +128,7 @@ def solve_game(game_path: str, max_turns: int = 500, verbose: bool = True, hints
 
     solution_data = {
         "game": str(game_path),
-        "source": "advanced_ai_sonnet",
+        "source": "advanced_ai_opus",
         "completed": result.get("game_won", False),
         "total_commands": len(result.get("commands", [])),
         "total_rooms": result.get("rooms_explored", 0),
@@ -136,7 +136,7 @@ def solve_game(game_path: str, max_turns: int = 500, verbose: bool = True, hints
         "commands": result.get("commands", []),
         "final_inventory": result.get("final_inventory", []),
         "strategies_used": result.get("strategies_tried", 0),
-        "model": "claude-sonnet-4-20250514",
+        "model": "claude-opus-4-8",
         "hints_file": hints_file
     }
 

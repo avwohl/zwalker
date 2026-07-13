@@ -1,15 +1,23 @@
 # ZWalker - TODO & Status
 
-**Last Updated**: 2026-02-05
+**Last Updated**: 2026-07-13
 
 ## Current Status
 
-- **130+ games solved** (exceeds target of 130)
-- **74 test scripts** generated (107 games pending test generation)
-- **24,488 total commands** across solutions
-- **Z-machine interpreter**: 100% CZECH compliance (425/425 tests)
-- **Z2JS tests**: 7/7 passing (100%)
-- **Zorkie tests**: 43/64 passing (67%)
+- **Verified complete solves: Zork I 350/350 and Zork II 400/400** (won, replay-verified
+  with `scripts/replay_solve.py` at fixed RNG seeds; `solutions/zork1_verified.json`,
+  `solutions/zork2_verified.json`)
+- **75 solution files tracked in git** (73 `*_solution.json` exploration runs + 2 verified
+  solves); the 2026-02-05 batch run produced ~58 more exploration runs that are local-only
+  (`.gitignore` excludes new `solutions/*_solution.json`)
+- **155 test scripts** tracked (73 smart tests that tolerate random events)
+- **Z-machine interpreter**: 100% CZECH compliance (1,604/1,604 tests across v3/v4/v5/v8;
+  re-verified 2026-07-13)
+- **Z2JS tests**: 7/7 passing as of 2026-02-05
+- **Zorkie tests**: 43/64 passing (67%) as of 2026-02-05
+
+Note: the batch "solves" are exploration/coverage runs (room mapping + command exercise),
+not completed games. The only verified end-to-end wins are Zork I and Zork II.
 
 ## Unsolved Games
 
@@ -19,7 +27,8 @@
 | gntests (z5) | Test suite, not playable |
 | Some IFDB/IF Archive games | Broken download links (HTTP 404) |
 
-Note: failsafe and plundered are now solved as of 2026-02-05.
+Note: failsafe and plundered got exploration runs in the 2026-02-05 batch (local output,
+not tracked in git); neither has a verified win.
 
 ## TODO
 
@@ -29,16 +38,18 @@ Note: failsafe and plundered are now solved as of 2026-02-05.
    - Detect prompt patterns: `(Y/N)?`, `Select an option`, numbered menus
    - Add Y/N/number responses to solver
 
-2. **Solve plundered** - Manual intervention or improved solver needed
+2. **More verified solves** - Extend the Zork I/II replay-verified treatment
+   (agentic solver + `scripts/replay_solve.py`) to Zork III and other games
 
-3. **Compile more games with z2js** - 61 games pending compilation
+3. **Compile more games with z2js** - many games pending compilation
+   (24 `scripts/*_z2js.js` compiled-game scripts tracked vs. a 155-story-file corpus)
    - Use `scripts/compile_games_for_testing.sh`
    - Or manually: `cd ~/src/z2js && python -m jsgen /path/to/game.z5`
 
 ### Medium Priority
 
 4. **Implement hints system** - Use human walkthrough files to guide AI
-   - See archived `docs/HINTS_ENHANCEMENT.md` for design
+   - See `docs/HINTS_ENHANCEMENT.md` for design
    - Parse hint files from `walkthroughs/` directory
    - Add to advanced solver context
 
@@ -61,13 +72,16 @@ Note: failsafe and plundered are now solved as of 2026-02-05.
 
 ```
 zwalker/
-├── zmachine.py      # Z-machine interpreter (425/425 CZECH)
+├── zmachine.py      # Z-machine interpreter (1,604/1,604 CZECH across v3/v4/v5/v8)
 ├── walker.py        # Game exploration engine
+├── agentic_solver.py # Agentic solver: perceive→act→verify + nav + backtracking
 ├── ai_assist.py     # Basic AI integration
 ├── advanced_solver.py # Strategic AI solver (Opus)
+├── knowledge.py     # Persistent cross-run knowledge base
 └── cli.py           # Command-line interface
 
 scripts/
+├── replay_solve.py     # Deterministic seed-search walkthrough verifier
 ├── solve_game.py       # Single game AI solver
 ├── solve_with_opus.py  # Advanced Opus solver
 ├── generate_test_script.py  # Test generator
@@ -75,8 +89,8 @@ scripts/
 ├── run_all_tests.sh         # Test runner
 └── test_zorkie_compilation.py  # Zorkie tester
 
-solutions/           # 130+ game solutions (JSON)
-scripts/test_*.js    # 74 generated test scripts
+solutions/           # 2 verified solves + 73 exploration runs (JSON, tracked)
+scripts/test_*.js    # 155 generated test scripts (73 smart)
 ```
 
 ## Key Tools
@@ -85,6 +99,7 @@ scripts/test_*.js    # 74 generated test scripts
 |------|---------|
 | `solve_game.py` | AI-solve a single game |
 | `solve_with_opus.py` | Advanced Opus solver with strategy |
+| `replay_solve.py` | Deterministic seed-search walkthrough verifier |
 | `generate_test_script.py` | Generate JS test from solution |
 | `generate_all_tests.py` | Batch generate all tests |
 | `run_all_tests.sh` | Run all z2js tests |
@@ -96,6 +111,9 @@ scripts/test_*.js    # 74 generated test scripts
 ```bash
 # Solve a game
 python scripts/solve_game.py games/zcode/zork1.z3 --real-ai
+
+# Verify a walkthrough deterministically (seed search)
+python3 scripts/replay_solve.py games/zcode/zork1.z3 walkthroughs/zork1_verified_350.txt --seeds 4
 
 # Advanced solving with Opus
 python scripts/solve_with_opus.py games/zcode/zork1.z3
@@ -130,7 +148,8 @@ This allows solutions to work even when random events occur at different times.
 ## Notes
 
 - Test suites (czech, gntests) are not playable games - excluded from coverage
-- Effective coverage of playable games: 130+ (target met: 130 games)
+- Exploration runs: 131 solution files locally (73 tracked in git); roughly 120 distinct
+  playable games after deduplicating variants and excluding test suites
 - Human walkthroughs available in `walkthroughs/` for ~12 games
-- Advanced solver uses Claude Opus for better puzzle solving
-- Batch solver completed 2026-02-05: 56 new games solved, 135 total solutions
+- Verified wins come from the agentic solver + `scripts/replay_solve.py` replay verification
+- Batch solver completed 2026-02-05: 56 new exploration runs (local-only, gitignored)
