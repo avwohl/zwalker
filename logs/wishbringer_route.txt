@@ -1,0 +1,319 @@
+# WISHBRINGER r68/850501 — merged route, 100/100, ZERO wishes, 0 deaths,
+# 0 Boot Patrol captures. Synthesized from the ZIL source (historicalsource
+# r69 tree, every mechanic re-verified on r68) + two IF-Archive step files +
+# InvisiClues conversion (see wishbringer_notes.md for every citation).
+# MACHINE-VERIFIED: this exact list (with its adaptive blocks) scored
+# 100/100 on 92/92 pinned RNG seeds against the r68 binary
+# (scripts/solve_wishbringer_adaptive.py), 179 commands, 162 game moves,
+# done by 19:45 game time. All three magic words exercised.
+#
+# One command per line. '#' lines are comments, not input.
+#
+# SCORE: real score = GLOBAL INDEX 136 (variable 152), NOT vm.get_score()
+# (this is a TIME game: globals 1/2 are hour/minute; GMOVES = global 135).
+# Every score event also prints "(Your score just went up by N ...)".
+#
+# Replayer directives (the replayer must implement these):
+#   @until <t1>|<t2> :: <cmd1> ;; <cmd2>
+#       loop the command cycle until any listed substring/regex appears in
+#       output. Cap ~40 iterations = desync signal. Desync also on:
+#       "You're FIRED", "It's the Boot Patrol", "RESTART, RESTORE"
+#       (except in the FINALE block), "torture at the skilled hands".
+#   @word — NEW PRIMITIVE (VARIABLE): after 'give hat to pelican', parse
+#       /traces a word on a passing cloud: ([A-Z]+)/ from the output and
+#       store as $WORD (KALUZE|FRATTO|SORKIN, equiprobable, rolled at the
+#       first post-office entry). NEVER hardcode it; saying a wrong word
+#       or saying it before the pelican scene permanently locks out +3.
+#   $WORD — substitute the stored word.
+#   yes — answers to inline YES?-prompts are sent as ordinary input lines.
+#   VARIABLE  = value/text must be parsed from THIS run, never hardcoded.
+#   CRITICAL  = no extra commands may be inserted in the window; order and
+#               count matter (timers/one-shots).
+#   `score` and `time` are timeless and safe anywhere for telemetry.
+#
+# ---------- PHASE 0: FESTERON, 15:00. Post office. (deadline 17:00) -----
+# I-HOORAY: +1 and the magic word is rolled here. Envelope tossed turn 2.
+s
+@until tossing it onto the service counter :: z
+take envelope
+# +5. Leave at once (stalling makes Crisp throw you out - harmless but noisy)
+n
+# ---------- PHASE 1: cemetery — shoo the digger, rob the grave ----------
+w
+# BE-SURE inline prompt:
+w
+yes
+# Creepy Corner -> copse (digger greets) -> glen (he follows, hands back
+# anything dropped, leaves and locks the north gate = deterministic shoo)
+n
+w
+# ^ expect "locking the north gate" — the digger is now gone for good
+e
+# CRITICAL: entering the grave only works with the digger gone, carried
+# weight <= 18 and no branch/open umbrella.
+d
+take bone
+# +1
+u
+s
+e
+e
+# ---------- PHASE 2: poodle, Voss note, coin, seahorse ------------------
+e
+give bone to poodle
+# +3; buys exactly ONE pass north. Do not re-cross before Witchville.
+n
+# Miss Voss offers the violet note; MUST take it (refusal = -10 and SKEW
+# deletes it = 100 impossible). It stays SEALED until Crisp opens it.
+@until holding it out to you :: z
+take note
+# +3
+n
+look in fountain
+take coin
+# +1. ONE-SHOT: unobtainable after the transformation.
+e
+e
+e
+# Wharf's End: seahorse dies in 4 visible turns. CRITICAL window:
+take seahorse
+throw seahorse in bay
+# HORSE-SAVED: insurance against a 3rd Boot Patrol capture (no points).
+w
+# ---------- PHASE 3: north over the bridge, up the trail maze -----------
+n
+n
+w
+w
+n
+n
+e
+# CRITICAL: trail maze from Cliff Bottom, TLOC cells; any wrong direction
+# rolls cumulative PROB-TUMBLE death. Exact sequence:
+u
+w
+n
+u
+e
+s
+u
+# +1 (first arrival at Cliff Edge). ~15:57 — beat the 17:00 deadline.
+# ---------- PHASE 4: Ye Olde Magick Shoppe (clock frozen inside) --------
+knock on door
+open door
+w
+# wait for the old woman to shuffle in (I-WOMAN-SCRIPT, ~3 turns):
+@until old woman :: z
+give envelope to woman
+# +5
+open envelope
+read letter to woman
+# +1
+@until holds out a small metal can|Take this :: z
+take can
+# +3. I-RATTLE flavor PROB 5/turn while carrying it (RNG only).
+# Transformation: 3 more script turns -> SKEW -> Cliff Edge, 18:00.
+@until Cliff Edge :: z
+# ---------- PHASE 5: WITCHVILLE. Fog maze down; troll; the Stone --------
+# (moonset deadline 06:00 = 720 turns; route needs ~105)
+# CRITICAL: fog maze, exact sequence (wrong moves roll PROB-TUMBLE):
+d
+n
+w
+d
+s
+e
+d
+# Cliff Bottom. Branch snaps off the tree first, then take it. The vulture
+# flies off: I-VULTURE PROB 5/turn outdoors from now on (flavor RNG only).
+take branch
+take branch
+w
+# North of Bridge: troll + toll gate. The snake-can does the work:
+open can
+# +3 ("a real, live rattlesnake leaps out!"); troll flees for good; the
+# can falls to the ground, open.
+take can
+squeeze can
+# "Pop! A small stone drops out of the squashed can"
+take stone
+# +5. WISHBRINGER glows while held = our light source all game.
+open gate
+s
+s
+w
+s
+# ---------- PHASE 6: platypus, whistle, Misty Island --------------------
+# Edge of Lake. ORDER IS A ONE-SHOT: dig before the rescue and the whistle
+# is lost forever (LAKE-SAND RMUNGBIT).
+look in pit
+put branch in pit
+take branch
+# +5; the platypus draws an X in the sand
+drop branch
+dig in sand
+take whistle
+# +3
+blow whistle
+# -> Misty Island
+w
+# Throne Room. King Anatinus: hat offered on script 2; refusing 4 turns =
+# death. CRITICAL-ish:
+@until holding it out to you|Take this :: z
+take hat
+# +1
+@until blow into the whistle one more time|expectantly :: z
+blow whistle
+# -> Edge of Lake; whistle consumed; BOOT PATROL RESET to Festeron Point.
+# ---------- PHASE 7: cemetery dash, tunnels, jail blanket, grue nest ----
+# CRITICAL: I-VAPORS grabs you (items scattered to RANDOM rooms) on your
+# 3rd consecutive cemetery turn. Exactly two moves, then into the grave:
+s
+yes
+e
+d
+# Inside Grave (ESCAPE-VAPORS). Hole south wall -> tunnels:
+n
+e
+# Under Cell. Sneak into the jail from below (no capture needed):
+push bunk
+# CRITICAL: the hole takes <= 18 units; the stone alone would pass but
+# drop everything to be safe (it all stays right here):
+drop all
+u
+take blanket
+# +3
+d
+take all
+# stone glows again
+n
+e
+# Grue's Nest: baby wakes on turn 3 in light = death. CRITICAL window:
+put blanket on beast
+# +3 (COVER-GRUE)
+open fridge
+take worm
+# +3 (milk bottle only matters for the darkness wish — leave it)
+w
+w
+open stump
+u
+# Lookout Hill (horseshoe here — luck wish fuel, not needed, skip)
+# ---------- PHASE 8: the pelican and THE WORD ----------------------------
+n
+e
+e
+e
+# Festeron Point:
+give hat to pelican
+# +5. VARIABLE: the lighthouse beam "traces a word on a passing cloud:"
+@word
+w
+w
+s
+s
+# ---------- PHASE 9: token, ticket, 3D glasses ---------------------------
+# Park: piranha guards the token; the worm buys a 3-turn window. CRITICAL:
+put worm in fountain
+take token
+# +3
+e
+# Rotary East: Miss Voss sells the ticket for the gold coin:
+give coin to voss
+# +3
+in
+give ticket to gravedigger
+n
+# Inside Theater (the movie itself is optional on r68 — skip it):
+look under seat
+take glasses
+# +3
+s
+# Leaving the lobby asks for confirmation:
+out
+yes
+# ---------- PHASE 10: video arcade teleport to Hilltop -------------------
+e
+s
+put token in slot
+# +1; star starts at grid H5/V3; target HILLTOP = H3/V5. ONE-SHOT machine:
+# CRITICAL, exactly these four moves then the button:
+push joystick west
+push joystick west
+push joystick south
+push joystick south
+press red button
+yes
+yes
+# +5: "you can feel your molecules being taken apart" -> Hilltop
+# ---------- PHASE 11: the Tower ------------------------------------------
+say $WORD
+# +3 VARIABLE: the drawbridge lowers only for the parsed word
+s
+# Vestibule: princess reveal (turn 1), capture (turn 2) — scripted, safe:
+z
+# Torture Chamber, chained. CRITICAL: give the note NOW (from script 5
+# Crisp confiscates one item per turn; empty hands = chute death):
+give note to crisp
+# "Violet scolds me when I'm late!" — he drops coat+key, hatch closes
+take coat
+take key
+# +3
+unlock chains with key
+# +1 (also clears THROWNBIT on anything he confiscated)
+pull lever
+# frees Princess Tasmania. NEVER "push lever up" (-10, torture).
+take note
+read note
+# +3: "...just say ALEXIS, HEEL..."
+open hatch
+u
+look behind paintings
+# reveals the metal crank
+u
+# Fuzziness — the lab exists only through the 3D glasses:
+wear glasses
+# -> Laboratory
+take broom
+open second switch
+# +3: security OFF (mandatory before breaking the museum case)
+d
+take off glasses
+# -> Round Chamber
+turn crank
+# +1: drawbridge opens (a second turn would close it again!)
+n
+n
+# Hilltop; the bridge slams shut behind you.
+# ---------- PHASE 12: Alexis, the steel key, the library -----------------
+e
+alexis, heel
+# +5 (requires the note read)
+open door
+in
+take steel key
+# +3
+out
+n
+unlock library door with steel key
+# +3
+in
+# the door slams+locks after 2 turns at the desk; wait it out:
+@until somebody locks :: z
+s
+# Museum (lit by the glowing stone)
+# ---------- PHASE 13: the vault and the finale ---------------------------
+break case with broom
+# (security already off; else this is the alarm -> torture ending)
+put stone in sculpture
+# "Wait!" — the Evil One appears; stand firm:
+yes
+# "Don't!"
+yes
+# silent +5 -> Cliff Edge, sunrise, Chaos found. FINALE (death-pattern
+# checks OFF from here — the win screen prints "RESTART, RESTORE or QUIT"):
+@until rubbing against your leg :: z
+knock on door
+@until finished the story :: z
+# "Congratulations! You've finished the story of Wishbringer!
+#  Your score is 100 points out of 100, in 162 moves."

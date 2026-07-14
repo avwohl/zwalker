@@ -15,9 +15,9 @@
 
 ## Verified Results
 
-The headline result is both classic Infocom trilogies plus Planetfall — seven
-games, played start to finish and reproducibly won, verified by deterministic
-replay against a fixed RNG seed:
+The headline result is both classic Infocom trilogies plus Planetfall and
+Wishbringer — eight games, played start to finish and reproducibly won,
+verified by deterministic replay against a fixed RNG seed:
 
 | Game | Score | Won | Turns | Commands | Seed | Solution | Walkthrough |
 |------|-------|-----|-------|----------|------|----------|-------------|
@@ -28,10 +28,13 @@ replay against a fixed RNG seed:
 | Sorcerer | 400/400 | ✅ | 390 | 234 | 2 | [JSON](solutions/sorcerer_verified.json) | [Text](walkthroughs/sorcerer_verified_400.txt) |
 | Spellbreaker | 600/600 | ✅ | 531 | 422 | 1 | [JSON](solutions/spellbreaker_verified.json) | [Text](walkthroughs/spellbreaker_verified_600.txt) |
 | Planetfall | 80/80 | ✅ | 5165 (GST) | 444 | 1 | [JSON](solutions/planetfall_verified.json) | [Text](walkthroughs/planetfall_verified_80.txt) |
+| Wishbringer | 100/100 | ✅ | 162 | 179 | 1 | [JSON](solutions/wishbringer_verified.json) | [Text](walkthroughs/wishbringer_verified_100.txt) |
 
 (Zork III scores "potential" out of 7; the win is entering the Treasury of Zork
 and becoming the Dungeon Master. Planetfall's move counter is its in-game
-Galactic Standard Time clock.) Reproduce any of them locally:
+Galactic Standard Time clock. Wishbringer is a V3 "time" game — the status
+line shows a clock, and the interpreter reads its true score from the game's
+own GSCORE global.) Reproduce any of them locally:
 
 ```bash
 python3 scripts/replay_solve.py games/zcode/zork1.z3 walkthroughs/zork1_verified_350.txt --seeds 4
@@ -54,6 +57,9 @@ python3 scripts/replay_solve.py games/zcode/spellbreaker.z3 walkthroughs/spellbr
 
 python3 scripts/replay_solve.py games/zcode/planetfall.z3 walkthroughs/planetfall_verified_80.txt --seeds 2
 # -> planetfall_verified_80.txt: VERIFIED 80/80 at seed 1 | 444 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/wishbringer.z3 walkthroughs/wishbringer_verified_100.txt --seeds 2
+# -> wishbringer_verified_100.txt: VERIFIED 100/100 at seed 1 | 179 cmds | died=False | won=True
 ```
 
 Beyond the verified solves, the repo carries exploration-grade coverage data: 43 room-mapping
@@ -202,14 +208,14 @@ python scripts/solve_game.py your_game.z5 --real-ai
 - ✅ Z-machine interpreter (1,604/1,604 CZECH tests across v3/v4/v5/v8)
 - ✅ Verified complete solves: Zork I 350/350, Zork II 400/400, Zork III 7/7,
   Enchanter 400/400, Sorcerer 400/400, Spellbreaker 600/600,
-  Planetfall 80/80 (deterministic replay)
+  Planetfall 80/80, Wishbringer 100/100 (deterministic replay)
 - ✅ Replay/verification harness (`scripts/replay_solve.py`)
 - ✅ Agentic solver with navigation, world model, and backtracking
 - ✅ Walkthrough generation and z2js test-script generation
 - ✅ Output comparison tools
 
 **Current Limitations**:
-- Most games beyond the seven verified solves have exploration coverage only, not verified wins
+- Most games beyond the eight verified solves have exploration coverage only, not verified wins
 - Menu-based IF and Y/N prompts need special handling
 - Complex opening puzzles can stall the AI solvers
 
@@ -243,6 +249,7 @@ scripts/               # (selection)
 ├── solve_sorcerer_adaptive.py # Adaptive recorder for the Sorcerer solve
 ├── solve_spellbreaker_adaptive.py # Adaptive recorder for the Spellbreaker solve
 ├── solve_planetfall_adaptive.py # Adaptive recorder for the Planetfall solve
+├── solve_wishbringer_adaptive.py # Adaptive recorder for the Wishbringer solve
 ├── debug_replay.py       # Transcript-printing replayer for walkthrough debugging
 ├── solve_game.py         # Single game AI solver
 ├── generate_all_smart_tests.py  # z2js test generation (random-event tolerant)
@@ -250,7 +257,7 @@ scripts/               # (selection)
 └── generate_docs_pages.py # Regenerates docs/WALKTHROUGHS.html from repo data
 
 docs/                # Documentation + GitHub Pages site
-solutions/           # Solution JSONs (7 verified solves + exploration runs)
+solutions/           # Solution JSONs (8 verified solves + exploration runs)
 walkthroughs/        # Human + verified walkthroughs (text + JSON command lists)
 games/zcode/         # Game corpus (155 story files)
 games/results/       # Exploration walkthrough dumps (43 games)

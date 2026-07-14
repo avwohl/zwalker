@@ -869,18 +869,35 @@ class ZMachine:
     #   global var 17 (0x11) = score             (signed 16-bit)
     #   global var 18 (0x12) = turns
     # Zork I/II/III are all score/turns games, so these hold the real score.
+    #
+    # V3 "time" games (Flags 1 bit 1 set) instead use vars 17/18 for the
+    # status-line clock (hours/minutes); their real score lives in some
+    # game-specific global. For known builds we map (serial, release) to the
+    # variable numbers of the true score/moves globals, found by tracing
+    # which globals the game's own SCORE verb prints.
+    _SCORE_VAR_OVERRIDES = {
+        # Wishbringer r68: V-SCORE prints ,GSCORE (var 152) and ,GMOVES
+        # (var 151); vars 17/18 hold the in-game clock.
+        ('850501', 68): (152, 151),
+    }
+
     def _read_global(self, var_num: int) -> int:
         """Read raw 16-bit global variable (var_num 16..255)."""
         addr = self.header.globals + (var_num - 16) * 2
         return self.read_word(addr)
 
+    def _score_vars(self) -> tuple:
+        """(score_var, turns_var) for this game (usually the standard 17, 18)."""
+        serial = (self.header.serial or "").strip()
+        return self._SCORE_VAR_OVERRIDES.get((serial, self.header.release), (17, 18))
+
     def get_score(self) -> int:
         """Current score (signed; score can go negative in some games)."""
-        return self._signed(self._read_global(17))
+        return self._signed(self._read_global(self._score_vars()[0]))
 
     def get_turns(self) -> int:
         """Number of turns/moves taken so far."""
-        return self._read_global(18)
+        return self._read_global(self._score_vars()[1])
 
     def get_max_score(self, banner: str = "") -> Optional[int]:
         """
@@ -913,6 +930,8 @@ class ZMachine:
             return 80
         if "PLANETFALL" in text:
             return 80
+        if "WISHBRINGER" in text:
+            return 100
 
         # Fall back to (serial, release) of the well-known Infocom builds.
         # Zork II and Zork III share serial 860811 but differ by release.
@@ -931,6 +950,7 @@ class ZMachine:
             ('860904', 18): 400,   # Sorcerer r18
             ('860904', 87): 600,   # Spellbreaker r87
             ('851003', 37): 80,    # Planetfall r37
+            ('850501', 68): 100,   # Wishbringer r68
         }
         if (serial, release) in known:
             return known[(serial, release)]

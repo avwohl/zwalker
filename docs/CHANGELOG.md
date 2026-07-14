@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-07-14 - Verified Complete Solve: Wishbringer
+
+- **Wishbringer solved 100/100** (won, 162 moves, 179 commands, RNG seed 1,
+  zero of the Stone's 7 Wishes used) — `solutions/wishbringer_verified.json`,
+  `walkthroughs/wishbringer_verified_100.txt`. The full ending: the Magick
+  Stone surrendered to the sculpture, Festeron restored, and the post-office
+  door knock answered. All 34 scoring events on the timeline.
+- **Time-game score support in the interpreter**: Wishbringer is a V3 "time"
+  game — the status-line globals (vars 17/18) hold the clock (15:00 start,
+  1 turn = 1 minute), so the standard V3 score read returned the *hour*.
+  `zmachine.py` now carries a per-build score-variable override map;
+  for Wishbringer r68 `get_score()`/`get_turns()` read the game's own
+  GSCORE/GMOVES globals (vars 152/151), found by tracing which globals the
+  SCORE verb prints and confirmed against the ZIL source. All seven prior
+  solves re-verified after the change.
+- New `scripts/solve_wishbringer_adaptive.py`: a no-wish route that parses
+  the seed-rolled magic word (KALUZE/FRATTO/SORKIN, revealed only in the
+  pelican's cloud-writing) at runtime, crosses the trail/fog maze with zero
+  wrong turns (each mistake adds a cumulative 10% death roll), dashes the
+  Witchville cemetery in two turns (a third scatters your inventory), and
+  dodges the deterministic 19-room Boot Patrol loop by entering the jail
+  from the tunnels below. Mechanics verified against the official ZIL
+  source (historicalsource/wishbringer) and machine-validated at 100/100
+  across 92 seeds during research; synthesis in `logs/wishbringer_notes.md`.
+- `games/zcode/wishbringer.z3` (r68/850501 freeware from eblong.com) added
+  to the corpus; `get_max_score` banner/serial map covers it.
+
 ## 2026-07-14 - Verified Complete Solve: Planetfall
 
 - **Planetfall solved 80/80** (won, 444 commands, RNG seed 1, best ending) —

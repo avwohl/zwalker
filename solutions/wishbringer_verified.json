@@ -1,0 +1,365 @@
+{
+  "game": "games/zcode/wishbringer.z3",
+  "walkthrough": "walkthroughs/wishbringer_verified_100.txt",
+  "solver": "replay+seed",
+  "rng_seed": 1,
+  "score": 100,
+  "max_score": 100,
+  "won": true,
+  "died": false,
+  "turns": 162,
+  "num_commands": 179,
+  "score_timeline": [
+    {
+      "step": 0,
+      "command": "s",
+      "score": 1
+    },
+    {
+      "step": 2,
+      "command": "take envelope",
+      "score": 6
+    },
+    {
+      "step": 11,
+      "command": "take bone",
+      "score": 7
+    },
+    {
+      "step": 17,
+      "command": "give bone to poodle",
+      "score": 10
+    },
+    {
+      "step": 21,
+      "command": "take note",
+      "score": 13
+    },
+    {
+      "step": 24,
+      "command": "take coin",
+      "score": 14
+    },
+    {
+      "step": 44,
+      "command": "u",
+      "score": 15
+    },
+    {
+      "step": 51,
+      "command": "give envelope to woman",
+      "score": 20
+    },
+    {
+      "step": 53,
+      "command": "read letter to woman",
+      "score": 21
+    },
+    {
+      "step": 55,
+      "command": "take can",
+      "score": 24
+    },
+    {
+      "step": 68,
+      "command": "open can",
+      "score": 27
+    },
+    {
+      "step": 71,
+      "command": "take stone",
+      "score": 32
+    },
+    {
+      "step": 79,
+      "command": "take branch",
+      "score": 37
+    },
+    {
+      "step": 82,
+      "command": "take whistle",
+      "score": 40
+    },
+    {
+      "step": 86,
+      "command": "take hat",
+      "score": 41
+    },
+    {
+      "step": 98,
+      "command": "take blanket",
+      "score": 44
+    },
+    {
+      "step": 103,
+      "command": "put blanket on beast",
+      "score": 47
+    },
+    {
+      "step": 105,
+      "command": "take worm",
+      "score": 50
+    },
+    {
+      "step": 114,
+      "command": "give hat to pelican",
+      "score": 55
+    },
+    {
+      "step": 120,
+      "command": "take token",
+      "score": 58
+    },
+    {
+      "step": 122,
+      "command": "give coin to voss",
+      "score": 61
+    },
+    {
+      "step": 127,
+      "command": "take glasses",
+      "score": 64
+    },
+    {
+      "step": 133,
+      "command": "put token in slot",
+      "score": 65
+    },
+    {
+      "step": 140,
+      "command": "yes",
+      "score": 70
+    },
+    {
+      "step": 141,
+      "command": "say KALUZE",
+      "score": 73
+    },
+    {
+      "step": 146,
+      "command": "take key",
+      "score": 76
+    },
+    {
+      "step": 147,
+      "command": "unlock chains with key",
+      "score": 77
+    },
+    {
+      "step": 150,
+      "command": "read note",
+      "score": 80
+    },
+    {
+      "step": 157,
+      "command": "open second switch",
+      "score": 83
+    },
+    {
+      "step": 160,
+      "command": "turn crank",
+      "score": 84
+    },
+    {
+      "step": 164,
+      "command": "alexis, heel",
+      "score": 89
+    },
+    {
+      "step": 167,
+      "command": "take steel key",
+      "score": 92
+    },
+    {
+      "step": 170,
+      "command": "unlock library door with steel key",
+      "score": 95
+    },
+    {
+      "step": 177,
+      "command": "yes",
+      "score": 100
+    }
+  ],
+  "commands": [
+    "s",
+    "z",
+    "take envelope",
+    "n",
+    "w",
+    "w",
+    "yes",
+    "n",
+    "w",
+    "e",
+    "d",
+    "take bone",
+    "u",
+    "s",
+    "e",
+    "e",
+    "e",
+    "give bone to poodle",
+    "n",
+    "z",
+    "z",
+    "take note",
+    "n",
+    "look in fountain",
+    "take coin",
+    "e",
+    "e",
+    "e",
+    "take seahorse",
+    "throw seahorse in bay",
+    "w",
+    "n",
+    "n",
+    "w",
+    "w",
+    "n",
+    "n",
+    "e",
+    "u",
+    "w",
+    "n",
+    "u",
+    "e",
+    "s",
+    "u",
+    "knock on door",
+    "open door",
+    "w",
+    "z",
+    "z",
+    "z",
+    "give envelope to woman",
+    "open envelope",
+    "read letter to woman",
+    "z",
+    "take can",
+    "z",
+    "z",
+    "d",
+    "n",
+    "w",
+    "d",
+    "s",
+    "e",
+    "d",
+    "take branch",
+    "take branch",
+    "w",
+    "open can",
+    "take can",
+    "squeeze can",
+    "take stone",
+    "open gate",
+    "s",
+    "s",
+    "w",
+    "s",
+    "look in pit",
+    "put branch in pit",
+    "take branch",
+    "drop branch",
+    "dig in sand",
+    "take whistle",
+    "blow whistle",
+    "w",
+    "z",
+    "take hat",
+    "z",
+    "blow whistle",
+    "s",
+    "yes",
+    "e",
+    "d",
+    "n",
+    "e",
+    "push bunk",
+    "drop all",
+    "u",
+    "take blanket",
+    "d",
+    "take all",
+    "n",
+    "e",
+    "put blanket on beast",
+    "open fridge",
+    "take worm",
+    "w",
+    "w",
+    "open stump",
+    "u",
+    "n",
+    "e",
+    "e",
+    "e",
+    "give hat to pelican",
+    "w",
+    "w",
+    "s",
+    "s",
+    "put worm in fountain",
+    "take token",
+    "e",
+    "give coin to voss",
+    "in",
+    "give ticket to gravedigger",
+    "n",
+    "look under seat",
+    "take glasses",
+    "s",
+    "out",
+    "yes",
+    "e",
+    "s",
+    "put token in slot",
+    "push joystick west",
+    "push joystick west",
+    "push joystick south",
+    "push joystick south",
+    "press red button",
+    "yes",
+    "yes",
+    "say KALUZE",
+    "s",
+    "z",
+    "give note to crisp",
+    "take coat",
+    "take key",
+    "unlock chains with key",
+    "pull lever",
+    "take note",
+    "read note",
+    "open hatch",
+    "u",
+    "look behind paintings",
+    "u",
+    "wear glasses",
+    "take broom",
+    "open second switch",
+    "d",
+    "take off glasses",
+    "turn crank",
+    "n",
+    "n",
+    "e",
+    "alexis, heel",
+    "open door",
+    "in",
+    "take steel key",
+    "out",
+    "n",
+    "unlock library door with steel key",
+    "in",
+    "z",
+    "s",
+    "break case with broom",
+    "put stone in sculpture",
+    "yes",
+    "yes",
+    "knock on door"
+  ]
+}
