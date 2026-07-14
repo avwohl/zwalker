@@ -909,6 +909,10 @@ class ZMachine:
             return 400
         if "ENCHANTER" in text:
             return 400
+        if "STATIONFALL" in text:
+            return 80
+        if "PLANETFALL" in text:
+            return 80
 
         # Fall back to (serial, release) of the well-known Infocom builds.
         # Zork II and Zork III share serial 860811 but differ by release.
@@ -926,6 +930,7 @@ class ZMachine:
             # detection misses it; the serial map is what identifies it.
             ('860904', 18): 400,   # Sorcerer r18
             ('860904', 87): 600,   # Spellbreaker r87
+            ('851003', 37): 80,    # Planetfall r37
         }
         if (serial, release) in known:
             return known[(serial, release)]

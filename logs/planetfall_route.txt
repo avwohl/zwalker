@@ -1,0 +1,439 @@
+# PLANETFALL r37/851003 — merged route, 80/80, 2 in-game days, 0 deaths.
+# Synthesized from the ZIL source + two IF-Archive step files + prose
+# walkthrough + WalkthroughKing + InvisiClues (see planetfall_notes.md for
+# every citation). MACHINE-VERIFIED: this exact list (with its adaptive
+# blocks) scored 80/80 on 65/65 pinned RNG seeds against the r37 binary,
+# 420-490 moves, finishing early on in-game Day 2 (~GST 5200).
+#
+# One command per line. '#' lines are comments, not input.
+#
+# Replayer directives (the replayer must implement these):
+#   @until <t1>|<t2> :: <cmd1> ;; <cmd2>
+#       loop the command cycle until any listed substring/regex appears in
+#       output. Cap ~120 iterations = desync signal. Death text
+#       ("You have died") anywhere = desync.
+#   @feed  — HUNGER WATCHDOG (new primitive). Passively watch every output for
+#       "growl from your stomach" / "really ravenous" / "feel faint from lack"
+#       / "millichrons" / "incredibly famished" and set HUNGRY. At each @feed
+#       point (never inside CRITICAL), if HUNGRY:
+#         if CANTEEN-FULL flag: open canteen ;; drink liquid ;; drop canteen
+#           (clear CANTEEN-FULL on "certainly quenched")
+#         else: eat <next goo>  (order: red goo, green goo, brown goo; each
+#           "tasted just like" consumes one; "not hungry" = clear HUNGRY)
+#       "can't see any" (kit elsewhere) is tolerable below the "feel faint"
+#       level; at/above it, desync. Also run @feed once per @until iteration.
+#   @floyd <order> :: <success-text>
+#       issue the order; on "can't see any Floyd" (he wandered, PROB 6), run
+#       @until Floyd follows you|Floyd bounds into|Floyd here now|Floyd rushes into :: z
+#       then reissue. Max 6 attempts.
+#   @comm  — communications color loop (VARIABLE, see PHASE 9/12):
+#       parse <color> from "A (red|blue|green|yellow|gray|brown|black) colored
+#       light is flashing" or "except one, a <color> light"; run one
+#       fill-and-pour cycle per color; stop on "go dark". 2 or 3 cycles total.
+#       NEVER press a button whose color was not parsed THIS run (a wrong pour
+#       permanently kills 6 points).
+#   @speck — zap loop (VARIABLE): repeat `shoot speck with laser` until
+#       "vaporizes into a fine cloud"; count shots as WARMTH (+1 each).
+#       "Click." = desync (battery empty; odds ~1e-9).
+#   @microbe — WARMTH ledger: WARMTH -1 per non-shot turn since the last zap
+#       (the `s` and `set dial` turns below). Repeat `shoot microbe with laser`
+#       (WARMTH +1) until WARMTH >= 9, then `throw laser off strip`.
+#       Hard ceiling: stop zapping at WARMTH 13 (>13 while zapping = death).
+#   VARIABLE  = value/text must be parsed from THIS run, never hardcoded.
+#   CRITICAL  = no extra commands may be inserted in the window; every listed
+#               command must succeed on its turn.
+#   `time` and `score` are timeless (0 clock cost) and safe anywhere for
+#   telemetry. `#random N` is a timeless in-game RNG reseed if ever needed.
+#
+# ---------- PHASE 0: S.P.S. Feinstein (Day 1, GST 4451-4630) ----------
+# Explosion fires RANDOM(90)+240 units after turn 1 (6-9 waits). Blather
+# (PROB 5) and the ambassador (PROB 15) may visit — ignore them, stay put.
+@until massive explosion rocks the ship :: z
+# CRITICAL: pod door is open for exactly 2 turns.
+w
+get in web
+# pod ejects, trip runs ~14 turns at 54 units each
+@until pod lands with a thud :: z
+# CRITICAL-ish: sinking starts on stand; 4 turns of slack, use 4.
+stand
+take kit
+open door
+out
+u
+# Crag [+3 here, +3 pod]. Do not linger anywhere below the Courtyard.
+# ---------- PHASE 1: up the cliff, shed junk ----------
+u
+u
+u
+drop brush
+drop brochure
+open kit
+n
+ne
+e
+e
+e
+# long hall (160 units) -> Corridor Junction
+# ---------- PHASE 2: Tool Room sweep ----------
+s
+s
+s
+sw
+take magnet
+take flask
+take laser
+take pliers
+e
+# ---------- PHASE 3: the key (magnet trick; no waiting for the glint) ----------
+n
+n
+n
+n
+n
+put magnet on crevice
+# "a piece of metal leaps from the crevice... a steel key!"
+drop magnet
+# NEVER carry the magnet and any card simultaneously (scrambler).
+# ---------- PHASE 4: Elevator Lobby — stash gear, call BOTH elevators ----------
+s
+e
+drop laser
+drop pliers
+press blue button
+press red button
+# arrivals are random (40+R20 / 80+R40 units); they will be open when needed.
+# ---------- PHASE 5: Robot Shop — steal the card, then wake Floyd [+1+2] ----------
+w
+s
+s
+s
+se
+search robot
+put lower card in kit
+turn on robot
+# "Nothing happens." — I-FLOYD fires ~4 turns later; Floyd is RNG noise from
+# here on (1-3 draws per turn) — all sync below is text-based.
+nw
+n
+n
+e
+take good bedistor
+w
+n
+e
+drop bedistor
+# ---------- PHASE 6: goo, padlock, Storage West [+4] ----------
+w
+w
+w
+@feed
+# (first growl lands around here on most seeds; eats red goo)
+unlock padlock with key
+take padlock
+drop padlock
+drop key
+open door
+drop kit
+# kit (25) + ladder (80) would bust the 100-unit load limit
+n
+take ladder
+s
+# ---------- PHASE 7: the ladder over the rift [+4] ----------
+e
+e
+n
+n
+drop ladder
+extend ladder
+put ladder across rift
+n
+# ---------- PHASE 8: office cards [+1+1+1] ----------
+w
+open desk
+take kitchen card
+take upper card
+w
+open desk
+take shuttle card
+e
+e
+s
+s
+s
+# ---------- PHASE 9: Tower Core [+4], Comm Room, pour #1 (VARIABLE) ----------
+e
+@until Upper Elevator :: n
+slide upper card through slot
+press up button
+@until elevator door slides open :: look
+s
+ne
+# VARIABLE: parse COLOR1 from "A <color> colored light is flashing"
+# @comm cycle (day 1 does exactly ONE pour; comm needs 2 or 3 total):
+sw
+n
+slide upper card through slot
+press down button
+@until elevator door slides open :: look
+s
+w
+s
+s
+s
+s
+put flask under spout
+press $COLOR1 button
+take flask
+n
+n
+n
+n
+e
+@until Upper Elevator :: n
+slide upper card through slot
+press up button
+@until elevator door slides open :: look
+s
+ne
+pour fluid into hole
+# VARIABLE: "except one, a <color> light" -> $COLOR2 ("go dark" cannot
+# happen on the first pour).
+# ---------- PHASE 10: dinner and canteen [+4 kitchen] ----------
+sw
+n
+slide upper card through slot
+press down button
+@until elevator door slides open :: look
+s
+w
+w
+w
+take kit
+s
+take canteen
+open canteen
+slide kitchen card through slot
+s
+put canteen in niche
+press button
+take canteen
+drink liquid
+# ("Thanks, but you're not hungry" is acceptable if a goo was just eaten;
+#  normal case: "certainly quenched your thirst")
+put canteen in niche
+press button
+take canteen
+close canteen
+# CANTEEN-FULL := true. The CLOSED canteen survives the night; the flask
+# always empties overnight (already empty), and hunger is now reset — both
+# conditions required before sleeping.
+drop kitchen card
+n
+n
+# ---------- PHASE 11: bed (Dorm B) ----------
+w
+n
+get in bed
+@until SEPTEM :: z
+# "***** SEPTEM 7, 11344 *****" — Day 2, GST 1600-1680. Everything carried
+# was dumped at the bedside; Floyd bounces in.
+# ---------- PHASE 12: Day 2 — gather, finish comm [+6] (VARIABLE) ----------
+stand
+take kit
+take upper card
+take shuttle card
+put shuttle card in kit
+take flask
+take canteen
+s
+e
+e
+e
+e
+# @feed: the wake growl fires ~GST 2050 (wake+400) — drink + drop canteen at
+# the first @until that notices it (any point in this phase is safe).
+@feed
+@until Upper Elevator :: n
+slide upper card through slot
+press up button
+@until elevator door slides open :: look
+s
+ne
+# @comm: repeat the PHASE-9 cycle with $COLOR2 (and $COLOR3 if offered) until
+# "go dark" => comm fixed [+6]. One cycle on 2-pour seeds, two on 3-pour.
+# (cycle = sw / elevator down / w / s s s s / put flask under spout /
+#  press $COLOR button / take flask / n n n n / e / elevator up / s / ne /
+#  pour fluid into hole)
+drop flask
+sw
+n
+slide upper card through slot
+press down button
+@until elevator door slides open :: look
+s
+drop upper card
+# ---------- PHASE 13: stash pickup, Lower Elevator, Kalamontee Platform [+4] ----------
+@feed
+take lower card
+take laser
+take pliers
+take bedistor
+# order matters: every take at <=7 carried objects (no fumble rolls)
+s
+slide lower card through slot
+press down button
+@until elevator door slides open :: look
+drop lower card
+n
+e
+# ---------- PHASE 14: the shuttle (BEFORE GST 6000; deterministic profile) ----------
+s
+e
+take shuttle card
+slide shuttle card through slot
+drop shuttle card
+push lever up
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+# display reads 60; the "Hafwaa Mark" deceleration sign passes at the pull
+pull lever
+pull lever
+@until glides into the station :: z
+# exactly 11 z's; "glides into the station and comes to rest" = clean stop
+w
+n
+# Lawanda Platform [+4]; sickness ticks to level 2 soon (load limit 80).
+# ---------- PHASE 15: Course Control [+6] ----------
+@feed
+e
+u
+ne
+e
+e
+n
+open lid
+take fused bedistor with pliers
+drop fused bedistor
+put good bedistor in cube
+# "The warning lights go out" [+6]. NEVER touch the good bedistor again.
+drop pliers
+# ---------- PHASE 16: Floyd fetches the fromitz board; Planetary Defense [+6] ----------
+s
+w
+w
+n
+@until Floyd follows you|Floyd bounds into|Floyd here now|That's Achilles|Floyd rushes into :: z
+@floyd floyd, go north :: squeezes through the opening
+@floyd floyd, take shiny board :: manage to catch it
+s
+e
+n
+open panel
+take second board
+drop fried board
+put shiny board in socket
+# "The warning lights stop flashing." [+6]
+# ---------- PHASE 17: Computer Room (COMPUTER-FLAG) ----------
+@feed
+s
+e
+s
+s
+s
+# if the entry text lacked "Computer is broken" (Floyd lagging):
+#   @until Floyd follows you|Floyd bounds into|Floyd here now|Floyd rushes into|Computer is :: z
+#   then if still unseen: show output to floyd
+take output
+drop output
+# (sector number is the constant 384; reading the printout is optional)
+# ---------- PHASE 18: battery swap ----------
+ne
+s
+take old battery
+drop old battery
+take new battery
+put new battery in laser
+n
+# ---------- PHASE 19: the foray — Floyd's sacrifice [+2, +1 mini card] ----------
+open bio-lock door
+se
+e
+@until Floyd will get card :: z
+# CRITICAL: exactly this 5-turn cadence; any deviation kills you or loses
+# the card forever. Do not exceed 3 idle turn-ends before the first open.
+open door
+close door
+z
+open door
+close door
+take mini card
+# ---------- PHASE 20: Miniaturization [+4 strip] ----------
+@feed
+w
+open door
+w
+sw
+s
+slide mini card through slot
+type 384
+# CRITICAL number: any other 2-4 digit sector = death.
+# ---------- PHASE 21: the speck [+8, +2 first zap] and the microbe (VARIABLE) ----------
+e
+n
+n
+set dial to 1
+# CRITICAL: dial MUST be 1 or the relay is destroyed (game unwinnable).
+@speck
+# repeat: shoot speck with laser  (until "vaporizes into a fine cloud")
+# I-FRY: 200-unit fuse to be off the strip — the block below fits easily.
+s
+# "elephant-sized monster" — the microbe blocks the exit. WARMTH ledger:
+# speck shots, -1 for the s, -1 for the dial change below.
+set dial to 6
+@microbe
+# repeat: shoot microbe with laser   (keeps its kill-counter frozen)
+# until WARMTH >= 9, then:
+throw laser off strip
+# "the laser and the microbe plummet into the void"
+s
+w
+# Station 384 auto-teleports you back -> Auxiliary Booth [+4]
+# ---------- PHASE 22: gas mask, fungicide, THE CHASE [+5], ending ----------
+n
+search desk
+open desk
+take gas mask
+wear gas mask
+# CRITICAL from here to the cryo button: one productive command per turn.
+# The flood window is 50 units; the east bio-door auto-closes behind you
+# (30 units) — do NOT close any door manually; never re-enter the room you
+# left two turns ago.
+press red button
+open office door
+w
+open lab door
+w
+w
+open door
+w
+w
+w
+s
+s
+press button
+# "The elevator door closes just as the monsters reach it!" [+5]
+@until elevator door opens onto a room :: z
+n
+# Cryo-Anteroom: Veldina wakes; course control fixed => planet saved;
+# comm + defense fixed => S.P.S. Flathead rescue, promotion, Floyd rebuilt.
+# EXPECT: "Your score would be 80 (out of 80 points)" ... "Galactic Overlord"
+# (Game over at the RESTART/RESTORE/QUIT prompt.)

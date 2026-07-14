@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-14 - Verified Complete Solve: Planetfall
+
+- **Planetfall solved 80/80** (won, 444 commands, RNG seed 1, best ending) —
+  `solutions/planetfall_verified.json`, `walkthroughs/planetfall_verified_80.txt`.
+  The full rescue: Veldina awakened, the cure administered, promotion to
+  Lieutenant First Class, Blather demoted to toilet attendant, Floyd rebuilt.
+  Rank: Galactic Overlord. All 23 scoring events on the timeline.
+- New `scripts/solve_planetfall_adaptive.py`: a two-in-game-day route
+  navigating the disease/hunger/sleep clocks with a hunger watchdog and a
+  scheduled Dorm-B night, Floyd's chatter (1-3 RNG draws per turn, 6%
+  wander-off with order retries), the comm-panel repair (2-or-3 pours with
+  the color sequence parsed from text), the shuttle speed curfew, Floyd's
+  bio-lab sacrifice, the miniaturization booth (TYPE 384), the speck
+  marksmanship ledger feeding the microbe disposal window, and the
+  fungicide-flood escape. Mechanics verified against the official ZIL
+  source (historicalsource/planetfall) and machine-validated at 80/80
+  across 65 seeds during research; synthesis in `logs/planetfall_notes.md`.
+- `get_max_score` banner/serial map covers Planetfall r37 (and Stationfall's
+  banner for the future). Planetfall's "turns" are Galactic Standard Time.
+
 ## 2026-07-14 - Verified Complete Solve: Spellbreaker (Both Trilogies Complete)
 
 - **Spellbreaker solved 600/600** (won, 531 turns, 422 commands, RNG seed 1) —
