@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-14 - Verified Complete Solve: Spellbreaker (Both Trilogies Complete)
+
+- **Spellbreaker solved 600/600** (won, 531 turns, 422 commands, RNG seed 1) —
+  `solutions/spellbreaker_verified.json`, `walkthroughs/spellbreaker_verified_600.txt`.
+  Full ending: the shadow destroyed inside its own hypercube, the age of
+  magic ended — "class of Scientist." All 31 scoring events on the timeline.
+  With this, both classic Infocom trilogies (Zork I-III, Enchanter saga) are
+  replay-verified complete.
+- New `scripts/solve_spellbreaker_adaptive.py` executing the directive route
+  `logs/spellbreaker_route.txt`: spell-fizzle retry loops (any cast can fail
+  until the magic cube is held), the sliding-rock chase solved by expectimax
+  over the brown rock's exact ZIL pursuit automaton, Belboz's identity quiz
+  answered from the guild-lore table, and the endgame vault weighing — twelve
+  shuffled cubes with random positional labels and a 50/50 glow bias,
+  identified in exactly three jindak comparisons (the classic 12-coin puzzle
+  with unknown bias); the found label is captured and reused downstream.
+  Route mechanics verified against the official ZIL source
+  (historicalsource/spellbreaker) and machine-validated at 600/600 across 20
+  seeds during research; synthesis in `logs/spellbreaker_notes.md`.
+- `games/zcode/spellbreaker.z3` (r87/860904 freeware from eblong.com) added
+  to the corpus; `get_max_score` serial map covers it.
+
 ## 2026-07-13 - Verified Complete Solve: Sorcerer
 
 - **Sorcerer solved 400/400** (won, 390 turns, 234 commands, RNG seed 2) —

@@ -1,0 +1,477 @@
+# SPELLBREAKER r87/860904 — merged route, 600/600, 3 naps max, 0 deaths on clean seeds
+# Synthesized from ZIL source + IF-Archive step file + prose walkthrough +
+# WalkthroughKing + InvisiClues (see spellbreaker_notes.md for every citation).
+# MACHINE-VERIFIED: this exact list (with its adaptive blocks) scored 600/600 on
+# 20/20 pinned RNG seeds against the r87 binary, 530-561 moves.
+#
+# One command per line. '#' lines are comments, not input.
+#
+# Replayer directives (the replayer must implement these):
+#   @until <t1>|<t2> :: <cmd1> ;; <cmd2>
+#       loop the command cycle until any listed substring appears in output.
+#       Used for: fizzle-able casts (a fizzle CONSUMES the memorization, so the
+#       cycle is cast ;; learn), text-milestone waits, and guarded takes.
+#       Cap ~250 iterations = desync signal.
+#   learn <spell>
+#       retry until "you learn the" (without "can't concentrate"), or accept
+#       "complex syllables" (= already at max copies) / "by heart". After 3
+#       consecutive "can't concentrate" failures, try one `sleep` (safe rooms only)
+#       and continue.
+#   NAP  = "@until snore blissfully|aren't tired :: sleep" — one-turn opportunistic
+#       sleep checkpoint. Sleeping WIPES memorized spells: naps only ever appear
+#       BEFORE learn-blocks. Never sleep at Bazaar/ogre/roc/ocean/castle.
+#   @fall     = roc gamble handler (see PHASE 2).
+#   @idol     = idol cadence with fizzle recovery (see PHASE 8).
+#   @rocks    = adaptive brown-rock pursuit (see PHASE 13).
+#   @belboz   = parse Belboz's random question, answer from the table (PHASE 16).
+#   @vault    = adaptive 3-jindak weighing (PHASE 17); RECORDS the time cube's
+#               label as runtime variable $TIME.
+#   VARIABLE  = value/commands must be derived from THIS run's text, never hardcoded.
+#   CRITICAL  = no extra commands may be inserted in the window.
+#   Any refused command consumes YUKS RNG — treat unexpected refusals as desync.
+#
+# ---------- PHASE 0: Council Chamber (fixed 4 waits) ----------
+z
+z
+z
+z
+# "...a shadowy figure in a dark cloak slips quietly out the door." Blorple is now
+# in your book. [cleesh on turn 4, deterministic]
+s
+take bread
+take fish
+s
+# ---------- PHASE 1: Belwit Square — earth cube [+15 blorple, +25 cube] ----------
+# lesoch is a 50% coin flip; loop until the cloud "gives up and dissipates".
+@until gives up and dissipates :: lesoch ;; learn lesoch
+take cube
+write "1" on cube
+learn blorple
+blorple 1
+# Packed Earth is dark: light the BURIN. NEVER "frotz me" (fatal at the grue cave).
+@until serviceable light source :: frotz burin
+# ---------- PHASE 2: the roc gamble -> Roc Nest (caskly) [+10] ----------
+# CRITICAL/SYNC: first 'd' is a refused warning; @fall does the second 'd' and
+# z-loops until "releases you". First-ever fall: catch guaranteed within 3 rolls.
+# If a DEATH ever sends you to the Boneyard here instead: n, learn blorple,
+# blorple 1, d, retry (~9.4% smash risk per re-fall; 3-death budget).
+d
+@fall
+take stained scroll
+gnusto caskly
+learn blorple
+blorple 1
+# ---------- PHASE 3: Ruins Room — the zipper and the flimsy scroll [+10+10] ----------
+e
+s
+take zipper
+open zipper
+reach into zipper
+# "Oops, it slipped away again." — the girgol scroll now exists inside the zipper.
+look into zipper
+take flimsy scroll
+read flimsy scroll
+learn blorple
+blorple 1
+# ---------- PHASE 4: Cliff — throck scroll, avalanche, girgol [+10] ----------
+s
+take dirty scroll
+gnusto throck
+u
+# SYNC/CRITICAL: wait at Cliff Top for the avalanche (PROB-timed start), then cast
+# girgol from the flimsy scroll on the VERY NEXT turn after "you will die!".
+@until you will die :: z
+girgol
+# 12 frozen turns; no hurry once on top (return is by blorple only).
+u
+u
+u
+u
+take coin
+put coin in zipper
+put bread in zipper
+put knife in zipper
+w
+# ---------- PHASE 5: Stone Hut — life cube [+25] ----------
+@until begins to melt :: caskly hut ;; learn caskly
+@until Taken|already have :: take cube
+write "2" on cube
+e
+learn blorple
+blorple 2
+# ---------- PHASE 6: Meadow — the weed ----------
+s
+take weed
+take weed
+# ("pulls out of the ground, taking a good-sized ball of earth")
+learn blorple
+blorple 1
+w
+put 1 in zipper
+put 2 in zipper
+# NAP checkpoint (Cave Entrance is safe; the cave is NOT)
+@until snore blissfully|aren't tired :: sleep
+# ---------- PHASE 7: the ogre — espnis scroll + gold box + water cube [+10+10+25] ----------
+# CRITICAL: <=12 turns inside; the sneeze window is 10 turns from the throck.
+n
+plant weed
+learn throck
+@until explosive growth :: throck weed ;; learn throck
+d
+take dusty scroll
+take gold box
+u
+s
+gnusto espnis
+open box
+@until Taken|already have :: take cube
+write "3" on cube
+put box in zipper
+learn blorple
+blorple 3
+@until snore blissfully|aren't tired :: sleep
+# ---------- PHASE 8a: Mid-Ocean trip 1 — bottle & liskon [+10] ----------
+# CRITICAL ordering: the grouper eats the FISH at end of the drop-fish turn;
+# the cube sinks at end of the take-3 turn.
+learn blorple
+drop all except fish
+s
+drop fish
+take 3
+take bottle
+blorple 3
+take all
+open bottle
+take damp scroll
+gnusto liskon
+n
+@until snore blissfully|aren't tired :: sleep
+# ---------- PHASE 8b: shrunk into the pipe — change cube [+25] ----------
+# CRITICAL: everything below "liskon me" fits well inside the 15-turn shrink.
+learn liskon
+@until squashed :: liskon me ;; learn liskon
+@until serviceable light source :: frotz bottle
+learn blorple
+drop all except bottle and 3
+enter outflow pipe
+w
+@until Taken|already have :: take cube
+w
+climb out of pipe
+blorple 3
+n
+take all
+write "4" on cube
+put bottle in zipper
+take 1
+learn blorple
+blorple 1
+# ---------- PHASE 9: serpent + idol — air cube [+25] ----------
+e
+n
+learn liskon
+@until tail tip slips :: liskon snake ;; learn liskon
+n
+n
+@until snore blissfully|aren't tired :: sleep
+learn malyon
+learn espnis
+learn espnis
+# @idol = CRITICAL fixed cadence: malyon idol / z / espnis idol / z ->
+# "caught in a cheek-stretching yawn". On an espnis fizzle: wait for
+# "turns back into basalt", relearn, redo the whole cadence.
+@idol
+climb idol
+look into mouth
+@until Taken|already have :: take cube
+d
+write "5" on cube
+learn blorple
+blorple 5
+@until snore blissfully|aren't tired :: sleep
+# ---------- PHASE 10: Glacier (tinsot) + Emporium (blue carpet) [+10+10] ----------
+# Glacier: grab and go — never walk (75% crevasse), ~10-turn cold budget.
+n
+take white scroll
+gnusto tinsot
+learn blorple
+blorple 5
+w
+take coin
+e
+# Haggling is deterministic: 800 -> 700 -> 600 -> deal at 500; he hands you the
+# red carpet; asking for the blue one swaps it ("How silly of me!").
+buy blue carpet
+offer 300
+offer 400
+offer 500
+take blue carpet
+w
+learn blorple
+blorple 3
+@until snore blissfully|aren't tired :: sleep
+# ---------- PHASE 11: flood the oubliette — death cube [+25]; moldy book [+10+15] ----------
+# Everything except the burin rides inside the CLOSED zipper (flood soaks the rest).
+learn tinsot
+learn tinsot
+learn tinsot
+learn tinsot
+put all in zipper
+take burin
+close zipper
+n
+@until creaks open :: rezrov trap door
+@until partially blocked :: tinsot channel ;; learn tinsot
+@until icy cap :: tinsot channel ;; learn tinsot
+@until ice floe :: tinsot water ;; learn tinsot
+climb on floe
+# SYNC: ride the floe; just keep trying 'u' until the Dungeon (works when full).
+@until Dungeon :: u
+@until Taken|already have :: take cube
+open zipper
+take book
+write "6" on cube
+e
+n
+@until bursts open :: rezrov cabinet
+take moldy book
+learn caskly
+@until rot retreat :: caskly moldy book ;; learn caskly
+gnusto snavig
+@until snore blissfully|aren't tired :: sleep
+s
+w
+# ---------- PHASE 12: carpet trips — connectivity cube [+25] ----------
+# CRITICAL: 4 commands max per Guard Tower visit (roc grabs on the 5th turn);
+# 4 commands max in the nest (egg hatches on the 5th turn; the chick eats the
+# cube and then you). Must SIT on the carpet to fly.
+u
+drop carpet
+sit on carpet
+u
+w
+w
+w
+w
+d
+get off carpet
+@until Taken|already have :: take cube
+sit on carpet
+u
+e
+e
+e
+e
+d
+get off carpet
+take carpet
+write "7" on cube
+d
+learn blorple
+blorple 3
+@until snore blissfully|aren't tired :: sleep
+# ---------- PHASE 13a: grouper dive — light cube [+25] ----------
+# CRITICAL: snavig drops all your stuff onto the ocean floor (that's fine).
+# After "become yourself again": exactly 2 commands before drowning.
+learn blorple
+learn snavig
+learn snavig
+learn snavig
+put all in zipper
+close zipper
+s
+take 3
+@until you change :: snavig grouper
+d
+@until become yourself again :: z
+take all
+u
+blorple 3
+open zipper
+take book
+take burin
+write "8" on cube
+put 3 in zipper
+n
+learn blorple
+blorple 8
+@until snore blissfully|aren't tired :: sleep
+# ---------- PHASE 13b: Volcano Base — the lava fragment (rock food) ----------
+w
+learn tinsot
+@until cool enough :: tinsot fragment ;; learn tinsot
+take fragment
+learn blorple
+take 4
+blorple 4
+@until snore blissfully|aren't tired :: sleep
+# ---------- PHASE 14: compass-rose maze — mind cube [+10+25] ----------
+n
+take compass rose
+learn blorple
+blorple 4
+w
+put rose in carving
+take rose
+n
+touch nw rune with rose
+nw
+touch w rune with rose
+w
+touch ne rune with rose
+ne
+@until leaving an octagonal hole :: rezrov alabaster
+w
+@until Taken|already have :: take cube
+write "9" on cube
+put 4 in zipper
+learn blorple
+blorple 9
+# ---------- PHASE 15: the Plain — brown rock chase, dark cube [+25] ----------
+# VARIABLE: adaptive pursuit. Track green (start loc 5) and brown (start loc 7)
+# on the 4x4 grid; command "rock, <dir>"; parse "The brown eyed rock slides
+# gracefully <dir>." each turn; land on its square (expectimax over the exact
+# flee automaton in notes §5.9, preferring the SHALLOWEST forced capture).
+# End on "mesmerized ... does not move."
+s
+give fragment to rock
+sit on rock
+@rocks
+jump on brown rock
+@until Taken|already have :: take cube
+write "10" on cube
+@until snore blissfully|aren't tired :: sleep
+learn blorple
+blorple 10
+# ---------- PHASE 16: the dark dimension — fire cube [+25] ----------
+# CRITICAL: no open light may enter the grue cave; drop the burin, keep the lit
+# bottle sealed in the zipper. Snavig must succeed first try (cubes make P>=100).
+d
+put 6 in zipper
+put 7 in zipper
+put 8 in zipper
+put 9 in zipper
+put rose in zipper
+@until snore blissfully|aren't tired :: sleep
+learn snavig
+learn blorple
+close zipper
+drop burin
+d
+snavig grue
+d
+climb on pillar
+@until Taken|already have :: take cube
+@until become yourself again :: z
+blorple 10
+d
+take all
+open zipper
+write "11" on cube
+learn blorple
+blorple 11
+# ---------- PHASE 17: gold-box trick — MAGIC CUBE [+25, god mode] ----------
+# Attune box to the dark cube, strand it on the outcropping, blorple into the
+# dark cube and walk "up" out of it to the box.
+n
+put 11 in zipper
+take box
+put 10 in box
+take 10
+throw box at outcropping
+learn blorple
+blorple 10
+u
+take box
+put box in zipper
+put 10 in zipper
+@until blast of power :: take cube
+write "12" on cube
+put burin in zipper
+take 7
+learn blorple
+blorple 7
+# From here: no fatigue, no fizzles (except girgol), unlimited memorization —
+# as long as cube 12 stays in hand.
+# ---------- PHASE 18: Belboz [+25, the key] ----------
+# VARIABLE: @belboz = "ask belboz about me", parse the question, answer:
+#   hardest trick->barsap | golmac->barbel | Coconut of Quendor->gustar |
+#   fireworks->dimithio | Double Fanucci->forburn | necromancers->berknip
+# Wrong answers are a delayed game-over. Sync: "Good! I knew it was you".
+s
+@belboz
+put 7 in zipper
+take 9
+learn blorple
+blorple 9
+# ---------- PHASE 19: THE VAULT — time cube [+25] ----------
+e
+put 9 in zipper
+put key in zipper
+put burin in zipper
+learn jindak
+learn jindak
+learn jindak
+learn blorple
+learn blorple
+@until swings ponderously open :: rezrov steel door
+n
+# VARIABLE/CRITICAL: @vault = the adaptive 12-coin procedure (notes §7):
+#   W1: park x1,x2,x7,x8 in zipper; jindak.
+#   Then rearrange piles per the decision tree, parking spares in the zipper
+#   (never hold more than one loose cube), max 3 jindaks total.
+#   The 3rd jindak raises the alarm: then exactly take <answer> / blorple <answer>.
+#   Parse: "identical brightness" / "first pile is glowing more brightly" /
+#          "second pile is glowing more brightly".
+#   RECORD the answer label as $TIME (needed twice below).
+@vault
+# ---------- PHASE 20: the past — book cabinet [+10 vellum, +25] ----------
+d
+put $TIME in zipper
+take key
+unlock cabinet with key
+open cabinet
+take vellum scroll
+learn blorple
+learn blorple
+learn blorple
+learn blorple
+put book in cabinet
+close cabinet
+lock cabinet with key
+put key in zipper
+take $TIME
+# CRITICAL: guards arrive 2 turns after the rezrov — blorple out immediately.
+rezrov door
+blorple $TIME
+# ---------- PHASE 21: past Ruins — close the time loop [+25] ----------
+# Water clock: ~10 free commands. Leave ONLY the closed zipper containing ONLY
+# the flimsy scroll. The copy needs burin in hand + magic cube held.
+u
+open sack
+take flimsy scroll
+take burin
+copy flimsy scroll to vellum scroll
+empty zipper into sack
+put flimsy scroll in zipper
+close zipper
+drop zipper
+take sack
+blorple 12
+# ---------- PHASE 22: the Castle — endgame [win sets 600] ----------
+# CRITICAL throughout. take knife on move 4 deliberately triggers the shadow's
+# freeze EARLY so the 5-stage thaw finishes before the girgol window (without it
+# the girgol fizzles while half-frozen = guaranteed loss). During the monologue
+# only 'z' is safe. Girgol comes from the vellum scroll in hand.
+e
+z
+z
+z
+take knife
+@until prepares to jump :: z
+girgol
+take 12
+put sack in hypercube
+z
+# "You've destroyed magic itself!" ... "A new age begins today," says Belboz.
+# Your score is 600 of a possible 600. Class: Scientist.

@@ -925,6 +925,7 @@ class ZMachine:
             # Sorcerer's banner prints only after the opening dream, so banner
             # detection misses it; the serial map is what identifies it.
             ('860904', 18): 400,   # Sorcerer r18
+            ('860904', 87): 600,   # Spellbreaker r87
         }
         if (serial, release) in known:
             return known[(serial, release)]
