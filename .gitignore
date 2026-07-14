@@ -60,3 +60,4 @@ tests/*_walkthrough.json
 .env
 .env~
 .env.local
+logs/zork3_source_*.txt
