@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-07-14 - Verified Complete Solve: Stationfall (Planetfall Series Complete)
+
+- **Stationfall solved 80/80** (won, GST 5700 on day 2, 375 commands, RNG
+  seed 1) — `solutions/stationfall_verified.json`,
+  `walkthroughs/stationfall_verified_80.txt`. Full ending: the corrupted
+  Floyd shot in the replica factory (a hero's death), the alien pyramid
+  destroyed with the reflective foil, Oliver toddling over to ask for a
+  game — "Intergalactic Mega-Hero." All 18 scoring events on the timeline.
+  With Planetfall 80/80, the Planetfall series is replay-verified complete.
+- **The determinism discovery**: Stationfall rolls its day-1 start clock
+  from RANDOM(1220) *during boot*, before any seed can be pinned, so no
+  fixed command list could ever replay — until the recording opens with
+  `restart`/`yes`, which reloads memory but keeps the seeded RNG and
+  re-rolls the clock on the pinned stream. After that prelude the whole
+  game is a pure function of the seed, including the feelie copy-protection
+  spacetruck course, which the recorder computes from the live clock.
+- New `scripts/solve_stationfall_adaptive.py`: a two-day route with
+  floating hazard handlers on every turn — hull welders hunted down
+  4%/turn (fourth turn in their room is death; the route bounces
+  out-and-back to despawn them), Plato's one-time stun ambush ("floyd,
+  help" each stun turn, then re-collecting the scattered inventory),
+  Floyd's floor-pilfering (nothing stealable is ever floor-stashed), the
+  frezone explosive's 210-unit melt clock, and hunger/sleep timers.
+  Mechanics verified against the official ZIL source
+  (historicalsource/stationfall) and machine-validated at 80/80 across 23
+  seeds during research; synthesis in `logs/stationfall_notes.md`.
+
 ## 2026-07-14 - Verified Complete Solve: Wishbringer
 
 - **Wishbringer solved 100/100** (won, 162 moves, 179 commands, RNG seed 1,

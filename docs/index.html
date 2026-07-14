@@ -249,6 +249,7 @@
             <span class="badge">Spellbreaker Solved 600/600</span>
             <span class="badge">Planetfall Solved 80/80</span>
             <span class="badge">Wishbringer Solved 100/100</span>
+            <span class="badge">Stationfall Solved 80/80</span>
         </div>
     </header>
 
@@ -278,11 +279,11 @@
                     <span class="stat-label">Tests Passing</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">8</span>
+                    <span class="stat-number">9</span>
                     <span class="stat-label">Verified Complete Solves</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">71</span>
+                    <span class="stat-number">70</span>
                     <span class="stat-label">Exploration Walkthroughs</span>
                 </div>
             </div>
@@ -386,13 +387,24 @@
                     <td>1</td>
                     <td><a href="solutions/wishbringer_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/wishbringer_verified_100.txt" class="walkthrough-link">Text</a></td>
                 </tr>
+                <tr>
+                    <td>Stationfall</td>
+                    <td class="status-pass">80/80</td>
+                    <td class="status-pass">Yes</td>
+                    <td>5700 (GST)</td>
+                    <td>375</td>
+                    <td>1</td>
+                    <td><a href="solutions/stationfall_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/stationfall_verified_80.txt" class="walkthrough-link">Text</a></td>
+                </tr>
             </table>
             <p>Both classic Infocom trilogies (Zork I&ndash;III, the Enchanter saga) plus
-               Planetfall and Wishbringer, played start to finish and reproducibly won.
-               (Zork III scores "potential" out of 7; Planetfall's move counter is its
-               in-game Galactic Standard Time clock; Wishbringer's status line is a
-               clock, so the interpreter reads the score from the game's own GSCORE
-               global.)</p>
+               the complete Planetfall series and Wishbringer, played start to finish
+               and reproducibly won. (Zork III scores "potential" out of 7;
+               Planetfall's and Stationfall's move counters are their in-game Galactic
+               Standard Time clocks; Wishbringer's status line is a clock, so the
+               interpreter reads the score from the game's own GSCORE global;
+               Stationfall's recording opens with a restart that re-rolls the game's
+               boot-time clock dice on the pinned seed.)</p>
             <pre><code># reproduce locally
 python3 scripts/replay_solve.py games/zcode/zork1.z3 walkthroughs/zork1_verified_350.txt --seeds 4
 python3 scripts/replay_solve.py games/zcode/zork2.z3 walkthroughs/zork2_verified_400.txt --seeds 3
@@ -401,7 +413,8 @@ python3 scripts/replay_solve.py games/zcode/enchanter.z3 walkthroughs/enchanter_
 python3 scripts/replay_solve.py games/zcode/sorcerer.z3 walkthroughs/sorcerer_verified_400.txt --seeds 3
 python3 scripts/replay_solve.py games/zcode/spellbreaker.z3 walkthroughs/spellbreaker_verified_600.txt --seeds 2
 python3 scripts/replay_solve.py games/zcode/planetfall.z3 walkthroughs/planetfall_verified_80.txt --seeds 2
-python3 scripts/replay_solve.py games/zcode/wishbringer.z3 walkthroughs/wishbringer_verified_100.txt --seeds 2</code></pre>
+python3 scripts/replay_solve.py games/zcode/wishbringer.z3 walkthroughs/wishbringer_verified_100.txt --seeds 2
+python3 scripts/replay_solve.py games/zcode/stationfall.z3 walkthroughs/stationfall_verified_80.txt --seeds 2</code></pre>
         </section>
 
         <section id="testing">
@@ -478,7 +491,7 @@ python3 scripts/replay_solve.py games/zcode/wishbringer.z3 walkthroughs/wishbrin
 
         <section id="games">
             <h2>Game Index</h2>
-            <p>The repository indexes 100+ game download sources and carries a corpus of 155 story files; 71 games have exploration data in the repo (40 walkthrough dumps in games/results/ plus tracked solution runs), plus the verified complete solves of Zork I and Zork II above.</p>
+            <p>The repository indexes 100+ game download sources and carries a corpus of 155 story files; 70 games have exploration data in the repo (40 walkthrough dumps in games/results/ plus tracked solution runs), plus the verified complete solves of Zork I and Zork II above.</p>
 
             <h3>Sample Exploration &amp; Replay Runs (Jan 2026)</h3>
             <p>Early solver output &mdash; room mapping and command coverage for compiler testing, not complete solves.</p>
@@ -561,7 +574,7 @@ python3 scripts/replay_solve.py games/zcode/wishbringer.z3 walkthroughs/wishbrin
 
         <section id="walkthroughs">
             <h2>Walkthroughs</h2>
-            <p>ZWalker generates walkthroughs for Interactive Fiction games using AI assistance: 8 verified complete solves and 71 exploration runs, all in JSON format with room tracking and command history.</p>
+            <p>ZWalker generates walkthroughs for Interactive Fiction games using AI assistance: 9 verified complete solves and 70 exploration runs, all in JSON format with room tracking and command history.</p>
 
             <h3>Highlights</h3>
             <ul>
@@ -573,6 +586,7 @@ python3 scripts/replay_solve.py games/zcode/wishbringer.z3 walkthroughs/wishbrin
                 <li>Spellbreaker (verified 600/600) - <a href="solutions/spellbreaker_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/spellbreaker_verified_600.txt" class="walkthrough-link">Text</a></li>
                 <li>Planetfall (verified 80/80) - <a href="solutions/planetfall_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/planetfall_verified_80.txt" class="walkthrough-link">Text</a></li>
                 <li>Wishbringer (verified 100/100) - <a href="solutions/wishbringer_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/wishbringer_verified_100.txt" class="walkthrough-link">Text</a></li>
+                <li>Stationfall (verified 80/80) - <a href="solutions/stationfall_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/stationfall_verified_80.txt" class="walkthrough-link">Text</a></li>
                 <li>Zork I exploration - <a href="games/results/zork1_walkthrough.json" class="walkthrough-link">JSON</a></li>
                 <li>Adventure (Colossal Cave) - <a href="games/results/advent_walkthrough.json" class="walkthrough-link">JSON</a></li>
                 <li>Photopia - <a href="solutions/photopia_solution.json" class="walkthrough-link">JSON</a></li>

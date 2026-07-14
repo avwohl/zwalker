@@ -1,0 +1,380 @@
+# Stationfall r107 — 80/80 route as a directive script
+# Verified with scripts/solve_stationfall_adaptive.py (GameWalker pathway,
+# RNG seed pinned after start()). Plain lines are commands. Directives:
+#   @until <regex>[|<regex>...] :: <cmd1> [;; <cmd2>]  - retry/wait sync block
+#   VARIABLE: value parsed/computed at runtime
+#   CRITICAL: permanently missable / instant-loss hazard
+# Floating handlers active on EVERY line (the harness watches every output):
+#   WELDER:  on "welder approaching|moves closer|almost upon you", bounce
+#            out-and-back via a per-room direction table, then resume.
+#            CRITICAL: the 4th consecutive turn in a welder's room is death;
+#            any room change despawns it.
+#   PLATO:   on "aiming a stun ray right at your chest",
+#            @until blown apart :: floyd, help
+#            then take all, drop re-grabbed junk, re-take the phase's
+#            critical items (+7, floating event, fires once mid-day-2).
+#            CRITICAL: without "floyd, help" the 5th stun turn is death.
+#   HUNGER:  on "ravenous|feel faint|pass out", eat the next meal
+#            (gray goo, orange goo, soup, taffy; suppressed while suited).
+#
+# ================= DAY 1: the Duffy, the truck, docking =================
+restart
+yes
+# CRITICAL: restart+yes re-roll the boot RANDOM 1220 on the pinned seed;
+# without them the start clock (and the course below) is unreproducible.
+e
+n
+insert robot form in slot
+type 3
+s
+e
+open hatch
+in
+close hatch
+sit in pilot seat
+insert spacecraft form in slot
+# VARIABLE: course = ((t//50 - 132)^2)//4 + 103, t = turns global NOW
+type {course}
+@until whispers, "Stationfall :: z
+stand
+take kit
+open kit
+eat gray goo
+open hatch
+out
+e
+# --- validation stamp (Quarters is welder-safe) ---
+se
+se
+e
+look under bed
+take stamp
+w
+nw
+# --- L7: crumpled village form + drill ---
+nw
+d
+d
+open trash can
+take crumpled form
+nw
+take drill
+se
+u
+u
+# --- L3: iron the form; chapel flame off; validate ---
+u
+u
+nw
+open presser
+put crumpled form in presser
+close presser
+turn on presser
+open presser
+take form
+# CRITICAL: leave the Laundry promptly - the steaming presser kills ~7
+# turns after switch-on
+e
+sw
+examine pulpit
+open pulpit
+turn switch
+validate entry form
+e
+# --- insert the form (+6); Floyd fetches the medium bit (+3) ---
+d
+d
+se
+s
+put entry form in slot
+w
+@until Yikes|drops it to the deck :: floyd, take medium bit ;; z
+take medium bit
+take small bit
+put medium bit in drill
+drop small bit
+e
+n
+# --- drill the safe (CRITICAL: the drill makes exactly ONE hole ever;
+#     it must be the safe, with the medium bit installed) ---
+se
+e
+drill safe
+drop drill
+w
+nw
+# --- to bed (Sick Bay; sleeping anywhere else is a PROB DAY*40 death) ---
+ne
+nw
+e
+get in bed
+@until NOVEM :: z
+# ================= DAY 2 =================
+stand
+take kit
+eat orange goo
+# --- twenty-prong fromitz board (rides in hand to the endgame) ---
+w
+n
+n
+n
+u
+take twenty-prong board
+d
+s
+s
+# --- village east: headlamp, nip (+3), ID rank 10, taffy ---
+s
+se
+e
+e
+e
+e
+take headlamp
+wear headlamp
+w
+sw
+examine ceiling
+open panel
+take nip
+se
+se
+put id in machine
+turn on machine
+type 10
+take id
+nw
+n
+open bag
+take taffy
+put taffy in pocket
+n
+w
+w
+# --- armory (+5): CRITICAL: the security door re-closes after ~2 turns;
+#     go north immediately after the reader accepts the ID ---
+w
+sw
+nw
+d
+se
+@until Armory :: put id in reader ;; n
+take zapgun
+s
+drop id
+w
+u
+# --- spray can; coin (+5); ostrich escort to the PX; timer (+6) ---
+se
+s
+s
+s
+se
+sw
+take spray can
+ne
+s
+shoot strongbox
+take coin
+n
+se
+nw
+nw
+n
+n
+n
+nw
+ne
+ne
+put coin in slot
+type 6
+scare ostrich
+take timer
+give nip to ostrich
+# --- foil (+4, stored inside the kit: Floyd can never steal from a
+#     container); balloon lure; the star (+7) ---
+sw
+se
+e
+e
+e
+se
+break mirror
+take foil
+put foil in kit
+nw
+sw
+open cage
+# each move below is followed by a spray; if a welder bounce interrupts,
+# spray again (the balloon follows from the adjacent room; 12 sprays total)
+ne
+@until gobbling up the spores|darting around :: spray can
+w
+@until gobbling up the spores|darting around :: spray can
+w
+@until gobbling up the spores|darting around :: spray can
+w
+@until gobbling up the spores|darting around :: spray can
+sw
+@until gobbling up the spores|darting around :: spray can
+nw
+@until gobbling up the spores|darting around :: spray can
+u
+@until gobbling up the spores|darting around :: spray can
+u
+@until gobbling up the spores|darting around :: spray can
+sw
+@until gobbling up the spores|darting around :: spray can
+drop spray can
+# CRITICAL: gravity room + no spacesuit + flame off, or the leash grab
+# fails (zero-g grab scatters your whole inventory)
+take leash
+take star
+drop leash
+open star
+take m diode
+drop star
+put m diode in kit
+# --- detonator; install the M diode (the J diode would burst) ---
+e
+u
+n
+take detonator
+open detonator
+take blackened diode
+drop blackened diode
+take m diode
+put m diode in detonator
+take detonator
+# --- stash ONLY the steal-immune detonator+timer at the Quarters
+#     (I-FLOYD's pilfer branch skips both and only ever looks at the
+#     first object in the room) ---
+sw
+d
+d
+d
+se
+se
+e
+drop detonator
+drop timer
+w
+nw
+# --- village south: roulette (+4), suit (worn at once: 40 size units
+#     would burst the carry limit), boots ---
+s
+s
+s
+ne
+ne
+e
+e
+turn wheel
+u
+open locker
+take suit
+wear suit
+d
+w
+w
+se
+d
+take boots
+wear boots
+u
+nw
+d
+# (harness gate: if the Plato attack has not fired yet, wait for it HERE,
+#  BEFORE touching the frezone - the melt budget cannot absorb a wait, and
+#  being stunned beside a ticking timer is death)
+take thermos
+open thermos
+open inner door
+d
+close inner door
+turn on headlamp
+open outer door
+d
+take explosive
+u
+close outer door
+# CRITICAL: melt clock runs from this turn - the explosive sublimes at 210
+# melt units (1/4 rate inside the CLOSED thermos, full rate outside);
+# shortest route home, no detours, ~4 welder bounces of slack
+put explosive in thermos
+close thermos
+open inner door
+take off suit
+drop suit
+take off boots
+drop boots
+turn off headlamp
+u
+u
+sw
+sw
+n
+n
+n
+se
+e
+# --- arm the bomb; the boom lands on the escape move; the key (+7) ---
+# CRITICAL: every turn from the outer-door close to the boom costs melt
+# budget (sublimation at 210 units): shortest possible assembly, timer 22
+# hits zero on the very next room-move (one room away is blast-safe)
+open thermos
+take explosive
+put explosive in hole
+connect detonator to explosive
+connect timer to detonator
+set timer to 22
+w
+@until explosion :: z
+turn on headlamp
+# (lights die 20-220 millichrons after the blast; headlamp: 92 turns)
+e
+take key
+w
+# --- jammer (dark Storage-5), board in, 710 ---
+nw
+nw
+ne
+n
+w
+take jammer
+e
+connect board to jammer
+set jammer to 710
+# --- Dome bin; air shaft (+2); Computer Control; Factory (+2); win (+5) ---
+s
+sw
+u
+u
+u
+u
+unlock bin with key
+open bin
+take zapgun
+take jammer
+take kit
+take foil
+move grating
+enter grating
+d
+d
+d
+d
+d
+d
+d
+turn on jammer
+open grating
+turn off jammer
+# CRITICAL: launch fires ~200 millichrons after the fall; no dawdling.
+# CRITICAL: never TAKE the stun gun after shooting Floyd (instant launch).
+u
+shoot floyd
+put foil on pyramid
+z
+# the final z flushes the [Hit RETURN] pause: "Your score is 80 (of 80
+# points), giving you the rank of Intergalactic Mega-Hero."
