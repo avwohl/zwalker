@@ -244,6 +244,7 @@
             <span class="badge">Zork I Solved 350/350</span>
             <span class="badge">Zork II Solved 400/400</span>
             <span class="badge">Zork III Solved 7/7</span>
+            <span class="badge">Enchanter Solved 400/400</span>
         </div>
     </header>
 
@@ -273,7 +274,7 @@
                     <span class="stat-label">Tests Passing</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">3</span>
+                    <span class="stat-number">4</span>
                     <span class="stat-label">Verified Complete Solves</span>
                 </div>
                 <div class="stat-card">
@@ -336,13 +337,23 @@
                     <td>1</td>
                     <td><a href="solutions/zork3_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/zork3_verified_7.txt" class="walkthrough-link">Text</a></td>
                 </tr>
+                <tr>
+                    <td>Enchanter</td>
+                    <td class="status-pass">400/400</td>
+                    <td class="status-pass">Yes</td>
+                    <td>300</td>
+                    <td>206</td>
+                    <td>1</td>
+                    <td><a href="solutions/enchanter_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/enchanter_verified_400.txt" class="walkthrough-link">Text</a></td>
+                </tr>
             </table>
-            <p>The complete Zork trilogy, played start to finish and reproducibly won.
+            <p>The complete Zork trilogy plus Enchanter, played start to finish and reproducibly won.
                (Zork III scores "potential" out of 7; the win is entering the Treasury of Zork.)</p>
             <pre><code># reproduce locally
 python3 scripts/replay_solve.py games/zcode/zork1.z3 walkthroughs/zork1_verified_350.txt --seeds 4
 python3 scripts/replay_solve.py games/zcode/zork2.z3 walkthroughs/zork2_verified_400.txt --seeds 3
-python3 scripts/replay_solve.py games/zcode/zork_iii.z3 walkthroughs/zork3_verified_7.txt --seeds 3</code></pre>
+python3 scripts/replay_solve.py games/zcode/zork_iii.z3 walkthroughs/zork3_verified_7.txt --seeds 3
+python3 scripts/replay_solve.py games/zcode/enchanter.z3 walkthroughs/enchanter_verified_400.txt --seeds 3</code></pre>
         </section>
 
         <section id="testing">
@@ -502,20 +513,21 @@ python3 scripts/replay_solve.py games/zcode/zork_iii.z3 walkthroughs/zork3_verif
 
         <section id="walkthroughs">
             <h2>Walkthroughs</h2>
-            <p>ZWalker generates walkthroughs for Interactive Fiction games using AI assistance: 3 verified complete solves and 72 exploration runs, all in JSON format with room tracking and command history.</p>
+            <p>ZWalker generates walkthroughs for Interactive Fiction games using AI assistance: 4 verified complete solves and 72 exploration runs, all in JSON format with room tracking and command history.</p>
 
             <h3>Highlights</h3>
             <ul>
                 <li>Zork I (verified 350/350) - <a href="solutions/zork1_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/zork1_verified_350.txt" class="walkthrough-link">Text</a></li>
                 <li>Zork II (verified 400/400) - <a href="solutions/zork2_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/zork2_verified_400.txt" class="walkthrough-link">Text</a></li>
                 <li>Zork III (verified 7/7) - <a href="solutions/zork3_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/zork3_verified_7.txt" class="walkthrough-link">Text</a></li>
+                <li>Enchanter (verified 400/400) - <a href="solutions/enchanter_verified.json" class="walkthrough-link">JSON</a> | <a href="walkthroughs/enchanter_verified_400.txt" class="walkthrough-link">Text</a></li>
                 <li>Zork I exploration - <a href="games/results/zork1_walkthrough.json" class="walkthrough-link">JSON</a></li>
                 <li>Adventure (Colossal Cave) - <a href="games/results/advent_walkthrough.json" class="walkthrough-link">JSON</a></li>
                 <li>Photopia - <a href="solutions/photopia_solution.json" class="walkthrough-link">JSON</a></li>
                 <li>Lost Pig - <a href="solutions/lostpig_solution.json" class="walkthrough-link">JSON</a></li>
                 <li>Shade - <a href="games/results/shade_walkthrough.json" class="walkthrough-link">JSON</a></li>
                 <li>Aisle - <a href="games/results/aisle_walkthrough.json" class="walkthrough-link">JSON</a></li>
-                <li>All 75 walkthroughs... <a href="WALKTHROUGHS.html" class="walkthrough-link">View the full index</a></li>
+                <li>All 76 walkthroughs... <a href="WALKTHROUGHS.html" class="walkthrough-link">View the full index</a></li>
             </ul>
 
             <h3>Walkthrough Format</h3>

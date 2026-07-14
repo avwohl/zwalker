@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-13 - Verified Complete Solve: Enchanter
+
+- **Enchanter solved 400/400** (won, 300 turns, 206 commands, RNG seed 1) —
+  `solutions/enchanter_verified.json`, `walkthroughs/enchanter_verified_400.txt`.
+  Full ending: "you have joined the Circle of Enchanters." All 18 scoring
+  events match the official ZIL point table.
+- New `scripts/solve_enchanter_adaptive.py`: 3-game-day route with adaptive
+  handling of the hunger/thirst/sleep survival clocks, the mirror-hall
+  adventurer (15%/turn appearance), map/pencil pilfering, the Unseen Terror
+  map-and-pencil maze, the hasted-turtle kulcad errand, and the one-command-
+  per-turn Krill endgame. Mechanics verified against the official ZIL source
+  (historicalsource/enchanter); route notes in `logs/enchanter_notes.md`.
+- `zmachine.get_max_score`: added Enchanter-series detection
+  (Enchanter 400, Sorcerer 400, Spellbreaker 600).
+- `replay_solve.py`: second death-marker false positive fixed — "fills your
+  lungs" matched Enchanter's west-gate text ("a blast of cold air fills your
+  lungs"); now requires the drowning phrasing. All four solves re-verified.
+
 ## 2026-07-13 - Verified Complete Solve: Zork III (Trilogy Complete)
 
 - **Zork III solved 7/7** (won, 241 turns, 216 commands, RNG seed 1) —

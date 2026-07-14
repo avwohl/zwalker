@@ -1,0 +1,300 @@
+# ENCHANTER r29/860820 — merged optimal route, 400/400, 3 game days
+# Synthesized from ZIL source + 4 IF-Archive walkthroughs (see enchanter_notes.md).
+# One command per line. '#' lines are comments, not input.
+# Replayer directives:
+#   - Never exceed 7 carried items (fumble RNG threshold).
+#   - Turn-critical windows are flagged CRITICAL; do not insert commands there.
+#   - Two nondeterministic sync points, flagged SYNC, need text-milestone loops.
+#   - Hunger/thirst commands are placed on schedule for this exact command
+#     count; if commands are inserted, drink on "thirsty" warnings and eat on
+#     "hungry" warnings (both are legal only within 60 turns of the deadline).
+#
+# ---------- DAY 1 : outside, west castle, sacrifice, melbor, library ----------
+# start: Fork (WEST-FORK)
+se
+se
+ne
+# crone's hovel: she hands you the scribbled (rezrov) scroll and expels you
+s
+gnusto rezrov
+ne
+ne
+nw
+nw
+sw
+n
+open oven
+take bread and jug
+s
+ne
+se
+ne
+# Shady Brook
+fill jug
+# first drink: +15 (thirst clock started at 41, still inside the <=60 gate)
+drink water
+# +20 first frotz; casting the pre-memorized frotz frees the slot that makes
+# the double rezrov memorize below deterministic (no random forget)
+frotz book
+learn rezrov
+learn rezrov
+sw
+se
+e
+e
+# Outside Gate
+rezrov gate
+# +20
+e
+n
+n
+u
+# Jewel Room
+rezrov egg
+# +5 (shredded scroll revealed inside; keep it in the egg)
+take egg
+d
+s
+s
+s
+s
+e
+# South Hall (DIM-DESCENT). Gallery must be entered WITHOUT light:
+drop book
+e
+# Gallery, dark: the lighted portrait is visible only now
+move lighted portrait
+# +25; niche revealed (black candle stays: it lights the gallery permanently)
+take black scroll
+w
+take book
+gnusto ozmoo
+learn ozmoo
+n
+# Closet (KNOT-ROOM): the rope-bound jewelled box
+take box
+n
+e
+e
+# Temple: end of this turn you are captured; ALL possessions moved to the
+# south cell. (Never be captured holding kulcad/guncho scrolls - destroyed.)
+# CRITICAL: sacrifice fires 4 turns after capture; ozmoo lasts 8.
+ozmoo me
+wait
+# sacrifice survived: +35, you revive on the Altar holding the dagger.
+# CRITICAL-ish: letter of transit lasts 10 turns outside the temple proper.
+d
+open south cell door
+s
+# south cell: your confiscated gear
+take all
+cut rope with dagger
+# +25; vellum (melbor) scroll now inside the box
+open box
+take vellum scroll
+gnusto melbor
+learn melbor
+# melbor is PERMANENT once cast: guards/junction/temple/sleep-theft all safe
+melbor me
+drop box
+drop dagger
+n
+w
+w
+s
+s
+d
+# Dungeon
+open door
+n
+move block
+e
+# Secret Passage (ignore the silver spoon decoy)
+take stained scroll
+gnusto exex
+w
+s
+u
+# South Hall again; feed on schedule (+10 first eat)
+eat bread
+drink water
+e
+e
+n
+n
+n
+n
+# Library (safe: melbor)
+examine tracks
+reach in hole
+# +25 frayed (gondar) scroll into hand
+gnusto gondar
+s
+s
+s
+s
+w
+w
+w
+u
+# Bedroom, ~turn 100: lying on the bed auto-sleeps (day >= 86 turns old).
+# Sleep #1: damsel dream reveals the bedpost button; no theft on this branch.
+get in bed
+#
+# ---------- DAY 2 : vaxum, north side scrolls, adventurer, door, terror ----------
+get up
+press button
+# +20; compartment opens
+take gold leaf scroll
+gnusto vaxum
+learn rezrov
+d
+e
+e
+e
+n
+n
+n
+n
+n
+# North Gate
+rezrov gate
+n
+# Forest
+take crumpled scroll
+e
+# Swamp (nitfol frogs is optional flavor; the scroll needs no precondition)
+look under lily pad
+w
+s
+# North Gate: krebf cast directly from the crumpled scroll (no gnusto needed)
+krebf shredded scroll
+# +10; faded (zifmia) scroll now readable inside the egg
+gnusto zifmia
+gnusto cleesh
+learn zifmia
+learn vaxum
+drink water
+eat bread
+w
+# Hall of Mirrors 4.
+# SYNC #1 (RNG): adventurer appears behind the glass with 15%/turn; once
+# visible he leaves with 25%/turn. Loop 'wait' IN THIS ROOM until the
+# "bedraggled adventurer comes into view" text, then IMMEDIATELY zifmia
+# (interrupts run after your command, so he cannot slip away first).
+wait
+wait
+wait
+wait
+wait
+# <-- loop the wait above until the appearance message, then:
+zifmia adventurer
+# +10
+vaxum adventurer
+# CRITICAL: charm lasts exactly 20 turns from here. Carrying the egg
+# (a treasure) makes him follow.
+e
+e
+# Guarded Door. Drop the egg so he pockets it and lingers:
+drop egg
+point at door
+# +35; illusion collapses, he opens the door and goes up ahead of you
+n
+# Map Room.
+# SYNC #2 (RNG): each turn he may have grabbed map/pencil (25%/item/turn).
+take map and pencil
+# BRANCH: if "take" reports either item missing, use (still charmed):
+#   ask adventurer for map
+#   ask adventurer for pencil
+# (the purple filfre scroll does not matter). He is expendable hereafter.
+s
+w
+s
+s
+s
+s
+s
+w
+w
+d
+d
+# Translucent Room, point B (T-A). Maze letters: B=here, R,K,H,J,M,V,F, P=goal.
+s
+e
+# now at point M. Pencil: 2 draws; eraser: 2 erases - exactly enough.
+# The Terror's walk is fully deterministic; this ordering never shares a
+# room with it (it steps P->F, F->V, then is sealed in the V/J/K/F pocket):
+draw line from p to f
+erase line from p to f
+erase line from m to v
+draw line from m to p
+se
+# point P
+take powerful scroll
+nw
+w
+n
+# back at B with the guncho scroll: +50 (anguished scream)
+u
+u
+# South Hall
+drop map and pencil
+drink water
+# pad to sleep-permission (>= 76 turns since waking); with the nominal
+# 5-wait sync above this needs ~3 waits - extend/trim to the first turn
+# 'sleep' is accepted (it is refused harmlessly if early):
+wait
+wait
+wait
+# Sleep #2 (indoors + melbor = safe; spells wiped, capacity now 6)
+sleep
+#
+# ---------- DAY 3 : turtle fetches kulcad, stairs, Krill ----------
+learn gondar
+learn cleesh
+learn nitfol
+learn exex
+eat bread
+e
+e
+s
+se
+# Beach
+# CRITICAL: nitfol window 20 turns, exex-on-turtle window 15 turns
+nitfol turtle
+turtle, follow me
+nw
+n
+e
+u
+# Engine Room (turtle followed up)
+exex turtle
+# next line is ONE input line: once addressed, the turtle takes all three
+# sentences (a remote turtle cannot hear a fresh order across the machinery)
+turtle, se. take scroll. nw
+# hasted crossing + spear trap bounce; it drops the scroll at your feet: +25
+take brittle scroll
+d
+w
+n
+n
+n
+e
+# Landing (lit). Optional buffer if thirst warnings resumed: drink water
+e
+# Winding Stair (dark - the frotzed book you carry covers it)
+# CRITICAL: from here every command is forced, one per turn:
+#   kulcad here is probe-exempt; it kills hunger/thirst/tired daemons,
+#   destroys all carried SIZE>4 items (bread etc - fine), leaves the ornate
+#   izyuk scroll in your hand, and starts a 5-turn fall-to-death timer.
+kulcad stairs
+# +10
+izyuk me
+e
+# +10; Warlock's Tower: dragon attacks next turn
+gondar dragon
+# shadowy being attacks next turn (vaxum monster also works)
+cleesh monster
+# Krill's death-chant finishes in 2 turns; cast from the powerful scroll:
+guncho krill
+# +50 -> 400/400, "Member of the Circle of Enchanters"

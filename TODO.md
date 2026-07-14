@@ -4,10 +4,10 @@
 
 ## Current Status
 
-- **Verified complete solves of the Zork trilogy: Zork I 350/350, Zork II 400/400,
-  Zork III 7/7** (won, replay-verified with `scripts/replay_solve.py` at fixed RNG
-  seeds; `solutions/zork1_verified.json`, `zork2_verified.json`, `zork3_verified.json`)
-- **76 solution files tracked in git** (73 `*_solution.json` exploration runs + 3 verified
+- **Verified complete solves: Zork I 350/350, Zork II 400/400, Zork III 7/7,
+  Enchanter 400/400** (won, replay-verified with `scripts/replay_solve.py` at fixed RNG
+  seeds; `solutions/{zork1,zork2,zork3,enchanter}_verified.json`)
+- **77 solution files tracked in git** (73 `*_solution.json` exploration runs + 4 verified
   solves); the 2026-02-05 batch run produced ~58 more exploration runs that are local-only
   (`.gitignore` excludes new `solutions/*_solution.json`)
 - **155 test scripts** tracked (73 smart tests that tolerate random events)
@@ -17,7 +17,7 @@
 - **Zorkie tests**: 43/64 passing (67%) as of 2026-02-05
 
 Note: the batch "solves" are exploration/coverage runs (room mapping + command exercise),
-not completed games. The only verified end-to-end wins are the Zork trilogy.
+not completed games. The only verified end-to-end wins are the Zork trilogy and Enchanter.
 
 ## Unsolved Games
 
@@ -38,9 +38,10 @@ not tracked in git); neither has a verified win.
    - Detect prompt patterns: `(Y/N)?`, `Select an option`, numbered menus
    - Add Y/N/number responses to solver
 
-2. **More verified solves** - Extend the Zork-trilogy replay-verified treatment
+2. **More verified solves** - Extend the replay-verified treatment
    (`scripts/replay_solve.py` + per-game adaptive recorders like
-   `scripts/solve_zork3_adaptive.py`) to Enchanter, Planetfall, and other games
+   `scripts/solve_zork3_adaptive.py` / `solve_enchanter_adaptive.py`)
+   to Sorcerer, Planetfall, and other games
 
 3. **Compile more games with z2js** - many games pending compilation
    (24 `scripts/*_z2js.js` compiled-game scripts tracked vs. a 155-story-file corpus)
@@ -90,7 +91,7 @@ scripts/
 ├── run_all_tests.sh         # Test runner
 └── test_zorkie_compilation.py  # Zorkie tester
 
-solutions/           # 3 verified solves + 73 exploration runs (JSON, tracked)
+solutions/           # 4 verified solves + 73 exploration runs (JSON, tracked)
 scripts/test_*.js    # 155 generated test scripts (73 smart)
 ```
 

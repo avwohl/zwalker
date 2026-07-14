@@ -34,8 +34,10 @@ VOCAB = {
 DEATH_MARKERS = (
     # "eaten by a grue" alone would false-positive on the darkness WARNING
     # ("You are likely to be eaten by a grue."); match the actual kill text.
+    # "fills your lungs" alone would false-positive on Enchanter's west gate
+    # ("a blast of cold air fills your lungs"); require the drowning phrasing.
     "you have died", "removes your head", "you are dead",
-    "slavering fangs of a lurking grue", "fills your lungs",
+    "slavering fangs of a lurking grue", "water fills your lungs",
     "you have been killed", "*** you have died ***",
 )
 

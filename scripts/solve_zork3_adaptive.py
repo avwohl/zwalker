@@ -28,7 +28,7 @@ from zwalker.walker import GameWalker  # noqa: E402
 GAME = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                     "games", "zcode", "zork_iii.z3")
 
-DEATH = re.compile(r"you have died|slavering fangs|you are dead|fills your lungs"
+DEATH = re.compile(r"you have died|slavering fangs|you are dead|water fills your lungs"
                    r"|\*\*\* {0,2}you have died", re.I)
 
 

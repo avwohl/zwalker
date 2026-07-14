@@ -886,20 +886,29 @@ class ZMachine:
         """
         Maximum achievable score, when known for this game.
 
-        Returns a small known map {Zork I:350, Zork II:400, Zork III:7} else None.
+        Returns a small known map {Zork I:350, Zork II:400, Zork III:7,
+        Enchanter:400, Sorcerer:400, Spellbreaker:600} else None.
         Detection prefers the banner text (the opening "ZORK I/II/III" line the
         walker captures), then falls back to the header serial+release, which
         uniquely identifies the standard Infocom builds.
         """
         text = (banner or "").upper()
         # Banner detection (most reliable when available). Order matters:
-        # check the longer Roman numerals before the shorter ones.
+        # check the longer Roman numerals before the shorter ones, and the
+        # later Enchanter-series games before ENCHANTER (their banners may
+        # reference the series name).
         if "ZORK III" in text or "ZORK 3" in text:
             return 7
         if "ZORK II" in text or "ZORK 2" in text:
             return 400
         if "ZORK I" in text or "ZORK 1" in text or "ZORK:" in text or "GREAT UNDERGROUND EMPIRE" in text:
             return 350
+        if "SPELLBREAKER" in text:
+            return 600
+        if "SORCERER" in text:
+            return 400
+        if "ENCHANTER" in text:
+            return 400
 
         # Fall back to (serial, release) of the well-known Infocom builds.
         # Zork II and Zork III share serial 860811 but differ by release.
@@ -912,6 +921,7 @@ class ZMachine:
             ('820901', 17): 400,   # Zork II earlier
             ('860811', 25): 7,     # Zork III r25
             ('840508', 17): 7,     # Zork III earlier
+            ('860820', 29): 400,   # Enchanter r29
         }
         if (serial, release) in known:
             return known[(serial, release)]
