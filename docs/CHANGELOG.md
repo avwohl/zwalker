@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-13 - Verified Complete Solve: Zork III (Trilogy Complete)
+
+- **Zork III solved 7/7** (won, 241 turns, 216 commands, RNG seed 1) —
+  `solutions/zork3_verified.json`, `walkthroughs/zork3_verified_7.txt`. The full
+  ending plays out: the Dungeon Master transformation in the Treasury of Zork.
+- New `scripts/solve_zork3_adaptive.py`: adaptive recorder that plays the
+  classic lake-first route under a pinned RNG seed, handling the random gates
+  (earthquake window, hooded-figure mercy fight, once-only Viking ship, 50%
+  amulet grab, old-man presence) and records a deterministic command list.
+  Mechanics cross-checked against the official ZIL source
+  (historicalsource/zork3).
+- New `scripts/debug_replay.py`: transcript-printing replayer for diagnosing
+  where a walkthrough goes wrong (companion to `replay_solve.py`).
+- `replay_solve.py` fix: "eaten by a grue" death marker false-positived on the
+  darkness *warning* text ("You are likely to be eaten by a grue"); now matches
+  the actual kill text. Zork I/II verifications unaffected (re-verified).
+
 ## 2026-06-08 - Verified Complete Solves: Zork I & Zork II
 
 ### Summary

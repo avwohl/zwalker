@@ -32,8 +32,11 @@ VOCAB = {
     "e.": "east", "w.": "west",
 }
 DEATH_MARKERS = (
-    "you have died", "removes your head", "you are dead", "eaten by a grue",
-    "fills your lungs", "you have been killed", "*** you have died ***",
+    # "eaten by a grue" alone would false-positive on the darkness WARNING
+    # ("You are likely to be eaten by a grue."); match the actual kill text.
+    "you have died", "removes your head", "you are dead",
+    "slavering fangs of a lurking grue", "fills your lungs",
+    "you have been killed", "*** you have died ***",
 )
 
 

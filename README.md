@@ -15,15 +15,17 @@
 
 ## Verified Results
 
-The headline results are two complete, reproducibly-won Infocom solves, verified by
-deterministic replay against a fixed RNG seed (re-verified 2026-07-13):
+The headline result is the complete Zork trilogy, played start to finish and
+reproducibly won, verified by deterministic replay against a fixed RNG seed:
 
 | Game | Score | Won | Turns | Commands | Seed | Solution | Walkthrough |
 |------|-------|-----|-------|----------|------|----------|-------------|
 | Zork I | 350/350 | ✅ | 499 | 431 | 3 | [JSON](solutions/zork1_verified.json) | [Text](walkthroughs/zork1_verified_350.txt) |
 | Zork II | 400/400 | ✅ | 416 | 386 | 2 | [JSON](solutions/zork2_verified.json) | [Text](walkthroughs/zork2_verified_400.txt) |
+| Zork III | 7/7 | ✅ | 241 | 216 | 1 | [JSON](solutions/zork3_verified.json) | [Text](walkthroughs/zork3_verified_7.txt) |
 
-Reproduce either result locally:
+(Zork III scores "potential" out of 7; the win is entering the Treasury of Zork
+and becoming the Dungeon Master.) Reproduce any of them locally:
 
 ```bash
 python3 scripts/replay_solve.py games/zcode/zork1.z3 walkthroughs/zork1_verified_350.txt --seeds 4
@@ -31,6 +33,9 @@ python3 scripts/replay_solve.py games/zcode/zork1.z3 walkthroughs/zork1_verified
 
 python3 scripts/replay_solve.py games/zcode/zork2.z3 walkthroughs/zork2_verified_400.txt --seeds 3
 # -> zork2_verified_400.txt: VERIFIED 400/400 at seed 2 | 386 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/zork_iii.z3 walkthroughs/zork3_verified_7.txt --seeds 3
+# -> zork3_verified_7.txt: VERIFIED 7/7 at seed 1 | 216 cmds | died=False | won=True
 ```
 
 Beyond the verified solves, the repo carries exploration-grade coverage data: 43 room-mapping
@@ -177,14 +182,15 @@ python scripts/solve_game.py your_game.z5 --real-ai
 
 **What Works**:
 - ✅ Z-machine interpreter (1,604/1,604 CZECH tests across v3/v4/v5/v8)
-- ✅ Verified complete solves: Zork I 350/350, Zork II 400/400 (deterministic replay)
+- ✅ Verified complete solves of the Zork trilogy: Zork I 350/350, Zork II 400/400,
+  Zork III 7/7 (deterministic replay)
 - ✅ Replay/verification harness (`scripts/replay_solve.py`)
 - ✅ Agentic solver with navigation, world model, and backtracking
 - ✅ Walkthrough generation and z2js test-script generation
 - ✅ Output comparison tools
 
 **Current Limitations**:
-- Most games beyond Zork I/II have exploration coverage only, not verified wins
+- Most games beyond the Zork trilogy have exploration coverage only, not verified wins
 - Menu-based IF and Y/N prompts need special handling
 - Complex opening puzzles can stall the AI solvers
 
@@ -213,13 +219,15 @@ zwalker/
 
 scripts/               # (selection)
 ├── replay_solve.py       # Deterministic seed-search walkthrough verifier
+├── solve_zork3_adaptive.py # Adaptive recorder that produced the Zork III solve
+├── debug_replay.py       # Transcript-printing replayer for walkthrough debugging
 ├── solve_game.py         # Single game AI solver
 ├── generate_all_smart_tests.py  # z2js test generation (random-event tolerant)
 ├── compare_outputs.py    # Output comparison tool
 └── generate_docs_pages.py # Regenerates docs/WALKTHROUGHS.html from repo data
 
 docs/                # Documentation + GitHub Pages site
-solutions/           # Solution JSONs (2 verified solves + exploration runs)
+solutions/           # Solution JSONs (3 verified solves + exploration runs)
 walkthroughs/        # Human + verified walkthroughs (text + JSON command lists)
 games/zcode/         # Game corpus (155 story files)
 games/results/       # Exploration walkthrough dumps (43 games)
@@ -230,7 +238,7 @@ tests/               # Interpreter regression tests
 
 Contributions welcome! Areas needing improvement:
 
-1. **More Verified Solves**: extend the Zork I/II treatment to other games
+1. **More Verified Solves**: extend the Zork-trilogy treatment to other games
 2. **Menu Detection**: better handling of menu-based IF and Y/N prompts
 3. **Puzzle Solving**: improved AI strategies for complex puzzles
 4. **More Games**: test coverage for additional IF games

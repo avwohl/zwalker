@@ -1,0 +1,324 @@
+# SOURCE B: "Zork 3 walkthrough" at eristic.net (last updated 6/17/2021)
+# URL: http://www.eristic.net/games/infocom/zork3.html
+# Prose walkthrough converted to a command list; all of the author's timing and
+# randomness notes kept as # comments. Commands are only those the source states.
+# Route notes: this walkthrough does the lake FIRST, blocks the beam with the
+# GRUE REPELLENT CAN, and passes the Guardians INSIDE the mirror box (no potion needed;
+# it names drinking the vial as the alternate solution).
+# Its Royal Puzzle sequence is the InvisiClues sequence (also used by walkthroughking.com).
+
+# --- The Lake and Aqueduct ---
+GET LAMP
+TURN ON LAMP
+S
+# Junction: your Elvish sword is stuck in the rock; you can't take it now
+S
+S
+S
+# Lake Shore
+TURN OFF LAMP
+DROP LAMP
+SAVE
+ENTER LAKE
+# Two enemies: giant roc above the surface, giant fish below.
+# If you see the roc, dive; if you see the fish, surface.
+# You may be killed outright by either - restore in that case.
+DIVE
+TAKE OBJECT
+# underwater you see a "small, shiny object" / "something sparkling" / "something shiny";
+# if you don't get it, keep trying (repeat TAKE OBJECT).
+# If you run out of air you return to the surface automatically; you may need to exit
+# the lake and re-enter lest you freeze ("You are becoming very weak..." = 2 turns to
+# leave the water or you die).
+U
+W
+S
+# Scenic Vista
+GET TORCH
+WAIT
+# repeat WAIT until the indicator over the viewing table reads "II"
+TOUCH TABLE
+# you are in Room 8 from Zork II
+GET CAN
+WAIT
+# one turn; you return to Scenic Vista
+WAIT
+# repeat WAIT until the indicator reads "III"
+TOUCH TABLE
+# you are in Damp Passage (one south + one east from the Endless Stair)
+DROP TORCH
+WAIT
+# wait one turn to be returned to Scenic Vista
+N
+# Western Shore
+ENTER LAKE
+# (entering the water makes you drop the can)
+DIVE
+GET CAN
+U
+S
+# swim across to the southern shore
+APPLY REPELLENT TO ME
+S
+S
+E
+# Key Room
+GET KEY
+RAISE MANHOLE COVER
+D
+# Aqueduct
+N
+N
+N
+# Damp Passage (via the Water Slide)
+GET TORCH
+# keep the empty repellent can - used later. The torch lasts the rest of the game.
+# (Optionally W and S back to Lake Shore for the lamp - not needed.)
+
+# --- The Cliff and Land of Shadow ---
+W
+W
+W
+# Cliff (from Damp Passage, west three times)
+GET BREAD
+D
+# down the rope to Cliff Ledge
+GET CHEST
+WAIT
+# repeat WAIT until a man appears at the top of the cliff
+TIE CHEST TO ROPE
+WAIT
+# repeat WAIT until he reappears (he lowers the rope)
+GRAB ROPE
+# you are hauled up; the man gives you a wooden staff from the chest
+D
+D
+# Cliff Base
+S
+# Flathead Ocean
+WAIT
+# repeat WAIT until you see a ship
+HELLO SAILOR
+# the sailor throws you a gift
+LOOK
+GET VIAL
+EXAMINE VIAL
+# it's an invisibility potion
+E
+# Land of Shadow (you arrive in room 7 of 8)
+# Wander the Land of Shadow until you meet "a cloaked and hooded figure";
+# you can also WAIT when you "hear quiet footsteps nearby".
+# When the figure appears the Elvish sword appears in your hand.
+ATTACK FIGURE
+# repeat - but DO NOT kill it. If you are getting hit a lot, leave the room in a
+# direction the figure is not blocking and wander until your wounds heal.
+# When the figure is "badly hurt and defenseless":
+TAKE HOOD
+TAKE CLOAK
+# then find your way EAST out of the Land of Shadow to the Creepy Crawl
+
+# --- The Royal Museum ---
+E
+E
+S
+# Royal Hall
+EXAMINE SEAL
+S
+# Great Door
+WAIT
+# if the earthquake hasn't happened yet, repeat WAIT here until it does
+# (earthquake fires somewhere around turn 85-130 per this source)
+E
+# through the "gaping cleft in the rock" to Museum Entrance
+N
+# Technology Museum
+READ PLAQUE
+EXAMINE GOLD MACHINE
+# a time machine; the dial displays the current year (948)
+PUSH GOLD MACHINE SOUTH
+OPEN STONE DOOR
+PUSH GOLD MACHINE EAST
+# into the Jewel Room
+READ PLAQUE
+# dedicated in 777
+TURN DIAL TO 776
+SIT ON SEAT
+PUSH BUTTON
+# you can't carry anything through time - possessions stay behind
+# now in the Jewel Room in 776 GUE
+LOOK
+TAKE RING
+WAIT
+# repeat WAIT until "You hear, from outside the door, guards marching away..."
+OPEN DOOR
+W
+OPEN WOODEN DOOR
+N
+# Technology Museum in 776
+LOOK UNDER SEAT
+PUT RING UNDER SEAT
+SIT IN GOLD MACHINE
+TURN DIAL TO 948
+PUSH BUTTON
+LOOK UNDER SEAT
+# you retrieve the ring
+STAND
+OPEN WOODEN DOOR
+S
+OPEN STONE DOOR
+E
+# Jewel Room
+GET ALL
+READ PLAQUE
+
+# --- The Royal Puzzle ---
+W
+S
+# Royal Puzzle Entrance
+READ NOTE
+SAVE
+D
+LOOK
+# sandstone "walls" are pushable cube blocks; marble is fixed. Get the lore book
+# from under a block, then maneuver the ladder-block under the entry hole.
+PUSH EAST WALL
+S
+S
+SE
+PUSH SOUTH WALL
+N
+NE
+PUSH SOUTH WALL
+TAKE BOOK
+PUSH SOUTH WALL
+E
+NE
+PUSH WEST WALL
+SW
+NW
+NE
+PUSH SOUTH WALL
+SW
+PUSH EAST WALL
+NE
+PUSH SOUTH WALL
+NW
+N
+N
+N
+PUSH EAST WALL
+SW
+S
+SE
+NE
+N
+PUSH WEST WALL
+NW
+PUSH SOUTH WALL
+AGAIN
+W
+NW
+NW
+PUSH SOUTH WALL
+SE
+SE
+SE
+NE
+PUSH WEST WALL
+AGAIN
+SW
+PUSH NORTH WALL
+AGAIN
+AGAIN
+NW
+UP
+# (You may wish to YELL at this point!)
+
+# --- The Mirror Box ---
+# from the Royal Puzzle Entrance:
+N
+W
+N
+N
+W
+W
+N
+E
+NE
+# Engravings Room. If no one is there, leave the room and return until
+# "an old and wizened man" appears.
+SHAKE MAN
+# wakes him
+GIVE BREAD TO MAN
+OPEN SECRET DOOR
+N
+N
+# Beam Room
+DROP CAN
+# blocks the beam of light
+S
+# Button Room
+PRESS BUTTON
+N
+N
+# Hallway - a mirrored panel has opened
+N
+# now inside the mirror box
+SAVE
+# Panels: mahogany moves the box; pine swings out (exit); red/yellow rotate clockwise;
+# black/white rotate counter-clockwise. Short pole steadies the box while it moves
+# (prevents rotation). Compass rose + T-bar on the long pole show the direction the
+# mahogany panel faces = direction of movement.
+RAISE SHORT POLE
+PUSH YELLOW WALL
+PUSH YELLOW WALL
+# compass rose now points north
+LOWER SHORT POLE
+PUSH MAHOGANY WALL
+PUSH MAHOGANY WALL
+PUSH MAHOGANY WALL
+RAISE SHORT POLE
+# push the white or black walls to rotate the box so the mahogany wall faces south:
+PUSH WHITE WALL
+# repeat until the mahogany wall faces south
+PUSH PINE WALL
+N
+# Dungeon Entrance. You bypassed the Guardians of Zork: they kill anything between
+# them but can't tell their twin from a reflection. The SHORT POLE MUST BE IN THE
+# CHANNEL while the box moves or they detect the wobble and kill you.
+# (Alternate solution: drink the invisibility potion from the vial and walk past.)
+
+# --- The Dungeon Master ---
+KNOCK ON DOOR
+# the dungeon master answers
+N
+E
+# (east or west both work)
+N
+N
+# Parapet
+LOOK AT SUNDIAL
+TURN DIAL TO 4
+PRESS BUTTON
+S
+OPEN DOOR
+S
+# Prison Cell
+TELL DUNGEON MASTER TO GO TO THE PARAPET
+TELL DUNGEON MASTER TO TURN THE DIAL TO 1
+# (pick any number other than 4)
+TELL DUNGEON MASTER TO PRESS THE BUTTON
+# cells are on a rotating arrangement; turning the sundial to a number summons that
+# cell; pressing with another number returns cell 4 (with you inside) to its original
+# position. You can only unlock the bronze door in cell 4 at its original position.
+UNLOCK BRONZE DOOR WITH KEY
+OPEN BRONZE DOOR
+S
+# Treasury of Zork. Congratulations, Dungeon Master!
+
+# --- Points (7 total, per this source) ---
+# 1 point each for: entering the lake; touching the viewing table; arriving at
+# Cliff Ledge; encountering the hooded figure; attacking the hooded figure;
+# pushing the button on the gold machine while the dial is turned to a number
+# other than 948 [InvisiClues + ZIL source say: specifically 776];
+# pushing a sandstone wall in the Royal Puzzle.
