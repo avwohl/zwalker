@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-13 - Verified Complete Solve: Sorcerer
+
+- **Sorcerer solved 400/400** (won, 390 turns, 234 commands, RNG seed 2) —
+  `solutions/sorcerer_verified.json`, `walkthroughs/sorcerer_verified_400.txt`.
+  Full ending: Jeearr destroyed against the vardik shield; "Leader of the
+  Circle of Enchanters." All 23 scoring events match the official ZIL table.
+- New `scripts/solve_sorcerer_adaptive.py`: parses the two seed-rolled values
+  from game text at runtime — the journal's monster code (mapped through the
+  infotater wheel to the five trunk buttons, where one wrong press is
+  permanently unwinnable) and the coal-mine combination (echoed on the dial
+  and back to your younger self to close the golmac time loop). Route
+  handles the matchbook mail window (turn 24), the berzio clock retirement,
+  the 3-fweep glass-maze crossing with the dorn-beast lure into the
+  floorless cell, and the 8-turn Belboz endgame window. Mechanics verified
+  against the official ZIL source (historicalsource/sorcerer); notes in
+  `logs/sorcerer_notes.md`.
+- `games/zcode/sorcerer.z3` (r18/860904, freeware from eblong.com) added to
+  the corpus; `get_max_score` serial map covers it (banner prints only after
+  the opening dream).
+
 ## 2026-07-13 - Verified Complete Solve: Enchanter
 
 - **Enchanter solved 400/400** (won, 300 turns, 206 commands, RNG seed 1) —

@@ -1,0 +1,441 @@
+# SORCERER r18/860904 — merged route, 400/400, 3 sleeps, no deaths
+# Synthesized from ZIL source + 4 IF-Archive walkthroughs + InvisiClues
+# (see sorcerer_notes.md for every citation).
+# One command per line. '#' lines are comments, not input.
+#
+# Replayer directives:
+#   - SYNC       = nondeterministic/text-dependent point; loop or parse as noted.
+#   - VARIABLE   = command contains a value that MUST be parsed from earlier game
+#                  text this run (journal code / mine combination). Never hardcode.
+#   - CRITICAL   = window where NO extra commands may be inserted (an inserted Z
+#                  can kill you AND shifts every later RNG draw).
+#   - Tick rule: <QUEUE n> fires at end of turn (queue-turn + n - 1); izyuk = 2
+#     moves of flight, fweep = 14 moves of bat time.
+#   - Any refused command consumes a RANDOM (YUKS tables) — the script below
+#     should produce zero refusals; treat one as a desync signal.
+#
+# ---------- PHASE 0: the dream (exactly ONE command) ----------
+# CRITICAL: one and only one command before the wake-up; the first RNG draw of
+# the game (journal code) happens at the moment of wake.
+z
+# hellhound kills you -> "...wake up in a cold sweat" -> +5, in bed, dark. [5]
+#
+# ---------- PHASE 1: Guild Hall (matchbook must be mailed by turn 24) ----------
+frotz me
+# permanent personal light for the whole game (ALWAYS-LIT)
+get up
+w
+s
+s
+# Lobby
+w
+# Store Room
+take vial and matchbook
+e
+# Lobby — CRITICAL: next command must land the matchbook before turn 25
+put matchbook in receptacle
+open vial
+drink potion
+# berzio: +10, hunger/thirst retired for the whole run [15]
+drop vial
+e
+# Library
+take dusty scroll
+# +10 [25]
+gnusto meef
+w
+n
+n
+w
+# Belboz's Quarters (parrot PROB-40 squawks here are cosmetic)
+move hanging
+# key falls, +15 [40]
+take key
+open desk
+take journal
+open journal
+# (auto: with the key)
+read journal
+# SYNC/VARIABLE: parse  Current code: <monster>  and map via infotater table:
+#   bloodworm: white gray black red black | brogmoid: red purple red black purple
+#   dorn: gray purple black gray white    | dryad: black gray white red red
+#   grue: black black red black purple    | hellhound: purple white gray red gray
+#   kobold: red purple black purple red   | nabiz: purple black black black red
+#   orc: red gray purple gray red         | rotgrub: gray red gray purple red
+#   surmin: black black purple red black  | yipple: gray purple white purple black
+drop journal
+drop key
+e
+s
+s
+# Lobby (mail arrived at turn 25: doorbell + receptacle closed)
+open receptacle
+take orange vial
+# +10 [50]
+d
+# Cellar — CRITICAL: the next five presses must be exact; ONE wrong press
+# permanently ruins the trunk (unwinnable). VARIABLE: colors from journal code.
+press VAR-BUTTON-1 button
+press VAR-BUTTON-2 button
+press VAR-BUTTON-3 button
+press VAR-BUTTON-4 button
+# 5th press pops the trunk: +25 [75]
+press VAR-BUTTON-5 button
+take moldy scroll
+# CRITICAL: aimfiz drops you next to the hellhound; the following command
+# after aimfiz MUST be ne.
+aimfiz belboz
+# +20 [95] — Twisted Forest, hound warning printed
+ne
+# Forest Edge — hound gives up. (Never go N: magic minefield deathtrap.)
+#
+# ---------- PHASE 2: river, fort, chasm, toll (day 1) ----------
+learn pulver
+learn izyuk
+learn izyuk
+e
+# Meadow (locust warning 1 — never spend >2 turn-ends here)
+ne
+# River Bank (bank turn-end 1 of 3 free ones)
+# CRITICAL: river returns 5 turns after pulver; go straight down and in.
+pulver river
+d
+ne
+# Hidden Cave, +20 [115]
+take soiled scroll
+take guano
+gnusto fweep
+# (amber/blort vial here is useless — skip; river floods back outside)
+d
+# Pit of Bones
+sw
+# Dungeon
+u
+# Ruins
+w
+# Drawbridge — the ONE free on-foot crossing; never step on it again
+w
+# Meadow (locust 1)
+ne
+# River Bank (3rd and last free turn-end)
+se
+# Fort Entrance
+e
+# Parade Ground
+lower flag
+examine flag
+# aqua vial drops out
+take aqua vial
+e
+# Gun Emplacement
+put guano in cannon
+# yipples flee, real scroll remains
+take ordinary scroll
+# yonk, +10 [125]
+w
+w
+# Fort Entrance — izyuk gives exactly 2 flying moves: bank then meadow
+izyuk me
+nw
+sw
+w
+# Forest Edge (on foot, fine)
+learn izyuk
+d
+# Snake Pit — pass straight through (fuse is >=2 turns)
+d
+# Slimy Room
+s
+# Crater
+w
+# Edge of Chasm — never JUMP (75% death); fly
+izyuk me
+w
+w
+# Elbow Room (landed)
+n
+# Tree Room
+take coin
+# +15 [140], tree vanishes. NEVER frotz the coin (gnomes refuse lit coins).
+s
+e
+# Bare Passage
+izyuk me
+e
+e
+# Crater (landed)
+ne
+ne
+# Bend
+e
+# Highway
+e
+# Toll Gate
+wake gnome
+# CRITICAL-ish: pay within 4 turns of waking him (patience 5, re-wake = death)
+give coin to gnome
+# +20 [160], gate opens forever, gnome sleeps again
+e
+e
+# End of Highway
+n
+n
+# Outside Glass Arch
+# SYNC: SLEEP is refused until the first "You are beginning to tire" message
+# (~turn 80 of the day). Loop: Z until tired-message seen, then:
+sleep
+#
+# ---------- PHASE 3: glass maze (day 2) — fully deterministic ----------
+learn fweep
+learn fweep
+learn fweep
+# fweep auto-drops everything (book, vials, yonk scroll) right here — good:
+# the Hollow's bird steals any carried spell book.
+fweep me
+e
+# in maze, room 13 — CRITICAL: exact 14 moves, no insertions (bat timer)
+n
+e
+s
+s
+w
+d
+e
+e
+n
+n
+u
+u
+s
+# room 24: fweep expires here ("worn off... fall") — the last move is on foot
+e
+# HOLLOW, +20 [180]
+take parchment scroll
+# evil laugh: maze panels shift (POST layout from now on)
+put scroll in hole
+# scroll lands in the Stone Hut fireplace; DORNBEAST released (2-turn fuse)
+# CRITICAL: from here to the splatter, exact sequence, no insertions:
+fweep me
+# (dorn warning prints this turn)
+w
+# maze room 24, dorn follows one room behind — never backtrack
+w
+# 23
+s
+# 26
+e
+# 27 (floorless): dorn beast plummets and dies — chase over
+d
+# 18
+d
+# 9 (splattered corpse here — do not malyon it, ever)
+w
+# 8
+w
+# 7
+u
+# 16
+u
+# 25
+n
+# 22
+n
+# 19
+d
+# 10
+e
+# 11 — 2nd fweep expires here (floored room)
+# SYNC: if wear-off text not yet printed, Z once before casting.
+fweep me
+s
+# 14
+e
+# 15
+n
+# 12
+d
+# 3
+w
+# 2
+s
+# 5
+w
+# 4
+u
+# 13
+w
+# OUT — Outside Glass Arch, still a bat for ~5 turns
+# SYNC: Z until "the fweep spell has worn off", then continue:
+z
+z
+z
+z
+z
+take all
+# book + orange vial + aqua vial + yonk scroll
+s
+s
+# End of Highway
+e
+# Stone Hut
+take parchment scroll
+# from the fireplace: +25 [205]
+gnusto swanzo
+w
+w
+w
+# Toll Gate
+search gnome
+# zorkmid back (one-shot; requires gate open, not a bat)
+w
+w
+# Bend
+sw
+d
+# Crater
+s
+# Winding Tunnel
+sw
+# Park Entrance
+#
+# ---------- PHASE 4: Bozbarland arcade + dragon ----------
+w
+# bounce; plaid gnome appears (6-turn patience, reappears if missed)
+give coin to gnome
+w
+# East End of Midway
+w
+# West End of Midway (ignore casino/rides/haunted house — all deathtraps/RNG)
+s
+# Arcade
+take ball
+open aqua vial
+drink aqua potion
+# fooble: 17 turns of coordination — throw within them
+throw ball at bunny
+# guaranteed hit while foobled: +10 [215], glittering scroll
+gnusto malyon
+drop aqua vial
+n
+e
+e
+# Park Entrance
+ne
+# Winding Tunnel
+s
+# Hall of Carvings
+learn malyon
+yonk malyon
+# consumes the yonk scroll, empowers malyon
+malyon dragon
+# wall crumbles, passage south — CRITICAL: never cast malyon at it again
+s
+# Sooty Room, +20 [235]
+# SYNC: Z until the day-2 tired message, then:
+sleep
+#
+# ---------- PHASE 5: coal mine time loop (day 3) ----------
+# CRITICAL SEQUENCE from here to the Cove: no insertions, no deviations.
+# Budget: rope descent needs zero fatigue (<=88 turns after sleep) and the
+# vilstu breath lasts ~28 turns from drinking. Carry ONLY book + orange vial in.
+open orange vial
+e
+# Coal Bin Room: cave-in (no return), COMBO rolled, gas clock started (4 turns)
+drink orange potion
+# gas clock off; your OLDER SELF slides out of the chute this turn.
+# You MUST be holding the spell book at this moment.
+# The next three commands are recorded and will be replayed by your younger
+# self later — keep them exactly: give / drop / walk.
+give book to twin
+# SYNC/VARIABLE: end of this turn the twin gasps  "The combination is <N>."
+# — capture N for the two VAR-COMBO commands below.
+drop vial
+e
+# Dial Room (twin dives down the lower chute with book + vardik scroll)
+turn dial to VAR-COMBO
+# "You hear a click from inside the door."
+open door
+# +20 [255] (REZROV here = alarm death)
+e
+# Shaft Bottom
+take rope
+u
+# Shaft Top
+nw
+# Coal Mine
+take beam
+# (rope+beam 60 weight — fine when rested)
+nw
+# Coal Mine (upper)
+w
+# Top of Chute (troglodyte appearances here are cosmetic)
+tie rope to beam
+put beam across chute
+put rope in chute
+# rope hangs from the beam into the chute; hands now empty (required!)
+d
+# Slanted Room, +20 [275] — gates: empty-handed AND not tired
+take shimmering scroll
+golmac me
+# time rewinds: you are now the older self; lamp snaps shut with the vardik
+# scroll inside; rope/beam/door/dial all reset. NEVER golmac twice (POOF).
+open lamp
+take smelly scroll
+# vardik, +25 [300] (vilstu warning #1 ~now; do NOT enter Shaft Bottom again)
+e
+# down the chute: Coal Bin Room — your YOUNGER SELF stands there with the book
+younger self, the combination is VAR-COMBO
+# VARIABLE: same N. This closes the causal loop (skipping it = POOF at the
+# Cove). End of this turn the younger self hands you the spell book.
+d
+# lower chute -> COVE (Lagoon Shore), +20 [320]; loop interrupts all die here
+# CRITICAL SEQUENCE ENDS.
+# SYNC: Z until "the final effects of the vilstu potion vanish" (total
+# exhaustion), then sleep immediately (collapse comes ~8 turns later):
+z
+z
+z
+z
+z
+sleep
+#
+# ---------- PHASE 6: lagoon and the white door ----------
+learn meef
+learn meef
+learn swanzo
+# everything must stay ashore: the lagoon surface soaks scrolls and book
+drop all
+e
+# Surface of Lagoon
+d
+# Lagoon Floor (5-turn breath budget starts)
+meef weeds
+# spenseweeds wilt, crate revealed
+take crate
+w
+# back ashore at the Cove (4 underwater turn-ends — inside budget)
+open crate
+# GRUE PROTECTION KIT: +15 [335]
+wear suit
+# (suit > repellent: the spray only lasts 5 turns; lantern not needed — grues
+# here ignore light anyway)
+take smelly scroll
+ne
+# Ocean Shore North
+n
+# Mouth of River (vine-twitch messages are cosmetic)
+meef vines
+# walking into un-meefed vines = death
+w
+# Grue Lair (suit carries you through the turn-end check)
+w
+# Mammoth Cavern, +20 [355]
+# Only the WHITE door: black = Chamber of Living Death, silver = Eternal Pain.
+# CRITICAL: vardik (12-turn shield) -> door (8-turn window) -> swanzo. Nothing
+# in between.
+vardik me
+open white door
+# +20 [375], drawn into the hideout; Belboz wakes in 8 turns
+swanzo belboz
+# Jeearr expelled, blocked by the shield, dissipates. +25 = 400/400.
+# "...you have been appointed as the next leader of the Circle of Enchanters."

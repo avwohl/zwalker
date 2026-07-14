@@ -922,6 +922,9 @@ class ZMachine:
             ('860811', 25): 7,     # Zork III r25
             ('840508', 17): 7,     # Zork III earlier
             ('860820', 29): 400,   # Enchanter r29
+            # Sorcerer's banner prints only after the opening dream, so banner
+            # detection misses it; the serial map is what identifies it.
+            ('860904', 18): 400,   # Sorcerer r18
         }
         if (serial, release) in known:
             return known[(serial, release)]
