@@ -1,0 +1,19 @@
+# MICROQUEST -- zorkie<->zwalker integration test walkthrough.
+#
+# This verifies the FULL pipeline end to end: zorkie compiles games/zil/microquest.zil
+# to a Z-machine story file, zwalker interprets it, and replay_solve drives this
+# command list to the game's real winning ending. Unlike the other 50 walkthroughs
+# (which target released/ZILF binaries), the game under test here is compiled by
+# zorkie itself -- this is the L2 "plays and wins" green in docs/ZORKIE_TESTING.md.
+#
+# Run:  python3 scripts/test_zorkie_game.py microquest
+#   => microquest: zorkie [L2] PASS
+# Or drive a prebuilt binary directly:
+#   python3 scripts/replay_solve.py <build>/microquest.z3 walkthroughs/microquest_zorkie_win.txt --seeds 1
+#
+# Route: read the etched word (FROTZ) to open the vault, take the gem, then WIN.
+#% WIN_TEXT: \*\*\* You have won \*\*\*
+look
+frotz
+take gem
+win

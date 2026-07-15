@@ -193,13 +193,31 @@ Start where zorkie already round-trips, not with Zork 1 (which still hangs):
   zorkie's routine-codegen coverage (currently ~26 % of official routine bytes for
   Zork 1) closes.
 
-## Current status: cloak through zorkie (2026-07-15)
+## Current status (2026-07-15)
 
-`scripts/test_zorkie_game.py cloak` today reports: **reference (ZILF golden) L2
-PASS** (plays and wins, 5 commands) and **zorkie COMPILE-FAIL**. The
-win-verification path and the source-matched walkthrough are therefore proven
-correct; the red is entirely in zorkie's compilation of the ZILF standard
-library that `cloak.zil` pulls in via `<INSERT-FILE "parser">`.
+**The integration is proven end to end.** `scripts/test_zorkie_game.py microquest`
+reports **zorkie [L2] PASS** — the full loop works: zorkie compiles
+[`games/zil/microquest.zil`](../games/zil/microquest.zil) to a V3 story file,
+zwalker interprets it, and `replay_solve` drives the walkthrough
+([`walkthroughs/microquest_zorkie_win.txt`](../walkthroughs/microquest_zorkie_win.txt):
+`look`, `frotz`, `take gem`, `win`) to the game's real `*** You have won ***`
+ending, scoring 10. MicroQuest is a small self-contained game (a `READ` loop with
+dictionary word-matching and a scored win) written to use only ZIL that zorkie
+compiles today; it is the standing green regression that proves zorkie output
+runs and wins inside zwalker.
+
+Getting there also fixed one zwalker robustness bug: `decode_zstring` had no
+recursion guard, so a malformed/cyclic abbreviation (or object-name detection
+reading non-string memory in a minimal game) recursed until the interpreter
+crashed. It now caps abbreviation depth (Z-Machine Standard §3.3 forbids nested
+abbreviations, so legitimate expansion is at most one level).
+
+### The frontier: a real Infocom-library game (cloak)
+
+`scripts/test_zorkie_game.py cloak` reports: **reference (ZILF golden) L2 PASS**
+(plays and wins, 5 commands) and **zorkie COMPILE-FAIL** — the red is entirely in
+zorkie's compilation of the ZILF standard library that `cloak.zil` pulls in via
+`<INSERT-FILE "parser">`.
 
 **`cloak.zil` now parses fully** — three parser/lexer bugs found here were fixed
 upstream, and the compile has moved past the whole front end into codegen:

@@ -52,6 +52,17 @@ _spec.loader.exec_module(rs)
 # recorded against a build of that source; `reference` (optional) is a known-good
 # ZILF/official golden .z used as the behavioral oracle.
 GAMES = {
+    # The integration proof: a self-contained ZIL game (source in this repo) that
+    # zorkie compiles today and zwalker drives to a real win. This is the L2 green.
+    "microquest": {
+        "zil": REPO / "games" / "zil" / "microquest.zil",
+        "walkthrough": REPO / "walkthroughs" / "microquest_zorkie_win.txt",
+        "version": 3,
+        "reference": None,  # no ZILF/official golden; zorkie is the only build
+        "seeds": 1,
+    },
+    # A real Infocom-library game (via the ZILF stdlib). Parses fully; currently
+    # fails in zorkie codegen -- tracks the frontier. See docs/ZORKIE_TESTING.md.
     "cloak": {
         "zil": ZORKIE / "tests" / "test-pairs" / "cloak.zil",
         "walkthrough": REPO / "walkthroughs" / "cloak_zilf_win.txt",

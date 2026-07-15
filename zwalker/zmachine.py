@@ -284,8 +284,16 @@ class ZMachine:
             return packed * 8
 
     # Z-String decoding
-    def decode_zstring(self, addr: int) -> Tuple[str, int]:
+    def decode_zstring(self, addr: int, _depth: int = 0) -> Tuple[str, int]:
         """Decode Z-string at address, return (string, next_address)"""
+        # The Z-Machine Standard (§3.3) forbids an abbreviation's own string from
+        # using an abbreviation z-char, so legitimate expansion is at most one
+        # level deep. A malformed or garbage abbreviation table (e.g. from an
+        # in-development compiler, or when object-name detection reads non-string
+        # memory) can form a cycle; cap the depth so decoding degrades gracefully
+        # instead of recursing until the interpreter crashes.
+        if _depth > 2:
+            return "", addr
         result = []
         alphabet = 0
         lock_alphabet = 0
@@ -331,7 +339,7 @@ class ZMachine:
                     if self.header.version >= 2 and self.header.abbreviations:
                         abbr_addr = self.header.abbreviations + 2 * (32 * (abbrev_table - 1) + c)
                         word_addr = self.read_word(abbr_addr)
-                        abbr_str, _ = self.decode_zstring(word_addr * 2)
+                        abbr_str, _ = self.decode_zstring(word_addr * 2, _depth + 1)
                         result.append(abbr_str)
                     abbrev_table = 0
                     alphabet = lock_alphabet
