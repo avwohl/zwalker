@@ -198,30 +198,39 @@ Start where zorkie already round-trips, not with Zork 1 (which still hangs):
 `scripts/test_zorkie_game.py cloak` today reports: **reference (ZILF golden) L2
 PASS** (plays and wins, 5 commands) and **zorkie COMPILE-FAIL**. The
 win-verification path and the source-matched walkthrough are therefore proven
-correct; the only red is zorkie's front end, which cannot yet compile the ZILF
-standard library that `cloak.zil` pulls in via `<INSERT-FILE "parser">`.
+correct; the red is entirely in zorkie's compilation of the ZILF standard
+library that `cloak.zil` pulls in via `<INSERT-FILE "parser">`.
 
-One root-cause parser bug found here was fixed upstream (zorkie commit
-`b5384e2`): special-form dispatch (`CONSTANT`/`ROUTINE`/`OBJECT`/…) was firing
-*inside* quasiquote templates, so `` `<CONSTANT ~.NAME <ITABLE …>> `` (pervasive
-in the library, e.g. `FINISH-PRONOUNS`) failed with "Expected RANGLE, got
-LANGLE". A `quasiquote_depth` counter now suppresses that dispatch inside
-templates. This advanced cloak's parse from `cloak.zil:964` to `:2318`.
+**`cloak.zil` now parses fully** — three parser/lexer bugs found here were fixed
+upstream, and the compile has moved past the whole front end into codegen:
 
-The remaining chain to a *winning* zorkie-compiled cloak, in order:
+1. zorkie `b5384e2` — special-form dispatch (`CONSTANT`/`ROUTINE`/`OBJECT`/…) was
+   firing *inside* quasiquote templates, so `` `<CONSTANT ~.NAME <ITABLE …>> ``
+   (pervasive in the library, e.g. `FINISH-PRONOUNS`) failed with "Expected
+   RANGLE, got LANGLE". A `quasiquote_depth` counter suppresses that dispatch
+   inside templates. (Advanced the parse from `cloak.zil:964` to `:2318`.)
+2. zorkie `f3d6e10` — the two `%<…>` compile-time-eval bracket-matchers (in the
+   lexer and in `preprocess_zilf_directives`) treated every `!` as a character
+   literal and skipped the next char, so a `!<form>` splice had its `<` swallowed
+   while its `>` still counted, ending the match one `>` short and leaking a stray
+   `>` ("Unexpected closing parenthesis" at `MAP-SCOPE-INIT-STAGES-FROM-BITS`).
+   Only `!\X` is a character literal; `!<form>`/`!.var`/`!,var` are splices.
 
-1. **More library parse gaps** (each a distinct bug, currently at `:2318`):
-   `~<PARSE …>` inside a `MAPF` binding ("Unexpected closing parenthesis"),
-   `<PUTPROP .NAME …>` with a computed (variable) name where an atom is expected,
-   and `%<VERSION? …>` **compile-time evaluation** used to build an `OBJECT`'s
-   properties ("Expected RANGLE, got NUMBER").
-2. **Compile-time macro evaluation** — the `%<…>` eval plus running `DEFINE` /
-   `MAPF` / PROPSPEC macros to actually *build* the tables and routines the
-   library generates. zorkie parses these but does not yet evaluate them
-   (its own "PROPSPEC routine creation" xfail).
-3. **Codegen coverage** — zorkie emits ~26 % of the official routine bytes for a
-   full game today; the library's routines must all lower.
-4. **Runtime** — even a fully compiled real game "still hangs" per zorkie's
+With those, cloak clears **every** parse error and the blocker is now **codegen**:
+the first stop is `ZIL0402: Call to LIBRARY-MESSAGE has 4 arguments, but V3 only
+supports up to 3 call arguments` (plus `Unknown identifier` warnings for
+`NO-OBJECT` / `ENTER`). That is the boundary between "parse the library" (done)
+and "compile and run it," which is the larger remaining work:
+
+1. **Codegen / semantics** — the V3 3-argument call limit (the library calls
+   `LIBRARY-MESSAGE` with 4 args; ZILF lowers this, zorkie rejects it), unresolved
+   identifiers, and zorkie emitting ~26 % of the official routine bytes for a full
+   game today.
+2. **Compile-time macro evaluation** — actually *running* `%<…>` / `DEFINE` /
+   `MAPF` / PROPSPEC to build the tables and routines the library generates
+   (zorkie parses these but does not yet evaluate them — its "PROPSPEC routine
+   creation" xfail).
+3. **Runtime** — even a fully compiled real game "still hangs" per zorkie's
    `WIP.md` (parser/`SYNTAX` runtime gaps).
 
 So cloak-via-zorkie is real compiler work, not one fix. The harness is built to
