@@ -177,11 +177,14 @@ binary and re-recording produces a command list matched to **that** build.
 
 Start where zorkie already round-trips, not with Zork 1 (which still hangs):
 
-- **Cloak of Darkness** is the ideal first target. It is tiny, zorkie already
-  compiles `cloak.zil → cloak.z3` as a committed golden pair, and we have
-  [`walkthroughs/cloak_verified_win.txt`](../walkthroughs/cloak_verified_win.txt).
-  Getting `cloak` to L2 through both ZILF and zorkie is the first concrete
-  milestone and shrinks the whole pipeline to a game you can debug by hand.
+- **Cloak of Darkness** is the ideal first target. It is tiny, zorkie ships
+  `tests/test-pairs/cloak.zil` with a committed **ZILF 0.8** golden `cloak.z3`
+  (the reference build), and we have a source-matched
+  [`walkthroughs/cloak_zilf_win.txt`](../walkthroughs/cloak_zilf_win.txt) that
+  wins against that golden. The L2 harness (`scripts/test_zorkie_game.py cloak`)
+  already drives this. Getting `cloak` to L2 through *zorkie* (it currently fails
+  to compile the source — see status below) is the first concrete milestone and
+  shrinks the whole pipeline to a game you can debug by hand.
 - **Adventure / Colossal Cave** next: zorkie vendors `games/advent_source/advent.zil`,
   and we have `advent_verified_350.txt`. (Note the golden `advent.z3` in
   `tests/test-pairs/` is currently a 14-byte "404" stub — re-fetch it before using
@@ -189,6 +192,41 @@ Start where zorkie already round-trips, not with Zork 1 (which still hangs):
 - Then the comp-scale games, then work up toward the full Infocom titles as
   zorkie's routine-codegen coverage (currently ~26 % of official routine bytes for
   Zork 1) closes.
+
+## Current status: cloak through zorkie (2026-07-15)
+
+`scripts/test_zorkie_game.py cloak` today reports: **reference (ZILF golden) L2
+PASS** (plays and wins, 5 commands) and **zorkie COMPILE-FAIL**. The
+win-verification path and the source-matched walkthrough are therefore proven
+correct; the only red is zorkie's front end, which cannot yet compile the ZILF
+standard library that `cloak.zil` pulls in via `<INSERT-FILE "parser">`.
+
+One root-cause parser bug found here was fixed upstream (zorkie commit
+`b5384e2`): special-form dispatch (`CONSTANT`/`ROUTINE`/`OBJECT`/…) was firing
+*inside* quasiquote templates, so `` `<CONSTANT ~.NAME <ITABLE …>> `` (pervasive
+in the library, e.g. `FINISH-PRONOUNS`) failed with "Expected RANGLE, got
+LANGLE". A `quasiquote_depth` counter now suppresses that dispatch inside
+templates. This advanced cloak's parse from `cloak.zil:964` to `:2318`.
+
+The remaining chain to a *winning* zorkie-compiled cloak, in order:
+
+1. **More library parse gaps** (each a distinct bug, currently at `:2318`):
+   `~<PARSE …>` inside a `MAPF` binding ("Unexpected closing parenthesis"),
+   `<PUTPROP .NAME …>` with a computed (variable) name where an atom is expected,
+   and `%<VERSION? …>` **compile-time evaluation** used to build an `OBJECT`'s
+   properties ("Expected RANGLE, got NUMBER").
+2. **Compile-time macro evaluation** — the `%<…>` eval plus running `DEFINE` /
+   `MAPF` / PROPSPEC macros to actually *build* the tables and routines the
+   library generates. zorkie parses these but does not yet evaluate them
+   (its own "PROPSPEC routine creation" xfail).
+3. **Codegen coverage** — zorkie emits ~26 % of the official routine bytes for a
+   full game today; the library's routines must all lower.
+4. **Runtime** — even a fully compiled real game "still hangs" per zorkie's
+   `WIP.md` (parser/`SYNTAX` runtime gaps).
+
+So cloak-via-zorkie is real compiler work, not one fix. The harness is built to
+track exactly this: each item above turns the `COMPILE-FAIL` into a later failure
+(or a boot/replay desync the `score_timeline` localizes), until it goes green.
 
 ## Reuse these
 
