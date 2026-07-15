@@ -421,6 +421,7 @@ interpreter fixes. Historical reports live in [docs/archive/](docs/archive/).
 ## Documentation
 
 - [CHANGELOG.md](docs/CHANGELOG.md) - Z-machine bug fixes
+- [ZORKIE_TESTING.md](docs/ZORKIE_TESTING.md) - using the verified solves to test the [zorkie](https://github.com/avwohl/zorkie) ZIL compiler, and why released `.z` ≠ compiled historicalsource ZIL
 - [TEST_GENERATION.md](docs/TEST_GENERATION.md) - z2js test pipeline
 - [ADVANCED_SOLVER.md](docs/ADVANCED_SOLVER.md) - strategic solver design (Dec 2025)
 - [PROJECT_NOTES.md](docs/PROJECT_NOTES.md) - project overview and approach

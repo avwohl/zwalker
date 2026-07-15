@@ -1,0 +1,27 @@
+# Cloak of Darkness -- SOURCE-BUILD walkthrough (compiled from ZIL, not the released binary)
+#
+# This is the "source-build" track described in docs/ZORKIE_TESTING.md: it verifies
+# a game compiled from ZIL source (by ZILF and/or zorkie), NOT a shipped Infocom .z.
+# The companion walkthroughs/cloak_verified_win.txt targets our Inform-built
+# games/zcode/cloak.z3 instead; keep the two separate -- they are different builds
+# of Roger Firth's demo (Inform vs the Jesse McGrew ZIL conversion) and do not share
+# object names, room wording, or the win string.
+#
+# Source: ~/src/zorkie/tests/test-pairs/cloak.zil  (ZIL conversion by Jesse McGrew,
+#         Jayson Smith, Josh Lawrence). Reference build in that dir: cloak.z3, banner
+#         "Release 1 / Serial 181205 / ZILF 0.8 lib J4".
+#
+# Run via the L2 harness (compiles the ZIL, replays this list, checks the win text):
+#   python3 scripts/test_zorkie_game.py cloak
+# Or directly against a compiled build:
+#   python3 scripts/replay_solve.py <build>/cloak.z3 walkthroughs/cloak_zilf_win.txt --seeds 1
+#   => VERIFIED ... at seed 1 | 5 cmds | died=False | won=True
+#
+# Route: the bar is pitch-dark and blundering in the dark scrawls the sawdust; hang
+# the velvet cloak in the cloakroom first so the bar is lit, then read the message.
+#% WIN_TEXT: The message simply reads: "You win\."
+west
+hang cloak on hook
+east
+south
+read message
