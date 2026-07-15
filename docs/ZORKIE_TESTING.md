@@ -277,6 +277,44 @@ So cloak-via-zorkie is real compiler work, not one fix. The harness is built to
 track exactly this: each item above turns the `COMPILE-FAIL` into a later failure
 (or a boot/replay desync the `score_timeline` localizes), until it goes green.
 
+## Compiling the real Infocom games (scope + progress)
+
+**Scope reality.** Of the 50 zwalker-verified games, only the **28 Infocom titles
+(`.z3`/`.z4`)** are even candidate targets for zorkie — the other **22 are Inform
+games** (`.z5`/`.z8` comp games: Photopia, Shade, Lost Pig, 9:05, …), and zorkie
+compiles ZIL, not Inform, so they can never be zorkie inputs. ~26 of the 28 have
+ZIL source vendored in zorkie's `tests/test-games/`. Also note the provenance gap:
+the historicalsource ZIL is a *different revision* than the shipped `.z`, so a
+zorkie build needs its own re-derived walkthrough regardless.
+
+**Zork 1 is the furthest-along real game and the best leverage** (all the Zork-era
+games share the original Infocom library — `gparser`/`gverbs`/`gmain`/`gclock` —
+so a shared-library fix helps many at once). It **compiles** (~107 KB) and, after
+the fixes below, **boots to the main-loop `READ` prompt**:
+
+- zorkie `f9b8fa3` — multi-operand `JE`/`EQUAL?` truncated large-constant
+  comparands (dictionary words); the verb-dispatch idiom never matched.
+- zorkie `97424a5` — `G?`/`L?` didn't evaluate a nested-form operand, so the
+  ubiquitous counter idiom `<G? <SET CNT <+ .CNT 1>> N>` compared against 0 and
+  never incremented → infinite loop. This is exactly what hung Zork 1 in
+  `V-VERSION`'s serial-number loop; fixing it got it to the prompt.
+
+**Still broken in Zork 1 (the remaining frontier), each a deep codegen area:**
+
+- **Room description** — after the banner, `<V-LOOK>` prints garbage ("echo echo
+  …", a stray string from `V-ECHO`) instead of "West of House"; both the room
+  *name* (`<TELL D ,HERE>`) and its `LDESC` (`<TELL <GETP ,HERE ,P?LDESC>>`) come
+  out wrong. A property-table / packed-string-address codegen problem.
+- **The parser** — typed commands read but don't dispatch to actions (`gparser`'s
+  `PARSER` + the verb/syntax tables). This is the biggest single subsystem.
+
+Getting even one full Infocom game to *compile and solve* through zorkie is
+therefore finishing a large part of the compiler back end (object/property/string
+codegen, the parser, verb dispatch, the compile-time macro evaluator for the
+library) — a multi-week effort, not a session. The bugs above were real and are
+fixed; the honest status is that Zork 1 boots and reaches the prompt but is not
+yet playable, and no real Infocom game is solvable through zorkie yet.
+
 ## Reuse these
 
 - `scripts/test_zorkie_compilation.py` — the existing zorkie↔ZWalker bridge
