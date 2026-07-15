@@ -1,0 +1,14 @@
+# REACTOR -- zorkie<->zwalker integration test #3.
+#
+# Verifies zorkie compiles games/zil/reactor.zil and zwalker drives it to the win.
+# Exercises arithmetic (<-> subtract, <+> add), comparison branches (<G?> JG, <L?>
+# JL), a global counter, and PRINTN.
+#
+# Run:  python3 scripts/test_zorkie_game.py reactor   =>  reactor: zorkie [L2] PASS
+#% WIN_TEXT: \*\*\* You have won \*\*\*
+lower
+lower
+lower
+lower
+lower
+vent

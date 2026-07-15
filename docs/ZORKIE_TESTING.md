@@ -195,22 +195,44 @@ Start where zorkie already round-trips, not with Zork 1 (which still hangs):
 
 ## Current status (2026-07-15)
 
-**The integration is proven end to end.** `scripts/test_zorkie_game.py microquest`
-reports **zorkie [L2] PASS** — the full loop works: zorkie compiles
-[`games/zil/microquest.zil`](../games/zil/microquest.zil) to a V3 story file,
-zwalker interprets it, and `replay_solve` drives the walkthrough
-([`walkthroughs/microquest_zorkie_win.txt`](../walkthroughs/microquest_zorkie_win.txt):
-`look`, `frotz`, `take gem`, `win`) to the game's real `*** You have won ***`
-ending, scoring 10. MicroQuest is a small self-contained game (a `READ` loop with
-dictionary word-matching and a scored win) written to use only ZIL that zorkie
-compiles today; it is the standing green regression that proves zorkie output
-runs and wins inside zwalker.
+**The integration is proven end to end, with a green three-game suite.**
+`scripts/test_zorkie_game.py` compiles each game's ZIL with zorkie, runs the
+resulting story file in zwalker, and replays a source-matched walkthrough to the
+game's real `*** You have won ***`:
 
-Getting there also fixed one zwalker robustness bug: `decode_zstring` had no
-recursion guard, so a malformed/cyclic abbreviation (or object-name detection
-reading non-string memory in a minimal game) recursed until the interpreter
-crashed. It now caps abbreviation depth (Z-Machine Standard §3.3 forbids nested
-abbreviations, so legitimate expansion is at most one level).
+```
+zorkie L2 suite: 3/3 games play-and-win  (microquest, mazekey, reactor)
+frontier (not counted): cloak -> not yet
+```
+
+The suite games live in [`games/zil/`](../games/zil/) and use only ZIL that
+zorkie compiles today, each exercising a different slice:
+
+- **microquest** — a `READ` loop, dictionary word-matching, verbs, a container,
+  and a scored win.
+- **mazekey** — room movement (a state machine), an inventory flag, a locked
+  door, and multi-word verb dispatch (`<EQUAL? .V ,W?UNLOCK ,W?OPEN>`).
+- **reactor** — arithmetic (`<->`, `<+>`) and comparison branches (`<G?>` JG,
+  `<L?>` JL) over a global counter.
+
+The suite's pass/fail is the harness exit code; cloak is reported but *not*
+counted (it is the frontier — see below).
+
+Two real bugs were found and fixed by this loop:
+
+- **zorkie codegen (fixed upstream, `f9b8fa3`)** — a multi-operand
+  `<EQUAL? x a b>` / `JE` mis-encoded a comparison constant > 255 as one byte,
+  truncating it, so dictionary-word constants (`W?FOO`, routinely > 255 — the
+  standard verb-dispatch idiom) never matched. Both the value-context and
+  branch-context paths now encode large constants as 2 bytes.
+- **zwalker robustness** — `decode_zstring` had no recursion guard, so a
+  malformed/cyclic abbreviation (or object-name detection reading non-string
+  memory in a minimal game) recursed until the interpreter crashed. It now caps
+  abbreviation depth (Z-Machine Standard §3.3 forbids nested abbreviations).
+
+(One further zorkie codegen quirk was noted, not yet fixed: `<AND …>` used as a
+`COND` predicate can mis-evaluate in some nestings; the suite games use nested
+`COND` instead of `AND` to stay robust.)
 
 ### The frontier: a real Infocom-library game (cloak)
 

@@ -1,0 +1,14 @@
+# MAZEKEY -- zorkie<->zwalker integration test #2.
+#
+# Verifies zorkie compiles games/zil/mazekey.zil and zwalker drives it to the win.
+# Exercises room movement (a HERE state machine), an inventory flag, a locked door,
+# and multi-word verb dispatch (multi-value <EQUAL? .V ,W?UNLOCK ,W?OPEN>) -- the
+# latter is what surfaced and drove the zorkie large-constant JE codegen fix.
+#
+# Run:  python3 scripts/test_zorkie_game.py mazekey   =>  mazekey: zorkie [L2] PASS
+#% WIN_TEXT: \*\*\* You have won \*\*\*
+north
+take key
+south
+unlock door
+east
