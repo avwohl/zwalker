@@ -106,9 +106,28 @@ class ZMachine:
             return 155 + self.DEFAULT_UNICODE_TABLE.index(v)
         return 63
 
+    def _init_interpreter_header(self) -> None:
+        """Fill in the interpreter-supplied header fields (Z-Machine Standard
+        1.0 §8.4, §11.1): interpreter number/version and the screen model.
+        These are the interpreter's responsibility, not the game file's, and
+        V4+ games may consult them -- e.g. Theatre (1995) checks the screen
+        size at boot and refuses to run when the bytes are left zero.
+        Re-applied on restart, since restart reloads original_data."""
+        if self.memory[0] >= 4:
+            self.memory[0x1E] = 6          # interpreter number: "IBM PC"
+            self.memory[0x1F] = ord('Z')   # interpreter version
+            self.memory[0x20] = 24         # screen height, lines
+            self.memory[0x21] = 80         # screen width, chars
+        if self.memory[0] >= 5:
+            self.memory[0x22:0x24] = (80).to_bytes(2, 'big')  # width, units
+            self.memory[0x24:0x26] = (24).to_bytes(2, 'big')  # height, units
+            self.memory[0x26] = 1          # font width, units (V5)
+            self.memory[0x27] = 1          # font height, units (V5)
+
     def __init__(self, data: bytes):
         self.original_data = bytes(data)
         self.memory = bytearray(data)
+        self._init_interpreter_header()
         self.header = self._parse_header()
 
         # CPU state
@@ -487,6 +506,11 @@ class ZMachine:
     def get_object_name(self, obj_num: int) -> str:
         prop_addr = self.get_object_prop_addr(obj_num)
         if not prop_addr:
+            return ""
+        # Scans past the real end of a small object table read garbage
+        # property pointers; treat out-of-range ones as nameless rather
+        # than crashing (seen with cloak.z3's ~20-object table).
+        if prop_addr >= len(self.memory):
             return ""
         text_len = self.read_byte(prop_addr)
         if text_len == 0:
@@ -879,6 +903,17 @@ class ZMachine:
         # Wishbringer r68: V-SCORE prints ,GSCORE (var 152) and ,GMOVES
         # (var 151); vars 17/18 hold the in-game clock.
         ('850501', 68): (152, 151),
+        # Cutthroats r23: V-SCORE prints ,RATING (var 132; RATING-MAX is
+        # var 130 = 250); vars 17/18 hold the in-game clock. Moves aren't
+        # counted ("Moves themselves aren't counted." -- globals.zil), so
+        # the turns slot maps to ,PRESENT-TIME (var 215), the master
+        # minutes-since-midnight clock that advances 1 per turn.
+        ('840809', 23): (132, 215),
+        # Trinity r15: V4+ games have no status-line convention at all, so
+        # vars 17/18 are ordinary game data. Trinity's own SCORE verb prints
+        # ,SCORE (var 170) and ,MOVES (var 149), verified against the game's
+        # "[Your score is N points out of 100, in M moves.]" output.
+        ('870628', 15): (170, 149),
     }
 
     def _read_global(self, var_num: int) -> int:
@@ -926,6 +961,8 @@ class ZMachine:
             return 400
         if "ENCHANTER" in text:
             return 400
+        if "LURKING HORROR" in text:
+            return 100
         if "STATIONFALL" in text:
             return 80
         if "PLANETFALL" in text:
@@ -951,6 +988,7 @@ class ZMachine:
             ('860904', 87): 600,   # Spellbreaker r87
             ('851003', 37): 80,    # Planetfall r37
             ('850501', 68): 100,   # Wishbringer r68
+            ('870918', 221): 100,  # The Lurking Horror r221
         }
         if (serial, release) in known:
             return known[(serial, release)]
@@ -1235,6 +1273,7 @@ class ZMachine:
     def restart(self) -> None:
         """Restart game"""
         self.memory = bytearray(self.original_data)
+        self._init_interpreter_header()
         self.header = self._parse_header()
         self.pc = self.header.initial_pc
         self.stack = []
@@ -2137,7 +2176,18 @@ class ZMachine:
             self.waiting_for_input = True
 
             def handle_char(input_text: str):
-                char = ord(input_text[0]) if input_text else 13
+                # Line-oriented drivers (walkthrough replays) cannot express a
+                # bare RETURN keypress: blank lines are stripped from command
+                # scripts before they reach the VM. Accept the literal words
+                # "enter"/"return" as the RETURN key (code 13) so raw-keypress
+                # menus (e.g. Theatre's journal reader) can be driven from a
+                # plain command list. Any other text supplies its first
+                # character, exactly as before.
+                t = input_text.strip().lower() if input_text else ""
+                if not input_text or t in ("enter", "return"):
+                    char = 13
+                else:
+                    char = ord(input_text[0])
                 self.set_variable(store_var, char)
                 self.waiting_for_input = False
                 self.pending_input_callback = None

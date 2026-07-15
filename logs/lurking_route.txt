@@ -1,0 +1,105 @@
+The Lurking Horror — verified route, milestone by milestone
+(point values from the ZIL source; 19 x 5 = 95 earned incrementally, the
+kill then sets SCORE=100 outright, absorbing the unreachable curtain 5.
+See logs/lurking_notes.md for file:line citations.)
+
+ 1. Terminal Room: sit, turn on pc, login 872325412 / password uhlersoth
+    (feelie copy protection), click menu, click paper, read paper, wait
+    through the three remaining pages of the corrupted text, faint.
+ 2. Yuggoth dream: down, down to the platform, TAKE STONE  [+5 = 5],
+    wait 3 turns; the lurker seizes you and you wake at your terminal.
+    The stone stays with you.
+ 3. Wait while the hacker fixes your files (he mentions "Lovecraft" and
+    the Department of Alchemy), then ASK HACKER ABOUT KEYS so he shows
+    off the master key.
+ 4. Kitchen (s, w): open fridge, take coke and carton, microwave the
+    Chinese food 5:00 on HI (heat 20 = hot but not ruined), take carton.
+ 5. Terminal Room: GIVE CARTON TO HACKER, then HACKER, GIVE ME MASTER KEY
+    [+5 = 10]. Drop the now-useless assignment.
+ 6. Elevator down (press down, wait for the doors, in): OPEN PANEL, TAKE
+    FLASHLIGHT, press 1, out at the Computer Center lobby, stairs down.
+ 7. Temporary Basement (e): take gloves and crowbar, WEAR GLOVES.
+ 8. Aero Basement (w, w): board forklift, start it, drive e/e/e into Dead
+    Storage, flashlight on, MOVE JUNK WITH FORKLIFT x4, dismount, e into
+    Ancient Storage [+5 = 15].
+ 9. OPEN MANHOLE WITH CROWBAR, down [+5 manhole = 20], n to the Renovated
+    Cave, down to the altar, TAKE KNIFE, back up/s/up, west out through
+    Dead Storage (flashlight off in the lit basement).
+10. Infinite Corridor west end (w, w, w to stairs, up, s): TAKE CONTAINER
+    (Frobozz floor wax). Follow the waxer east (it moves every 5 turns;
+    you cannot pass its room). At the emergency cabinet (INF-4): SMASH
+    CABINET WITH CROWBAR, TAKE AXE, CUT CORD WITH AXE, OPEN CONTAINER,
+    POUR WAX ON FLOOR — the maintenance man descends, charges, and slips
+    in the wax [+5 = 25]. Drop the empty container and leave him
+    slipping (he dissolves into squealing creatures a few turns later).
+11. Great Dome (w to INF-3, up): CLIMB ROPE wearing the gloves — it is a
+    tentacle; it dumps you on the catwalk and flees [+5 Top of Dome = 30].
+    Open the metal door, out into the blizzard (freeze clock ~22 turns),
+    up to the tip, TAKE PLUG, DROP PLUG, TAKE PAPER — the suicide note
+    [+5 = 35]. Back inside, LOWER LADDER, down, down.
+12. Brown Building (e, e, n, d, se): TAKE BOOTS, WEAR BOOTS, up to the
+    lobby, up the long stairs, UNLOCK DOOR WITH KEY, open, w onto the
+    skyscraper roof, up into the weather dome. The flier smashes against
+    the dome. DIG IN DIRT (the peach-tree tub), TAKE HAND [+5 = 40],
+    down to the roof — the flier is waiting — THROW STONE AT CREATURE:
+    both go over the parapet, the flier chasing the stone [+5 = 45].
+    Inside, down to the lobby, OUT to the Small Courtyard, TAKE STONE,
+    back in.
+13. Alchemy (d, nw, u, s to INF-5, s, knock on door, wait): the professor
+    ushers you in. SHOW NOTE TO PROFESSOR (his student's suicide note —
+    his manner turns predatory), s into the lab: he chalks you into the
+    pentagram as the sacrifice. Wait 2 turns (cutting earlier gets your
+    inventory confiscated), CUT LINE WITH KNIFE, EXIT PENTAGRAM, MOVE
+    BENCH, OPEN TRAPDOOR, DOWN — the summoned thing takes the professor
+    instead [+5 = 50]. Flashlight on (the tunnel is pitch dark and
+    darkness kills).
+14. Back up through the trapdoor: the lab is wrecked, the vat intact.
+    PUT HAND IN VAT (Elixir of Life), wait 2 turns, TAKE HAND — animated,
+    it perches on your shoulder [+5 = 55]. Drink the Coke here (pushes
+    the turn-200 exhaustion clock past the end of the game).
+15. Walk the corridor west; the urchin (random wanderer, seed-pinned)
+    turns up — SHOW HAND TO URCHIN: he flees screaming and drops the
+    BOLT CUTTER; take it [+5 = 60].
+16. Stash axe + bolt cutter + flask (fetched from the Temporary Lab,
+    flashlight on inside) + knife + coke at the Basement elevator: the
+    Tomb crack rejects anything bigger than the crowbar.
+17. Tomb (w, w, d, nw): UNLOCK PADLOCK WITH KEY, TAKE PADLOCK, OPEN
+    HATCH, flashlight on, down into the muggy Steam Tunnel [+5 = 65].
+18. Rats: e to the valve, OPEN VALVE WITH CROWBAR (loosens it), wait 3
+    turns while the rat horde arrives and attacks, OPEN VALVE WITH
+    CROWBAR again — live steam scalds the troop [+5 = 70]. CLOSE VALVE,
+    e, e to the wall triad, MOVE BRICK WITH CROWBAR, MOVE NEW BRICK WITH
+    CROWBAR — a hole with a steel reinforcing rod. Return up the hatch.
+19. Elevator pit: at the Basement doors OPEN DOORS WITH CROWBAR, PUT
+    CROWBAR IN DOORS (wedge), s down into the Concrete Box [+5 = 75].
+    TAKE CHAIN, PUT CHAIN AROUND ROD, LOCK CHAIN WITH PADLOCK, climb up,
+    PUT CHAIN ON HOOK (the machinery under the parked car), TAKE CROWBAR.
+20. Ride: upstairs, press up, in, PRESS 2 — the car climbs, the chain
+    snaps taut and rips the rod and half the wall out from below
+    [+5 = 80]. Out at 2, stairs back down to the Basement.
+21. Final descent (one-way): take axe/cutter/flask, wedge the doors
+    again, flashlight on, into the pit, N through the ripped wall, w x5
+    along the steam tunnel, w into the Muddy Tunnel, d to the Large
+    Chamber of urchin slots, CUT WIRE WITH CUTTER — the pseudo-urchins
+    collapse [+5 = 85].
+22. Wet-tunnel maze (fixed layout): d, n, d, s, s, d to the slime
+    curtain. OPEN FLASK, POUR LIQUID ON CURTAIN — liquid nitrogen
+    freezes and shatters it, exposing an ancient door [+5 = 90].
+    UNLOCK DOOR WITH KEY, open, s — it locks behind you.
+23. Inner Lair (hacker death-countdown running): the hand dives into the
+    pool. OPEN COVER, UNPLUG COAXIAL CABLE, SEARCH POOL (finds the
+    high-voltage line), TAKE LINE, CUT LINE WITH AXE x3 (the hacker
+    walks in and is absorbed by the mass meanwhile), TAKE LINE, PUT LINE
+    IN SOCKET — sparks; the mass compacts into the frob [+5 = 95].
+24. Wait one turn (it tenses; the stone glows red-hot), THROW STONE AT
+    CREATURE — it swallows itself [SCORE set to 100]. TAKE STONE: it
+    cracks open, something small flies off into the dark, the hacker
+    crawls out of the mud ("Can I have my key back?") — game over,
+    100/100, President of the Institute.
+
+Point ledger (19 x 5 incremental + final set-to-100):
+  5 stone, 10 master key, 15 Ancient Storage, 20 manhole, 25 waxer man,
+  30 Top of Dome, 35 note, 40 hand, 45 flier, 50 professor, 55 animated
+  hand, 60 bolt cutter, 65 Steam Tunnel, 70 rats/valve, 75 Concrete Box,
+  80 brick wall, 85 urchin wire, 90 curtain, 95 frob appears,
+  100 frob destroyed (SETG SCORE 100).

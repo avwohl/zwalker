@@ -7,6 +7,7 @@
   "max_score": 400,
   "won": true,
   "died": false,
+  "win_text_seen": false,
   "turns": 300,
   "num_commands": 206,
   "score_timeline": [

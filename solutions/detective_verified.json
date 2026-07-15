@@ -1,0 +1,192 @@
+{
+  "game": "games/zcode/detective.z5",
+  "walkthrough": "walkthroughs/detective_verified_360.txt",
+  "solver": "replay+seed",
+  "rng_seed": 1,
+  "score": 360,
+  "max_score": 360,
+  "won": true,
+  "died": false,
+  "win_text_seen": true,
+  "turns": 45,
+  "num_commands": 45,
+  "score_timeline": [
+    {
+      "step": 0,
+      "command": "get paper",
+      "score": 20
+    },
+    {
+      "step": 2,
+      "command": "get pistol",
+      "score": 30
+    },
+    {
+      "step": 5,
+      "command": "w",
+      "score": 40
+    },
+    {
+      "step": 6,
+      "command": "e",
+      "score": 50
+    },
+    {
+      "step": 8,
+      "command": "get note",
+      "score": 60
+    },
+    {
+      "step": 11,
+      "command": "get wood",
+      "score": 70
+    },
+    {
+      "step": 13,
+      "command": "n",
+      "score": 80
+    },
+    {
+      "step": 18,
+      "command": "w",
+      "score": 90
+    },
+    {
+      "step": 20,
+      "command": "n",
+      "score": 100
+    },
+    {
+      "step": 22,
+      "command": "e",
+      "score": 110
+    },
+    {
+      "step": 25,
+      "command": "get hamburger",
+      "score": 120
+    },
+    {
+      "step": 27,
+      "command": "n",
+      "score": 130
+    },
+    {
+      "step": 28,
+      "command": "e",
+      "score": 140
+    },
+    {
+      "step": 29,
+      "command": "n",
+      "score": 150
+    },
+    {
+      "step": 30,
+      "command": "n",
+      "score": 160
+    },
+    {
+      "step": 31,
+      "command": "n",
+      "score": 170
+    },
+    {
+      "step": 32,
+      "command": "n",
+      "score": 180
+    },
+    {
+      "step": 33,
+      "command": "e",
+      "score": 190
+    },
+    {
+      "step": 35,
+      "command": "w",
+      "score": 200
+    },
+    {
+      "step": 37,
+      "command": "n",
+      "score": 210
+    },
+    {
+      "step": 38,
+      "command": "n",
+      "score": 220
+    },
+    {
+      "step": 39,
+      "command": "w",
+      "score": 230
+    },
+    {
+      "step": 40,
+      "command": "n",
+      "score": 240
+    },
+    {
+      "step": 41,
+      "command": "w",
+      "score": 250
+    },
+    {
+      "step": 42,
+      "command": "n",
+      "score": 260
+    },
+    {
+      "step": 43,
+      "command": "n",
+      "score": 360
+    }
+  ],
+  "commands": [
+    "get paper",
+    "w",
+    "get pistol",
+    "e",
+    "n",
+    "w",
+    "e",
+    "w",
+    "get note",
+    "e",
+    "e",
+    "get wood",
+    "w",
+    "n",
+    "n",
+    "w",
+    "n",
+    "n",
+    "w",
+    "e",
+    "n",
+    "e",
+    "e",
+    "e",
+    "s",
+    "get hamburger",
+    "n",
+    "n",
+    "e",
+    "n",
+    "n",
+    "n",
+    "n",
+    "e",
+    "w",
+    "w",
+    "e",
+    "n",
+    "n",
+    "w",
+    "n",
+    "w",
+    "n",
+    "n",
+    "u"
+  ]
+}

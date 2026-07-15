@@ -61,3 +61,5 @@ tests/*_walkthrough.json
 .env~
 .env.local
 logs/zork3_source_*.txt
+logs/lurking_source_*.txt
+logs/lurking_zil/

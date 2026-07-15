@@ -1,5 +1,58 @@
 # Changelog
 
+## 2026-07-14 - Verified Complete Solves: 26-game batch — corpus now 35 games across V1/V3/V4/V5/V8
+
+- **26 new verified complete solves** join the 9 already in the repo, taking the
+  corpus to **35 games, every one played start to finish and reproducibly won**
+  under a pinned RNG seed (`scripts/replay_solve.py`; JSON + documented
+  walkthrough per game). The batch spans every Z-machine story-file version
+  the interpreter plays: V1, V3, V4, V5, V8.
+  - Infocom: The Lurking Horror 100/100, Trinity 100/100 (V4),
+    A Mind Forever Voyaging (V4, ending-text win), Infidel 400/400,
+    Cutthroats 250/250, Moonmist (ending-text win), Plundered Hearts 25/25,
+    The Witness (ending-text win), and Zork I Release 5 350/350 — a 1980
+    **V1** story file, the first V1 verified solve.
+  - Classics and comp games: Adventure/Colossal Cave 350/350 (V3 port),
+    Adventureland 100/100, Detective 360/360, 9:05, Photopia, Shade,
+    All Roads, Balances 51/51, The Edifice, The Acorn Court 30/30,
+    Suveh Nux, Cloak of Darkness, Theatre 50/50, Lost Pig 7/7,
+    The Dreamhold, Castle Adventure!, Cold Iron (V8).
+- **The Lurking Horror 100/100** (won, 310 turns, 306 commands, RNG seed 1,
+  r221/s870918 from eblong.com): all 19 five-point ZIL scoring events plus the
+  endgame's `SETG SCORE 100` on killing the horror; the win text is the
+  "President of the Institute" ending. Only two RNG sources matter — the
+  urchin's 10-turn wander and a 25% random elevator call — and the recorded
+  route rides them deterministically at seed 1; the adaptive recorder
+  (`scripts/solve_lurking_adaptive.py`) also carries urchin-hunt and
+  elevator-recall recoveries, winning 6 of seeds 1-8. Research synthesis with
+  ZIL file:line citations in `logs/lurking_notes.md`.
+- **Unscored games are now verifiable**: walkthrough headers can carry
+  machine directives — `#% WIN_TEXT: <regex>` (the win is asserted by the
+  game's true ending text) and `#% MAX_SCORE: <N>` (for games whose max the
+  interpreter's banner/serial map doesn't know). The win criterion requires
+  the declared ending text and/or the max score, and the verified JSON
+  records `win_text_seen`.
+- **Interpreter fixes** shaken out by the batch (all 35 games re-verified
+  against the final code):
+  - V4+ games get the interpreter-supplied header bytes (screen size,
+    interpreter number) filled in at boot and on restart — Theatre and
+    Trinity refuse to run without them.
+  - Score-variable overrides for Cutthroats r23 (its RATING global; the
+    turn slot maps to its minutes-since-midnight clock) and Trinity r15
+    (V4+ has no status-line convention; its SCORE/MOVES globals are mapped
+    per build), plus max-score map entries for The Lurking Horror.
+  - `read char` accepts the literal words "enter"/"return" as the RETURN
+    key so raw-keypress menus (Theatre's journal) can be driven from a
+    plain command list.
+  - Out-of-range property pointers in small object tables read as nameless
+    instead of crashing (cloak.z3).
+  - `replay_solve` death detection: bare "you are dead" replaced with the
+    Zork-family kill phrasing — Plundered Hearts' mandatory pre-duel taunt
+    ("You will have no need of her when you are dead.") false-positived.
+- Docs overhauled for the batch: README and docs/index.html verified tables
+  now carry a Z-version column and are generated from the verified JSONs;
+  WALKTHROUGHS.html regenerated.
+
 ## 2026-07-14 - Verified Complete Solve: Stationfall (Planetfall Series Complete)
 
 - **Stationfall solved 80/80** (won, GST 5700 on day 2, 375 commands, RNG

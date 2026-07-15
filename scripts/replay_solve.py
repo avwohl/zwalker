@@ -17,6 +17,7 @@ Usage:
 """
 import sys
 import os
+import re
 import json
 import argparse
 
@@ -36,7 +37,10 @@ DEATH_MARKERS = (
     # ("You are likely to be eaten by a grue."); match the actual kill text.
     # "fills your lungs" alone would false-positive on Enchanter's west gate
     # ("a blast of cold air fills your lungs"); require the drowning phrasing.
-    "you have died", "removes your head", "you are dead",
+    # Bare "you are dead" false-positived on Plundered Hearts' mandatory
+    # pre-duel taunt ("You will have no need of her when you are dead.");
+    # require the Zork-family kill phrasing ("I'm afraid you are dead.").
+    "you have died", "removes your head", "afraid you are dead",
     "slavering fangs of a lurking grue", "water fills your lungs",
     "you have been killed", "*** you have died ***",
 )
@@ -54,6 +58,26 @@ def load_commands(path):
             if ln.strip() and not ln.strip().startswith("#")]
 
 
+def load_directives(path):
+    """Machine directives from walkthrough header comments (still plain
+    comments to load_commands, so old walkthroughs are unaffected):
+
+        #% WIN_TEXT: <regex>   -- the game is won when this matches any output
+                                  (needed for scoreless games, where there is
+                                  no max score to reach)
+        #% MAX_SCORE: <N>      -- max score for games the interpreter's
+                                  banner/serial map doesn't know
+    """
+    d = {}
+    if not path.endswith(".json"):
+        for ln in open(path):
+            s = ln.strip()
+            if s.startswith("#%"):
+                key, _, val = s[2:].partition(":")
+                d[key.strip().upper().replace(" ", "_")] = val.strip()
+    return d
+
+
 def normalize(cmd):
     c = cmd.strip().lower()
     if c in VOCAB:
@@ -64,15 +88,16 @@ def normalize(cmd):
     return c
 
 
-def run_once(data, cmds, seed):
+def run_once(data, cmds, seed, win_rx=None, max_override=None):
     """Replay the walkthrough under a fixed seed; return (score, max, died,
-    score_timeline, turns)."""
+    score_timeline, turns, win_seen)."""
     w = GameWalker(data)
     w.start()
     w.vm.rng.seed(seed)            # pin RNG -> deterministic combat
     timeline = []
     prev = w.vm.get_score()
     died = False
+    win_seen = False
     for i, raw in enumerate(cmds):
         try:
             r = w.try_command(normalize(raw))
@@ -88,27 +113,50 @@ def run_once(data, cmds, seed):
         if s != prev:
             timeline.append({"step": i, "command": raw, "score": s})
             prev = s
+        if win_rx is not None and win_rx.search(out):
+            win_seen = True
         if any(m in out.lower() for m in DEATH_MARKERS):
             died = True
-    return w.vm.get_score(), w.max_score, died, timeline, w.vm.get_turns()
+    maxs = max_override if max_override is not None else w.max_score
+    return w.vm.get_score(), maxs, died, timeline, w.vm.get_turns(), win_seen
+
+
+def is_won(score, maxs, died, win_seen, win_rx):
+    """The win criterion: reach max score when one is known; when the
+    walkthrough declares a WIN_TEXT, that text must also have appeared
+    (and it alone decides for scoreless games)."""
+    if died:
+        return False
+    if win_rx is not None:
+        return win_seen and (maxs is None or score == maxs)
+    return maxs is not None and score == maxs
 
 
 def solve(game_path, wt_path, seeds=24):
     data = open(game_path, "rb").read()
     cmds = load_commands(wt_path)
+    directives = load_directives(wt_path)
+    win_rx = (re.compile(directives["WIN_TEXT"], re.I | re.S)
+              if "WIN_TEXT" in directives else None)
+    max_override = (int(directives["MAX_SCORE"])
+                    if "MAX_SCORE" in directives else None)
     best = None
     for seed in range(1, seeds + 1):
-        score, maxs, died, tl, turns = run_once(data, cmds, seed)
+        score, maxs, died, tl, turns, win_seen = run_once(
+            data, cmds, seed, win_rx, max_override)
         cand = {"seed": seed, "score": score, "max_score": maxs, "died": died,
-                "timeline": tl, "turns": turns}
+                "timeline": tl, "turns": turns, "win_seen": win_seen}
         better = (best is None
                   or (not died and best["died"])
                   or (died == best["died"] and score > best["score"]))
         if better:
             best = cand
-        if maxs is not None and score == maxs and not died:
+        if is_won(score, maxs, died, win_seen, win_rx):
+            best = cand
             break  # perfect verified win — stop searching
     best["commands"] = cmds
+    best["won"] = is_won(best["score"], best["max_score"], best["died"],
+                         best["win_seen"], win_rx)
     return best
 
 
@@ -121,7 +169,7 @@ def main():
     a = ap.parse_args()
 
     best = solve(a.game, a.walkthrough, a.seeds)
-    won = best["max_score"] is not None and best["score"] == best["max_score"]
+    won = best["won"]
     print(f"{os.path.basename(a.walkthrough)}: VERIFIED {best['score']}/{best['max_score']} "
           f"at seed {best['seed']} | {len(best['commands'])} cmds | "
           f"died={best['died']} | won={won}")
@@ -134,6 +182,7 @@ def main():
         "game": a.game, "walkthrough": a.walkthrough, "solver": "replay+seed",
         "rng_seed": best["seed"], "score": best["score"],
         "max_score": best["max_score"], "won": won, "died": best["died"],
+        "win_text_seen": best["win_seen"],
         "turns": best["turns"], "num_commands": len(best["commands"]),
         "score_timeline": best["timeline"], "commands": best["commands"],
     }, open(out, "w"), indent=2)

@@ -1,0 +1,21 @@
+{
+  "game": "games/zcode/cloak.z3",
+  "walkthrough": "walkthroughs/cloak_verified_win.txt",
+  "solver": "replay+seed",
+  "rng_seed": 1,
+  "score": 0,
+  "max_score": null,
+  "won": true,
+  "died": false,
+  "win_text_seen": true,
+  "turns": 4,
+  "num_commands": 5,
+  "score_timeline": [],
+  "commands": [
+    "w",
+    "hang cloak on hook",
+    "e",
+    "s",
+    "read message"
+  ]
+}

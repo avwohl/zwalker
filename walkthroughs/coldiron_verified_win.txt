@@ -1,0 +1,73 @@
+# Cold Iron (Andrew Plotkin as "Lyman Clive Charles", Release 6, serial 111119,
+# Inform 7 build 6G60, Z-machine V8) - IFComp 2011
+# VERIFIED COMPLETE SOLVE: won=True (win text), died=False
+#
+# Reproduce with the RNG-pinned replay harness (free, no API):
+#   cd ~/src/zwalker
+#   python3 scripts/replay_solve.py games/zcode/coldiron.z8 walkthroughs/coldiron_verified_win.txt --seeds 4
+#   => coldiron_verified_win.txt: VERIFIED 0/None at seed 1 | 30 cmds | died=False | won=True
+#
+# Ending: the game's single true ending ("*** The End ***"). Cold Iron is a
+# two-protagonist tale. A farmer who "knows about piskeys" hunts his missing
+# axe through the forest, guided by Reverd Pearson's book of fairy tales:
+# a found glass bead is traded to a vanishing stranger for a knife, the
+# knife's shadow on the oak stump points the way, and a holly bush on a
+# small hill yields branches - and a rusty old axe head. The instant the
+# farmer grips the cold iron, the story pivots: you are now a modern-day
+# clergyman in the woods behind the Old College, holding a corroded
+# artifact. Twilight gloom blocks the path home until you do exactly what
+# the tale prescribed - weave the holly branches into a wreath, wash it in
+# the stream at Dim Copse, and wear it - after which you pass unseen
+# through the shadows to Chapel Green. In the chapel the Reverend muses
+# about publishing his fancies as a book of fairy tales ("If it helps
+# banish the fears of a lonely old Reverend, then all the better."),
+# closing the loop with the story book from the opening scene.
+#
+# The game is scoreless, so this walkthrough carries a WIN_TEXT directive
+# matching the final chapel musing together with the "*** The End ***"
+# banner, both printed by the last command's output.
+#
+# Deterministic, no RNG on route: the game has no combat, no timers, and no
+# random hazards; every seed 1..8 replays identically to the same ending
+# (spot-checked during verification). The pinned seed is only the harness's
+# standard reproducibility guarantee.
+#
+# Quirk: taking the axe head triggers a "(Hit any key...)" keypress prompt
+# at the protagonist switch; the lone "z" below flushes it (the keystroke is
+# consumed by the prompt, not executed as a WAIT).
+#
+#% WIN_TEXT: banish the fears of a lonely old Reverend.*\*\*\* The End \*\*\*
+#
+# Route follows the author's official walkthrough
+# (eblong.com/zarf/zweb/coldiron/walkthrough.txt), machine-realigned for the
+# keypress prompt; replay-verified by scripts/replay_solve.py.
+get book
+read book
+w
+s
+sw
+w
+get glass
+read book
+s
+give glass to man
+get knife
+read book
+se
+put knife in stump
+examine shadow
+ne
+examine holly
+read book
+get branches
+get axe
+z
+d
+nw
+examine gloom
+weave holly
+wash holly
+wear holly
+nw
+n
+n

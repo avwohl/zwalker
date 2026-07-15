@@ -1,0 +1,165 @@
+# Shade (Release 3, serial 001127, Inform v6.21/6.10, Z-machine V5)
+# by Andrew Plotkin, writing as "Ampe R. Sand" (IF Comp 2000)
+# VERIFIED COMPLETE SOLVE: won=True (win text), died=False
+#
+# Reproduce with the RNG-pinned replay harness (free, no API):
+#   cd ~/src/zwalker
+#   python3 scripts/replay_solve.py games/zcode/shade.z5 walkthroughs/shade_verified_win.txt --seeds 4
+#   => shade_verified_win.txt: VERIFIED 0/None at seed 1 | 126 cmds | died=False | won=True
+#
+# Shade is scoreless - a one-room psychological piece with no score, no
+# deaths, and only one ending - so this walkthrough carries a WIN_TEXT
+# directive matched from the true final passage.
+#
+# Ending: the apartment illusion collapses item by item into sand until
+# you are sitting in the open desert at sunrise, watching a tiny human
+# figure (the "real" you, a lost Death Valley Om hiker) stagger, fall,
+# and die in the sand. The last exchange - the dead figure crawling out
+# to say "You win ... Okay, my turn again" - is the game's closing text,
+# followed by the *** SHADE *** epitaph banner. The WIN_TEXT anchors on
+# the unique "Okay, my turn again" line, NOT on *** SHADE ***, because
+# the same banner is printed at boot.
+#
+# Why a pinned seed: the route's structure is deterministic (the story is
+# driven by the to-do list and a fixed event ladder: thirst -> tickets ->
+# helicopter -> vacuum/alarm -> hunger -> the sand cascade -> taxi ->
+# desert), but Shade burns RNG constantly on flavor - radio world-music
+# tune names, news snippets, the darting movements of the tiny figure -
+# so replays only reproduce exactly under a pinned seed. Seed 1 wins.
+# Two [Hit any key...] prompts occur mid-route (after "x mirror" reveals
+# the street reflection, and after "sit" melts the mirage); the next
+# command in the list flushes each, so no extra filler is needed. The
+# closing RESTART/RESTORE/QUIT prompt arrives inside the final "wait"
+# output, after the win text, and needs no answer.
+#
+#% WIN_TEXT: "You win," it says\. "Okay, my turn again\."
+#
+# Route derived from David Welbourn's Release 3 solution (plover.net),
+# machine-validated command by command on this interpreter; replay-verified
+# by scripts/replay_solve.py.
+i
+x futon
+stand
+look
+x desk
+x computer
+x papers
+x list
+x book
+x lamp
+x shade
+x window
+stand
+x luggage
+x plant
+x mirror
+x door
+x stereo
+x crate
+x kitchen
+x glass
+take glass
+fill glass with water
+enter bathroom
+fill glass with water
+x water
+drink water
+out
+x list
+take list
+search papers
+x luggage
+search luggage
+x closet
+x jacket
+search jacket
+take tickets
+look
+x sand
+listen
+look through window
+open shade
+x list
+x vacuum
+take vacuum
+vacuum
+x sand
+open vacuum
+z
+z
+z
+read book
+enter kitchen
+x fridge
+open fridge
+take jar
+x jar
+close fridge
+x cupboard
+open cupboard
+take box
+x box
+open jar
+empty jar
+open box
+out
+x list
+x plant
+enter bathroom
+fill glass with water
+x list
+out
+x closet
+open closet
+x crate
+open crate
+enter kitchen
+turn on tap
+x stove
+turn on stove
+x list
+open fridge
+enter bathroom
+turn on shower
+out
+search luggage
+x list
+enter kitchen
+x cupboard
+close cupboard
+out
+search papers
+flush toilet
+out
+touch mirror
+look in mirror
+walk through mirror
+x list
+open shade
+look through window
+x door
+open door
+x mirror
+x list
+take luggage
+g
+sit
+x dunes
+x shade
+x sun
+x futon
+x stereo
+x computer
+x book
+take book
+turn off stereo
+turn off computer
+sit on futon
+x figure
+figure, hi
+touch figure
+take figure
+kiss figure
+sleep
+x book
+wait

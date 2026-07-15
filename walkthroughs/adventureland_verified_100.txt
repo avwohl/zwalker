@@ -1,0 +1,211 @@
+# Adventureland (Scott Adams #1, Inform port by Graham Nelson, Release 4, serial 970902, Z-machine V5)
+# VERIFIED COMPLETE SOLVE: 100/100, won=True, died=False
+#
+# Reproduce with the RNG-pinned replay harness (free, no API):
+#   cd ~/src/zwalker
+#   python3 scripts/replay_solve.py games/zcode/adventureland.z5 walkthroughs/adventureland_verified_100.txt --seeds 4
+#   => adventureland_verified_100.txt: VERIFIED 100/100 at seed 3 | 146 cmds | died=False | won=True
+#
+# Ending: all 13 *TREASURES* deposited in the hollow stump. The game checks
+# the stump every turn; the instant the 13th treasure (the rug, re-dropped
+# after its last maze-escape duty) lands, it prints "Congratulations! By
+# finding and depositing all 13 *TREASURES*, you have solved Scott Adams's
+# 'Adventureland'..." followed by "*** You have won ***" at 100/100.
+# Scoring: 11 treasures x 7 points + dragon eggs 12 + firestone 11 = 100.
+#
+# This port differs from the classic TRS-80 walkthroughs in load-bearing
+# ways (all confirmed against the game binary, and cross-checked in the
+# port's published Inform source, if-archive/games/source/inform/
+# Adventureland.inf, the exact Release 4 / 970902 build):
+#   - The genie ignores the lamp until you GET SLIME in the swamp ("magic
+#     oil attracts magic lamp"): that both fills the lamp (125 turns) and
+#     enables exactly two RUB LAMP gifts (ring, bracelet). Rubbing done in
+#     the stump so both gifts land already-deposited. A third rub is
+#     punished - never do it.
+#   - SING (not YELL) startles the bear off the far ledge.
+#   - DROP BRICKS alone dams the lava and reveals the *FIRESTONE* - no
+#     water-pouring step exists here.
+#   - The maze's only exit is the magic word AWAY, which works solely in
+#     the room with the "ALADDIN WAS HERE" scratchings and only while
+#     carrying the rug - so the rug is taken back OUT of the stump for the
+#     final bricks/firestone trip, then re-deposited to trigger the win.
+#   - Inventory is capped at 6 items; the route never exceeds it.
+#   - The mirror shatters unless the rug is lying in the room when it is
+#     dropped, so the rug reaches the stump before the mirror does.
+#
+# Why a pinned seed: four live RNG streams gate the route. (1) Standing in
+# the swamp while the oily slime is still there risks a 5%/turn chigger
+# bite (untreated bites infect and then kill) - the route takes the slime
+# on its second swamp turn, leaving a single exposed roll. (2) Carried mud
+# dries and falls off at 5%/turn unless bottled water is also carried; the
+# route keeps the water until the last possible moment (drunk in the hive,
+# one turn before bottling the bees). (3) Bottled bees suffocate at
+# 8%/turn, so the hive-to-meadow dash is the minimum 9 turns. (4) The
+# released bees sting at 8%/turn unless mud is in hand or on the ground -
+# the route drops its mud in the meadow, permanently disarming that roll
+# for the later firestone transit. The fish involves no RNG at all when
+# carried with both the net and the bottled water. Seed 3 threads every
+# gate; the lamp's 125-turn charge covers all four underground trips with
+# ~50 turns to spare.
+#
+#% MAX_SCORE: 100
+#% WIN_TEXT: you have solved Scott Adams
+#
+# Generated from a machine-played route (GameWalker pathway, seed pinned
+# after start) informed by the port's Inform source; replay-verified by
+# scripts/replay_solve.py.
+
+# --- Surface: axe from the lakeside, ox teleported out of the bog via BUNYON ---
+e
+e
+get axe
+d
+bunyon
+swim
+# --- Swamp: take the slime immediately (chigger exposure ends; lamp arrives full) ---
+w
+get slime
+w
+get axe
+get ox
+get fruit
+e
+u
+get keys
+d
+chop tree
+# --- Stump: deposit ox + fruit, genie drops ring + bracelet where they already count ---
+go stump
+drop ox
+drop fruit
+rub lamp
+rub lamp
+get bottle
+d
+get rubies
+u
+drop rubies
+d
+d
+unlock door with keys
+open door
+drop keys
+drop axe
+# --- Trip 1 (lamp on): wine bladder, flint, rug, net; AWAY out of the maze ---
+light lamp
+d
+d
+s
+get bladder
+n
+d
+n
+get flint
+w
+n
+get rug
+d
+get net
+u
+u
+away
+turn off lamp
+s
+get gas
+go stump
+drop rug
+drop net
+# --- Trip 2: blow the bricked window, SING the bear off the ledge, mirror + crown ---
+d
+d
+light lamp
+d
+d
+s
+u
+drop bladder
+burn bladder
+e
+jump
+sing
+get mirror
+e
+get crown
+w
+jump
+w
+d
+n
+u
+u
+turn off lamp
+u
+u
+drop mirror
+drop crown
+drop flint
+# --- Fish: net + bottled water in hand = the fish neither escapes nor dies ---
+get net
+n
+n
+e
+get fish
+w
+go stump
+drop fish
+drop net
+# --- Trip 3: mud shields us in the hive; bees released on the dragon yield the eggs ---
+n
+get mud
+go stump
+d
+d
+light lamp
+d
+d
+n
+get honey
+drink water
+get bees
+s
+u
+u
+u
+u
+n
+n
+drop bees
+get eggs
+drop mud
+turn off lamp
+s
+go stump
+drop eggs
+drop honey
+# --- Trip 4: rug back in hand for AWAY; bricks dam the lava -> firestone; win on the final drop ---
+get rug
+d
+d
+light lamp
+d
+d
+s
+u
+get bricks
+d
+n
+d
+n
+w
+n
+d
+drop bricks
+get firestone
+u
+u
+away
+turn off lamp
+s
+go stump
+drop firestone
+drop rug

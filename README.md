@@ -15,42 +15,124 @@
 
 ## Verified Results
 
-The headline result is both classic Infocom trilogies plus the complete
-Planetfall series and Wishbringer — nine games, played start to finish and
-reproducibly won, verified by deterministic replay against a fixed RNG seed:
+The headline result is a corpus of verified complete solves spanning Z-machine
+versions V1 through V8 — Infocom classics (both Zork-era trilogies, the
+Planetfall series, Trinity, A Mind Forever Voyaging) alongside modern
+classics (Photopia, Shade, Lost Pig, The Dreamhold). Every game is played
+start to finish and reproducibly won, verified by deterministic replay
+against a fixed RNG seed:
 
-| Game | Score | Won | Turns | Commands | Seed | Solution | Walkthrough |
-|------|-------|-----|-------|----------|------|----------|-------------|
-| Zork I | 350/350 | ✅ | 499 | 431 | 3 | [JSON](solutions/zork1_verified.json) | [Text](walkthroughs/zork1_verified_350.txt) |
-| Zork II | 400/400 | ✅ | 416 | 386 | 2 | [JSON](solutions/zork2_verified.json) | [Text](walkthroughs/zork2_verified_400.txt) |
-| Zork III | 7/7 | ✅ | 241 | 216 | 1 | [JSON](solutions/zork3_verified.json) | [Text](walkthroughs/zork3_verified_7.txt) |
-| Enchanter | 400/400 | ✅ | 300 | 206 | 1 | [JSON](solutions/enchanter_verified.json) | [Text](walkthroughs/enchanter_verified_400.txt) |
-| Sorcerer | 400/400 | ✅ | 390 | 234 | 2 | [JSON](solutions/sorcerer_verified.json) | [Text](walkthroughs/sorcerer_verified_400.txt) |
-| Spellbreaker | 600/600 | ✅ | 531 | 422 | 1 | [JSON](solutions/spellbreaker_verified.json) | [Text](walkthroughs/spellbreaker_verified_600.txt) |
-| Planetfall | 80/80 | ✅ | 5165 (GST) | 444 | 1 | [JSON](solutions/planetfall_verified.json) | [Text](walkthroughs/planetfall_verified_80.txt) |
-| Wishbringer | 100/100 | ✅ | 162 | 179 | 1 | [JSON](solutions/wishbringer_verified.json) | [Text](walkthroughs/wishbringer_verified_100.txt) |
-| Stationfall | 80/80 | ✅ | 5700 (GST) | 375 | 1 | [JSON](solutions/stationfall_verified.json) | [Text](walkthroughs/stationfall_verified_80.txt) |
+| Game | Z-ver | Score | Won | Turns | Commands | Seed | Solution | Walkthrough |
+|------|-------|-------|-----|-------|----------|------|----------|-------------|
+| 9:05 | V5 | Win (unscored) | ✅ | 0 | 20 | 1 | [JSON](solutions/905_verified.json) | [Text](walkthroughs/905_verified_win.txt) |
+| A Mind Forever Voyaging | V4 | Win (unscored) | ✅ | 0 | 623 | 1 | [JSON](solutions/amfv_verified.json) | [Text](walkthroughs/amfv_verified_win.txt) |
+| Adventure (Colossal Cave) | V3 | 350/350 | ✅ | 290 | 289 | 3 | [JSON](solutions/advent_verified.json) | [Text](walkthroughs/advent_verified_350.txt) |
+| Adventureland | V5 | 100/100 | ✅ | 146 | 146 | 3 | [JSON](solutions/adventureland_verified.json) | [Text](walkthroughs/adventureland_verified_100.txt) |
+| All Roads | V5 | Win (unscored) | ✅ | 0 | 185 | 1 | [JSON](solutions/allroads_verified.json) | [Text](walkthroughs/allroads_verified_win.txt) |
+| Balances | V5 | 51/51 | ✅ | 123 | 124 | 1 | [JSON](solutions/balances_verified.json) | [Text](walkthroughs/balances_verified_51.txt) |
+| Castle Adventure! | V8 | Win (unscored) | ✅ | 67 | 277 | 1 | [JSON](solutions/castle_adventure_verified.json) | [Text](walkthroughs/castle_adventure_verified_win.txt) |
+| Cloak of Darkness | V3 | Win (unscored) | ✅ | 4 | 5 | 1 | [JSON](solutions/cloak_verified.json) | [Text](walkthroughs/cloak_verified_win.txt) |
+| Cold Iron | V8 | Win (unscored) | ✅ | 89 | 30 | 1 | [JSON](solutions/coldiron_verified.json) | [Text](walkthroughs/coldiron_verified_win.txt) |
+| Cutthroats | V3 | 250/250 | ✅ | 416 (clock) | 264 | 1 | [JSON](solutions/cutthroats_verified.json) | [Text](walkthroughs/cutthroats_verified_250.txt) |
+| Detective | V5 | 360/360 | ✅ | 45 | 45 | 1 | [JSON](solutions/detective_verified.json) | [Text](walkthroughs/detective_verified_360.txt) |
+| Enchanter | V3 | 400/400 | ✅ | 300 | 206 | 1 | [JSON](solutions/enchanter_verified.json) | [Text](walkthroughs/enchanter_verified_400.txt) |
+| Infidel | V3 | 400/400 | ✅ | 305 | 306 | 1 | [JSON](solutions/infidel_verified.json) | [Text](walkthroughs/infidel_verified_400.txt) |
+| Lost Pig | V8 | 7/7 | ✅ | 173 | 173 | 1 | [JSON](solutions/lostpig_verified.json) | [Text](walkthroughs/lostpig_verified_7.txt) |
+| Moonmist | V3 | Win (unscored) | ✅ | 26 | 86 | 1 | [JSON](solutions/moonmist_verified.json) | [Text](walkthroughs/moonmist_verified_win.txt) |
+| Photopia | V5 | Win (unscored) | ✅ | 80 | 110 | 1 | [JSON](solutions/photopia_verified.json) | [Text](walkthroughs/photopia_verified_win.txt) |
+| Planetfall | V3 | 80/80 | ✅ | 5165 (GST) | 444 | 1 | [JSON](solutions/planetfall_verified.json) | [Text](walkthroughs/planetfall_verified_80.txt) |
+| Plundered Hearts | V3 | 25/25 | ✅ | 192 | 186 | 1 | [JSON](solutions/plundered_verified.json) | [Text](walkthroughs/plundered_verified_25.txt) |
+| Shade | V5 | Win (unscored) | ✅ | 124 | 126 | 1 | [JSON](solutions/shade_verified.json) | [Text](walkthroughs/shade_verified_win.txt) |
+| Sorcerer | V3 | 400/400 | ✅ | 390 | 234 | 2 | [JSON](solutions/sorcerer_verified.json) | [Text](walkthroughs/sorcerer_verified_400.txt) |
+| Spellbreaker | V3 | 600/600 | ✅ | 531 | 422 | 1 | [JSON](solutions/spellbreaker_verified.json) | [Text](walkthroughs/spellbreaker_verified_600.txt) |
+| Stationfall | V3 | 80/80 | ✅ | 5700 (GST) | 375 | 1 | [JSON](solutions/stationfall_verified.json) | [Text](walkthroughs/stationfall_verified_80.txt) |
+| Suveh Nux | V5 | Win (unscored) | ✅ | 0 | 102 | 1 | [JSON](solutions/suveh_nux_verified.json) | [Text](walkthroughs/suveh_nux_verified_win.txt) |
+| The Acorn Court | V5 | 30/30 | ✅ | 18 | 18 | 1 | [JSON](solutions/acorncourt_verified.json) | [Text](walkthroughs/acorncourt_verified_30.txt) |
+| The Dreamhold | V8 | Win (unscored) | ✅ | 0 | 438 | 1 | [JSON](solutions/dreamhold_verified.json) | [Text](walkthroughs/dreamhold_verified_win.txt) |
+| The Edifice | V5 | Win (unscored) | ✅ | 136 | 142 | 1 | [JSON](solutions/edifice_verified.json) | [Text](walkthroughs/edifice_verified_win.txt) |
+| The Lurking Horror | V3 | 100/100 | ✅ | 310 | 306 | 1 | [JSON](solutions/lurking_verified.json) | [Text](walkthroughs/lurking_verified_100.txt) |
+| The Witness | V3 | Win (unscored) | ✅ | 42 | 56 | 1 | [JSON](solutions/witness_verified.json) | [Text](walkthroughs/witness_verified_win.txt) |
+| Theatre | V5 | 50/50 | ✅ | 295 | 357 | 1 | [JSON](solutions/theatre_verified.json) | [Text](walkthroughs/theatre_verified_50.txt) |
+| Trinity | V4 | 100/100 | ✅ | 485 | 473 | 1 | [JSON](solutions/trinity_verified.json) | [Text](walkthroughs/trinity_verified_100.txt) |
+| Wishbringer | V3 | 100/100 | ✅ | 162 | 179 | 1 | [JSON](solutions/wishbringer_verified.json) | [Text](walkthroughs/wishbringer_verified_100.txt) |
+| Zork I | V3 | 350/350 | ✅ | 499 | 431 | 3 | [JSON](solutions/zork1_verified.json) | [Text](walkthroughs/zork1_verified_350.txt) |
+| Zork I (Release 5) | V1 | 350/350 | ✅ | 416 | 418 | 4 | [JSON](solutions/zork1-r5_verified.json) | [Text](walkthroughs/zork1-r5_verified_350.txt) |
+| Zork II | V3 | 400/400 | ✅ | 416 | 386 | 2 | [JSON](solutions/zork2_verified.json) | [Text](walkthroughs/zork2_verified_400.txt) |
+| Zork III | V3 | 7/7 | ✅ | 241 | 216 | 1 | [JSON](solutions/zork3_verified.json) | [Text](walkthroughs/zork3_verified_7.txt) |
 
-(Zork III scores "potential" out of 7; the win is entering the Treasury of Zork
-and becoming the Dungeon Master. Planetfall's and Stationfall's move counters
-are their in-game Galactic Standard Time clocks. Wishbringer is a V3 "time"
-game — the status line shows a clock, and the interpreter reads its true score
-from the game's own GSCORE global. Stationfall's recording opens with a
-restart, which re-rolls the game's boot-time clock dice on the pinned seed to
-make the run reproducible.) Reproduce any of them locally:
+Notes on the odd columns: Zork III scores "potential" out of 7; the win is
+entering the Treasury of Zork and becoming the Dungeon Master. Planetfall's
+and Stationfall's move counters are their in-game Galactic Standard Time
+clocks, and Cutthroats' is its minutes-since-midnight clock. Wishbringer and
+Cutthroats are V3 "time" games — the status line shows a clock, so the
+interpreter reads their true score from the games' own globals (GSCORE,
+RATING). Trinity is V4+, which has no status-line score convention at all,
+so its SCORE/MOVES globals are mapped per build. "Win (unscored)" games
+(9:05, Photopia, Shade, A Mind Forever Voyaging, The Witness, Moonmist, ...)
+are verified by asserting the game's true ending text with a `#% WIN_TEXT:`
+directive in the walkthrough header instead of a score; a few of them
+(Suveh Nux, The Dreamhold, 9:05) also show 0 turns because they don't keep
+a move counter in the global the interpreter samples. Stationfall's recording
+opens with a restart, which re-rolls the game's boot-time clock dice on the
+pinned seed to make the run reproducible. Reproduce any of them locally:
 
 ```bash
-python3 scripts/replay_solve.py games/zcode/zork1.z3 walkthroughs/zork1_verified_350.txt --seeds 4
-# -> zork1_verified_350.txt: VERIFIED 350/350 at seed 3 | 431 cmds | died=False | won=True
+python3 scripts/replay_solve.py games/zcode/905.z5 walkthroughs/905_verified_win.txt --seeds 2
+# -> 905_verified_win.txt: VERIFIED 0/None at seed 1 | 20 cmds | died=False | won=True
 
-python3 scripts/replay_solve.py games/zcode/zork2.z3 walkthroughs/zork2_verified_400.txt --seeds 3
-# -> zork2_verified_400.txt: VERIFIED 400/400 at seed 2 | 386 cmds | died=False | won=True
+python3 scripts/replay_solve.py games/zcode/amfv.z4 walkthroughs/amfv_verified_win.txt --seeds 2
+# -> amfv_verified_win.txt: VERIFIED -4134/None at seed 1 | 623 cmds | died=False | won=True
 
-python3 scripts/replay_solve.py games/zcode/zork_iii.z3 walkthroughs/zork3_verified_7.txt --seeds 3
-# -> zork3_verified_7.txt: VERIFIED 7/7 at seed 1 | 216 cmds | died=False | won=True
+python3 scripts/replay_solve.py games/zcode/advent.z3 walkthroughs/advent_verified_350.txt --seeds 4
+# -> advent_verified_350.txt: VERIFIED 350/350 at seed 3 | 289 cmds | died=False | won=True
 
-python3 scripts/replay_solve.py games/zcode/enchanter.z3 walkthroughs/enchanter_verified_400.txt --seeds 3
+python3 scripts/replay_solve.py games/zcode/adventureland.z5 walkthroughs/adventureland_verified_100.txt --seeds 4
+# -> adventureland_verified_100.txt: VERIFIED 100/100 at seed 3 | 146 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/allroads.z5 walkthroughs/allroads_verified_win.txt --seeds 2
+# -> allroads_verified_win.txt: VERIFIED 36/None at seed 1 | 185 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/balances.z5 walkthroughs/balances_verified_51.txt --seeds 2
+# -> balances_verified_51.txt: VERIFIED 51/51 at seed 1 | 124 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/castle_adventure.z8 walkthroughs/castle_adventure_verified_win.txt --seeds 2
+# -> castle_adventure_verified_win.txt: VERIFIED 0/None at seed 1 | 277 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/cloak.z3 walkthroughs/cloak_verified_win.txt --seeds 2
+# -> cloak_verified_win.txt: VERIFIED 0/None at seed 1 | 5 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/coldiron.z8 walkthroughs/coldiron_verified_win.txt --seeds 2
+# -> coldiron_verified_win.txt: VERIFIED 0/None at seed 1 | 30 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/cutthroats.z3 walkthroughs/cutthroats_verified_250.txt --seeds 2
+# -> cutthroats_verified_250.txt: VERIFIED 250/250 at seed 1 | 264 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/detective.z5 walkthroughs/detective_verified_360.txt --seeds 2
+# -> detective_verified_360.txt: VERIFIED 360/360 at seed 1 | 45 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/enchanter.z3 walkthroughs/enchanter_verified_400.txt --seeds 2
 # -> enchanter_verified_400.txt: VERIFIED 400/400 at seed 1 | 206 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/infidel.z3 walkthroughs/infidel_verified_400.txt --seeds 2
+# -> infidel_verified_400.txt: VERIFIED 400/400 at seed 1 | 306 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/lostpig.z8 walkthroughs/lostpig_verified_7.txt --seeds 2
+# -> lostpig_verified_7.txt: VERIFIED 7/7 at seed 1 | 173 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/moonmist.z3 walkthroughs/moonmist_verified_win.txt --seeds 2
+# -> moonmist_verified_win.txt: VERIFIED 21/None at seed 1 | 86 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/photopia.z5 walkthroughs/photopia_verified_win.txt --seeds 2
+# -> photopia_verified_win.txt: VERIFIED 2/None at seed 1 | 110 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/planetfall.z3 walkthroughs/planetfall_verified_80.txt --seeds 2
+# -> planetfall_verified_80.txt: VERIFIED 80/80 at seed 1 | 444 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/plundered.z3 walkthroughs/plundered_verified_25.txt --seeds 2
+# -> plundered_verified_25.txt: VERIFIED 25/25 at seed 1 | 186 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/shade.z5 walkthroughs/shade_verified_win.txt --seeds 2
+# -> shade_verified_win.txt: VERIFIED 0/None at seed 1 | 126 cmds | died=False | won=True
 
 python3 scripts/replay_solve.py games/zcode/sorcerer.z3 walkthroughs/sorcerer_verified_400.txt --seeds 3
 # -> sorcerer_verified_400.txt: VERIFIED 400/400 at seed 2 | 234 cmds | died=False | won=True
@@ -58,14 +140,47 @@ python3 scripts/replay_solve.py games/zcode/sorcerer.z3 walkthroughs/sorcerer_ve
 python3 scripts/replay_solve.py games/zcode/spellbreaker.z3 walkthroughs/spellbreaker_verified_600.txt --seeds 2
 # -> spellbreaker_verified_600.txt: VERIFIED 600/600 at seed 1 | 422 cmds | died=False | won=True
 
-python3 scripts/replay_solve.py games/zcode/planetfall.z3 walkthroughs/planetfall_verified_80.txt --seeds 2
-# -> planetfall_verified_80.txt: VERIFIED 80/80 at seed 1 | 444 cmds | died=False | won=True
+python3 scripts/replay_solve.py games/zcode/stationfall.z3 walkthroughs/stationfall_verified_80.txt --seeds 2
+# -> stationfall_verified_80.txt: VERIFIED 80/80 at seed 1 | 375 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/suveh_nux.z5 walkthroughs/suveh_nux_verified_win.txt --seeds 2
+# -> suveh_nux_verified_win.txt: VERIFIED 0/None at seed 1 | 102 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/acorncourt.z5 walkthroughs/acorncourt_verified_30.txt --seeds 2
+# -> acorncourt_verified_30.txt: VERIFIED 30/30 at seed 1 | 18 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/dreamhold.z8 walkthroughs/dreamhold_verified_win.txt --seeds 2
+# -> dreamhold_verified_win.txt: VERIFIED 0/None at seed 1 | 438 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/edifice.z5 walkthroughs/edifice_verified_win.txt --seeds 2
+# -> edifice_verified_win.txt: VERIFIED 0/None at seed 1 | 142 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/lurking.z3 walkthroughs/lurking_verified_100.txt --seeds 2
+# -> lurking_verified_100.txt: VERIFIED 100/100 at seed 1 | 306 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/witness.z3 walkthroughs/witness_verified_win.txt --seeds 2
+# -> witness_verified_win.txt: VERIFIED 0/None at seed 1 | 56 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/theatre.z5 walkthroughs/theatre_verified_50.txt --seeds 2
+# -> theatre_verified_50.txt: VERIFIED 50/50 at seed 1 | 357 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/trinity.z4 walkthroughs/trinity_verified_100.txt --seeds 2
+# -> trinity_verified_100.txt: VERIFIED 100/100 at seed 1 | 473 cmds | died=False | won=True
 
 python3 scripts/replay_solve.py games/zcode/wishbringer.z3 walkthroughs/wishbringer_verified_100.txt --seeds 2
 # -> wishbringer_verified_100.txt: VERIFIED 100/100 at seed 1 | 179 cmds | died=False | won=True
 
-python3 scripts/replay_solve.py games/zcode/stationfall.z3 walkthroughs/stationfall_verified_80.txt --seeds 2
-# -> stationfall_verified_80.txt: VERIFIED 80/80 at seed 1 | 375 cmds | died=False | won=True
+python3 scripts/replay_solve.py games/zcode/zork1.z3 walkthroughs/zork1_verified_350.txt --seeds 4
+# -> zork1_verified_350.txt: VERIFIED 350/350 at seed 3 | 431 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/zork1-r5.z1 walkthroughs/zork1-r5_verified_350.txt --seeds 5
+# -> zork1-r5_verified_350.txt: VERIFIED 350/350 at seed 4 | 418 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/zork2.z3 walkthroughs/zork2_verified_400.txt --seeds 3
+# -> zork2_verified_400.txt: VERIFIED 400/400 at seed 2 | 386 cmds | died=False | won=True
+
+python3 scripts/replay_solve.py games/zcode/zork_iii.z3 walkthroughs/zork3_verified_7.txt --seeds 2
+# -> zork3_verified_7.txt: VERIFIED 7/7 at seed 1 | 216 cmds | died=False | won=True
 ```
 
 Beyond the verified solves, the repo carries exploration-grade coverage data: 43 room-mapping
@@ -222,7 +337,7 @@ python scripts/solve_game.py your_game.z5 --real-ai
 - ✅ Output comparison tools
 
 **Current Limitations**:
-- Most games beyond the nine verified solves have exploration coverage only, not verified wins
+- Most games beyond the 35 verified solves have exploration coverage only, not verified wins
 - Menu-based IF and Y/N prompts need special handling
 - Complex opening puzzles can stall the AI solvers
 
@@ -265,7 +380,7 @@ scripts/               # (selection)
 └── generate_docs_pages.py # Regenerates docs/WALKTHROUGHS.html from repo data
 
 docs/                # Documentation + GitHub Pages site
-solutions/           # Solution JSONs (9 verified solves + exploration runs)
+solutions/           # Solution JSONs (35 verified solves + exploration runs)
 walkthroughs/        # Human + verified walkthroughs (text + JSON command lists)
 games/zcode/         # Game corpus (155 story files)
 games/results/       # Exploration walkthrough dumps (43 games)

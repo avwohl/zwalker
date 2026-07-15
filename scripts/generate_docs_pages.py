@@ -126,7 +126,7 @@ def render(verified, rows) -> str:
     vrows = "\n".join(
         f"""    <tr>
         <td>{e(v['game'])}</td>
-        <td class="status-good">{v['score']}/{v['max_score']}</td>
+        <td class="status-good">{'win (unscored)' if v['max_score'] in (None, 0) else f"{v['score']}/{v['max_score']}"}</td>
         <td>{'Yes' if v['won'] else 'No'}</td>
         <td>{v['turns']}</td>
         <td>{v['commands']}</td>

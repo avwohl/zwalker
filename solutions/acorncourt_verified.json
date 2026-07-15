@@ -1,0 +1,45 @@
+{
+  "game": "games/zcode/acorncourt.z5",
+  "walkthrough": "walkthroughs/acorncourt_verified_30.txt",
+  "solver": "replay+seed",
+  "rng_seed": 1,
+  "score": 30,
+  "max_score": 30,
+  "won": true,
+  "died": false,
+  "win_text_seen": true,
+  "turns": 18,
+  "num_commands": 18,
+  "score_timeline": [
+    {
+      "step": 4,
+      "command": "turn on machine",
+      "score": 10
+    },
+    {
+      "step": 15,
+      "command": "take key",
+      "score": 30
+    }
+  ],
+  "commands": [
+    "take pail",
+    "take balls from pail",
+    "put balls in machine",
+    "aim machine at tree",
+    "turn on machine",
+    "turn off machine",
+    "take acorns",
+    "fix bucket with acorn",
+    "g",
+    "g",
+    "g",
+    "turn crank",
+    "tie bucket to rope",
+    "turn crank",
+    "turn crank",
+    "take key",
+    "unlock gate with key",
+    "open gate"
+  ]
+}

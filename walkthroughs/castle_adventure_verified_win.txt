@@ -1,0 +1,330 @@
+# Castle Adventure! (Ben Chenoweth, Release 2, serial 121207, Inform 7 build
+# 6G60, Z-machine V8) - IFComp 2012 entry, post-competition release
+# VERIFIED COMPLETE SOLVE: won=True (win text), died=False
+#
+# Reproduce with the RNG-pinned replay harness (free, no API):
+#   cd ~/src/zwalker
+#   python3 scripts/replay_solve.py games/zcode/castle_adventure.z8 walkthroughs/castle_adventure_verified_win.txt --seeds 4
+#   => castle_adventure_verified_win.txt: VERIFIED 0/None at seed 1 | 277 cmds | died=False | won=True
+#
+# Ending: the game's best ("super happy") ending, reached in 277 moves. A
+# knight crosses a forest, shrinks himself with a mushroom to squeeze into a
+# cave, robs a skeleton of its gold key, opens the caretaker's hut, and rides
+# the secret well down under the moat. Inside the castle he feeds the guard
+# dog a sausage (thrown south into the pit), calms a ghost by forcing the
+# panel above the royal bed and finding her ring, uses the ring to open the
+# cellar floor, crosses the labyrinth by the tapestry codes (esw / ene / wns),
+# drugs the dungeon guard with a bottle of wine, and frees the princess.
+# When a ghost spooks her on the way out, her dropped tiara lures the ghost
+# away; the princess is recovered on the highest turret, the drawbridge winch
+# is kicked (her idea), and the pair walk out north. Because the shiny gold
+# key was left out for the magpie after unlocking the hut (instead of being
+# hidden in the pouch), the guard dog Fido vouches for you before the king,
+# and "you marry the princess and live happily ever after, all because you
+# showed kindness to a pesky magpie!" followed by *** The End ***.
+#
+# Why a pinned seed: the game's one true RNG puzzle is the pitch-dark cellar
+# under the caretaker's hut - each GET FLASHLIGHT is a random grope (the
+# game's own hints say "Just keep trying!"). Under seed 1 the flashlight
+# turns up on the 4th try; the list pads eight attempts so the recording is
+# stable ("You already have that." afterwards is harmless). Everything else
+# that looks random is turn-scheduled and replays identically: the magpie
+# swoops, the mushroom shrink timer, the ghost appearances, and the dungeon
+# guard's patrol (guard visible from behind the barrels on arrival and every
+# 5th turn after; the bottle of wine is planted two turns after a sighting
+# and he drinks it on his next pass).
+#
+# Release note: this is Release 2 (serial 121207), which renamed Release 1's
+# "electric torch" to "flashlight" - the route was machine-realigned for
+# that. The guardhouse door is unlocked BEFORE walking into it: bumping a
+# locked door costs nothing in-game, but the replay pathway rolls back
+# blocked moves and the rollback swallows the following command, so the
+# route avoids blocked moves entirely.
+#
+# The game is scoreless ("There is no score in this story"), so this
+# walkthrough carries a WIN_TEXT directive matching the super-happy-ending
+# sentence together with the "*** The End ***" banner, both printed by the
+# final command's output.
+#
+#% WIN_TEXT: all because you showed kindness to a pesky magpie!.*\*\*\* The End \*\*\*
+#
+# Route derived from the author's official Release 1 competition transcript
+# (ifarchive.org if-archive/games/competition2012/zcode/castle/), machine-
+# realigned for Release 2; replay-verified by scripts/replay_solve.py.
+n
+w
+jump stream
+e
+e
+e
+n
+n
+read sign
+e
+e
+e
+get mushroom
+w
+w
+w
+s
+w
+w
+eat mushroom
+w
+n
+e
+e
+n
+w
+n
+get key
+get paper
+read paper
+s
+e
+s
+w
+w
+s
+e
+s
+w
+jump stream
+s
+e
+s
+get pouch
+e
+e
+e
+w
+get key
+put key in pouch
+e
+e
+get key from pouch
+unlock door with key
+w
+e
+n
+pull rake
+pull kettle
+pull ladle
+d
+get flashlight
+get flashlight
+get flashlight
+get flashlight
+get flashlight
+get flashlight
+get flashlight
+get flashlight
+switch flashlight on
+n
+n
+u
+w
+n
+get wine
+e
+n
+n
+w
+get knife
+e
+s
+w
+s
+e
+s
+e
+e
+e
+e
+n
+n
+get sausage
+i
+drop pouch
+get sausage
+s
+s
+w
+w
+w
+w
+n
+w
+n
+e
+e
+e
+e
+throw sausage south
+e
+e
+s
+s
+w
+enter bed
+open panel with knife
+drop knife
+get ring
+s
+e
+n
+n
+u
+n
+examine tapestries
+s
+examine tapestries
+s
+examine tapestries
+n
+d
+e
+s
+e
+n
+e
+e
+e
+examine socket
+examine ring
+put ring in socket
+d
+e
+s
+w
+e
+n
+e
+w
+n
+s
+wait
+wait
+wait
+wait
+wait
+wait
+e
+drop bottle
+w
+wait
+e
+get keys
+s
+unlock celldoor with keys
+w
+e
+s
+unlock celldoor with keys
+e
+examine princess
+w
+n
+n
+w
+w
+w
+s
+w
+e
+n
+n
+s
+w
+e
+s
+s
+w
+s
+n
+s
+e
+s
+w
+n
+e
+n
+s
+w
+u
+w
+w
+w
+s
+w
+n
+w
+get tiara
+s
+drop tiara
+n
+u
+n
+u
+w
+n
+u
+u
+d
+d
+s
+e
+d
+s
+d
+w
+w
+w
+n
+ask princess about drawbridge
+s
+w
+w
+w
+s
+e
+s
+e
+e
+e
+e
+n
+n
+n
+n
+w
+unlock door with keys
+w
+examine chains
+w
+u
+e
+kick winch
+w
+d
+e
+e
+e
+s
+s
+s
+s
+w
+w
+w
+w
+n
+w
+n
+e
+e
+e
+n
+n
+n
