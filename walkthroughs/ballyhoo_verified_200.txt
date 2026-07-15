@@ -1,0 +1,487 @@
+# BALLYHOO (Infocom Release 97, serial 851218, Z-machine V3)
+# VERIFIED COMPLETE SOLVE: 200/200 and the winning ending.
+#
+# Reproduce with the RNG-pinned replay harness (free, no API):
+#   cd ~/src/zwalker
+#   python3 scripts/replay_solve.py games/zcode/ballyhoo.z3 walkthroughs/ballyhoo_verified_200.txt --seeds 24 --out solutions/ballyhoo_verified.json
+#   => ballyhoo_verified_200.txt: VERIFIED 200/200 at seed 1 | 415 cmds | won=True
+#
+# Ending: on the high wire during the rescue, with the transistor radio held,
+# tuned to WPDL 1170 and switched on -- and only after phoning in a pledge so
+# the station finally plays Vivaldi -- the classical music becalms Mahler the
+# gorilla, who "lets loose the girl like a rag doll ... falling ... falling
+# ... deep into the safety of the net!" You catch the wire, dangle, then drop
+# into the net yourself: "Your score is 200 of a possible 200, in 415 turns."
+# -- having saved The Traveling Circus That Time Forgot, Inc.
+#
+# ==> VERIFIER NOTE (the ONE "you have died" line is a NON-fatal gag, not a
+#     death). Award #16 (the elephant-tent prod fight, "On the Tent") is
+#     reachable ONLY by climbing the cage top, and the FIRST descent from Top
+#     of Cage is a scripted joke: "You fall awkwardly down from the cage.
+#     **** You have died ****" -- then, two turns later, "the reports of your
+#     demise have been grossly exaggerated. You suffer little more than
+#     injured pride." Play continues uninterrupted; the score climbs to
+#     200/200 and the game is won. This is way.zil:660-668, the ONLY setter of
+#     the DIED global (which nothing else reads), and it is UNAVOIDABLE in any
+#     complete solve. It prints via the same TELL-DIED routine as a real death
+#     (verbs.zil:3510), so scripts/replay_solve.py's bare "you have died"
+#     marker flags died=True here even though the game is genuinely won at
+#     200/200 -- a heuristic false-positive on this specific gag.
+#
+# Why a pinned seed (no restart prelude -- boot draws no randomness; two boots
+# are byte-identical and the seed is pinned right after start()): the ONLY
+# route-relevant randomness is the mandatory $1 blackjack hand in the Blue
+# Room (cards.zil PICK-CARD, <RANDOM 52>); the recorder stands immediately and
+# the number of baked-in "n" answers matches the pinned seed. Everything else
+# is turn-counter clockwork (I-MEET meeting, I-CLOWN-ALLEY, I-STANDS hypnosis
+# dream, the headphone tape deck, I-APE cage, I-OFFICE white wagon, I-POKE
+# tent prod, I-CHASE, and the ACROSS-ROPE endgame) plus flavor-only PROB rolls
+# -- all replay identically under the same command list. Mechanics verified
+# against the official ZIL source (github.com/historicalsource/ballyhoo);
+# synthesis in logs/ballyhoo_notes.md, route in logs/ballyhoo_route.txt.
+#
+# Route (20 awards x 10 = 200): help Comrade Thumb drink (load-bearing 3x),
+# grab the clown mask, hide behind the Taft cutout to overhear the kidnapping;
+# balance-pole across the tightrope (+10) for the helium balloon; inhale
+# helium and greet blind Harry to pass the turnstile (+10); masked knock fools
+# Chuckles into Clown Alley (+10), grab the newsprint scrap, get thrown out at
+# clown-counter 7 (the sideshow-front gate); through the canvas pleats (+10);
+# ticket from the bleacher garbage (+10); pole-fish the cage keys (+10); whip
+# for the baggage compartment; whip the smooth lion off the grate and search
+# the lion stand for the cigarette case (+10); Harry then Jenny recall
+# Andrew's plot (+10); Rimshaw's hypnosis dream -- buy the $1.85 granola, work
+# the concession line for the frozen banana to shed the monkey, return to your
+# seat as the granola falls (+10); shake Tina's hand for the radio (+10);
+# record classical over the headphone tape and let Mahler snatch it (+10),
+# taking the skeleton key/ribbon; spring the mousetrap with the pole, lure and
+# bucket a live mouse (+10); show it to Hannibal to stampede him (+10);
+# crank/knock the white wagon and lock yourself in the office for the
+# spreadsheet (+10); slide the ticket under the sideshow front into the Blue
+# Room (+10); the forced blackjack hand lets Thumb tap the hole card; phone
+# I-THUMB points you back; second entry grabs the keister; on the tent, grip
+# and pull the elephant prod (+10); pour water on the sobered detective for
+# the ransom note and trade card; costume up and show all five clues to
+# "Eddie" to scare Chuckles off (+10); crowbar into the trailer, drop Thumb
+# through the moose-hole to hoist Chelsea out of the crawl space (+10); carry
+# her out to spring the endgame; clap the post-hypnotic roustabout and order
+# the net (+10); ride the lion stand up the tangled ladder, flush Mahler
+# platform to platform, phone WPDL so the radio plays Vivaldi, and cross the
+# wire until the music drops Chelsea into the net (+10) = 200/200 and the win.
+#
+# Recorded by scripts/solve_ballyhoo_adaptive.py --seed 1.
+#% WIN_TEXT: score is 200 of a possible 200|saved The Traveling Circus That Time Forgot
+south
+help thumb
+west
+take mask
+south
+west
+examine taft
+hide behind taft
+wait
+wait
+east
+east
+take pole
+north
+north
+north
+drop mask
+up
+east
+east
+east
+east
+east
+east
+take balloon
+west
+west
+west
+west
+west
+west
+down
+down
+take all
+south
+south
+west
+south
+look in cage
+examine man
+untie balloon
+inhale helium
+harry, hello
+south
+west
+wear mask
+knock on door
+south
+close door
+search ashes
+take scrap
+wait
+go under the wall
+east
+north
+east
+north
+northeast
+search garbage
+take ticket
+punch blue dot
+southwest
+south
+put ticket in slot
+east
+south
+southeast
+look in cage
+take keys with pole
+unlock door
+open door
+north
+take bucket
+take headphones
+south
+northwest
+north
+west
+west
+south
+west
+south
+east
+examine trailer
+unlock baggage compartment
+open compartment
+take whip
+north
+east
+north
+put ticket in slot
+east
+east
+east
+north
+northeast
+take stool
+northwest
+south
+west
+west
+west
+north
+north
+unlock cage
+open cage
+west
+look at lions
+whip smooth lion
+whip smooth lion
+whip smooth lion
+lift grate
+throw meat in passage
+east
+west
+lower grate
+search stand
+east
+south
+south
+south
+west
+give case to harry
+north
+east
+put ticket in slot
+east
+east
+south
+show case to jenny
+give case to jenny
+north
+north
+give ticket to rimshaw
+rimshaw, hypnotize me
+wait
+wait
+wait
+wait
+buy candy from hawker
+give $1.85 to hawker
+stand up
+east
+up
+east
+down
+east
+up
+east
+down
+south
+stand in line
+wait
+wait
+get out of long line
+stand in short line
+wait
+wait
+get out of long line
+yes
+stand in long line
+bite banana
+drop banana
+north
+ask hawker about candy
+up
+west
+down
+west
+up
+west
+down
+west
+stand up
+south
+west
+go under the wall
+search garbage
+take granola bar
+south
+east
+east
+north
+northeast
+show granola bar to tina
+tina, hello
+shake hands
+northwest
+take radio
+south
+west
+west
+south
+southeast
+drop all except radio and headphones
+up
+set radio to 1170
+turn off radio
+rewind tape
+wait
+play tape
+wait
+wait
+stop tape
+rewind tape
+turn on radio
+record
+wait
+wait
+wait
+wait
+wait
+stop tape
+rewind tape
+wait
+turn off radio
+down
+take all
+northwest
+unlock cage
+open cage
+west
+play tape
+search straw
+open trap door
+take ribbon
+east
+close cage
+lock cage
+north
+west
+west
+south
+west
+touch wood with pole
+take mousetrap
+drop trap
+east
+west
+east
+west
+catch mouse with bucket
+take mouse
+east
+north
+east
+put ticket in slot
+east
+south
+show mouse to elephant
+show mouse to elephant
+wait
+southwest
+drop all
+up
+turn crank
+look in wagon
+knock on door
+in
+lock door
+search desk
+take spreadsheet
+move desk
+up
+read spreadsheet
+down
+take all
+west
+ask harry about eddie
+east
+northeast
+southeast
+slide ticket under front
+east
+take ticket
+open panel
+n
+open panel
+west
+northwest
+north
+west
+examine thumb
+south
+northeast
+southeast
+slide ticket under front
+east
+look under table
+take suitcase
+wait
+west
+drop all
+up
+up
+wait
+east
+wait
+take shaft
+pull shaft
+down
+down
+take all
+drop key
+drop whip
+drop stool
+northwest
+north
+west
+fill bucket with water
+south
+northeast
+north
+pour water on detective
+ask detective about chelsea
+drop bucket
+take note
+take card
+read note
+east
+south
+up
+look
+take all
+up
+north
+west
+west
+west
+south
+west
+south
+east
+eddie, hello
+show ribbon to eddie
+show scrap to eddie
+show note to eddie
+show spreadsheet to eddie
+show card to eddie
+search pocket
+take veil
+wear veil
+wear dress
+wear jacket
+inventory
+knock on door
+east
+close door
+take crowbar
+move moose
+open door
+west
+west
+open trailer door with crowbar
+south
+take thumb
+north
+east
+east
+put thumb in hole
+wait
+take chelsea
+west
+north
+east
+northeast
+north
+west
+north
+north
+clap
+roustabout, get net
+take off veil
+take off jacket
+take off dress
+drop all
+west
+take stand
+east
+drop stand
+take radio
+climb stand
+up
+up
+set radio to 1170
+turn on radio
+east
+east
+east
+west
+west
+west
+west
+drop radio
+down
+south
+south
+south
+east
+call wpdl
+west
+north
+north
+north
+climb stand
+up
+take radio
+east
+east
+east
+east
+east
+wait
+wait
+wait

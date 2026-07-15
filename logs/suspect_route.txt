@@ -1,0 +1,83 @@
+SUSPECT — verified winning route (my own words), clock times logged at seed 1.
+Status line = SCORE:MOVES = hour:minute. Party starts 9:00 p.m. (PRESENT-TIME 540).
+Recording opens with restart/yes to pin the boot RNG.
+
+PHASE 0 — pin the seed
+  restart / yes            re-roll the party clock on the seeded RNG stream.
+
+PHASE 1 — rain + let Alicia in (start: Ballroom, Near Bar)
+  9:01 west                to the fireplace group (Michael + the fake Veronica).
+  9:02 examine veronica    the drink-spill (I-SPILL) fires; "Veronica" leaves.
+       west, west          out through South Entrance to Long Hall South. Butler
+  9:05-08 south x4         and a guest tangle the hall (I-UNTANGLE) — 3 eaten,
+                           the 4th south reaches Long Hall Begins.
+       west, west, south   to the Entry Hall,
+  9:12 west                into the Morning Room (door auto-opens).
+  9:13 open curtains
+  9:14 look through window  "The rain has slacked off, it's just a drizzle now."
+                           -> SAW-RAIN-SLACK-OFF? (the clue-12 prerequisite).
+  9:15 east                back to the Entry Hall.
+  9:16-18 look x3          idle until the doorbell rings (~9:18).
+  9:19 open front door     Alicia enters "thanking you for answering the doorbell";
+                           she walks off and drops her wet coat in the East Closet.
+
+PHASE 2 — loot the office BEFORE the body is found
+  north, west, west, south, west, north   Entry Hall -> Office (west wing).
+       take folder         the manila/sale folder (holds the sale agreement).
+       take fairy mask     the over-the-head mask Alicia wore.
+       look in wastebasket / take card     Cochrane's business card.
+       search corpse / take bullet / put bullet in gunbelt
+                           the planted silver bullet, back into your belt.
+       look in fairy mask / examine dark hair
+                           reveal the dark hair caught inside (Veronica was blonde).
+  *** LEAVE THE LARIAT (rope). Taking it kills the case. ***
+
+PHASE 3 — kitchen glass + Alicia's coat
+  south, east, north, east x4, north x5, east    Office -> Kitchen.
+       take basket         the WHOLE trash basket (touching the glass ruins the
+                           fingerprints on it).
+  west, south x4, west     Kitchen -> East Coat Closet.
+       take wet overcoat   Alicia's soaked overcoat (adjectives ALICIA/WET).
+
+PHASE 4 — watch the library meeting, snatch the burning list
+  east, south x3           East Closet -> Library.
+       hide behind chair   conceal behind the overstuffed armchair.
+  wait for marston + yes + yes
+                           10:42 Marston arrives (2 events interrupt the wait).
+  wait for michael         10:46 Michael arrives; they lock the doors and Michael
+                           hands Marston the investor list.
+       unlock north door / open north door
+       north x3, east x2   race the pair to the ballroom fireplace,
+  10:54 take paper         "...grab the piece of paper just in time!" (the list is
+                           in the fire for only ~2 turns before it is consumed).
+
+PHASE 5 — crowbar the BMW trunk for the Trust folder
+  west, west, south, west x4, north, north, unlock door, open door, north, west
+                           fireplace -> Garage (Michael has long since gone).
+       open tool chest
+       drop receipt / drop notebook / drop pen   shed baggage for the weight limit.
+       take crowbar
+  11:13 open bmw trunk with crowbar   "...revealing a trust folder."
+       drop crowbar / take trust folder
+
+PHASE 6 — convince the detective, then arrest
+  east, south, south       Garage -> the hallways where the detective is roaming.
+  wait for detective + yes 11:20 he approaches (never meet him at the fireplace —
+                           there he arrests YOU; here GRAB-ATTENTION freezes him).
+  show card to detective            DETECTIVE-SEEN 2 -> 3
+  show manila folder to detective              -> 4
+  show trust folder to detective               -> 5
+  show paper to detective                      -> 6
+  look in fairy mask / show hair to detective  -> 7
+  detective, analyze glass for fingerprints    -> 10  (+3: seen/analyzed/printed)
+  show wet overcoat to detective               (+0, "everyone's coat is wet")
+  tell detective about rain                    -> 12  (coat+rain pay out together)
+  11:29 detective, arrest michael and alicia
+        -> Duffy appears with Michael and Alicia in handcuffs; "Congratulations!
+           Your testimony ... secures the conviction of Michael for the first
+           degree murder of his wife, and of Alicia as his accomplice ..." WIN.
+
+Notes: n/s/e/w are full words; diagonals must be abbreviations (sw/ne/...).
+Address the detective by name for ANALYZE and ARREST. The detective auto-counts
+the corpse and the lariat (+2) when he searches the office, so only the ten
+hand-delivered clues are shown above.

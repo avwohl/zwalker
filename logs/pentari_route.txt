@@ -1,0 +1,63 @@
+Pentari — verified route to the maximum 70/70 ending, in my own words.
+(Fixed 35-command list; verified by replay_solve at seed 3. Commands in CAPS.)
+
+Getting into the castle
+  N, N              Quarters -> Compound -> Barracks (the Pentarian Transporter).
+  IN                Step into the transporter.
+  CITY              Cast the transporter word. It misfires to the Wizard's Guild
+                    Entrance Hall instead of the Bank.  (+5 -> 5)
+  E                 Into the Library; the wizard Morden is here.
+  COVERT            Cast Morden's "word of bringing". You are teleported into
+                    Vamvevmew's castle (the Castle intersection) and made covert,
+                    so the Dark Elf wanders "looking for" you but can't attack.
+
+Break the ward and gather gear
+  S                 Castle -> Castle Entrance, where the Magical Seal (Morden's
+                    anti-magic ward) sits.
+  SMASH SEAL        Shatter the ward so your magic (Fwoosh) will work.  (+10 -> 15)
+  N, N, N           Entrance -> Castle -> Main Hall -> Main Hall by the Fireplace.
+  IN                Climb into the Large Fireplace; a dirty scroll is here.
+  GET SCROLL        The scroll teaches the Fwoosh (fireball) spell.  (+10 -> 25)
+  OUT               Back to Main Hall by the Fireplace.
+  S                 -> Main Hall.
+  E                 -> Spiral Stairway.
+  N                 -> Dining Room; a folded linen towel is on the floor.
+  GET TOWEL         (Used to wrap/carry the emerald; not itself scored.)
+  S                 -> Spiral Stairway.
+  W                 -> Main Hall.
+  W                 -> Armory; Galin's jewel-encrusted dagger is here.
+  GET DAGGER        Take the dagger.  (+5 -> 30)
+  N                 -> Treasury; the damaged, locked oaken chest is here.
+
+Free the emerald (must be done with the elf NOT in the Treasury)
+  OPEN TOWEL        Unfold the towel.
+  FWOOSH            Summon a fireball; it blasts the oaken chest open. (If the
+                    elf were in the room here it would hit HIM and get you
+                    killed — the recorder waits for him to leave first.) (+10->40)
+  LOOK              (Settles the room view.)
+  GET SMALL EMERALD Take the freed "daughter" emerald. This shatters the whole
+                    anti-magic zone; Morden senses it and teleports in to duel
+                    Vamvevmew somewhere in the castle.  (+5 -> 45)
+
+Meet the elf, kill him, summon Galin
+  S, E              Treasury -> Armory -> Main Hall (the four-exit hub the
+                    wandering elf passes through most often).
+  Z, Z              Wait. Carrying the emerald, your "aura of power" gives you
+                    away; the elf enters, cracks you on the head, steals the
+                    emerald, and yanks you into the Upper Level where Morden and
+                    Vamvevmew are locked in sorceral combat.
+  KILL ELF          While the elf is distracted by Morden you come up behind him
+                    and run him through with your sword; he dies.  (+10 -> 55)
+  GET SMALL EMERALD Reclaim the emerald the elf dropped.
+  PUT SMALL EMERALD ON BOX   Crown the platinum box in the summoning circle.
+  LOOK              The box glows; Duke Galin materializes, finds his enemy's
+                    corpse ("Damn it, I wanted the privilege."), and rewards you.
+                    *** You have won ***  70 out of a possible 70.  (+15 -> 70)
+
+Notes
+- The IF Archive walkthrough stops at 60/70 by skipping the duel: it hurries the
+  emerald upstairs and crowns the box alone, so Galin kills the elf offstage.
+  Meeting the elf and killing him yourself is what adds the last 10 points.
+- The only randomness is the elf's wander; the adaptive recorder
+  (scripts/solve_pentari_adaptive.py) handles the FWOOSH timing and the hub wait
+  and records every command, so the fixed list above replays deterministically.

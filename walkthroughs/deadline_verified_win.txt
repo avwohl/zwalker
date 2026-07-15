@@ -1,0 +1,212 @@
+# Deadline (Infocom Release 28, serial 850129, Z-machine V3)
+# VERIFIED COMPLETE SOLVE: won=True (correct arrest + conviction epilogue), died=False
+#
+# Reproduce with the RNG-pinned replay harness (free, no API):
+#   cd ~/src/zwalker
+#   python3 scripts/replay_solve.py games/zcode/deadline.z3 walkthroughs/deadline_verified_win.txt --seeds 24 --out solutions/deadline_verified.json
+#   => deadline_verified_win.txt: VERIFIED 13/None at seed 1 | 129 cmds | died=False | won=True
+#
+# Deadline is a V3 "time" game (Flags 1 bit 1): the status line is a 12-hour
+# CLOCK, not a score. Its own clock.zil labels the two status globals exactly
+# ("SCORE INDICATES HOURS / MOVES = MINUTES"): global 17 = hours, global 18 =
+# minutes, so vm.get_score() reads the HOUR (it reports 8 at 8:00 AM start and
+# 13 at the 1:10 PM arrest -- that "13/None" in the line above is the wall
+# clock, NOT a point score). There is no numeric score and no max score
+# (vm.get_max_score() is None); the SCORE verb prints a prose evaluation. The
+# ending is decided purely by evidence flags, so this is a WIN_TEXT solve.
+#
+# The WIN_TEXT directive below matches the one line printed ONLY by the true
+# winning ending -- Commissioner Klutz's Sept 5 letter reporting that "a jury
+# convicted Mr. Baxter and Ms. Dunbar today of the murder of Mr. Robner"
+# (actions.zil:3922, the OBJECT-PAIR-F ARREST branch, reached only after
+# END-HEADER + EPILOGUE). Every OTHER outcome of "arrest Baxter and Dunbar"
+# prints "declined to convict Mr. Baxter and Ms. Dunbar" (present tense, the
+# hung/acquitting juries at actions.zil:3958/3969) or an earlier DA refusal;
+# the past-tense "convicted Mr. Baxter and Ms. Dunbar" string is unique to the
+# win (grep of the official ZIL: the only "convicted" is line 3922). \s+ guards
+# every word gap against line-wrap.
+#
+# The win gate (actions.zil:3914-3929): arrest the Baxter+Dunbar PAIR after
+# 11:40 AM with Dunbar still alive AND all four evidence flags set --
+#   1. NOTE-READ      : rub the pencil on the library notepad (the "Baxter ...
+#                       Focus" impression -> motive)                cmd 15
+#   2. LAB-REPORT held: dig the porcelain teacup fragment out of the rose-
+#                       garden holes and "analyze fragment for loblo"; Sgt
+#                       Duffy returns the lab slip (the poison method) cmds 46-47
+#   3. BAXTER-PAPERS  : catch George at the hidden-closet safe and take the
+#                       Focus embezzlement papers (Baxter's motive)   cmd 93
+#   4. STUB-D         : after accusing Dunbar she flees and drops a concert
+#                       ticket stub; show it to her (breaks the alibi) cmd 114
+#
+# Ending: Chief of Detectives, 12-hour clock. Marshall Robner was poisoned
+# with his secretary Ms. Dunbar's blood-pressure drug LoBlo, administered in a
+# teacup (smashed and buried in the rose garden) by Dunbar, whose partner Mr.
+# Baxter climbed the balcony ladder that night -- his motive the Focus
+# embezzlement that Robner's new will would have exposed. With means (LoBlo lab
+# report), motive (Focus papers + calendar) and opportunity (the concert-alibi
+# ticket stub tying Baxter and Dunbar together that night) all in evidence,
+# arresting the pair at the shed at 1:10 PM convicts them both.
+#
+# Timeline milestones (clock from the status line, logged during recording):
+#   8:00 start (South Lawn)        8:12 library, rub pad (NOTE-READ)
+#   8:31 Garden Path               11:13 McNabb arrives, complains of holes
+#   11:19 Among the Roses, dig     11:23 analyze fragment for LoBlo
+#   11:50 Duffy delivers LAB-REPORT (during the will wait)
+#   11:56 will read in Living Room 12:17 George opens the hidden safe
+#   12:31 take Focus papers        12:42 show lab report to Dunbar + accuse
+#   12:51 Dunbar drops ticket stub 12:55 show stub to Dunbar (STUB-D)
+#   1:09 Baxter+Dunbar at shed     1:10 ARREST -> conviction epilogue
+#
+# Why a pinned seed: boot draws no randomness (two boots are byte-identical),
+# so the interpreter RNG is pinned right after start() with NO restart prelude.
+# The seed then fixes every randomized delay -- Duffy's 15-30 min lab turnaround
+# (DO-FINGERPRINT, actions.zil:2715), McNabb's 2-12 min "holes" outburst
+# (I-G-I-G, goal.zil:509), the George-safe GEORGE-SEARCH window and the Dunbar
+# flee timing -- so the exact recorded command list (including each 'y' answer
+# to a "keep waiting? (Y/N)" prompt and each fixed filler 'look') replays
+# deterministically. Recorded and verified at seed 1.
+#
+# Harness/quirks notes:
+#  - Multi-minute waits ("wait until 11:00", "wait for mcnabb") are ONE command
+#    line each but are interrupted by passing NPCs with "Do you want to keep
+#    waiting? (Y/N)"; each following 'y' answers one such prompt (cmds 33-34,
+#    36-37, 57-62, 119-127). Bare 'y' outside a prompt is a harmless
+#    "You must supply a verb!" no-op, but under the pinned seed every 'y' lands
+#    exactly on a prompt.
+#  - The front door auto-closes behind you, so "open door" precedes each
+#    foyer<->front-path crossing (cmds 27, 52, 108).
+#  - George must be given 10-15 turns at the safe before you press the library
+#    button: the twelve fixed 'look' fillers on the balcony (cmds 77-88) land
+#    GEORGE-SEARCH in-window so he is caught with the safe OPEN (papers
+#    reachable), not still dialing (too early) or already gone (too late).
+#
+#% WIN_TEXT: convicted Mr\.\s+Baxter\s+and\s+Ms\.\s+Dunbar
+n
+open door
+n
+n
+e
+u
+u
+w
+w
+w
+w
+n
+take pad
+take pencil
+rub pencil on pad
+take calendar
+turn calendar
+s
+e
+e
+e
+e
+d
+d
+w
+s
+open door
+s
+w
+w
+ne
+wait until 11:00
+y
+y
+wait for mcnabb
+y
+y
+mcnabb, hello
+mcnabb, hello
+mcnabb, hello
+mcnabb, hello
+mcnabb, what is wrong
+mcnabb, show me the holes
+follow mcnabb
+examine holes
+examine ground
+analyze fragment for loblo
+n
+w
+se
+e
+open door
+n
+n
+w
+wait until 12:00
+y
+y
+y
+y
+y
+y
+show calendar to george
+follow george
+follow george
+follow george
+follow george
+follow george
+follow george
+follow george
+follow george
+n
+w
+n
+open balcony door
+n
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+s
+examine bookshelf
+press button
+examine safe
+get papers
+w
+s
+e
+e
+e
+e
+d
+d
+w
+w
+show lab report to dunbar
+accuse dunbar
+e
+s
+open door
+s
+wait for dunbar
+follow dunbar
+get ticket
+read ticket
+show ticket to dunbar
+e
+e
+se
+wait for baxter
+y
+y
+y
+y
+y
+y
+y
+y
+y
+show ticket to baxter
+arrest baxter and dunbar

@@ -1,0 +1,128 @@
+Suspended (r8/830521) — verified route, cycle by cycle (seed 1 recording)
+==========================================================================
+One command = one cycle; every robot with a standing "go to" order also
+moves one room per cycle. 72 commands, win at cycle 71, 8,000 casualties,
+ranking 1 of 7 (best). Three robots sacrificed: Poet, Waldo, Sensa.
+
+PHASE 1 — dispatch before the acid (cycles 1-15)
+ 1  poet, go to weather control       Poet: CPU -> surface via Skywalks.
+ 2  sensa, go to sub supply room      Sensa: fetch run begins.
+ 3  whiz, go to secondary channel     Whiz crosses the (still safe)
+                                      Cavernous Room BEFORE the cycle-15
+                                      acid spill; arrives cycle 15 and
+                                      simply waits there until cycle 62.
+ 4  sensa, take ramp                  (arrived cycle 3) wedge/ramp aboard.
+ 5  sensa, go west                    -> Middle Supply Room.
+ 6  sensa, take container and grasper basket of ICs + microsurgery hand.
+ 7  sensa, go to hallway junction     6-room walk.
+ 8  waldo, go to hallway junction     Waldo from Gamma Repair, 6 rooms.
+ 9  auda, go to gamma repair          Auda's long walk (arrives cycle 23);
+                                      Poet announces Weather Control arrival.
+10  poet, turn second dial to 100     THE weather fix: dial 2 at 100 pulls
+                                      pressure 2 up against the decay so
+                                      WINDS casualties never start.
+11  poet, go to hallway end           Poet heads for the car.
+12  iris, go to main supply room      blind Iris walks 3 rooms west.
+13  iris, look                        filler; Sensa reaches the Junction.
+14  sensa, put ramp at dropoff        WEDGE-PLACED=2: opens the Junction <->
+                                      Sloping Corridor step for everyone
+                                      (Auda, Poet, Sensa all use it).
+15  auda, listen                      ears on; ACID SPILL HITS (I-TREMOR1).
+
+PHASE 2 — fix Iris, fetch camera/cutter, chip the machine (16-42)
+16  waldo, take container and grasper handoff at the Junction (cycle 14
+                                      arrival); Whiz reports Secondary
+                                      Channel arrival.
+17  waldo, go to main supply          5 rooms; carries basket + grasper.
+18  waldo, install grasper            wears the microsurgery hand en route.
+19  waldo, take red ic and yellow ic  out of the basket, en route.
+20  sensa, go north                   up the ramp -> Sloping Corridor.
+21  sensa, take ramp                  wedge comes along (gate stays open).
+22  sensa, go to small supply         via Hallway T / Sterilization side.
+23  waldo, open panel                 (arrived 22; Iris arrived 13; Auda
+                                      reaches Gamma Repair) Iris's panel:
+                                      smooth + bumpy + ROUGH (fried) chips.
+24  waldo, replace rough device with rough object   fried CX1 out, RX1 in.
+25  waldo, close panel                "IRIS: You never looked so good." —
+                                      Iris sees; Poet reaches Hallway End.
+26  poet, get in car                  auto-ride -> Vehicle Debarkation.
+27  poet, get out of car
+28  poet, go to biology lab           2 rooms north/west.
+29  waldo, take burned chip and fried chip   old CX3/CX4 out of the sockets.
+30  poet, take camera                 FIRST TV TAKE => GENERATE-CODES rolls
+                                      the reset code on the pinned stream
+                                      (seed 1 + this list => MUM KLA).
+31  sensa, put ramp at holder         (arrived 29) wedge under the shelf.
+32  sensa, get on ramp
+33  sensa, take cutter                wire cutter off the top shelf.
+34  sensa, get off ramp
+35  sensa, take ramp
+36  sensa, go to sloping corridor     back toward the lower levels.
+37  poet, go to vehicle debarkation
+38  waldo, put red ic in red socket   RX0 -> S1.
+39  waldo, put yellow ic in yellow socket   RX2 -> S2 (machine now live).
+40  poet, get in car                  (arrived 38) ride back.
+41  poet, get out of car              at Hallway End.
+42  poet, go to primary channel       Poet's ONE-WAY run: Junction step ->
+                                      Southeast Junction -> Short Corridor
+                                      -> ACID (exposed c.51) -> East End ->
+                                      Alpha FC -> Primary Channel (c.54).
+
+PHASE 3 — the two cable swaps (43-71)
+43  sensa, put ramp at dropoff        (arrived 42) ramp back at the step.
+44  sensa, go to gamma repair         to FRED, via the Junction.
+45  waldo, push button                front panel pops: 14-inch cable +
+                                      fuse + eight lettered circles.
+46  iris, take fuse                   FUSE OUT FIRST — touching the exposed
+                                      cable with the fuse in is fatal.
+47  waldo, take cable                 fourteen-inch orange cable.
+48  waldo, go to secondary channel    Waldo's ONE-WAY run (exposed c.55,
+                                      dies ON arrival at the Secondary
+                                      Channel c.60 — cable lands at Whiz's
+                                      feet).
+49  iris, go to middle supply         one room south.
+50  iris, take cable                  spare sixteen-inch cable.
+51  iris, go to main supply           back to the machine; Poet exposed.
+52  sensa, examine cabinet            (arrived 50) reveals the flowswitch.
+53  sensa, turn flowswitch            Sensa-only: FRED's cabinet opens.
+54  both sensa and auda, move fred    two-robot shove exposes the wire;
+                                      Poet reaches the Primary Channel.
+55  sensa, cut cable with cutter      twelve-inch red wire cut free.
+56  poet, plug tv1 in                 TV into the wall hole; Iris receives.
+57  poet, aim tv1 at sign             "IRIS: ... It says MUMKLA." Poet dies
+                                      this same cycle — mission complete.
+58  sensa, take cable                 the twelve-inch wire.
+59  sensa, go to primary channel      Sensa's ONE-WAY run (exposed c.65).
+60  iris, put cable in machine        spare cable in; Waldo dies at the
+                                      Secondary Channel with the cargo.
+61  iris, put fuse in machine         circles are armed again.
+62  whiz, take fourteen-inch cable    off Waldo's corpse.
+63  whiz, replace nine-inch cable with fourteen-inch cable
+                                      GROOVE1 swap => ORANGESET correct.
+64  auda, go to sleep chamber         housekeeping filler (guard post).
+65  iris, look                        ---
+66  iris, look                        five filler cycles while Sensa
+67  iris, look                        crosses the acid to the Primary
+68  iris, look                        Channel (arrives c.70, dying).
+69  iris, look                        ---
+70  (Sensa arrival prints)            —
+71  sensa, replace four-inch cable with twelve-inch cable
+                                      GROOVE2 swap => REDSET correct =>
+                                      "FC INTERRUPT: ... Reset codes may be
+                                      entered now."
+72  iris, press mum circle            "First access code accepted."
+73  iris, press kla circle            "Second access code accepted." =>
+                                      END-GAME: 8,000 casualties, 30,164,000
+                                      survivors, ranking 1 (best) of 7,
+                                      "You successfully completed your task,
+                                      bringing the Filtering Computers back
+                                      into balance, in 71 cycles."
+
+(Line numbers 70-73 above are the 68th-72nd commands; the arrival interrupt
+prints during the preceding filler's output, so the file's 72 commands map
+to cycles 1-71.)
+
+Casualty ledger: TOTAL-SCORE starts at 3 (the quake), +5 accrued from brief
+WINDS drift before the dial-2 fix takes hold, +0 projected at END-GAME
+(recovery in 0 cycles) = 8 => "8,000 casualties", inside the <=40 bracket
+for ranking 1: "a home in the country and an unlimited bank account."

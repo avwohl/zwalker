@@ -1,0 +1,289 @@
+# Starcross (Infocom Release 18, serial 830114, Z-machine V3)
+# VERIFIED COMPLETE SOLVE: 400/400, won=True, died=False
+#
+# Reproduce with the RNG-pinned replay harness (free, no API):
+#   cd ~/src/zwalker
+#   python3 scripts/replay_solve.py games/zcode/starcross.z3 walkthroughs/starcross_verified_400.txt --seeds 24 --out solutions/starcross_verified.json
+#   => starcross_verified_400.txt: VERIFIED 400/400 at seed 1 | 240 cmds | died=False | won=True
+#
+# Ending: with all twelve crystal rods found and the ship computer repaired,
+# the rods power up the Control Bubble console; the course is set to a
+# circle around Earth at slow speed and the blue (execute) spot is pressed:
+# "The artifact, under your assured control, moves serenely toward Earth...
+# 'Congratulations, you who have passed our test.'" -> 400/400.
+#
+# Why a pinned seed (no restart prelude needed -- boot draws no randomness;
+# two boots are byte-identical and the seed is pinned right after start()):
+# the mass-detector contact is rolled by I-ALARM on the FIRST player turn
+# (<SETG MASSNUM <RANDOM 8>>, actions.zil:38), i.e. on the pinned stream --
+# under seed 1 the contact is UM24 and the course keyed in is
+# r 100 / theta 285 / phi 87 from the fixed MASS-LOCS table
+# (dungeon.zil:186-198). The other live randomness this recording bakes in:
+# the maintenance mouse's wander (I-MOUSE every 2 turns; it must carry a
+# transporter disk to the Garage, 15%/tick), the trash-bin search count
+# (escalating PROB 25/50/75/100), the weasel chief's appearance (3+RANDOM 3
+# ticks) and warren path (5+RANDOM 5 follow legs), and the bad-air clock
+# (75+RANDOM 50 turns, defused by the oxygen repair long before it can
+# matter). Deaths cost -10 and the route never dies.
+#
+# Route: program the nav computer with the detector contact's coordinates
+# and ride to the artifact belted in; Red Dock (+25) and the solar-system
+# relief puzzle (press the FOURTH bump = Earth, then the tiny bump) for the
+# black rod; tape library smashes the rat-ant nest (red rod), then buys the
+# spider's yellow rod; Repair Room: yellow rod -> lights, red rod in SECOND
+# red slot -> oxygen; Laboratory force-field/transporter-disk trick frees
+# the blue rod; safety line to the hook for the pink rod in the debris;
+# black rod filters the observatory projector (clear rod); card + switch
+# revive the alien computer (gold rod + mandatory endgame precondition);
+# a transporter disk fed to the maintenance mouse teleports us into the
+# Garage (green rod in the trash bin); the ray gun holds the silver rod;
+# the space suit buys the chief's brown rod and an escort to the warren
+# ladder; the throne-room skeleton yields the violet rod (teleport escape);
+# tree -> jump -> silver rod opens the Drive Bubble (white rod -> drive on);
+# jump + three recoil shots cross the axis; gold rod opens the Control
+# Bubble (+25); clear + 5 rods light the console; large square, brown x4
+# (Earth), violet x4 (circle), green (slow), blue = execute (+25) and the
+# winning ending (+25). 12 rods x 25 + 2 rooms x 25 + execute + win = 400.
+#
+# Recorded by scripts/solve_starcross_adaptive.py --seed 1.
+
+stand up
+take tape library
+east
+push red button
+read screen
+sit on couch
+fasten seat belt
+computer, r is 100
+computer, theta is 285
+computer, phi is 87
+computer, confirm
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+unfasten seat belt
+stand up
+east
+take suit
+wear suit
+take line
+west
+open inner door
+south
+close inner door
+open outer door
+out
+push fourth bump
+push tiny bump
+take black rod
+up
+close outer door
+open inner door
+up
+close inner door
+north
+west
+north
+east
+throw tape library at nest
+take red rod
+take tape library
+west
+south
+west
+south
+open inner door
+down
+close inner door
+open outer door
+down
+south
+south
+give tape library to spider
+take yellow rod
+north
+north
+up
+close outer door
+open inner door
+up
+up
+south
+open hatch
+down
+take square
+put yellow rod in yellow slot
+put red rod in second red slot
+up
+north
+down
+south
+south
+west
+south
+east
+take red disk
+take blue disk
+drop red disk
+put blue disk under globe
+put square on globe
+set dial to 4
+set dial to 1
+take blue rod
+take square
+take blue disk
+take red disk
+west
+north
+north
+open inner door
+down
+close inner door
+take basket
+put black rod in basket
+put blue rod in basket
+open outer door
+open outer door
+down
+tie line to suit
+tie line to hook
+west
+take pink rod
+put pink rod in basket
+east
+untie line from hook
+untie line from suit
+drop line
+up
+close outer door
+open inner door
+up
+north
+east
+north
+west
+look at projector through black rod
+take clear rod
+put clear rod in basket
+east
+north
+west
+west
+south
+open panel
+put square in slot
+turn on switch
+take gold rod
+put gold rod in basket
+north
+east
+south
+south
+south
+south
+east
+west
+north
+drop red disk
+wait
+east
+east
+drop blue disk
+stand on blue disk
+take blue disk
+wait
+drop blue disk
+stand on blue disk
+take blue disk
+wait
+drop blue disk
+stand on blue disk
+take red disk
+search trash bin
+search trash bin
+search trash bin
+take green rod
+put green rod in basket
+north
+take blue disk
+west
+north
+west
+drop red disk
+take gun
+look inside gun
+take silver rod
+put silver rod in basket
+east
+north
+east
+east
+east
+remove suit
+wait
+give suit to chief
+point at brown rod
+follow chief
+follow chief
+follow chief
+follow chief
+follow chief
+follow chief
+open inner door
+down
+close inner door
+open outer door
+down
+west
+west
+north
+move skeleton
+take violet rod
+drop blue disk
+stand on blue disk
+east
+north
+up
+east
+south
+south
+up
+up
+jump
+put silver rod in silver slot
+in
+take white rod
+put white rod in white slot
+out
+up
+jump
+fire gun at drive bubble
+fire gun at drive bubble
+fire gun at drive bubble
+down
+put gold rod in gold slot
+in
+put clear rod in clear slot
+put pink rod in pink slot
+put brown rod in brown slot
+put violet rod in violet slot
+put green rod in green slot
+put blue rod in blue slot
+touch large square
+touch brown spot
+touch brown spot
+touch brown spot
+touch brown spot
+touch violet spot
+touch violet spot
+touch violet spot
+touch violet spot
+touch green spot
+touch blue spot

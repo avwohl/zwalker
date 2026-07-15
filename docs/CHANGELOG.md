@@ -1,5 +1,45 @@
 # Changelog
 
+## 2026-07-15 - Verified Complete Solves: 15-game batch — corpus now 50 games across V1/V3/V4/V5/V8
+
+- **15 new verified complete solves** join the 35 already in the repo, taking
+  the corpus to **50 games, every one played start to finish and reproducibly
+  won** under a pinned RNG seed (`scripts/replay_solve.py`; JSON + documented
+  walkthrough per game). This batch fills in a large part of the Infocom
+  catalogue plus more IF-Comp titles.
+  - Infocom: The Hitchhiker's Guide to the Galaxy 400/400, Starcross 400/400,
+    Ballyhoo 200/200, Hollywood Hijinx 150/150, Mini-Zork I 350/350,
+    Suspended (ending-text win), Deadline (ending-text win — arrest and
+    conviction of Baxter & Dunbar), Suspect (ending-text win — Michael &
+    Alicia convicted), Leather Goddesses of Phobos (ending-text win).
+  - IF-Comp / modern: The Jewel of Knowledge 90/90, Pentari 70/70 (the true
+    maximum — 10 over the published walkthrough, by killing the elf yourself),
+    Deephome 300/300, All Quiet on the Library Front 30/30, Wearing the Claw
+    (win), Reverberations 50/50.
+- **Mini-Zork I** is the second V3 Zork on the list and rounds out the family
+  alongside the full Zork I (both the standard build and the 1980 V1 release);
+  350/350, death-free, ending at the Stone Barrow.
+- **The `#% WIN_TEXT` path now also carries internally-scored games** whose
+  particular build keeps the score in a global the interpreter doesn't sample
+  (Deephome, Reverberations, All Quiet on the Library Front): the walkthrough
+  reaches the documented maximum and the win is asserted by the true ending
+  text (which prints the real score) rather than the number. Leather Goddesses
+  is a special case — it *deliberately* randomizes its own score and collapses
+  its maximum to whatever total you reach ("...call it 321 out of 321 points"),
+  so it too is verified by ending text.
+- **Interpreter / harness changes** (all 50 games re-verified together after
+  each):
+  - `get_max_score` banner/serial map gains Hitchhiker's (400), Hollywood
+    Hijinx (150), Ballyhoo (200), Starcross (400), Seastalker (100) and
+    Mini-Zork (350 via the Zork banner); the mistaken fixed Leather Goddesses
+    entry was removed once its score proved randomized.
+  - `replay_solve` death detection: a `DEATH_FALSE_POSITIVES` guard exempts
+    Ballyhoo's mandatory non-fatal gag ("**** You have died ****" while you
+    "fall awkwardly down from the cage", reprieved two turns later) — the same
+    per-game curation already used for Enchanter, Plundered Hearts and Zork.
+- Docs (README, docs/index.html, WALKTHROUGHS.html) regenerated from the
+  verified JSONs; badges/counts, CHANGELOG and TODO updated.
+
 ## 2026-07-14 - Verified Complete Solves: 26-game batch — corpus now 35 games across V1/V3/V4/V5/V8
 
 - **26 new verified complete solves** join the 9 already in the repo, taking the

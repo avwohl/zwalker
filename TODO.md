@@ -4,23 +4,28 @@
 
 ## Current Status
 
-- **35 verified complete solves** spanning Z-machine versions V1/V3/V4/V5/V8
+- **50 verified complete solves** spanning Z-machine versions V1/V3/V4/V5/V8
   (won, replay-verified with `scripts/replay_solve.py` at fixed RNG seeds;
   `solutions/*_verified.json` + documented `walkthroughs/*_verified_*.txt`):
   - Infocom: Zork I 350/350 (both the standard V3 build and the 1980 V1
-    Release 5), Zork II 400/400, Zork III 7/7, Enchanter 400/400,
-    Sorcerer 400/400, Spellbreaker 600/600, Planetfall 80/80,
-    Stationfall 80/80, Wishbringer 100/100, The Lurking Horror 100/100,
-    Trinity 100/100, Infidel 400/400, Cutthroats 250/250,
-    Plundered Hearts 25/25, A Mind Forever Voyaging (ending-text win),
-    Moonmist (win), The Witness (win)
+    Release 5) and Mini-Zork I 350/350, Zork II 400/400, Zork III 7/7,
+    Enchanter 400/400, Sorcerer 400/400, Spellbreaker 600/600,
+    Planetfall 80/80, Stationfall 80/80, Wishbringer 100/100,
+    The Lurking Horror 100/100, Trinity 100/100, Infidel 400/400,
+    Cutthroats 250/250, Plundered Hearts 25/25, The Hitchhiker's Guide to
+    the Galaxy 400/400, Starcross 400/400, Ballyhoo 200/200,
+    Hollywood Hijinx 150/150, A Mind Forever Voyaging (ending-text win),
+    Moonmist (win), The Witness (win), Deadline (win), Suspect (win),
+    Suspended (win), Leather Goddesses of Phobos (win — self-randomized score)
   - Others: Adventure/Colossal Cave 350/350, Adventureland 100/100,
     Detective 360/360, Balances 51/51, Theatre 50/50, The Acorn Court 30/30,
-    Lost Pig 7/7, and ending-text wins for 9:05, Photopia, Shade, All Roads,
-    The Edifice, Suveh Nux, Cloak of Darkness, The Dreamhold,
-    Castle Adventure!, Cold Iron
-- **108 solution files tracked in git** (73 `*_solution.json` exploration runs
-  + 35 verified solves); the 2026-02-05 batch run produced ~58 more exploration
+    Lost Pig 7/7, The Jewel of Knowledge 90/90, Pentari 70/70,
+    Deephome 300/300, All Quiet on the Library Front 30/30,
+    Reverberations 50/50, and ending-text wins for 9:05, Photopia, Shade,
+    All Roads, The Edifice, Suveh Nux, Cloak of Darkness, The Dreamhold,
+    Castle Adventure!, Cold Iron, Wearing the Claw
+- **123 solution files tracked in git** (73 `*_solution.json` exploration runs
+  + 50 verified solves); the 2026-02-05 batch run produced ~58 more exploration
   runs that are local-only (`.gitignore` excludes new `solutions/*_solution.json`)
 - **155 test scripts** tracked (73 smart tests that tolerate random events)
 - **Z-machine interpreter**: 100% CZECH compliance (1,604/1,604 tests across v3/v4/v5/v8;
@@ -29,7 +34,7 @@
 - **Zorkie tests**: 43/64 passing (67%) as of 2026-02-05
 
 Note: the batch "solves" are exploration/coverage runs (room mapping + command
-exercise), not completed games. The verified end-to-end wins are the 35 games
+exercise), not completed games. The verified end-to-end wins are the 50 games
 listed above.
 
 ## Unsolved Games
@@ -104,7 +109,7 @@ scripts/
 ├── run_all_tests.sh         # Test runner
 └── test_zorkie_compilation.py  # Zorkie tester
 
-solutions/           # 35 verified solves + 73 exploration runs (JSON, tracked)
+solutions/           # 50 verified solves + 73 exploration runs (JSON, tracked)
 scripts/test_*.js    # 155 generated test scripts (73 smart)
 ```
 

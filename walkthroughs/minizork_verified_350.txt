@@ -1,0 +1,434 @@
+# MINI-ZORK I (Infocom, 1988) -- VERIFIED complete solve: 350/350 + Stone Barrow.
+#
+# Reproduce:
+#   python3 scripts/replay_solve.py games/zcode/minizork.z3 \
+#           walkthroughs/minizork_verified_350.txt --seeds 24 \
+#           --out solutions/minizork_verified.json
+#   -> VERIFIED 350/350 at seed 1 | 405 cmds | died=False | won=True
+# Expected final line: the Stone Barrow victory --
+#   "You have completed a great and perilous adventure ... You have mastered
+#    the first part of the ZORK trilogy."
+#
+# Binary: minizork.z3, Release 34 / Serial 871124, Z-machine V3, max score 350.
+# Why pin the seed: the troll and thief melees and the Frigid-River buoy drift
+#   are RANDOM; the interpreter RNG is seeded AFTER start() (boot draws no
+#   randomness -- two boots are byte-identical, so no `restart` prelude).  This
+#   list is the exact command stream recorded by scripts/solve_minizork_adaptive.py
+#   at seed 1; every combat repeat, heal-wait, and buoy retry is baked in,
+#   so it replays deterministically.  A single death (-10) makes the exact-325
+#   trophy-case win unreachable, so the run is perfectly death-free.
+#
+# Route (see logs/minizork_route.txt / logs/minizork_notes.md):
+#   350 = 215 (fifteen treasures, points on first TAKE) + 55 (room entries:
+#   Kitchen 10, Cellar 25, Thief's Lair 20) + 55 (events: troll 10, drain dam
+#   20, pray at altar 15, Drafty Room lit 10) -> reach exactly 325, then the
+#   15th treasure into the trophy case fires +25 -> 350, reveals the map, opens
+#   West-of-House SW to the Barrow.  Trips: 1 house/egg/troll/torch/coins/cyclops;
+#   2 dam-drain/trunk; 3 skull exorcism; 4 coffin+sceptre / rainbow pot-of-gold;
+#   5 river emerald+scarab; 6 kill thief (recover painting+chalice); 7 coal mine
+#   (jade/bracelet/diamond via the basket puzzle); then map -> Stone Barrow.
+north
+north
+up
+take egg
+down
+south
+east
+open window
+west
+west
+take lamp
+take sword
+turn on lamp
+move rug
+open trap door
+open case
+east
+up
+take rope
+take knife
+down
+west
+put egg in case
+down
+east
+take painting
+west
+north
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+drop sword
+east
+se
+tie rope to railing
+down
+take torch
+turn off lamp
+south
+down
+north
+north
+west
+west
+nw
+down
+take coins
+sw
+east
+east
+se
+ulysses
+east
+put painting in case
+put coins in case
+open trap door
+down
+north
+east
+north
+east
+take matches
+northeast
+press yellow button
+take wrench
+take screwdriver
+southwest
+turn bolt with wrench
+drop wrench
+west
+north
+take trunk
+south
+south
+west
+west
+nw
+down
+sw
+east
+east
+se
+east
+put trunk in case
+drop matches
+drop screwdriver
+take matches
+open trap door
+down
+north
+east
+se
+down
+take bell
+south
+take candles
+take book
+down
+down
+ring bell
+take candles
+light match
+light candles with match
+read book
+drop bell
+drop book
+south
+take skull
+drop candles
+drop matches
+north
+up
+north
+north
+west
+west
+nw
+down
+sw
+east
+east
+se
+east
+put skull in case
+open trap door
+down
+north
+east
+se
+down
+down
+open coffin
+take sceptre
+up
+south
+pray
+east
+east
+ne
+wave sceptre
+take pot
+sw
+up
+west
+nw
+west
+south
+east
+west
+west
+put sceptre in case
+put pot in case
+open trap door
+down
+north
+east
+se
+down
+down
+take coffin
+up
+south
+pray
+nw
+west
+south
+east
+west
+west
+put coffin in case
+open trap door
+down
+north
+east
+north
+north
+north
+take pump
+south
+south
+east
+down
+inflate plastic with pump
+drop pump
+enter boat
+launch
+take buoy
+take buoy
+take buoy
+take buoy
+take buoy
+take buoy
+take buoy
+take buoy
+take buoy
+take buoy
+east
+open buoy
+take emerald
+get out of boat
+take shovel
+northeast
+dig sand with shovel
+dig sand with shovel
+dig sand with shovel
+dig sand with shovel
+take scarab
+drop shovel
+southwest
+south
+west
+southwest
+up
+west
+nw
+west
+south
+east
+west
+west
+put emerald in case
+put scarab in case
+drop buoy
+open trap door
+down
+north
+west
+nw
+down
+sw
+east
+east
+se
+up
+kill thief with knife
+kill thief with knife
+kill thief with knife
+kill thief with knife
+kill thief with knife
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+wait
+diagnose
+take all
+drop stiletto
+down
+east
+put chalice in case
+put painting in case
+put egg in case
+put coins in case
+put trunk in case
+put skull in case
+put sceptre in case
+put pot in case
+put coffin in case
+put emerald in case
+put scarab in case
+take screwdriver
+east
+open sack
+take garlic
+west
+open trap door
+down
+north
+east
+north
+north
+north
+north
+north
+north
+west
+north
+take jade
+east
+turn on lamp
+put torch in basket
+put screwdriver in basket
+north
+take bracelet
+east
+north
+south
+down
+take coal
+up
+east
+nw
+west
+south
+put coal in basket
+lower basket
+north
+east
+north
+south
+down
+drop knife
+drop garlic
+drop jade
+drop bracelet
+drop lamp
+west
+take torch
+take coal
+take screwdriver
+south
+open lid
+put coal in machine
+close lid
+turn switch with screwdriver
+open lid
+take diamond
+north
+put diamond in basket
+put torch in basket
+put screwdriver in basket
+east
+take lamp
+take knife
+take garlic
+take jade
+take bracelet
+turn on lamp
+up
+east
+nw
+west
+south
+raise chain
+take diamond
+take torch
+west
+south
+east
+down
+north
+west
+nw
+down
+sw
+east
+east
+se
+east
+put jade in case
+put bracelet in case
+put diamond in case
+put torch in case
+take map
+read map
+east
+east
+nw
+west
+sw

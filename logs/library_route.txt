@@ -1,0 +1,56 @@
+All Quiet on the Library Front -- verified winning route (my own notation)
+Release 2 / serial 951204 / Inform 5 / Z-machine V5, by Michael S. Phillips.
+7 rooms, ~36 turns, no randomness. Boot needs a keypress ("enter").
+
+Map (exits used):
+  Lobby --w--> Ground Floor Stacks --n--> Ground Floor Stairwell --u-->
+  Second Floor Stairwell --s--> Second Floor Stacks --s--> Rare Books Room
+  Second Floor Stacks --e--> Computer Lab
+  (Lobby exit east = the security gates = the way out / the win)
+
+Command list (exactly as recorded and verified):
+  enter                         # satisfy the "press SPACE to begin" read_char
+  ask attendant about nelson    # Alan points you to the librarian
+  ask attendant about librarian
+  w                             # -> Ground Floor Stacks (Marion)
+  ask librarian about nelson    # bio is in the Rare Books Room
+  ask librarian about rare      # 2nd floor, need the key
+  ask librarian about key       # key is at the circulation desk
+  e                             # -> Lobby
+  ask attendant about key       # he wants your ID card
+  give card to attendant        # +5  swap ID card for the Rare Books key
+  w
+  n                             # -> Ground Floor Stairwell
+  look under stairs             # +1  red herring
+  u                             # -> Second Floor Stairwell
+  give herring to grue          # +2  grue in the painting eats the herring
+  s                             # -> Second Floor Stacks
+  unlock door with key
+  open door
+  s                             # -> Rare Books Room
+  take nelson                   # +5  the Graham Nelson biography (mcguffin)
+  n                             # -> Second Floor Stacks
+  close door
+  lock door with key
+  search shelves                # +5  a copy of the novel "Debt of Honor"
+  e                             # -> Computer Lab
+  ask technician about gates    # +2  Tom storms off to dismantle the gates
+  x printout                    # +5  examining it auto-takes the Frobozzica printout
+  w
+  n
+  d
+  s                             # -> Ground Floor Stacks
+  give printout to librarian    # +2
+  xyzzy                         # +1  the classic magic word
+  e                             # -> Lobby (Tom has followed you here)
+  give novel to attendant       # +2  Alan buries his nose in the novel
+  give key to attendant         #      returns your ID card (no points)
+  e                             # WIN  exit east through the disabled gates
+
+Score ladder (in-game SCORE/FULL, max 30): 5 key, 1 herring, 2 grue, 5 bio,
+5 novel, 2 tech-leaves(=gates disabled), 5 printout, 2 printout->librarian,
+1 xyzzy, 2 novel->attendant = 30/30.
+
+Win text (unique to the ending, used as the WIN_TEXT anchor):
+  "...you meet an investor who loves IF, and you write a wildly successful
+   game..."  then  *** You have won ***

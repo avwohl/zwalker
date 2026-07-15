@@ -1,0 +1,129 @@
+The Jewel of Knowledge — route in my own words (Release 2, seed 1, 90/90)
+
+Legend: >>> marks a scoring action (running cumulative total in brackets).
+
+0. INTRO SKIP
+   bypass -> yes. Lands on the Rocky Plateau (Sixth Layer) with just the sword.
+
+1. ROCKY PLATEAU / MINERALIZED CORRIDOR / TIGHT FIT
+   Take Jacob's travelling sack (it holds moon salt). verbose. Go w, nw into the
+   Mineralized Corridor.
+   >>> pull quartz  -> quartz shatters, revealing a fault line          [2]
+   Go u to the Tight Fit; you can't climb up carrying everything, so d, drop all,
+   then u, u.
+   >>> the second u reaches Fifth Layer Dropoff (a "visit" point)       [4]
+
+2. REFIND FIREBUG + BOOK
+   The firebug sits on an outcrop over a gaping hole; you can't reach it, and
+   throwing the book AT the bug would kill it. So:
+   >>> throw book at outcrop  -> outcrop cracks; book AND bug fall below[7]
+   d, d back to the Mineralized Corridor; take all; se, e to Rocky Plateau; take
+   bug, take book.
+
+3. VISIT THE DRUIDS
+   open sack; rub bug (lights it); light salt with bug;
+   >>> smell smoke  -> transported to the Amylyan Druids' Temple        [9]
+   Talk to Allarah: tell allarah about jacob; ask about jewel, helspeth, white
+   dragon, then:
+   >>> ask allarah about black dragon  -> she gives the ebony key       [12]
+   >>> enter mist  -> returns you to the Rocky Plateau                  [14]
+
+4. MOSS, TRAPDOOR, LYE, SKELETON  (west chain)
+   w, w, w to Carved Steps; n to the Moss-Filled Cave. take moss.
+   >>> clean dirt with moss  -> uncovers a wooden trapdoor             [16]
+   open trapdoor; d to the Cleaning Closet; take lye; u, s, s to the Lonely
+   Burial Ground. pour lye on moss (makes it foamy):
+   >>> clean skeleton with moss  -> skeleton collapses, revealing the
+       air bladder and crampons                                        [19]
+   take bladder; read label; take crampons.
+
+5. GEYSER CLIMB TO ARIANA
+   n, e, e, nw, w, w to the Gaseous Geyser (erupts on the 4th turn after entry).
+   Examine hole/shaft/vapor to burn turns, wear crampons, then:
+   >>> climb porous  -> climb the porous wall to Shaft Base (a visit pt)[21]
+   u, u, e to On the Ledge (Ariana's body). look in boot:
+   >>> take lockpick  (a sundry item point)                            [23]
+   Also take bow (the crossbow, arrow inside).
+
+6. BLOW THE POROUS WALL
+   w, d, d, d back to the Gaseous Geyser (erupts again on the 4th turn).
+   x porous, search porous, break porous (too weak), then:
+   >>> put bladder in hole  -> the blocked geyser bursts the porous
+       wall open, opening the Quarry                                   [26]
+   look; take bladder; w to the Quarry; take pickaxe.
+
+7. CROSSBOW PRACTICE
+   e, e, e, se, w, w, n, n to the Fungus Forest. Shoot the target-shaped mushroom
+   three times, reloading between (shoot mushroom with bow / take arrow /
+   put arrow in bow / shoot / put arrow in bow / shoot):
+   >>> the third hit makes you an expert marksman                      [29]
+   put arrow in bow (reload for later).
+
+8. ICE WALL + WHITE DRAGON'S COAT
+   s, s, w to the Frozen Foyer. break ice with pickaxe, then g four times:
+   >>> the passage finally breaks through                              [32]
+   s, se to the (dead) White Dragon's Lair. open claws:
+   >>> take coat  -- the coat of many colours (a sundry item point)    [34]
+   wear coat.
+
+9. GYPSUM-FLOWER MAZE
+   s to the Antechamber, then n, nw, n, e, e, e, e, ne to the Ebony Expanse; e
+   into the maze. Five rooms: disturb a flower a DIFFERENT way each room and
+   follow the direction its sediment blows. The fixed path is NE, S, W, N, E
+   (the recorder reads the reported direction). Verbs used: break/push/pull/
+   squeeze/cut.
+   >>> stepping east out of the last room reaches the Obsidian Door    [36]
+
+10. OBSIDIAN DOOR
+   x door; unlock door with key (ebony key opens the first lock, revealing a
+   second keyhole); unlock door with lockpick:
+   >>> the obsidian door opens                                         [39]
+   e into the Black Dragon's Lair (the door slams shut).
+
+11. BLACK DRAGON — SURVIVE, SEVER, SUBDUE, ROB
+   You have 13 free turns; he blasts acid on the 14th. Chat to burn turns
+   (ask about black/white dragon, amylya, trinket, raif, red dragon, treasure,
+   cousin, goblin; ask for ring; ask about ramp, plague, door), then on the 14th:
+   >>> put lye in coat  -> the coat (now a base) neutralises the acid   [44]
+   >>> kill dragon with sword  -> sever a claw (sword lost)             [46]
+   >>> se to At the Top of the Ramp (a visit point)                    [48]
+   >>> push boulder  -> boulders crush/subdue the dragon               [51]
+   nw back down;
+   >>> ask dragon for ring  -> he hands over the ring of heat resistance[53]
+   ask dragon about door (he opens it); x ring; wear ring;
+   >>> ask dragon about red dragon  -> he offers a secret ride          [58]
+
+12. RIDE TO THE RED DRAGON
+   sit on head. He carries you east; on his head you get a few turns per room
+   (Antechamber: x paper/cube/statue), then z through Well-Lit Passage and Steep
+   Cliff Face, x gate at the Red Dragon Gate, z (he speaks the gate open), z:
+   >>> arrive at the Red Dragon's Lair (a visit point)                 [60]
+
+13. THE DIVIDE — OUTLAST BOTH DRAGONS
+   w to On The Divide (the safe middle). Wait (z x8). The black dragon's acid
+   can't hurt you through the lye coat (it raises the water) and the red dragon's
+   flames can't hurt you through the ring (they cost you some gear and rip the lye
+   out of the coat):
+   >>> the red dragon finally collapses                                [70]
+   i (confirms you've lost firebug/moss/lye/lockpick/pickaxe), w to the Red
+   Dragon's Plateau.
+
+14. CHANDELIER + RIVER
+   >>> shoot chandelier with bow  -> it drops onto the Red Dragon      [73]
+   look (so you notice them); take ember; put ember in coat; n into the river.
+   Float: z, z, z:
+   >>> carried downstream past the red dragon                          [75]
+   z, z, then:
+   >>> remove ring  -> now the embered coat keeps you warm; you survive
+       the freezing river and wash up on Pebble Beach                  [80]
+
+15. THE JEWEL ROOM — TOUCH, DON'T TAKE
+   n through the three Halls of the Ancients (x murals between the n moves) to the
+   Jewel Room. x mirror, x pedestal, x jewel. Do NOT take the jewel (poison
+   death).
+   >>> touch mirror  -> pulled home through the mirror; you lie to the
+       Druids that no Jewel exists and live a quiet life. WIN.         [90]
+
+FINAL: "*** You have won ***" / "you scored 90 out of a possible 90, in 247
+turns, earning you the rank of Humbled Land Owner." Ending closes on
+"the lingering scent of foolish dreams" (WIN_TEXT anchor).

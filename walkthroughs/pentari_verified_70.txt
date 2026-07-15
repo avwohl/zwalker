@@ -1,0 +1,91 @@
+# Pentari by Howard A. Sherman
+# (An Interactive Prequel to First Light; Release 6 / Serial 030206 /
+#  Inform v6.21 Library 6/10, Z-machine V5)
+# VERIFIED COMPLETE SOLVE: 70/70 (maximum), won=True, died=False
+#
+# Reproduce with the RNG-pinned replay harness (free, no API):
+#   cd ~/src/zwalker
+#   python3 scripts/replay_solve.py games/zcode/pentari.z5 walkthroughs/pentari_verified_70.txt --seeds 24 --out solutions/pentari_verified.json
+#   => pentari_verified_70.txt: VERIFIED 70/70 at seed 3 | 35 cmds | died=False | won=True
+#
+# Ending (the true MAXIMUM ending): you slay Vamvevmew yourself. Freeing the
+# daughter emerald shatters the anti-magic ward, Morden teleports in and duels
+# the Dark Elf, and while the elf is distracted you run him through from behind
+# with your sword; crowning the platinum box then summons Duke Galin, who finds
+# "the corpse of his ancient nemesis" and laments "Damn it, I wanted the
+# privilege." — "*** You have won ***  In that game you scored 70 out of a
+# possible 70, in 35 turns." The IF Archive walkthrough only reaches 60/70 by
+# taking the lesser ending (Galin dashes off and kills the elf offstage, the
+# "no one else in the room" ending, which omits the two combat points and the
+# +10 KILL). This recording takes the full-credit ending.
+#
+# Point breakdown (max 70; the SCORE verb reports "out of a possible 70"):
+#   CITY (word of bringing -> the guild)                +5   => 5
+#   SMASH SEAL (shatter Vamvevmew's guard ward)        +10   => 15
+#   GET SCROLL (from the fireplace; learns Fwoosh)     +10   => 25
+#   GET DAGGER (Galin's jewel-encrusted blade)          +5   => 30
+#   FWOOSH (fireball blasts the oaken chest open)      +10   => 40
+#   GET SMALL EMERALD (free the Empirical daughter)     +5   => 45
+#   KILL ELF (run him through while Morden holds him)  +10   => 55
+#   PUT SMALL EMERALD ON BOX (summon Galin -> win)     +15   => 70
+#
+# Why a pinned seed (no restart prelude needed — boot draws no randomness; two
+# boots are byte-identical and the seed is pinned right after start()): the
+# game's one piece of state-relevant randomness is the Dark Elf's wander. It
+# bites twice. (1) FWOOSH in the Treasury blasts the chest open ONLY if the elf
+# is NOT in the room; if he is, the fireball hits HIM, he flies into a rage and
+# kills you — so the seed must leave the Treasury clear during the FWOOSH turn.
+# (2) Once you carry the freed emerald, your "aura of power" betrays you: the
+# instant the elf shares your room he steals it and yanks you into the Upper
+# Level where Morden is dueling him — so you must MEET him. In this recording,
+# after grabbing the emerald you walk to the Main Hall (the four-exit hub) and
+# wait two turns (the two Z's below); the elf wanders in, the encounter fires,
+# and KILL ELF lands the distracted-kill. This fixed command list was recorded
+# under adaptive seed 7 but the replay harness (sweeping seeds 1..24) first
+# reproduces it cleanly at seed 3 — hence the seed 3 above; other seeds win too
+# (they differ only in how many hub waits are needed and where the elf is
+# caught). Route recorded by scripts/solve_pentari_adaptive.py, which adapts the
+# FWOOSH wait and the hub wait per seed and records every command.
+#
+# The interpreter knows no max score for this post-Infocom V5 title
+# (get_max_score returns None), so the MAX_SCORE directive below carries the
+# game's own ceiling from its SCORE verb ("out of a possible 70").
+#
+#% MAX_SCORE: 70
+#% WIN_TEXT: \*\*\*\s*You have won\s*\*\*\*
+#
+N
+N
+IN
+CITY
+E
+COVERT
+S
+SMASH SEAL
+N
+N
+N
+IN
+GET SCROLL
+OUT
+S
+E
+N
+GET TOWEL
+S
+W
+W
+GET DAGGER
+N
+OPEN TOWEL
+FWOOSH
+LOOK
+GET SMALL EMERALD
+S
+E
+Z
+Z
+KILL ELF
+GET SMALL EMERALD
+PUT SMALL EMERALD ON BOX
+LOOK

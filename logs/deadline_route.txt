@@ -1,0 +1,63 @@
+Deadline — verified winning route (my own words)
+Recorded & verified 2026-07-15 02:33, seed 1, 129 commands.
+Clock times (from the status line) matter more than turn counts; they are the
+milestones the recorder synchronizes on.
+
+GOAL: prove Baxter + Dunbar conspired to murder Marshall Robner and arrest the
+pair with means/motive/opportunity in evidence, before ~2 PM (when Baxter
+murders Dunbar at the shed) and before the 8 PM deadline. Four evidence flags
+gate the win: NOTE-READ, LAB-REPORT held, BAXTER-PAPERS taken, STUB-D.
+
+8:00  South Lawn (start). n → Front Path, open the (auto-closing) front door,
+      n,n,e,u,u,w,w,w,w,n → Library (~8:12).
+8:12  LIBRARY. take pad + pencil; "rub pencil on pad" → the "Baxter … Focus"
+      impression = NOTE-READ (motive hint). take calendar; "turn calendar" →
+      flips it to July 8, "Call Coates: Will completed" (the new-will motive).
+8:18  Leave: s,e,e,e,e,d,d,w,s, open door, s → Front Path; w,w,ne → Garden Path
+      (the rose garden), arriving ~8:31.
+8:31  Kill time in the rose garden: "wait until 11:00" (answer y to each passing-
+      NPC "keep waiting?" prompt). McNabb tends the garden 11-1.
+11:13 "wait for mcnabb" — he arrives. A few "mcnabb, hello" until his "Crushed my
+      roses" outburst fires, then "mcnabb, what is wrong", "mcnabb, show me the
+      holes". "follow mcnabb" → Among the Roses; he shows two ladder holes.
+11:20 "examine holes", "examine ground" → cut finger, unearth a filthy porcelain
+      TEACUP shard (the murder weapon, smashed and buried). "analyze fragment for
+      loblo" — Sgt Duffy carries it to the lab (returns in 15-30 min).
+11:23 Head to the will: n,w,se,e, open door, n,n,w → Living Room (~11:30).
+      "wait until 12:00" (y to prompts). At ~11:50 Duffy delivers the LAB-REPORT
+      ("The fragment did contain LoBlo") = LAB-REPORT held. At ~11:56 Coates
+      reads the (old) will; George nods, relieved.
+12:00 LIVING ROOM. "show calendar to george" → George panics (the completed new
+      will would disinherit-adjacent expose things) and bolts for his room.
+      "follow george" ×8 up to George's Bedroom (~12:09). Then leave him:
+      n,w,n, "open balcony door", n → Library Balcony. Leaving his room starts
+      his secret run to Dad's hidden wall safe.
+12:14 On the balcony, wait (single-turn "look" fillers) until George "rotates
+      away" the bookshelf and enters the hidden closet (~12:17). Give him 10-15
+      turns at the safe: twelve fixed "look" fillers. Then s → Library,
+      "examine bookshelf" (reveals the black button), "press button" → catches
+      George with the safe OPEN; he crumples, you enter the closet.
+12:30 "examine safe" reveals the stack of papers; "get papers" = BAXTER-PAPERS
+      (the Focus embezzlement evidence — Baxter's motive). Exit the closet:
+      w,s,e,e,e,e,d,d,w,w → Living Room (~12:41).
+12:42 "show lab report to dunbar" (sets LOBLO-FLAG so the accusation bites),
+      then "accuse dunbar" → she cries and begins to flee. Leave: e,s, open
+      door, s → Front Path.
+12:47 "wait for dunbar" — she walks past (~12:51). "follow dunbar" → she stops,
+      pulls a cigarette and drops a Hartford Philharmonic ticket stub.
+      "get ticket", "read ticket" (July 7, 8 PM — the concert alibi),
+      "show ticket to dunbar" → she confesses she was with Baxter that night =
+      STUB-D (opportunity, ties the two together).
+12:55 To the shed: e,e,se → Shed. "wait for baxter" until BOTH Baxter and Dunbar
+      arrive (~1:09). "show ticket to baxter" (he lies about the alibi),
+      "arrest baxter and dunbar".
+1:10  WIN — Klutz's letter: "a jury convicted Mr. Baxter and Ms. Dunbar today of
+      the murder of Mr. Robner." Case solved.
+
+Reproduce:
+  python3 scripts/replay_solve.py games/zcode/deadline.z3 \
+    walkthroughs/deadline_verified_win.txt --seeds 24 \
+    --out solutions/deadline_verified.json
+  => VERIFIED 13/None at seed 1 | 129 cmds | died=False | won=True
+     (13 = the 1 PM clock hour, not a point score; Deadline has no score)
+Re-record: python3 scripts/solve_deadline_adaptive.py --seed 1 --out <file>

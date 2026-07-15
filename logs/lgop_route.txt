@@ -1,0 +1,93 @@
+LEATHER GODDESSES OF PHOBOS — verified route (male, SUGGESTIVE default)
+=======================================================================
+Recorded by scripts/solve_lgop_adaptive.py; final list in
+walkthroughs/lgop_verified_316.txt. First real turn is `#random <k>`, which
+reseeds the interpreter PRNG so the whole run is a pure function of k and the
+final RANDOMized score lands on exactly 316 (see logs/lgop_notes.md).
+
+Scoring is randomized (BASE+RANDOM(VAR) per event). The 17 events below are the
+ones the route collects; for the chosen k their draws sum to 316. Ranges shown
+are BASE+1 .. BASE+VAR (file:line in logs/lgop_zil).
+
+PHASE 1 — Joe's Bar → Phobos cell (EVENT 1: wake in cell, 2-8, earth.zil:516)
+  nw (Gents' = male) / wee / take stool / wait / wait  → abducted to the Cell.
+  Grab flashlight, blanket, painting, food; open doors; meet Trent (S from End
+  of Hallway through the narrow cell door); up to the Observation Room and Roof.
+  Enter the roof black circle → Martian Desert.
+
+PHASE 2 — Mars: mouse, barge, cipher, Sultan, catacombs
+  w, nw to Hickory-and-Dickory-Dock; SHOW PAINTING TO MOUSE (freezes it),
+  TAKE MOUSE  (EVENT 3: 15-23, mars.zil:582 — needs <11 items carried).
+  To Royal Docks; barge to Baby Dock (press orange=leave, moor, wait to dock).
+  Read the coded message — it prints the wife number Caesar+3 and digit-reversed;
+  reverse the shown digits to recover WIFE-NUMBER. Take the lip balm.
+  Barge to My Kind of Dock; grab the clothes pin (Laundry); NE to the Audience
+  Chamber. YES → Trent answers wrong (killed, rejoins) → SAY "RIDDLE"
+  (EVENT 5: answer riddle, 9-19, mars.zil:2364). W → guard, SAY "<wife>", W →
+  Harem, WAIT (beckoned to Inner Harem), "<wife>, KISS MY KNEECAPS" → secret map
+  + reliable torch, catacombs open. DOWN.
+  Catacombs: fixed route with CLAP/HOP/KWEEPA every few turns; TAKE DIRECTORY
+  (EVENT 6: phone book, 14-39, mars.zil:3106) and TAKE RAFT (EVENT 7: 9-11,
+  mars.zil:3264); climb up to the Laundry Room.
+
+PHASE 3 — back to the Cell, then Venus
+  Drop torch; via Oriental Garden→Base of Tower→Minaret circle → Cramped Space →
+  fall into the Cell. Up to the Closet; STAND ON TRENT to get the wicker basket;
+  enter the Closet circle → Venus Jungle.
+  Escape the flytrap into the tree-hole, climb out (stand on trent); stash loose
+  items in the basket, TAKE CAN (of black stain); at the Vizicomm Booth pull the
+  knob / open box for the coin. To the Back Door: OFFER FLASHLIGHT TO SALESMAN
+  (EVENT 14: TEE remover, 4-10, venus.zil:555); knock → dragged into the Lab.
+  Gorilla puzzle: THROW FOOD IN CAGE, wait for the mind-transfer, KISS FEMALE
+  (scientist leaves), EAT FOOD, BEND BARS, exit, untie both bodies, PULL SWITCH
+  (EVENT 15: back in own body, 20-43, venus.zil:985). Take the rubber hose.
+  Enter the Lab circle → Vizicomm Booth.
+
+PHASE 4 — frog, then Cleveland
+  SE, enter circle → Royal Docks; S to the Throne Room, DROP MACHINE (the TEE
+  remover, retrieved at the endgame). S,S,E to the frog ruin: balm on lips, pin
+  on nose, drop all, cover ears, close eyes, KISS FROG
+  (EVENT 2: → blender, 18-34, mars.zil:414). Take all. E,SE to the (now white)
+  Oasis circle: APPLY STAIN TO CIRCLE (re-blackens it), enter → Cleveland.
+  Get the canvas sack (leaves inside) and rake; upstairs, make a rope from the
+  sheet and hang it out the window; Trent fetches the Ford headlight and, after
+  a truck/ceiling gag, returns it (EVENT 16: 15-47, cleveland.zil:657). Take the
+  headlight; downstairs, E, take the trellis, MOVE SOD → circle → Phobos hallway.
+
+PHASE 5 — ion-beam barge, south pole
+  Cell circle → Main Hall → My Kind of Dock. Board the barge, press orange
+  (leave), PUT RAFT IN CANAL, press purple while boarding the raft so the barge
+  FORGES AHEAD EMPTY past the ion beam (CANAL-LOC 31). Drift, GRAB DOCK at
+  Wattz-Upp; walk to the basement circle → up → Palace → Oriental Garden well →
+  Well Bottom circle → back aboard the barge at Icy Dock
+  (EVENT 8: enter Icy Dock un-radiated, 5-18, mars.zil:3628).
+  South pole: GIVE COIN TO PENGUIN (get change = a one-marsmid coin), rescue the
+  robot baby (blanket + basket, leave on the igloo stoop for the matron), enter
+  the igloo, TAKE BALLS (EVENT 9: cotton balls, 17-45, mars.zil:4168); the matron
+  ejects you; re-pack the sack; circle back to Wattz-Upp.
+
+PHASE 6 — Venus jar, spaceship
+  Wattz-Upp → basement circle → Closet circle → Venus Jungle; HISS the flytrap
+  (EVENT 12: 3-17, verbs.zil:1205); W to the Spawning Ground, TAKE JAR (untangling
+  cream); enter its circle → spaceship Hold.
+  Trent shields you from the grenade (must be present). Take the sword; through
+  the Stable (ride the stallion) to the Main Hatch; wear the therma suit (or
+  freeze); open hatch, N into space. Duel Thorbast: attack until his sword is
+  knocked loose, TAKE SWORD, GIVE THORBAST HIS SWORD → suicide
+  (EVENT 10: 6-20, spaceship.zil:729). Drive off the monster, untie the woman,
+  N → Space Yacht, she gives the PHOTO (EVENT 11: 18-30, spaceship.zil:947).
+  Leave via the Long Corridor alcove circle → random Mars room.
+
+PHASE 7 — Theta, Boudoir, the machine
+  From the landing (Oasis: w,nw,w,n,n / Ruined Castle 2: w,n,n) reach the Throne
+  Room. TAKE MACHINE; put the jar in it and TURN MACHINE ON → "untangling"
+  becomes "unangling" cream; APPLY CREAM TO ANGLE (Princess Theta)
+  (EVENT 13: 17-26, venus.zil:252) → King Mitre gives the 82-degree angle.
+  N to Royal Docks; ride the raft to Donald Dock; BUY EXIT / GIVE COIN TO
+  PROPRIETOR (EVENT 4: 6-17, mars.zil:1749) → RAKE DUST for the exit tube; open
+  it, drop the flexible circle, enter it → Boudoir. SEARCH DIVAN / WAIT → caught
+  and dumped to the Plaza (EVENT 17: 10-22, phobos.zil:1093).
+  Give Trent the 8 parts as he asks (blender, rubber hose, cotton balls, 82°
+  angle, headlight, mouse, photo, phone book); one z flushes the finale — the
+  banana peel routs the Leather Goddesses. Score lands on 316/316,
+  rank Interplanetary Emperor. WIN.

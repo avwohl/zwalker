@@ -1,0 +1,228 @@
+# Wearing the Claw (Release 3, serial 970327, Inform v1502 Library 5/12, Z-machine V5)
+# by Paul O'Brian (IF Comp 1996) -- title banner: "WEARING THE CLAW / An
+# Interactive Fantasy / Copyright (c) 1996, 1997 by Paul O'Brian."
+# VERIFIED COMPLETE SOLVE: won=True (win text), died=False
+#
+# Reproduce with the RNG-pinned replay harness (free, no API):
+#   cd ~/src/zwalker
+#   python3 scripts/replay_solve.py games/zcode/wearing_the_claw.z5 \
+#       walkthroughs/wearing_the_claw_verified_win.txt --seeds 24 \
+#       --out solutions/wearing_the_claw_verified.json
+#   => wearing_the_claw_verified_win.txt: VERIFIED 0/None at seed 1 |
+#      159 cmds | died=False | won=True
+#
+# SCORELESS: Wearing the Claw has no SCORE verb (the parser answers "That's not
+# a verb I recognise"), and zwalker's get_score() reads 0 throughout, w.max_score
+# is None. So there is no MAX_SCORE directive; the win is decided solely by the
+# WIN_TEXT directive below, matched against the true winning denouement. The
+# phrase "save another foolish wizard" is Marnian's parting whisper and appears
+# ONLY in the winning ending (printed in the same turn as "*** You have won ***").
+#
+# BOOT KEYPRESS: the title screen ("Welcome to WEARING THE CLAW... / [Please
+# press SPACE to continue]") is a read_char prompt. The FIRST command below,
+# `enter` (RETURN in this harness), satisfies it; that single keypress also
+# flushes the whole prologue (Lord Midel's plea, the Emily Dickinson epigraph)
+# and drops you at Dirt Road. There is only ONE intro keypress -- the prologue
+# does not pause again. Boot draws no RNG (two boots are byte-identical), so the
+# seed is pinned right after start(); seed 1 wins on the first try.
+#
+# WHY A PINNED SEED: the plot is deterministic (a fixed puzzle ladder, no timers
+# and no combat), but the game burns RNG on flavor (child/gull ambience, the
+# "black fly" stings, breeze lulls), so exact replay only reproduces under a
+# pinned interpreter RNG seed. Seed 1 is verified.
+#
+# ROUTE SUMMARY (Bex village -> Isle of the Goergs -> home):
+#   * Disguise the wolf paw: reach Goodman's Emporium (via the beach loop back
+#     into town), `buy glove` (with the gold piece), `tie glove to paw` (with
+#     mother's handkerchief) so Old Bill will deal with you.
+#   * `buy contract` from Old Bill in the Shed (with the topaz), board the ship
+#     at the Pier -> ferried to the island's Rocky Shore.
+#   * Island ring: read the fortress plaque (learn the word of returning), take
+#     the black coat ("PhantomPiercer, BarrierBreaker") at the Southwest Corner,
+#     tour the corners to the Clearing's silver (mirror) wall.
+#   * `wear coat` + `touch silver wall` -> the wall vanishes; enter the fortress.
+#   * The Styx/Cerberus/brimstone gauntlet is illusion: the coat lets you pass
+#     the barrier, but WATER destroys the coat -- so stow it (remove/put in
+#     pack/close pack) before the river and before the dripping barrier, wear it
+#     only to walk past Cerberus, and NEVER hit the dog (instant death).
+#   * Queen Clea gives the Pendant of Elinor (look in crystal x3); the pendant
+#     "destroys lies", so the barrier gauntlet reveals itself as Bare Hallway +
+#     Foyer on the way out. Return to the Southeast Corner, say `yeyos` to
+#     teleport home to the Town Square.
+#   * Endgame: Midel has illusion-swapped himself with Marnian. `give pendant to
+#     marnian` unmasks the fraud; `wear coat` + `enter cage` survives Midel's
+#     sword (do NOT leave the cage or dawdle -- decapitation); `give coat to
+#     marnian` lets him escape the cage and defeat Midel -> *** You have won ***.
+#
+# ROLLBACK NOTE: this V5 game reports real room-object changes, so GameWalker's
+# blocked-move rollback never fires on the winning path (every listed move is a
+# genuine room change or a harmless in-room action). Blocked probes en route say
+# "There's no path that way." which is not a rollback pattern anyway. No
+# period-suffixed directions are needed.
+#
+#% WIN_TEXT: save another foolish wizard
+#
+# Route from David Welbourn's Release 3 solution (plover.net/~davidw), corrected
+# for the Beach maze (the flattened summary dropped the east step from Beach
+# (south) to Beach (southeast)) and machine-validated command-by-command on this
+# interpreter; replay-verified by scripts/replay_solve.py.
+enter
+x me
+i
+remove pack
+x it
+open it
+x parchment
+x handkerchief
+x gold
+x topaz
+x town
+x mountains
+w
+x buildings
+w
+x garments
+x alehouse
+w
+n
+s
+w
+x shop
+s
+x desk
+x bell
+ring bell
+n
+w
+x sand
+x waves
+n
+x man
+ask man about ships
+x paw
+s
+nw
+x island
+x bushes
+s
+e
+sw
+x ship
+x sea
+w
+ne
+s
+x pebbles
+e
+nw
+e
+e
+e
+n
+x clothes
+x box
+x table
+x glove
+buy glove
+wear glove
+take handkerchief
+tie glove to paw
+x clerk
+ask clerk about glove
+ask clerk about town
+ask clerk about alehouse
+ask clerk about shop
+ask clerk about boarding house
+ask clerk about old bill
+ask clerk about ship
+ask clerk about goergs
+s
+w
+w
+w
+n
+ask man about ship
+buy contract
+x contract
+s
+sw
+w
+x sea
+w
+x wall
+read plaque
+take plaque
+x sand
+w
+take coat
+x it
+x crag
+n
+climb wall
+e
+x silver wall
+e
+w
+n
+x pebbles
+x waves
+s
+touch silver wall
+wear coat
+touch silver wall
+s
+read sign
+remove coat
+put coat in pack
+close pack
+x river
+x shapes
+s
+s
+x dog
+pet dog
+open pack
+wear coat
+s
+x water
+remove coat
+put coat in pack
+close pack
+s
+s
+s
+x clea
+look in crystal
+again
+again
+ask clea about midel
+ask clea about marnian
+ask clea about crystal
+ask clea about curse
+ask clea about pendant
+ask clea about goergs
+ask clea about magic
+ask clea about illusion
+give crystal to clea
+x pendant
+look
+x northwest door
+x northeast door
+x throne
+x dog
+x basins
+n
+x drain
+n
+n
+e
+s
+x plaque
+yeyos
+remove pendant
+give pendant to marnian
+open pack
+wear coat
+enter cage
+remove coat
+give coat to marnian

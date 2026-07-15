@@ -1,0 +1,67 @@
+Reverberations ("Reverb") — verified route (my own words), 72 commands, 50/50.
+Binary: games/zcode/reverb.z5 (R1 / serial 990110 / Inform v6.10 / Z V5).
+Deterministic: no boot RNG, all timers turn-based; wins 50/50 on seeds 1..24.
+Win declared by WIN_TEXT ("You Rule!  The game's totally over") — get_score()
+reads a garbage global (constant 3), so there is no MAX_SCORE to use.
+
+Every command matters; several scenes kill you if you waste a turn. Directions
+are bare words; no period-suffix forms needed (nothing gets falsely rolled back).
+
+1. Behind the Counter
+   x counter; read note (delivery to the courthouse); get pizza box.
+
+2. Go to the Courthouse:  sw (Pizza Parlor), s (Street), w (Near Courthouse),
+   s (Courthouse).
+
+3. Courthouse — expose the file:
+   x district attorney; wait (hear Jill argue the case);
+   open pizza box; search pizza  -> finds a metal file  [+2 -> 2];
+   show file to district attorney -> Guido jailed, Guido snatches the box [+5 -> 7].
+
+4. To Jill, then the Mayor's office:
+   n (Jill catches up), w (Downtown), w (Office Building),
+   u (2nd Floor), e (Law Office — Jill hands you a KEY),
+   w (2nd Floor), u (3rd Floor), e (Mayor's Office).
+
+5. Mayor's office — steal the file and bail out (TIMED):
+   open window; unlock cabinet with key; open cabinet;
+   get file  -> mayor + henchman burst in  [+3 -> 10];
+   jump out window -> now dangling ("Hangin' Out")  [+5 -> 15].
+
+6. Hangin' Out — get rescued (TIMED, exactly two waits):
+   kick second window; wait; wait (Jill appears at the 2nd-storey window);
+   jill, hold me; jump -> Jill catches you into the Law Office  [+5 -> 20].
+   (Jill takes the file; cops will now be after you.)
+
+7. Back to the parlor for the mob's "gift":
+   w (2nd Floor), d (ground), e (Downtown), e (Near Courthouse),
+   e (Street by Pizza Parlor), n (Pizza Parlor — a new closed box is on counter).
+   get pizza box; open box (it's a BOMB); get bomb;
+   s (Street); put bomb in sewer -> bomb gone, but it starts an EARTHQUAKE [+5 -> 25].
+
+8. Barkley's cosmetics dept — kill the assassin (TIMED):
+   e (by Department Store), s (Clothing), se (Cosmetics — a thug blocks you);
+   get spray; spray thug [+5 -> 30]; kick thug; nw (MOVE at once — Clothing);
+   n (back to the street).
+
+9. Barkley's hardware dept — grab gear (riot has flung tools onto the floor):
+   s (Clothing), sw (Hardware);
+   get hammer; get rope [+2 -> 32].
+
+10. Downtown — bluff the guard at the office building:
+    ne (Clothing), n (street), w (by Pizza Parlor), w (Near Courthouse),
+    w (Downtown — a guard blocks the entrance);
+    close box; show box to guard -> he phones "Jill" and steps aside [+3 -> 35].
+
+11. Rope-swing back into the Mayor's office:
+    w (Office Building), u, u, u (Roof — a lightning rod);
+    tie rope to rod; hold rope; jump -> you swing through the window,
+    CRASH into a mafia meeting in the Mayor's office  [+5 -> 40].
+
+12. Endgame — the fire axe (TIMED, exactly two waits):
+    break glass with hammer -> the glass axe-case  [+3 -> 43]; get axe;
+    wait; wait (earthquake opens a hairline crack in the floor);
+    hit floor with axe -> the rift swallows the whole mob; Jill's SWAT team
+    books them; you're hired and kissed  [+7 -> 50]  ->  *** You Rule! ***
+
+Final line: "In that game you scored 50 out of a possible 50, in 72 turns."

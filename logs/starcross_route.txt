@@ -1,0 +1,125 @@
+STARCROSS — route for the verified 400/400 solve (points in [brackets], sum 400)
+Room names as printed by the game; ZIL citations in logs/starcross_notes.md.
+
+PHASE 1 — the Starcross (0 -> 0)
+  stand up; take tape library; east (Bridge); push red button (alarm off);
+  read screen -> "mass UMxx" (seed-dependent, rolled on turn 1 AFTER the
+  seed pin); sit on couch; fasten seat belt;
+  computer, r is <R>; computer, theta is <T>; computer, phi is <P>
+  (from the fixed MASS-LOCS table; seed 1 = UM24 = 100/285/87);
+  computer, confirm; wait ~25 turns (burn at +3, five trip legs every 3,
+  four rotating views every 2, then the tentacle grabs the ship — belt
+  stays fastened through the grab or death).
+
+PHASE 2 — Red Dock, black rod [Red Dock room +25, black rod +25 = 50]
+  unfasten belt; stand up; east (Storage); take suit; wear suit; take line;
+  west; open inner door; south (Airlock); close inner door; open outer
+  door; down (Red Dock, +25). push fourth bump (a tiny bump appears —
+  the relief is the solar system, 4th planet = Earth); push tiny bump
+  (black rod extrudes); take black rod (+25; the red outer airlock door
+  opens). up (Red Airlock); close outer door; open inner door; up (Red
+  Hall = RED-THREE); close inner door.
+
+PHASE 3 — red rod [75]
+  north, west, north, east (Nesting Cage); throw tape library at nest;
+  take red rod (+25); take tape library (both within 15 turns, before the
+  ants rebuild).
+
+PHASE 4 — yellow rod [100]
+  west, south, west, south (Blue Hall with airlock = BLUE-THREE);
+  open inner door; down (Blue Airlock); close inner door; open outer door;
+  down (Blue Dock); south (Bubbles); south (Spherical Ship);
+  give tape library to spider; take yellow rod (+25);
+  north; north; up (Blue Airlock); close outer door; open inner door;
+  up (Blue Hall).
+
+PHASE 5 — repairs (lights + oxygen; no points)
+  up (Grassland); south (Thin Forest); open hatch; down (Repair Room);
+  take square; put yellow rod in yellow slot (ALWAYS-LIT — the yellow
+  hall was dark); put red rod in second red slot (O2; kills the bad-air
+  timer); up; north (Grassland); down (Blue Hall).
+
+PHASE 6 — blue rod [125]
+  south (Melted Spot); south; west; south; east (Laboratory);
+  take red disk; take blue disk; drop red disk; put blue disk under globe;
+  put square on globe; set dial to 4 (transporter fires; blue rod +25
+  lands on the red disk); set dial to 1; take blue rod; take square;
+  take blue disk; take red disk.
+
+PHASE 7 — pink rod [150]
+  west; north; north (Yellow Hall airlock = YELLOW-THREE); open inner
+  door; down (Yellow Airlock); close inner door; open outer door (jammed);
+  open outer door (opens, vacuum — suit is on); down (Yellow Dock);
+  tie line to suit; tie line to hook; west (Among Debris);
+  take pink rod (+25); east; untie line from hook; untie line from suit;
+  drop line; up (Yellow Airlock); close outer door; open inner door;
+  up (Yellow Hall).
+
+PHASE 8 — clear rod [175]
+  north; east; north; west (Observatory);
+  look at projector through black rod (reveals the rod inside);
+  take clear rod (+25).
+
+PHASE 9 — gold rod + mandatory computer repair [200]
+  east; north; west; west (Room on Ring One); south (Computer Room);
+  open panel; put square in slot; turn on switch (gold rod falls out; the
+  repaired computer is REQUIRED for the endgame slots); take gold rod (+25).
+
+PHASE 10 — green rod [225] (adaptive)
+  Patrol the halls until the maintenance mouse is in the room; drop red
+  disk; wait for "picks up some refuse"; walk to Room on Ring Four; loop
+  {drop blue disk; stand on blue disk; if "Nothing happens" take blue
+  disk and wait} until the mouse has dumped the red disk on the Garage
+  floor and the teleport fires (player lands in the Garage); take red
+  disk; search trash bin (1-5 times, escalating odds) until "Ahah,
+  there's something!"; take green rod (+25); north (Room on Ring Four);
+  take blue disk (recovery via EMPTY MOUSE if it stole a disk).
+
+PHASE 11 — silver rod, disk pre-positioned [250]
+  west; west (Weapons Deck); drop red disk (the escape anchor for the
+  warren burglary); take gun; look inside gun (+25 silver rod, scored on
+  sight); take silver rod (never fire while it is chambered).
+
+PHASE 12 — brown rod [275] (adaptive)
+  east; north (Blue Hall); east (Red Hall); east (Outskirts — queues the
+  chief); east (Village Center); remove suit; wait for the chief
+  (3+RANDOM 3 ticks); give suit to chief; point at brown rod (+25, chief
+  hands it over); wait until "The chief slips through an opening..." then
+  FOLLOW CHIEF each time he leaves (5+RANDOM 5 legs through the warren,
+  waiting between legs) until Center of the Warren ("points portentiously
+  at the ladder").
+
+PHASE 13 — violet rod + teleport escape [300] (adaptive)
+  down (Green Airlock); close inner door; open outer door; down (Green
+  Dock — pressurized umbilical, no suit needed); west (Umbilical); west
+  (Cargo Hold); north (Control Room); move skeleton (ONCE); take violet
+  rod (+25); drop blue disk; stand on blue disk -> teleport to the red
+  disk at the Weapons Deck (or the Garage if the mouse relocated it —
+  either way, never walk back into the warren).
+
+PHASE 14 — drive bubble, white rod [325]
+  (from Weapons Deck) east; north (Blue Hall); up (Grassland); east;
+  south; south (Base of Tree — climbable now that the suit is gone);
+  up; up (Top of Tree); jump (Drive Bubble Entrance); put silver rod in
+  silver slot (hatch opens; rod stays); in (Drive Bubble); take white rod
+  (+25); put white rod in white slot (drive live; ignore the black slot —
+  emergency shutoff); out; up (On Drive Bubble).
+
+PHASE 15 — crossing the axis, Control Bubble [350]
+  jump (Floating in Air); fire gun at drive bubble; again; again (three
+  shots = three axis rooms -> On Control Bubble); down (Control Bubble
+  Entrance); put gold rod in gold slot (hatch opens); in (Control Bubble,
+  +25 room).
+
+PHASE 16 — take command [400 = 350 + 25 execute + 25 win]
+  put clear rod in clear slot (five colored slots appear);
+  put pink rod in pink slot (view screen); put brown rod in brown slot
+  (target spot); put violet rod in violet slot (course spot); put green
+  rod in green slot (speed spot); put blue rod in blue slot (execute spot);
+  touch large square (zoom out to the inner solar system);
+  touch brown spot x4 (Earth highlighted);
+  touch violet spot x4 (a circle around Earth; ellipse also wins);
+  touch green spot (slow speed — needs the white rod installed);
+  touch blue spot (+25 execute; TARGET=Earth & circle -> WIN-GAME +25):
+  "The artifact, under your assured control, moves serenely toward
+  Earth..." — 400/400, game over.

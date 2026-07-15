@@ -1,0 +1,183 @@
+BALLYHOO — verified route to 200/200 (20 awards x 10 points).
+Written from my own playthrough; ZIL cites live in logs/ballyhoo_notes.md.
+Award order below is the order the points are actually scored on this route.
+
+Points ledger (each line = +10; running total in the right column):
+
+  1. Cross the tightrope with the balance pole ........................  10
+  2. Greet Harry with helium in your lungs (pass the turnstile) .......  20
+  3. Knock on Clown Alley wearing the clown mask (fool Chuckles) ......  30
+  4. Walk through the canvas pleats into the Prop Tent (first time) ...  40
+  5. Find the circus ticket in the bleacher garbage ..................  50
+  6. Fish the skeleton keys off the cage wall with the pole ..........  60
+  7. Find the cigarette case under the lion stand ....................  70
+  8. Show/give the cigarette case to Jenny (she recalls Andrew) ......  80
+  9. Finish the hypnosis dream as the granola bar falls ..............  90
+ 10. Get the transistor radio from Tina (shake hands) ...............  100
+ 11. Soothe Mahler with recorded classical music ...................  110
+ 12. Catch a live mouse in the bucket ..............................  120
+ 13. Get rid of Hannibal the elephant (show him the mouse) .........  130
+ 14. Gain access into the white wagon office ......................  140
+ 15. Use the ticket to get into the Blue Room .....................  150
+ 16. Pull the elephant prod while standing on the tent ............  160
+ 17. Show the five clues to "Eddie" and scare Chuckles off ........  170
+ 18. Rescue Chelsea from the crawl space ..........................  180
+ 19. Order the roustabout to get the safety net ...................  190
+ 20. Make Mahler lose his grip on Chelsea (drop into the net) .. WIN 200
+
+Narrative walkthrough
+=====================
+
+OPENING (no points, but three flags are set here that pay off later).
+  From In the Wings go south to the Connection and HELP THUMB while the
+  midget is struggling to drink -- this sets HELPED-THUMB, which later keeps
+  Thumb from ratting you out in Clown Alley, hides him under the blackjack
+  table, and lets him hoist Chelsea. West for the clown MASK, south to the
+  Back Yard, west into the Prop Tent, EXAMINE then HIDE BEHIND TAFT (a
+  cardboard cutout) and wait out the Munrab/detective conversation: you learn
+  Chelsea has been kidnapped and the ransom note is "not an inside job."
+
+AWARD 1 (tightrope, +10) and the balloon.
+  East x2 to Near White Wagon, TAKE POLE. North x3 to the Performance Ring,
+  drop the mask, UP to the platform, and walk EAST x6 across the tightrope --
+  the fiberglass pole is what keeps you balanced. TAKE the helium BALLOON on
+  the far platform, west x6 back, down x2, TAKE ALL.
+
+AWARD 2 (helium/Harry, +10).
+  South x2, west, south to the Back Yard. UNTIE BALLOON, INHALE HELIUM, then
+  immediately HARRY, HELLO -- your squeaky voice fools the blind guard Harry
+  and the turnstile buzzes open. South (through the turnstile) and west.
+
+AWARD 3 (clown mask, +10) and the newsprint scrap.
+  At Camp West, WEAR MASK and KNOCK ON DOOR: Chuckles mistakes you for
+  "Malcom" and lets you into Clown Alley. CLOSE DOOR, SEARCH ASHES (a scrap of
+  newsprint surfaces), TAKE SCRAP, then one WAIT -- at clown-counter 6 with
+  the door shut he blurts the Annie Oakley tip (setting the sideshow-front
+  gate to 7) and throws you out unmasked.
+
+AWARD 4 (canvas pleats, +10).
+  GO UNDER THE WALL to slip through the pleated canvas into the Prop Tent
+  (this also drops a mousetrap disguised as a bit of wood, for later).
+
+AWARD 5 (ticket, +10).
+  East, north, east, north, northeast to Under the Bleachers. SEARCH GARBAGE,
+  TAKE TICKET, PUNCH BLUE DOT (you play the rest of the game as a man).
+
+AWARD 6 (keys, +10).
+  Southwest, south to the Connection, PUT TICKET IN SLOT, east through the
+  turnstile, south, southeast to the Menagerie Nook. LOOK IN CAGE, TAKE KEYS
+  WITH POLE (fish the hoop ring off the wall), UNLOCK/OPEN DOOR, north into
+  the cage, TAKE BUCKET (the meat rides inside) and HEADPHONES.
+
+THE WHIP and the STOOL (setup).
+  Loop out to Camp East (south, nw, north, west x2, south, west, south, east),
+  UNLOCK/OPEN the baggage COMPARTMENT, TAKE WHIP. Back to the Connection
+  (north, east, north), PUT TICKET IN SLOT, east x3 to the Far End of Midway,
+  north, northeast to the Fat Lady's east half, TAKE STOOL.
+
+AWARD 7 (cigarette case, +10).
+  Northwest, south, west x3, north x2 to the Performance Ring, UNLOCK/OPEN the
+  round CAGE, west to the Lions' Den. WHIP SMOOTH LION x3 (the smooth/maneless
+  one) until it lies down, LIFT GRATE, THROW MEAT IN PASSAGE, step east then
+  west, LOWER GRATE (the lions are gone), SEARCH STAND -> cigarette case.
+
+AWARD 8 (Jenny, +10).
+  East, south x3, west to the Back Yard, GIVE CASE TO HARRY (he says it's
+  Andrew's). North, east, PUT TICKET IN SLOT, east x2, south to Jennifer's
+  Boudoir. SHOW CASE TO JENNY then GIVE CASE TO JENNY: Jenny remembers
+  Andrew's part in the plot and chases him off, naming Katz's trailer.
+
+AWARD 9 (hypnosis dream, +10).
+  North x2 to the Hypnotist's Parlor. GIVE TICKET TO RIMSHAW, then RIMSHAW,
+  HYPNOTIZE ME -- you relive being stuck in the Standing-Room-Only seats.
+  WAIT x4 until the hawker appears, BUY CANDY FROM HAWKER, GIVE $1.85 TO
+  HAWKER for the granola. Thread the seat grid out (east, up, east, down,
+  east, up, east, down, south) to the concession line, work the long/short
+  line con to grab the $2.25 frozen banana, BITE BANANA and DROP BANANA to
+  shed the monkey. North, ASK HAWKER ABOUT CANDY (your $12.81 dream-tab is
+  exactly right), thread back to your seat -- the granola falls and you wake.
+
+AWARD 10 (radio, +10).
+  South, west, GO UNDER THE WALL, SEARCH GARBAGE, TAKE GRANOLA BAR. South,
+  east x2, north, northeast to the Fat Lady, SHOW GRANOLA BAR TO TINA, TINA
+  HELLO, SHAKE HANDS. Northwest, TAKE RADIO.
+
+AWARD 11 (Mahler classical, +10).
+  Carry only the radio and headphones to the Menagerie Nook and up to the Top
+  of Cage. Play the built-in cassette to hear Rimshaw's subliminal, then
+  SET RADIO TO 1170 (classical) and RECORD over tape positions 0-6. Rewind,
+  climb DOWN (the harmless "you fall / you have died" gag -- see the notes),
+  TAKE ALL, enter Mahler's cage, PLAY TAPE: the ape snatches the classical
+  headphones and is soothed. SEARCH STRAW, OPEN TRAP DOOR, TAKE RIBBON, out,
+  lock the cage.
+
+AWARD 12 (mouse, +10).
+  To the Prop Tent: TOUCH WOOD WITH POLE (springs the trap safely -- a bare
+  hand is fatal), TAKE/DROP the sprung trap with its cheese, then step out and
+  back twice so the field mouse comes to feed. CATCH MOUSE WITH BUCKET,
+  TAKE MOUSE.
+
+AWARD 13 (Hannibal, +10).
+  Ticket through the turnstile to the Menagerie, SHOW MOUSE TO ELEPHANT x2 and
+  WAIT: terrified Hannibal shears his chain and stampedes through the fence.
+
+AWARD 14 (white wagon, +10).
+  Southwest to the (now reachable) Near White Wagon, drop your load, UP,
+  TURN CRANK to open the roof panel, LOOK IN WAGON, KNOCK ON DOOR to lure
+  Munrab out, then IN through the panel into the Office. LOCK DOOR, SEARCH
+  DESK, TAKE SPREADSHEET (Eddie Smaldone's shrinking salary), MOVE DESK under
+  the panel, UP and out. Read the sheet; back down, TAKE ALL, west, ASK HARRY
+  ABOUT EDDIE -> Eddie is Chuckles.
+
+AWARD 15 (Blue Room, +10).
+  East, northeast, southeast to the Menagerie Nook, SLIDE TICKET UNDER FRONT
+  (the clown-counter-7 gate opens the sideshow panel), east into the Blue
+  Room, TAKE TICKET. OPEN PANEL forces a $1 blackjack hand during which Thumb,
+  hidden below, taps the dealer's hole card on your foot (stand immediately).
+  OPEN PANEL again, west out. At the Connection Thumb reappears and points you
+  back (marking a "new dealer"); slide the ticket a second time, LOOK UNDER
+  TABLE, TAKE SUITCASE -- Chelsea's screaming keister -- and the thugs wrestle
+  it away and bolt up onto the tent.
+
+AWARD 16 (tent prod, +10).
+  Drop your load, UP x2 to On the Tent. Dodge the electric prod (WAIT, walk
+  around with EAST to keep your footing), and when it lingers TAKE SHAFT then
+  PULL SHAFT: your unseen opponent loses the prod and crashes down.
+
+THE DRUNK DETECTIVE (setup).
+  Down x2 (this descent just "clambers" -- the death gag already fired above).
+  Recover your gear (leaving key/whip/stool), FILL BUCKET WITH WATER at the
+  fountain, POUR WATER ON DETECTIVE, ASK DETECTIVE ABOUT CHELSEA -> he coughs
+  up the ransom NOTE and the trade CARD.
+
+AWARD 17 (scare Chuckles, +10).
+  East, south, UP to the Wardrobe Closet, TAKE ALL (dress/suit and
+  shawl/jacket combos). Loop to Camp East where Chuckles lurks. EDDIE, HELLO
+  to name him, then SHOW RIBBON / SCRAP / NOTE / SPREADSHEET / CARD TO EDDIE:
+  the fifth clue breaks him and he flees.
+
+AWARD 18 (Chelsea, +10).
+  SEARCH POCKET for the VEIL; WEAR VEIL, DRESS, JACKET to pass as a woman.
+  KNOCK ON DOOR -- Katzenjammer, fooled, steps out. East inside, CLOSE DOOR,
+  TAKE CROWBAR, MOVE MOOSE to reveal the crawl-space hole, open the door.
+  West x2, OPEN TRAILER DOOR WITH CROWBAR into Clown Alley, TAKE THUMB. Back
+  north/east/east, PUT THUMB IN HOLE, WAIT while he boosts the girl up, then
+  TAKE CHELSEA.
+
+AWARD 19 (net, +10).
+  Carry Chelsea out (west, north, east, northeast, north, west, north x2):
+  Munrab bolts, the ape grabs the girl onto the platform, and the endgame
+  begins. CLAP to fire the roustabout's post-hypnotic trigger, then
+  ROUSTABOUT, GET NET.
+
+AWARD 20 (Mahler drops Chelsea, +10 -> WIN).
+  Strip the disguise, drop everything, fetch the LION STAND from the den as a
+  step, TAKE RADIO, CLIMB STAND, UP onto the platform (net held, so the
+  spooked ape is safe among the guy wires). UP again flushes Mahler to the far
+  platform. TURN ON RADIO (already tuned to 1170) and cross EAST partway until
+  the WPDL "Pledge Week" break interrupts the music, then turn around. Down to
+  the Office, CALL WPDL to pledge so the station will finally play Vivaldi.
+  Back up onto the platform, TAKE RADIO, and cross EAST x5: the classical
+  music becalms Mahler, who drops Chelsea into the net (+10 = 200/200). You
+  catch the wire, WAIT x3, and are flung safely into the net -- game won,
+  "having saved The Traveling Circus That Time Forgot, Inc."

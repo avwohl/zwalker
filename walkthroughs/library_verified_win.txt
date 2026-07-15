@@ -1,0 +1,112 @@
+# All Quiet on the Library Front (Release 2, serial 951204, Inform 5, Z-machine V5)
+# by Michael S. Phillips (IF Comp 1995, 5th place) -- "An Interactive Vignette"
+# VERIFIED COMPLETE SOLVE: won=True (win text), died=False, 30/30 in-game points
+#
+# Reproduce with the RNG-pinned replay harness (free, no API):
+#   cd ~/src/zwalker
+#   python3 scripts/replay_solve.py games/zcode/library.z5 walkthroughs/library_verified_win.txt --seeds 24 --out solutions/library_verified.json
+#   => library_verified_win.txt: VERIFIED 0/None at seed 1 | 37 cmds | died=False | won=True
+#
+# WHY A WIN_TEXT SOLVE (NOT A SCORE SOLVE), even though the game IS scored:
+# This is a clock/status-line game -- the status line prints the TIME (the
+# library opens at 3:00 pm and closes at 5:00 pm), and the point total lives in
+# a game-specific global that the standard interpreter path does not read. So
+# zwalker's ZMachine.get_score() returns garbage for this game (0, then 1),
+# NOT the true score. The game's OWN score is real and maxes at 30: typing
+# SCORE prints "You have so far scored N out of a possible 30" and this route
+# reaches the full 30/30 (the winning banner confirms "you scored 30 out of a
+# possible 30, in 36 turns"). Because get_score() can't see that 30, a
+# #% MAX_SCORE: 30 directive would make replay_solve demand score==30 and fail,
+# so the solve is pinned instead to a #% WIN_TEXT regex from the true ending.
+# (I must not patch zwalker's score-override table, so WIN_TEXT is the correct
+# and sufficient proof of the true win here.)
+#
+# THE WINNING ENDING: you exit east through the (now-disabled) security gates
+# carrying the smuggled Graham Nelson biography. The game prints the "End Game"
+# epilogue -- you write the paper, pass the class, graduate, then "meet an
+# investor who loves IF, and you write a wildly successful game" -- followed by
+# "*** You have won ***". The WIN_TEXT anchors on that unique investor/IF line
+# (it never appears at boot), not on the generic "*** You have won ***" banner.
+#
+# WHY A PINNED SEED ISN'T ACTUALLY NEEDED (but is documented anyway): this
+# vignette has NO combat and NO state-relevant randomness -- the clock is a
+# plain one-tick-per-command counter -- so the identical command list wins
+# under every interpreter seed (verified 30/30 at seeds 1-24). Seed 1 is the
+# canonical recording.
+#
+# BOOT KEYPRESS: the title screen ("ALL QUIET ON THE LIBRARY FRONT /
+# [Please press SPACE to begin.]") is a read_char prompt, so the FIRST command
+# must be a keypress. We send the literal word `enter`, which this harness maps
+# to RETURN, satisfying the prompt and dropping us into the Lobby. Boot draws
+# no randomness (two boots are byte-identical), so the seed is simply pinned
+# after start() with no restart prelude.
+#
+# ROUTE SUMMARY (7 rooms; ~36 turns, well inside the 5:00 pm deadline):
+#   Lobby: ask the attendant (Alan) and, in the Ground Floor Stacks, the
+#   reference librarian (Marion) the right topics (Nelson, rare books, key),
+#   then trade your ID card to Alan for the Rare Books Room key (+5). Up the
+#   Ground Floor Stairwell: look under the stairs for a red herring (+1); up to
+#   the Second Floor Stairwell and feed the herring to the grue lurking in the
+#   painting (+2). South to the Second Floor Stacks: unlock/open the rare-books
+#   door, go south, take the Graham Nelson biography (+5), come back north and
+#   re-lock the door; search the shelves for a copy of the novel "Debt of
+#   Honor" (+5). East to the Computer Lab: ask the technician (Tom) about the
+#   security gates -- he storms off to dismantle them (+2, this is also what
+#   lets you leave), and examining the printout of the Encyclopedia Frobozzica
+#   picks it up (+5). Back down to the Ground Floor Stacks: give the printout
+#   to Marion (+2) and say XYZZY (+1). East to the Lobby: give the novel to
+#   Alan so he's too engrossed to notice the smuggled bio (+2), give the key
+#   back to reclaim your ID card, and walk east through the disabled gates to
+#   win at a clean 30/30.
+#
+# QUIRK NOTES: the security gates are disabled by the FIRST "ask technician
+# about gates" (in the Computer Lab); the technician then follows you to the
+# Lobby, but asking him again there only yields flavor -- no second ask is
+# needed. Don't type "x gates" in the Lobby (it's ambiguous with the manual he
+# carries in); it's not part of the route. No walker-rollback issues arise
+# because every locked door (the rare-books door) is unlocked/opened before it
+# is walked through.
+#
+#% WIN_TEXT: investor who loves IF, and you write a wildly successful game
+#
+# Route cross-checked against two independent third-party walkthroughs (pjg's
+# release-2 step solution and David Welbourn's Key & Compass map), then
+# machine-validated command by command on this interpreter and replay-verified
+# by scripts/replay_solve.py.
+enter
+ask attendant about nelson
+ask attendant about librarian
+w
+ask librarian about nelson
+ask librarian about rare
+ask librarian about key
+e
+ask attendant about key
+give card to attendant
+w
+n
+look under stairs
+u
+give herring to grue
+s
+unlock door with key
+open door
+s
+take nelson
+n
+close door
+lock door with key
+search shelves
+e
+ask technician about gates
+x printout
+w
+n
+d
+s
+give printout to librarian
+xyzzy
+e
+give novel to attendant
+give key to attendant
+e

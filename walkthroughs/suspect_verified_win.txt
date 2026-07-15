@@ -1,0 +1,204 @@
+# Suspect (Infocom Release 14, serial 841005, Z-machine V3)
+# VERIFIED COMPLETE SOLVE: won=True (real murderers arrested, you cleared),
+# died=False, win_text_seen=True
+#
+# Reproduce with the RNG-pinned replay harness (free, no API):
+#   cd ~/src/zwalker
+#   python3 scripts/replay_solve.py games/zcode/suspect.z3 walkthroughs/suspect_verified_win.txt --seeds 24 --out solutions/suspect_verified.json
+#   => suspect_verified_win.txt: VERIFIED 23/None at seed 1 | 110 cmds | died=False | won=True
+#
+# Suspect is a V3 "time" game (header flags1 bit 1): the status line is a
+# clock, there is no numeric score, and the SCORE verb only prints prose
+# ("It's not so much a question of your score..."). The game's own globals
+# are SCORE = hours and MOVES = minutes ("SCORE INDICATES HOURS / MOVES =
+# MINUTES", events.zil:4), so vm.get_score() reads the clock HOUR (23 =
+# 11 p.m., the minute the murderers are arrested) and vm.get_max_score() is
+# None. Hence the WIN_TEXT directive below decides the win: it matches the
+# one line printed ONLY by the true winning ending (CASE-OVER's correct
+# branch, events.zil:307-341), reached when you convince the detective to
+# arrest Michael Wellman with Alicia Barron as his accomplice.
+#
+# Ending: You are the framed prime suspect. By collecting every scrap of
+# real evidence before the detective decides to arrest YOU, you convince
+# him (DETECTIVE-SEEN must reach DETECTIVE-CONVINCED = 12, people.zil:3669)
+# that Michael murdered his wife Veronica and had his lover Alicia
+# impersonate her (the over-the-head fairy costume) to fake an alibi.
+# "Congratulations! Your testimony as star witness for the prosecution
+# secures the conviction of Michael for the first degree murder of his
+# wife, and of Alicia as his accomplice ... Colonel Marston is convicted in
+# a parallel case of embezzlement ... your syndicated twelve-part story ...
+# wins the Pulitzer Prize."
+#
+#% WIN_TEXT: secures\s+the\s+conviction\s+of\s+Michael\s+for\s+the\s+first\s+degree\s+murder\s+of\s+his\s+wife
+#
+# Why the recording starts with "restart"/"yes": Suspect draws RNG at boot
+# (two fresh boots are byte-different), BEFORE a seed can be pinned. The
+# `restart` opcode re-runs GO with the interpreter RNG already seeded, so
+# the boot draw lands on the pinned stream and the whole party schedule
+# becomes deterministic. replay_solve pins vm.rng.seed(seed) right after
+# start(), so the first two recorded commands (restart, yes) do the pin.
+#
+# Why a pinned seed: the mansion is alive with autonomous, RNG-varied NPC
+# movement (goal.zil / people.zil). The murder-discovery chain fires on its
+# own timers -- the three-way bar argument (I-ARGUMENT, people.zil:834)
+# sends Michael + Marston + Cochrane to the office where they find the body
+# and phone the police (I-POLICE-ARRIVE +25, people.zil:1435); Michael then
+# sneaks to the garage and hides the incriminating Trust folder in his BMW
+# trunk (I-MICHAEL-HIDES-FOLDER, people.zil:638 -- this happens whether or
+# not you witness it); Michael + Marston hold a private library meeting
+# (I-LIBRARY-MEETING, people.zil:691) where Michael hands over the investor
+# list, then both walk to the ballroom fireplace where Marston tries to
+# burn it (G-COL-MARSTON, people.zil:2363). The exact minute each of these
+# lands depends on the RNG stream, so the route synchronises with
+# `wait for <person>` (V-WAIT-FOR, verbs.zil:2289), each a single command
+# that advances many minutes until the awaited NPC arrives. When an in-game
+# event prints during a wait, V-WAIT asks "Do you want to keep waiting?",
+# so a wait is followed by exactly the right number of recorded `yes`
+# lines (seed-1 deterministic: 2 after `wait for marston`, 1 after
+# `wait for detective`). Verified against the official ZIL source
+# (github.com/historicalsource/suspect); synthesis notes: logs/suspect_notes.md,
+# route: logs/suspect_route.txt.
+#
+# Evidence / framing chain -- ALL TWELVE clues are required (miss one and
+# DETECTIVE-SEEN < 12, so the jury acquits, events.zil:342). The detective
+# auto-registers clues 1 (corpse) and 2 (rope/lariat, the murder weapon
+# planted to frame you) when he investigates the office (people.zil:4287),
+# giving DETECTIVE-SEEN = 2. You supply the other ten by intercepting him
+# on his rounds (GRAB-ATTENTION holds him once you show the first item,
+# goal.zil:611) -- catch him ROAMING, never at the ballroom fireplace,
+# where he switches to arresting you (I-START-ARREST, people.zil:4290/4373;
+# he cannot arrest while DETECTIVE-SEEN > 4, people.zil:4374):
+#   3  business card              show card to detective          (people.zil:3883)
+#   4  manila/sale folder         show manila folder to detective (people.zil:3898)
+#   5  trust folder (BMW trunk)   show trust folder to detective  (people.zil:3932)
+#   6  investor list (fireplace)  show paper to detective         (people.zil:3976)
+#   7  dark hair (in fairy mask)  show hair to detective          (people.zil:3959)
+#   8-10 broken glass, prints     detective, analyze glass for fingerprints (+3, CHECK-GLASS people.zil:4069)
+#   11-12 Alicia's wet coat + rain show wet overcoat / tell detective about rain (+2, people.zil:3916/3999)
+# => DETECTIVE-SEEN = 12; then: detective, arrest michael and alicia.
+#
+# Timeline logged at seed 1 (status-line clock = SCORE:MOVES):
+#   9:00pm start; 9:14 note the rain has slacked to a drizzle (Morning Room
+#   window; SAW-RAIN-SLACK-OFF?, things.zil:225); 9:19 answer the door for
+#   Alicia; 9:22-9:34 loot the office (folder, mask+hair, card, silver
+#   bullet back into your gunbelt) -- LEAVE THE LARIAT; 9:47 take the whole
+#   kitchen trash basket (do NOT touch the glass -- it holds Alicia's
+#   prints); 9:55 take Alicia's wet overcoat from the East Coat Closet;
+#   hide behind the library armchair; 10:42 Marston arrives, 10:46 the
+#   meeting (Michael hands over the list); race to the fireplace, 10:54
+#   snatch the burning paper "just in time"; 11:13 crowbar the BMW trunk
+#   for the Trust folder; 11:20 intercept the detective and hand over the
+#   ten remaining clues; 11:29 arrest -> win.
+#
+# Generated by scripts/solve_suspect_adaptive.py (adaptive recorder, RNG
+# seed 1); replay-verified by scripts/replay_solve.py.
+restart
+yes
+west
+examine veronica
+west
+west
+south
+south
+south
+south
+west
+west
+south
+west
+open curtains
+look through window
+east
+look
+look
+look
+open front door
+north
+west
+west
+south
+west
+north
+take folder
+take fairy mask
+look in wastebasket
+take card
+search corpse
+take bullet
+put bullet in gunbelt
+look in fairy mask
+examine dark hair
+south
+east
+north
+east
+east
+east
+east
+north
+north
+north
+north
+north
+east
+take basket
+west
+south
+south
+south
+south
+west
+take wet overcoat
+east
+south
+south
+south
+hide behind chair
+wait for marston
+yes
+yes
+wait for michael
+unlock north door
+open north door
+north
+north
+north
+east
+east
+take paper
+west
+west
+south
+west
+west
+west
+west
+north
+north
+unlock door
+open door
+north
+west
+open tool chest
+drop receipt
+drop notebook
+drop pen
+take crowbar
+open bmw trunk with crowbar
+drop crowbar
+take trust folder
+east
+south
+south
+wait for detective
+yes
+show card to detective
+show manila folder to detective
+show trust folder to detective
+show paper to detective
+look in fairy mask
+show hair to detective
+detective, analyze glass for fingerprints
+show wet overcoat to detective
+tell detective about rain
+detective, arrest michael and alicia

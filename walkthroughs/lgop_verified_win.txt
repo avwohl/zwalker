@@ -1,0 +1,402 @@
+# Leather Goddesses of Phobos (Infocom, Steve Meretzky; Release 59 / Serial 860730, Z-machine V3)
+# VERIFIED COMPLETE SOLVE: won=True (win text), died=False
+#
+# Reproduce with the RNG-pinned replay harness (free, no API):
+#   cd ~/src/zwalker
+#   python3 scripts/replay_solve.py games/zcode/lgop.z3 walkthroughs/lgop_verified_win.txt --seeds 4
+#   => lgop_verified_win.txt: VERIFIED <N>/None at seed 1 | 373 cmds | died=False | won=True
+#
+# LGOP has NO fixed maximum score: the game awards points as BASE + RANDOM(VAR)
+# and, at the win, collapses its EXT-MAX to whatever total you happened to
+# reach -- the ending even jokes about it ("...you have achieved a score of,
+# um, oh, call it 321 out of 321 points"). So get_score() prints a
+# seed-dependent number (321 at seed 1) and this walkthrough is verified by a
+# WIN_TEXT directive keyed to the one genuinely winning ending instead of a
+# score target.
+#
+# Route: played in TAME mode with a male protagonist (enter the MEN'S room in
+# Joe's Bar). Collect the anti-Leather-Goddess machine's components across
+# Cleveland, the Phobos dome, Mars, Venus and the catacombs, assemble the
+# contraption, and aim it at the Leather Goddesses -- ending with the hero
+# waking at the roadside gas station, "aglow in the knowledge that Earth is
+# safe from the threat of the Leather Goddesses of Phobos."
+#
+# Why a pinned seed: LGOP's per-award RANDOM rolls and several encounter
+# outcomes are RNG-driven; pinning the interpreter seed after start() makes
+# the whole playthrough a deterministic function of the seed. No restart
+# prelude is needed (boot draws no state-relevant randomness).
+#
+#% WIN_TEXT: Earth\s+is\s+safe\s+from\s+the\s+threat\s+of\s+the\s+Leather\s+Goddesses
+look
+nw
+wee
+take stool
+wait
+wait
+read rule book
+take flashlight
+take blanket
+take painting
+take food
+open door
+s
+open narrow door
+s
+n
+u
+u
+enter circle
+w
+nw
+show painting to mouse
+take mouse
+drop painting
+s
+e
+n
+n
+n
+enter barge
+press orange
+wait
+press orange
+wait
+wait
+wait
+wait
+wait
+get out
+n
+examine message
+take balm
+s
+enter barge
+press orange
+wait
+press purple
+wait
+wait
+press orange
+press purple
+get out
+e
+s
+take pin
+n
+ne
+yes
+say "riddle"
+w
+say "5301"
+w
+wait
+5301, kiss my kneecaps
+take torch
+down
+nw
+n
+clap
+ne
+e
+clap
+hop
+ne
+ne
+clap
+say "kweepa"
+se
+down
+clap
+hop
+nw
+ne
+clap
+say "kweepa"
+n
+s
+hop
+clap
+ne
+up
+clap
+nw
+say "kweepa"
+hop
+clap
+take directory
+nw
+clap
+s
+se
+hop
+clap
+se
+say "kweepa"
+down
+clap
+ne
+hop
+w
+clap
+say "kweepa"
+e
+w
+hop
+clap
+sw
+sw
+clap
+say "kweepa"
+hop
+take raft
+n
+clap
+ne
+e
+hop
+clap
+say "kweepa"
+nw
+clap
+hop
+n
+up
+n
+drop torch
+e
+se
+up
+enter circle
+turn on flashlight
+s
+up
+n
+stand on trent
+take basket
+enter circle
+e
+enter hole
+stand on trent
+e
+put all in basket
+take can
+read can
+ne
+e
+nw
+pull knob
+open box
+put all in basket
+take coin
+se
+n
+offer flashlight to salesman
+take machine
+knock on door
+down
+throw food in cage
+wait
+wait
+take food
+kiss female
+take hose
+eat food
+bend bars
+exit cage
+drop hose
+untie trent
+untie your body
+pull switch
+get off slab
+get hose
+enter circle
+se
+enter circle
+s
+drop machine
+s
+s
+e
+examine frog
+take balm
+take pin
+apply balm to lips
+put pin on nose
+drop all
+cover ears with hands
+close eyes
+kiss frog
+take all
+remove balm
+remove pin
+drop pin
+e
+se
+apply stain to circle
+drop can
+enter circle
+s
+open sack
+take sack
+take rake
+n
+ne
+up
+take sheet
+rip sheet
+tie strips together
+tie rope to bed
+put rope through window
+wait
+wait
+take headlight
+go down stairs
+e
+take trellis
+move sod
+enter circle
+n
+enter circle
+w
+enter barge
+press orange
+put raft in canal
+press purple
+enter raft
+wait
+wait
+wait
+grab dock
+take raft
+w
+w
+nw
+w
+w
+enter circle
+up
+n
+enter circle
+e
+climb down well
+get out
+s
+se
+read sign
+give coin to penguin
+se
+n
+take baby
+cover baby with blanket
+s
+drop rake
+take mouse
+empty basket
+put baby in basket
+s
+put basket on stoop
+wait
+wait
+open door
+enter igloo
+take balls
+ne
+n
+open sack
+put all in sack
+take all
+nw
+w
+enter circle
+w
+w
+nw
+w
+w
+enter circle
+up
+up
+n
+enter circle
+hiss
+w
+take jar
+enter circle
+take sword
+s
+climb on stallion
+w
+climb off stallion
+take suit
+wear suit
+open hatch
+n
+kill thorbast with sword
+kill thorbast with sword
+kill thorbast with sword
+kill thorbast with sword
+take sword
+give thorbast his sword
+kill monster with sword
+untie woman
+n
+s
+s
+e
+e
+e
+e
+e
+e
+e
+e
+enter circle
+w
+nw
+w
+n
+n
+take machine
+open compartment
+put jar in compartment
+close compartment
+turn machine on
+open compartment
+take jar
+drop machine
+apply cream to angle
+drop jar
+take angle
+n
+put raft in canal
+enter raft
+wait
+wait
+wait
+wait
+wait
+wait
+grab dock
+s
+e
+s
+buy exit
+give coin to proprietor
+rake dust
+n
+open tube
+drop circle
+enter circle
+get off couch
+smell odor
+search divan
+wait
+give blender to trent
+give hose to trent
+give balls to trent
+give angle to trent
+give headlight to trent
+give mouse to trent
+give photo to trent
+give phone book to trent
+z

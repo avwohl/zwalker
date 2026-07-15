@@ -1,0 +1,53 @@
+Wearing the Claw — winning route (my own words), seed 1, scoreless WIN_TEXT solve.
+First command `enter` clears the press-SPACE title + prologue and lands at Dirt Road.
+
+BEX VILLAGE
+- Dirt Road: open the backpack (parchment, handkerchief, gold piece, blue topaz). Go west.
+- Walk west through Outskirts to the Dusty Road, past the central crossroads to the
+  west end of town, then west to the End of the Road (edge of land / sea).
+- North to the Shed: the old man (Old Bill) recoils from your bare wolf paw — you
+  can't do business until it's hidden.
+- Beach loop back to the shop: End of Road -> nw (Beach NW, island visible) -> s
+  (Beach W) -> e -> sw (Pier). Try to board (w): the sea-captain demands a contract.
+  Pier -> ne (End of Road) -> s (Beach S) -> e (Beach SE) -> nw -> e,e,e -> n, arriving
+  at Goodman's Used Clothing Emporium.
+- Goodman's: the clerk offers a black leather glove. `buy glove` (gold piece). It
+  won't stay on the paw, so `take handkerchief` and `tie glove to paw` — paw hidden.
+- Back to the Shed: s, w, w, w, n. Now `ask man about ship`, then `buy contract`
+  (topaz). Return to the Pier (s, sw) and `w` — the captain ferries you to the island.
+
+ISLE OF THE GOERGS
+- Rocky Shore -> w -> Southeast Corner. `read plaque` (teaches the word of returning,
+  yeyos; you can't take the plaque — it's an image). West to Southwest Corner and
+  `take coat` (the "PhantomPiercer, BarrierBreaker"). North to Northwest Corner;
+  `climb wall` fails (paw), so go e into the Clearing with its silver (mirror) wall.
+- Tour the ring: e (NE Corner), w (Clearing), n (Chersonese), s (Clearing) — nothing
+  gained, just the walkthrough's tour.
+- At the Clearing: `wear coat`, then `touch silver wall` — the wall vanishes; go s
+  into the fortress (North of River).
+
+THE ILLUSORY GAUNTLET (coat = pass, water = destroys coat)
+- North of River: `read sign` (River Styx). STOW the coat: remove coat, put coat in
+  pack, close pack. Then s (into the river), s (South of River).
+- South of River: Cerberus. Do NOT hit/pet-into it (death). `open pack`, `wear coat`,
+  then s — the illusion breaks and the real guard dog flees; you reach Before the Barrier.
+- Before the Barrier: dripping water threatens the coat, so stow it again (remove /
+  put in pack / close pack), then push s, s, s through the brimstone barrier into the
+  Hall of the Goergs.
+
+HALL OF THE GOERGS
+- `x clea`, then `look in crystal` / `again` / `again` (three visions expose Midel's
+  plot). Two turns later Queen Clea hangs the Pendant of Elinor on you (it destroys
+  lies). Ask her the lore topics; `give crystal to clea` (she says keep it).
+- Leave with the pendant on: n (Bare Hallway) -> n (Foyer) -> n (Clearing) -> e (NE
+  Corner) -> s (Southeast Corner). At the now-blank plaque, say `yeyos` — teleport home.
+
+TOWN SQUARE (BEX) — ENDGAME
+- Midel has cast himself as "Marnian" and Marnian as himself, with Marnian caged.
+- `remove pendant`, then `give pendant to marnian` — he dons it, can't remove it, and
+  the illusion collapses: Midel is exposed as the villain.
+- Midel draws a sword. `open pack`, `wear coat`, `enter cage` (the coat's magic lets
+  you pass the bars just as the sword strikes). Do NOT leave the cage or dawdle.
+- `remove coat`, then `give coat to marnian` — he escapes the cage, binds Midel,
+  transfers the curse to Midel, and restores the town.  *** You have won ***
+  (Marnian's whisper "save another foolish wizard" is the WIN_TEXT anchor.)

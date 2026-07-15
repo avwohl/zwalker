@@ -1,0 +1,123 @@
+HHGG (r60/861002) — verified 400-point route, in plain words
+=============================================================
+Point values in [brackets]; they sum to 400. ZIL citations in logs/hhgg_notes.md.
+
+ACT 1 — EARTH (25)
+  Wake in the dark: turn on light, get up, take + wear the gown, look in the
+  pocket, swallow the analgesic [10 -> 10]. Take the screwdriver and toothbrush
+  (endgame tools). South to the porch: take the junk mail (4th babel-fish
+  blocker). South again and LIE IN FRONT OF THE BULLDOZER. Wait out the whole
+  Ford/Prosser negotiation (6 waits) and only take the towel AFTER Prosser lies
+  down in your place — taking it earlier makes Ford leave and strands you.
+  South, west into the pub. Wait for Ford to buy the beer, then drink exactly
+  three [3x5 -> 25]: fewer and the matter-transference beam kills you, and the
+  fourth is refused. Buy the cheese sandwich but NEVER eat it (-30). Leave east;
+  give the sandwich to the dog — the fed dog is what melts the war fleet's
+  hearts four acts later. Wait for the Vogon demolition announcement; Ford drops
+  the Sub-Etha Thumb at your feet: take device, press green button.
+
+ACT 2 — VOGON SHIP (33 -> 85)
+  The Dark: senses return after four wasted turns; the litany omits SMELL, so
+  smell, then examine the (Ford-shaped) shadow to wake in the Vogon Hold
+  [+8 -> 33]. Eat the peanuts at once (protein loss is lethal in ~6 turns).
+  Babel fish Rube Goldberg — set all four blockers BEFORE pressing (only 5
+  fish in the machine): remove gown, hang gown on hook, put towel on drain,
+  wait for Ford to nap (he leaves the satchel and the Guide), take satchel,
+  put satchel in front of panel, put mail on satchel, press dispenser button
+  [+12 -> 45]. Re-wear the gown (the pocket fluff rides in it). Press the case
+  switch: a recording names WHICH word of the poem's second verse opens the
+  case (rolled per seed). Guards drag you to the poetry chairs: after the
+  captain starts the first verse, ENJOY POETRY [+15 -> 60]; he then reads the
+  second verse — note its FIRST line and pick the announced word (seed 1:
+  "Fripping lyshus wimbgunts..." + third word = wimbgunts). Back in the hold,
+  TYPE "WIMBGUNTS" — with the quotes; anything else blows up the case
+  [+25 -> 85]. Take the plotter and the towel, wait through the airlock:
+  spaced, and 29 seconds later the Heart of Gold scoops you up.
+
+ACT 3 — HEART OF GOLD (110)
+  Dark again (hearing missing): listen, then walk south — the "exit to port"
+  is a lie. Entry Bay Two; one look and Ford walks you to the Bridge. Wait for
+  the crew to head for the sauna. Drop the heavy gear (plotter, thumb,
+  screwdriver, toothbrush, Guide) — the Bridge is the staging area. Down and
+  aft: Eddie stonewalls the Engine Room five times — just keep going south
+  (sure / absolutely / fake-out / reconsider / in). LOOK twice more and Eddie
+  concedes: the spare Improbability Generator appears with pliers and rasp
+  [+25 -> 110]. Take the drive, fetch a cup of Advanced Tea Substitute from the
+  Nutrimat (touch pad, take cup — do NOT drink it, ever), then on the Bridge:
+  drop drive and cup, put the small plug in the plotter, put the dangly bit in
+  the cup. Push the switch for the first trip.
+
+ACT 4 — FIVE IMPROBABILITY DREAMS (225; order is seed-dependent)
+  Every trip starts in the Dark; after four turns the litany names the working
+  sense, and the sense verb tells you where you are. Completed scenes bounce
+  (instant dream deaths); each dream ends back in the Dark, hearing missing,
+  listen / south, aboard again, up to the Bridge, push the switch.
+  * LAIR (smell -> Beast-shaped shadow): say arthur dent; flee EAST; take a
+    sharp stone; put towel on head (only works with the Beast in the room);
+    carve my name on memorial — the Beast finds "Arthur Dent" on its list of
+    victims and naps. Remove the towel, west, southwest: take the
+    Nutrimat/Computer Interface off the skeleton [+25 -> 135]. Wait for the
+    Beasthunters — their case of mistaken identity ends the dream and leaves
+    the asteroid paint chipper in your hands.
+  * PARTY, as Trillian (feel -> wine): drop plate, examine Arthur (that shows
+    the jacket fluff), take fluff, open handbag, put fluff in handbag, take
+    the plate back (or the hostess never leaves), hello phil — he ferries you
+    off three turns later [+25].
+  * SPEEDBOAT, as Zaphod (see -> orange sun of Damogran): look under seat
+    (cushion fluff + key), take toolbox, steer boat toward spire — the
+    autopilot blinks awake on the fourth crash-countdown turn and docks you.
+    Stand, north to the Dais, wait for Trillian's stick-up, then: guards, drop
+    the rifles; trillian, shoot the rifles; east into the ship [+25].
+  * FORD ON EARTH (see -> yellow sun of Earth): open satchel, take fluff and
+    towel, north, give towel to arthur ("...what's the word?" — idiot),
+    go to prosser, prosser, lie down. Pub: buy peanuts, buy beer, drink beer
+    [+15], drink beer (the house falls). East, north to the ruins, give fluff
+    to arthur — he pockets it, which is why it is in YOUR gown afterwards.
+    Wait for the fleet and the fumbled Thumb; Arthur presses the button.
+  * WAR CHAMBER (hear, hum from BELOW): only reachable after "careless words" —
+    a bungled 4+-word command after Earth's death (the route deliberately fires
+    "put stone in satchel" on the Bridge) — and the route fires it ONLY once
+    the other four dreams are done: a war-chamber re-roll after the particle
+    would end in an unavoidable brain-materialisation death. In the chamber:
+    take awl, wait ~13 turns — the fed dog defuses the Vl'Hurg/G'Gugvunt
+    revenge, they beam you home microscopic, into your own synapse maze. Walk
+    (40% of steps blocked) until the big black particle appears and take it
+    the same turn [+25 -> 225]: it is your common sense ("Sense, Common for:
+    Dent, Arthur"), and losing it is what later lets you hold no tea.
+
+ACT 5 — TEA, MISSILES, WHALE (250)
+  Back aboard: collect the cushion fluff and small key in the Hatchway (Zaphod's
+  pockets emptied there). Galley: open panel, take board, put interface in
+  nutrimat, touch pad — the Nutrimat sieges Eddie for the recipe for real tea.
+  Bridge: put large plug in large receptacle and wait for the Magrathean
+  missiles (launched when the tea job swamps the ship's circuits), then push
+  the generator switch: improbability turns the missiles into a sperm whale
+  (and a bowl of petunias), and the tea arrives in the Galley slot.
+  Take tea, back to the Bridge, drop tea, remove dangly bit, put dangly bit in
+  tea: with real tea as the Brownian source the next dark is STEERABLE. Drop
+  everything except the Thing (worn gown and babel fish are exempt; anything
+  else is lost with the whale). Push the switch; in the controlled dark, feel
+  darkness each turn and taste the liquid only when it feels WARM (cold means
+  the party): you wake licking the whale's stomach lining. Take flowerpot, put
+  flowerpot in thing, and wait for the ground (the pot survives only inside the
+  Thing).
+
+ACT 6 — ENDGAME (400)
+  Aboard again, the Thing (pot inside) finds its way back to you within a few
+  turns — take it wherever it lands. On the Bridge: take out the pot, gather
+  all four fluffs (pocket + satchel from the gown, jacket from the handbag —
+  open it first, cushion from the floor), plant each in the pot, wait for the
+  sprout, and carry the pot west into the sauna: it blooms [+25 -> 250]. Eat
+  the fruit — the Tree of Foreknowledge shows WHICH tool Marvin will demand
+  (seed 1: the toothbrush); that is why all ten tools must already be aboard.
+  Fetch the named tool, then take tea and take no tea (possible now that your
+  common sense is a maze ornament). Down, aft: OPEN DOOR — the screening door
+  waves through anyone holding tea and no tea simultaneously. DRINK THE TEA
+  [+100 -> 350] BEFORE stepping in: the Pantry's depression is lethal below
+  300 points, survivable at 350 [+25 -> 375]. Say marvin, open the hatch (the
+  ship has landed by now), then east, down to the Hatchway, drop everything
+  but the tool (the Access Space admits one carried item), east, and wait the
+  twelve turns. Marvin shambles in, asks for the tool, give toothbrush to
+  marvin [+25 -> 400]; he unjams the mechanism in three-tenths of a second.
+  West, down, and one single foot on the ancient dust of Magrathea ends the
+  game at 400/400.

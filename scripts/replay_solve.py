@@ -44,6 +44,16 @@ DEATH_MARKERS = (
     "slavering fangs of a lurking grue", "water fills your lungs",
     "you have been killed", "*** you have died ***",
 )
+# Scripted NON-fatal gags that print a death marker in the SAME turn output but
+# let play continue (score untouched, no game-over). When one of these appears
+# alongside a marker, that turn is not a real death. Ballyhoo's first climb-down
+# from the cage prints "**** You have died ****" as a joke ("You fall awkwardly
+# down from the cage." ... a couple turns later "the reports of your demise have
+# been grossly exaggerated") -- this phrase is Ballyhoo-specific, so it cannot
+# suppress a genuine death in any other game.
+DEATH_FALSE_POSITIVES = (
+    "awkwardly down from the cage",
+)
 
 
 def load_commands(path):
@@ -115,7 +125,9 @@ def run_once(data, cmds, seed, win_rx=None, max_override=None):
             prev = s
         if win_rx is not None and win_rx.search(out):
             win_seen = True
-        if any(m in out.lower() for m in DEATH_MARKERS):
+        low = out.lower()
+        if any(m in low for m in DEATH_MARKERS) and not any(
+                p in low for p in DEATH_FALSE_POSITIVES):
             died = True
     maxs = max_override if max_override is not None else w.max_score
     return w.vm.get_score(), maxs, died, timeline, w.vm.get_turns(), win_seen

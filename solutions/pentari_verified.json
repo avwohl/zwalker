@@ -1,0 +1,92 @@
+{
+  "game": "games/zcode/pentari.z5",
+  "walkthrough": "walkthroughs/pentari_verified_70.txt",
+  "solver": "replay+seed",
+  "rng_seed": 3,
+  "score": 70,
+  "max_score": 70,
+  "won": true,
+  "died": false,
+  "win_text_seen": true,
+  "turns": 35,
+  "num_commands": 35,
+  "score_timeline": [
+    {
+      "step": 3,
+      "command": "CITY",
+      "score": 5
+    },
+    {
+      "step": 7,
+      "command": "SMASH SEAL",
+      "score": 15
+    },
+    {
+      "step": 12,
+      "command": "GET SCROLL",
+      "score": 25
+    },
+    {
+      "step": 21,
+      "command": "GET DAGGER",
+      "score": 30
+    },
+    {
+      "step": 24,
+      "command": "FWOOSH",
+      "score": 40
+    },
+    {
+      "step": 26,
+      "command": "GET SMALL EMERALD",
+      "score": 45
+    },
+    {
+      "step": 31,
+      "command": "KILL ELF",
+      "score": 55
+    },
+    {
+      "step": 34,
+      "command": "LOOK",
+      "score": 70
+    }
+  ],
+  "commands": [
+    "N",
+    "N",
+    "IN",
+    "CITY",
+    "E",
+    "COVERT",
+    "S",
+    "SMASH SEAL",
+    "N",
+    "N",
+    "N",
+    "IN",
+    "GET SCROLL",
+    "OUT",
+    "S",
+    "E",
+    "N",
+    "GET TOWEL",
+    "S",
+    "W",
+    "W",
+    "GET DAGGER",
+    "N",
+    "OPEN TOWEL",
+    "FWOOSH",
+    "LOOK",
+    "GET SMALL EMERALD",
+    "S",
+    "E",
+    "Z",
+    "Z",
+    "KILL ELF",
+    "GET SMALL EMERALD",
+    "PUT SMALL EMERALD ON BOX",
+    "LOOK"
+  ]
+}

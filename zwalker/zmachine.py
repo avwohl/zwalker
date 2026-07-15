@@ -989,6 +989,15 @@ class ZMachine:
             ('851003', 37): 80,    # Planetfall r37
             ('850501', 68): 100,   # Wishbringer r68
             ('870918', 221): 100,  # The Lurking Horror r221
+            ('861002', 60): 400,   # Hitchhiker's Guide r60
+            # Leather Goddesses of Phobos deliberately randomizes the score
+            # (BASE + RANDOM(VAR)) and collapses EXT-MAX to the achieved score
+            # at the win ("...call it 321 out of 321 points"), so there is no
+            # fixed max to reach -- it is verified by WIN_TEXT instead.
+            ('861215', 37): 150,   # Hollywood Hijinx r37
+            ('851218', 97): 200,   # Ballyhoo r97
+            ('830114', 18): 400,   # Starcross r18
+            ('850919', 18): 100,   # Seastalker r18
         }
         if (serial, release) in known:
             return known[(serial, release)]

@@ -1,0 +1,102 @@
+Deephome — route in my own words (verified 300/300, seed 1)
+
+Legend: capitalised = a milestone / score change.
+
+OPENING
+- Secret Entrance: the barred door has three carved symbols (tree=elves,
+  house=humans, mountain=dwarves). PUSH MOUNTAIN -> the door clicks open (+5).
+  sw into the city.
+- Northern Guard Post: open the cabinet, take + WIELD the Sword, take + WEAR the
+  shield (needed for the Eranti fight much later). sw.
+- Main Hall: the dark spirit Indanaz paralyses you. Wait it out (five z's), then
+  leave. Go straight s to N. Main Street — deliberately NOT up to Dwarven
+  Village, because skipping that one optional room keeps the final score at the
+  clean 300 instead of the off-by-one 301.
+
+STREET / TEMPLE / ROYAL SWEEP (collecting location points + the moss)
+- N. Main Street -> Clothier (ne) -> back (sw) -> Bakery (e) -> back (w) ->
+  Scrivener's (w): open the desks so the blank paper is takeable later.
+- e, s to S. Main Street; e into the Dwarven Library (just for the point — no
+  book lookups are needed); w back, then w into the Great Temple of Kraxis
+  (Indanaz has moved here). e, s to the Intersection: drop the King's Order.
+- w to East Royal Road; s to Lesser Noble's Palace; n, w to West Royal Road:
+  TAKE MOSS (glowing green, repels the terrock). n to Greater Noble's Palace;
+  s, w to Outer Court; w to the Throne Room (the benign spirit Cholok is here).
+- Out east five times to Eastern Guard Post; se to City Gates: OPEN the panel
+  HATCH now (the gear goes here later). nw, w, s to Extreme South Main Street.
+
+POWER
+- sw to Water Works (the wheel does nothing yet). ne, s to Mining Center; s to
+  Ore Mines: TAKE the pickaxe ("axe"). n, e to Coal Mines: DIG ROCK WITH AXE ->
+  a lump of coal; TAKE COAL (+10). w, n, e to the City Generator: open furnace,
+  PUT COAL IN FURNACE, close furnace, PULL LEVER -> POWER ON (+30).
+
+RAIL LOOP 1 — gear, then scouting the wings
+- Back to the Main Hall railway (w,n,n,e,w,n,n,w). The rail car travels between
+  four wings; board with "enter car", travel with "push <colour> button", leave
+  with "out".
+- yellow -> Smithy Court (nw). sw to the Blacksmith: open the forge, TAKE the
+  GEAR. Wander the smithy court for its points (Silversmith, Carpenter's, Common
+  Forge, Slag Pit, Goldsmith).
+- Smithy railway, green -> Barracks (w). Sweep Soldiers' Barracks, Armory, Mess
+  Hall, Training Grounds, and the Waterfall (scout: the terrock nests in the
+  intake pipe). Back to the Barracks railway.
+- red -> Treasury (sw). Treasury Antechamber; n to the Common Bank (deposit box
+  is locked); w to the Common Vault. Back to the Treasury railway.
+
+WATER, then the GATE
+- yellow -> Main Hall; immediately green -> Barracks; w, sw, sw to the Waterfall:
+  PUT MOSS IN NEST -> the terrock leaves (+10); PUSH ROD to swing the intake
+  pipe clear.
+- ne, ne, e; yellow -> Main Hall; e, s, s, s, s, sw to Water Works: TURN WHEEL ->
+  WATER ON (+30).
+- ne, n, e, se to City Gates: PUT GEAR ON POST, close hatch, PUSH LEVER (set to
+  "Gate"), PUSH BUTTON -> the GATE OPENS (+40).
+
+THE WOODS AND EMBER — clover + the Eranti
+- s to Deephome Entrance; w, w to Great Woods Limits. The enchanted woods path
+  is w, sw, w, s, e, n, w, e -> Forest Clearing: X CLOVER (reveals it), then TAKE
+  FOUR LEAF CLOVER (for the temple rite). Leave s, e; then e, e, s, s to the
+  Wooded Path (note the squirrel + acorns — trapped later), s to Town of Ember,
+  w to Shops, e, s to Ember's Town Square, w to the Ember Tool Shop.
+- Ask the young man about the hammer (he'll give it once the Eranti is gone) and
+  about the eranti. e, s to the Pond: KILL ERANTI repeatedly until it dies (+20)
+  — the sword+shield keep the dwarf healing safely (10 blows at seed 1). n, w
+  back to the shop; ask about the hammer again, TAKE HAMMER.
+
+FORGE THE PICK
+- Long walk back to the Main Hall (e, then n×5, nw, w, n×3): TAKE the magical
+  TORCH (a fire source). w; yellow -> Smithy; nw, sw to the Blacksmith:
+  take scrap, PUT SCRAP IN FURNACE, BURN COAL WITH TORCH, z (scraps glow),
+  TAKE SCRAPS (they merge), PUT SCRAPS ON ANVIL, HAMMER SCRAPS -> a sharp
+  ("metal") pick; TAKE METAL PICK.
+
+KEY, COIN
+- ne, se; red -> Treasury; sw, n to the Common Bank: UNLOCK BOX WITH METAL PICK,
+  open box, LOOK IN BOX (reveals it), TAKE LARGE KEY. s to the Antechamber:
+  UNLOCK DOOR WITH LARGE KEY, drop the key, open door, w into The Treasury
+  (the shadow spirit Kebarn is here): SEARCH WEALTH (reveals it), TAKE GOLD COIN
+  (+10). e, ne; yellow -> Main Hall.
+
+NET, SQUIRREL, HOST
+- e, s, s to S. Main Street; the shack path is s, e, se, s, s, s, s, s, e ->
+  Small Shack: UNLOCK CHEST WITH METAL PICK, open chest, TAKE NET. w, n, n to
+  the Wooded Path: DIG GROUND WITH AXE, PUT NET ON HOLE, TAKE ACORNS, PUT ACORNS
+  IN NET, CLIMB TREE -> the squirrel springs the net (+10); down, TAKE NET.
+- To the Throne Room (n, n, n, nw, w, w, w, w, w): OPEN NET -> the benign spirit
+  Cholok inhabits the squirrel and leaves (+20). The net is now free again.
+
+BANISH INDANAZ (temple)
+- e, e, e, e to the Intersection: drop the axe and the metal pick (no longer
+  needed). n, n, w to Scrivener's: TAKE PAPER. e, e to the Bakery: TAKE BOTTLE,
+  FILL BOTTLE (water is on now), BURN BLANK PAPER WITH TORCH -> ashes. w, s, w
+  to the Great Temple: DROP COIN, POUR WATER ON COIN, PUT ASHES ON COIN, PUT
+  CLOVER ON COIN, PRAY TO KRAXIS, MANAZ -> Indanaz is banished (+30). TAKE COIN,
+  TAKE ALL FROM COIN (recover the clover etc.).
+
+BANISH KEBARN (treasury) -> WIN
+- e, n, e to the Bakery: FILL BOTTLE again. w, n, w to the Main Hall railway;
+  red -> Treasury; sw, w into The Treasury: OPEN NET, DROP NET, PUT COIN IN NET,
+  POUR WATER ON NET, TAKE COIN, PRAY TO KRAXIS, MANAZ -> Kebarn is banished
+  (+40). With power, water, gate, and all three spirits done:
+  *** You have won ***  —  "300 out of a possible 300 ... remembered forever."

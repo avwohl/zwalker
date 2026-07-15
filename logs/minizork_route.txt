@@ -1,0 +1,102 @@
+MINI-ZORK I — verified route (in my own words)
+================================================
+Binary minizork.z3 (R34/S871124), max 350. Seed pinned after start() (boot is
+RNG-free). The win needs SCORE to be EXACTLY 325 as the 15th treasure enters
+the trophy case (fires +25 -> 350, reveals the map, opens the SW Barrow exit);
+every scored action below happens exactly once and the run never dies.
+
+Point sources (total 350):
+  Treasures, points on first TAKE (215): egg 6, painting 7, torch 12,
+    coffin 13, sceptre 9, skull 22, trunk 15, jade 13, bracelet 10, diamond 25,
+    coins 11, chalice 20, emerald 18, scarab 15, pot of gold 19.
+  Room entries (55): Kitchen 10, Cellar 25, Thief's Lair 20.
+  Events (55): kill troll 10, open dam/drain reservoir 20, pray at altar 15,
+    reach Drafty Room lit 10.
+  Completion bonus: 15th treasure cased at 325 -> +25 = 350.
+
+The house Living Room (trophy case) is the hub. The trap door bars behind you
+(one-way down); the return is Cyclops-Room -> east -> Living Room, opened for
+good once you say ULYSSES. The Living Room is SACREDBIT (thief-free), used as a
+tool stash. The ivory torch is the main light (lamp lasts only ~140 turns);
+lamp is backup + the coal-mine light.
+
+TRIP 1 — house, egg, troll, torch, coins, cyclops
+  Grab the jeweled egg up the forest tree; enter the Kitchen window (+10);
+  take lamp + sword (Living Room), open the case, move rug, open trap door;
+  fetch rope + knife from the Attic; case the egg. Down to the Cellar (+25),
+  east to the Studio for the painting, back and north to the Troll Room; kill
+  the troll with the sword (+10) and HEAL to full (wounds cut carry capacity).
+  Via the Round Room take the Dome rope down to the Temple for the torch (drop
+  the sword, switch off the lamp), out through the Altar/Windy Cave, and through
+  the maze (w,nw,d to the skeleton) for the bag of coins. Say ULYSSES at the
+  Cyclops Room (opens the Living-Room shortcut), return and case painting+coins.
+  [running score ~81; the thief usually snatches the painting en route -> it is
+  recovered from his lair in Trip 6, still counted since take-value fired once.]
+
+TRIP 2 — dam drain + trunk
+  Down to the Dam: take the matchbook; in the Maintenance Room press the yellow
+  button and take the wrench + screwdriver; turn the bolt with the wrench to
+  open the sluice gates (+20, reservoir drains). Cross the drained reservoir for
+  the trunk of jewels (+15). Return through the maze, case the trunk, and stash
+  the matches + screwdriver on the Living-Room floor.  [~116]
+
+TRIP 3 — crystal skull (exorcism)
+  Carry the matches down; take the brass bell (Temple) and the black book +
+  candles (Altar). At the Entrance to Hades perform the ceremony: ring bell,
+  re-take candles, light match, light candles with match, read book (the gate
+  spirits flee). Enter Hades for the skull (+22), drop the ceremony items,
+  return and case the skull.  [~138]
+
+TRIP 4a — sceptre + rainbow pot of gold
+  Down to the Egyptian Room, open the coffin, take just the sceptre; at the
+  Altar PRAY (+15) — this teleports you (sceptre in hand) up to Forest Edge.
+  Cross to the End of the Rainbow, wave the sceptre (the rainbow solidifies and
+  the pot of gold appears), take the pot (+19). Walk back over the surface
+  (thief-free) and case sceptre + pot.  [~181]
+
+TRIP 4b — the gold coffin
+  Down again, take the size-55 coffin (too heavy to carry with anything much,
+  and it can only leave the Altar by PRAY), pray up to Forest Edge, walk home
+  and case the coffin (+13).  [~194]
+
+TRIP 5 — Frigid River: emerald + scarab
+  Fetch the air pump from Reservoir North; at the Dam Base inflate the boat,
+  launch, and let the current drift you to River-3; grab the red buoy, land east
+  on Sandy Beach, open the buoy for the large emerald (+18). Dig the Sandy Cave
+  sand four times for the jeweled scarab (+15) — a 5th dig collapses the hole
+  (death). Exit over the now-solid rainbow / canyon / forest to the house; case
+  emerald + scarab.  [~227]  (river rooms are SACREDBIT, so the thief can't
+  touch you here.)
+
+TRIP 6 — kill the thief (recover loot), keep the torch
+  Through the maze to the Cyclops Room, up to the Thief's Lair (+20). Kill the
+  thief with the knife (safe at this score, to-hit ~72%); his death drops the
+  silver chalice plus everything he stole (the painting, etc.) in the lair.
+  HEAL, take it all, drop the stiletto, return and case the chalice (+20) and
+  the recovered painting.  KEEP the torch — the mine needs it, and the thief is
+  now dead so it can't be stolen.  [~267]
+
+TRIP 7 — coal mine: jade, bracelet, diamond
+  Take the stashed screwdriver + the Kitchen garlic (or the bat flies you off).
+  Down to the Bat Room for the jade figurine (+13). At the Shaft Room stow the
+  torch + screwdriver in the basket. On the LAMP only (a lit flame in the Gas
+  Room = death) cross the Gas Room for the sapphire bracelet (+10) and fetch the
+  coal from the Ladder Room; back at the Shaft Room add the coal to the basket
+  and lower it. Return, drop everything at the Ladder Room (the squeeze west
+  needs empty hands), enter the torch-lit Drafty Room (+10), take torch/coal/
+  screwdriver from the basket, and in the Machine Room open the lid, put coal
+  in, close, turn the switch with the screwdriver -> huge diamond (+25). Basket
+  the diamond/torch/screwdriver back up (raise chain), reclaim your gear, exit
+  via the Bat Room and the Slide-Room chute to the Cellar, and through the maze
+  to the Living Room. Case jade, bracelet, diamond and finally the torch.
+  The 15th treasure at exactly 325 -> +25 = 350, "Look to your treasures for
+  the final secret."
+
+ENDGAME — Stone Barrow
+  Take the newly-revealed parchment map from the case, read it (points SW to
+  the Stone Barrow), walk out to West of House (the secret SW path is now open),
+  and go SW into the Barrow: "You have completed a great and perilous adventure
+  ... You have mastered the first part of the ZORK trilogy."  = WIN, 350/350.
+
+Verified: walkthroughs/minizork_verified_350.txt (405 recorded commands) via
+scripts/replay_solve.py --seeds 24 -> 350/350, died=False, won=True.
