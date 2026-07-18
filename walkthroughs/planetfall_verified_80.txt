@@ -1,3 +1,4 @@
+#% MAX_SCORE: 80
 # Planetfall (Infocom Release 37, serial 851003, Z-machine V3)
 # VERIFIED COMPLETE SOLVE: 80/80, won=True, died=False
 #

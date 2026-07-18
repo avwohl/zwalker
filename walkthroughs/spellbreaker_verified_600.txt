@@ -1,3 +1,4 @@
+#% MAX_SCORE: 600
 # Spellbreaker (Infocom Release 87, serial 860904, Z-machine V3)
 # VERIFIED COMPLETE SOLVE: 600/600, won=True, died=False
 #

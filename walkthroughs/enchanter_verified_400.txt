@@ -1,3 +1,4 @@
+#% MAX_SCORE: 400
 # Enchanter (Infocom Release 29, serial 860820, Z-machine V3)
 # VERIFIED COMPLETE SOLVE: 400/400, won=True, died=False
 #

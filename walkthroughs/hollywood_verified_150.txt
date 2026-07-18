@@ -1,3 +1,4 @@
+#% MAX_SCORE: 150
 # Hollywood Hijinx (Infocom Release 37, serial 861215, Z-machine V3)
 # VERIFIED COMPLETE SOLVE: 150/150, won=True, died=False
 #

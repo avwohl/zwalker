@@ -1,3 +1,4 @@
+#% MAX_SCORE: 400
 # Zork II — "The Wizard of Frobozz" (Infocom Release 63, serial 860811, Z-machine V3)
 # VERIFIED COMPLETE SOLVE: 400/400, won=True, died=False
 #

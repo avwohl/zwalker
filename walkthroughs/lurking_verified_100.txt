@@ -1,3 +1,4 @@
+#% MAX_SCORE: 100
 # The Lurking Horror (Infocom Release 221, serial 870918, Z-machine V3)
 # VERIFIED COMPLETE SOLVE: 100/100, won=True, died=False
 #
