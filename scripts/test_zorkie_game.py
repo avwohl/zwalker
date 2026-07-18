@@ -77,10 +77,23 @@ GAMES = {
         "reference": None,
         "seeds": 1,
     },
+    "minizork": {
+        # THE MILESTONE: the first real Infocom game zorkie compiles to a full
+        # verified win (350/350, Stone Barrow) in zwalker. Source is the
+        # historical Release-0 mini.zil; the published Release 34 binary is a
+        # DIFFERENT build (own map/scoring/RNG stream), covered separately by
+        # the released-binary solve walkthroughs/minizork_verified_350.txt.
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "minizork-1987" / "mini.zil",
+        "walkthrough": REPO / "walkthroughs" / "minizork_zorkie_350.txt",
+        "version": 3,
+        "reference": None,  # no golden of THIS source; official binary is another release
+        "seeds": 1,
+    },
     # === Frontier target (informational; NOT counted in the suite pass/fail). ===
-    # A real Infocom-library game via the ZILF stdlib. Parses fully; currently
-    # fails in zorkie codegen (compile-time macro evaluation for LIBRARY-MESSAGE).
-    # Tracks progress toward compiling real games. See docs/ZORKIE_TESTING.md.
+    # A real Infocom-library game via the ZILF stdlib. Parses fully and is now
+    # past the old LIBRARY-MESSAGE macro blocker; current compile error is the
+    # stdlib's ISAVE (a V5+ opcode) reached in this V3 build.
+    # Tracks progress toward compiling ZILF-library games. See docs/ZORKIE_TESTING.md.
     "cloak": {
         "zil": ZORKIE / "tests" / "test-pairs" / "cloak.zil",
         "walkthrough": REPO / "walkthroughs" / "cloak_zilf_win.txt",

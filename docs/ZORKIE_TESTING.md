@@ -193,20 +193,29 @@ Start where zorkie already round-trips, not with Zork 1 (which still hangs):
   zorkie's routine-codegen coverage (currently ~26 % of official routine bytes for
   Zork 1) closes.
 
-## Current status (2026-07-15)
+## Current status (2026-07-18)
 
-**The integration is proven end to end, with a green three-game suite.**
-`scripts/test_zorkie_game.py` compiles each game's ZIL with zorkie, runs the
-resulting story file in zwalker, and replays a source-matched walkthrough to the
-game's real `*** You have won ***`:
+**The integration is proven end to end, and the suite now includes a real
+Infocom game played to a full win.** `scripts/test_zorkie_game.py` compiles each
+game's ZIL with zorkie, runs the resulting story file in zwalker, and replays a
+source-matched walkthrough to the game's real win:
 
 ```
-zorkie L2 suite: 3/3 games play-and-win  (microquest, mazekey, reactor)
+zorkie L2 suite: 4/4 games play-and-win  (microquest, mazekey, reactor, minizork)
 frontier (not counted): cloak -> not yet
 ```
 
-The suite games live in [`games/zil/`](../games/zil/) and use only ZIL that
-zorkie compiles today, each exercising a different slice:
+**minizork is the milestone**: zorkie compiles the historical Mini-Zork I source
+(`mini.zil`, Release 0, 1987) and the build plays the *complete game* to its
+350/350 Stone Barrow victory — 420 commands, RNG seed 1, recorded in
+[`walkthroughs/minizork_zorkie_350.txt`](../walkthroughs/minizork_zorkie_350.txt).
+The published Release-34 binary is a *different build* with its own RNG stream,
+so the route was re-derived for this build (heal-waits in sacred rooms replace
+the published route's Troll-Room heal); the released binary stays covered by
+`walkthroughs/minizork_verified_350.txt` in the 50-solve suite.
+
+The three purpose-built suite games live in [`games/zil/`](../games/zil/) and
+use only ZIL that zorkie compiles today, each exercising a different slice:
 
 - **microquest** — a `READ` loop, dictionary word-matching, verbs, a container,
   and a scored win.
@@ -256,11 +265,12 @@ upstream, and the compile has moved past the whole front end into codegen:
    `>` ("Unexpected closing parenthesis" at `MAP-SCOPE-INIT-STAGES-FROM-BITS`).
    Only `!\X` is a character literal; `!<form>`/`!.var`/`!,var` are splices.
 
-With those, cloak clears **every** parse error and the blocker is now **codegen**:
-the first stop is `ZIL0402: Call to LIBRARY-MESSAGE has 4 arguments, but V3 only
-supports up to 3 call arguments` (plus `Unknown identifier` warnings for
-`NO-OBJECT` / `ENTER`). That is the boundary between "parse the library" (done)
-and "compile and run it," which is the larger remaining work:
+With those, cloak clears **every** parse error and the blocker is now **codegen**.
+The first stop was `ZIL0402: Call to LIBRARY-MESSAGE has 4 arguments, but V3 only
+supports up to 3 call arguments`; the classic-parser compiler work has since
+moved the compile past that, and the current stop is the ZILF stdlib's `ISAVE`
+(a V5+ opcode) reached in a V3 build. That is the boundary between "parse the
+library" (done) and "compile and run it," which is the larger remaining work:
 
 1. **Codegen / semantics** — the V3 3-argument call limit (the library calls
    `LIBRARY-MESSAGE` with 4 args; ZILF lowers this, zorkie rejects it), unresolved
@@ -270,8 +280,9 @@ and "compile and run it," which is the larger remaining work:
    `MAPF` / PROPSPEC to build the tables and routines the library generates
    (zorkie parses these but does not yet evaluate them — its "PROPSPEC routine
    creation" xfail).
-3. **Runtime** — even a fully compiled real game "still hangs" per zorkie's
-   `WIP.md` (parser/`SYNTAX` runtime gaps).
+3. **Runtime** — largely retired for the classic-MDL path: a full real game now
+   compiles and wins (minizork, above). The ZILF-stdlib runtime path is what
+   cloak still exercises.
 
 So cloak-via-zorkie is real compiler work, not one fix. The harness is built to
 track exactly this: each item above turns the `COMPILE-FAIL` into a later failure
@@ -299,21 +310,20 @@ the fixes below, **boots to the main-loop `READ` prompt**:
   never incremented → infinite loop. This is exactly what hung Zork 1 in
   `V-VERSION`'s serial-number loop; fixing it got it to the prompt.
 
-**Still broken in Zork 1 (the remaining frontier), each a deep codegen area:**
+**Where Zork 1 stands now:** the shared-library work that won minizork (same
+`gparser`/`gverbs` family) has Zork 1 booting to "West of House", reaching the
+`READ` prompt, and dispatching parsed commands. The remaining path to a win is
+the **lockstep-differ method** that finished minizork: run the official binary
+and the zorkie build side by side through a verified route, compare room + score
+after every command, fix the first divergence, repeat.
 
-- **Room description** — after the banner, `<V-LOOK>` prints garbage ("echo echo
-  …", a stray string from `V-ECHO`) instead of "West of House"; both the room
-  *name* (`<TELL D ,HERE>`) and its `LDESC` (`<TELL <GETP ,HERE ,P?LDESC>>`) come
-  out wrong. A property-table / packed-string-address codegen problem.
-- **The parser** — typed commands read but don't dispatch to actions (`gparser`'s
-  `PARSER` + the verb/syntax tables). This is the biggest single subsystem.
-
-Getting even one full Infocom game to *compile and solve* through zorkie is
-therefore finishing a large part of the compiler back end (object/property/string
-codegen, the parser, verb dispatch, the compile-time macro evaluator for the
-library) — a multi-week effort, not a session. The bugs above were real and are
-fixed; the honest status is that Zork 1 boots and reaches the prompt but is not
-yet playable, and no real Infocom game is solvable through zorkie yet.
+Getting one full Infocom game to *compile and solve* through zorkie meant
+finishing a large part of the compiler back end (object/property/string codegen,
+the classic parser tables, verb dispatch) — and that has now happened: **minizork
+is solvable through zorkie end to end** (350/350, in the counted suite above).
+Zork 1, zork3 and starcross boot but are not yet winnable; the rest of the
+catalog is behind size limits, macro gaps, or per-game blockers (see
+`~/src/zorkie/STATUS.md` for the measured frontier).
 
 ## Reuse these
 
