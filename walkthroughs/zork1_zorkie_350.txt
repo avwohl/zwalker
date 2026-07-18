@@ -1,10 +1,10 @@
-# Adaptive @-route for the ZORKIE build of zork1 (renovated Release-0 source).
-# Derived from walkthroughs/zork1_verified_350.txt (official Release-119 route,
-# seed 3): baked combat repeats/heal-waits/river drift become adaptive steps
-# (@killtroll @killthief @heal @buoy) handled by
-# scripts/solve_zork1_zorkie_adaptive.py, which records the actual command
-# stream for deterministic replay.
-# ===== TRIP A: setup, egg, tools, troll, give egg to thief, bank coins =====
+#% MAX_SCORE: 350
+#% WIN_TEXT: rank of Master Adventurer
+# ZORK 1 compiled FROM SOURCE by zorkie (renovated Release 0)
+# -- complete solve recorded by solve_zork1_zorkie_adaptive.py
+# at interpreter RNG seed 3; 402 commands.
+# Replays deterministically: every combat repeat, heal-wait,
+# and buoy retry is baked into this stream.
 south
 east
 open window
@@ -34,7 +34,7 @@ west
 open trap door
 down
 north
-@killtroll
+kill troll with sword
 west
 west
 west
@@ -54,9 +54,7 @@ east
 put coins in case
 drop sword
 drop key
-# ----- heal to full (30 waits) -----
-@heal
-# ===== TRIP B: dam -> drain -> reservoir treasures (matches+trunk+pump+trident) =====
+diagnose
 open trap door
 down
 north
@@ -105,9 +103,7 @@ east
 east
 put trunk in case
 put trident in case
-# heal to full in the (thief-safe) Living Room before the Treasure Room fight
-@heal
-# ===== TRIP B2: kill thief -> chalice, egg(opened), canary; wind canary -> bauble =====
+diagnose
 down
 north
 west
@@ -119,7 +115,14 @@ east
 south
 se
 up
-@killthief
+kill thief with knife
+kill thief with knife
+kill thief with knife
+kill thief with knife
+kill thief with knife
+kill thief with knife
+kill thief with knife
+kill thief with knife
 take chalice
 take egg
 take canary
@@ -140,7 +143,6 @@ west
 west
 put canary in case
 put bauble in case
-# ===== TRIP C: torch, temple(bell,sceptre), Hades(skull). Thief is dead; safe. =====
 drop knife
 open trap door
 down
@@ -183,7 +185,6 @@ west
 south
 up
 put skull in case
-# ===== TRIP D: painting (Gallery) + bar (Loud Room) =====
 down
 south
 east
@@ -205,7 +206,6 @@ west
 south
 up
 put bar in case
-# ===== TRIP E: rainbow -> pot of gold (uses sceptre, then bank both) =====
 east
 east
 east
@@ -224,7 +224,6 @@ west
 west
 put pot in case
 put sceptre in case
-# ===== TRIP F: coffin (Egyptian -> pray out) =====
 drop pump
 open trap door
 down
@@ -247,7 +246,6 @@ west
 west
 put coffin in case
 take pump
-# ===== TRIP G: COAL MINE -> diamond (+ figurine, bracelet) =====
 drop pump
 east
 take sack
@@ -358,7 +356,6 @@ up
 put diamond in case
 put figurine in case
 put bracelet in case
-# ===== TRIP H: river (emerald) + sandy cave (scarab); bank emerald,scarab,torch =====
 take pump
 open trap door
 down
@@ -374,7 +371,13 @@ inflate plastic with pump
 drop pump
 enter boat
 launch
-@buoy
+take buoy
+wait
+take buoy
+wait
+take buoy
+wait
+take buoy
 east
 get out of boat
 open buoy

@@ -143,7 +143,8 @@ def main():
         if sc == MAX_SCORE:
             if a.out:
                 with open(a.out, 'w') as f:
-                    f.write(f"#% MAX_SCORE {MAX_SCORE}\n")
+                    f.write(f"#% MAX_SCORE: {MAX_SCORE}\n")
+                    f.write("#% WIN_TEXT: rank of Master Adventurer\n")
                     f.write(f"# ZORK 1 compiled FROM SOURCE by zorkie (renovated Release 0)\n"
                             f"# -- complete solve recorded by solve_zork1_zorkie_adaptive.py\n"
                             f"# at interpreter RNG seed {seed}; {len(r.sent)} commands.\n"

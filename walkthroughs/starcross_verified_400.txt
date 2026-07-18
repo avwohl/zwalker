@@ -1,3 +1,4 @@
+#% MAX_SCORE: 400
 # Starcross (Infocom Release 18, serial 830114, Z-machine V3)
 # VERIFIED COMPLETE SOLVE: 400/400, won=True, died=False
 #

@@ -89,6 +89,37 @@ GAMES = {
         "reference": None,  # no golden of THIS source; official binary is another release
         "seeds": 1,
     },
+    "zork1": {
+        # THE FULL ZORK I (renovated Release-0 source), 350/350 to Master
+        # Adventurer. The published Release-119 route was re-derived for this
+        # build's RNG stream by scripts/solve_zork1_zorkie_adaptive.py (seed 3;
+        # combat repeats, heal-waits, and the river-buoy drift baked in).
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "zork1" / "zork1.zil",
+        "walkthrough": REPO / "walkthroughs" / "zork1_zorkie_350.txt",
+        "version": 3,
+        "reference": None,  # official Release 119 is a different build
+        "seeds": 3,
+    },
+    "zork3": {
+        # The OFFICIAL verified route replays clean on the zorkie build --
+        # lockstep-identical (rooms AND scores) to the Release-25 binary over
+        # all 216 commands to the Treasury of Zork.
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "zork3" / "zork3.zil",
+        "walkthrough": REPO / "walkthroughs" / "zork3_verified_7.txt",
+        "version": 3,
+        "reference": REPO / "games" / "zcode" / "zork_iii.z3",
+        "seeds": 1,
+    },
+    "starcross": {
+        # The OFFICIAL verified route replays clean on the zorkie build --
+        # lockstep-identical to the Release-18 binary over all 240 commands,
+        # 400/400 in the Control Bubble.
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "starcross" / "starcross.zil",
+        "walkthrough": REPO / "walkthroughs" / "starcross_verified_400.txt",
+        "version": 3,
+        "reference": REPO / "games" / "zcode" / "starcross.z3",
+        "seeds": 1,
+    },
     # === Frontier target (informational; NOT counted in the suite pass/fail). ===
     # A real Infocom-library game via the ZILF stdlib. Parses fully and is now
     # past the old LIBRARY-MESSAGE macro blocker; current compile error is the
