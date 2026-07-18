@@ -1,0 +1,404 @@
+# Adaptive @-route for the ZORKIE build of zork1 (renovated Release-0 source).
+# Derived from walkthroughs/zork1_verified_350.txt (official Release-119 route,
+# seed 3): baked combat repeats/heal-waits/river drift become adaptive steps
+# (@killtroll @killthief @heal @buoy) handled by
+# scripts/solve_zork1_zorkie_adaptive.py, which records the actual command
+# stream for deterministic replay.
+# ===== TRIP A: setup, egg, tools, troll, give egg to thief, bank coins =====
+south
+east
+open window
+enter window
+west
+take lamp
+take sword
+turn on lamp
+move rug
+open trap door
+open case
+east
+east
+north
+north
+up
+take egg
+down
+south
+east
+west
+up
+take knife
+take rope
+down
+west
+open trap door
+down
+north
+@killtroll
+west
+west
+west
+up
+take coins
+take key
+sw
+east
+south
+se
+ulysses
+up
+give egg to thief
+down
+east
+east
+put coins in case
+drop sword
+drop key
+# ----- heal to full (30 waits) -----
+@heal
+# ===== TRIP B: dam -> drain -> reservoir treasures (matches+trunk+pump+trident) =====
+open trap door
+down
+north
+east
+east
+north
+north
+northeast
+east
+north
+take matches
+north
+take wrench
+press yellow button
+south
+south
+turn bolt with wrench
+drop wrench
+west
+wait
+wait
+wait
+north
+take trunk
+north
+take pump
+north
+take trident
+south
+south
+south
+southwest
+south
+south
+west
+west
+west
+west
+west
+up
+sw
+east
+south
+se
+east
+east
+put trunk in case
+put trident in case
+# ===== TRIP B2: kill thief -> chalice, egg(opened), canary; wind canary -> bauble =====
+down
+north
+west
+west
+west
+up
+sw
+east
+south
+se
+up
+@killthief
+take chalice
+take egg
+take canary
+down
+east
+east
+put chalice in case
+put egg in case
+east
+east
+north
+north
+wind canary
+take bauble
+south
+east
+west
+west
+put canary in case
+put bauble in case
+# ===== TRIP C: torch, temple(bell,sceptre), Hades(skull). Thief is dead; safe. =====
+drop knife
+open trap door
+down
+north
+east
+east
+southeast
+east
+tie rope to railing
+down
+take torch
+turn off lamp
+south
+take bell
+east
+open coffin
+take sceptre
+west
+south
+take book
+take candles
+down
+down
+ring bell
+take candles
+light match
+light candles with match
+read book
+drop book
+drop candles
+south
+take skull
+north
+up
+north
+north
+north
+west
+west
+south
+up
+put skull in case
+# ===== TRIP D: painting (Gallery) + bar (Loud Room) =====
+down
+south
+east
+take painting
+west
+north
+up
+put painting in case
+down
+north
+east
+east
+east
+echo
+take bar
+west
+west
+west
+south
+up
+put bar in case
+# ===== TRIP E: rainbow -> pot of gold (uses sceptre, then bank both) =====
+east
+east
+east
+east
+down
+down
+north
+wave sceptre
+take pot
+southwest
+up
+up
+northwest
+west
+west
+west
+put pot in case
+put sceptre in case
+# ===== TRIP F: coffin (Egyptian -> pray out) =====
+drop pump
+open trap door
+down
+north
+east
+east
+southeast
+east
+down
+south
+east
+take coffin
+west
+south
+pray
+east
+south
+east
+west
+west
+put coffin in case
+take pump
+# ===== TRIP G: COAL MINE -> diamond (+ figurine, bracelet) =====
+drop pump
+east
+take sack
+open sack
+take garlic
+drop sack
+west
+open trap door
+down
+north
+east
+east
+north
+north
+northeast
+east
+north
+north
+take screwdriver
+south
+south
+west
+north
+north
+north
+up
+north
+north
+west
+north
+west
+north
+take figurine
+east
+turn on lamp
+put torch in basket
+put screwdriver in basket
+north
+down
+take bracelet
+east
+northeast
+southeast
+southwest
+down
+down
+south
+take coal
+north
+up
+up
+north
+east
+south
+north
+up
+south
+put coal in basket
+lower basket
+north
+down
+east
+northeast
+southeast
+southwest
+down
+down
+west
+drop all
+west
+take torch
+take coal
+take screwdriver
+south
+open lid
+put coal in machine
+close lid
+turn switch with screwdriver
+open lid
+take diamond
+north
+put diamond in basket
+put torch in basket
+put screwdriver in basket
+east
+take lamp
+take garlic
+take figurine
+take bracelet
+east
+up
+up
+north
+east
+south
+north
+up
+south
+raise basket
+take diamond
+take torch
+west
+south
+east
+south
+down
+up
+put diamond in case
+put figurine in case
+put bracelet in case
+# ===== TRIP H: river (emerald) + sandy cave (scarab); bank emerald,scarab,torch =====
+take pump
+open trap door
+down
+north
+east
+east
+north
+north
+northeast
+east
+down
+inflate plastic with pump
+drop pump
+enter boat
+launch
+@buoy
+east
+get out of boat
+open buoy
+take emerald
+drop buoy
+take shovel
+northeast
+dig sand with shovel
+dig sand with shovel
+dig sand with shovel
+dig sand with shovel
+take scarab
+drop shovel
+southwest
+south
+south
+west
+west
+southwest
+up
+up
+northwest
+west
+west
+west
+put emerald in case
+put scarab in case
+put torch in case
+score
