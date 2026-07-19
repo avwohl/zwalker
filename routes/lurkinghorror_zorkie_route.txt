@@ -1,0 +1,318 @@
+# DRAFT adaptive route from walkthroughs/lurking_verified_100.txt
+# 0 adaptive steps; verify each condition before recording.
+#% MAX_SCORE: 100
+#% WIN_TEXT: President of the Institute
+sit on chair
+turn on pc
+login 872325412
+password uhlersoth
+click menu
+click paper
+read paper
+# ADAPTIVE? 4 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+d
+d
+take stone
+# ADAPTIVE? 6 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+z
+z
+ask hacker about keys
+s
+w
+open fridge
+take coke and carton
+open microwave
+put carton in microwave
+close microwave
+press 5
+press 0
+press 0
+press hi
+press start
+# ADAPTIVE? 4 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+open microwave
+take carton
+e
+n
+give carton to hacker
+hacker, give me master key
+drop assignment
+s
+press down
+z
+z
+s
+open panel
+take flashlight
+press 1
+# ADAPTIVE? 3 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+n
+look
+n
+d
+e
+take gloves and crowbar
+wear gloves
+w
+w
+enter forklift
+turn on forklift
+e
+e
+e
+turn on flashlight
+move junk with forklift
+again
+again
+again
+turn off forklift
+get out of forklift
+e
+open manhole with crowbar
+d
+n
+d
+take knife
+u
+s
+u
+w
+w
+turn off flashlight
+w
+w
+w
+u
+s
+take container
+e
+e
+# ADAPTIVE? 3 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+e
+# ADAPTIVE? 3 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+e
+smash cabinet with crowbar
+take axe
+cut cord with axe
+open container
+pour wax on floor
+drop container
+w
+u
+climb rope
+open door
+n
+u
+take plug
+drop plug
+take paper
+d
+s
+close door
+lower ladder
+d
+d
+e
+e
+n
+d
+se
+take boots
+wear boots
+u
+u
+unlock door with key
+open door
+w
+u
+dig in dirt
+take hand
+d
+throw stone at creature
+e
+d
+d
+u
+out
+take stone
+in
+d
+nw
+u
+s
+s
+knock on door
+z
+z
+show note to professor
+s
+z
+z
+cut line with knife
+exit pentagram
+move bench
+open trapdoor
+d
+turn on flashlight
+open trapdoor
+u
+put hand in vat
+z
+z
+take hand
+drink coke
+n
+open door
+n
+turn off flashlight
+n
+w
+w
+w
+w
+show hand to urchin
+take bolt cutter
+n
+d
+e
+e
+e
+u
+take flask
+d
+w
+e
+u
+turn on flashlight
+take flask
+d
+turn off flashlight
+w
+drop flask
+drop axe
+drop bolt cutter
+drop knife
+drop coke
+w
+w
+d
+nw
+unlock padlock with key
+take padlock
+open hatch
+turn on flashlight
+d
+e
+open valve with crowbar
+# ADAPTIVE? 3 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+open valve with crowbar
+close valve
+e
+e
+move brick with crowbar
+move new brick with crowbar
+look through hole
+w
+w
+w
+w
+u
+se
+u
+turn off flashlight
+e
+e
+w
+u
+se
+u
+e
+e
+look
+open doors with crowbar
+put crowbar in doors
+s
+take chain
+put chain around rod
+lock chain with padlock
+u
+put chain on hook
+take crowbar
+u
+press up
+z
+z
+press up
+s
+press 2
+# ADAPTIVE? 3 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+n
+d
+d
+take axe
+take bolt cutter
+take flask
+open doors with crowbar
+put crowbar in doors
+turn on flashlight
+s
+n
+w
+w
+w
+w
+w
+w
+d
+cut wire with cutter
+d
+n
+d
+s
+s
+d
+open flask
+pour liquid on curtain
+drop flask
+unlock door with key
+open door
+s
+open cover
+unplug coaxial cable
+search pool
+take line
+cut line with axe
+again
+again
+take line
+put line in socket
+z
+throw stone at creature
+take stone

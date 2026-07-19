@@ -1,0 +1,180 @@
+# DRAFT adaptive route from walkthroughs/wishbringer_verified_100.txt
+# 3 adaptive steps; verify each condition before recording.
+#% MAX_SCORE: 100
+s
+z
+take envelope
+n
+w
+w
+yes
+n
+w
+e
+d
+take bone
+u
+s
+e
+e
+e
+give bone to poodle
+n
+z
+z
+take note
+n
+look in fountain
+take coin
+e
+e
+e
+take seahorse
+throw seahorse in bay
+w
+n
+n
+w
+w
+n
+n
+e
+u
+w
+n
+u
+e
+s
+u
+knock on door
+open door
+w
+# ADAPTIVE? 3 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+give envelope to woman
+open envelope
+read letter to woman
+z
+take can
+z
+z
+d
+n
+w
+d
+s
+e
+d
+@repeat-max8 taken | take branch
+w
+open can
+take can
+squeeze can
+take stone
+open gate
+s
+s
+w
+s
+look in pit
+put branch in pit
+take branch
+drop branch
+dig in sand
+take whistle
+blow whistle
+w
+z
+take hat
+z
+blow whistle
+s
+yes
+e
+d
+n
+e
+push bunk
+drop all
+u
+take blanket
+d
+take all
+n
+e
+put blanket on beast
+open fridge
+take worm
+w
+w
+open stump
+u
+n
+e
+e
+e
+give hat to pelican
+w
+w
+s
+s
+put worm in fountain
+take token
+e
+give coin to voss
+in
+give ticket to gravedigger
+n
+look under seat
+take glasses
+s
+out
+yes
+e
+s
+put token in slot
+@repeat-max8 moves | push joystick west
+@repeat-max8 moves | push joystick south
+press red button
+yes
+yes
+say KALUZE
+s
+z
+give note to crisp
+take coat
+take key
+unlock chains with key
+pull lever
+take note
+read note
+open hatch
+u
+look behind paintings
+u
+wear glasses
+take broom
+open second switch
+d
+take off glasses
+turn crank
+n
+n
+e
+alexis, heel
+open door
+in
+take steel key
+out
+n
+unlock library door with steel key
+in
+z
+s
+break case with broom
+put stone in sculpture
+yes
+yes
+knock on door

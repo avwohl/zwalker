@@ -1,0 +1,640 @@
+# DRAFT adaptive route from walkthroughs/amfv_verified_win.txt
+# 0 adaptive steps; verify each condition before recording.
+#% WIN_TEXT: a voyage that would last forever
+# ADAPTIVE? 4 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+enter simulation mode
+84
+look
+sw
+nw
+record on
+record off
+se
+n
+w
+record on
+ask official about the plan
+record off
+e
+ne
+n
+n
+w
+ne
+record on
+buy meal
+record off
+out
+e
+s
+e
+e
+put credit card in slot
+record on
+read newspaper
+record off
+s
+e
+s
+w
+record on
+elder, hello
+record off
+e
+s
+e
+s
+sw
+sw
+se
+s
+record on
+record off
+n
+nw
+down
+look
+# ADAPTIVE? 4 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+look
+look
+look
+look
+in
+record on
+record off
+look
+look
+look
+look
+look
+look
+look
+look
+look
+out
+look
+up
+se
+e
+n
+n
+e
+nw
+buy ticket
+record on
+in
+record off
+out
+se
+w
+s
+s
+w
+s
+w
+s
+w
+in
+look
+unlock door with key
+in
+look
+unlock door with key
+open door
+n
+look
+record on
+record off
+abort
+# ADAPTIVE? 9 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+z
+z
+z
+z
+z
+peof
+# ADAPTIVE? 5 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+z
+peof
+z
+yes
+cloud
+bird
+tree
+face
+dog
+look
+enter simulation mode
+48
+20
+look
+# ADAPTIVE? 3 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+in
+record on
+look
+record off
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+out
+up
+look
+record on
+examine dispenser
+record off
+se
+record on
+look
+read pamphlet
+record off
+nw
+sw
+w
+record on
+look
+record off
+w
+s
+s
+nw
+record on
+look
+record off
+se
+s
+w
+unlock door with key
+in
+open door
+n
+record on
+look through window
+record off
+unlock door with key
+n
+record on
+look through window
+record off
+# ADAPTIVE? 19 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+abort
+enter simulation mode
+36
+enter simulation mode
+0
+30
+look
+record on
+look
+record off
+n
+down
+look
+look
+in
+record on
+look
+look
+record off
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+out
+up
+record on
+look
+record off
+s
+s
+s
+se
+se
+record on
+sw
+record off
+e
+record on
+look
+record off
+e
+ne
+se
+record on
+read pamphlet
+record off
+nw
+sw
+s
+w
+s
+nw
+record on
+look
+record off
+se
+s
+w
+unlock door with key
+in
+unlock door with key
+n
+record on
+look through window
+examine window
+record off
+# ADAPTIVE? 24 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+abort
+enter simulation mode
+62
+40
+look
+se
+record on
+read pamphlet
+record off
+nw
+sw
+w
+record on
+look
+record off
+w
+s
+s
+nw
+record on
+look
+record off
+se
+s
+nw
+record on
+read list of titles
+record off
+se
+w
+n
+w
+w
+unlock door with key
+in
+unlock door with key
+n
+record on
+look through window
+record off
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+record on
+look
+look
+look
+look
+look
+record off
+s
+e
+e
+nw
+look
+record on
+read banned list
+record off
+se
+n
+n
+ne
+n
+n
+w
+w
+n
+n
+record on
+look
+record off
+s
+s
+e
+e
+nw
+look
+n
+n
+ne
+n
+n
+w
+w
+n
+n
+record on
+look
+record off
+s
+s
+s
+record on
+look
+record off
+e
+e
+record on
+look
+record off
+# ADAPTIVE? 42 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+abort
+enter simulation mode
+84
+50
+look
+record on
+look
+read sign
+record off
+n
+record on
+look
+record off
+s
+sw
+record on
+look
+record off
+abort
+enter simulation mode
+99
+50
+n
+record on
+look
+record off
+s
+sw
+record on
+look
+record off
+abort
+enter simulation mode
+73
+50
+sw
+record on
+look
+record off
+abort
+peof
+show record buffer to perelman
+# ADAPTIVE? 8 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+z
+z
+z
+z
+show record buffer to perelman
+# ADAPTIVE? 14 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+peof
+# ADAPTIVE? 9 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+z
+z
+z
+z
+z
+look
+look
+look
+look
+look
+record on
+look
+look
+record off
+enter interface mode
+no
+hvac controller, turn off ventilation in delta sector
+# ADAPTIVE? 11 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+hvac controller, turn on ventilation in delta sector
+# ADAPTIVE? 6 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+z
+z
+feeder, transmit record buffer
+# ADAPTIVE? 4 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+look
+enter simulation mode
+look
+z
+z
+look
+look
+look
+look
+look
+z
+z

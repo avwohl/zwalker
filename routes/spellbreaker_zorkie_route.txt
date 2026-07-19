@@ -1,0 +1,430 @@
+# DRAFT adaptive route from walkthroughs/spellbreaker_verified_600.txt
+# 1 adaptive steps; verify each condition before recording.
+#% MAX_SCORE: 600
+# ADAPTIVE? 4 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+s
+take bread
+take fish
+s
+lesoch
+learn lesoch
+lesoch
+take cube
+write "1" on cube
+learn blorple
+blorple 1
+frotz burin
+d
+d
+# ADAPTIVE? 5 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+z
+take stained scroll
+gnusto caskly
+learn blorple
+blorple 1
+e
+s
+take zipper
+open zipper
+reach into zipper
+look into zipper
+take flimsy scroll
+read flimsy scroll
+learn blorple
+blorple 1
+s
+take dirty scroll
+gnusto throck
+u
+z
+z
+girgol
+u
+u
+u
+u
+take coin
+put coin in zipper
+put bread in zipper
+put knife in zipper
+w
+caskly hut
+learn caskly
+caskly hut
+learn caskly
+caskly hut
+learn caskly
+caskly hut
+take cube
+write "2" on cube
+e
+learn blorple
+blorple 2
+s
+@repeat-max8 taken | take weed
+learn blorple
+blorple 1
+w
+put 1 in zipper
+put 2 in zipper
+sleep
+n
+plant weed
+learn throck
+throck weed
+d
+take dusty scroll
+take gold box
+u
+s
+gnusto espnis
+open box
+take cube
+write "3" on cube
+put box in zipper
+learn blorple
+blorple 3
+sleep
+learn blorple
+drop all except fish
+s
+drop fish
+take 3
+take bottle
+blorple 3
+take all
+open bottle
+take damp scroll
+gnusto liskon
+n
+sleep
+learn liskon
+liskon me
+frotz bottle
+learn blorple
+drop all except bottle and 3
+enter outflow pipe
+w
+take cube
+w
+climb out of pipe
+blorple 3
+n
+take all
+write "4" on cube
+put bottle in zipper
+take 1
+learn blorple
+blorple 1
+e
+n
+learn liskon
+liskon snake
+n
+n
+sleep
+learn malyon
+learn espnis
+learn espnis
+malyon idol
+z
+espnis idol
+z
+climb idol
+look into mouth
+take cube
+d
+write "5" on cube
+learn blorple
+blorple 5
+sleep
+n
+take white scroll
+gnusto tinsot
+learn blorple
+blorple 5
+w
+take coin
+e
+buy blue carpet
+offer 300
+offer 400
+offer 500
+take blue carpet
+w
+learn blorple
+blorple 3
+sleep
+learn tinsot
+learn tinsot
+learn tinsot
+learn tinsot
+put all in zipper
+take burin
+close zipper
+n
+rezrov trap door
+tinsot channel
+tinsot channel
+tinsot water
+climb on floe
+u
+u
+take cube
+open zipper
+take book
+write "6" on cube
+e
+n
+rezrov cabinet
+take moldy book
+learn caskly
+caskly moldy book
+gnusto snavig
+sleep
+s
+w
+u
+drop carpet
+sit on carpet
+u
+w
+w
+w
+w
+d
+get off carpet
+take cube
+sit on carpet
+u
+e
+e
+e
+e
+d
+get off carpet
+take carpet
+write "7" on cube
+d
+learn blorple
+blorple 3
+sleep
+learn blorple
+learn snavig
+learn snavig
+learn snavig
+put all in zipper
+close zipper
+s
+take 3
+snavig grouper
+d
+# ADAPTIVE? 4 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+take all
+u
+blorple 3
+open zipper
+take book
+take burin
+write "8" on cube
+put 3 in zipper
+n
+learn blorple
+blorple 8
+sleep
+w
+learn tinsot
+tinsot fragment
+take fragment
+learn blorple
+take 4
+blorple 4
+sleep
+n
+take compass rose
+learn blorple
+blorple 4
+w
+put rose in carving
+take rose
+n
+touch nw rune with rose
+nw
+touch w rune with rose
+w
+touch ne rune with rose
+ne
+rezrov alabaster
+w
+take cube
+write "9" on cube
+put 4 in zipper
+learn blorple
+blorple 9
+s
+give fragment to rock
+sit on rock
+rock, north
+rock, southwest
+rock, east
+rock, east
+rock, south
+rock, south
+jump on brown rock
+take cube
+write "10" on cube
+sleep
+learn blorple
+blorple 10
+d
+put 6 in zipper
+put 7 in zipper
+put 8 in zipper
+put 9 in zipper
+put rose in zipper
+sleep
+learn snavig
+learn blorple
+close zipper
+drop burin
+d
+snavig grue
+d
+climb on pillar
+take cube
+# ADAPTIVE? 3 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+blorple 10
+d
+take all
+open zipper
+write "11" on cube
+learn blorple
+blorple 11
+n
+put 11 in zipper
+take box
+put 10 in box
+take 10
+throw box at outcropping
+learn blorple
+blorple 10
+u
+take box
+put box in zipper
+put 10 in zipper
+take cube
+write "12" on cube
+put burin in zipper
+take 7
+learn blorple
+blorple 7
+s
+ask belboz about me
+answer dimithio
+put 7 in zipper
+take 9
+learn blorple
+blorple 9
+e
+put 9 in zipper
+put key in zipper
+put burin in zipper
+learn jindak
+learn jindak
+learn jindak
+learn blorple
+learn blorple
+rezrov steel door
+n
+take x1
+put x1 in zipper
+take x2
+put x2 in zipper
+take x7
+put x7 in zipper
+take x8
+put x8 in zipper
+jindak
+take x9
+put x9 on first pile
+take x6
+put x6 on second pile
+take x1
+put x1 on second pile
+take x2
+put x2 on second pile
+take x7
+put x7 on second pile
+take x10
+put x10 in zipper
+take x11
+put x11 in zipper
+take x12
+put x12 in zipper
+jindak
+take x9
+put x9 in zipper
+take x8
+put x8 on first pile
+jindak
+take x6
+blorple x6
+d
+put x6 in zipper
+take key
+unlock cabinet with key
+open cabinet
+take vellum scroll
+learn blorple
+learn blorple
+learn blorple
+learn blorple
+put book in cabinet
+close cabinet
+lock cabinet with key
+put key in zipper
+take x6
+rezrov door
+blorple x6
+u
+open sack
+take flimsy scroll
+take burin
+copy flimsy scroll to vellum scroll
+empty zipper into sack
+put flimsy scroll in zipper
+close zipper
+drop zipper
+take sack
+blorple 12
+e
+# ADAPTIVE? 3 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+take knife
+# ADAPTIVE? 6 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+z
+z
+girgol
+take 12
+put sack in hypercube

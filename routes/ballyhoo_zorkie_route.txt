@@ -1,0 +1,421 @@
+# DRAFT adaptive route from walkthroughs/ballyhoo_verified_200.txt
+# 0 adaptive steps; verify each condition before recording.
+#% WIN_TEXT: score is 200 of a possible 200|saved The Traveling Circus That Time Forgot
+south
+help thumb
+west
+take mask
+south
+west
+examine taft
+hide behind taft
+wait
+wait
+east
+east
+take pole
+north
+north
+north
+drop mask
+up
+east
+east
+east
+east
+east
+east
+take balloon
+west
+west
+west
+west
+west
+west
+down
+down
+take all
+south
+south
+west
+south
+look in cage
+examine man
+untie balloon
+inhale helium
+harry, hello
+south
+west
+wear mask
+knock on door
+south
+close door
+search ashes
+take scrap
+wait
+go under the wall
+east
+north
+east
+north
+northeast
+search garbage
+take ticket
+punch blue dot
+southwest
+south
+put ticket in slot
+east
+south
+southeast
+look in cage
+take keys with pole
+unlock door
+open door
+north
+take bucket
+take headphones
+south
+northwest
+north
+west
+west
+south
+west
+south
+east
+examine trailer
+unlock baggage compartment
+open compartment
+take whip
+north
+east
+north
+put ticket in slot
+east
+east
+east
+north
+northeast
+take stool
+northwest
+south
+west
+west
+west
+north
+north
+unlock cage
+open cage
+west
+look at lions
+whip smooth lion
+whip smooth lion
+whip smooth lion
+lift grate
+throw meat in passage
+east
+west
+lower grate
+search stand
+east
+south
+south
+south
+west
+give case to harry
+north
+east
+put ticket in slot
+east
+east
+south
+show case to jenny
+give case to jenny
+north
+north
+give ticket to rimshaw
+rimshaw, hypnotize me
+# ADAPTIVE? 4 waits here -- consider "@until <state text> | <probe cmd> | wait"
+wait
+wait
+wait
+wait
+buy candy from hawker
+give $1.85 to hawker
+stand up
+east
+up
+east
+down
+east
+up
+east
+down
+south
+stand in line
+wait
+wait
+get out of long line
+stand in short line
+wait
+wait
+get out of long line
+yes
+stand in long line
+bite banana
+drop banana
+north
+ask hawker about candy
+up
+west
+down
+west
+up
+west
+down
+west
+stand up
+south
+west
+go under the wall
+search garbage
+take granola bar
+south
+east
+east
+north
+northeast
+show granola bar to tina
+tina, hello
+shake hands
+northwest
+take radio
+south
+west
+west
+south
+southeast
+drop all except radio and headphones
+up
+set radio to 1170
+turn off radio
+rewind tape
+wait
+play tape
+wait
+wait
+stop tape
+rewind tape
+turn on radio
+record
+# ADAPTIVE? 5 waits here -- consider "@until <state text> | <probe cmd> | wait"
+wait
+wait
+wait
+wait
+wait
+stop tape
+rewind tape
+wait
+turn off radio
+down
+take all
+northwest
+unlock cage
+open cage
+west
+play tape
+search straw
+open trap door
+take ribbon
+east
+close cage
+lock cage
+north
+west
+west
+south
+west
+touch wood with pole
+take mousetrap
+drop trap
+east
+west
+east
+west
+catch mouse with bucket
+take mouse
+east
+north
+east
+put ticket in slot
+east
+south
+show mouse to elephant
+show mouse to elephant
+wait
+southwest
+drop all
+up
+turn crank
+look in wagon
+knock on door
+in
+lock door
+search desk
+take spreadsheet
+move desk
+up
+read spreadsheet
+down
+take all
+west
+ask harry about eddie
+east
+northeast
+southeast
+slide ticket under front
+east
+take ticket
+open panel
+n
+open panel
+west
+northwest
+north
+west
+examine thumb
+south
+northeast
+southeast
+slide ticket under front
+east
+look under table
+take suitcase
+wait
+west
+drop all
+up
+up
+wait
+east
+wait
+take shaft
+pull shaft
+down
+down
+take all
+drop key
+drop whip
+drop stool
+northwest
+north
+west
+fill bucket with water
+south
+northeast
+north
+pour water on detective
+ask detective about chelsea
+drop bucket
+take note
+take card
+read note
+east
+south
+up
+look
+take all
+up
+north
+west
+west
+west
+south
+west
+south
+east
+eddie, hello
+show ribbon to eddie
+show scrap to eddie
+show note to eddie
+show spreadsheet to eddie
+show card to eddie
+search pocket
+take veil
+wear veil
+wear dress
+wear jacket
+inventory
+knock on door
+east
+close door
+take crowbar
+move moose
+open door
+west
+west
+open trailer door with crowbar
+south
+take thumb
+north
+east
+east
+put thumb in hole
+wait
+take chelsea
+west
+north
+east
+northeast
+north
+west
+north
+north
+clap
+roustabout, get net
+take off veil
+take off jacket
+take off dress
+drop all
+west
+take stand
+east
+drop stand
+take radio
+climb stand
+up
+up
+set radio to 1170
+turn on radio
+east
+east
+east
+west
+west
+west
+west
+drop radio
+down
+south
+south
+south
+east
+call wpdl
+west
+north
+north
+north
+climb stand
+up
+take radio
+east
+east
+east
+east
+east
+# ADAPTIVE? 3 waits here -- consider "@until <state text> | <probe cmd> | wait"
+wait
+wait
+wait

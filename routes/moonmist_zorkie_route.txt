@@ -1,0 +1,90 @@
+# DRAFT adaptive route from walkthroughs/moonmist_verified_win.txt
+# 0 adaptive steps; verify each condition before recording.
+#% WIN_TEXT: Congratulations, Ms\. Smith! You've won the game
+push eye
+ms. kate smith
+yes
+blue
+yes
+in
+yes
+follow tamara
+follow tamara
+wait
+yes
+yes
+follow tamara
+follow tamara
+tamara, tell me about the ghost
+wait
+yes
+bolitho, tell me about the ghost
+yes
+wait
+yes
+yes
+yes
+n
+remove clothes
+take bath
+s
+dress for dinner
+go to dining room
+go to dining room
+wait until 7:54
+yes
+yes
+take butler's note
+read note
+drop note
+sit down
+wait
+eat dinner
+# ADAPTIVE? 3 waits here -- consider "@until <state text> | <probe cmd> | wait"
+wait
+wait
+wait
+z
+look under punchbowl
+read first clue
+z
+z
+jack, give me your clue
+read second clue
+examine desk
+take maid's note
+read maid's note
+drop maid's note
+examine piano
+take piece of music
+read piece of music
+go to drawing room
+go to drawing room
+examine tapestry
+go to new great hall
+examine suit of armor
+look in suit
+take third clue
+read third clue
+go to kitchen
+take lantern
+turn on lantern
+go to wine cellar
+examine rack
+take bottle
+examine bottle
+go to fighting deck
+examine bell
+take skull
+go to vivien's bedroom
+go to vivien's bedroom
+go to vivien's bedroom
+open box
+take small box
+search wooden box
+take diary
+search wooden box
+read diary
+examine wig
+arrest vivien
+yes

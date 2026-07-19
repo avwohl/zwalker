@@ -1,0 +1,195 @@
+# DRAFT adaptive route from walkthroughs/plundered_verified_25.txt
+# 0 adaptive steps; verify each condition before recording.
+#% MAX_SCORE: 25
+#% WIN_TEXT: earning the title, "Happily Ever After\."
+z
+stand up
+z
+z
+get coffer
+z
+hit crulley with coffer
+z
+z
+read missive
+yes
+z
+z
+stand up
+# ADAPTIVE? 3 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+n
+open cupboard
+in
+get clothes
+remove frock
+tear frock
+wear breeches
+wear shirt
+out
+z
+d
+n
+n
+get bottle
+s
+s
+open coffer
+get invitation
+u
+s
+break window with coffer
+s
+get ladder
+u
+u
+u
+u
+n
+n
+examine barrels
+dip rag in water
+open hatch
+d
+throw rag at fire
+u
+n
+examine winch
+raise lever
+in
+get dagger
+out
+s
+s
+sit in cask
+get pork
+cut line with dagger
+# ADAPTIVE? 3 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+get out of cask
+w
+n
+w
+n
+e
+z
+get garter
+w
+s
+ne
+u
+remove clothes
+get gown
+wear gown
+n
+e
+d
+show invitation to butler
+s
+# ADAPTIVE? 4 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+e
+n
+n
+examine bookcase
+get treatise
+get hat
+press island
+n
+d
+e
+e
+get key
+get horn
+w
+w
+s
+examine bottle
+read label
+put laudanum on pork
+give pork to crocodile
+z
+z
+s
+w
+unlock door with key
+open door
+n
+give garter to papa
+s
+e
+n
+n
+u
+s
+s
+w
+s
+yes
+# ADAPTIVE? 4 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+z
+u
+e
+open door
+n
+drink wine
+pour wine in green goblet
+pour wine in blue goblet
+put laudanum in blue goblet
+get spices
+blow spices at lafond
+s
+give blue goblet to butler
+# ADAPTIVE? 3 waits here -- consider "@until <state text> | <probe cmd> | wait"
+z
+z
+z
+get tray
+wave tray in moonlight
+s
+w
+d
+z
+e
+n
+open portrait
+n
+d
+s
+s
+get rapier
+attack crulley
+again
+wake jamison with salts
+unlock chains with brooch
+n
+n
+u
+s
+s
+w
+u
+e
+s
+untie rope
+swing on rope
+get all
+s
+s
+s
+z
+z
+yes
+get pistol
+load pistol
+shoot crulley

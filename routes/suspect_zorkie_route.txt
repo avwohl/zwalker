@@ -1,0 +1,113 @@
+# DRAFT adaptive route from walkthroughs/suspect_verified_win.txt
+# 0 adaptive steps; verify each condition before recording.
+#% WIN_TEXT: secures\s+the\s+conviction\s+of\s+Michael\s+for\s+the\s+first\s+degree\s+murder\s+of\s+his\s+wife
+restart
+yes
+west
+examine veronica
+west
+west
+south
+south
+south
+south
+west
+west
+south
+west
+open curtains
+look through window
+east
+look
+look
+look
+open front door
+north
+west
+west
+south
+west
+north
+take folder
+take fairy mask
+look in wastebasket
+take card
+search corpse
+take bullet
+put bullet in gunbelt
+look in fairy mask
+examine dark hair
+south
+east
+north
+east
+east
+east
+east
+north
+north
+north
+north
+north
+east
+take basket
+west
+south
+south
+south
+south
+west
+take wet overcoat
+east
+south
+south
+south
+hide behind chair
+wait for marston
+yes
+yes
+wait for michael
+unlock north door
+open north door
+north
+north
+north
+east
+east
+take paper
+west
+west
+south
+west
+west
+west
+west
+north
+north
+unlock door
+open door
+north
+west
+open tool chest
+drop receipt
+drop notebook
+drop pen
+take crowbar
+open bmw trunk with crowbar
+drop crowbar
+take trust folder
+east
+south
+south
+wait for detective
+yes
+show card to detective
+show manila folder to detective
+show trust folder to detective
+show paper to detective
+look in fairy mask
+show hair to detective
+detective, analyze glass for fingerprints
+show wet overcoat to detective
+tell detective about rain
+detective, arrest michael and alicia
