@@ -1,0 +1,324 @@
+# Adaptive @-route for the ZORKIE build of zork2 (renovated source).
+# Derived from walkthroughs/zork2_verified_400.txt (official Release-63 route,
+# seed 2). Baked RNG outcomes (carousel spins, Low Room coin flips, take
+# fumbles, princess/wizard daemon timing, treasure-ferry trips) become
+# adaptive steps handled by solve_zork2_zorkie_adaptive.py, which records the
+# actual command stream for deterministic replay via scripts/replay_solve.py.
+#
+# Syntax:  cmd                      plain step
+#          cmd @@ Room [| tries]    checked step, retried while stuck in place
+#          @take noun | DESC        take with ITAKE-fumble retries, VM-verified
+#          @spin Room               escape the spinning Carousel Room
+#          @lowexit                 escape the post-button Low Room to Tea Room
+#          @waituntil Room | cap    wait for a daemon (balloon) to arrive
+#          @waithave DESC | cap     wait until the object is carried
+#          @ferry                   loop treasures Guarded Room -> Pentagram
+#          @give noun | DESC        take+give to the demon, VM-verified
+#          @wand                    poll the demon/wizard for the wand
+
+# ===== Barrow -> garden: teapot =====
+@take lamp | lamp
+@take sword | elvish sword
+turn on lamp
+south @@ Narrow Tunnel
+south @@ Foot Bridge
+south @@ Great Cavern
+sw @@ Shallow Ford
+south @@ Dark Tunnel
+se @@ North End of Garden
+enter gazebo @@ Gazebo
+@take teapot | china teapot
+exit @@ North End of Garden
+north @@ Dark Tunnel
+ne @@ Shallow Ford
+fill teapot
+south @@ Dark Tunnel
+sw @@ Path Near Stream
+sw @@ Carousel Room
+# The carousel is still spinning: exits are random until the robot presses
+# the triangular button.
+@spin Riddle Room
+answer "well"
+east @@ Pearl Room
+@take necklace | pearl necklace
+east @@ Circular Room
+enter bucket
+pour water in bucket @@ Top of Well
+stand @@ Top of Well
+east @@ Tea Room
+
+# ===== Alice area: cakes, candy =====
+@takeall
+eat green cake @@ Posts Room
+east @@ Pool Room
+drop orange cake
+throw red cake in pool
+@take candies | package of candy
+west @@ Posts Room
+eat blue cake @@ Tea Room
+nw @@ Low Room
+
+# ===== Robot: red sphere, stop the carousel =====
+read paper
+drop paper
+robot, go east
+east @@ Machine Room
+robot, go south
+south @@ Dingy Closet
+take red sphere @@ Cage
+robot, lift cage @@ Dingy Closet
+@take red sphere | red crystal sphere
+look in red sphere
+robot, go north
+north @@ Machine Room
+robot, push triangular button
+west @@ Low Room
+# The button flips the spin onto the Low Room: its exit is now a PROB-50
+# coin flip between Machine Room and Tea Room.
+@lowexit
+west @@ Top of Well
+enter bucket
+fill teapot @@ Circular Room
+stand @@ Circular Room
+drop teapot
+west @@ Pearl Room
+west @@ Riddle Room
+nw @@ Carousel Room
+
+# ===== Violin, string; stash at the Guarded Room; feed the lizard =====
+open steel box
+@take violin | fancy violin
+sw @@ Cobwebby Corridor
+@take string | black string
+sw @@ Guarded Room
+give candies to lizard
+drop necklace
+drop violin
+drop red sphere
+north @@ Cobwebby Corridor
+ne @@ Carousel Room
+east @@ Topiary
+north @@ Formal Garden
+north @@ North End of Garden
+enter gazebo @@ Gazebo
+@takeall
+exit @@ North End of Garden
+south @@ Formal Garden
+west @@ Path Near Stream
+sw @@ Carousel Room
+north @@ Marble Hall
+
+# ===== Tiny Room oak door -> blue sphere =====
+@take brick | brick
+north @@ Deep Ford
+north @@ Ledge in Ravine
+up @@ Tiny Room
+put mat under door
+open lid
+put opener in keyhole
+take opener
+drop opener
+take mat
+@take rusty key | rusty iron key
+unlock door with key. open door. north @@ Dreary Room
+@take blue sphere | blue crystal sphere
+look in blue sphere
+south @@ Tiny Room
+down @@ Ledge in Ravine
+
+# ===== Dragon: lure it to the Ice Room; princess; gold key =====
+west @@ End of Ledge
+north @@ Dragon Room
+attack dragon with sword
+south @@ Stone Bridge
+attack dragon with sword
+south @@ Cool Room
+attack dragon with sword
+west @@ Ice Room
+east @@ Cool Room
+north @@ Stone Bridge
+north @@ Dragon Room
+north @@ Dragon's Lair
+kiss princess
+south @@ Dragon Room
+east @@ End of Ledge
+east @@ Ledge in Ravine
+down @@ Deep Ford
+south @@ Marble Hall
+# The princess opens the hidden east passage on her own schedule; each
+# blocked "east" doubles as a wait.
+east @@ Path Near Stream | 14
+east @@ Formal Garden
+north @@ North End of Garden
+in @@ Gazebo
+# She summons the unicorn and hands over the delicate gold key.
+@waithave delicate gold key | 25
+exit @@ North End of Garden
+drop rose
+drop rusty key
+
+# ===== Red sphere out of the Guarded Room; sphere fusion -> black sphere =====
+south @@ Formal Garden
+south @@ Topiary
+west @@ Carousel Room
+sw @@ Cobwebby Corridor
+sw @@ Guarded Room
+@take red sphere | red crystal sphere
+unlock door with gold key. open door. south @@ Wizard's Workshop
+west @@ Wizard's Workroom
+west @@ Aquarium Room
+throw sword at aquarium
+@take clear sphere | clear crystal sphere
+east @@ Wizard's Workroom
+@asserthave clear crystal sphere
+@asserthave red crystal sphere
+@asserthave blue crystal sphere
+put clear sphere on diamond stand
+put red sphere on ruby stand
+put blue sphere on sapphire stand
+@take black sphere | black crystal sphere
+look in black sphere
+east @@ Wizard's Workshop
+north @@ Guarded Room
+north @@ Cobwebby Corridor
+
+# ===== Ruby; hot-air balloon: coin, stamp, crown =====
+north @@ Lava Tube
+down @@ Ice Room
+west @@ Lava Room
+@take ruby | ruby
+south @@ Volcano Bottom
+enter basket
+open receptacle
+put newspaper in receptacle
+light match
+burn newspaper with match
+read label
+drop label
+@waituntil Volcano Near Small Ledge | 8
+land @@ Narrow Ledge
+tie wire to hook
+stand @@ Narrow Ledge
+@take coin | priceless zorkmid
+south @@ Library
+open purple book
+@take stamp | Flathead stamp
+north @@ Narrow Ledge
+enter basket
+untie wire
+@waituntil Volcano Near Wide Ledge | 8
+land @@ Wide Ledge
+tie wire to hook
+stand @@ Wide Ledge
+south @@ Dusty Room
+put brick in hole
+put string in brick
+light match
+burn string with match
+north @@ Wide Ledge
+south @@ Dusty Room
+@take crown | gaudy crown
+read card
+north @@ Wide Ledge
+enter basket
+untie wire
+close receptacle
+@waituntil Volcano Bottom | 14
+drop card
+stand @@ Volcano Bottom
+north @@ Lava Room
+east @@ Ice Room
+east @@ Cool Room
+se @@ Carousel Room
+sw @@ Cobwebby Corridor
+sw @@ Guarded Room
+drop crown
+drop stamp
+drop coin
+drop ruby
+
+# ===== Dragon's chest (statuette); Bank of Zork (portrait, bills) =====
+north @@ Cobwebby Corridor
+ne @@ Carousel Room
+north @@ Marble Hall
+north @@ Deep Ford
+north @@ Ledge in Ravine
+west @@ End of Ledge
+north @@ Dragon Room
+north @@ Dragon's Lair
+open chest
+open chest
+@take statuette | golden dragon statuette
+south @@ Dragon Room
+west @@ Fresco Room
+west @@ Bank Entrance
+nw @@ West Teller's Room
+west @@ Safety Depository
+south @@ Chairman's Office
+@take portrait | portrait of J. Pierpont Flathead
+north @@ Safety Depository
+walk through north wall @@ Small Room
+walk through south wall @@ Safety Depository
+walk through north wall @@ Vault
+@take bills | stack of zorkmid bills
+walk through north wall @@ Safety Depository
+drop bills
+drop portrait
+east @@ East Teller's Room
+east @@ Safety Depository
+@take bills | stack of zorkmid bills
+@take portrait | portrait of J. Pierpont Flathead
+walk through north wall @@ East Viewing Room
+south @@ Bank Entrance
+east @@ Fresco Room
+east @@ Dragon Room
+south @@ Stone Bridge
+south @@ Cool Room
+se @@ Carousel Room
+west @@ Room 8
+@take repellent | Frobozz Magic Grue Repellent
+east @@ Carousel Room
+sw @@ Cobwebby Corridor
+sw @@ Guarded Room
+
+# ===== Ferry all ten treasures to the Pentagram Room; summon the demon =====
+@ferry
+@asserthave black crystal sphere
+put black sphere in pentagram
+@give necklace | pearl necklace
+@give gold key | delicate gold key
+@give statuette | golden dragon statuette
+@give violin | fancy violin
+@give portrait | portrait of J. Pierpont Flathead
+@give bills | stack of zorkmid bills
+@give ruby | ruby
+@give crown | gaudy crown
+@give stamp | Flathead stamp
+@give coin | priceless zorkmid
+@wand
+@asserthave Wizard's magic wand
+
+# ===== Float the menhir; collar; oddly-angled diamond; Cerberus; crypt =====
+north @@ Wizard's Workroom
+east @@ Wizard's Workshop
+north @@ Guarded Room
+north @@ Cobwebby Corridor
+ne @@ Carousel Room
+south @@ Menhir Room
+wave wand at menhir
+say "float"
+sw @@ Kennel
+@take collar | gigantic dog collar
+ne @@ Menhir Room
+south @@ Stairway
+down @@ Oddly-angled Room
+@diamond
+down @@ Cerberus Room
+put collar on cerberus
+east @@ Crypt Anteroom
+open door
+south @@ Crypt
+apply repellent to me
+turn off lamp
+open secret door
+south

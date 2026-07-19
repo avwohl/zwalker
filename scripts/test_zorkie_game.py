@@ -120,6 +120,29 @@ GAMES = {
         "reference": REPO / "games" / "zcode" / "starcross.z3",
         "seeds": 1,
     },
+    "zork2": {
+        # ZORK II from source: route re-derived for this build's RNG stream.
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "zork2" / "zork2.zil",
+        "walkthrough": REPO / "walkthroughs" / "zork2_zorkie_400.txt",
+        "version": 3, "reference": None, "seeds": 2,
+    },
+    "deadline": {
+        # The official verified route replays as-is on the zorkie build.
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "deadline" / "deadline.zil",
+        "walkthrough": REPO / "walkthroughs" / "deadline_verified_win.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "deadline.z3", "seeds": 1,
+    },
+    "suspended": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "suspended" / "suspended.zil",
+        "walkthrough": REPO / "walkthroughs" / "suspended_verified_win.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "suspended.z3", "seeds": 1,
+    },
+    "infidel": {
+        # Lockstep-identical to the official Release-22 binary over all 306 cmds.
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "infidel" / "infidel.zil",
+        "walkthrough": REPO / "walkthroughs" / "infidel_verified_400.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "infidel.z3", "seeds": 1,
+    },
     # === Frontier target (informational; NOT counted in the suite pass/fail). ===
     # A real Infocom-library game via the ZILF stdlib. Parses fully and is now
     # past the old LIBRARY-MESSAGE macro blocker; current compile error is the
