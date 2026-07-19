@@ -77,6 +77,18 @@ def load_directives(path):
                                   no max score to reach)
         #% MAX_SCORE: <N>      -- max score for games the interpreter's
                                   banner/serial map doesn't know
+        #% WIN_TEXT_SUFFICIENT: 1 -- the WIN_TEXT match alone decides the win,
+                                  even when a max score is known. For V3 "time"
+                                  games (Wishbringer, ...) the status-line
+                                  globals hold a clock, not the score, and a
+                                  fresh zorkie build's score global sits at a
+                                  different variable than the official binary's
+                                  (which the interpreter's serial/release map
+                                  keys on), so get_score() cannot read the real
+                                  score. The endgame WIN_TEXT (which quotes the
+                                  final "100 points out of 100") is then the
+                                  airtight signal. Opt-in per walkthrough; no
+                                  existing walkthrough is affected.
     """
     d = {}
     if not path.endswith(".json"):
@@ -133,13 +145,16 @@ def run_once(data, cmds, seed, win_rx=None, max_override=None):
     return w.vm.get_score(), maxs, died, timeline, w.vm.get_turns(), win_seen
 
 
-def is_won(score, maxs, died, win_seen, win_rx):
+def is_won(score, maxs, died, win_seen, win_rx, text_sufficient=False):
     """The win criterion: reach max score when one is known; when the
     walkthrough declares a WIN_TEXT, that text must also have appeared
-    (and it alone decides for scoreless games)."""
+    (and it alone decides for scoreless games, or when the walkthrough marks
+    the WIN_TEXT as sufficient for a time-game whose score var isn't readable)."""
     if died:
         return False
     if win_rx is not None:
+        if text_sufficient:
+            return win_seen
         return win_seen and (maxs is None or score == maxs)
     return maxs is not None and score == maxs
 
@@ -152,6 +167,7 @@ def solve(game_path, wt_path, seeds=24):
               if "WIN_TEXT" in directives else None)
     max_override = (int(directives["MAX_SCORE"])
                     if "MAX_SCORE" in directives else None)
+    text_sufficient = "WIN_TEXT_SUFFICIENT" in directives
     best = None
     for seed in range(1, seeds + 1):
         score, maxs, died, tl, turns, win_seen = run_once(
@@ -163,12 +179,12 @@ def solve(game_path, wt_path, seeds=24):
                   or (died == best["died"] and score > best["score"]))
         if better:
             best = cand
-        if is_won(score, maxs, died, win_seen, win_rx):
+        if is_won(score, maxs, died, win_seen, win_rx, text_sufficient):
             best = cand
             break  # perfect verified win — stop searching
     best["commands"] = cmds
     best["won"] = is_won(best["score"], best["max_score"], best["died"],
-                         best["win_seen"], win_rx)
+                         best["win_seen"], win_rx, text_sufficient)
     return best
 
 

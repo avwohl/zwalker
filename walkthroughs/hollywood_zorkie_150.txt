@@ -1,0 +1,476 @@
+#% MAX_SCORE: 150
+# Hollywood Hijinx (Infocom Release 37, serial 861215, Z-machine V3)
+# VERIFIED COMPLETE SOLVE: 150/150, won=True, died=False
+#
+# Reproduce with the RNG-pinned replay harness (free, no API):
+#   cd ~/src/zwalker
+#   python3 scripts/replay_solve.py games/zcode/hollywood.z3 walkthroughs/hollywood_verified_150.txt --seeds 24 --out solutions/hollywood_verified.json
+#   => hollywood_verified_150.txt: VERIFIED 150/150 at seed 1 | 394 cmds | died=False | won=True
+#
+# Ending: with Herman knocked down by the third prop, UNTIE AUNT stops the
+# buzz saw; Aunt Hildegarde reveals she faked her death to test the heir:
+# "Well, it's all yours now. I knew you could do it." ... "And let's hope
+# we've seen the last of your Cousin Herman." -- "Your score is 150 points
+# out of 150, in 395 moves."
+#
+# Why a pinned seed (no restart prelude needed -- boot draws no randomness;
+# two boots are byte-identical and the seed is pinned right after start()):
+# the game has exactly two pieces of state-relevant randomness, both in
+# late-game scripting. (1) The piano song is rolled the first time you
+# enter the Projection Booth (PROJECTION-BOOTH-F, parlor.zil:507-512,
+# SONG-NUMBER = RANDOM(10)-1); the projected message names the song and
+# V-PLAY (verbs.zil:1683-1731) only opens the parlor trapdoor for that
+# exact title. Under seed 1 the song is "Feelings", so this list contains
+# PLAY FEELINGS. (2) In the Prop Vault endgame Cousin Herman grabs a
+# RANDOM prop from the pool each turn his hands are empty
+# (I-HERMAN-ATTACK + PICK-ONE, elevator.zil:1195-1223) and you cannot
+# take the prop he holds; under seed 1 he grabs bag/sword/clippers, so
+# club/stick/mop are free for the three hits (any three hits fell him,
+# elevator.zil:1038-1082). Everything else is deterministic clockwork:
+# both safe combinations are constants (wall safe R3-L7-R5,
+# first-floor.zil:1387-1420; shelter safe L4-R5-L7, bshelter.zil:925-963),
+# the Atomic Chihuahua model, tanks, planes and rocket are turn-counted
+# (hedgemaze.zil:511-841, PROB only flavors one stomp message), the
+# bucket drips 1 unit/turn (I-DRIP, elevator.zil:556-597), the rope burns
+# through 3 turns after lighting (I-ROPE-BURN, bshelter.zil:1141), the
+# maze is a static byte table (HM-TABLE, hedgemaze.zil:1266+), and the
+# 9 a.m. limit is I-SANDS-OF-TIME at turn 600 (misc.zil:250-253) -- this
+# run finishes in 395 moves, before the turn-547 sunrise. Mechanics
+# verified against the official ZIL source
+# (github.com/historicalsource/hollywoodhijinx); adaptive recorder:
+# scripts/solve_hollywood_adaptive.py (re-derives the song and dodges
+# Herman's grabs on any seed). Synthesis notes: logs/hollywood_notes.md;
+# route: logs/hollywood_route.txt.
+#
+# Route summary (10 treasures x 10 + 4 bonuses = 150):
+# Buck statue W-E-N unlocks the front door (first-floor.zil:144-160).
+# Game Room: drive the Atomic Chihuahua through Tokyo (green=forward,
+# black=stomp tanks/truck, white=swipe planes, blue=clutch, red=flame),
+# stomp the rocket truck at the monument, clutch, advance, melt the dome:
+# RING +10. Projection Booth: slide + focused slide lens + film + cap off
+# + both projectors on, EXAMINE SCREEN: +10 and the song title. Wall safe
+# behind the painting R3-L7-R5: GRATER +10 (combo = statuette hands:
+# red=3 right, white=7 left, blue=5 right). PLAY <song> opens the
+# trapdoor; push piano north, steal the south pillar, push piano south
+# twice to tip the floor: PARKING METER +10. Fireplace brick: indigo
+# card; chimney up, across the roof, down the second chimney: PENGUIN
+# +10. Closet elevator (peg1=cellar peg2=foyer peg3=upstairs) up, TURN
+# NEWEL to lock the flattening stairs; bathroom mat: red card; grab the
+# window sack then open window, open sack: FINCH +10. Cards: yellow
+# (screening room), green (behind painting), violet (piano), blue (shaft
+# bottom), indigo (fireplace), red (bath mat), orange (patio); computer
+# on, feed all 7 dry cards (order irrelevant in r37 -- the ROYGBIV check
+# is compiled out, first-floor.zil:562-576), lights read 576-3190.
+# Maze (52 junction moves each way, BFS over HM-TABLE): DIG: STAMP +10.
+# Top Landing, wear skis, D: +10 jump the gap, land on the Beach. Light
+# the red wax statuette at Morgan Fairchild's fire, wax both matches,
+# blow it out; dive grotto-pool -> underpass -> dark pool -> Ledge; light
+# match, light statuette; Bomb Shelter: PULL CHAIN, LOWER RIGHT END, BURN
+# ROPE, STAND ON RIGHT END -- safe crashes, plank catapults you to the
+# Cliff. Ladder down the hatch hole, hang on hooks; safe L4-R5-L7 (plaque
+# initials Levy=4L, Regan=5R, Lebling=7L): "A Corpse Line" FILM +10.
+# Cannon: ball in barrel, light fuse: MASK +10 in the compartment. Fill
+# bucket at the pond, hang on third peg, ride the closet ROOF from the
+# upstairs shaft door -- when the bucket drains the peg pops and the
+# closet rises to the attic: OPEN PANEL clicks the trunk open, HYDRANT
+# +10. Phone 576-3190 from the Master Bedroom ("look in the hopper");
+# ride the closet to the cellar, TAKE TOUPEE +10 (10th treasure -- the
+# chipped peg and note drop with it, verbs.zil:2493-2521). PUT PEG IN
+# HOLE +10: the closet floor drops you into the Prop Vault. Hit Herman
+# with any three props he is not holding (they all "break -- only a
+# prop"; the third fells him), then UNTIE AUNT before the saw reaches
+# her (I-AUNT fires 2 turns after the knockdown): +20, game won.
+turn statue west
+turn statue east
+turn statue north
+north
+open door
+north
+turn on flashlight
+north
+press green
+press green
+press green
+press black
+press black
+press white
+press white
+press green
+press green
+press green
+press black
+press blue
+press green
+press green
+press green
+press red
+press red
+press red
+take ring
+east
+east
+south
+take slide
+put slide in slide projector
+turn on slide projector
+focus lens
+take film
+remove lens cap
+put film in film projector
+turn on film projector
+examine screen
+focus slide projector
+turn off film projector
+take film
+put film in film projector
+turn on film projector
+examine screen
+north
+take yellow card
+west
+west
+south
+east
+look behind painting
+take green card
+turn dial right to 3
+turn dial left to 7
+turn dial right to 5
+open safe
+take grater
+east
+open piano
+take violet card
+play feelings
+push piano north
+down
+south
+take pillar
+drop pillar
+north
+up
+push piano south
+push piano south
+down
+north
+take meter
+south
+up
+west
+west
+west
+drop ring
+drop grater
+drop meter
+drop lens cap
+in
+remove brick
+take indigo card
+drop brick
+up
+up
+up
+east
+down
+take penguin
+up
+west
+down
+down
+down
+out
+drop penguin
+north
+west
+take matchbox
+down
+open closet door
+south
+take blue card
+north
+up
+east
+east
+south
+open closet door
+in
+take skis
+take bucket
+pull third peg
+open closet door
+out
+turn newel
+west
+south
+look under mat
+take red card
+north
+east
+east
+take sack
+open window
+open sack
+west
+down
+north
+unlock patio door
+open patio door
+north
+take orange card
+south
+west
+west
+down
+turn on computer
+put red card in slot
+put orange card in slot
+put yellow card in slot
+put green card in slot
+put blue card in slot
+put indigo card in slot
+put violet card in slot
+examine lights
+up
+east
+south
+drop sack
+take red statue
+east
+up
+open closet door
+in
+pull second peg
+open closet door
+out
+north
+north
+north
+northwest
+take shovel
+northeast
+put bucket in pond
+north
+north
+west
+north
+west
+north
+west
+south
+west
+west
+north
+west
+south
+east
+south
+east
+north
+east
+south
+west
+north
+west
+south
+west
+north
+west
+south
+west
+north
+east
+north
+east
+north
+east
+east
+north
+east
+south
+east
+east
+south
+east
+north
+east
+north
+east
+south
+west
+south
+west
+south
+east
+north
+west
+south
+dig ground with shovel
+drop shovel
+take stamp
+north
+east
+south
+west
+north
+east
+north
+east
+north
+west
+south
+west
+south
+west
+north
+west
+west
+north
+west
+south
+west
+west
+south
+west
+south
+west
+south
+east
+north
+east
+south
+east
+north
+east
+south
+east
+north
+west
+south
+west
+north
+west
+north
+east
+south
+east
+east
+north
+east
+south
+east
+south
+east
+south
+east
+east
+drop flashlight
+wear skis
+down
+remove skis
+drop skis
+take green match
+open matchbox
+take red match
+light statue with fire
+cover red match with wax
+put red match in matchbox
+close matchbox
+cover green match with wax
+blow out statue
+south
+west
+dive
+down
+down
+west
+up
+up
+north
+light green match
+light statue with match
+north
+up
+pull chain
+lower right end
+burn rope with statue
+stand on right end
+wait
+drop stamp
+drop matchbox
+drop photo
+drop letter
+take ladder
+put ladder in hole
+down
+drop statue
+take ladder
+hang ladder on hooks
+take statue
+turn dial left to 4
+turn dial right to 5
+turn dial left to 7
+open safe
+take film
+drop film
+up
+take matchbox
+up
+take ball
+put ball in cannon
+light fuse with statue
+open compartment
+take mask
+drop mask
+drop statue
+east
+east
+take flashlight
+west
+south
+west
+north
+northeast
+northwest
+take bucket
+fill bucket
+southeast
+southwest
+south
+south
+south
+open closet door
+in
+hang bucket on third peg
+out
+up
+open closet door
+in
+wait
+wait
+open closet door
+north
+open panel
+open trunk
+take hydrant
+down
+west
+north
+call 576-3190
+south
+east
+open closet door
+in
+pull first peg
+open closet door
+north
+take toupee
+take peg
+south
+put peg in hole
+take club
+hit herman with club
+take stick
+hit herman with stick
+take mop
+hit herman with mop
+untie aunt

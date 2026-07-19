@@ -181,6 +181,27 @@ GAMES = {
         "walkthrough": REPO / "walkthroughs" / "ballyhoo_verified_200.txt",
         "version": 3, "reference": REPO / "games" / "zcode" / "ballyhoo.z3", "seeds": 1,
     },
+    # Won after a round-6 lockstep pass fixed the tipped-room state machine
+    # (THINGS pseudo tables, FSET/FCLEAR void ops, reversed syntax lines) and an
+    # 8-bit vocab-placeholder overflow (index 256 -> 0 aliased 'hole' to 'all',
+    # blocking 'put peg in hole'). Lockstep-clean vs the official binary over all
+    # 394 commands; the OFFICIAL route replays to the 150/150 win.
+    "hollywoodhijinx": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "hollywoodhijinx" / "hijinx.zil",
+        "walkthrough": REPO / "walkthroughs" / "hollywood_zorkie_150.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "hollywood.z3", "seeds": 1,
+    },
+    # Fits since round-5; the round-5 build already PLAYS the official route to the
+    # true "finished the story of Wishbringer! Your score is 100 points out of 100"
+    # ending. Wishbringer is a V3 time-game (status line = clock, not score) and a
+    # zorkie build's score global sits at a different variable than the official
+    # binary's, so get_score() reads the clock; the win is verified by the endgame
+    # WIN_TEXT via the WIN_TEXT_SUFFICIENT directive (see scripts/replay_solve.py).
+    "wishbringer": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "wishbringer" / "wishbringer.zil",
+        "walkthrough": REPO / "walkthroughs" / "wishbringer_zorkie_100.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "wishbringer.z3", "seeds": 1,
+    },
     # === Frontier target (informational; NOT counted in the suite pass/fail). ===
     # A real Infocom-library game via the ZILF stdlib. Parses fully and is now
     # past the old LIBRARY-MESSAGE macro blocker; current compile error is the
