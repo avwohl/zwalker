@@ -228,6 +228,26 @@ GAMES = {
         "walkthrough": REPO / "walkthroughs" / "plundered_verified_25.txt",
         "version": 3, "reference": REPO / "games" / "zcode" / "plundered.z3", "seeds": 1,
     },
+    # Won in round-8: ZIL backslash-escape normalization at the Dictionary
+    # boundary (mars.zil's escaped THINGS words created a phantom dict entry
+    # whose late insertion shifted 43 objects' SYNONYM word addresses by one
+    # slot -- 'take stool' resolved to 'stone'). OFFICIAL route, lockstep-clean;
+    # LGOP self-randomizes its score, so the WIN_TEXT ending is the signal.
+    "leathergoddesses": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "leathergoddesses" / "x1.zil",
+        "walkthrough": REPO / "walkthroughs" / "lgop_verified_win.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "lgop.z3", "seeds": 1,
+    },
+    # Won in round-8: fit under the cap via the CELF abbreviation selector +
+    # peephole/AUX-local/VTBL levers, then the MDL macro machinery fixes
+    # (P?/PE/MULTIFROB expansion -- 135 routines had compiled to garbage),
+    # ZILCH-builtin exit constants, MAP-DIRECTIONS branch widening, and
+    # variadic-arithmetic operand evaluation. OFFICIAL route.
+    "lurkinghorror": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "lurkinghorror" / "h1.zil",
+        "walkthrough": REPO / "walkthroughs" / "lurking_verified_100.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "lurking.z3", "seeds": 1,
+    },
     # === Frontier target (informational; NOT counted in the suite pass/fail). ===
     # A real Infocom-library game via the ZILF stdlib. Parses fully and is now
     # past the old LIBRARY-MESSAGE macro blocker; current compile error is the
