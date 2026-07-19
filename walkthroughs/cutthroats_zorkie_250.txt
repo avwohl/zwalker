@@ -1,0 +1,296 @@
+# CUTTHROATS -- route for the ZORKIE-COMPILED build (round 4).
+#
+# The command list is IDENTICAL, line for line, to the official verified
+# recording walkthroughs/cutthroats_verified_250.txt (264 commands, seed 1).
+# The zorkie build replays it LOCKSTEP-CLEAN against the official Release-23
+# binary: scripts/lockstep.py agrees on room AND status-line globals for all
+# 264 commands, and the game's own RATING global follows the official
+# score_timeline exactly --
+#   20@27 'yes' | 40@47 'wait' | 50@57 'get passbook' | 70@105 'show money to
+#   johnny' | 90@116 'wait' | 110@192 'wait' | 130@230 'dive' | 155@239 'up' |
+#   180@246 'get case' | 250@263 'up'
+# -- ending at RATING = 250/250 with the winning epilogue.
+#
+# WHY NO '#% MAX_SCORE' DIRECTIVE HERE (the only difference from the official
+# recording): cutthroats is a V3 *time* game -- status-line globals 17/18 hold
+# the clock, and the true score lives in ,RATING.  zwalker's
+# ZMachine._SCORE_VAR_OVERRIDES maps that by (serial, release), and it only
+# knows the official ('840809', 23).  A zorkie build stamps its own build-date
+# serial, so vm.get_score() reads the CLOCK there and a MAX_SCORE assertion
+# would compare against the wrong global.  The win is therefore asserted by
+# WIN_TEXT alone (the same way deadline's and witness's routes do it).
+#
+# To re-verify the real 250/250 on a zorkie build, read RATING directly:
+#   python3 <scratch>/wc/scoreroute.py <build.z3> \
+#           walkthroughs/cutthroats_verified_250.txt 1 <RATING global, e.g. 0x6f> \
+#           "hope his soul is resting a little easier"
+# (RATING's global number comes from the compile: codegen.globals['RATING'].)
+#
+# If zwalker later learns to identify zorkie builds, add '#% MAX_SCORE: 250'
+# back and this file becomes byte-identical in meaning to the official one.
+#
+#% WIN_TEXT: hope his soul is resting a little easier
+wind watch
+stand
+get note
+read note
+drop note
+open dresser
+get key
+open door
+out
+close door
+lock door
+down
+north
+east
+east
+east
+east
+south
+sit down
+order food
+eat meal
+order water
+drink water
+wait
+wait
+wait
+yes
+yes
+stand
+north
+west
+west
+west
+west
+southwest
+southwest
+northwest
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+southeast
+northeast
+northeast
+south
+up
+unlock door
+open door
+south
+get passbook
+north
+close door
+lock door
+down
+north
+east
+east
+east
+east
+southeast
+south
+south
+southwest
+north
+withdraw $500
+south
+northeast
+north
+north
+northwest
+west
+west
+west
+west
+south
+up
+unlock door
+open door
+south
+put passbook in dresser
+north
+close door
+lock door
+down
+north
+east
+east
+east
+east
+southeast
+south
+south
+southeast
+wait
+wait
+wait
+wait
+show money to johnny
+no
+northwest
+north
+north
+northwest
+west
+south
+wait
+wait
+wait
+wait
+wait
+read price list
+give money to salesman
+buy flashlight
+buy shark repellent
+buy putty
+buy c battery
+buy electromagnet
+rent air compressor
+north
+east
+south
+order water
+drink water
+wait
+wait
+wait
+north
+southeast
+southwest
+west
+west
+west
+look through window
+wait
+look through window
+wait
+look through window
+wait
+look through window
+open window
+enter window
+get envelope
+enter window
+close window
+east
+north
+north
+west
+west
+south
+up
+unlock door
+open door
+south
+get wet suit
+get air tank
+get mask
+get flippers
+north
+close door
+lock door
+down
+north
+east
+east
+north
+west
+northwest
+down
+put envelope under bunk
+wait 60 minutes
+wait 60 minutes
+wait 60 minutes
+wait 60 minutes
+wait 60 minutes
+wait 60 minutes
+johnny, latitude is 25
+johnny, longitude is 25
+wait
+wait
+lie down
+wait
+wait
+wait
+wait
+stand
+get envelope
+south
+south
+south
+show envelope to johnny
+north
+up
+look
+down
+north
+eat
+drink
+north
+north
+fill tank with compressor
+get c battery
+open drill
+put c battery in drill
+close drill
+wear wet suit
+wear flippers
+wear mask
+wear tank
+get flashlight
+get canister
+get putty
+get drill
+get magnet
+south
+south
+south
+up
+turn on flashlight
+dive
+dive
+open canister
+dive
+down
+down
+south
+open door
+south
+put magnet on mine
+turn on magnet
+drop magnet
+up
+remove tank
+south
+south
+turn on drill
+drill safe with drill
+turn off drill
+get case
+north
+north
+wear tank
+down
+north
+up
+turn on drill
+drill case with drill
+open putty
+put putty on crack
+down
+north
+up
+up
+up
+up
+up

@@ -143,6 +143,31 @@ GAMES = {
         "walkthrough": REPO / "walkthroughs" / "infidel_verified_400.txt",
         "version": 3, "reference": REPO / "games" / "zcode" / "infidel.z3", "seeds": 1,
     },
+    "witness": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "witness" / "witness.zil",
+        "walkthrough": REPO / "walkthroughs" / "witness_verified_win.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "witness.z3", "seeds": 1,
+    },
+    "cutthroats": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "cutthroats" / "cutthroats.zil",
+        "walkthrough": REPO / "walkthroughs" / "cutthroats_zorkie_250.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "cutthroats.z3", "seeds": 1,
+    },
+    "sorcerer": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "sorcerer" / "sorcerer.zil",
+        "walkthrough": REPO / "walkthroughs" / "sorcerer_verified_400.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "sorcerer.z3", "seeds": 2,
+    },
+    "enchanter": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "enchanter" / "enchanter.zil",
+        "walkthrough": REPO / "walkthroughs" / "enchanter_verified_400.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "enchanter.z3", "seeds": 1,
+    },
+    "hitchhikersguide": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "hitchhikersguide" / "s4.zil",
+        "walkthrough": REPO / "walkthroughs" / "hhgg_verified_400.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "hhgg.z3", "seeds": 1,
+    },
     # === Frontier target (informational; NOT counted in the suite pass/fail). ===
     # A real Infocom-library game via the ZILF stdlib. Parses fully and is now
     # past the old LIBRARY-MESSAGE macro blocker; current compile error is the

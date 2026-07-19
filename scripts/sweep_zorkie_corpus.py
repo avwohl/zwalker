@@ -50,7 +50,7 @@ CORPUS = {
     "planetfall":      ("planetfall", "planetfall.zil", 3, "planetfall_verified_80.txt", "planetfall_verified*"),
     "suspended":       ("suspended", "suspended.zil", 3, "suspended_verified_win.txt", "suspended_verified*"),
     "hollywoodhijinx": ("hollywoodhijinx", "hijinx.zil", 3, "hollywood_verified_150.txt", "hollywood_verified*"),
-    "cutthroats":      ("cutthroats", "cutthroats.zil", 3, "cutthroats_verified_250.txt", "cutthroats_verified*"),
+    "cutthroats":      ("cutthroats", "cutthroats.zil", 3, "cutthroats_zorkie_250.txt", "cutthroats_verified*"),
     "infidel":         ("infidel", "infidel.zil", 3, "infidel_verified_400.txt", "infidel_verified*"),
     "enchanter":       ("enchanter", "enchanter.zil", 3, "enchanter_verified_400.txt", "enchanter_verified*"),
     "lurkinghorror":   ("lurkinghorror", "h1.zil", 3, "lurking_verified_100.txt", "lurking_verified*"),
