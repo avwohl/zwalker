@@ -1,7 +1,4 @@
 #% WIN_TEXT: secures the conviction of Michael for the first degree murder of his wife
-# Recorded by scripts/rederive_route.py from /private/tmp/claude-501/-Users-wohl-src-zwalker/10f9f23a-9744-4a59-9963-416823b91447/scratchpad/suspect_adaptive_route.txt
-# at interpreter RNG seed 1; 109 commands.
-# Replays deterministically (every adaptive retry baked in).
 restart
 yes
 west
@@ -100,6 +97,10 @@ take trust folder
 east
 south
 south
+wait for detective
+wait for detective
+wait for detective
+wait for detective
 wait for detective
 show card to detective
 show manila folder to detective
