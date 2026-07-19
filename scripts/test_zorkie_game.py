@@ -79,14 +79,16 @@ GAMES = {
     },
     "minizork": {
         # THE MILESTONE: the first real Infocom game zorkie compiles to a full
-        # verified win (350/350, Stone Barrow) in zwalker. Source is the
-        # historical Release-0 mini.zil; the published Release 34 binary is a
-        # DIFFERENT build (own map/scoring/RNG stream), covered separately by
-        # the released-binary solve walkthroughs/minizork_verified_350.txt.
+        # verified win (350/350, Stone Barrow) in zwalker. Once zorkie honored
+        # PROPDEF defaults (the <PROPDEF SIZE 5> the official ZILCH build also
+        # applies), the source build became LOCKSTEP-IDENTICAL to the published
+        # minizork.z3 -- so it now wins the OFFICIAL released-binary route
+        # directly. (The old minizork_zorkie_350.txt was tuned to the pre-fix
+        # SIZE=0 build and only reaches 305 on the correct build / official.)
         "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "minizork-1987" / "mini.zil",
-        "walkthrough": REPO / "walkthroughs" / "minizork_zorkie_350.txt",
+        "walkthrough": REPO / "walkthroughs" / "minizork_verified_350.txt",
         "version": 3,
-        "reference": None,  # no golden of THIS source; official binary is another release
+        "reference": REPO / "games" / "zcode" / "minizork.z3",
         "seeds": 1,
     },
     "zork1": {
@@ -201,6 +203,30 @@ GAMES = {
         "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "wishbringer" / "wishbringer.zil",
         "walkthrough": REPO / "walkthroughs" / "wishbringer_zorkie_100.txt",
         "version": 3, "reference": REPO / "games" / "zcode" / "wishbringer.z3", "seeds": 1,
+    },
+    # Won in round-7 on the reduced base: the wip 8-fix set (PREP-SYNONYM, reversed
+    # SYNTAX lines, TELL 'atom, CEXIT-gate globals, %,CONST props, DO variable-limit
+    # loops, direction-synonym adjectives, funny-global SETG) plus three more general
+    # fixes (VOC part-of-speech accumulation, pseudo-noun dict value byte, DO-loop
+    # LONG exit-branch off-by-2). OFFICIAL route, lockstep-clean over all 422 cmds.
+    "spellbreaker": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "spellbreaker" / "z6.zil",
+        "walkthrough": REPO / "walkthroughs" / "spellbreaker_verified_600.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "spellbreaker.z3", "seeds": 1,
+    },
+    # Won in round-7: PROPDEF defaults populated (Thermos CAPACITY) + JE
+    # nested-comparand evaluation. OFFICIAL route, lockstep-clean end-to-end.
+    "stationfall": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "stationfall" / "s6.zil",
+        "walkthrough": REPO / "walkthroughs" / "stationfall_verified_80.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "stationfall.z3", "seeds": 1,
+    },
+    # Won in round-7: branch-context multi-operand EQUAL? evaluation (+2 more
+    # general codegen fixes). OFFICIAL route, lockstep-clean end-to-end.
+    "plunderedhearts": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "plunderedhearts" / "plundered.zil",
+        "walkthrough": REPO / "walkthroughs" / "plundered_verified_25.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "plundered.z3", "seeds": 1,
     },
     # === Frontier target (informational; NOT counted in the suite pass/fail). ===
     # A real Infocom-library game via the ZILF stdlib. Parses fully and is now

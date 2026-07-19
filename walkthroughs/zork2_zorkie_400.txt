@@ -1,10 +1,26 @@
 #% MAX_SCORE: 400
-# ZORK II compiled FROM SOURCE by zorkie (renovated source)
-# -- complete solve recorded by solve_zork2_zorkie_adaptive.py
-# at interpreter RNG seed 2; 388 commands.
-# Replays deterministically: every take-fumble retry, carousel spin,
-# Low Room coin-flip exit, balloon wait, treasure-ferry trip and
-# demon/wizard-timing wait is baked into this stream.
+#% WIN_TEXT: carefully drawn magical runes
+# Zork II -- zorkie build of the preserved (historicalsource) zork2 ZIL source,
+# compiled with PROPDEF defaults honored: item SIZEs are real, so carry limits
+# (weight + the >7-item probabilistic take-fumble) actually bind, unlike the
+# old all-SIZE-0 zorkie build.
+#
+# Derived from walkthroughs/zork2_verified_400.txt (official Release-63 route)
+# with load-management insertions:
+#   * Guarded Room, before 'take red sphere': drop brick/newspaper/matchbook/
+#     string so the sphere take cannot fumble; 'take sword' after the aquarium
+#     is dropped entirely (the sword is never needed again).
+#   * After the three-sphere fusion, the gold key and black sphere are stashed
+#     at the Guarded Room and the balloon kit is re-taken (count stays <= 7
+#     before every scoring take; the 8th-item take is still fumble-free).
+#   * Treasure ferry: matchbook shed, violin moved to trip 1, and an explicit
+#     'take black sphere' added to trip 2 (8 items max, no fumble window).
+#   * The oddly-angled diamond maze is RNG-scrambled per turn in this source
+#     (random hop onto a base corner, then the fixed SE/NE/NW/SW circuit);
+#     the baked 'se' x17 hops + circuit + south/down are the seed-2 stream.
+#
+# VERIFIED on the z2-pd.z3 build: 400/400, won=True, died=False at
+# interpreter RNG seed 2 (scripts/replay_solve.py ... --seeds 24).
 take lamp
 take sword
 turn on lamp
@@ -23,17 +39,9 @@ fill teapot
 south
 sw
 sw
-south
+southeast
 west
-south
-north
-south
-sw
-south
-se
-south
-north
-south
+southeast
 answer "well"
 east
 take necklace
@@ -64,6 +72,8 @@ look in red sphere
 robot, go north
 north
 robot, push triangular button
+west
+southeast
 west
 southeast
 west
@@ -105,7 +115,7 @@ put opener in keyhole
 take opener
 drop opener
 take mat
-take rusty key
+take key
 unlock door with key. open door. north
 take blue sphere
 look in blue sphere
@@ -130,28 +140,48 @@ east
 down
 south
 east
+wait
 east
+wait
 east
 east
 north
 in
 wait
 wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
 exit
+take key
 drop rose
+drop orange cake
 drop rusty key
+inventory
 south
 south
 west
 sw
 sw
-take red sphere
+drop brick
+drop newspaper
+drop matchbook
+drop string
 take red sphere
 unlock door with gold key. open door. south
 west
 west
 throw sword at aquarium
-take clear sphere
 take clear sphere
 east
 put clear sphere on diamond stand
@@ -161,6 +191,12 @@ take black sphere
 look in black sphere
 east
 north
+drop gold key
+drop black sphere
+take brick
+take newspaper
+take matchbook
+take string
 north
 north
 down
@@ -218,9 +254,10 @@ east
 se
 sw
 sw
+take off crown
 drop crown
 drop stamp
-drop coin
+drop zorkmid
 drop ruby
 north
 ne
@@ -264,84 +301,68 @@ take repellent
 east
 sw
 sw
+drop matchbook
 take necklace
-take necklace
-take necklace
 take violin
-take violin
-take violin
-wait
-wait
-take violin
-wait
-wait
-wait
-wait
-take violin
-wait
-wait
-wait
-wait
-wait
-wait
-take ruby
-take crown
-take crown
-take crown
-wait
-wait
-take crown
-wait
-wait
-wait
-wait
-take crown
-wait
-wait
-wait
-wait
-wait
-wait
-take stamp
-take coin
-take coin
-take coin
-wait
-wait
-take coin
-wait
-wait
-wait
-wait
-take coin
-wait
-wait
-wait
-wait
-wait
-wait
 south
 west
 south
 drop necklace
 drop gold key
 drop statuette
+drop violin
 drop portrait
 drop bills
 drop ruby
+drop crown
 drop stamp
+drop zorkmid
 north
 east
 north
+look
+take necklace
+take gold key
+take statuette
 take violin
+take portrait
+take bills
+take ruby
 take crown
-take coin
+take stamp
+take zorkmid
+take black sphere
 south
 west
 south
+drop necklace
+drop gold key
+drop statuette
 drop violin
+drop portrait
+drop bills
+drop ruby
 drop crown
-drop coin
+drop stamp
+drop zorkmid
+north
+east
+north
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+look
+south
+west
+south
 put black sphere in pentagram
 take necklace
 give necklace to demon
@@ -365,6 +386,7 @@ take coin
 give coin to demon
 demon, give me wand
 take wand
+inventory
 north
 east
 north
@@ -378,7 +400,22 @@ take collar
 ne
 south
 down
-west
+se
+se
+se
+se
+se
+se
+se
+se
+se
+se
+se
+se
+se
+se
+se
+se
 se
 ne
 nw
