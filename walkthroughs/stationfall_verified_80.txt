@@ -1,3 +1,4 @@
+#% MAX_SCORE: 80
 # Stationfall (Infocom Release 107, serial 870430, Z-machine V3)
 # VERIFIED COMPLETE SOLVE: 80/80, won=True, died=False
 #
