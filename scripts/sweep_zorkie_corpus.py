@@ -58,7 +58,7 @@ CORPUS = {
     "ballyhoo":        ("ballyhoo", "m4.zil", 3, "ballyhoo_verified_200.txt", "ballyhoo_verified*"),
     "moonmist":        ("moonmist", "moonmist.zil", 3, "moonmist_verified_win.txt", "moonmist_verified*"),
     "wishbringer":     ("wishbringer", "wishbringer.zil", 3, "wishbringer_verified_100.txt", "wishbringer_verified*"),
-    "leathergoddesses": ("leathergoddesses", "leathergoddesses.zil", 3, "lgop_verified_win.txt", "lgop_verified*"),
+    "leathergoddesses": ("leathergoddesses", "x1.zil", 3, "lgop_verified_win.txt", "lgop_verified*"),
     "plunderedhearts": ("plunderedhearts", "plundered.zil", 3, "plundered_verified_25.txt", "plundered_verified*"),
     "stationfall":     ("stationfall", "s6.zil", 3, "stationfall_verified_80.txt", "stationfall_verified*"),
     "hitchhikersguide": ("hitchhikersguide", "s4.zil", 3, "hhgg_verified_400.txt", "hhgg_verified*"),

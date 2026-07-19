@@ -168,6 +168,19 @@ GAMES = {
         "walkthrough": REPO / "walkthroughs" / "hhgg_verified_400.txt",
         "version": 3, "reference": REPO / "games" / "zcode" / "hhgg.z3", "seeds": 1,
     },
+    "suspect": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "suspect" / "suspect.zil",
+        "walkthrough": REPO / "walkthroughs" / "suspect_zorkie_win.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "suspect.z3", "seeds": 1,
+    },
+    # Unblocked once zorkie's size peephole (Z/K folds) + abbreviation-corpus fix
+    # brought the source build under the V3 cap; the OFFICIAL verified route then
+    # replays clean to the 200/200 win (no RNG re-derivation needed).
+    "ballyhoo": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "ballyhoo" / "m4.zil",
+        "walkthrough": REPO / "walkthroughs" / "ballyhoo_verified_200.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "ballyhoo.z3", "seeds": 1,
+    },
     # === Frontier target (informational; NOT counted in the suite pass/fail). ===
     # A real Infocom-library game via the ZILF stdlib. Parses fully and is now
     # past the old LIBRARY-MESSAGE macro blocker; current compile error is the
