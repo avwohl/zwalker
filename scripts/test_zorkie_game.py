@@ -283,10 +283,17 @@ GAMES = {
         "version": 4, "reference": REPO / "games" / "zcode" / "amfv.z4", "seeds": 1,
     },
     # === Frontier target (informational; NOT counted in the suite pass/fail). ===
-    # A real Infocom-library game via the ZILF stdlib. Parses fully and is now
-    # past the old LIBRARY-MESSAGE macro blocker; current compile error is the
-    # stdlib's ISAVE (a V5+ opcode) reached in this V3 build.
-    # Tracks progress toward compiling ZILF-library games. See docs/ZORKIE_TESTING.md.
+    # The first ZILF-STANDARD-LIBRARY game to reach zorkie. Now COMPILES to a
+    # valid V3 image (banner + room descriptions run) after ~8 general ZILF-dialect
+    # fixes: ZIP-OPTIONS/IF-UNDO conditionals (the old "ISAVE requires V5" was this
+    # -- cloak is <VERSION ZIP>=V3 and the undo code must be stripped, not a
+    # missing-version-support bug), the LIBRARY-MESSAGE system, DEFAULT-DEFINITION,
+    # DEFSTRUCT, the pronoun subsystem, and compile-time table-constructor DEFINE
+    # inlining + ITABLE-size folding. It does NOT win yet: the ZILF *library*
+    # parser (_is_classic_parser=False) reads a VERBS/syntax-table byte layout
+    # zorkie doesn't emit for that dialect, so MATCH-SYNTAX never sets PRSA and
+    # every command mis-dispatches. Remaining work is that parser-table format,
+    # not compile-time macros. See docs/ZORKIE_TESTING.md.
     "cloak": {
         "zil": ZORKIE / "tests" / "test-pairs" / "cloak.zil",
         "walkthrough": REPO / "walkthroughs" / "cloak_zilf_win.txt",
