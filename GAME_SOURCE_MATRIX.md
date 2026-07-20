@@ -71,7 +71,7 @@ Obsessively Complete Infocom Catalog (eblong.com/infocom), and IFDB/IFWiki.
 | Game | source dir | from-source | note |
 |------|-----------|:-----------:|------|
 | Beyond Zork | beyondzork | — | needs a V5 target |
-| Border Zone | borderzone | — | needs a V5 target |
+| Border Zone | borderzone | ⚙️ parses | spy.zil; V5 target works -- boots + in-game parser (first V5 game) |
 | Border Zone (prototype "spy") | checkpoint | — | spy.z5 |
 | Sherlock | sherlock | — | needs a V5 target |
 
@@ -155,7 +155,7 @@ approximate). See `TODO.md` for the binary-solve history.
   minizork2, sampler — no counted win only because they lack a
   locally-distributable published binary for route derivation; they are the
   binary/solve track's next route-derivation candidates.
-- **V5/V6 Infocom sources (9)** are un-attempted: they need a zorkie V5/V6 target.
+- **V5 target now works** (Border Zone compiles/boots/parses, first V5 game); Beyond Zork/Sherlock/cloak_plus next. V6 sources still need a V6 target (+ zwalker V6 interpreter).
 - **cloak** compiles as V3 but the ZILF-library parser-table format blocks a win.
 - **planetfall** now WINS 80/80: its historicalsource `comptwo.zil` was
   truncated, but the-infocom-files has the complete source (submodule repointed).

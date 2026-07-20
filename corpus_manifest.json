@@ -406,9 +406,11 @@
       "src_kind": "zil",
       "src_dir": "borderzone",
       "src_version": 5,
-      "src_entry": null,
+      "src_entry": "spy.zil",
       "src_win": false,
       "src_frontier": false,
+      "src_boots": true,
+      "src_compile_flags": [],
       "pub_walkthroughs": [],
       "src_walkthroughs": []
     },

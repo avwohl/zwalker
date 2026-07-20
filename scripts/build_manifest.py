@@ -36,6 +36,7 @@ SRC_BOOTS = {
                   "verbs,actions,fights,melee", ["--allow-undefined-routines"], 3),
     "sampler": ("sampler.zil", ["--allow-undefined-routines"], 3),
     "nordandbert": ("nordandbert.zil", [], 4),  # the-infocom-files mirror
+    "borderzone": ("spy.zil", [], 5),  # first V5 game: compiles/boots/parses
 }
 # Confirmed source-incomplete (not zorkie bugs) -- documented, not attempted.
 SRC_SOURCE_BLOCKED = {
