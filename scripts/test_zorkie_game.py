@@ -248,6 +248,17 @@ GAMES = {
         "walkthrough": REPO / "walkthroughs" / "lurking_verified_100.txt",
         "version": 3, "reference": REPO / "games" / "zcode" / "lurking.z3", "seeds": 1,
     },
+    # Won last: six parser/compile-time fixes -- the MDL CHARACTER type (the game's
+    # own TELL DEFMAC dispatches on it), LAST-OBJECT auto-fill (MOBY-FIND scan),
+    # a FAR-AWAY? branch-corruption crash, the SETG clock/dinner-time idiom, and
+    # the classic-parser punctuation vocabulary. The global FORM-fold is guarded
+    # to scalar value-forms so cutthroats' <GLOBAL DELIVERY-TABLE <TABLE ...>>
+    # isn't collapsed. OFFICIAL route.
+    "moonmist": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "moonmist" / "moonmist.zil",
+        "walkthrough": REPO / "walkthroughs" / "moonmist_verified_win.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "moonmist.z3", "seeds": 1,
+    },
     # FIRST V4 GAMES (won in rounds 8-9). Trinity: positional vocab resolution
     # (374 words > the old 8-bit marker limit), seven V4 miscompile fixes
     # (16-bit operands, scan_table, property-header bit 7, EZIP exits, word-form
