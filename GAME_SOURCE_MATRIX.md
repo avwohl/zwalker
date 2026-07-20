@@ -38,7 +38,7 @@ Obsessively Complete Infocom Catalog (eblong.com/infocom), and IFDB/IFWiki.
 | Starcross | starcross | ✅ 400/400 | lockstep-identical to R18 |
 | Suspended | suspended | ✅ win | |
 | The Witness | witness | ✅ win | |
-| Planetfall | planetfall | ✋ | comptwo.zil truncated upstream (mid-object) |
+| Planetfall | planetfall | ✅ 80/80 | fixed by repointing submodule to the-infocom-files (complete source) |
 | Enchanter | enchanter | ✅ 400/400 | |
 | Infidel | infidel | ✅ 400/400 | |
 | Sorcerer | sorcerer | ✅ 400/400 | |
@@ -129,13 +129,13 @@ approximate). See `TODO.md` for the binary-solve history.
 |:-----:|:-------------:|:--------------:|:--------------------:|:----------------:|:-------------------:|
 | v1 | 0¹ | 0 | 0 | 2 | 1 |
 | v2 | 0¹ | 0 | 0 | 0 | 0 |
-| **v3** | 27 | 6² | **26** (23 Infocom + 3 toys) | 33 | 32 |
+| **v3** | 27 | 6² | **27** (24 Infocom + 3 toys) | 33 | 32 |
 | **v4** | 4 | 0 | **2** (trinity, amfv) | 4 | 2 |
 | v5 | 4 | 1 (cloak_plus) | 0 | 83 | 17 |
 | v6 | 5 | 0 | 0 | 2 | 0 |
 | v7 | 0 | 0 | 0 | 0 | 0 |
 | v8 | 0 | 0³ | 0 | 21 | 4 |
-| **total** | **40** | **~7** | **28** | **~145** | **~56** |
+| **total** | **40** | **~7** | **29** | **~145** | **~56** |
 
 ¹ Zork I's earliest revisions are v1/v2 but only the v3 ZIL source is in the corpus.
 ² 3 zorkie toys (microquest/mazekey/reactor) + the ZILF samples cloak/advent/zil_test.
@@ -143,7 +143,7 @@ approximate). See `TODO.md` for the binary-solve history.
 
 ### Headline
 
-- **28 from-source wins** — 26 V3 + 2 V4 — every V3 Infocom source with a
+- **29 from-source wins** — 27 V3 + 2 V4 — every V3 Infocom source with a
   verified route, plus the first two V4 games (Trinity, AMFV). Registered and
   green in `scripts/test_zorkie_game.py`.
 - **4 more compile+boot** (Phase 1): seastalker, bureaucracy (V4 MDL-ZIL),
@@ -152,8 +152,8 @@ approximate). See `TODO.md` for the binary-solve history.
   binary/solve track's next route-derivation candidates.
 - **V5/V6 Infocom sources (9)** are un-attempted: they need a zorkie V5/V6 target.
 - **cloak** compiles as V3 but the ZILF-library parser-table format blocks a win.
-- **planetfall** is the one V3 source that can't be built — its `comptwo.zil`
-  historicalsource checkout is physically truncated (ends mid-object).
+- **planetfall** now WINS 80/80: its historicalsource `comptwo.zil` was
+  truncated, but the-infocom-files has the complete source (submodule repointed).
 
 ## Sources
 

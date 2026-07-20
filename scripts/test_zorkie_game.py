@@ -122,6 +122,14 @@ GAMES = {
         "reference": REPO / "games" / "zcode" / "starcross.z3",
         "seeds": 1,
     },
+    # Won once the planetfall submodule was repointed from historicalsource
+    # (comptwo.zil truncated mid-object at TRIFFID) to the-infocom-files
+    # (complete source). The OFFICIAL verified route wins 80/80 unchanged.
+    "planetfall": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "planetfall" / "planetfall.zil",
+        "walkthrough": REPO / "walkthroughs" / "planetfall_verified_80.txt",
+        "version": 3, "reference": REPO / "games" / "zcode" / "planetfall.z3", "seeds": 1,
+    },
     "zork2": {
         # ZORK II from source: route re-derived for this build's RNG stream.
         "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "zork2" / "zork2.zil",
