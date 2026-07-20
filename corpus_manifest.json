@@ -1,0 +1,1849 @@
+{
+  "generated_by": "scripts/build_manifest.py",
+  "games": [
+    {
+      "game": "905",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/905.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "905_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "a1rl0ck",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/a1rl0ck.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "a_fable",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/a_fable.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "a_mind_forever_voyaging",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/a_mind_forever_voyaging.z4",
+      "pub_version": 4,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "a_tight_spot",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/a_tight_spot.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "abyss",
+      "src_kind": "zil",
+      "src_dir": "abyss",
+      "src_version": 6,
+      "src_entry": null,
+      "src_win": false,
+      "src_frontier": false,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "acheton",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/acheton.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "acorncourt",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/acorncourt.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "acorncourt_verified_30.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "adv440",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/adv440.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "adv550",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/adv550.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "advent",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/advent.z6",
+      "pub_version": 6,
+      "pub_walkthroughs": [
+        "advent_verified_350.txt",
+        "adventureland_verified_100.txt",
+        "castle_adventure_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": false
+    },
+    {
+      "game": "adverbum",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/adverbum.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "aisle",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/aisle.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "aisle_human_walkthrough.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": false
+    },
+    {
+      "game": "allroads",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/allroads.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "allroads_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "amfv",
+      "src_kind": "zil",
+      "src_dir": "amfv",
+      "src_version": 4,
+      "src_entry": "s5.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/amfv.z4",
+      "pub_version": 4,
+      "pub_walkthroughs": [
+        "amfv_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "amish",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/amish.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "anchor",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/anchor.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [
+        "anchor_human_walkthrough.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": false
+    },
+    {
+      "game": "and_a_hippo_new_year",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/and_a_hippo_new_year.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "animals",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/animals.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "apartment_f209",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/apartment_f209.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "appallatron",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/appallatron.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "arthur",
+      "src_kind": "zil",
+      "src_dir": "arthur",
+      "src_version": 6,
+      "src_entry": null,
+      "src_win": false,
+      "src_frontier": false,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "asylum",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/asylum.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "atrocitron",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/atrocitron.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "balances",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/balances.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "balances_verified_51.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "ballyhoo",
+      "src_kind": "zil",
+      "src_dir": "ballyhoo",
+      "src_version": 3,
+      "src_entry": "m4.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/ballyhoo.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "ballyhoo_verified_200.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "bear",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/bear.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "bedlam",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/bedlam.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "beneath_a_transformation",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/beneath_a_transformation.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "beyondzork",
+      "src_kind": "zil",
+      "src_dir": "beyondzork",
+      "src_version": 5,
+      "src_entry": null,
+      "src_win": false,
+      "src_frontier": false,
+      "pub_path": "games/zcode/beyond.z5",
+      "pub_version": 80,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "bluechairs",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/bluechairs.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "bofh",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/bofh.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "book_and_volume",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/book_and_volume.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "booth",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/booth.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "borderzone",
+      "src_kind": "zil",
+      "src_dir": "borderzone",
+      "src_version": 5,
+      "src_entry": null,
+      "src_win": false,
+      "src_frontier": false,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "bse",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/bse.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "bunny",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/bunny.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "bureaucracy",
+      "src_kind": "zil",
+      "src_dir": "bureaucracy",
+      "src_version": 4,
+      "src_entry": null,
+      "src_win": false,
+      "src_frontier": false,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "buried_in_shoes",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/buried_in_shoes.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "candy",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/candy.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "casting",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/casting.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "catseye",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/catseye.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "cheater",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/cheater.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "checkpoint",
+      "src_kind": "zil",
+      "src_dir": "checkpoint",
+      "src_version": 5,
+      "src_entry": null,
+      "src_win": false,
+      "src_frontier": false,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "cheeseshop",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/cheeseshop.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "chicks_dig_jerks",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/chicks_dig_jerks.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "cloak",
+      "src_kind": "zilf/toy",
+      "src_dir": null,
+      "src_version": 3,
+      "src_entry": "cloak.zil",
+      "src_win": false,
+      "src_frontier": true,
+      "pub_path": "games/zcode/cloak.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "cloak_verified_win.txt"
+      ],
+      "src_walkthroughs": [
+        "cloak_zilf_win.txt"
+      ],
+      "pub_solved": true
+    },
+    {
+      "game": "coldiron",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/coldiron.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [
+        "coldiron_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "conan_kill_everything",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/conan_kill_everything.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "critical_breach",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/critical_breach.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "crobe",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/crobe.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "cryptographer",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/cryptographer.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "curses",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/curses.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "curses_human_walkthrough.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": false
+    },
+    {
+      "game": "cutthroats",
+      "src_kind": "zil",
+      "src_dir": "cutthroats",
+      "src_version": 3,
+      "src_entry": "cutthroats.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/cutthroats.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "cutthroats_verified_250.txt"
+      ],
+      "src_walkthroughs": [
+        "cutthroats_zorkie_250.txt"
+      ],
+      "pub_solved": true
+    },
+    {
+      "game": "czech",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/czech.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "dangerous_curves",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/dangerous_curves.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "darkiss_chapter_1",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/darkiss_chapter_1.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "deadline",
+      "src_kind": "zil",
+      "src_dir": "deadline",
+      "src_version": 3,
+      "src_entry": "deadline.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/deadline.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "deadline_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "death_to_my_enemies",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/death_to_my_enemies.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "deephome",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/deephome.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "deephome_verified_300.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "degeneracy",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/degeneracy.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "deja_vu",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/deja_vu.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "detective",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/detective.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "detective_verified_360.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "devours",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/devours.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "djinni",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/djinni.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "dr._dumonts_wild_p.a.r.t.i.",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/dr._dumonts_wild_p.a.r.t.i..z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "dracula",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/dracula.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "dreamhold",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/dreamhold.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [
+        "dreamhold_human_walkthrough.txt",
+        "dreamhold_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": false
+    },
+    {
+      "game": "edifice",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/edifice.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "edifice_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "egyptian_walking_simulator",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/egyptian_walking_simulator.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "enchanter",
+      "src_kind": "zil",
+      "src_dir": "enchanter",
+      "src_version": 3,
+      "src_entry": "enchanter.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/enchanter.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "enchanter_human_walkthrough.txt",
+        "enchanter_verified_400.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": false
+    },
+    {
+      "game": "encyclopedia_frobozzica",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/encyclopedia_frobozzica.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "entropy",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/entropy.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "etude",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/etude.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "failsafe",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/failsafe.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "fairyland",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/fairyland.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "fantasydimension",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/fantasydimension.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "farm",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/farm.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "fork_the_great_underground_dining_room",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/fork_the_great_underground_dining_room.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "gntests",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/gntests.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "hitchhikersguide",
+      "src_kind": "zil",
+      "src_dir": "hitchhikersguide",
+      "src_version": 3,
+      "src_entry": "s4.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/hhgg.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "hhgg_verified_400.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "hollywoodhijinx",
+      "src_kind": "zil",
+      "src_dir": "hollywoodhijinx",
+      "src_version": 3,
+      "src_entry": "hijinx.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/hollywood.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "hollywood_verified_150.txt"
+      ],
+      "src_walkthroughs": [
+        "hollywood_zorkie_150.txt"
+      ],
+      "pub_solved": true
+    },
+    {
+      "game": "infidel",
+      "src_kind": "zil",
+      "src_dir": "infidel",
+      "src_version": 3,
+      "src_entry": "infidel.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/infidel.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "infidel_verified_400.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "its_a_dogs_life",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/its_a_dogs_life.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "jewel",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/jewel.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "jewel_verified_90.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "journey",
+      "src_kind": "zil",
+      "src_dir": "journey",
+      "src_version": 6,
+      "src_entry": null,
+      "src_win": false,
+      "src_frontier": false,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "leathergoddesses",
+      "src_kind": "zil",
+      "src_dir": "leathergoddesses",
+      "src_version": 3,
+      "src_entry": "x1.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/leather.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "lgop_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "library",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/library.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "library_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "lists",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/lists.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "loose",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/loose.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "lostpig",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/lostpig.z8",
+      "pub_version": 8,
+      "pub_walkthroughs": [
+        "lostpig_verified_7.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "lurkinghorror",
+      "src_kind": "zil",
+      "src_dir": "lurkinghorror",
+      "src_version": 3,
+      "src_entry": "h1.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/lurking.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "lurking_verified_100.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "mazekey",
+      "src_kind": "zilf/toy",
+      "src_dir": null,
+      "src_version": 3,
+      "src_entry": "mazekey.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": [
+        "mazekey_zorkie_win.txt"
+      ]
+    },
+    {
+      "game": "microquest",
+      "src_kind": "zilf/toy",
+      "src_dir": null,
+      "src_version": 3,
+      "src_entry": "microquest.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": [
+        "microquest_zorkie_win.txt"
+      ]
+    },
+    {
+      "game": "minizork",
+      "src_kind": "zil",
+      "src_dir": "minizork-1987",
+      "src_version": 3,
+      "src_entry": "mini.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/minizork.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "minizork_verified_350.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "minizork2",
+      "src_kind": "zil",
+      "src_dir": "minizork-1982",
+      "src_version": 3,
+      "src_entry": null,
+      "src_win": false,
+      "src_frontier": false,
+      "pub_walkthroughs": [
+        "minizork_verified_350.txt"
+      ],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "moonmist",
+      "src_kind": "zil",
+      "src_dir": "moonmist",
+      "src_version": 3,
+      "src_entry": "moonmist.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/moonmist.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "moonmist_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "night_of_the_vampire_bunnies",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/night_of_the_vampire_bunnies.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "nordandbert",
+      "src_kind": "zil",
+      "src_dir": "nordandbert",
+      "src_version": 4,
+      "src_entry": null,
+      "src_win": false,
+      "src_frontier": false,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "pentari",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/pentari.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "pentari_verified_70.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "photopia",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/photopia.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "photopia_human_walkthrough.txt",
+        "photopia_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": false
+    },
+    {
+      "game": "planetfall",
+      "src_kind": "zil",
+      "src_dir": "planetfall",
+      "src_version": 3,
+      "src_entry": null,
+      "src_win": false,
+      "src_frontier": false,
+      "pub_path": "games/zcode/planetfall.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "planetfa_human_walkthrough.txt",
+        "planetfall_verified_80.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": false
+    },
+    {
+      "game": "plunderedhearts",
+      "src_kind": "zil",
+      "src_dir": "plunderedhearts",
+      "src_version": 3,
+      "src_entry": "plundered.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/plundered.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "plundered_verified_25.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "ralph",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/Ralph.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "reactor",
+      "src_kind": "zilf/toy",
+      "src_dir": null,
+      "src_version": 3,
+      "src_entry": "reactor.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": [
+        "reactor_zorkie_win.txt"
+      ]
+    },
+    {
+      "game": "restaurant",
+      "src_kind": "zil",
+      "src_dir": "restaurant",
+      "src_version": 6,
+      "src_entry": null,
+      "src_win": false,
+      "src_frontier": false,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "reverb",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/reverb.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "reverb_verified_50.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "sampler",
+      "src_kind": "zil",
+      "src_dir": "infocom-sampler",
+      "src_version": 3,
+      "src_entry": null,
+      "src_win": false,
+      "src_frontier": false,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "seastalker",
+      "src_kind": "zil",
+      "src_dir": "seastalker",
+      "src_version": 3,
+      "src_entry": null,
+      "src_win": false,
+      "src_frontier": false,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "shade",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/shade.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "shade_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "sherlock",
+      "src_kind": "zil",
+      "src_dir": "sherlock",
+      "src_version": 5,
+      "src_entry": null,
+      "src_win": false,
+      "src_frontier": false,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "sorcerer",
+      "src_kind": "zil",
+      "src_dir": "sorcerer",
+      "src_version": 3,
+      "src_entry": "sorcerer.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/sorcerer.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "sorcerer_verified_400.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "spellbreaker",
+      "src_kind": "zil",
+      "src_dir": "spellbreaker",
+      "src_version": 3,
+      "src_entry": "z6.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/spellbreaker.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "spellbreaker_verified_600.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "spider_and_web",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/spider_and_web.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "spirit",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/spirit.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "starcross",
+      "src_kind": "zil",
+      "src_dir": "starcross",
+      "src_version": 3,
+      "src_entry": "starcross.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/starcross.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "starcross_verified_400.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "stationfall",
+      "src_kind": "zil",
+      "src_dir": "stationfall",
+      "src_version": 3,
+      "src_entry": "s6.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/stationfall.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "stationfall_verified_80.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "suspect",
+      "src_kind": "zil",
+      "src_dir": "suspect",
+      "src_version": 3,
+      "src_entry": "suspect.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/suspect.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "suspect_verified_win.txt"
+      ],
+      "src_walkthroughs": [
+        "suspect_zorkie_win.txt"
+      ],
+      "pub_solved": true
+    },
+    {
+      "game": "suspended",
+      "src_kind": "zil",
+      "src_dir": "suspended",
+      "src_version": 3,
+      "src_entry": "suspended.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/suspended.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "suspended_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "suveh_nux",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/suveh_nux.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "suveh_nux_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "tangle",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/tangle.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "the_awakening",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/the_awakening.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "the_bible_retold",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/the_bible_retold.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "the_cabal",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/the_cabal.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "the_cove",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/the_cove.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "the_gostak",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/the_gostak.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "the_great_machine",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/the_great_machine.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "the_mad_bomber",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/the_mad_bomber.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "the_nine_dancers",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/the_nine_dancers.z5",
+      "pub_version": 80,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "the_seven_doctors",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/the_seven_doctors.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "the_zuni_doll",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/the_zuni_doll.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "theatre",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/theatre.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "theatre_verified_50.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "trinity",
+      "src_kind": "zil",
+      "src_dir": "trinity",
+      "src_version": 4,
+      "src_entry": "trinity.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/trinity.z4",
+      "pub_version": 4,
+      "pub_walkthroughs": [
+        "trinity_human_walkthrough.txt",
+        "trinity_verified_100.txt"
+      ],
+      "src_walkthroughs": [
+        "trinity_zorkie_100.txt"
+      ],
+      "pub_solved": false
+    },
+    {
+      "game": "vicious_cycles",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/vicious_cycles.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "wearing_the_claw",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/wearing_the_claw.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [
+        "wearing_the_claw_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "winter",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/winter.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "wishbringer",
+      "src_kind": "zil",
+      "src_dir": "wishbringer",
+      "src_version": 3,
+      "src_entry": "wishbringer.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/wishbringer.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "wishbringer_verified_100.txt"
+      ],
+      "src_walkthroughs": [
+        "wishbringer_zorkie_100.txt"
+      ],
+      "pub_solved": true
+    },
+    {
+      "game": "witness",
+      "src_kind": "zil",
+      "src_dir": "witness",
+      "src_version": 3,
+      "src_entry": "witness.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/witness.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "witness_verified_win.txt"
+      ],
+      "src_walkthroughs": [],
+      "pub_solved": true
+    },
+    {
+      "game": "zombies",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/zombies.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "zork1",
+      "src_kind": "zil",
+      "src_dir": "zork1",
+      "src_version": 3,
+      "src_entry": "zork1.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/zork1-r2.z1",
+      "pub_version": 1,
+      "pub_walkthroughs": [
+        "zork1-r5_verified_350.txt",
+        "zork1_base.txt",
+        "zork1_complete.txt",
+        "zork1_fixed.txt",
+        "zork1_gameboomers.txt",
+        "zork1_human_walkthrough.txt",
+        "zork1_mit.txt",
+        "zork1_mit_corrected.txt",
+        "zork1_mit_fixed.txt",
+        "zork1_verified_350.txt",
+        "zork1_verified_complete.txt",
+        "zork1_walkthrough.txt"
+      ],
+      "src_walkthroughs": [
+        "zork1_zorkie_350.txt",
+        "zork1_zorkie_route.txt"
+      ],
+      "pub_solved": true
+    },
+    {
+      "game": "zork2",
+      "src_kind": "zil",
+      "src_dir": "zork2",
+      "src_version": 3,
+      "src_entry": "zork2.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_path": "games/zcode/zork2.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [
+        "zork2_human_walkthrough.txt",
+        "zork2_verified_400.txt"
+      ],
+      "src_walkthroughs": [
+        "zork2_zorkie_400.txt",
+        "zork2_zorkie_route.txt"
+      ],
+      "pub_solved": false
+    },
+    {
+      "game": "zork3",
+      "src_kind": "zil",
+      "src_dir": "zork3",
+      "src_version": 3,
+      "src_entry": "zork3.zil",
+      "src_win": true,
+      "src_frontier": false,
+      "pub_walkthroughs": [
+        "zork3_human_walkthrough.txt",
+        "zork3_verified_7.txt"
+      ],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "zork_i",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/zork_i.z3",
+      "pub_version": 3,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "zork_the_cavern_of_doom",
+      "src_kind": null,
+      "src_dir": null,
+      "src_version": null,
+      "src_win": false,
+      "pub_path": "games/zcode/zork_the_cavern_of_doom.z5",
+      "pub_version": 5,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    },
+    {
+      "game": "zorkzero",
+      "src_kind": "zil",
+      "src_dir": "zorkzero",
+      "src_version": 6,
+      "src_entry": null,
+      "src_win": false,
+      "src_frontier": false,
+      "pub_walkthroughs": [],
+      "src_walkthroughs": []
+    }
+  ]
+}
