@@ -9,21 +9,22 @@ Session handoff / resume state. Primary repos:
 Build the ZIL **sources** of the games zwalker solved, compile them with zorkie,
 and drive the zorkie-compiled builds to verified wins in zwalker.
 
-## State after session 9 (2026-07-19/20): L2 suite 27/27 — V3 corpus done, V4 arrived
+## State after session 9 (2026-07-20): L2 suite 28/28 — V3 corpus done, V4 arrived, cloak compiles
 
-`python3 scripts/test_zorkie_game.py` → **27/27** games compile from ZIL source
+`python3 scripts/test_zorkie_game.py` → **28/28** games compile from ZIL source
 and play to a replay_solve-verified win: microquest, mazekey, reactor,
 minizork 350/350, zork1 350/350, zork3 7/7, starcross 400/400, zork2 400/400,
 deadline, suspended, infidel, witness, cutthroats 250/250, sorcerer 400/400,
 enchanter 400/400, hitchhikersguide 400/400, suspect, ballyhoo 200/200,
 hollywoodhijinx 150/150, wishbringer 100/100, spellbreaker 600/600,
 stationfall 80/80, plunderedhearts 25/25, leathergoddesses (321,
-self-randomized), lurkinghorror 100/100, **trinity 100/100 (V4)**,
+self-randomized), lurkinghorror 100/100, **moonmist**, **trinity 100/100 (V4)**,
 **amfv (V4, scoreless)**. zorkie pytest: 696 pass / 3 pre-existing fails.
 
-Every Infocom V3 corpus game with a verified route now wins from source. The
-compiler-fix catalog lives in `~/src/zorkie/STATUS.md` (sessions 8-9) and the
-git log of both repos.
+Every Infocom V3 corpus game with a verified route now wins from source, and
+the first two V4 games win. cloak (the first ZILF-standard-library game) now
+COMPILES as V3 but does not win yet (frontier). The compiler-fix catalog lives
+in `~/src/zorkie/STATUS.md` (sessions 8-9) and the git log of both repos.
 
 ### Route-provenance rule (learned the hard way)
 When a compiler CORRECTNESS fix "breaks" a game, the route is usually stale:
@@ -45,15 +46,20 @@ different stream (trinity/amfv were mis-"verified" that way once).
 
 ## Remaining frontier
 
-1. **moonmist** — fits the V3 cap (130196) and replays its 86-cmd route to
-   completion, but ask/tell topic resolution fails pre-existing ("Bolitho looks
-   confused"; 'examine ghost' prints raw dict memory). Needs a parser-table /
-   GENERIC-property lockstep investigation, then it should win.
+1. **cloak — the ZILF-library parser-table format** (closest real work). cloak
+   now COMPILES as V3 and runs the banner + first rooms, but every command
+   mis-dispatches: the ZILF *library* parser (`_is_classic_parser=False`, first
+   game to exercise it) reads a VERBS/syntax-table byte layout zorkie doesn't
+   emit for that dialect, so `MATCH-SYNTAX` never sets `,PRSA` and `PERFORM`
+   calls `ACTIONS[0]`. Ruled out (per zorkie 2989b3a): table sizing/placement,
+   constructor eval, library-message/pronoun/DEFSTRUCT, ACTIONS mapping — the
+   gap is purely the ZILF syntax-table emission. This unlocks all ZILF-library
+   games (advent, the modern IF corpus).
 2. **planetfall** — SOURCE truncated (`comptwo.zil` physically ends mid-object
    at TRIFFID). Provenance problem; check upstream historicalsource for a
    complete revision. Do NOT "fix" by accepting unbalanced input.
-3. **cloak** — ZILF stdlib uses ISAVE (V5+) in a V3 build; the real frontier is
-   a V5 target (the V4 opcode work + call_vs2 are a head start).
+3. **A V5 target** — cloak's undo path, and modern games, want V5. The V4 opcode
+   work (call_vs2, EZIP property/exit layouts, scan_table) is a head start.
 4. Cosmetics: stray \x01 on some V4 CRLFs, TELL two-space, amfv tubecar
    departure-message timing (2/14 occurrences).
 
