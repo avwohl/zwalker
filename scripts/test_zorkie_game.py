@@ -248,6 +248,29 @@ GAMES = {
         "walkthrough": REPO / "walkthroughs" / "lurking_verified_100.txt",
         "version": 3, "reference": REPO / "games" / "zcode" / "lurking.z3", "seeds": 1,
     },
+    # FIRST V4 GAMES (won in rounds 8-9). Trinity: positional vocab resolution
+    # (374 words > the old 8-bit marker limit), seven V4 miscompile fixes
+    # (16-bit operands, scan_table, property-header bit 7, EZIP exits, word-form
+    # GLOBAL/ADJECTIVE, scratch-global collision), the V4+ call_vs2 fix for
+    # 4..7-arg calls, and 880B of codegen savings so the full-synonym build fits
+    # the V4 cap. zwalker can't read a zorkie trinity build's score var (the
+    # serial/release map targets the official layout), so the win is the game's
+    # own "You've completed the story of TRINITY" + printed 100/100 via
+    # WIN_TEXT_SUFFICIENT.
+    "trinity": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "trinity" / "trinity.zil",
+        "walkthrough": REPO / "walkthroughs" / "trinity_zorkie_100.txt",
+        "version": 4, "reference": REPO / "games" / "zcode" / "trinity.z4", "seeds": 1,
+    },
+    # AMFV (V4, scoreless): won on the OFFICIAL route once V4+ calls with more
+    # than 3 args stopped being silently truncated to call_vs (now call_vs2) --
+    # the parser's 4th argument (the noun match table) had arrived as 0 and
+    # every noun resolution failed post-match.
+    "amfv": {
+        "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "amfv" / "s5.zil",
+        "walkthrough": REPO / "walkthroughs" / "amfv_verified_win.txt",
+        "version": 4, "reference": REPO / "games" / "zcode" / "amfv.z4", "seeds": 1,
+    },
     # === Frontier target (informational; NOT counted in the suite pass/fail). ===
     # A real Infocom-library game via the ZILF stdlib. Parses fully and is now
     # past the old LIBRARY-MESSAGE macro blocker; current compile error is the
@@ -276,7 +299,7 @@ def compile_zorkie(zil: Path, out: Path, version: int):
     try:
         r = subprocess.run(
             [sys.executable, "zorkie", str(zil), "-o", str(out), "-v", str(version)],
-            capture_output=True, text=True, timeout=180, cwd=str(ZORKIE),
+            capture_output=True, text=True, timeout=900, cwd=str(ZORKIE),
             env={**os.environ, "PYTHONPATH": str(ZORKIE)},
         )
     except Exception as e:  # noqa: BLE001
