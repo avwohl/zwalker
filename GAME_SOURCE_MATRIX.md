@@ -97,7 +97,7 @@ ZILF (Tara McGrew's open-source ZIL compiler, 2010–) targets V3/V4/V5/V8.
 
 | Game | source | .z version | from-source | note |
 |------|--------|:----------:|:-----------:|------|
-| Cloak of Darkness (ZILF sample) | cloak.zil | v3 | ⚙️ compiles | ZILF-stdlib parser table not emitted → no win yet |
+| Cloak of Darkness (ZILF sample) | cloak.zil | v3 | ⚙️ runs | parser+movement work; blocked on the ZILF scope engine (#10) for object resolution |
 | Cloak of Darkness (extended) | cloak_plus.zil | v5 | — | ZILF sample; needs V5 target |
 | Colossal Cave / Advent (ZILF port) | advent.zil | v3 | — | ZILF sample (Jesse McGrew port) |
 | zil_test (ZILF sample) | zil_test.zil | v3 | — | ZILF test game |
