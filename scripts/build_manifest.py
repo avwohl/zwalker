@@ -25,6 +25,23 @@ WT = REPO / "walkthroughs"
 
 _VMAP = {"ZIP": 3, "EZIP": 4, "XZIP": 5, "YZIP": 6}
 
+# Games that COMPILE + BOOT from source but have no verified win yet (no
+# locally-distributable published binary to derive a route from). Phase-1
+# outcome; these are route-derivation candidates for the binary/solve track.
+# value = (correct entry relative to the source dir, extra compile flags, version)
+SRC_BOOTS = {
+    "seastalker": ("seastalker.zil", ["--allow-undefined-routines"], 3),
+    "bureaucracy": ("b.zil", ["--allow-undefined-routines"], 4),
+    "minizork2": ("MULTI:macros,syntax,dungeon,clock,main,parser,demons,crufty,"
+                  "verbs,actions,fights,melee", ["--allow-undefined-routines"], 3),
+    "sampler": ("sampler.zil", ["--allow-undefined-routines"], 3),
+}
+# Confirmed source-incomplete (not zorkie bugs) -- documented, not attempted.
+SRC_SOURCE_BLOCKED = {
+    "nordandbert": "PICK-NEXT defined nowhere in the tree (README: no known build)",
+    "planetfall": "comptwo.zil truncated mid-object at TRIFFID",
+}
+
 
 def src_version(game_dir: Path):
     """Z-version of a ZIL source tree: <VERSION ...> directive, else a COMPILED .z."""
@@ -133,6 +150,19 @@ def main():
             rows[stem] = {"game": stem, "src_kind": None, "src_dir": None,
                           "src_version": None, "src_win": False,
                           "pub_path": f"games/zcode/{z.name}", "pub_version": pub_version(z)}
+
+    # 3b. Phase-1 compile+boot status and source-blocked notes
+    for name, (entry, flags, ver) in SRC_BOOTS.items():
+        r = rows.get(name)
+        if r is not None:
+            r["src_boots"] = True
+            r["src_entry"] = entry
+            r["src_compile_flags"] = flags
+            r.setdefault("src_version", ver)
+    for name, why in SRC_SOURCE_BLOCKED.items():
+        r = rows.get(name)
+        if r is not None:
+            r["src_blocked"] = why
 
     # 4. walkthroughs
     for name, row in rows.items():

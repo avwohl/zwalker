@@ -33,7 +33,7 @@ Obsessively Complete Infocom Catalog (eblong.com/infocom), and IFDB/IFWiki.
 | Zork II | zork2 | ✅ 400/400 | route re-derived (PROPDEF/carry limits) |
 | Zork III | zork3 | ✅ 7/7 | lockstep-identical to R25 |
 | Mini-Zork I | minizork-1987 | ✅ 350/350 | matches official binary post-PROPDEF |
-| Mini-Zork II | minizork-1982 | — | not yet attempted |
+| Mini-Zork II | minizork-1982 | ⚙️ boots | "West of House"; 12-file build, trimmed 1982 source |
 | Deadline | deadline | ✅ win | |
 | Starcross | starcross | ✅ 400/400 | lockstep-identical to R18 |
 | Suspended | suspended | ✅ win | |
@@ -42,7 +42,7 @@ Obsessively Complete Infocom Catalog (eblong.com/infocom), and IFDB/IFWiki.
 | Enchanter | enchanter | ✅ 400/400 | |
 | Infidel | infidel | ✅ 400/400 | |
 | Sorcerer | sorcerer | ✅ 400/400 | |
-| Seastalker | seastalker | — | not yet attempted |
+| Seastalker | seastalker | ⚙️ boots | seastalker.zil; name-entry flow + "lab center" |
 | Cutthroats | cutthroats | ✅ 250/250 | |
 | Hitchhiker's Guide | hitchhikersguide | ✅ 400/400 | |
 | Suspect | suspect | ✅ win | conviction ending; route re-derived |
@@ -55,7 +55,7 @@ Obsessively Complete Infocom Catalog (eblong.com/infocom), and IFDB/IFWiki.
 | Plundered Hearts | plunderedhearts | ✅ 25/25 | |
 | Stationfall | stationfall | ✅ 80/80 | |
 | The Lurking Horror | lurkinghorror | ✅ 100/100 | |
-| Infocom Sampler | infocom-sampler | — | demo/sampler, not attempted |
+| Infocom Sampler | infocom-sampler | ⚙️ boots | sampler.zil; demo menu (Zork/Planetfall/Infidel/Witness) |
 
 ### Z-machine V4 (EZIP) — 4 sources
 
@@ -63,8 +63,8 @@ Obsessively Complete Infocom Catalog (eblong.com/infocom), and IFDB/IFWiki.
 |------|-----------|:-----------:|------|
 | A Mind Forever Voyaging | amfv | ✅ win | scoreless; first V4 game |
 | Trinity | trinity | ✅ 100/100 | first V4 game |
-| Bureaucracy | bureaucracy | — | not yet attempted |
-| Nord and Bert | nordandbert | — | not yet attempted |
+| Bureaucracy | bureaucracy | ⚙️ boots | b.zil; MDL-ZIL dialect; 1987 banner + license form |
+| Nord and Bert | nordandbert | ✋ | source-incomplete (PICK-NEXT defined nowhere) |
 
 ### Z-machine V5 (XZIP) — 4 sources
 
@@ -146,6 +146,10 @@ approximate). See `TODO.md` for the binary-solve history.
 - **28 from-source wins** — 26 V3 + 2 V4 — every V3 Infocom source with a
   verified route, plus the first two V4 games (Trinity, AMFV). Registered and
   green in `scripts/test_zorkie_game.py`.
+- **4 more compile+boot** (Phase 1): seastalker, bureaucracy (V4 MDL-ZIL),
+  minizork2, sampler — no counted win only because they lack a
+  locally-distributable published binary for route derivation; they are the
+  binary/solve track's next route-derivation candidates.
 - **V5/V6 Infocom sources (9)** are un-attempted: they need a zorkie V5/V6 target.
 - **cloak** compiles as V3 but the ZILF-library parser-table format blocks a win.
 - **planetfall** is the one V3 source that can't be built — its `comptwo.zil`

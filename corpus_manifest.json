@@ -12,8 +12,7 @@
       "pub_walkthroughs": [
         "905_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "a1rl0ck",
@@ -92,8 +91,7 @@
       "pub_walkthroughs": [
         "acorncourt_verified_30.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "adv440",
@@ -130,8 +128,7 @@
         "adventureland_verified_100.txt",
         "castle_adventure_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": false
+      "src_walkthroughs": []
     },
     {
       "game": "adverbum",
@@ -155,8 +152,7 @@
       "pub_walkthroughs": [
         "aisle_human_walkthrough.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": false
+      "src_walkthroughs": []
     },
     {
       "game": "allroads",
@@ -169,8 +165,7 @@
       "pub_walkthroughs": [
         "allroads_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "amfv",
@@ -185,8 +180,7 @@
       "pub_walkthroughs": [
         "amfv_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "amish",
@@ -210,8 +204,7 @@
       "pub_walkthroughs": [
         "anchor_human_walkthrough.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": false
+      "src_walkthroughs": []
     },
     {
       "game": "and_a_hippo_new_year",
@@ -301,8 +294,7 @@
       "pub_walkthroughs": [
         "balances_verified_51.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "ballyhoo",
@@ -317,8 +309,7 @@
       "pub_walkthroughs": [
         "ballyhoo_verified_200.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "bear",
@@ -448,9 +439,13 @@
       "src_kind": "zil",
       "src_dir": "bureaucracy",
       "src_version": 4,
-      "src_entry": null,
+      "src_entry": "b.zil",
       "src_win": false,
       "src_frontier": false,
+      "src_boots": true,
+      "src_compile_flags": [
+        "--allow-undefined-routines"
+      ],
       "pub_walkthroughs": [],
       "src_walkthroughs": []
     },
@@ -557,8 +552,7 @@
       ],
       "src_walkthroughs": [
         "cloak_zilf_win.txt"
-      ],
-      "pub_solved": true
+      ]
     },
     {
       "game": "coldiron",
@@ -571,8 +565,7 @@
       "pub_walkthroughs": [
         "coldiron_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "conan_kill_everything",
@@ -629,8 +622,7 @@
       "pub_walkthroughs": [
         "curses_human_walkthrough.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": false
+      "src_walkthroughs": []
     },
     {
       "game": "cutthroats",
@@ -647,8 +639,7 @@
       ],
       "src_walkthroughs": [
         "cutthroats_zorkie_250.txt"
-      ],
-      "pub_solved": true
+      ]
     },
     {
       "game": "czech",
@@ -696,8 +687,7 @@
       "pub_walkthroughs": [
         "deadline_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "death_to_my_enemies",
@@ -721,8 +711,7 @@
       "pub_walkthroughs": [
         "deephome_verified_300.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "degeneracy",
@@ -757,8 +746,7 @@
       "pub_walkthroughs": [
         "detective_verified_360.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "devours",
@@ -816,8 +804,7 @@
         "dreamhold_human_walkthrough.txt",
         "dreamhold_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": false
+      "src_walkthroughs": []
     },
     {
       "game": "edifice",
@@ -830,8 +817,7 @@
       "pub_walkthroughs": [
         "edifice_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "egyptian_walking_simulator",
@@ -858,8 +844,7 @@
         "enchanter_human_walkthrough.txt",
         "enchanter_verified_400.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": false
+      "src_walkthroughs": []
     },
     {
       "game": "encyclopedia_frobozzica",
@@ -973,8 +958,7 @@
       "pub_walkthroughs": [
         "hhgg_verified_400.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "hollywoodhijinx",
@@ -991,8 +975,7 @@
       ],
       "src_walkthroughs": [
         "hollywood_zorkie_150.txt"
-      ],
-      "pub_solved": true
+      ]
     },
     {
       "game": "infidel",
@@ -1007,8 +990,7 @@
       "pub_walkthroughs": [
         "infidel_verified_400.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "its_a_dogs_life",
@@ -1032,8 +1014,7 @@
       "pub_walkthroughs": [
         "jewel_verified_90.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "journey",
@@ -1059,8 +1040,7 @@
       "pub_walkthroughs": [
         "lgop_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "library",
@@ -1073,8 +1053,7 @@
       "pub_walkthroughs": [
         "library_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "lists",
@@ -1109,8 +1088,7 @@
       "pub_walkthroughs": [
         "lostpig_verified_7.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "lurkinghorror",
@@ -1125,8 +1103,7 @@
       "pub_walkthroughs": [
         "lurking_verified_100.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "mazekey",
@@ -1167,17 +1144,20 @@
       "pub_walkthroughs": [
         "minizork_verified_350.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "minizork2",
       "src_kind": "zil",
       "src_dir": "minizork-1982",
       "src_version": 3,
-      "src_entry": null,
+      "src_entry": "MULTI:macros,syntax,dungeon,clock,main,parser,demons,crufty,verbs,actions,fights,melee",
       "src_win": false,
       "src_frontier": false,
+      "src_boots": true,
+      "src_compile_flags": [
+        "--allow-undefined-routines"
+      ],
       "pub_walkthroughs": [
         "minizork_verified_350.txt"
       ],
@@ -1196,8 +1176,7 @@
       "pub_walkthroughs": [
         "moonmist_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "night_of_the_vampire_bunnies",
@@ -1218,6 +1197,7 @@
       "src_entry": null,
       "src_win": false,
       "src_frontier": false,
+      "src_blocked": "PICK-NEXT defined nowhere in the tree (README: no known build)",
       "pub_walkthroughs": [],
       "src_walkthroughs": []
     },
@@ -1232,8 +1212,7 @@
       "pub_walkthroughs": [
         "pentari_verified_70.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "photopia",
@@ -1247,8 +1226,7 @@
         "photopia_human_walkthrough.txt",
         "photopia_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": false
+      "src_walkthroughs": []
     },
     {
       "game": "planetfall",
@@ -1260,12 +1238,12 @@
       "src_frontier": false,
       "pub_path": "games/zcode/planetfall.z3",
       "pub_version": 3,
+      "src_blocked": "comptwo.zil truncated mid-object at TRIFFID",
       "pub_walkthroughs": [
         "planetfa_human_walkthrough.txt",
         "planetfall_verified_80.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": false
+      "src_walkthroughs": []
     },
     {
       "game": "plunderedhearts",
@@ -1280,8 +1258,7 @@
       "pub_walkthroughs": [
         "plundered_verified_25.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "ralph",
@@ -1329,17 +1306,20 @@
       "pub_walkthroughs": [
         "reverb_verified_50.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "sampler",
       "src_kind": "zil",
       "src_dir": "infocom-sampler",
       "src_version": 3,
-      "src_entry": null,
+      "src_entry": "sampler.zil",
       "src_win": false,
       "src_frontier": false,
+      "src_boots": true,
+      "src_compile_flags": [
+        "--allow-undefined-routines"
+      ],
       "pub_walkthroughs": [],
       "src_walkthroughs": []
     },
@@ -1348,9 +1328,13 @@
       "src_kind": "zil",
       "src_dir": "seastalker",
       "src_version": 3,
-      "src_entry": null,
+      "src_entry": "seastalker.zil",
       "src_win": false,
       "src_frontier": false,
+      "src_boots": true,
+      "src_compile_flags": [
+        "--allow-undefined-routines"
+      ],
       "pub_walkthroughs": [],
       "src_walkthroughs": []
     },
@@ -1365,8 +1349,7 @@
       "pub_walkthroughs": [
         "shade_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "sherlock",
@@ -1392,8 +1375,7 @@
       "pub_walkthroughs": [
         "sorcerer_verified_400.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "spellbreaker",
@@ -1408,8 +1390,7 @@
       "pub_walkthroughs": [
         "spellbreaker_verified_600.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "spider_and_web",
@@ -1446,8 +1427,7 @@
       "pub_walkthroughs": [
         "starcross_verified_400.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "stationfall",
@@ -1462,8 +1442,7 @@
       "pub_walkthroughs": [
         "stationfall_verified_80.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "suspect",
@@ -1480,8 +1459,7 @@
       ],
       "src_walkthroughs": [
         "suspect_zorkie_win.txt"
-      ],
-      "pub_solved": true
+      ]
     },
     {
       "game": "suspended",
@@ -1496,8 +1474,7 @@
       "pub_walkthroughs": [
         "suspended_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "suveh_nux",
@@ -1510,8 +1487,7 @@
       "pub_walkthroughs": [
         "suveh_nux_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "tangle",
@@ -1645,8 +1621,7 @@
       "pub_walkthroughs": [
         "theatre_verified_50.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "trinity",
@@ -1664,8 +1639,7 @@
       ],
       "src_walkthroughs": [
         "trinity_zorkie_100.txt"
-      ],
-      "pub_solved": false
+      ]
     },
     {
       "game": "vicious_cycles",
@@ -1689,8 +1663,7 @@
       "pub_walkthroughs": [
         "wearing_the_claw_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "winter",
@@ -1718,8 +1691,7 @@
       ],
       "src_walkthroughs": [
         "wishbringer_zorkie_100.txt"
-      ],
-      "pub_solved": true
+      ]
     },
     {
       "game": "witness",
@@ -1734,8 +1706,7 @@
       "pub_walkthroughs": [
         "witness_verified_win.txt"
       ],
-      "src_walkthroughs": [],
-      "pub_solved": true
+      "src_walkthroughs": []
     },
     {
       "game": "zombies",
@@ -1775,8 +1746,7 @@
       "src_walkthroughs": [
         "zork1_zorkie_350.txt",
         "zork1_zorkie_route.txt"
-      ],
-      "pub_solved": true
+      ]
     },
     {
       "game": "zork2",
@@ -1795,8 +1765,7 @@
       "src_walkthroughs": [
         "zork2_zorkie_400.txt",
         "zork2_zorkie_route.txt"
-      ],
-      "pub_solved": false
+      ]
     },
     {
       "game": "zork3",
