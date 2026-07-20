@@ -1194,10 +1194,11 @@
       "src_kind": "zil",
       "src_dir": "nordandbert",
       "src_version": 4,
-      "src_entry": null,
+      "src_entry": "nordandbert.zil",
       "src_win": false,
       "src_frontier": false,
-      "src_blocked": "PICK-NEXT defined nowhere in the tree (README: no known build)",
+      "src_boots": true,
+      "src_compile_flags": [],
       "pub_walkthroughs": [],
       "src_walkthroughs": []
     },
@@ -1238,7 +1239,6 @@
       "src_frontier": false,
       "pub_path": "games/zcode/planetfall.z3",
       "pub_version": 3,
-      "src_blocked": "comptwo.zil truncated mid-object at TRIFFID",
       "pub_walkthroughs": [
         "planetfa_human_walkthrough.txt",
         "planetfall_verified_80.txt"

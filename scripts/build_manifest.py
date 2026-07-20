@@ -35,11 +35,12 @@ SRC_BOOTS = {
     "minizork2": ("MULTI:macros,syntax,dungeon,clock,main,parser,demons,crufty,"
                   "verbs,actions,fights,melee", ["--allow-undefined-routines"], 3),
     "sampler": ("sampler.zil", ["--allow-undefined-routines"], 3),
+    "nordandbert": ("nordandbert.zil", [], 4),  # the-infocom-files mirror
 }
 # Confirmed source-incomplete (not zorkie bugs) -- documented, not attempted.
 SRC_SOURCE_BLOCKED = {
-    "nordandbert": "PICK-NEXT defined nowhere in the tree (README: no known build)",
-    "planetfall": "comptwo.zil truncated mid-object at TRIFFID",
+    # (planetfall + nordandbert historicalsource truncation resolved by
+    # repointing those submodules to the more-complete the-infocom-files mirror.)
 }
 
 

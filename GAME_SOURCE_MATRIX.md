@@ -64,7 +64,7 @@ Obsessively Complete Infocom Catalog (eblong.com/infocom), and IFDB/IFWiki.
 | A Mind Forever Voyaging | amfv | ✅ win | scoreless; first V4 game |
 | Trinity | trinity | ✅ 100/100 | first V4 game |
 | Bureaucracy | bureaucracy | ⚙️ boots | b.zil; MDL-ZIL dialect; 1987 banner + license form |
-| Nord and Bert | nordandbert | ✋ | source-incomplete (PICK-NEXT defined nowhere) |
+| Nord and Bert | nordandbert | ⚙️ boots | the-infocom-files mirror; nordandbert.zil; title/status line |
 
 ### Z-machine V5 (XZIP) — 4 sources
 
@@ -84,6 +84,11 @@ Obsessively Complete Infocom Catalog (eblong.com/infocom), and IFDB/IFWiki.
 | Arthur | arthur | — | V6 |
 | Restaurant at the End of the Universe (HHGG 2, unreleased) | restaurant | — | h2.z6 |
 | Abyss (demo) | abyss | — | abyss.z6 |
+
+**Mirror note:** two submodules (planetfall, nordandbert) were repointed from
+`historicalsource` (which had truncated/incomplete checkouts) to
+`the-infocom-files`, which carries the complete source. Prefer the-infocom-files
+when a historicalsource game looks truncated or missing routines.
 
 **Infocom ZIL source NOT in the local corpus** (source not public / not mirrored):
 Shogun (v6). Everything else Infocom shipped has source here.
