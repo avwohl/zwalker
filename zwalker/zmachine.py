@@ -124,12 +124,63 @@ class ZMachine:
             self.memory[0x24:0x26] = (24).to_bytes(2, 'big')  # height, units
             self.memory[0x26] = 1          # font width, units (V5)
             self.memory[0x27] = 1          # font height, units (V5)
+        # Standard revision number (§11.1.5): claim Standard 1.1, as dfrotz
+        # does. Left zero, conformance-checking games (Silicon Castles) boot
+        # into a "your interpreter does not conform" warning + keypress gate
+        # that desynchronizes scripted play. (Corpus-sweep find.)
+        self.memory[0x32] = 1
+        self.memory[0x33] = 1
+
+    @staticmethod
+    def _unwrap_blorb(data: bytes) -> bytes:
+        """Extract the ZCOD chunk from a Blorb container, if `data` is one.
+
+        Several wild-corpus files carry .z5/.z8 extensions but are actually
+        Blorb archives (IFF "FORM" + "IFRS"); loading the raw wrapper bytes as
+        Z-machine memory decodes IFF headers as z-text garbage. Walk the IFF
+        chunks (4-byte id, big-endian u32 length, padded to even) and return
+        the ZCOD payload; non-Blorb data is returned unchanged. (Corpus-sweep
+        find; dfrotz prints "Found zcode chunk in Blorb file" for these.)
+        """
+        if len(data) < 16 or data[0:4] != b"FORM" or data[8:12] != b"IFRS":
+            return data
+        pos = 12
+        while pos + 8 <= len(data):
+            cid = data[pos:pos + 4]
+            clen = int.from_bytes(data[pos + 4:pos + 8], "big")
+            if cid == b"ZCOD":
+                return data[pos + 8:pos + 8 + clen]
+            pos += 8 + clen + (clen & 1)   # chunks are padded to even length
+        return data  # no ZCOD chunk; let the header parser complain
 
     def __init__(self, data: bytes):
+        data = self._unwrap_blorb(bytes(data))
         self.original_data = bytes(data)
         self.memory = bytearray(data)
         self._init_interpreter_header()
         self.header = self._parse_header()
+
+        # Custom alphabet table (V5+, header word 0x34; Standard §3.5.5):
+        # 78 bytes = 3 rows of 26 ZSCII codes for z-chars 6-31 of A0/A1/A2.
+        # Non-English wild-corpus games (Russian, accented Spanish/Swedish)
+        # define one; ignoring it garbles ALL their text. Z-char 6 of A2
+        # stays the ZSCII escape (handled in decode) and z-char 7 of A2 is
+        # always newline regardless of the table. Instance A0/A1 shadow the
+        # class defaults so the dictionary encoder picks them up too.
+        self.custom_A2 = None
+        if self.header.version >= 5 and len(self.memory) > 0x36:
+            tbl = struct.unpack('>H', self.memory[0x34:0x36])[0]
+            if tbl and tbl + 78 <= len(self.memory):
+                def _row(off):
+                    return "".join(
+                        chr(c) if 32 <= c <= 126 else
+                        ('\n' if c == 13 else self.zscii_to_unicode(c))
+                        for c in self.memory[tbl + off:tbl + off + 26])
+                self.A0 = _row(0)
+                self.A1 = _row(26)
+                a2 = list(_row(52))
+                a2[1] = '\n'               # z-char 7 of A2: always newline
+                self.custom_A2 = "".join(a2)
 
         # CPU state
         self.pc = self.header.initial_pc
@@ -221,14 +272,29 @@ class ZMachine:
 
     def write_byte(self, addr: int, value: int) -> None:
         if addr >= self.header.static_memory:
-            raise ZMachineError(f"Write to static memory at 0x{addr:04X}")
-        self.memory[addr] = value & 0xFF
+            self._static_write(addr)
+        if addr < len(self.memory):
+            self.memory[addr] = value & 0xFF
 
     def write_word(self, addr: int, value: int) -> None:
         if addr >= self.header.static_memory:
-            raise ZMachineError(f"Write to static memory at 0x{addr:04X}")
-        self.memory[addr] = (value >> 8) & 0xFF
-        self.memory[addr + 1] = value & 0xFF
+            self._static_write(addr)
+        if addr + 1 < len(self.memory):
+            self.memory[addr] = (value >> 8) & 0xFF
+            self.memory[addr + 1] = value & 0xFF
+
+    def _static_write(self, addr: int) -> None:
+        """A write at/above the static-memory mark.
+
+        The Standard forbids it, but several wild-corpus games do it and the
+        reference interpreters tolerate it by default (frotz reports it only
+        under its strict error-checking levels). Match that: raise under
+        ZWALKER_STRICT=1, otherwise count it and let the write proceed
+        (bounds-checked against the memory image by the callers).
+        """
+        if self.strict:
+            raise ZMachineError(f"strict: write to static memory at 0x{addr:04X}")
+        self._static_write_count = getattr(self, "_static_write_count", 0) + 1
 
     # Stack operations
     def push(self, value: int) -> None:
@@ -325,13 +391,20 @@ class ZMachine:
         zscii_state = 0
         zscii_high = 0
 
-        # Version-specific A2
-        if self.header.version == 1:
+        # Version-specific A2 (a custom alphabet table overrides it, §3.5.5)
+        if getattr(self, 'custom_A2', None):
+            A2 = self.custom_A2
+        elif self.header.version == 1:
             A2 = " 0123456789.,!?_#'\"/\\<-:()"
         else:
             A2 = " \n0123456789.,!?_#'\"/\\-:()"
 
         while True:
+            # A garbage "string" (object-table heuristics probing non-string
+            # memory in a wild-corpus game) has no stop bit and can walk off
+            # the end of memory; stop at the boundary instead of raising.
+            if addr + 1 >= len(self.memory):
+                return "".join(result), addr
             word = self.read_word(addr)
             addr += 2
 
@@ -2124,7 +2197,10 @@ class ZMachine:
             self.put_property(ops[0], ops[1], ops[2])
 
         elif name == "sread" or name == "aread" or name == "read":
-            # Input instruction - pause execution
+            # Input instruction - pause execution. Any queued keypress
+            # remainder (a command partially eaten by a read_char gate) is
+            # dropped so the NEXT full command lands on this line input.
+            self._char_input_buffer = ""
             self.waiting_for_input = True
             text_buffer = ops[0]
             parse_buffer = ops[1] if len(ops) > 1 else 0
@@ -2225,27 +2301,40 @@ class ZMachine:
             pass  # Ignore
 
         elif name == "read_char":
-            self.waiting_for_input = True
+            # Consume a queued keypress first: a line-oriented driver's
+            # command becomes a char STREAM (chars + terminating RETURN), so
+            # consecutive read_chars see 'l','o','o','k',13 instead of one
+            # 'l' with the rest silently discarded. Without this, "press
+            # SPACE to begin" gates that loop until an accepted key ate one
+            # whole command per keypress and the game went permanently dead
+            # (corpus sweep: sherbet.z5, curses-r14.z5). This matches dumb
+            # frotz, which feeds read_char from the same stdin byte stream.
+            buf = getattr(self, "_char_input_buffer", "")
+            if buf:
+                self._char_input_buffer = buf[1:]
+                self.set_variable(store_var, ord(buf[0]))
+            else:
+                self.waiting_for_input = True
 
-            def handle_char(input_text: str):
-                # Line-oriented drivers (walkthrough replays) cannot express a
-                # bare RETURN keypress: blank lines are stripped from command
-                # scripts before they reach the VM. Accept the literal words
-                # "enter"/"return" as the RETURN key (code 13) so raw-keypress
-                # menus (e.g. Theatre's journal reader) can be driven from a
-                # plain command list. Any other text supplies its first
-                # character, exactly as before.
-                t = input_text.strip().lower() if input_text else ""
-                if not input_text or t in ("enter", "return"):
-                    char = 13
-                else:
-                    char = ord(input_text[0])
-                self.set_variable(store_var, char)
-                self.waiting_for_input = False
-                self.pending_input_callback = None
+                def handle_char(input_text: str):
+                    # Line-oriented drivers cannot express a bare RETURN
+                    # keypress: blank lines are stripped from command scripts
+                    # before they reach the VM. Accept the literal words
+                    # "enter"/"return" as the RETURN key (code 13) so
+                    # raw-keypress menus (e.g. Theatre's journal reader) can
+                    # be driven from a plain command list.
+                    t = input_text.strip().lower() if input_text else ""
+                    if not input_text or t in ("enter", "return"):
+                        stream = "\r"
+                    else:
+                        stream = input_text + "\r"
+                    self._char_input_buffer = stream[1:]
+                    self.set_variable(store_var, ord(stream[0]))
+                    self.waiting_for_input = False
+                    self.pending_input_callback = None
 
-            self.pending_input_callback = handle_char
-            return False
+                self.pending_input_callback = handle_char
+                return False
 
         elif name == "scan_table":
             x = ops[0]
@@ -2302,7 +2391,17 @@ class ZMachine:
 
             for row in range(height):
                 for col in range(width):
-                    self.print_char(self.read_byte(addr + row * (width + skip) + col))
+                    cell = addr + row * (width + skip) + col
+                    if cell >= len(self.memory):
+                        # Wild-corpus games pass table geometry that runs off
+                        # the end of memory (IFComp 2009 "Interface"); clamp
+                        # like reference interpreters instead of crashing.
+                        if self.strict:
+                            raise ZMachineError(
+                                f"strict: print_table read past memory at "
+                                f"0x{cell:04X} (pc=0x{self.pc:04X})")
+                        break
+                    self.print_char(self.read_byte(cell))
                 if row < height - 1:
                     self.print_text("\n")
 
@@ -2516,11 +2615,20 @@ class ZMachine:
                 zchars.append(4)  # Shift to A1
                 zchars.append(self.A1.index(c) + 6)
             else:
-                # A2 character or special
-                a2 = " \n0123456789.,!?_#'\"/\\-:()"
+                # A2 character or special (custom alphabet table overrides)
+                a2 = self.custom_A2 or " \n0123456789.,!?_#'\"/\\-:()"
                 if c in a2:
                     zchars.append(5)  # Shift to A2
                     zchars.append(a2.index(c) + 6)
+                else:
+                    # 10-bit ZSCII escape (§3.5.4) -- needed so accented
+                    # input words in custom-alphabet games can still match
+                    # dictionary entries encoded the same way.
+                    z = self.unicode_to_zscii(c)
+                    zchars.append(5)
+                    zchars.append(6)
+                    zchars.append((z >> 5) & 0x1F)
+                    zchars.append(z & 0x1F)
 
         # Pad with 5s (shift to A2, but no character follows = padding)
         while len(zchars) < max_chars:
