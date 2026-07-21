@@ -117,10 +117,12 @@
     },
     {
       "game": "advent",
-      "src_kind": null,
+      "src_kind": "zilf/toy",
       "src_dir": null,
-      "src_version": null,
-      "src_win": false,
+      "src_version": 3,
+      "src_entry": "advent.zil",
+      "src_win": true,
+      "src_frontier": false,
       "pub_path": "games/zcode/advent.z6",
       "pub_version": 6,
       "pub_walkthroughs": [
@@ -128,7 +130,9 @@
         "adventureland_verified_100.txt",
         "castle_adventure_verified_win.txt"
       ],
-      "src_walkthroughs": []
+      "src_walkthroughs": [
+        "advent_zorkie_win.txt"
+      ]
     },
     {
       "game": "adverbum",
