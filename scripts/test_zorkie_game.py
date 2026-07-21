@@ -296,19 +296,18 @@ GAMES = {
     # fixes: ZIP-OPTIONS/IF-UNDO conditionals (the old "ISAVE requires V5" was this
     # -- cloak is <VERSION ZIP>=V3 and the undo code must be stripped, not a
     # missing-version-support bug), the LIBRARY-MESSAGE system, DEFAULT-DEFINITION,
-    # DEFSTRUCT, the pronoun subsystem, and compile-time table-constructor DEFINE
-    # inlining + ITABLE-size folding. It does NOT win yet: the ZILF *library*
-    # parser (_is_classic_parser=False) reads a VERBS/syntax-table byte layout
-    # zorkie doesn't emit for that dialect, so MATCH-SYNTAX never sets PRSA and
-    # every command mis-dispatches. Remaining work is that parser-table format,
-    # not compile-time macros. See docs/ZORKIE_TESTING.md.
+    # DEFSTRUCT, the pronoun subsystem, the VERBS/syntax-table emission, and the
+    # full ZILF compile-time metaprogramming SCOPE ENGINE (top-level DEFINE-driven
+    # list building + MAPF/EVAL that emits the scope-stage routines + LENGTH/MAPF
+    # constant folding). cloak now plays to the "You win" ending -- the FIRST
+    # ZILF-standard-library game to win from source. ~25 general ZILF-dialect
+    # fixes across rounds; see the git log.
     "cloak": {
         "zil": ZORKIE / "tests" / "test-pairs" / "cloak.zil",
         "walkthrough": REPO / "walkthroughs" / "cloak_zilf_win.txt",
         "version": 3,
         "reference": ZORKIE / "tests" / "test-pairs" / "cloak.z3",  # ZILF 0.8 golden
         "seeds": 1,
-        "frontier": True,
     },
     # Next targets (see docs/ZORKIE_TESTING.md): advent (zorkie games/advent_source/
     # advent.zil; re-fetch the 404-stub golden first), then comp-scale games, then

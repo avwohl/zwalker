@@ -102,7 +102,7 @@ ZILF (Tara McGrew's open-source ZIL compiler, 2010–) targets V3/V4/V5/V8.
 
 | Game | source | .z version | from-source | note |
 |------|--------|:----------:|:-----------:|------|
-| Cloak of Darkness (ZILF sample) | cloak.zil | v3 | ⚙️ runs | parser+movement work; blocked on the ZILF scope engine (#10) for object resolution |
+| Cloak of Darkness (ZILF sample) | cloak.zil | v3 | ✅ win | FIRST ZILF-library win ("You win"); full ZILF scope engine implemented |
 | Cloak of Darkness (extended) | cloak_plus.zil | v5 | — | ZILF sample; needs V5 target |
 | Colossal Cave / Advent (ZILF port) | advent.zil | v3 | — | ZILF sample (Jesse McGrew port) |
 | zil_test (ZILF sample) | zil_test.zil | v3 | — | ZILF test game |
@@ -113,10 +113,10 @@ ZILF (Tara McGrew's open-source ZIL compiler, 2010–) targets V3/V4/V5/V8.
 | Thread Unlocked (Max Fog) | (community) | ? | — | minimal ZIL choice game |
 | Method in my Madness (Max Fog) | (community) | ? | — | minimal ZIL choice game |
 
-Note: the ZILF standard library's parser uses a VERBS/syntax-table layout the
-zorkie codegen does not yet emit (`_is_classic_parser=False`), so ZILF-library
-games (cloak, advent, Milliways) compile but don't yet play — this is the next
-frontier and would unlock the whole ZILF-library corpus at once.
+Note: the ZILF-library path (`_is_classic_parser=False`) now WORKS end to end --
+cloak wins. The syntax-table emission + the full compile-time scope engine are in;
+advent/Milliways (same library) are now route-derivation candidates, not compiler
+frontiers.
 
 ---
 
@@ -134,13 +134,13 @@ approximate). See `TODO.md` for the binary-solve history.
 |:-----:|:-------------:|:--------------:|:--------------------:|:----------------:|:-------------------:|
 | v1 | 0¹ | 0 | 0 | 2 | 1 |
 | v2 | 0¹ | 0 | 0 | 0 | 0 |
-| **v3** | 27 | 6² | **27** (24 Infocom + 3 toys) | 33 | 32 |
+| **v3** | 27 | 6² | **28** (24 Infocom + 3 toys + cloak) | 33 | 32 |
 | **v4** | 4 | 0 | **2** (trinity, amfv) | 4 | 2 |
 | v5 | 4 | 1 (cloak_plus) | 0 | 83 | 17 |
 | v6 | 5 | 0 | 0 | 2 | 0 |
 | v7 | 0 | 0 | 0 | 0 | 0 |
 | v8 | 0 | 0³ | 0 | 21 | 4 |
-| **total** | **40** | **~7** | **29** | **~145** | **~56** |
+| **total** | **40** | **~7** | **30** | **~145** | **~56** |
 
 ¹ Zork I's earliest revisions are v1/v2 but only the v3 ZIL source is in the corpus.
 ² 3 zorkie toys (microquest/mazekey/reactor) + the ZILF samples cloak/advent/zil_test.
@@ -148,7 +148,7 @@ approximate). See `TODO.md` for the binary-solve history.
 
 ### Headline
 
-- **29 from-source wins** — 27 V3 + 2 V4 — every V3 Infocom source with a
+- **30 from-source wins** — 28 V3 (incl. cloak, first ZILF-library win) + 2 V4 — every V3 Infocom source with a
   verified route, plus the first two V4 games (Trinity, AMFV). Registered and
   green in `scripts/test_zorkie_game.py`.
 - **4 more compile+boot** (Phase 1): seastalker, bureaucracy (V4 MDL-ZIL),

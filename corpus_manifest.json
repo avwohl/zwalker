@@ -545,8 +545,8 @@
       "src_dir": null,
       "src_version": 3,
       "src_entry": "cloak.zil",
-      "src_win": false,
-      "src_frontier": true,
+      "src_win": true,
+      "src_frontier": false,
       "pub_path": "games/zcode/cloak.z3",
       "pub_version": 3,
       "pub_walkthroughs": [
