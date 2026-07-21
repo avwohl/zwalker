@@ -104,7 +104,7 @@ ZILF (Tara McGrew's open-source ZIL compiler, 2010–) targets V3/V4/V5/V8.
 |------|--------|:----------:|:-----------:|------|
 | Cloak of Darkness (ZILF sample) | cloak.zil | v3 | ✅ win | FIRST ZILF-library win ("You win"); full ZILF scope engine implemented |
 | Cloak of Darkness (extended) | cloak_plus.zil | v5 | — | ZILF sample; needs V5 target |
-| Colossal Cave / Advent (ZILF port) | advent.zil | v3 | ⚙️ boots+plays | compiles (65 KB V3), boots, plays opening moves; blocked on the `FINISH-HINTS` compile-time hint-table macro (I-OFFER-HINT calls an unresolved `HINT-CONDITION-TBL` routine) |
+| Colossal Cave / Advent (ZILF port) | advent.zil | v3 | ⚙️ plays | compiles (67 KB V3) with faithful hint tables (compile-time DEFSTRUCT + FINISH-HINTS metaprogramming), boots, and plays (End Of Road → Building → cave) with no bad calls. Remaining for a from-source **win**: a 350-pt route + a separate `<CONSTANT <STRING <IFFLAG…>…>>` GAME-BANNER codegen bug (dfrotz turn-1 underflow; zwalker tolerates it) |
 | zil_test (ZILF sample) | zil_test.zil | v3 | — | ZILF test game |
 | microquest (zorkie toy) | microquest.zil | v3 | ✅ win | self-contained ZIL toy |
 | mazekey (zorkie toy) | mazekey.zil | v3 | ✅ win | self-contained ZIL toy |
