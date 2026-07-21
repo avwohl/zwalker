@@ -1,0 +1,294 @@
+#% MAX_SCORE: 350
+#% WIN_TEXT: off into the sunset
+# Colossal Cave (ZILF port) SRC route for the zorkie build, derived by
+# scripts/solve_advent_adaptive.py (seed 3; also wins the real-ZILF golden
+# games/zcode/advent.z3 r1/s151001 with identical turn count).
+no
+in
+take lamp
+on
+plugh
+plover
+ne
+take pyramid
+s
+plover
+s
+z
+take axe
+take silver
+n
+plugh
+off
+drop silver
+drop pyramid
+take bottle
+on
+plugh
+s
+d
+w
+d
+w
+w
+w
+w
+d
+water plant
+u
+w
+u
+n
+n
+throw axe at dwarf
+take axe
+fill bottle
+s
+s
+d
+s
+d
+water plant
+u
+e
+d
+fill bottle
+u
+e
+nw
+nw
+n
+w
+drop bottle
+drop axe
+drop lamp
+e
+take emerald
+w
+take lamp
+take bottle
+take axe
+throw axe at dwarf
+take axe
+nw
+s
+take vase
+se
+e
+take pillow
+w
+w
+w
+d
+climb plant
+w
+n
+oil door
+drop bottle
+open door
+n
+take trident
+w
+d
+se
+se
+ne
+e
+n
+unlock clam with trident
+d
+d
+take pearl
+u
+u
+s
+u
+e
+u
+n
+plugh
+off
+drop pillow
+drop emerald
+drop pearl
+drop trident
+drop vase
+on
+xyzzy
+take rod
+e
+take cage
+w
+w
+w
+drop rod
+take bird
+take rod
+w
+d
+d
+free bird
+drop cage
+sw
+w
+kill dragon
+yes
+take rug
+e
+e
+w
+take coins
+e
+s
+take jewelry
+n
+u
+w
+wave rod
+drop rod
+w
+take diamonds
+e
+e
+s
+take nugget
+n
+n
+n
+n
+plugh
+off
+drop coins
+drop rug
+drop nugget
+drop diamonds
+drop jewelry
+take food
+take keys
+on
+plugh
+s
+throw axe at dwarf
+take axe
+d
+w
+d
+w
+w
+w
+w
+d
+climb plant
+w
+take eggs
+n
+n
+w
+throw axe at dwarf
+take axe
+d
+sw
+u
+ne
+throw eggs at troll
+ne
+ne
+e
+se
+s
+e
+give food to bear
+unlock chain with keys
+take chain
+drop keys
+take bear
+w
+w
+n
+ne
+e
+take spices
+w
+s
+w
+w
+sw
+release bear
+sw
+sw
+d
+se
+se
+w
+throw axe at dwarf
+take axe
+w
+d
+climb plant
+w
+fee
+fie
+foe
+foo
+take eggs
+s
+d
+u
+w
+u
+s
+e
+e
+n
+n
+plugh
+off
+drop eggs
+on
+plugh
+s
+s
+u
+w
+w
+w
+s
+e
+s
+s
+throw axe at dwarf
+take axe
+s
+n
+e
+e
+nw
+take chest
+take chain
+take spices
+se
+n
+d
+e
+e
+xyzzy
+drop spices
+drop chest
+drop chain
+plugh
+s
+d
+w
+d
+e
+take magazine
+e
+drop magazine
+z
+z
+sw
+take rod
+ne
+drop rod
+sw
+blast

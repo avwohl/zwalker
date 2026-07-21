@@ -104,7 +104,7 @@ ZILF (Tara McGrew's open-source ZIL compiler, 2010–) targets V3/V4/V5/V8.
 |------|--------|:----------:|:-----------:|------|
 | Cloak of Darkness (ZILF sample) | cloak.zil | v3 | ✅ win | FIRST ZILF-library win ("You win"); full ZILF scope engine implemented |
 | Cloak of Darkness (extended) | cloak_plus.zil | v5 | — | ZILF sample; needs V5 target |
-| Colossal Cave / Advent (ZILF port) | advent.zil | v3 | ⚙️ plays+scores | banner prints, first-touch/carry/deposit treasure scoring matches the real-ZILF golden (fixes: `'(BYTE)` table flag, `<CONSTANT <STRING…>>` fold, `%<* <- ,MAX-TREASURES 1> 2>` const-arith, DO-bound folding, LOWCORE-TABLE, REPLACE-DEFINITION/IF-BETA, FINISH-HINTS). Remaining for a from-source **win**: the `<MAZE-ROOM>` compile-time `<EVAL <FORM ROOM…>>` emission (~20 maze rooms missing → object-table knock-ons: doubled dwarf match, dead `water plant` arm) — in progress. **cloak is now fully dfrotz-clean to its win** (the gameplay garble was gen_voc emitting nothing for `<VOC…>` comparands in EXPAND-PRONOUN; fixed + tested) |
+| Colossal Cave / Advent (ZILF port) | advent.zil | v3 | ✅ **win 350/350** | The second ZILF-standard-library win and the deepest from-source game yet: full 350-point Colossal Cave, adaptive route (seed 3, 289 cmds) that ALSO wins the **real-ZILF golden** `games/zcode/advent.z3` (r1/s151001) with an identical turn count — zorkie's build cross-checked against genuine ZILF output. Took ~25 ZILF-dialect fixes across four rounds: REPLACE-DEFINITION/IF-BETA, FINISH-HINTS hint engine, LOWCORE-TABLE, gen_voc, `'(BYTE)` table flag, `<CONSTANT <STRING…>>` fold, %-immediate const-arith, EVAL-FORM-ROOM maze expansion (37 rooms), MAP-SCOPE option dispatch, SYNTAX action-name override, PRONOUN props, SYNONYM/ADJECTIVE encoding, PER-exit encoding, MAPF/UNPARSE. **cloak is fully dfrotz-clean to its win** (gen_voc fix) |
 | zil_test (ZILF sample) | zil_test.zil | v3 | — | ZILF test game |
 | microquest (zorkie toy) | microquest.zil | v3 | ✅ win | self-contained ZIL toy |
 | mazekey (zorkie toy) | mazekey.zil | v3 | ✅ win | self-contained ZIL toy |
@@ -134,7 +134,7 @@ approximate). See `TODO.md` for the binary-solve history.
 |:-----:|:-------------:|:--------------:|:--------------------:|:----------------:|:-------------------:|
 | v1 | 0¹ | 0 | 0 | 2 | 1 |
 | v2 | 0¹ | 0 | 0 | 0 | 0 |
-| **v3** | 27 | 6² | **28** (24 Infocom + 3 toys + cloak) | 33 | 32 |
+| **v3** | 27 | 6² | **29** (24 Infocom + 3 toys + cloak + advent) | 33 | 32 |
 | **v4** | 4 | 0 | **2** (trinity, amfv) | 4 | 2 |
 | v5 | 4 | 1 (cloak_plus) | 0 | 83 | 17 |
 | v6 | 5 | 0 | 0 | 2 | 0 |
@@ -148,7 +148,7 @@ approximate). See `TODO.md` for the binary-solve history.
 
 ### Headline
 
-- **30 from-source wins** — 28 V3 (incl. cloak, first ZILF-library win) + 2 V4 — every V3 Infocom source with a
+- **31 from-source wins** — 29 V3 (incl. cloak and the full 350-point advent, both ZILF-library) + 2 V4 — every V3 Infocom source with a
   verified route, plus the first two V4 games (Trinity, AMFV). Registered and
   green in `scripts/test_zorkie_game.py`.
 - **4 more compile+boot** (Phase 1): seastalker, bureaucracy (V4 MDL-ZIL),
@@ -156,7 +156,6 @@ approximate). See `TODO.md` for the binary-solve history.
   locally-distributable published binary for route derivation; they are the
   binary/solve track's next route-derivation candidates.
 - **V5 target now works** (Border Zone compiles/boots/parses, first V5 game); Beyond Zork/Sherlock/cloak_plus next. V6 sources still need a V6 target (+ zwalker V6 interpreter).
-- **cloak** compiles as V3 but the ZILF-library parser-table format blocks a win.
 - **planetfall** now WINS 80/80: its historicalsource `comptwo.zil` was
   truncated, but the-infocom-files has the complete source (submodule repointed).
 

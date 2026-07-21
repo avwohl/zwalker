@@ -321,9 +321,23 @@ GAMES = {
         "reference": None,
         "seeds": 1,
     },
-    # Next targets (see docs/ZORKIE_TESTING.md): advent (zorkie games/advent_source/
-    # advent.zil; re-fetch the 404-stub golden first), then comp-scale games, then
-    # the full Infocom titles as zorkie's routine codegen coverage closes.
+    # The second ZILF-standard-library game, and by far the deepest: the full
+    # 350-point Colossal Cave. Getting here took the FINISH-HINTS compile-time
+    # hint engine, EVAL-FORM-ROOM maze expansion (37 EVAL-built rooms), the
+    # MAP-SCOPE option dispatch, the SYNTAX action-name override, the '(BYTE)
+    # table flag, %-immediate constant arithmetic, and a dozen more
+    # ZILF-dialect fixes -- see the zorkie git log. The route is an adaptive
+    # recording (dwarf/axe combat + pirate robbery are RNG; seed 3 wins) that
+    # ALSO wins the real-ZILF golden games/zcode/advent.z3 (r1/s151001) with
+    # an identical turn count, so the reference row cross-checks zorkie's
+    # build against genuine ZILF output on the same route.
+    "advent": {
+        "zil": ZORKIE / "tests" / "test-pairs" / "advent.zil",
+        "walkthrough": REPO / "walkthroughs" / "advent_zorkie_win.txt",
+        "version": 3,
+        "reference": REPO / "games" / "zcode" / "advent.z3",  # real-ZILF golden
+        "seeds": 4,
+    },
 }
 
 
