@@ -38,7 +38,10 @@ from tempfile import mkdtemp
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
-ZORKIE = Path.home() / "src" / "zorkie"
+# ZORKIE env var overrides the compiler checkout -- lets the suite run against
+# an isolated worktree (e.g. gating a branch, or a strict-mode sweep while the
+# main checkout is busy) without touching this file.
+ZORKIE = Path(os.environ.get("ZORKIE", str(Path.home() / "src" / "zorkie")))
 
 from zwalker.walker import GameWalker  # noqa: E402
 
