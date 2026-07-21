@@ -2326,7 +2326,18 @@ class ZMachine:
                     t = input_text.strip().lower() if input_text else ""
                     if not input_text or t in ("enter", "return"):
                         stream = "\r"
+                    elif len(input_text) == 1:
+                        # A single character is a KEYPRESS: no synthetic
+                        # RETURN. Menu-driven routes (amfv's PRISM interface)
+                        # send one key per command; appending CR made the
+                        # next read_char see ENTER and desynced the menus
+                        # (caught by the L2 confirm run).
+                        stream = input_text
                     else:
+                        # A typed word implies the Enter that submitted it;
+                        # stream chars + CR so keypress gates that loop until
+                        # an accepted key ("press SPACE to begin") terminate
+                        # instead of eating one whole command per key.
                         stream = input_text + "\r"
                     self._char_input_buffer = stream[1:]
                     self.set_variable(store_var, ord(stream[0]))
