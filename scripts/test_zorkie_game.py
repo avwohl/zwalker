@@ -181,7 +181,12 @@ GAMES = {
     "suspect": {
         "zil": ZORKIE / "tests" / "test-games" / "infocom-zil" / "suspect" / "suspect.zil",
         "walkthrough": REPO / "walkthroughs" / "suspect_zorkie_win.txt",
-        "version": 3, "reference": REPO / "games" / "zcode" / "suspect.z3", "seeds": 1,
+        # No reference row: suspect_zorkie_win is a SRC route re-derived for the
+        # source build (post-PROPDEF-defaults); it does NOT win the official
+        # binary, so replaying games/zcode/suspect.z3 with it is pure FAIL
+        # noise. The official binary is covered by the PUB track
+        # (verify_corpus.py --run-pub with suspect_verified_*).
+        "version": 3, "reference": None, "seeds": 1,
     },
     # Unblocked once zorkie's size peephole (Z/K folds) + abbreviation-corpus fix
     # brought the source build under the V3 cap; the OFFICIAL verified route then
@@ -306,7 +311,11 @@ GAMES = {
         "zil": ZORKIE / "tests" / "test-pairs" / "cloak.zil",
         "walkthrough": REPO / "walkthroughs" / "cloak_zilf_win.txt",
         "version": 3,
-        "reference": ZORKIE / "tests" / "test-pairs" / "cloak.z3",  # ZILF 0.8 golden
+        # The committed "ZILF 0.8 golden" cloak.z3 was a 404-page stub (never a
+        # real story file) and has been removed; re-add if a genuine
+        # ZILF-compiled golden is ever fetched. The zorkie build is verified in
+        # BOTH interpreters (zwalker win + dfrotz full-walkthrough win).
+        "reference": None,
         "seeds": 1,
     },
     # Next targets (see docs/ZORKIE_TESTING.md): advent (zorkie games/advent_source/

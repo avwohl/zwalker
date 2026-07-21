@@ -5,6 +5,7 @@ A Python implementation of the Z-machine virtual machine,
 designed for automated game exploration and testing.
 """
 
+import os
 import struct
 import copy
 import random
@@ -136,6 +137,15 @@ class ZMachine:
         self.call_stack: List[CallFrame] = []
         self.locals: List[int] = [0] * 16
 
+        # Strict mode (ZWALKER_STRICT=1): raise on the leniencies that
+        # otherwise MASK compiler bugs -- pop of an empty stack / pop past the
+        # current frame's boundary (spec 6.3.2) and calls to garbage routine
+        # addresses. The default stays lenient (several released Infocom
+        # binaries genuinely rely on it), but the zorkie L2 pipeline can opt
+        # in to catch miscompiles that a strict interpreter (dfrotz) would
+        # crash on, instead of silently absorbing them.
+        self.strict = os.environ.get("ZWALKER_STRICT", "") not in ("", "0")
+
         # I/O
         self.output_buffer = ""
         self.input_callback: Optional[Callable[[str], str]] = None
@@ -228,7 +238,21 @@ class ZMachine:
         if not self.stack:
             # Some games have code paths that pop from empty stack
             # Return 0 to allow continued execution
+            if self.strict:
+                raise ZMachineError(
+                    f"strict: pop of EMPTY stack at pc=0x{self.pc:04X}")
             return 0
+        if self.strict and self.call_stack and \
+                len(self.stack) <= self.call_stack[-1].stack_depth:
+            # Per spec 6.3.2 a routine may only pull values it pushed in its
+            # own frame; reading past the frame boundary is exactly the
+            # leniency that masked zorkie's EXPAND-PRONOUN `je x,(sp)`
+            # miscompile (the pops consumed the CALLER's values here while a
+            # strict interpreter read its own local slots).
+            raise ZMachineError(
+                f"strict: pop past frame boundary at pc=0x{self.pc:04X} "
+                f"(depth {len(self.stack)} <= frame base "
+                f"{self.call_stack[-1].stack_depth})")
         return self.stack.pop()
 
     # Variable access (0=stack, 1-15=locals, 16-255=globals)
@@ -1699,11 +1723,22 @@ class ZMachine:
 
         # Bounds check - invalid address returns 0
         if routine_addr >= len(self.memory):
+            if self.strict:
+                raise ZMachineError(
+                    f"strict: call to out-of-bounds routine 0x{routine_addr:04X} "
+                    f"(packed 0x{packed_addr:04X}) at pc=0x{self.pc:04X}")
             if store_var is not None:
                 self.set_variable(store_var, 0)
             return
 
         num_locals = self.read_byte(routine_addr)
+        if self.strict and num_locals > 15:
+            # A "routine" whose header byte exceeds the 15-local limit is a
+            # garbage address (e.g. an unresolved placeholder) -- exactly what
+            # advent's unfixed hint tables used to APPLY into.
+            raise ZMachineError(
+                f"strict: call target 0x{routine_addr:04X} has num_locals="
+                f"{num_locals} (>15; garbage address) at pc=0x{self.pc:04X}")
         routine_addr += 1
 
         # Save call frame

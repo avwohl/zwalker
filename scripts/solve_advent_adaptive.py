@@ -60,7 +60,9 @@ class SeedFailed(Exception):
 
 class Runner:
     def __init__(self, seed, verbose=False):
-        self.w = GameWalker(open(GAME, 'rb').read())
+        # ADVENT_GAME overrides the default PUB binary -- used to derive a
+        # SRC route against a zorkie-compiled build of the same port.
+        self.w = GameWalker(open(os.environ.get('ADVENT_GAME', GAME), 'rb').read())
         self.w.start()
         self.w.vm.rng.seed(seed)
         self.seed = seed
