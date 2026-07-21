@@ -64,3 +64,5 @@ logs/*_source_*
 logs/*.html
 logs/*_zil/
 logs/*_zil_analysis.md
+games/ifarchive/
+games/ifarchive_solutions/
