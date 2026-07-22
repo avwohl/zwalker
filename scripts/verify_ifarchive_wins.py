@@ -22,12 +22,22 @@ from zwalker.walker import GameWalker  # noqa: E402
 
 ROUTES = REPO / "walkthroughs" / "ifarchive"
 GAMES = [REPO / "games" / "ifarchive", REPO / "games" / "zcode"]
-WIN_RX = re.compile(r"\*\*\*[^*\n]*(won|win|victor|congratulat|success"
-                    r"|you did it|the end|finis|complete|occupant"
-                    r"|rightful|fin de|escape[ds]?|freedom|good time"
-                    r"|survived|home)[^*\n]*\*\*\*", re.I)
-DEATH_RX = re.compile(r"\*\*\*[^*\n]*(died|dead|you have failed|you lose"
-                      r"|game over|perish|killed|fatal)[^*\n]*\*\*\*", re.I)
+# Explicit victory words (always a win). "escape/freedom/home/fin de" are here
+# because several games' ONLY victory banner uses them.
+WIN_RX = re.compile(r"\*\*\*[^*\n]*(you have won|you won|victor|congratulat"
+                    r"|you did it|finis|fin de l|occupant|rightful"
+                    r"|freedom|good time|survived|you have escaped"
+                    r"|managed to escape|have a good time)[^*\n]*\*\*\*", re.I)
+# Explicit LOSS banners -- a "*** ... ***" ending is NOT a win if it matches.
+# Beyond death: capture/arrest/imprisonment, failure, time-out, and generic
+# "game over". ("captured"/"caught"/"arrested" are failure endings that the
+# bare-non-death rule would otherwise miscount -- Tangle's "*** You have been
+# captured ***".)
+LOSS_RX = re.compile(r"\*\*\*[^*\n]*(die[ds]?|dead|you have failed|failed"
+                     r"|you lose|lost|game over|perish|killed|fatal"
+                     r"|captured|caught|arrested|imprisoned|trapped forever"
+                     r"|out of time|too late|time.s up|defeat|doomed"
+                     r"|the end of your|paranoi)[^*\n]*\*\*\*", re.I)
 END_RX = re.compile(r"\*\*\*[^*\n]+\*\*\*")
 
 
@@ -52,11 +62,13 @@ def replay(game: Path, cmds, win_phrase=None):
                 out = (w.try_command(c).output or "")
             except Exception:  # noqa: BLE001
                 break
-            if (win_phrase and win_phrase in out) or WIN_RX.search(out) or (
-                    END_RX.search(out) and not DEATH_RX.search(out)):
+            if win_phrase and win_phrase in out:
                 return seed
-            if DEATH_RX.search(out):
-                break
+            if LOSS_RX.search(out):
+                break            # a losing ending -- not a win, stop this seed
+            if WIN_RX.search(out) or END_RX.search(out):
+                # a positive victory banner, or a non-loss "*** ... ***" ending
+                return seed
     return None
 
 

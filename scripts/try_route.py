@@ -20,29 +20,31 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
 from zwalker.walker import GameWalker  # noqa: E402
 
-WIN_RX = re.compile(r"\*\*\*[^*\n]*(won|win|victor|congratulat|success"
-                    r"|you did it|the end|finis|complete|fin de"
-                    r"|occupant|rightful|escape[ds]?|freedom|good time"
-                    r"|survived|home)[^*\n]*\*\*\*", re.I)
-# An Inform victory sets deadflag=2 and prints a "*** ... ***" banner; a death
-# is deadflag=1. The banners share the "*** ... ***" shape, so a positive
-# WIN_RX or a NON-death ending both count. DEATH_RX classifies the losers.
-DEATH_RX = re.compile(r"\*\*\*[^*\n]*(died|dead|you have failed|you lose"
-                      r"|game over|perish|killed|fatal)[^*\n]*\*\*\*", re.I)
+WIN_RX = re.compile(r"\*\*\*[^*\n]*(you have won|you won|victor|congratulat"
+                    r"|you did it|finis|fin de l|occupant|rightful"
+                    r"|freedom|good time|survived|you have escaped"
+                    r"|managed to escape|have a good time)[^*\n]*\*\*\*", re.I)
+# An Inform victory sets deadflag=2 and prints a "*** ... ***" banner; a LOSS
+# (death, capture, failure, time-out) is deadflag=1 and shares the banner
+# shape, so classify losers explicitly. A non-loss ending banner (or an
+# explicit WIN word / declared WIN_PHRASE) is a win.
+LOSS_RX = re.compile(r"\*\*\*[^*\n]*(die[ds]?|dead|you have failed|failed"
+                     r"|you lose|lost|game over|perish|killed|fatal"
+                     r"|captured|caught|arrested|imprisoned|trapped forever"
+                     r"|out of time|too late|time.s up|defeat|doomed"
+                     r"|the end of your|paranoi)[^*\n]*\*\*\*", re.I)
 END_RX = re.compile(r"\*\*\*[^*\n]+\*\*\*")
 
 
 def is_win(out: str, win_phrase=None) -> bool:
     if win_phrase and win_phrase in out:
         return True
-    if not END_RX.search(out):
+    if LOSS_RX.search(out):
         return False
-    if DEATH_RX.search(out):
-        return False
-    # An ending banner that is not a death: treat as a win (covers custom
-    # victory banners -- "FIN DE L'HISTOIRE", escape/freedom endings -- that
-    # the positive word list would miss). Positive WIN_RX also always wins.
-    return True
+    if WIN_RX.search(out):
+        return True
+    # a non-loss "*** ... ***" ending banner (custom victory phrasing) is a win
+    return bool(END_RX.search(out))
 
 
 def main():
@@ -82,7 +84,8 @@ def main():
         logs.append((i, c, out))
         if (wp and wp in out) or END_RX.search(out):
             won = is_win(out, wp)
-            break
+            if won or LOSS_RX.search(out):
+                break   # stop on a decisive win or an explicit losing ending
 
     show = logs if a.tail is None else logs[-a.tail:]
     for i, c, out in show:
