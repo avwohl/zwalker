@@ -1,0 +1,323 @@
+# auto-extracted from IF Archive solution mansion.sol
+# verified WIN at seed 1 (step 319)
+#% WIN_TEXT_SUFFICIENT: 1
+go east
+look at bird
+examine canister
+open it
+take paper
+read it
+put it in canister
+close canister
+show bag to bird
+show key to bird
+go west
+go south
+unlock door with key
+open door
+go south
+go south
+go west
+go south
+eat meal
+put plate on table
+go north
+go east
+go north
+look at brookes
+read documents
+examine model
+go east
+drop model
+drop documents
+look
+take diary
+read it
+drop it
+go west
+go south
+go west
+go south
+unlock door with key
+open door
+go south
+go south
+open shed door
+go west
+get tin
+go east
+go north
+go north
+go north
+go north
+call brookes
+give tin to brookes
+get tin
+open it
+get rusty key
+put tin on snooker table
+go east
+go south
+go west
+go south
+get knife
+go south
+go west
+go north
+open left-hand window with knife
+go east
+open grate
+get skull
+open window
+go west
+go north
+open car
+get torch
+go south
+open door
+go south
+get candle
+go south
+go west
+go south
+put knife on table
+take saucepan
+put saucepan on table
+turn on stove
+light candle
+turn off stove
+put candle in skull
+go north
+go east
+go up
+go east
+look under bed
+open red torch
+open yellow torch
+get red battery
+get grey battery
+close red torch
+close yellow torch
+go west
+go down
+go north
+go north
+go north
+put yellow torch in car
+close car
+go south
+open door
+go south
+go south
+go up
+go up
+get skull
+put skull on floor
+call brookes
+wait
+wait
+go down
+go down
+go north
+go south
+go west
+go south
+go south
+go south
+go west
+get spanner
+get wellingtons
+go east
+go north
+go east
+go east
+unlock door with rusty key
+open door
+go south
+turn blue stopcock
+put spanner in bag
+drop rusty key
+go north
+go west
+wear wellingtons
+wait
+look
+wait
+look
+wait
+look
+wait
+look
+get parcel
+open parcel
+open box
+take costume
+drop parcel
+go south
+go south
+look
+wait
+look
+wait
+look
+wait
+look
+wait
+look
+wait
+look
+get candlestick
+remove wellingtons
+drop wellingtons
+go north
+go north
+go west
+go north
+go north
+put candlestick in bracket
+pull bracket
+turn on torch
+go west
+examine west wall
+go east
+get torch
+turn it off
+go east
+go up
+go west
+drop costume
+call brookes
+recite incantation
+drop paper
+go east
+go down
+go north
+go south
+go up
+go east
+get tweezers
+go west
+go down
+go north
+go north
+go north
+go east
+get needle with tweezers
+go west
+go south
+go south
+go south
+go west
+go south
+drop tweezers
+get straw
+put needle in straw
+go north
+turn on torch
+go west
+go north
+look through holes
+call brookes
+blow through straw
+drop straw
+go south
+go east
+drop torch
+go east
+go north
+go east
+wait
+wait
+wait
+get notebook
+read it
+go west
+go north
+go north
+go west
+go south
+go west
+left
+right
+left
+right
+ahead
+right
+ahead
+left
+right
+right
+ahead
+right
+get lavender
+back
+left
+ahead
+left
+left
+right
+ahead
+left
+ahead
+left
+right
+left
+right
+go east
+go south
+go west
+get packet
+open packet
+get seeds
+drop packet
+go east
+look in heap
+go north
+go north
+go north
+go east
+go east
+get net
+unlock doors with skeleton key
+open doors
+go east
+drop net
+get frog
+get net
+go west
+go west
+go west
+go south
+get frog
+put frog on cutting board
+get knife
+cut frog with knife
+go west
+listen
+examine pickles
+go east
+go north
+go east
+go north
+get fruit
+go south
+go west
+go south
+get lavender
+put it in pan
+get seeds
+put them in pan
+get spinach
+put spinach in pan
+open jar
+empty it into pan
+get pan
+squeeze ugli fruit
+stir pan
+drink mixture
+call brookes
+wait
+wait
+wait
+look
+get rose

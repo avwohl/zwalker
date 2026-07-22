@@ -1,0 +1,350 @@
+# So Far (Andrew Plotkin), Release 6 / 961218 -- verified winning route, seed 1
+# Derived from games/ifarchive_solutions/SoFar.sol (pjg guide for Release 5;
+# used as a guide, not a literal script).
+# VERIFIED WIN with try_route.py at SEED 1: "*** You have won ***" in 323 steps.
+# 'enter' lines answer the "[Hit any key.]" gates at every shadow/world transition.
+# Seed-sensitive stretches (re-derive timings for other seeds):
+#   - rodeo alley: three 'e' tries to slip past the silk-clad watchers
+#   - dusty yard: 14 z's until the cleaners drag the arena gate open; then
+#     n / get orange / s must be exactly 3 turns or you are locked in
+#   - mist world: resistance directions were N then W here (4 n's resist, 5th
+#     attracts; back up s; 7 w's until seized), 3 z's until the dark ring forms
+#   - shape plane: gradient walk was w, e, se, n, e (regular, shallower,
+#     fainter, paler, palest); 'move brown/tan north' reveals each gradient
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+w
+w
+s
+s
+s
+w
+listen
+g
+g
+x sky
+x shrubs
+n
+n
+w
+open cabinet
+get box
+look behind cabinet
+enter shadow
+enter
+# Road world (autumn): chimney shadow
+n
+x chimney
+enter shadow
+enter
+# Rodeo world (spring): slip into the alley, statue shadow
+x bales
+w
+sw
+e
+s
+e
+e
+e
+enter shadow
+enter
+u
+# Grasslands: jar of water, knife, flee to the tree shadow
+d
+x tree
+x shadow
+s
+w
+n
+n
+n
+get jar
+s
+s
+s
+put jar in water
+n
+n
+n
+get knife
+se
+se
+enter shadow
+enter
+# Back in rodeo alley: fire square, orange saddle; stash gear in the yard
+w
+get square
+n
+w
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+n
+get orange
+s
+drop knife
+drop square
+drop box
+drop orange
+ne
+e
+enter shadow
+enter
+# Road: pods and the gate machinery
+w
+search mound
+x vine
+get pod
+e
+n
+w
+x pillar
+crush pod on hatch
+open hatch
+look in hatch
+enter hatch
+u
+x vine
+get pods
+d
+exit
+e
+e
+x pillar
+crush pod on hatch
+open hatch
+enter hatch
+u
+x wheel
+crush pod on wheel
+d
+exit
+w
+w
+push pillar
+e
+# Dome: shower cord, vapor plant, block-moving; then castle lever
+n
+n
+nw
+w
+open hatch
+enter depression
+pull cord
+g
+g
+exit
+x plant
+touch plant
+inhale vapor
+w
+move left
+g
+g
+g
+g
+e
+close hatch
+e
+ne
+pull lever
+e
+# Iceland via balcony shadow: blanket, water in the crack, oil in the jar
+enter shadow
+enter
+s
+get blanket
+wear blanket
+w
+nw
+s
+x crack
+pour water in crack
+crush pod into jar
+n
+se
+sw
+wait
+w
+w
+w
+enter shadow
+enter
+# Sand dome, then the mist: uphill N, back one, uphill W, wait for the ring
+remove blanket
+nw
+x sky
+enter shadow
+enter
+n
+n
+n
+n
+n
+s
+w
+w
+w
+w
+w
+w
+w
+z
+z
+z
+enter ring
+enter
+d
+enter
+# Sand dome again: sphere; back through ice to the spire shadow
+get sphere
+se
+wear blanket
+enter shadow
+enter
+e
+e
+e
+ne
+ne
+enter shadow
+enter
+drop blanket
+# Balcony -> road -> chimney shadow -> rodeo: watch the third show
+w
+sw
+se
+s
+s
+s
+enter shadow
+enter
+w
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+sw
+# Violet jumps highest: saddle it, ride, pull its harness, fall in the park
+get knife
+get square
+get box
+get orange
+cut tether with knife
+drop knife
+s
+put orange on violet
+ride violet
+get violet harness
+z
+z
+z
+z
+# Shady Park: pole shadow into the dark noisy world
+x pole
+enter shadow
+enter
+w
+n
+follow sound
+follow plooping
+s
+s
+e
+s
+sw
+follow sound
+follow thud
+ne
+sing to box
+drop box
+n
+w
+n
+ne
+e
+s
+se
+enter silence
+enter
+# Cramped metal world: light the jar, pipe-hop R L L L R R R R, boy, R
+break square
+light trickle
+get all
+drop square
+hit thick
+get all
+hit thin
+hit thin
+get all
+hit thin
+get all
+hit thick
+hit thick
+hit thick
+hit thick
+get thick
+x boy
+ask boy for thick
+get thick
+offer thick to boy
+hit thick
+drop jar
+enter shadow
+enter
+# Shape plane: walk the cube regular, shallow, faint, pale, palest
+s
+move brown north
+w
+move brown north
+e
+move brown north
+se
+move brown north
+n
+move tan north
+e
+enter ring
+enter ring
+no
+enter

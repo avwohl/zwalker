@@ -1,0 +1,298 @@
+# The Wedding (Neil James Brown, Release 5, Acorn User CD Edition) - verified route
+# Derived from pjg's walkthrough (wedding.sol), adapted to this release and parser.
+# Replay with seed 1: several answers below are seed-dependent runtime discoveries:
+#   - Chloe's Battlebase quiz question/answer ("new intake" -> lennox)
+#   - the pizza phone number from the channel-3 TV ad (8252)
+#   - the guard's cellar keypad code taped by the camera (8874)
+#
+# Intro absorbers: the title/quote screens are 6 single-keypress gates.
+z
+z
+z
+z
+n
+ask guard about alarm
+# Real play starts here, at Outside the front entrance.
+# Set off the burglar alarm with an apple, then hide in the study.
+e
+open gate
+n
+n
+e
+shake tree
+look
+get apple
+w
+s
+s
+throw apple at attic window
+w
+n
+e
+barbara, hello
+get key
+ask barbara about guard
+ask barbara about the mother of the bride
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+# Alarm off. Get the spade from the cupboard, stash it, meet Chloe and Scamp.
+w
+unlock cupboard with key
+open cupboard
+get spade
+drop all
+w
+x chloe
+ne
+untie scamp
+ne
+s
+get programme
+e
+n
+sw
+e
+read programme
+consult programme about barbara
+consult programme about chloe
+read books
+look up battlebase in index
+w
+sw
+# Chloe's Battlebase quiz (question is seed-dependent; look it up out of her sight)
+ask chloe about battlebase
+answer yes
+e
+look up new intake in guide
+w
+answer lennox
+drop guide
+# Upstairs: secret attic door behind the painting; camera in store room;
+# love letter under guest bed -> Deborah gives you the fake goodbye note.
+e
+u
+drop programme
+push north wall
+knock on north wall
+x painting
+turn painting
+w
+knock on bathroom door
+e
+e
+e
+get bag
+x boxes
+move cardboard box
+get camera
+w
+s
+look under bed
+get letter
+n
+n
+read letter
+show letter to deborah
+read note
+open curtains
+get remote
+ask deborah about bathroom
+s
+w
+n
+untie malcolm
+show note to malcolm
+# Order a pizza using the number from the channel-3 commercial (8252 on seed 1),
+# collect it in the pantry, and bribe Uncle William out of the bathroom.
+d
+get programme
+d
+w
+consult programme about william
+switch on tv
+x remote
+press 3 on remote
+x telephone
+dial 8252 on telephone
+switch off tv
+drop remote
+ne
+ne
+s
+wait
+wait
+wait
+wait
+wait
+get pizza
+n
+sw
+s
+u
+w
+n
+give pizza to william
+get key
+# Bronze key opens the hall door to the garden. Dig up the cash box,
+# then golf with Albert to knock the steel key out of the Sphinx.
+s
+e
+d
+get spade
+n
+n
+unlock hall door with key
+drop key
+open hall door
+consult programme about albert
+ask albert about golf
+n
+n
+dig earth with spade
+look in hole
+get box
+n
+search hedge
+n
+look in water
+get ball
+s
+put ball on course
+play golf
+look
+get key
+s
+unlock box with key
+drop key
+open box
+get diamond
+drop box
+# Lean on the guard: the chef (his sister) sells him out for the fake diamond.
+s
+w
+ask guard about attic
+ask guard about note
+e
+s
+s
+sw
+ask chloe about guard
+ne
+ne
+ask chef about guard
+x diamond
+give diamond to chef
+ask chef about guard
+sw
+s
+s
+ask guard about dartmoor
+e
+s
+s
+sw
+# Sting: hide the recording camera on the passage table, bang the cellar lock,
+# and film the guard entering his keypad code.
+x video recorder
+switch on vcr
+press rew on vcr
+wait
+wait
+wait
+wait
+wait
+wait
+press eject on vcr
+get tape
+get camera
+open camera
+put tape in camera
+close camera
+ne
+put camera on table
+x door
+x lock
+press record on camera
+attack lock
+n
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+s
+open camera
+get tape
+sw
+put tape in vcr
+press rew on vcr
+switch on tv
+get remote
+press eight on remote
+wait
+wait
+wait
+wait
+wait
+wait
+press play on vcr
+wait
+wait
+wait
+wait
+# Code on the tape (seed 1): 8874. Open the cellar, take the water detector.
+ne
+press 8 on remote
+press 8 on remote
+press 7 on remote
+press 4 on remote
+w
+get detector
+e
+s
+# Confronting Sheryl gets you thrown in the dungeon - intended. Escape via
+# the weak ceiling spot the detector finds, swim the river back to the garden.
+ask sheryl about guard
+ask sheryl about guard
+look
+push detector
+move stool under part
+stand on stool
+hit part
+u
+swim
+exit
+s
+s
+s
+s
+s
+s
+# Eavesdrop on Sheryl and the guard, report to Barbara, then lead Deborah
+# through the secret door to Malcolm.
+listen
+listen
+listen
+listen
+listen
+e
+ask barbara about sheryl
+w
+u
+e
+n
+deborah, s
+deborah, w
+deborah, n

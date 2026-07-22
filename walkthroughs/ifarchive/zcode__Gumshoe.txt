@@ -1,0 +1,256 @@
+# Gumshoe route (derived from pjg walkthrough)
+# --- Morning: hallway, wait for Marge ---
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+get newspaper
+read newspaper
+s
+remove coat
+search desk
+search desk
+search desk
+search desk
+search desk
+put coat on coat rack
+wear camera
+e
+x desk
+search papers
+read note
+read bill
+get envelope
+read envelope
+open drawer
+get handkerchief
+# --- Wait for Sandra ---
+wait until 11:16
+z
+z
+z
+z
+z
+z
+sandra, sit down
+offer handkerchief to sandra
+x sandra
+yes
+w
+open door
+ask marge about logitek
+n
+e
+e
+hail cab
+enter cab
+cabbie, go to logitek
+# --- Logitek ---
+exit
+n
+show license to barbara
+drop license
+show snapshot to barbara
+drop snapshot
+read funeral
+show funeral to barbara
+s
+hail cab
+enter cab
+cabbie, go to giuseppe
+# --- Giuseppe ---
+exit
+x john
+x nicole
+wait until 12:44
+x sedan
+x tires
+x valve
+push pin
+hail cab
+enter cab
+exit
+hail cab
+enter cab
+z
+z
+z
+z
+z
+z
+z
+z
+cabbie, follow the yellow cab
+# --- Winchester ---
+exit
+z
+z
+z
+take photo of couple
+z
+z
+z
+z
+z
+open door
+look in the window
+x guard
+x cap
+ask guard about baseball
+read sports
+drop newspaper
+sw
+z
+z
+z
+z
+z
+x tv
+turn knob
+g
+g
+g
+e
+wait until 2:30
+open door
+w
+get matchbook
+e
+x matchbook
+drop matchbook
+hail cab
+enter cab
+cabbie, go to alibi
+# --- Alibi ---
+exit
+read placard
+wait until 5:04
+n
+ask bartender about drinks
+buy beer
+z
+z
+get beer
+i
+show incriminating to bartender
+drop incriminating
+offer beer to billy
+offer beer to billy
+offer beer to billy
+ask billy about lydia
+get dart
+throw dart at board
+get dart
+throw dart at board
+get dart
+throw dart at board
+get dart
+throw dart at board
+s
+hail cab
+enter cab
+cabbie, go to lincoln
+# --- Lincoln ---
+exit
+x gate
+untie rope
+untie rope
+get rope
+open gate
+s
+s
+search scraps
+u
+push crate under balcony
+stand on crate
+tie rope to balcony
+drop all
+u
+e
+x window
+clean window
+look in the window
+wait until 7:06
+look in the window
+take picture of couple
+take picture of couple
+remove camera
+drop camera
+w
+drop naughty
+d
+d
+get all but crate
+n
+n
+hail cab
+enter cab
+cabbie, go to office
+# --- Back at office: phone Sandra ---
+exit
+w
+w
+read note
+look under the mat
+unlock door with key
+drop key
+open door
+s
+e
+get receiver
+read card
+drop card
+dial 653-2720
+tell sandra about naughty
+put receiver on phone
+w
+n
+e
+e
+hail cab
+enter cab
+cabbie, go to highland
+# --- Highland ---
+exit
+knock on the door
+show naughty to sandra
+open door
+w
+hail cab
+enter cab
+cabbie, go to office
+# --- Poker game and mailing rent ---
+exit
+n
+x morty
+x vincent
+x roderick
+x cards
+give hundred to roderick
+g
+g
+g
+g
+s
+put hundred in envelope
+g
+g
+g
+g
+close envelope
+x stamp machine
+i
+put money in stamp machine
+i
+smooth crumpled
+i
+put dollar bill in stamp machine
+lick stamp
+put stamp on envelope
+put envelope in mailbox

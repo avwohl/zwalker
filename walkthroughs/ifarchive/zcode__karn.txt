@@ -1,0 +1,393 @@
+# Return to Karn (Patrick Wigfull), Release 2 / 961207 -- verified winning route
+# Derived from games/ifarchive_solutions/karn.sol (guide, not literal).
+# VERIFIED WIN with try_route.py at SEED 2: "*** You have won ***",
+# score 170/170 in 363 turns. Seed 1 fails (random slip off the saucer top
+# before the hatch can be closed, losing 10 points and breaking the takeoff).
+# Seed-specific RNG values baked into this route (re-derive for other seeds):
+#   - security wire to cut = GREEN (both the reactor door box and the
+#     cybernization-chamber box; bubble turns yellow when correct)
+#   - K9's reactor code = blue, blue, green, yellow
+#   - opposite code (blue<->yellow, green<->red) = yellow, yellow, red, blue
+# The 14 waits in section 5 carry the flying saucer's timed takeoff.
+#% MAX_SCORE: 170
+# SECTION 1: TARDIS prep
+remove jacket
+drop jacket
+remove hat
+drop hat
+remove scarf
+drop yo-yo
+drop key
+e
+open door
+s
+get toolkit
+open toolkit
+get screwdriver
+get homing
+x homing
+turn on homing
+open cupboard
+get pouch
+open pouch
+put pouch in toolkit
+n
+w
+x scanner
+pull lever
+w
+# SECTION 2: Karn surface
+nw
+ne
+e
+u
+search ruins
+get scalpel
+put scalpel in toolkit
+d
+ne
+nw
+w
+x creature
+x globe
+e
+se
+sw
+w
+sw
+se
+e
+se
+e
+n
+tie scarf to signpost
+climb scarf
+open hatch with screwdriver
+get battery
+put homing in hatch
+close hatch
+d
+put screwdriver in toolkit
+get battery
+nw
+x tree
+climb tree
+get branch
+w
+w
+sw
+w
+sw
+se
+e
+se
+e
+fill battery
+n
+get scarf
+s
+w
+nw
+w
+# SECTION 3: back to TARDIS, K9
+enter tardis
+drop scarf
+e
+e
+get match
+put match in toolkit
+n
+x k9
+put battery in panel
+close panel
+s
+w
+w
+x console
+open drawer
+get link
+ask k9 about k9
+k9, follow me
+w
+k9, shoot boulder
+get stone
+w
+get firework
+put firework in toolkit
+s
+open tapestry
+w
+put link in chalice
+open shield
+put stone in fire
+close shield
+get link
+close link
+e
+close tapestry
+n
+e
+# SECTION 4: boulder trap
+nw
+w
+s
+e
+push boulder
+jam branch under boulder
+pull branch
+get branch
+w
+n
+e
+se
+k9, follow me
+enter tardis
+put link in drawer
+close drawer
+x console
+x slot
+get brown
+drop brown
+get gold
+put gold in slot
+# SECTION 5: wait for saucer takeoff
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+# SECTION 6: follow saucer, board it
+pull lever
+push button
+x scanner
+pull lever
+get gold
+put gold in toolkit
+k9, follow me
+w
+open hatch
+get torch
+get mine
+put all in toolkit
+# SECTION 7: recon
+n
+w
+ask k9 about door
+x bubble
+drop mine
+drop branch
+e
+s
+d
+turn on torch
+nw
+x plate
+open catch
+ne
+n
+open hatch
+turn off torch
+u
+e
+s
+# SECTION 8: airlock, flush the bay
+open door
+e
+w
+close door
+turn wheel
+x bubble
+pull lever
+pull lever
+push button
+turn wheel
+open door
+e
+open hatch
+d
+turn on torch
+n
+w
+x plate
+nw
+open hatch
+u
+open door
+turn off torch
+x left screen
+push left button
+x right screen
+push right button
+# SECTION 9: lure guards, fall into shaft
+e
+s
+s
+s
+e
+w
+w
+w
+get screwdriver
+get scalpel
+unlock box with screwdriver
+open box
+look up
+cut green wire with scalpel
+look up
+# SECTION 10: reactor room
+turn on torch
+close plate
+se
+turn off torch
+put all in toolkit
+u
+k9, follow me
+n
+w
+ask k9 about door
+k9, shoot door
+w
+x control
+push switch
+ask k9 about reactor
+ask k9 about control
+ask k9 about sequence
+# SECTION 11: set the mine trap under the plate
+d
+turn on torch
+e
+get branch
+jam branch under plate
+open catch
+x mine
+push button
+w
+turn off torch
+u
+# SECTION 12: overheat reactor, trap cyberman, restore
+push blue
+push blue
+push green
+push yellow
+ask k9 about reactor
+ask k9 about sequence
+push yellow
+push yellow
+push red
+push blue
+# SECTION 13: recover white card, haul K9 up with rope
+k9, follow me
+e
+get white
+put white in toolkit
+k9, follow me
+turn on torch
+ne
+n
+turn off torch
+u
+get torch
+drop torch
+get rope
+d
+tie rope to k9
+u
+put rope in unit
+k9, follow me
+# SECTION 14: push table, disable smoke detector, firework diversion
+e
+s
+s
+w
+s
+push table n
+push it e
+push it n
+push it n
+push it n
+push it e
+x door
+push table e
+x door
+get white
+put white in slot
+push table s
+climb on table
+x device
+push button
+exit
+get match
+get firework
+light match
+light firework
+drop match
+drop firework
+n
+w
+w
+wait
+again
+e
+e
+get white
+# SECTION 15: grind gold card into dust, collect in pouch
+put white in unit
+pull pipe
+again
+get gold
+get pouch
+put pouch under pipe
+ask k9 about cybermen
+put gold in unit
+get pouch
+# SECTION 16: flight deck, black card
+w
+n
+get black
+s
+w
+s
+s
+s
+e
+s
+# SECTION 17: cybernization room, disable cyberman, get brain
+x door
+put black in slot
+w
+x apparatus
+x respirator
+x vent
+put dust in vent
+drop pouch
+get screwdriver
+get scalpel
+unlock box with screwdriver
+open box
+cut green wire with scalpel
+open tank
+get brain
+# SECTION 18: return to TARDIS and Gallifrey
+e
+n
+w
+w
+s
+enter tardis
+put silver in slot
+drop all but brain
+pull lever
+push button
+x scanner
+pull lever
+w
+give brain to timelord

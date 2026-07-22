@@ -1,0 +1,262 @@
+# The Jewel of Knowledge - Francesco Bova (1999), Release 2 / Serial 990710 / Inform v6.15
+# Verified winning route: try_route.py prints "== WIN ==" (Inform banner "*** You have won ***",
+# final score 90/90) on seeds 1-4, deterministically at 227 replayed commands.
+# Derived from games/ifarchive_solutions/jewel.sol (by pjg), adapted to the game's parser.
+#
+# Key deviations from the guide prose that were needed to win:
+#  - "light salt" is rejected; must be "light salt with firebug" (after "rub bug").
+#  - Black Dragon: after "put lye in coat", wait exactly 5 turns until he spews acid
+#    (coat's lye negates it, +5), THEN "attack dragon with sword" during his 3-turn stun.
+#  - Dragon ride: "sit on dragon" then 10 waits to arrive at the Red Dragon's Lair; you are
+#    auto-dismounted on arrival, so a plain "w" reaches "On The Divide" before he eats you.
+#  - Red Dragon: ~10 waits on The Divide until the two-dragon fight resolves (+10 -> 70).
+#  - Chandelier: "shoot rope with crossbow" FIRST (her speech is a countdown to death);
+#    do the ring/book/bladder/embers prep only after she is pinned.
+#  - Jewel Room: DO NOT take the jewel (that is a lethal trap). "touch mirror" is the victory.
+#
+# Prologue (5th layer with Jacob)
+ask jacob about jewel
+ask jacob about amylya
+ask jacob about druids
+ask jacob about ariana
+ask jacob about dragons
+ask jacob about book
+# The Beginning (6th layer)
+verbose
+drop all
+w
+nw
+x minerals
+pull quartz
+u
+u
+# The Book and Firebug
+get book
+x gaping
+x outcrop
+x insect
+throw book at outcrop
+d
+d
+# The Moss and Skeleton
+se
+w
+w
+n
+get moss
+x moss
+smell
+smell dirty floor
+clean dirty floor with spongy moss
+open trapdoor
+d
+get lye
+u
+s
+s
+x skeleton
+put lye on moss
+clean skeleton with moss
+drop moss
+get bladder
+get crampons
+# The Geyser area
+n
+e
+e
+nw
+w
+w
+x porous wall
+wear crampons
+climb porous wall
+u
+u
+e
+x ariana
+x boots
+search boots
+get lockpick
+get crossbow
+x crossbow
+w
+d
+d
+d
+put bladder in geyser
+z
+g
+look
+drop crampons
+get bladder
+x bladder
+read label
+w
+search refuse
+get axe
+# The Ice wall and White Dragon
+e
+e
+e
+se
+w
+w
+w
+x block
+chop ice with axe
+g
+g
+g
+g
+drop axe
+s
+se
+x dragon
+look in mouth
+open claws
+get coat
+wear coat
+# The Crossbow and Mushroom (train to 3/3 hits)
+nw
+n
+e
+n
+n
+x fungus
+x mushroom
+x crossbow
+shoot mushroom with crossbow
+get arrow
+put arrow in crossbow
+shoot mushroom with crossbow
+put arrow in crossbow
+shoot mushroom with crossbow
+put arrow in crossbow
+# The Temple
+s
+s
+e
+e
+e
+get all
+x body
+get sack
+open sack
+wear sack
+get salt
+x salt
+rub bug
+light salt with firebug
+smell smoke
+read book
+ask allarah about white
+ask allarah about black
+ask allarah about red
+ask allarah about jewel
+look
+touch mist
+put bug in sack
+put bladder in sack
+# The Gypsum Flower Gardens (disturb flowers 5 different ways)
+ne
+e
+touch flower
+ne
+rub flower
+s
+squeeze flower
+w
+pull flower
+n
+cut flower
+e
+# The Obsidian Door
+x door
+unlock door with key
+unlock lock with lockpick
+drop key
+drop lockpick
+# The Black Dragon
+e
+ask dragon about trinket
+ask dragon about white
+ask dragon about black
+ask dragon about red
+ask dragon about jewel
+read book
+x lye
+x coat
+put lye in coat
+z
+z
+z
+z
+z
+attack dragon with sword
+se
+push boulders
+nw
+show crossbow to dragon
+dragon, give ring to me
+wear ring
+dragon, open door
+ask dragon about jewel
+sit on dragon
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+# arrive Red Dragon's Lair (auto-dismount); go to the safe divide
+w
+# On The Divide: two-dragon fight resolves, +10 -> 70
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+# Red Dragon weakened; advance to the chandelier plateau
+w
+# The Chandelier and River: drop the chandelier on the exhausted dragon first
+shoot rope with crossbow
+look
+remove ring
+put ring in sack
+put book in sack
+get bladder
+put crossbow in sack
+get embers
+put embers in coat
+# The Jewel: float the cold river (+2 -> 75, +5 -> 80 at Pebble Beach)
+n
+z
+z
+z
+z
+z
+z
+z
+# Pebble Beach reached; head north through the three mural halls
+n
+x murals
+n
+x murals
+n
+x murals
+n
+# Jewel Room
+x mirror
+x pedestal
+look under cushion
+# The Mirror: touching it (without greedily taking the Jewel) wins, +10 -> 90
+touch mirror
