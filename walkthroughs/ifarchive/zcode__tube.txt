@@ -1,0 +1,55 @@
+# Tube Trouble -- verified winning route (guide: tube.sol), seed 1
+# NOTE: random NPC events (thin man, mouth-organ) are turn/RNG sensitive,
+# so this exact command sequence is load-bearing under seed 1.
+s
+get penny
+read notice
+e
+x machine
+x lever
+x slot
+i
+put shilling in slot
+pull lever
+put penny in slot
+pull lever
+look in tray
+get sixpence from tray
+put sixpence in slot
+pull lever
+look in tray
+get all from tray
+w
+w
+look in hat
+get hat
+buy hat
+wear cap
+wait
+wait
+look
+x bag
+x zip
+pull zip
+e
+e
+wait
+wait
+yes
+i
+w
+w
+buy hat
+e
+e
+wait
+wait
+wait
+wait
+wait
+wait
+w
+w
+look
+w
+eat bar

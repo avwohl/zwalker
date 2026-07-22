@@ -1,0 +1,5 @@
+# PUTPBAA -- Pick Up the Phone Booth and Aisle (Spinster/Zaratustra)
+# This is a joke game with ~210 one-move endings; there is no map to traverse.
+# The thematically intended victory is the game's own title command, which
+# yields the Inform ending "*** You have won ***".
+pick up the phone booth and aisle

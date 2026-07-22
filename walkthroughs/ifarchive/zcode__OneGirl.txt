@@ -1,0 +1,80 @@
+# One Girl - verified route (seed 1). Score 8/8 = win.
+# --- startup ---
+99
+y
+n
+# --- pt1: lick girl to orgasm (magics appear) ---
+suck cunt
+g
+g
+g
+g
+g
+g
+# --- she sucks me (re-stiffen), wave twice, fuck (pt2) ---
+girl, suck me
+wave pink
+g
+fuck girl
+# --- build arousal, then tie + lick + wait handjob (pt3&4, mode unlock) ---
+wave pink
+g
+g
+g
+g
+girl, tie me with rope
+lick cunt
+g
+z
+z
+z
+# --- switch to "no confirmation" mode ---
+mode
+99
+N
+N
+return
+Q
+# --- pt5: pee ---
+pee on girl
+# --- pt6: build arousal, spank until orgasm ---
+wave pink
+g
+g
+g
+g
+g
+g
+g
+spank girl
+g
+g
+g
+g
+# --- pt7: build arousal, fist (n,n) ---
+wave pink
+g
+g
+g
+g
+g
+g
+fist cunt
+n
+n
+# --- pt8: pink dial to near-orgasmic (seed1: -64 then 107), then anal ---
+turn on pink dial
+turn it
+g
+girl, suck me
+fuck ass
+g
+g
+g
+g
+g
+g
+g
+# --- end ---
+win
+y

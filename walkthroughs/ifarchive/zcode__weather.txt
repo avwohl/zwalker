@@ -1,0 +1,116 @@
+# A Change in the Weather (Andrew Plotkin) -- Release 6 / 960613
+# Winning route derived from the pjg step-by-step solution (games/ifarchive_solutions/weather.sol).
+# Reaches the game's deadflag=2 victory: "*** You have a good time after all. ***"
+# (the end prompt offers RESTART/RESTORE/QUIT with no UNDO -> a true win, not a death).
+# Plotkin's custom victory string contains none of the generic win keywords, so this
+# route declares the phrase for the repo trust gate (verify_ifarchive_wins.py):
+# WIN_PHRASE: You have a good time after all
+#
+# Tuned for seed 1 (fox appearance, lightning flashes, and bridge-erosion race are
+# turn-gated / RNG-driven; the wait counts below are calibrated to seed 1).
+#
+# --- first line absorbs the "[Hit any key]" title prompt ---
+look
+# Phase 1: gather bucket, wet the mud, free the spade, move the boulder
+E
+S
+get all
+N
+fill bucket
+NE
+pour water on mud
+get spade
+drop bucket
+E
+x rock
+move rock with spade
+# wait for the fox to wander to the hilltop
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+# fox is present: play fetch twice; second fetch brings the rusty key
+throw shaft
+throw shaft
+get key
+# enter the cave and wait out the evening until you can sleep (Rainy Night)
+E
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+sleep
+# --- wake in the thunderstorm (this next line is eaten by the wake keypress) ---
+drop blanket
+# Phase 2 (tightly timed): navigate to the shed and unlock it
+W
+NW
+SE
+S
+unlock door with key
+drop key
+E
+# shed is dark; a look lets a lightning flash light it, afterimages linger one turn
+look
+get torn
+# carry the torn sandbag down to the bridge and drop it
+W
+N
+SW
+N
+drop torn
+# roll the boulder to free the spade blade, then re-bridge the south gap with it
+NE
+E
+push rock south
+get blade
+NW
+SE
+wedge blade in crack
+S
+# back to the shed for the dirty sandbag (flash lights it on entry here)
+E
+get dirty
+W
+throw dirty across gap
+N
+get dirty
+get branch
+SW
+N
+drop dirty
+# the dammed runoff reveals a spot in the bank; fox yips to point it out
+examine bridge
+dig spot
+# prop the sagging bridge with the branch, then dig the channel until dawn
+wedge branch under bridge
+dig spot
+dig spot
+dig spot
+dig spot
+dig spot
+# --- bridge saved; this next line is eaten by the wake keypress (Sunny Dawn) ---
+look
+get blanket
+# walk home across the mended bridge
+W
+NW
+SW
+W
+W

@@ -1,0 +1,1232 @@
+# Jigsaw route - working file
+look
+# === PROLOGUE: CENTURY PARK ===
+e
+take sparkler
+w
+take piece
+se
+take rucksack
+examine crate
+search crate
+take curious device
+take tagged key
+nw
+ne
+e
+e
+look under stool
+get pencil
+open stool
+look in stool
+get book
+w
+w
+sketch night-jar
+sw
+w
+climb monument
+examine lightning-conductor
+light fuse
+d
+enter monument
+# === INSIDE MONUMENT ===
+e
+x table
+look under table
+take piece
+clean table
+x board
+i
+# === PUZZLE BOARD: place first pieces ===
+take corner piece
+turn corner piece
+turn corner piece
+put corner piece at a4
+put centre piece at c2
+# --- set clock and press c2 to transport ---
+take clock
+set clock to 59
+press c2
+# === CH: FLAT OVER THE STREET (Sarajevo 1914) ===
+look
+unlock dresser with tagged key
+open dresser
+take piece
+shake hands with black
+z
+z
+z
+no
+z
+z
+z
+z
+z
+z
+z
+switch rifle off
+z
+z
+z
+z
+z
+z
+z
+z
+shoot duke
+sketch horses
+z
+z
+z
+z
+set clock to 1
+look
+nw
+# === BACK AT MONUMENT: place Sarajevo edge piece at C1, go to Titanic ===
+take device
+put device in rucksack
+take edge piece
+turn edge piece
+put edge piece at c1
+set clock to 59
+press c1
+look
+# === CH2: TITANIC ===
+sw
+n
+w
+s
+u
+move deckchairs
+look
+take boy's book
+open boy's book
+take elegant key
+read boy's book
+d
+n
+e
+s
+e
+u
+w
+take jacket
+e
+d
+e
+unlock black's door with elegant key
+open black's door
+e
+look under wardrobe
+take long key
+open porthole
+take piece
+read note
+w
+w
+w
+n
+w
+s
+wear jacket
+w
+set clock to 59
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+w
+give letter to shutes
+look
+take piece
+e
+e
+n
+e
+s
+e
+u
+unlock wireless room door with long key
+open wireless room door
+e
+x charts
+x morse key
+dah
+dit
+dah
+dit
+dah
+dah
+dit
+dah
+dah
+dit
+dit
+set clock to 1
+look
+nw
+i
+# place corner piece at a1 (4-orientation sweep)
+put corner piece at a1
+take a1
+turn corner piece
+put corner piece at a1
+take a1
+turn corner piece
+put corner piece at a1
+take a1
+turn corner piece
+put corner piece at a1
+# place edge piece at b1 (4-orientation sweep)
+put edge piece at b1
+take b1
+turn edge piece
+put edge piece at b1
+take b1
+turn edge piece
+put edge piece at b1
+take b1
+turn edge piece
+put edge piece at b1
+examine a1
+examine b1
+# === Go to Clarence Wing (a1) ===
+set clock to 59
+press a1
+look
+# === CH3: CLARENCE WING (Fleming) ===
+open lower door
+d
+sketch mice
+n
+take jar
+s
+u
+open upper door
+u
+look under bench
+take petri dish
+take certificate
+take piece
+put petri dish on suitcase
+push suitcase e
+z
+z
+z
+z
+z
+set clock to 1
+look
+nw
+# place c3 piece (from Clarence Wing)
+put piece at c3
+take c3
+turn piece
+put piece at c3
+take c3
+turn piece
+put piece at c3
+take c3
+turn piece
+put piece at c3
+examine c3
+# === Go to Lenin's Train (c3) ===
+set clock to 59
+press c3
+look
+e
+# === CH4: LENIN'S TRAIN ===
+wear uniform
+open trunk
+search trunk
+remove jacket
+wear army uniform
+w
+unlock west door with little key
+open west door
+w
+search man
+e
+s
+ask soldiers for paskha
+take paskha
+n
+n
+ne
+give paskha to boy
+take paper
+sw
+give paper to lenin
+nw
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+look
+look under bunk
+open vent
+take tray
+put piece in vent
+ne
+n
+take bomb
+throw bomb
+take piece
+set clock to 1
+look
+nw
+# place a2 piece (Lenin's train -> a2)
+put piece at a2
+take a2
+turn piece
+put piece at a2
+take a2
+turn piece
+put piece at a2
+take a2
+turn piece
+put piece at a2
+examine a2
+# === Go to Abbey Road (a2) ===
+set clock to 59
+press a2
+look
+z
+z
+z
+z
+z
+kiss black
+set clock to 1
+look
+nw
+# === Go to Temps Perdu / Paris (b1) ===
+set clock to 59
+press b1
+look
+n
+n
+# --- Paris streets: follow breadcrumb directions ---
+ne
+se
+s
+s
+e
+s
+take flask
+drink absinthe
+dance with black
+s
+s
+take coin
+n
+open door
+e
+give coin to boy
+enter lift
+boy, up
+boy, up
+boy, up
+boy, up
+boy, up
+boy, up
+boy, up
+boy, up
+look
+take centre piece
+boy, down
+boy, down
+boy, down
+out
+e
+look
+take tray
+take piece
+take madeleine
+w
+enter lift
+boy, down
+out
+w
+s
+w
+set clock to 59
+dip madeleine in tea
+eat madeleine
+swing pendulum
+set ormolu clock to 59
+take paperole
+e
+n
+e
+enter lift
+boy, up
+out
+e
+drop paperole
+set clock to 1
+look
+nw
+# place centre piece -> b2 (Kitty Hawk)
+put centre piece at b2
+take b2
+turn centre piece
+put centre piece at b2
+take b2
+turn centre piece
+put centre piece at b2
+take b2
+turn centre piece
+put centre piece at b2
+# place edge piece -> b4 (Snowlands)
+put edge piece at b4
+take b4
+turn edge piece
+put edge piece at b4
+take b4
+turn edge piece
+put edge piece at b4
+take b4
+turn edge piece
+put edge piece at b4
+examine b2
+examine b4
+# === Go to Kitty Hawk (b2) ===
+set clock to 59
+press b2
+look
+# === CH7: KITTY HAWK ===
+take dart
+d
+examine crowd
+sketch terrier
+e
+take bread
+take anemometer
+look
+in
+take mandolin
+play mandolin
+play mandolin
+play mandolin
+play mandolin
+e
+put bread in trap
+z
+sketch mouse
+w
+u
+take cap
+take mosquito powder
+d
+w
+n
+set clock to 59
+look
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+play mandolin
+play mandolin
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+n
+examine flyer
+examine aileron
+take square
+look
+z
+z
+get bottle
+w
+in
+shake mosquito powder
+examine heater
+take bread
+put bread in holes
+look
+take creased edge piece
+set clock to 1
+look
+nw
+# place centre piece -> b3 (Ghost Plane)
+put centre piece at b3
+take b3
+turn centre piece
+put centre piece at b3
+take b3
+turn centre piece
+put centre piece at b3
+take b3
+turn centre piece
+put centre piece at b3
+# place creased edge piece -> d3 (Enigma/Cabbages)
+put creased edge piece at d3
+take d3
+turn creased edge piece
+put creased edge piece at d3
+take d3
+turn creased edge piece
+put creased edge piece at d3
+take d3
+turn creased edge piece
+put creased edge piece at d3
+examine b3
+examine d3
+# === Go to Snowlands/Wilderness (b4) ===
+set clock to 59
+press b4
+look
+z
+look
+# === CH8: SNOWLANDS ===
+sketch goose
+e
+look
+sketch leopard
+w
+w
+w
+w
+w
+sw
+take seed
+take broom
+ne
+e
+u
+take cable
+d
+d
+look
+sweep snow
+examine disc
+tie cable to ring
+d
+examine missile
+open hatch
+in
+press green button
+press blue button
+out
+take piece
+u
+untie cable
+u
+drop seed
+w
+throw cable at nest
+pull cable
+pull cable
+take piece
+set clock to 1
+look
+nw
+# place edge piece -> c4 (Moon)
+put edge piece at c4
+take c4
+turn edge piece
+put edge piece at c4
+take c4
+turn edge piece
+put edge piece at c4
+take c4
+turn edge piece
+put edge piece at c4
+# place corner piece -> d4 (Egypt/Barge)
+put corner piece at d4
+take d4
+turn corner piece
+put corner piece at d4
+take d4
+turn corner piece
+put corner piece at d4
+take d4
+turn corner piece
+put corner piece at d4
+examine c4
+examine d4
+# === Go to Ghost Plane (b3) ===
+set clock to 59
+press b3
+look
+# === CH9: GHOST PLANE ===
+ne
+examine panel
+press cuteng/l
+sit in navigator's chair
+turn on radio
+stand
+press aut/p
+sw
+sw
+w
+examine hole
+examine control
+press res/f
+take clock
+turn off alarm
+e
+put all in rucksack
+drop rucksack
+examine locker
+get safe
+e
+drop safe
+w
+take rucksack
+ne
+ne
+push column forward
+push column forward
+push column forward
+push column forward
+push column forward
+push column forward
+push column forward
+push column forward
+push column forward
+push column forward
+push column forward
+push column forward
+push column forward
+push column forward
+push column forward
+push column forward
+push column forward
+push column forward
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+press lower/u
+z
+land
+press rel/b
+exit
+exit
+e
+examine parachute
+take gadget
+w
+put gadget on safe
+open safe
+take folder
+take shelf
+put all in rucksack
+z
+z
+z
+z
+z
+z
+z
+n
+take rucksack
+s
+press button
+put body in ball
+enter ball
+z
+z
+look
+enter doorway
+nw
+# place edge piece (shelf) -> d2 (Suffragettes)
+put edge piece at d2
+take d2
+turn edge piece
+put edge piece at d2
+take d2
+turn edge piece
+put edge piece at d2
+take d2
+turn edge piece
+put edge piece at d2
+examine d2
+# open display case for d1 piece
+w
+take gadget
+put gadget on case
+take piece
+take gadget
+e
+# place model piece -> d1 (Endgame gates)
+put piece at d1
+take d1
+turn piece
+put piece at d1
+take d1
+turn piece
+put piece at d1
+take d1
+turn piece
+put piece at d1
+examine d1
+# === Go to Moon (c4) ===
+set clock to 59
+press c4
+look
+# === CH10: MOON ===
+take atlas
+z
+z
+z
+z
+z
+z
+look up littrow in atlas
+show atlas to black
+z
+z
+z
+z
+z
+z
+d
+look
+enter rover
+turn on joystick
+s
+take gnomon
+n
+n
+take clod
+n
+n
+take sunshade
+look
+e
+out
+climb boulder
+open pod with gnomon
+take waldo
+take checklist
+sw
+enter rover
+w
+s
+look
+w
+look
+examine rod
+wrap rod with sunshade
+w
+w
+out
+sw
+look
+examine their rover
+ne
+enter rover
+e
+e
+e
+s
+s
+s
+out
+u
+look
+# program Waldo (fetch fender): F2 R2 F2 R2 S1 F2 R2 F2
+type forward 2
+type rturn 2
+type forward 2
+type rturn 2
+type sample 1
+type forward 2
+type rturn 2
+type forward 2
+examine screen
+# carry Waldo to Tortilla Flat
+d
+enter rover
+n
+n
+n
+w
+w
+w
+out
+sw
+look
+# fetch fender with Waldo
+throw clod
+drop waldo
+examine waldo
+turn waldo
+examine waldo
+turn waldo
+turn waldo
+turn waldo
+examine waldo
+push pink button
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+z
+take fender
+take waldo
+i
+# reactor task at Silver Cairns
+ne
+enter rover
+e
+e
+out
+look
+drop waldo
+plug cable into waldo
+drop gnomon
+drop checklist
+push pink button
+z
+look
+z
+z
+take rod
+put rod in reactor
+z
+z
+z
+unplug cable from waldo
+take waldo
+take gnomon
+take edge piece
+enter rover
+e
+s
+s
+s
+drop waldo
+out
+u
+i
+# leave Moon via clock
+take clock
+turn on alarm
+set clock to 1
+look
+take sparkler
+nw
+# place edge piece (fender) -> a3 (Berlin)
+put edge piece at a3
+take a3
+turn edge piece
+put edge piece at a3
+take a3
+turn edge piece
+put edge piece at a3
+take a3
+turn edge piece
+put edge piece at a3
+examine a3
+# === Go to Berlin (a3) ===
+set clock to 59
+press a3
+look
+# === CH11: BERLIN ===
+w
+n
+n
+take rope
+s
+look
+climb fence
+sw
+sketch hare
+se
+climb fence
+s
+s
+look
+in
+look
+u
+take purse
+open purse
+take fifty
+take cyrillic key
+d
+search masonry
+look
+out
+e
+examine blockhouse
+n
+look
+unlock skoda with cyrillic key
+open skoda
+enter skoda
+turn on skoda
+n
+give fifty to man
+w
+w
+s
+look
+out
+in
+d
+look
+sw
+tie rope to cables
+u
+look
+tie rope to skoda
+ne
+u
+out
+enter skoda
+n
+set clock to 1
+look
+nw
+# === Go to Suffragettes (d2) ===
+set clock to 59
+press d2
+look
+d
+look
+se
+look
+take newspaper
+se
+look
+throw newspaper at handcuffs
+take handcuffs
+nw
+nw
+cuff black to fence
+set clock to 1
+look
+nw
+# === Go to Egypt (d4) ===
+set clock to 59
+press d4
+look
+# === CH13: EGYPT ===
+break door
+n
+look
+ne
+take soap
+sw
+s
+open shutters
+look
+catch mosquito with soap
+sketch mosquito
+z
+z
+z
+z
+z
+z
+z
+d
+look
+enter barge
+d
+look
+examine cans
+examine black
+examine deck
+open strongbox with gadget
+hug black
+z
+z
+z
+press button
+enter ball
+z
+z
+look
+set clock to 1
+z
+look
+n
+w
+enter doorway
+nw
+# === Go to Enigma (d3) Part 1: Barn ===
+set clock to 59
+press d3
+look
+in
+look
+read paper
+examine typewriter
+examine wheels
+examine wardrobe
+examine one wheel
+examine other wheel
+out
+fly
+look
+# === Enigma d3 Part 2: Bletchley ===
+nw
+set clock to 59
+turn off alarm
+press d3
+look
+take cartridge
+remove army uniform
+e
+look in window
+get cap
+wear cap
+w
+n
+say codebreaker
+open crate
+open crate
+take machine
+examine machine
+examine wires
+
+take wheel ii
+put wheel ii in machine
+set wheel ii to 7
+take wheel iv
+put wheel iv in machine
+set wheel iv to 24
+take wheel v
+put wheel v in machine
+examine machine
+unstecker
+stecker a to g
+stecker w to c
+stecker v to t
+stecker u to j
+stecker y to r
+stecker d to f
+stecker p to x
+pull lever
+examine wires
+type intercept
+press red button
+turn wheel v
+type intercept
+press red button
+turn wheel v
+type intercept
+press red button
+turn wheel v
+type intercept
+press red button
+turn wheel v
+type intercept
+press red button
+turn wheel v
+type intercept
+press red button
+turn wheel v
+type intercept
+press red button
+turn wheel v
+type intercept
+press red button
+turn wheel v
+type intercept
+z
+z
+z
+press button
+enter ball
+z
+z
+n
+look
+enter doorway
+nw
+# === ENDGAME: press d1 ===
+set clock to 59
+turn off alarm
+press d1
+look
+n
+look
+ask gatekeeper about amulet
+ask gatekeeper for amulet
+# === LIVING LAND ===
+e
+look
+n
+look
+enter pagoda
+get cage
+out
+e
+look
+s
+look
+get rod
+n
+e
+look
+wave rod
+n
+e
+look
+get grenade
+w
+look
+n
+look
+z
+z
+z
+s
+n
+get all
+s
+look
+w
+look
+take oval rock
+drop oval rock
+get oval rock
+look
+shake tree
+look
+w
+look
+drop rod
+e
+e
+look
+w
+look
+w
+get rod
+e
+s
+look
+throw rod at rabbit
+look
+get rod
+e
+e
+look
+w
+w
+n
+put woodpecker in cage
+look
+s
+e
+e
+open cage
+look
+get grenade
+wash grenade
+look
+w
+w
+n
+pull pin
+throw grenade in river
+z
+z
+z
+z
+z
+z
+z
+# === FINALE ===
+nw
+give emily's book to toby
+se
+e
+look
+w
+give teddy to black

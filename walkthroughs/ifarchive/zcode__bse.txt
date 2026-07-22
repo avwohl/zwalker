@@ -1,0 +1,182 @@
+# BSE (An Interactive Epidemic) -- verified winning route
+# Story: games/ifarchive/zcode__bse.z5  (Release 3 / Serial 970110)
+# Guide: games/ifarchive_solutions/bse.sol (used loosely)
+# Result: *** You have won *** -- 60/60, rank Saviour of the World
+# Note line 1 ('look') absorbs the [Press SPACE if you dare...] key-read.
+# Note: the water pistol holds ONE shot; do NOT fire early. Wait until the
+#   pictogram 'roars in anger', then 'shoot pistol at demon' (auto-hit).
+#
+look
+s
+search bed
+get all
+n
+drop fork
+open remote
+get burnt battery
+open sound
+get watch battery
+put watch battery in remote
+close remote
+push remote
+open boot
+open remote
+get watch battery
+put watch battery in sound
+close sound
+put remote in boot
+put burnt battery in boot
+get coat
+wear coat
+get briefcase
+get ring
+unlock briefcase with key
+put ring in boot
+open briefcase
+read typed note
+get jar
+put briefcase in boot
+put jar in pockets
+put pistol in pockets
+get fork
+i
+n
+ask tom about cows
+z
+z
+ask dick about bse
+z
+z
+ask harry about devil
+z
+z
+read faxed note
+drop faxed note
+ask dick about red-chevette
+ask tom about beer
+open can
+get can
+shake can
+drop can
+look
+get key
+i
+se
+x gate
+climb gate
+read leaflet
+read sheep in leaflet
+read mountain in leaflet
+read keynes in leaflet
+read fliglot in leaflet
+read weather in leaflet
+read code in leaflet
+read devil in leaflet
+e
+unlock tractor with key
+drop key
+open tractor
+search tractor
+get envelope
+w
+n
+get hat
+wear hat
+i
+e
+get kettle
+get glove
+w
+put kettle on rack
+plug kettle in socket
+turn on kettle
+z
+z
+z
+z
+x kettle
+z
+z
+z
+z
+x kettle
+steam envelope
+drop envelope
+get card
+i
+read card
+w
+look
+push yellow button
+roll mat
+x trapdoor
+open trapdoor with fork
+drop fork
+d
+look
+x dial
+turn dial right
+push button
+turn dial left
+push button
+turn dial right
+turn dial right
+push button
+turn dial left
+turn dial left
+turn dial left
+push button
+turn dial left
+turn dial left
+turn dial left
+turn dial left
+push button
+turn dial right
+turn dial right
+push button
+nw
+look
+get all from pockets
+i
+read clippings
+x gadget
+turn on gadget
+reverse glove
+put glove on pad
+drop glove
+turn on gadget
+put jar in bay
+sharon, scan jar
+read card
+get jar
+open jar
+pour liquid into pistol
+i
+s
+u
+e
+s
+e
+x haystack
+climb tractor
+u
+unroll ladder
+put all in pockets
+w
+nw
+sw
+look
+get pistol
+get jar
+i
+z
+z
+z
+z
+z
+shoot pistol at demon
+ne
+ne
+sw
+d
+w

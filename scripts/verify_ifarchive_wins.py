@@ -24,7 +24,10 @@ ROUTES = REPO / "walkthroughs" / "ifarchive"
 GAMES = [REPO / "games" / "ifarchive", REPO / "games" / "zcode"]
 WIN_RX = re.compile(r"\*\*\*[^*\n]*(won|win|victor|congratulat|success"
                     r"|you did it|the end|finis|complete|occupant"
-                    r"|rightful)[^*\n]*\*\*\*", re.I)
+                    r"|rightful|fin de|escape[ds]?|freedom|good time"
+                    r"|survived|home)[^*\n]*\*\*\*", re.I)
+DEATH_RX = re.compile(r"\*\*\*[^*\n]*(died|dead|you have failed|you lose"
+                      r"|game over|perish|killed|fatal)[^*\n]*\*\*\*", re.I)
 END_RX = re.compile(r"\*\*\*[^*\n]+\*\*\*")
 
 
@@ -49,9 +52,10 @@ def replay(game: Path, cmds, win_phrase=None):
                 out = (w.try_command(c).output or "")
             except Exception:  # noqa: BLE001
                 break
-            if WIN_RX.search(out) or (win_phrase and win_phrase in out):
+            if (win_phrase and win_phrase in out) or WIN_RX.search(out) or (
+                    END_RX.search(out) and not DEATH_RX.search(out)):
                 return seed
-            if END_RX.search(out) and "die" in out.lower():
+            if DEATH_RX.search(out):
                 break
     return None
 

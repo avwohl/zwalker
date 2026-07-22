@@ -1,0 +1,88 @@
+look
+wait
+x box
+open box
+empty box
+shake box
+empty box
+get all
+drop box
+wait
+x paper
+play o at 2
+play x at 9
+x glue
+squeeze glue on grey
+put grey on wheeled
+get mouse
+put mouse in hole
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+play e
+play f
+play l
+play k
+play i
+play c
+play j
+wait
+x board
+get small
+file gnomon with small
+squeeze glue on small
+put small on medium
+get small
+put medium on middle
+get large
+put large on right
+get small
+put medium on right
+squeeze glue on gnomon
+put gnomon on sundial
+wait
+wait
+wait
+x paper
+move b up
+move b up
+move b left
+move a up
+move b up
+move a up
+move a up
+get mushroom
+get egg
+get baguette
+x sundial
+put mushroom in shadow
+x sundial
+get rod
+strike rod
+point rod at egg
+drop rod
+drop glue
+put baguette in hole
+hole, n
+hole, w
+hole, w
+hole, n
+hole, n
+hole, e
+hole, s
+hole, s
+hole, s
+hole, e
+hole, e
+hole, e
+get key
+get egg
+eat egg
+unlock chest with key
+type 543251543251
+enter chest

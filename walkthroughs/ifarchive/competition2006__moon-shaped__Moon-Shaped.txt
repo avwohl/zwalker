@@ -1,0 +1,139 @@
+# Moon-Shaped (competition2006 / Release 1) -- winning route derived from the R2 guide.
+#
+# NOTE ON VERIFICATION: This route DETERMINISTICALLY reaches the game's BEST ending
+# (ending 1 of 8: the curse is lifted, both father and grandmother are saved) on every
+# seed. The game is Inform 7 and ends via "end the story finally saying ...", printing
+# the marker:  *** (This is ending 1 of 8) ***
+# scripts/try_route.py detects a win with WIN_RX (won|win|victor|congratulat|success|
+# you did it|the end|finis|complete). This game's marker contains none of those words,
+# so try_route prints "== NO WIN" even though this is a genuine Inform victory ending.
+# All 8 endings use the same "(This is ending N of 8)" format, so no route can trigger
+# WIN_RX for this game -- it is a harness win-detection gap, not a route defect.
+#
+# TWO commands use a trailing period ("southwest." / "east.") ON PURPOSE: those rooms
+# (Firefly Glen, Marshy Patch) contain the phrase "way is blocked" in their room text,
+# which trips a false-rollback in GameWalker.try_command (its object-based room-change
+# detection returns a constant for this game, so a movement into such a room is wrongly
+# treated as "blocked" and rolled back). Inform strips the trailing '.', so the move
+# still happens in-game, while the walker no longer classifies it as a direction and
+# skips the bogus rollback.
+#
+# --- Rosalind's house ---
+take everything from the table
+open the chest
+take the cape
+wear the cape
+north
+out
+south
+southwest
+# wolf cutscene advance + 3 wander moves back to path
+north
+north
+north
+north
+# Covered Bridge -> Wooded Path -> Clearing -> Front Garden -> Living Room
+north
+northwest
+north
+north
+# --- Kitchen / attic: get the locket ---
+west
+up
+examine the glint
+take the locket
+wear the locket
+down
+east
+south
+# --- to the Lakeshore, open locket in center of lake ---
+south
+northeast
+east
+southeast
+pull the chain
+enter the boat
+open the locket
+pull the chain
+# --- make firefly lantern: wash jar at lake, catch fireflies in glen ---
+open the jar
+wash the jar
+northwest
+southwest.
+catch fireflies
+# --- leave glen, go to Side Yard ---
+west
+north
+west
+# --- Side Yard: hatchet, woodpile, down the well to the cellar ---
+take the hatchet
+search the woodpile
+enter the bucket
+take the key
+north
+take the glass fragment
+unlock the cellar door with the key
+open the cellar door
+east
+# --- Living Room: gloves, clock/jacket/pebbles ---
+east
+look under the bed
+examine the gloves
+examine the clock
+open the clock
+set the time to 2:35
+search the jacket
+examine the pebbles
+# --- follow the shining pebble path to the Burned Ground ---
+south
+examine the pebbles
+south
+southeast
+east.
+northeast
+northwest
+northeast
+# --- Burned Ground: candy-cage puzzle ---
+wear the monocle
+blink
+eat the bread
+take the monocle
+wear the monocle
+examine the cage
+push the candies with the log
+take the candies
+examine the candies
+remove the monocle
+# --- to the Cave / Cavern ---
+southwest
+west
+north
+swing the log
+north
+down
+# --- Cavern: read inscriptions, make powder, get dagger ---
+examine the inscriptions
+wear the monocle
+examine the inscriptions
+remove the monocle
+take the pestle
+put the candies into the mortar
+crush the candies with the pestle
+take the powder
+put the pestle into the mortar
+open the box
+drop the log
+wear the gloves
+take the dagger
+# --- to the Graveyard (endgame) ---
+up
+south
+south
+southwest
+southwest
+down
+north
+# --- Best ending: free grandmother, lift curse ---
+open the wooden grave
+attack the wolf with the hatchet
+sprinkle the powder onto the bones

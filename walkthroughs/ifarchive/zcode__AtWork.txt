@@ -1,0 +1,233 @@
+# DANGER! Adventurer at Work! (Simon Avery, 1991 Quill game; Duncan Cross' Inform port)
+# Winning route derived from games/ifarchive_solutions/atwork.sol.
+# Reaches the true 100% victory: ride the winged pony to the cloud of adventures
+#   -> "Congratulations !!!" / "You have taken 186 turns." / "You have scored 100%" / "END OF D.A.A.W."
+#
+# This is a faithful Quill port: BOTH victory and death end with the custom
+# "END OF D.A.A.W. / Do you wish to play again?" screen and emit NO Inform
+# "*** ... ***" banner (decoding all packed strings shows only Inform
+# library-error "**" strings -- no "***" victory string exists in the game).
+# So scripts/try_route.py's win-regex cannot fire; the repo trust gate
+# (scripts/verify_ifarchive_wins.py) recognizes the win via the phrase below.
+# WIN_PHRASE: You have scored 100%
+#
+# Deterministic: wins at 186 turns on seeds 1-4 (no RNG-gated steps).
+# "look" lines marked (paging) exist only to absorb "Press any key to continue"
+# prompts, which otherwise swallow the next real command.
+#
+# --- Pub: smash out through the window ---
+take stool
+throw it at window
+go window
+look
+take head
+# --- Street east: booth (rope), field (torso + tether bull) ---
+e
+go booth
+take rope
+out
+n
+e
+take torso
+take bull
+# bull scares the shopkeeper into dropping the boltcutters
+w
+s
+e
+s
+take cutters
+n
+w
+# --- Booth: cut phone wire, take receiver ---
+go booth
+x phone
+cut wire
+take phone
+out
+e
+e
+take lleg
+# --- Alley-ette: give phone to witch, take her broom ---
+s
+x witch
+talk to her
+give phone to witch
+take broom
+n
+e
+read sign
+# --- Beach: eat kipper, grab inner tube ---
+d
+x kipper
+take it
+eat it
+x lady
+take tube
+u
+# --- West end: hedgepig (broom -> needle), bucket ---
+w
+w
+w
+w
+w
+w
+x hedgepig
+give broom to hedgepig
+look
+take needle
+w
+take bucket
+s
+take rarm
+# --- Cave: look behind dragon for the adventure game; take rock/gold/game ---
+in
+x dragon
+lobe dragon
+look
+take rock, gold, game
+# --- Night school: buy body-building with the gold ---
+out
+n
+e
+e
+n
+in
+talk to teacher
+read sign
+give gold to teacher
+out
+s
+e
+e
+e
+e
+# --- Fence: kick loose slat -> bird seed ---
+x fence
+kick fence
+look
+take seed
+e
+d
+fill bucket
+u
+w
+w
+w
+# --- Farm: needle through the camel's eye -> dung -> brass coin ---
+n
+show needle to camel
+look
+x dung
+take coin
+n
+take leaflet
+x it
+# --- Poultry farm: crack Humpty on the rock -> bird + eggshells ---
+e
+x humpty
+push humpty
+drop rock
+push humpty
+look
+take shells
+w
+s
+s
+w
+w
+# --- Blackened building: bucket of sand to engineer -> dynamite ---
+s
+x engineer
+talk to him
+give bucket to engineer
+n
+w
+# --- Cul-de-sac: eggshells to Day-Vee -> hammer; take right leg ---
+n
+take rleg
+x man
+talk to him
+give shells to man
+s
+w
+s
+s
+# --- Hut: take left arm; leaflet to Bod -> sharp wit ---
+in
+take larm
+x bod
+talk to him
+give leaflet to bod
+inventory
+out
+n
+n
+# --- Castle entrance: brass coin to Angus the tollkeeper ---
+n
+x angus
+talk to him
+give coin to angus
+n
+n
+# --- Laboratory: assemble & animate the body ---
+make body
+tie electrodes to body
+turn on switch
+loun bench
+look
+take pills
+# --- West side of chasm: loose brick -> matches ---
+n
+x brick
+pull brick
+look
+take matches
+x chasm
+x button
+# --- Bird pecks seed off the button -> bridge; game to Balrog ---
+throw seed
+look
+x balrog
+talk to him
+give game to balrog
+e
+e
+# --- Circular room: cut rope with wit -> fall into cellar ---
+cut rope
+look
+n
+# --- Dark cellar: pull nails (hammer) to free flashlight ---
+e
+x rug
+loun rug
+pull nails
+look
+take flashlight
+turn it on
+# --- Underground river: wear tube, swim across ---
+e
+x river
+wear tube
+swim
+look
+# --- Cavern: dynamite the locked pub door, retreat, wait for the bang ---
+e
+x sign
+drop dynamite
+light it
+w
+z
+z
+e
+# --- Tavern: turn fireplace bracket -> hole in east wall ---
+s
+x fireplace
+turn bracket
+e
+e
+# --- Glade: pills, then ride the pony to victory ---
+x pony
+talk to it
+eat pills
+ride pony
+look

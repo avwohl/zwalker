@@ -1,0 +1,344 @@
+# DEEPHOME verified route (seed 2)
+# --- Secret Entrance ---
+read note
+x door
+push mountain
+sw
+# --- Northern Guard Post ---
+open cabinet
+look in cabinet
+take shield
+take sword
+search table
+read letter
+sw
+# --- Main Hall ---
+read warning note
+get torch
+wait
+wait
+wait
+s
+s
+s
+s
+s
+# --- Ore Mines ---
+s
+get axe
+n
+# --- Coal Mines ---
+e
+dig rock with axe
+take coal
+w
+n
+# --- City Generator ---
+e
+open furnace
+put coal in furnace
+close furnace
+x generator
+pull lever
+w
+n
+n
+n
+n
+# --- Railway to Smithy, Blacksmith gear ---
+w
+enter car
+push yellow
+out
+nw
+sw
+get gear
+ne
+se
+# --- Railway to Barracks, Waterfall terrock ---
+enter car
+push green button
+out
+w
+sw
+sw
+x terrock
+ne
+ne
+e
+# --- Railway to Deephome, Library terrock lookup ---
+enter car
+push yellow
+out
+e
+s
+s
+e
+look up terrock in leshosh
+# --- West Royal Road moss ---
+w
+s
+w
+w
+get moss
+# --- Railway to Barracks, moss in nest, water intake ---
+e
+e
+n
+n
+n
+w
+enter car
+push green button
+out
+w
+sw
+sw
+put moss in nest
+x pipe
+push rod
+ne
+ne
+e
+# --- Railway to Deephome, Waterworks ---
+enter car
+push yellow
+out
+e
+s
+s
+s
+s
+sw
+turn wheel
+# --- City Gates open ---
+ne
+n
+e
+se
+x panel
+open hatch
+look in hatch
+put gear on post
+push lever
+push button
+# --- Into Ember, Tool Shop ---
+s
+s
+s
+s
+s
+w
+ask man about hammer
+ask man about eranti
+# --- Pond: fight eranti ---
+e
+wear shield
+wield sword
+s
+kill eranti
+kill eranti
+kill eranti
+kill eranti
+kill eranti
+kill eranti
+kill eranti
+kill eranti
+# --- get hammer ---
+n
+w
+get hammer
+# --- Great Woods maze to Clearing ---
+e
+n
+n
+n
+n
+w
+w
+read sign
+w
+sw
+w
+s
+e
+n
+w
+e
+x clover
+get clover
+read sign
+s
+e
+# --- back to Deephome railway, Blacksmith sharp pick ---
+e
+e
+n
+nw
+w
+n
+n
+n
+w
+enter car
+push yellow
+out
+nw
+sw
+get scraps
+open forge
+light coal with torch
+put scraps in forge
+wait
+wait
+wait
+get scraps
+put scraps on anvil
+hammer scraps
+take metal pick
+ne
+se
+# --- Railway to Treasury, bank box, key ---
+enter car
+push red
+out
+sw
+n
+x box
+pick lock with metal pick
+open box
+look in box
+get key
+s
+unlock door with key
+open door
+w
+# --- Treasury spirit name Kebarn, coin ---
+ask spirit for name
+search valuables
+get coin
+e
+ne
+# --- Railway to Deephome, Temple spirit Indanaz ---
+enter car
+push yellow
+out
+e
+s
+s
+w
+ask spirit for name
+# --- Throne Room spirit Cholok ---
+e
+s
+w
+w
+w
+w
+ask spirit for name
+# --- Library exorcism lookups ---
+e
+e
+e
+e
+n
+e
+look up Kebarn in Leshosh
+look up Partaim in Fresto
+look up Indanaz in Leshosh
+look up Ternalim in Fresto
+look up Cholok in Leshosh
+look up Yetzuiz in Fresto
+look up squirrel in Leshosh
+# --- Small Shack: net ---
+w
+s
+e
+se
+s
+s
+s
+s
+s
+e
+x chest
+pick lock with metal pick
+open chest
+look in chest
+drop hammer
+drop sword
+drop metal pick
+drop key
+get net
+# --- Wooded Path: catch squirrel ---
+w
+n
+n
+dig ground with axe
+put net on hole
+get acorns
+put acorns in net
+climb tree
+down
+get net
+# --- Throne Room: release squirrel ---
+n
+n
+n
+nw
+w
+w
+w
+w
+w
+open net
+# --- Scrivener: paper ---
+e
+e
+e
+e
+n
+n
+w
+open desk
+look in desk
+get paper
+# --- Bakery: bottle + water ---
+e
+e
+get bottle
+fill bottle
+# --- Temple exorcism (Ternalim/Indanaz) ---
+w
+s
+w
+burn paper with torch
+drop coin
+pour water on coin
+put ashes on coin
+put clover on coin
+pray to kraxis
+manaz
+get coin
+# --- Bakery: refill water ---
+e
+n
+e
+fill bottle
+# --- Railway to Treasury for final exorcism ---
+w
+n
+w
+enter car
+push red
+out
+sw
+w
+# --- Treasury exorcism (Partaim/Kebarn) - final ---
+drop net
+open net
+put coin in net
+pour water on net
+get coin
+pray to kraxis
+manaz
