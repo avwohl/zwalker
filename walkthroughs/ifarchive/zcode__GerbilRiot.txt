@@ -1,0 +1,180 @@
+# WIN_PHRASE: You've managed to escape
+# Gerbil Riot of '67 (Release 2) -- derived from Duncan Cross solution
+look
+examine body
+take syringe
+south
+east
+north
+take picture
+south
+east
+east
+north
+take top
+open fridge
+get garlic
+north
+get blanket
+wear blanket
+south
+south
+west
+north
+push north wall
+north
+get all
+south
+south
+west
+west
+west
+north
+get fire bucket
+south
+west
+north
+get horn
+south
+south
+show picture to ralph
+south
+get acid
+north
+north
+east
+south
+down
+throw bucket on fire
+down
+look in crates
+get zinc
+east
+eat garlic
+examine shadows
+get glands
+east
+east
+east
+pull rope
+east
+examine mud
+east
+west
+west
+west
+south
+blow horn
+whistle
+north
+west
+west
+west
+up
+up
+north
+east
+north
+unlock cupboard with key
+look in cupboard
+take copper
+make battery
+tie wires to battery
+south
+west
+south
+down
+down
+east
+east
+east
+east
+get rope
+east
+east
+throw rope
+drink monkey glands
+climb rope
+look
+in
+give battery to squirrel
+out
+down
+west
+west
+west
+west
+west
+west
+up
+up
+north
+west
+north
+spill ink on tissue
+give tissue to shrink
+inject fudge
+south
+east
+east
+east
+east
+south
+give sweetie to harry
+take jacket
+north
+west
+west
+west
+south
+down
+down
+east
+east
+east
+south
+south
+east
+give jacket to arnold
+east
+north
+get matches
+south
+west
+west
+north
+north
+north
+whistle
+north
+burn bush
+east
+east
+north
+examine pit
+examine hub
+push button
+give top to tony
+south
+south
+show tattoo to crazy people
+east
+get wad
+west
+north
+west
+west
+south
+west
+west
+west
+up
+up
+north
+east
+east
+east
+east
+east
+give wad to guard
+east

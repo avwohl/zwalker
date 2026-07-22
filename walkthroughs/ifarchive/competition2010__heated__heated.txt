@@ -1,0 +1,44 @@
+out
+get out of bed
+break alarm
+west
+take a shower
+take key
+east
+open closet
+search pile
+take clothes
+south
+move couch
+plug iron into electrical outlet
+iron clothes
+unplug iron
+put iron on couch
+wear clothes
+wear shoes
+bend hanger
+west
+open fridge
+take sack
+close fridge
+east
+east
+take gum
+west
+north
+west
+take key
+east
+south
+south
+east
+unlock car with keys
+south
+hit trunk
+chew gum
+take jug
+put gum in hole
+north
+north
+open jug
+pour water on radiator
